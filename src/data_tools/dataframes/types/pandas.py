@@ -43,16 +43,16 @@ class PandasDF(DataFrame):
             else:
                 return "string"  # Default for other types
 
-        total_count = len(self.df)
-        columns = self.df.columns.tolist()
-        dtypes = {
+        self.count = len(self.df)
+        self.columns = self.df.columns.tolist()
+        self.dtypes = {
             col: __format_dtype_pandas__(dtype) for col, dtype in self.df.dtypes.items()
         }
 
         return ProfilingOutput(
-            count=total_count,
-            columns=columns,
-            dtypes=dtypes,
+            count=self.count,
+            columns=self.columns,
+            dtypes=self.dtypes,
         )
 
 
