@@ -1,0 +1,67 @@
+# Global configuration
+line-length = 120
+cache-dir = ".ruff_cache"
+target-version = "py310"
+unsafe-fixes = true
+show-fixes = true
+indent-width = 4
+src = ["src"]
+
+# Linting configuration
+[lint]
+select = [
+    "E",        # pycodestyle (errors)
+    "F",        # pyflakes
+    "I",        # isort (imports)
+    "TC",       # flake8-type-checking
+    "W505",     # line too long warning
+    "PT018",    # pytest-style (e.g., assert rewriting)
+    "SIM101",   # flake8-simplify: use ternary
+    "SIM114",   # flake8-simplify: merging nested ifs
+    "PGH004",   # pygrep-hooks: no blanket type ignore
+    "PLE1142",  # pylint error
+    "RUF100",   # Ruff-specific rule: unused noqa
+    "UP007"     # pyupgrade: use | for Union
+]
+ignore = ["FURB101"]
+preview = true
+
+[lint.per-file-ignores]
+"**/api/v1/*.py" = ["TC"]
+"**/model/*.py" = ["TC003"]
+"**/model/__init__.py" = ["F401"]
+"**/tests/*.py" = ["E402"]
+
+# isort-like rules
+[lint.isort]
+lines-between-types = 1
+order-by-type = true
+
+# pytest-style rules
+[lint.flake8-pytest-style]
+mark-parentheses = false
+parametrize-names-type = "list"
+parametrize-values-type = "tuple"
+parametrize-values-row-type = "list"
+
+# flake8-unused-arguments
+[lint.flake8-unused-arguments]
+ignore-variadic-names = true
+
+# Quote preferences
+[lint.flake8-quotes]
+inline-quotes = "double"
+multiline-quotes = "double"
+docstring-quotes = "double"
+
+# Docstring style
+[lint.pydocstyle]
+convention = "google"
+
+# Formatting options
+[format]
+preview = true
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+skip-magic-trailing-comma = false
