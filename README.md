@@ -1,13 +1,14 @@
-# Data Tools
+# Data Analysis Pipeline
 
-A flexible and extensible Python library for profiling various types of dataframes. This tool automatically detects the dataframe format (e.g., pandas) and provides a standardized profiling output.
+A flexible and extensible Python library for building data analysis pipelines. This tool allows you to define a series of analysis steps that are executed in sequence, with each step building upon the results of the previous ones. The pipeline is designed to be dataframe-agnostic, with built-in support for pandas DataFrames and an easy-to-use plugin system for adding support for other libraries like Spark.
 
 ## Key Features
 
-- **Automatic Type Detection**: No need to specify the dataframe type; the factory handles it automatically.
-- **Standardized Profiling**: Get consistent output (row count, columns, data types) regardless of the underlying dataframe library.
+- **Analysis Pipeline**: Chain together multiple analysis steps to create a sophisticated data processing workflow.
+- **Automatic Type Detection**: The underlying dataframe type is automatically detected, so you can use the same pipeline for different data sources.
 - **Extensible Plugin Architecture**: Easily add support for new dataframe libraries (e.g., Spark, Dask) by creating a simple plugin.
-- **Lightweight and Modern**: Built with modern Python practices and a minimal set of dependencies.
+- **Clear Dependency Management**: Each analysis step can depend on the results of previous steps, ensuring a robust and predictable workflow.
+- **Separation of Concerns**: The pipeline architecture cleanly separates the analysis logic from the data access layer, making the code easier to maintain and test.
 
 ## Installation
 
@@ -21,13 +22,20 @@ uv pip install -e .
 
 ## Quick Start
 
-Using the library is straightforward. Simply create your dataframe and pass it to the `DataFrameFactory`.
+Using the library is straightforward. Simply define your pipeline, create your dataframe, and run the analysis.
 
 ```python
 import pandas as pd
-from data_tools.dataframes.factory import DataFrameFactory
+from data_tools.analysis.pipeline import Pipeline
+from data_tools.analysis.steps import TableProfiler
 
-# 1. Create a dataframe from any supported library
+# 1. Define your pipeline
+pipeline = Pipeline([
+    TableProfiler(),
+    # Add other analysis steps here
+])
+
+# 2. Create your dataframe
 data = {
     'name': ['Alice', 'Bob', 'Charlie'],
     'age': [30, 25, 35],
@@ -36,16 +44,11 @@ data = {
 }
 my_df = pd.DataFrame(data)
 
-# 2. Initialize the factory
-# The factory automatically discovers and registers available dataframe types.
-factory = DataFrameFactory()
+# 3. Run the pipeline
+analysis_results = pipeline.run(my_df)
 
-# 3. Let the factory auto-detect and create the correct wrapper
-# It inspects the object `my_df` and finds the right handler.
-data_tool_df = factory.create(my_df)
-
-# 4. Profile the data
-profile = data_tool_df.profile()
+# 4. Access the results
+profile = analysis_results.results["table_profile"]
 
 # Print the results
 print(profile.model_dump_json(indent=2))
@@ -73,47 +76,39 @@ print(profile.model_dump_json(indent=2))
 
 ## How It Works
 
-The library uses a **Factory Pattern** with a plugin-based architecture.
+The library is built around a central `Pipeline` class that executes a series of `AnalysisStep` objects on a `DataSet`.
 
-1.  **`DataFrame` Abstract Class**: Defines a common interface (`profile()` method) that all dataframe wrappers must implement.
-2.  **`DataFrameFactory`**: The central component that manages registration and object creation.
-3.  **Plugins**: Each supported dataframe type (like pandas) is a "plugin." A plugin consists of:
-    - A **checker function** that identifies if it can handle a given object (e.g., `isinstance(df, pd.DataFrame)`).
-    - A **creator class** (e.g., `PandasDF`) that implements the `DataFrame` interface.
-    - A **`register` function** that provides the checker and creator to the factory.
+1.  **`DataSet`**: A container for the raw dataframe and all the analysis results. This object is passed from one pipeline step to the next.
+2.  **`AnalysisStep`**: An abstract base class that defines the interface for all analysis steps. Each step implements an `analyze` method that takes a `DataSet` as input and adds its results to the `DataSet`.
+3.  **`DataFrameFactory`**: A factory that automatically detects the dataframe type and creates a wrapper object that provides a consistent API for accessing the data.
+4.  **`Pipeline`**: The orchestrator that takes a list of analysis steps and a dataframe, creates a `DataSet`, and runs the steps in sequence.
 
-When `factory.create(df)` is called, the factory iterates through its registered plugins, uses the first checker that returns `True`, and then uses the corresponding creator to wrap the dataframe object.
+## Extending the Tool
 
-## Extending the Tool (Adding a New DataFrame Type)
+### Adding a New Analysis Step
 
-To add support for a new library (e.g., Spark), follow these steps:
+To add a new analysis step, create a new class that inherits from `AnalysisStep` and implement the `analyze` method.
+
+```python
+from data_tools.analysis.steps import AnalysisStep
+from data_tools.analysis.models import DataSet
+
+class MyCustomProfiler(AnalysisStep):
+    def analyze(self, dataset: DataSet) -> None:
+        # Your analysis logic here
+        # ...
+        dataset.results["my_custom_profile"] = my_results
+```
+
+### Adding a New DataFrame Type
+
+To add support for a new dataframe library (e.g., Spark), follow these steps:
 
 1.  **Create a New Module**: Add a file like `src/data_tools/dataframes/types/spark.py`.
-
 2.  **Implement the `DataFrame` Interface**: Create a class (e.g., `SparkDF`) that inherits from `DataFrame` and implements the `profile()` method with logic specific to Spark DataFrames.
-
 3.  **Create a Checker Function**: Write a function that returns `True` if the input object is a Spark DataFrame.
-    ```python
-    def can_handle_spark(df: Any) -> bool:
-        # Your logic to check if df is a Spark DataFrame
-        return "pyspark.sql.dataframe.DataFrame" in str(type(df))
-    ```
-
 4.  **Create a Register Function**: In the same file, create a function to register your new components with the factory.
-    ```python
-    from data_tools.dataframes.factory import DataFrameFactory
-
-    def register(factory: DataFrameFactory):
-        factory.register("spark", can_handle_spark, SparkDF)
-    ```
-
 5.  **Activate the Plugin**: Add the path to your new module in the `DEFAULT_PLUGINS` list in `src/data_tools/dataframes/factory.py`.
-    ```python
-    DEFAULT_PLUGINS = [
-        "data_tools.dataframes.types.pandas",
-        "data_tools.dataframes.types.spark"  # Add this line
-    ]
-    ```
 
 ## Running Tests
 
