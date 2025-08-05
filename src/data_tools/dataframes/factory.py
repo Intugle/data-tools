@@ -18,7 +18,7 @@ def import_module(name: str) -> ModuleInterface:
     return importlib.import_module(name)  # type: ignore
 
 
-DEFAULT_PLUGINS = ["data_tools.dataframes.types.pandas"]
+DEFAULT_PLUGINS = ["data_tools.dataframes.types.pandas.pandas"]
 
 
 class DataFrameFactory:

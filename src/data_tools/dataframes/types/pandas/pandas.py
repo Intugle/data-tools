@@ -11,6 +11,8 @@ from data_tools.dataframes.dataframe import DataFrame
 from data_tools.dataframes.factory import DataFrameFactory
 from data_tools.dataframes.models import AssetColumnProfileResponse, ColumnProfile, ProfilingOutput
 
+from .utils import convert_to_native
+
 
 class PandasDF(DataFrame):
 
@@ -120,13 +122,16 @@ class PandasDF(DataFrame):
             # Combine the full set of unique values with the additional random samples.
             dtype_sample = list(distinct_values) + additional_samples
         else:
-            # No data to sample from.
             dtype_sample = []
+
+        # --- Convert numpy types to native Python types for JSON compatibility --- #
+        native_sample_data = convert_to_native(sample_data)
+        native_dtype_sample = convert_to_native(dtype_sample)
 
         # --- Final Profile --- #
         return AssetColumnProfileResponse(
             name=column_name,
-            table_name=table_name,  # Placeholder for table name
+            table_name=table_name,
             
             profile=ColumnProfile(
                 null_count=null_count,
@@ -134,8 +139,8 @@ class PandasDF(DataFrame):
                 distinct_count=distinct_count,
             ),
             
-            sample_data=sample_data,
-            dtype_sample=dtype_sample,
+            sample_data=native_sample_data,
+            dtype_sample=native_dtype_sample,
             ts=time.time() - start_ts,
         )
 

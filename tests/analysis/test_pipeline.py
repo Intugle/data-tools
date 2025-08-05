@@ -50,7 +50,6 @@ def test_column_profiling_with_complex_data():
     ])
     analysis_results = pipeline.run(COMPLEX_DF, DF_NAME)
     column_profiles = analysis_results.results.get("column_profiles")
-
     assert column_profiles is not None
     assert len(column_profiles) == 5
 
