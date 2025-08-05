@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Any
 
-from .models import ProfilingOutput
+from .models import AssetColumnProfileResponse, ProfilingOutput
 
 
 class DataFrame(ABC):
@@ -16,5 +16,5 @@ class DataFrame(ABC):
         table_name: str,
         column_name: str, 
         sample_limit: int = 200
-    ) -> ProfilingOutput:
+    ) -> AssetColumnProfileResponse:
         pass

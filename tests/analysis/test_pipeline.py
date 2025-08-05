@@ -36,7 +36,7 @@ def test_pipeline_with_complex_data():
         'product_name': 'string',
         'price': 'float',
         'purchase_date': 'date & time',
-        'is_returned': 'string' # Objects (mixed types) are treated as strings
+        'is_returned': 'string'  # Objects (mixed types) are treated as strings
     }
 
 

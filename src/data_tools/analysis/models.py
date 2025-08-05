@@ -1,3 +1,5 @@
+import uuid
+
 from typing import Any, Dict
 
 from data_tools.dataframes.factory import DataFrameFactory
@@ -11,6 +13,7 @@ class DataSet:
 
     def __init__(self, df: Any, name: str):
         # The original, raw dataframe object (e.g., a pandas DataFrame)
+        self.id = uuid.uuid4()
         self.name = name
         self.raw_df = df
 
