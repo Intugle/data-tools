@@ -7,9 +7,16 @@ import numpy as np
 import pandas as pd
 import pandas.api.types as ptypes
 
+from data_tools.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
+from data_tools.core.utilities.processing import string_standardization
 from data_tools.dataframes.dataframe import DataFrame
 from data_tools.dataframes.factory import DataFrameFactory
-from data_tools.dataframes.models import AssetColumnProfileResponse, ColumnProfile, ProfilingOutput
+from data_tools.dataframes.models import (
+    ColumnProfile,
+    ColumnProfileOutput,
+    DataTypeIdentificationL1Output,
+    ProfilingOutput,
+)
 
 from .utils import convert_to_native
 
@@ -64,7 +71,7 @@ class PandasDF(DataFrame):
         table_name: str,
         column_name: str, 
         sample_limit: int = 200
-    ) -> Optional[AssetColumnProfileResponse]:
+    ) -> Optional[ColumnProfileOutput]:
         """
         Generates a detailed profile for a single column of a pandas DataFrame.
 
@@ -128,9 +135,12 @@ class PandasDF(DataFrame):
         native_sample_data = convert_to_native(sample_data)
         native_dtype_sample = convert_to_native(dtype_sample)
 
+        business_name = string_standardization(column_name)
+
         # --- Final Profile --- #
-        return AssetColumnProfileResponse(
+        return ColumnProfileOutput(
             name=column_name,
+            business_name=business_name,
             table_name=table_name,
             
             profile=ColumnProfile(
@@ -143,6 +153,46 @@ class PandasDF(DataFrame):
             dtype_sample=native_dtype_sample,
             ts=time.time() - start_ts,
         )
+    
+    def datatype_identification_l1(
+        self,
+        df: pd.DataFrame, 
+        table_name: str, 
+        column_stats: dict[str, ColumnProfileOutput],
+    ) -> list[DataTypeIdentificationL1Output]:
+        """
+        Performs a Level 1 data type identification based on the column's profile.
+
+        This initial step uses the `dtype_sample` collected during the column
+        profiling to infer the most likely data type for the column.
+        Args:
+            df: The input pandas DataFrame.
+            table_name: The name of the table the column belongs to.
+            column_name: The name of the column to analyze.
+            column_stats: The pre-computed statistics for the column from the
+                          `column_profile` method.
+
+        Returns:
+            A DataTypeIdentificationL1Output model containing the inferred data type.
+        """
+        records = []
+        for column_name, stats in column_stats.items():
+            records.append({
+                "table_name": table_name,
+                "column_name": column_name,
+                "values": stats.dtype_sample
+            })
+                
+        l1_df = pd.DataFrame(records)
+        di_pipeline = DataTypeIdentificationPipeline()
+        l1_result = di_pipeline(sample_values_df=l1_df)
+
+        output = [
+            DataTypeIdentificationL1Output(**row)
+            for row in l1_result.to_dict(orient="records")
+        ]
+
+        return output
 
 
 def can_handle_pandas(df: Any) -> bool:

@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from .models import DataSet
 
 if TYPE_CHECKING:
-    from data_tools.dataframes.models import ProfilingOutput
+    from data_tools.dataframes.models import ColumnProfileOutput, ProfilingOutput
 
 
 class AnalysisStep(ABC):
@@ -47,3 +47,25 @@ class ColumnProfiler(AnalysisStep):
             all_column_profiles[col_name] = stats
             
         dataset.results['column_profiles'] = all_column_profiles
+
+
+class DataTypeIdentifierL1(AnalysisStep):
+    def analyze(self, dataset: DataSet) -> None:
+        """
+        Performs datatype identification level 1 for each column.
+        This step depends on the 'column_profiles' result.
+        """
+        
+        # Dependency check
+        if 'column_profiles' not in dataset.results:
+            raise RuntimeError("TableProfiler and ColumnProfiler must be run before DatatypeIdentifierL1.")
+
+        column_profiles: dict[str, ColumnProfileOutput] = dataset.results['column_profiles']
+
+        column_datatypes_l1 = dataset.dataframe_wrapper.datatype_identification_l1(dataset.raw_df, dataset.name, column_profiles)
+
+        for column in column_datatypes_l1:
+            column_profiles[column.column_name].datatype_l1 = column.datatype_l1
+
+        dataset.results['column_datatypes_l1'] = column_datatypes_l1
+
