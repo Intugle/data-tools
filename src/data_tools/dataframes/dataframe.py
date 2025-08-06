@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Any
 
-from .models import AssetColumnProfileResponse, ProfilingOutput
+from .models import ColumnProfileOutput, DataTypeIdentificationL1Output, ProfilingOutput
 
 
 class DataFrame(ABC):
@@ -15,6 +15,15 @@ class DataFrame(ABC):
         df: Any,
         table_name: str,
         column_name: str, 
-        sample_limit: int = 200
-    ) -> AssetColumnProfileResponse:
+        sample_limit: int = 200,
+    ) -> ColumnProfileOutput:
         pass
+
+    @abstractmethod
+    def datatype_identification_l1(
+        df: Any, 
+        table_name: str, 
+        column_stats: dict[str, ColumnProfileOutput],
+    ) -> list[DataTypeIdentificationL1Output]:
+        pass
+    

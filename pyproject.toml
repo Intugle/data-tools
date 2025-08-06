@@ -15,9 +15,13 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "nltk>=3.9.1",
     "pandas>=2.3.1",
     "pydantic>=2.11.7",
     "pydantic-settings>=2.10.1",
+    "pyfunctional>=1.5.0",
+    "symspellpy>=6.9.0",
+    "trieregex>=1.0.0",
 ]
 
 [dependency-groups]

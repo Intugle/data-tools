@@ -14,7 +14,7 @@ COMPLEX_DF = pd.DataFrame({
         '2023-01-15', '2023-01-15', '2023-01-16', '2023-01-17', '2023-01-18',
         '2023-01-18', '2023-01-19', '2023-01-20', '2023-01-20', '2023-01-21'
     ]),
-    'is_returned': [False, False, True, False, False, True, False, False, True, np.nan]
+    'is returned': [False, False, True, False, False, True, False, False, True, np.nan]
 })
 
 DF_NAME = "complex_test_df"
@@ -30,13 +30,13 @@ def test_pipeline_with_complex_data():
 
     assert profile is not None
     assert profile.count == 10
-    assert profile.columns == ['user_id', 'product_name', 'price', 'purchase_date', 'is_returned']
+    assert profile.columns == ['user_id', 'product_name', 'price', 'purchase_date', 'is returned']
     assert profile.dtypes == {
         'user_id': 'float',  # Floats because of NaN
         'product_name': 'string',
         'price': 'float',
         'purchase_date': 'date & time',
-        'is_returned': 'string'  # Objects (mixed types) are treated as strings
+        'is returned': 'string'  # Objects (mixed types) are treated as strings
     }
 
 
@@ -52,7 +52,7 @@ def test_column_profiling_with_complex_data():
     column_profiles = analysis_results.results.get("column_profiles")
     assert column_profiles is not None
     assert len(column_profiles) == 5
-
+    breakpoint()
     # --- Assertions for 'user_id' ---
     user_id_profile = column_profiles.get('user_id')
     assert user_id_profile is not None
@@ -76,9 +76,10 @@ def test_column_profiling_with_complex_data():
     assert price_profile.profile.null_count == 1
     assert price_profile.profile.distinct_count == 8  # 1200.50 is repeated
 
-    # --- Assertions for 'is_returned' ---
-    returned_profile = column_profiles.get('is_returned')
+    # --- Assertions for 'is returned' ---
+    returned_profile = column_profiles.get('is returned')
     assert returned_profile is not None
     assert returned_profile.profile.count == 10
     assert returned_profile.profile.null_count == 1
     assert returned_profile.profile.distinct_count == 2  # True, False
+    assert returned_profile.business_name == "is_returned"
