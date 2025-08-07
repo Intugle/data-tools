@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING
 
+from data_tools.core.settings import settings
+
 from .models import DataSet
 
 if TYPE_CHECKING:
@@ -43,7 +45,7 @@ class ColumnProfiler(AnalysisStep):
 
         for col_name in table_profile.columns:
             # We would add a method to our DataFrame wrapper to get stats for a single column
-            stats = dataset.dataframe_wrapper.column_profile(dataset.raw_df, dataset.name, col_name)
+            stats = dataset.dataframe_wrapper.column_profile(dataset.raw_df, dataset.name, col_name, settings.UPSTREAM_SAMPLE_LIMIT)
             all_column_profiles[col_name] = stats
             
         dataset.results['column_profiles'] = all_column_profiles

@@ -186,7 +186,6 @@ class PandasDF(DataFrame):
         l1_df = pd.DataFrame(records)
         di_pipeline = DataTypeIdentificationPipeline()
         l1_result = di_pipeline(sample_values_df=l1_df)
-
         output = [
             DataTypeIdentificationL1Output(**row)
             for row in l1_result.to_dict(orient="records")

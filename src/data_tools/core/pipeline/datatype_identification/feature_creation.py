@@ -4,6 +4,7 @@ import multiprocessing
 
 from datetime import datetime
 from time import time
+from typing import Optional
 
 import pandas as pd
 
@@ -41,8 +42,7 @@ class DIFeatureCreation:
 
         return parquet_df
     
-    def __extract__(self, parquet_values: list, pool: multiprocessing.pool.Pool = None) -> pd.DataFrame:
-
+    def __extract__(self, parquet_values: list, pool: Optional[multiprocessing.Pool] = None) -> pd.DataFrame:
         if pool:
             normalized_list = pool.map(normalise_string_whitespace, parquet_values)
             features_dict = pool.map(extract_features, normalized_list)
@@ -54,7 +54,7 @@ class DIFeatureCreation:
         
     def __call__(self, sample_values_df: pd.DataFrame) -> pd.DataFrame:
 
-        with multiprocessing.pool.Pool(multiprocessing.cpu_count(),) as pool:
+        with multiprocessing.Pool(multiprocessing.cpu_count(),) as pool:
             
             parquet_df = sample_values_df
 
@@ -85,10 +85,8 @@ class DIFeatureCreation:
             end = time()
 
             log.info(f"[**] FEATS COMPUTATION <dtype_features> ==> {round((end - start) / 60, 3)} minutes")
-
             assert features_df.shape[0] != 0, "Features dataframe is empty"
             # Get the total number of null features and replace them with 0
-
              # Get the feature execution stats
             features_df['start_time'] = start_ft
             features_df['end_time'] = datetime.now()

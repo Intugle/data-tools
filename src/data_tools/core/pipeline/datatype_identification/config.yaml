@@ -1,0 +1,55 @@
+## Thresholds values for L1 and L2 Model
+PREPROCESS_CONSTANT:
+    NUMBER_PATTERN: '[0-9]'
+    TEXT_PATTERN: '[a-zA-Z]'
+    WORD_PATTERN: '[\w+]'
+    SPECIAL_CHAR_PATTERN: '[!@#$%^&*(),?":;{}\''|<>~`=_\\/+-]'
+    RANGE_PATTERN: '(\d+)\s*[-|to]+\s*(\d+)'
+    URL_PATTERN: 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    FLOAT_PATTERN: '(?<!\w)(?:\d+\.\d*|\.\d+)(?!\w)'
+    SPECIAL_CHARACTER_PATTERN_WITH_DOT: '[^\w\s]'
+    TRAIN_DATASET: 'sherlock'
+    VALIDATION_DATASET: 'web_data_common'
+    FILES_TO_RUN: 4
+    PARALLEL: False
+
+PROFILING:
+    PARALLEL: False
+    
+FEATURES:
+    PARALLEL: False
+    BATCHED: False
+
+SAVE_FEATURES: False
+USE_EXISTING_FEATURE_FILE: False
+
+THRESHOLD:
+    CORPUS_WORD_LIMIT: 3
+    PARTITION_SIZE: 100
+    DATE_MIN_YEAR: 1800
+    DATE_MAX_YEAR: 2100
+    SYMSPELL_PREFIX_LEN: 7
+    SYMSPELL_EDIT_DIST: 0
+    SYMSPELL_TERM_INDEX: 0
+    SYMSPELL_COUNT_INDEX: 1
+    DATA_VALUES_LIMIT: 10000
+    XGB_MODEL_WEIGHT: 0.4
+    RF_MODEL_WEIGHT: 0.3
+    SVM_MODEL_WEIGHT: 0.3
+    TOKENIZE_WORD_LIMIT: 2
+    PAR_EMBED_MIN_SAMPLE: 1000
+    DOC2VEC_DIM_SIZE: 50
+    GLOVE_DIM_SIZE: 50
+    BATCH_SIZE: 100
+
+L2PARAMS:
+    MODEL: "LLM"
+    BERT_SAMPLE_SIZE: 20
+    LLM_SAMPLE_SIZE: 20
+    BATCH_SIZE: 100
+
+API_INFO:
+
+FILE_TYPE:
+    FILE_ENCODING: 'iso-8859-1'
+    DTYPE_ENCODING: 'unicode'

@@ -26,9 +26,6 @@ from .preprocessing import (
     additional_processing,
     special_token_repl,
 )
-from .word_embeddings import (
-    extract_word_embeddings_features,
-)
 
 log = logging.getLogger(__name__)
 
@@ -67,7 +64,6 @@ size = settings.DI_CONFIG['THRESHOLD']['PARTITION_SIZE']
 
 
 def extract_features(col_values: list) -> OrderedDict:
-    
     # Extract features from raw data
     # reuse_model = True
     
@@ -75,7 +71,7 @@ def extract_features(col_values: list) -> OrderedDict:
     table_name = col_values[0]
     column_name = col_values[1]
     col_values = col_values[2:]
-    
+
     # Cleaning the table name for special token replacement and segmenting the compound words
     table_name_clean = special_token_repl(table_name, suffix='_table_name')
     table_name_clean = sym_spell.word_segmentation(table_name_clean).corrected_string
@@ -83,18 +79,18 @@ def extract_features(col_values: list) -> OrderedDict:
     # Cleaning the column name for special token replacement and segmenting the compound words
     column_name_clean = special_token_repl(column_name, suffix='_column_name')
     column_name_clean = sym_spell.word_segmentation(column_name_clean).corrected_string
-        
+
     # Number of samples used for feature creation and total samples present in data
     n_samples = settings.DI_CONFIG['THRESHOLD']['DATA_VALUES_LIMIT']
     n_values = len(col_values)
-    
+
     features = OrderedDict()
 
     # Additional processing on the col values with nan and lower case converted
     log.info('Custom Preprocessing started:%s', datetime.now())
     cleaned_population_nan = pseq(map(additional_processing, col_values), processes=core_count, partition_size=size)
     cleaned_population_nan = list(cleaned_population_nan)
-    
+
     log.info('Custom preprocessing completed:%s', datetime.now())
     uniq_cleaned_population = len(set([val.lower() for val in cleaned_population_nan if len(val) > 0]))
 
@@ -112,25 +108,11 @@ def extract_features(col_values: list) -> OrderedDict:
     # uniq_cleaned_sample = list(set(cleaned_sample_wo_nan))
 
     # Extracting the bag of character, words, embedding based features along with additional statistical features
-    log.info('*' * 100)
-#     extract_bag_of_characters_features(cleaned_sample_wo_nan, features)
-    log.info('=' * 100)
-    extract_word_embeddings_features(cleaned_sample_wo_nan, features, prefix='values')
-#     log.info('=' * 100)
-#     extract_word_embeddings_features([table_name_clean], features, prefix='table_name')
-    log.info('=' * 100)
-    extract_word_embeddings_features([column_name_clean], features, prefix='column_name')
     log.info('=' * 100)
     extract_bag_of_words_features(cleaned_sample_nan, cleaned_sample_wo_nan_uncased, features)
     log.info('=' * 100)
     extract_addl_feats(cleaned_sample_nan, features)
     log.info('*' * 100)
-
-    # Extracting the paragraph embeddings features using custom/pretrained doc2vec model
-    # log.info('paragraph embedding started..')
-    # infer_paragraph_embeddings_features(uniq_cleaned_sample, features, reuse_model)
-    # log.info('paragraph embedding completed..')
-    # log.info('*' * 100)
 
     # Creating the additional info for table level data
     features['table_population'] = n_values
@@ -140,7 +122,7 @@ def extract_features(col_values: list) -> OrderedDict:
     # Additional new features
     features['uniq_samp_pop_ratio'] = features['uniq_values_sample'] / uniq_cleaned_population if uniq_cleaned_population > 0 else 0
     features['samp_pop_ratio'] = n_samples / n_values if n_values > 0 else 0
-    
+
     lengths = [len(s) for s in cleaned_population_nan]
     n_none = sum(1 for _l in lengths if _l == 0)
 
@@ -149,10 +131,10 @@ def extract_features(col_values: list) -> OrderedDict:
     features["none-agg-percent_population"] = n_none / n_values if n_values > 0 else 1
     features["none-agg-num_population"] = n_none
     features["none-agg-all_population"] = 1 if n_none == n_values else 0
-    
-     # new completeness logic
+
+    # new completeness logic
     features['completeness'] = (n_values - n_none) / n_values
-    
+
     # Adding the metadata specific information of the features
     features['table_name'] = table_name
     features['column_name'] = column_name
@@ -161,5 +143,4 @@ def extract_features(col_values: list) -> OrderedDict:
 
     log.info('Completed...')
     log.info('#' * 100)
-
     return features

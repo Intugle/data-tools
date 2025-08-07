@@ -39,7 +39,7 @@ def test_datatype_identification_l1_end_to_end():
 
     # Assertions for 'product_name'
     assert 'product_name' in results_map
-    assert results_map['product_name'].datatype_l1 == 'string'
+    assert results_map['product_name'].datatype_l1 == 'close_ended_text'
 
     # Assertions for 'price'
     assert 'price' in results_map
@@ -48,5 +48,5 @@ def test_datatype_identification_l1_end_to_end():
     # Also check that the original column profiles were updated
     column_profiles = analysis_results.results.get("column_profiles")
     assert column_profiles['user_id'].datatype_l1 == 'integer'
-    assert column_profiles['product_name'].datatype_l1 == 'string'
+    assert column_profiles['product_name'].datatype_l1 == 'close_ended_text'
     assert column_profiles['price'].datatype_l1 == 'float'

@@ -42,4 +42,4 @@ class DataTypeIdentificationL1Output(BaseModel):
     """
     column_name: str = Field(..., description="The name of the column being profiled.")
     table_name: str = Field(..., description="The name of the source table or a placeholder (e.g., 'pandas_dataframe').")
-    datatype_l1: str = Field(..., description="The inferred data type for the column.")
+    datatype_l1: str = Field(..., validation_alias='predicted_datatype_l1', description="The inferred data type for the column.")

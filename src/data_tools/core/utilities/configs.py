@@ -26,7 +26,7 @@ def load_model_configuration(pipeline_name: str, custom_config: dict):
     default_config = {}
 
     if pipeline_name not in ["DC"]:
-        default_config_file = os.path.join(CODE_PATH, "core", "pipeline", ALIAS[pipeline_name.upper()], "config.yaml")
+        default_config_file = os.path.join(CODE_PATH, "pipeline", ALIAS[pipeline_name.upper()], "config.yaml")
         with open(default_config_file, "r") as d_config_file:
             default_config = yaml.safe_load(d_config_file)
             

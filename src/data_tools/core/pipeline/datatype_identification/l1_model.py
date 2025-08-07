@@ -83,7 +83,6 @@ class L1Model:
 # 
         model_path = os.path.join(self.model_objects_directory, 'di_l1_classifier_xgb_' + model_version + '.pkl')
         encoder_path = os.path.join(self.model_objects_directory, 'di_l1_classifier_encoder_' + model_version + '.pkl')
-        
         with open(model_path, 'rb') as f:
             clf_model = pickle.load(f) 
         log.info("[*] Loaded L1 classifier model")
