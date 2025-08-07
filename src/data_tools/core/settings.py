@@ -14,9 +14,9 @@ class Settings(BaseSettings):
     """Global Configuration"""
 
     UPSTREAM_SAMPLE_LIMIT: int = 10000
-    MODEL_DIR_PATH: str = Path(os.path.split(os.path.abspath(__file__))[0]).parent.joinpath(
+    MODEL_DIR_PATH: str = str(Path(os.path.split(os.path.abspath(__file__))[0]).parent.joinpath(
         "artifacts"
-    )
+    ))
     MODEL_RESULTS_PATH: str = os.path.join("model", "model_results")
     
     DI_CONFIG: dict = load_model_configuration('DI', {})

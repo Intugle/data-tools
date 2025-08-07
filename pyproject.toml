@@ -16,17 +16,24 @@ classifiers = [
 ]
 dependencies = [
     "nltk>=3.9.1",
+    "numpy==1.26.2",
     "pandas>=2.3.1",
+    "pyaml>=25.7.0",
     "pydantic>=2.11.7",
     "pydantic-settings>=2.10.1",
     "pyfunctional>=1.5.0",
+    "scikit-learn==1.2.2",
     "symspellpy>=6.9.0",
     "trieregex>=1.0.0",
+    "xgboost==1.7.5",
 ]
 
 [dependency-groups]
 test = ["pytest"]
 lint = ["ruff"]
+dev = [
+    "pytest>=8.4.1",
+]
 
 [tool.ruff]
 src = ["src"]

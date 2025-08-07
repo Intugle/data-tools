@@ -52,7 +52,6 @@ def test_column_profiling_with_complex_data():
     column_profiles = analysis_results.results.get("column_profiles")
     assert column_profiles is not None
     assert len(column_profiles) == 5
-    breakpoint()
     # --- Assertions for 'user_id' ---
     user_id_profile = column_profiles.get('user_id')
     assert user_id_profile is not None

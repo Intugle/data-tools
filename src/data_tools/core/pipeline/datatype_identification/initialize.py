@@ -12,9 +12,6 @@ def di_initalizer():
     settings.MODEL_DIR_PATH, "dependant", "datatype_l1_identification"
 )
 
-    if not os.path.exists(par_vec_path):
-        raise FileNotFoundError(f"No models at {par_vec_path}")
-
     import nltk
 
     from .paragraph_vectors import (
@@ -28,8 +25,6 @@ def di_initalizer():
     while count > 0:
         try:
             initialise_nltk()
-            # initialise_word_embeddings(par_vec_path)
-            # initialise_pretrained_model(path=par_vec_path, dim=50)
             return
         except Exception as ex:
             log.error(
