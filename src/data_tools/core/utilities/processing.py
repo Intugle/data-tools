@@ -1,6 +1,10 @@
+import logging
 import re
 
 import numpy as np
+
+log = logging.getLogger(__name__)
+
 
 SPECIAL_PATTERN = r'[^a-zA-Z0-9\s]'
 WHITESPACE_PATTERN = r'\s{2,}'
@@ -42,3 +46,39 @@ def compute_stats(values):
         _kurtosis = np.mean(x ** 4) / _variance ** 2 - 3
     
     return _mean, _variance, _skew, _kurtosis, _min, _max, _sum
+
+
+def adjust_sample(sample_data, expected_size, sample=True, distinct=False, empty_return_na: bool = True):
+    
+    if not isinstance(sample_data, list):
+        try:
+            sample_data = eval(sample_data)
+        except Exception:
+            log.error("[!] Error when evaluating sample_data")
+            return [np.nan] * 2
+    
+    sample_size = len(sample_data)
+    
+    if sample_size == 0:
+        if empty_return_na:
+            return [np.nan] * expected_size
+        else:
+            return []
+        
+    if distinct:
+
+        sample_data = list(set(sample_data))
+    
+    if not sample:
+        
+        return sample_data[:expected_size]
+    
+    if sample_size / expected_size <= 0.3:
+
+        sample_data = sample_data + list(np.random.choice(sample_data, expected_size - sample_size))
+    
+    else:
+
+        sample_data = sample_data[:expected_size]
+
+    return sample_data

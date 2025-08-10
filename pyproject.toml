@@ -15,6 +15,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "langchain>=0.3.27",
+    "langchain-community>=0.3.21",
+    "langchain-openai>=0.3.28",
     "nltk>=3.9.1",
     "numpy==1.26.2",
     "pandas>=2.3.1",

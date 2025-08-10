@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import pandas.api.types as ptypes
 
+from data_tools.core.pipeline.datatype_identification.l2_model import L2Model
 from data_tools.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
 from data_tools.core.utilities.processing import string_standardization
 from data_tools.dataframes.dataframe import DataFrame
@@ -15,6 +16,8 @@ from data_tools.dataframes.models import (
     ColumnProfile,
     ColumnProfileOutput,
     DataTypeIdentificationL1Output,
+    DataTypeIdentificationL2Input,
+    DataTypeIdentificationL2Output,
     ProfilingOutput,
 )
 
@@ -139,7 +142,7 @@ class PandasDF(DataFrame):
 
         # --- Final Profile --- #
         return ColumnProfileOutput(
-            name=column_name,
+            column_name=column_name,
             business_name=business_name,
             table_name=table_name,
             
@@ -192,7 +195,34 @@ class PandasDF(DataFrame):
         ]
 
         return output
+    
+    def datatype_identification_l2(
+        self,
+        df: Any, 
+        table_name: str, 
+        column_stats: list[DataTypeIdentificationL2Input],
+    ) -> list[DataTypeIdentificationL1Output]:
+        """
+        Performs a Level 2 data type identification based on the column profiling.
 
+        Args:
+            df: The input pandas DataFrame.
+            table_name: The name of the table the column belongs to.
+            column_stats: The list of columns, sample data  (DataTypeIdentificationL2Input).
+
+        Returns:
+            A DataTypeIdentificationL2Output model containing the inferred data type l2.
+        """
+        column_values_df = pd.DataFrame([item.model_dump() for item in column_stats])
+        l2_model = L2Model()
+        l2_result = l2_model(l1_pred=column_values_df)
+        output = [
+            DataTypeIdentificationL2Output(**row)
+            for row in l2_result.to_dict(orient="records")
+        ]
+
+        return output
+        
 
 def can_handle_pandas(df: Any) -> bool:
     return isinstance(df, pd.DataFrame)
