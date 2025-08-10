@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING
 
 from data_tools.core.settings import settings
+from data_tools.dataframes.models import DataTypeIdentificationL2Input
 
 from .models import DataSet
 
@@ -70,4 +71,25 @@ class DataTypeIdentifierL1(AnalysisStep):
             column_profiles[column.column_name].datatype_l1 = column.datatype_l1
 
         dataset.results['column_datatypes_l1'] = column_datatypes_l1
+
+
+class DataTypeIdentifierL2(AnalysisStep):
+    def analyze(self, dataset: DataSet) -> None:
+        """
+        Performs datatype identification level 2 for each column.
+        This step depends on the 'column_datatypes_l1' result.
+        """
+        
+        # Dependency check
+        if 'column_profiles' not in dataset.results:
+            raise RuntimeError("TableProfiler and ColumnProfiler  must be run before DatatypeIdentifierL2.")
+
+        column_profiles: dict[str, ColumnProfileOutput] = dataset.results['column_profiles']
+        columns_with_samples = [DataTypeIdentificationL2Input(**col.model_dump()) for col in column_profiles.values()]
+        column_datatypes_l2 = dataset.dataframe_wrapper.datatype_identification_l2(dataset.raw_df, dataset.name, columns_with_samples)
+
+        for column in column_datatypes_l2:
+            column_profiles[column.column_name].datatype_l2 = column.datatype_l2
+
+        dataset.results['column_datatypes_l2'] = column_datatypes_l2
 

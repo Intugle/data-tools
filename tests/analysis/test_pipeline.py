@@ -55,7 +55,7 @@ def test_column_profiling_with_complex_data():
     # --- Assertions for 'user_id' ---
     user_id_profile = column_profiles.get('user_id')
     assert user_id_profile is not None
-    assert user_id_profile.name == 'user_id'
+    assert user_id_profile.column_name == 'user_id'
     assert user_id_profile.table_name == DF_NAME
     assert user_id_profile.profile.count == 10
     assert user_id_profile.profile.null_count == 1

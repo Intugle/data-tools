@@ -29,6 +29,10 @@ class Settings(BaseSettings):
         extra="ignore",
         case_sensitive=True,
     )
+    L2_SAMPLE_LIMIT: int = 10
+
+    # LLM CONFIGS
+    LLM_TYPE: str = "azure"
 
 
 @lru_cache

@@ -1,7 +1,13 @@
 from abc import ABC, abstractmethod
 from typing import Any
 
-from .models import ColumnProfileOutput, DataTypeIdentificationL1Output, ProfilingOutput
+from .models import (
+    ColumnProfileOutput,
+    DataTypeIdentificationL1Output,
+    DataTypeIdentificationL2Input,
+    DataTypeIdentificationL2Output,
+    ProfilingOutput,
+)
 
 
 class DataFrame(ABC):
@@ -26,4 +32,11 @@ class DataFrame(ABC):
         column_stats: dict[str, ColumnProfileOutput],
     ) -> list[DataTypeIdentificationL1Output]:
         pass
-    
+
+    @abstractmethod
+    def datatype_identification_l2(
+        df: Any, 
+        table_name: str, 
+        column_stats: list[DataTypeIdentificationL2Input],
+    ) -> list[DataTypeIdentificationL2Output]:
+        pass
