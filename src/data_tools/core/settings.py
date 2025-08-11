@@ -20,6 +20,7 @@ class Settings(BaseSettings):
     MODEL_RESULTS_PATH: str = os.path.join("model", "model_results")
     
     DI_CONFIG: dict = load_model_configuration('DI', {})
+    KI_CONFIG: dict = load_model_configuration('KI', {})
 
     DI_MODEL_VERSION: str = "13052023"
 

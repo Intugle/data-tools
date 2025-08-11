@@ -57,28 +57,36 @@ def test_column_profiling_with_complex_data():
     assert user_id_profile is not None
     assert user_id_profile.column_name == 'user_id'
     assert user_id_profile.table_name == DF_NAME
-    assert user_id_profile.profile.count == 10
-    assert user_id_profile.profile.null_count == 1
-    assert user_id_profile.profile.distinct_count == 7  # 101, 102, 103, 104, 105, 106, 107 -> 101 is repeated
+    assert user_id_profile.count == 10
+    assert user_id_profile.null_count == 1
+    assert user_id_profile.distinct_count == 7  # 101, 102, 103, 104, 105, 106, 107 -> 101 is repeated
+    assert user_id_profile.uniqueness == 0.7  # 7 distinct out of 10 total  
+    assert user_id_profile.completeness == 0.9  # 9 non-null out of 10 total
 
     # --- Assertions for 'product_name' ---
     product_profile = column_profiles.get('product_name')
     assert product_profile is not None
-    assert product_profile.profile.count == 10
-    assert product_profile.profile.null_count == 1
-    assert product_profile.profile.distinct_count == 6  # Laptop, Mouse, Keyboard, Monitor, Webcam, HDMI Cable
+    assert product_profile.count == 10
+    assert product_profile.null_count == 1
+    assert product_profile.distinct_count == 6  # Laptop, Mouse, Keyboard, Monitor, Webcam, HDMI Cable
+    assert user_id_profile.uniqueness == 0.7  # 7 distinct out of 10 total  
+    assert user_id_profile.completeness == 0.9  # 9 non-null out of 10 total
 
     # --- Assertions for 'price' ---
     price_profile = column_profiles.get('price')
     assert price_profile is not None
-    assert price_profile.profile.count == 10
-    assert price_profile.profile.null_count == 1
-    assert price_profile.profile.distinct_count == 8  # 1200.50 is repeated
+    assert price_profile.count == 10
+    assert price_profile.null_count == 1
+    assert price_profile.distinct_count == 8  # 1200.50 is repeated
+    assert user_id_profile.uniqueness == 0.7  # 7 distinct out of 10 total  
+    assert user_id_profile.completeness == 0.9  # 9 non-null out of 10 total
 
     # --- Assertions for 'is returned' ---
     returned_profile = column_profiles.get('is returned')
     assert returned_profile is not None
-    assert returned_profile.profile.count == 10
-    assert returned_profile.profile.null_count == 1
-    assert returned_profile.profile.distinct_count == 2  # True, False
+    assert returned_profile.count == 10
+    assert returned_profile.null_count == 1
+    assert returned_profile.distinct_count == 2  # True, False
     assert returned_profile.business_name == "is_returned"
+    assert user_id_profile.uniqueness == 0.7  # 7 distinct out of 10 total  
+    assert user_id_profile.completeness == 0.9  # 9 non-null out of 10 total
