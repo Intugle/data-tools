@@ -12,23 +12,17 @@ class ProfilingOutput(BaseModel):
 
 class ColumnProfile(BaseModel):
     """
-    A Pydantic model to represent the detailed profile statistics of a column.
-    """
-    null_count: int = Field(..., description="The total number of null (NaN or None) values in the column.")
-    count: int = Field(..., description="The total number of rows in the DataFrame (including nulls).")
-    distinct_count: int = Field(..., description="The number of unique non-null values in the column.")
-
-
-class ColumnProfileOutput(BaseModel):
-    """
     A Pydantic model for validating the response of the column_profile function.
     
-    This model ensures that the output conforms to a strict, predictable schema.
     """
     column_name: str = Field(..., description="The name of the column being profiled.")
     business_name: str = Field(..., description="Cleaned column name")
     table_name: str = Field(..., description="The name of the source table or a placeholder (e.g., 'pandas_dataframe').")
-    profile: ColumnProfile = Field(..., description="An object containing detailed count statistics for the column.")
+    null_count: int = Field(..., description="The total number of null (NaN or None) values in the column.")
+    count: int = Field(..., description="The total number of rows in the DataFrame (including nulls).")
+    distinct_count: int = Field(..., description="The number of unique non-null values in the column.")
+    uniqueness: float = Field(..., description="The ratio of distinct values to total count, indicating the uniqueness of the column.")
+    completeness: float = Field(..., description="The ratio of non-null values to total count, indicating the completeness of the column.")
     sample_data: List[Any] = Field(..., description="A sample of unique values from the column, up to the specified sample_limit.")
     dtype_sample: Optional[List[Any]] = Field(None, description="A combined sample of unique and non-unique values, intended for data type inference.")
     ts: float = Field(..., description="The timestamp indicating how long the profiling took, in seconds.")
@@ -40,7 +34,6 @@ class DataTypeIdentificationL1Output(BaseModel):
     """
     A Pydantic model for validating the response of the datatype_identification function.
     
-    This model ensures that the output conforms to a strict, predictable schema.
     """
     column_name: str = Field(..., description="The name of the column being profiled.")
     table_name: str = Field(..., description="The name of the source table or a placeholder (e.g., 'pandas_dataframe').")
@@ -51,7 +44,6 @@ class DataTypeIdentificationL2Input(BaseModel):
     """
     A Pydantic model for validating the response of the column_profile function.
     
-    This model ensures that the output conforms to a strict, predictable schema.
     """
     column_name: str = Field(..., description="The name of the column being profiled.")
     table_name: str = Field(..., description="The name of the source table or a placeholder (e.g., 'pandas_dataframe').")
@@ -69,9 +61,15 @@ class DataTypeIdentificationL2Output(BaseModel):
     """
     A Pydantic model for validating the response of the datatype_identification function.
     
-    This model ensures that the output conforms to a strict, predictable schema.
     """
     column_name: str = Field(..., description="The name of the column being profiled.")
     table_name: str = Field(..., description="The name of the source table or a placeholder (e.g., 'pandas_dataframe').")
     datatype_l2: L2OutputTypes = Field(..., validation_alias='predicted_datatype_l2', description="The inferred category (dimension or measure) for the column.")
 
+
+class KeyIdentificationOutput(BaseModel):
+    """
+    A Pydantic model for validating the response of the key_identification function.
+    
+    """
+    column_name: str = Field(..., description="The name of the column identified as a primary key.")

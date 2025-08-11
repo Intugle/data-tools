@@ -9,15 +9,16 @@ import pandas.api.types as ptypes
 
 from data_tools.core.pipeline.datatype_identification.l2_model import L2Model
 from data_tools.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
+from data_tools.core.pipeline.key_identification.ki import KeyIdentificationLLM
 from data_tools.core.utilities.processing import string_standardization
 from data_tools.dataframes.dataframe import DataFrame
 from data_tools.dataframes.factory import DataFrameFactory
 from data_tools.dataframes.models import (
     ColumnProfile,
-    ColumnProfileOutput,
     DataTypeIdentificationL1Output,
     DataTypeIdentificationL2Input,
     DataTypeIdentificationL2Output,
+    KeyIdentificationOutput,
     ProfilingOutput,
 )
 
@@ -74,7 +75,7 @@ class PandasDF(DataFrame):
         table_name: str,
         column_name: str, 
         sample_limit: int = 200
-    ) -> Optional[ColumnProfileOutput]:
+    ) -> Optional[ColumnProfile]:
         """
         Generates a detailed profile for a single column of a pandas DataFrame.
 
@@ -141,17 +142,15 @@ class PandasDF(DataFrame):
         business_name = string_standardization(column_name)
 
         # --- Final Profile --- #
-        return ColumnProfileOutput(
+        return ColumnProfile(
             column_name=column_name,
             business_name=business_name,
             table_name=table_name,
-            
-            profile=ColumnProfile(
-                null_count=null_count,
-                count=total_count,
-                distinct_count=distinct_count,
-            ),
-            
+            null_count=null_count,
+            count=total_count,
+            distinct_count=distinct_count,
+            uniqueness=distinct_count / total_count if total_count > 0 else 0.0,
+            completeness=not_null_count / total_count if total_count > 0 else 0.0,
             sample_data=native_sample_data,
             dtype_sample=native_dtype_sample,
             ts=time.time() - start_ts,
@@ -161,7 +160,7 @@ class PandasDF(DataFrame):
         self,
         df: pd.DataFrame, 
         table_name: str, 
-        column_stats: dict[str, ColumnProfileOutput],
+        column_stats: dict[str, ColumnProfile],
     ) -> list[DataTypeIdentificationL1Output]:
         """
         Performs a Level 1 data type identification based on the column's profile.
@@ -221,6 +220,29 @@ class PandasDF(DataFrame):
             for row in l2_result.to_dict(orient="records")
         ]
 
+        return output
+    
+    def key_identification(
+        self,
+        table_name: str, 
+        column_stats_df: pd.DataFrame,
+    ) -> KeyIdentificationOutput:
+        """
+        Identifies potential primary keys in the DataFrame based on column profiles.
+
+        Args:
+            df: The input pandas DataFrame.
+            table_name: The name of the table the column belongs to.
+            column_stats_df: The pre-computed statistics for the columns from the
+                          `column_profile` method.
+
+        Returns:
+            A KeyIdentificationOutput model containing the identified primary key column.
+        """
+        # Placeholder implementation, actual logic would depend on specific criteria for key identification
+        ki_model = KeyIdentificationLLM(profiling_data=column_stats_df)
+        ki_result = ki_model()
+        output = KeyIdentificationOutput(**ki_result)
         return output
         
 

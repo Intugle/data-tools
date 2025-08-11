@@ -1,13 +1,15 @@
 from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING
 
+import pandas as pd
+
 from data_tools.core.settings import settings
 from data_tools.dataframes.models import DataTypeIdentificationL2Input
 
 from .models import DataSet
 
 if TYPE_CHECKING:
-    from data_tools.dataframes.models import ColumnProfileOutput, ProfilingOutput
+    from data_tools.dataframes.models import ColumnProfile, ProfilingOutput
 
 
 class AnalysisStep(ABC):
@@ -63,7 +65,7 @@ class DataTypeIdentifierL1(AnalysisStep):
         if 'column_profiles' not in dataset.results:
             raise RuntimeError("TableProfiler and ColumnProfiler must be run before DatatypeIdentifierL1.")
 
-        column_profiles: dict[str, ColumnProfileOutput] = dataset.results['column_profiles']
+        column_profiles: dict[str, ColumnProfile] = dataset.results['column_profiles']
 
         column_datatypes_l1 = dataset.dataframe_wrapper.datatype_identification_l1(dataset.raw_df, dataset.name, column_profiles)
 
@@ -84,7 +86,7 @@ class DataTypeIdentifierL2(AnalysisStep):
         if 'column_profiles' not in dataset.results:
             raise RuntimeError("TableProfiler and ColumnProfiler  must be run before DatatypeIdentifierL2.")
 
-        column_profiles: dict[str, ColumnProfileOutput] = dataset.results['column_profiles']
+        column_profiles: dict[str, ColumnProfile] = dataset.results['column_profiles']
         columns_with_samples = [DataTypeIdentificationL2Input(**col.model_dump()) for col in column_profiles.values()]
         column_datatypes_l2 = dataset.dataframe_wrapper.datatype_identification_l2(dataset.raw_df, dataset.name, columns_with_samples)
 
@@ -92,4 +94,20 @@ class DataTypeIdentifierL2(AnalysisStep):
             column_profiles[column.column_name].datatype_l2 = column.datatype_l2
 
         dataset.results['column_datatypes_l2'] = column_datatypes_l2
+
+
+class KeyIdentifier(AnalysisStep):
+    def analyze(self, dataset: DataSet) -> None:
+        """
+        Performs key identification for the dataset.
+        This step depends on the datatype identification results.
+        """
+        if 'column_datatypes_l1' not in dataset.results or 'column_datatypes_l2' not in dataset.results:
+            raise RuntimeError("DataTypeIdentifierL1 and L2 must be run before KeyIdentifier.")
+        
+        column_profiles: dict[str, ColumnProfile] = dataset.results['column_profiles']
+        column_profiles_df = pd.DataFrame([col.model_dump() for col in column_profiles.values()])
+
+        key = dataset.dataframe_wrapper.key_identification(dataset.name, column_profiles_df)
+        dataset.results["key"] = key
 

@@ -1,11 +1,14 @@
 from abc import ABC, abstractmethod
 from typing import Any
 
+import pandas as pd
+
 from .models import (
-    ColumnProfileOutput,
+    ColumnProfile,
     DataTypeIdentificationL1Output,
     DataTypeIdentificationL2Input,
     DataTypeIdentificationL2Output,
+    KeyIdentificationOutput,
     ProfilingOutput,
 )
 
@@ -22,14 +25,14 @@ class DataFrame(ABC):
         table_name: str,
         column_name: str, 
         sample_limit: int = 200,
-    ) -> ColumnProfileOutput:
+    ) -> ColumnProfile:
         pass
 
     @abstractmethod
     def datatype_identification_l1(
         df: Any, 
         table_name: str, 
-        column_stats: dict[str, ColumnProfileOutput],
+        column_stats: dict[str, ColumnProfile],
     ) -> list[DataTypeIdentificationL1Output]:
         pass
 
@@ -39,4 +42,11 @@ class DataFrame(ABC):
         table_name: str, 
         column_stats: list[DataTypeIdentificationL2Input],
     ) -> list[DataTypeIdentificationL2Output]:
+        pass
+
+    @abstractmethod
+    def key_identification(
+        table_name: str, 
+        column_stats: pd.DataFrame,
+    ) -> KeyIdentificationOutput:
         pass
