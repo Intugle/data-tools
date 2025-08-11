@@ -18,7 +18,7 @@ def import_module(name: str) -> ModuleInterface:
     return importlib.import_module(name)  # type: ignore
 
 
-DEFAULT_PLUGINS = ["data_tools.dataframes.types.pandas"]
+DEFAULT_PLUGINS = ["data_tools.dataframes.types.pandas.pandas"]
 
 
 class DataFrameFactory:
@@ -57,5 +57,5 @@ class DataFrameFactory:
         """Create a execution engine type"""
         for checker_fn, creator_fn in cls.dataframe_funcs.values():
             if checker_fn(df):
-                return creator_fn(df=df)
+                return creator_fn()
         raise ValueError(f"No suitable dataframe type found for object of type {type(df)!r}")
