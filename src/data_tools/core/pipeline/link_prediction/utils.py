@@ -1,8 +1,15 @@
+import logging
+
 from typing import List, Optional, TypedDict
 
 import pandas as pd
 
 from pydantic import BaseModel, Field
+
+from data_tools.core import settings
+from data_tools.core.utilities.processing import classify_datetime_format, preprocess_profiling_data
+
+log = logging.getLogger(__name__)
 
 
 class linkage(BaseModel):
@@ -55,6 +62,51 @@ def dtype_check(dtype1: str, dtype2: str) -> bool:
 
 
 def preprocess_profiling_df(profiling_data: pd.DataFrame):
+
+    profiling_data = preprocess_profiling_data(
+        profiling_data=profiling_data,
+        sample_limit=settings.STRATA_SAMPLE_LIMIT,
+        dtypes_to_filter=["dimension"],
+        truncate_sample_data=True
+    )
+
+    if settings.REMOVE_DATETIME_LP:
+        profiling_data = profiling_data.loc[
+            ~(profiling_data["datatype_l1"] == "date & time")
+        ].reset_index(drop=True)
+
+    condn2 = (
+        profiling_data["datatype_l1"].isin(["integer", "float"])
+    ) & (profiling_data["datatype_l2"] == "dimension")
+
+    profiling_data["datatype"] = profiling_data["datatype_l1"]
+
+    profiling_data.loc[condn2, "datatype"] = (
+        profiling_data.loc[condn2, "datatype_l1"] + "_dimension"
+    )
+
+    condn = profiling_data["datatype_l1"] == "date & time"
+
+    if condn.any():
+        log.info(
+            "[!] Warning date time should not be considered in link prediction"
+        )
+        profiling_data.loc[condn, "date_time_format"] = profiling_data.loc[
+            condn, "sample_data"
+        ].apply(
+            classify_datetime_format,
+        )
+
+        def datetime_format(dtype, format):
+            return f"{dtype} ({format})"
+
+        profiling_data.loc[condn, "datatype"] = profiling_data.loc[condn].apply(
+            lambda row: datetime_format(
+                row["predicted_datatype_l1"], row["date_time_format"]
+            ),
+            axis=1,
+        )
+    
     def percent_conversion(x):
         return f"{(x * 100):.2f}%"
 
@@ -65,4 +117,5 @@ def preprocess_profiling_df(profiling_data: pd.DataFrame):
     profiling_data["completeness"] = profiling_data.completeness.apply(
         percent_conversion
     )
+
     return profiling_data

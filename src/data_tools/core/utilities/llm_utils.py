@@ -63,7 +63,7 @@ def generate_create_table_query(table_columns: list,
 
             sample_data = ""
 
-            profiling = json.dumps(profiling).replace("{", "").replace("}", "").replace('"', '')
+            profiling = json.dumps(profiling).replace("{", "").replace("}", "").replace('"', '').replace("_l1", "")
             profiling = f" -- {profiling}{sample_data}"
         
         parts.append(profiling)
