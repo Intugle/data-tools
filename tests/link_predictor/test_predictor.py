@@ -93,19 +93,37 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     assert len(results.links) == 1
 
 
-def test_predictor_end_to_end():
+def test_predictor_end_to_end_complex():
     """
-    Tests the LinkPredictor end-to-end without mocking the prediction logic.
+    Tests the LinkPredictor end-to-end with more complex dataframes,
+    including datetime columns and multiple potential links.
     """
-    # 1. Prepare dummy dataframes with a clear link
-    customers_df = pd.DataFrame({"customer_id": [1, 2, 3], "name": ["A", "B", "C"]})
-    orders_df = pd.DataFrame({"order_id": [101, 102], "cust_id": [1, 3]})
-    reviews_df = pd.DataFrame({"review_id": [10, 20], "user_id": [1, 2]})
+    # 1. Prepare more complex dummy dataframes
+    customers_df = pd.DataFrame({
+        "id": [101, 102, 103],
+        "email": ["alice@example.com", "bob@example.com", "charlie@example.com"],
+        "created_at": pd.to_datetime(["2023-01-15", "2023-02-20", "2023-03-10"]),
+        "country": ["USA", "UK", "USA"]
+    })
+
+    orders_df = pd.DataFrame({
+        "order_id": [1, 2, 3, 4],
+        "customer_id": [101, 102, 101, 103],
+        "order_date": pd.to_datetime(["2023-01-20", "2023-02-22", "2023-01-25", "2023-03-12"]),
+        "amount": [100.50, 50.00, 75.25, 120.00]
+    })
+
+    events_df = pd.DataFrame({
+        "event_id": [1, 2, 3],
+        "user_id": [101, 103, 102],
+        "event_timestamp": pd.to_datetime(["2023-01-20 10:00", "2023-03-12 11:00", "2023-02-22 12:00"]),
+        "event_type": ["purchase", "page_view", "purchase"]
+    })
 
     datasets = {
         "customers": customers_df,
         "orders": orders_df,
-        "reviews": reviews_df,
+        "events": events_df,
     }
 
     # 2. Initialize the predictor
@@ -114,16 +132,21 @@ def test_predictor_end_to_end():
     # 3. Run the prediction
     results = predictor.predict()
 
-    # 4. Assert that the correct link was found
-    assert len(results.links) >= 1
-    link_found = False
-    for link in results.links:
-        if (
-            link.from_dataset == "customers"
-            and link.from_column == "customer_id"
-            and link.to_dataset == "orders"
-            and link.to_column == "cust_id"
-        ):
-            link_found = True
-            break
-    assert link_found, "Expected link between customers.customer_id and orders.cust_id not found"
+    # 4. Assert that the correct links were found
+    assert len(results.links) >= 2, "Expected at least two links to be found"
+
+    # Check for the link between customers and orders
+    link1_found = any(
+        link.from_dataset == "customers" and link.from_column == "id" and
+        link.to_dataset == "orders" and link.to_column == "customer_id"
+        for link in results.links
+    )
+    assert link1_found, "Expected link between customers.id and orders.customer_id not found"
+
+    # Check for the link between customers and events
+    link2_found = any(
+        link.from_dataset == "customers" and link.from_column == "id" and
+        link.to_dataset == "events" and link.to_column == "user_id"
+        for link in results.links
+    )
+    assert link2_found, "Expected link between customers.id and events.user_id not found"
