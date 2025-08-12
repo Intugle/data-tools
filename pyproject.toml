@@ -18,6 +18,7 @@ dependencies = [
     "langchain>=0.3.27",
     "langchain-community>=0.3.21",
     "langchain-openai>=0.3.28",
+    "langgraph>=0.6.4",
     "nltk>=3.9.1",
     "numpy==1.26.2",
     "pandas>=2.3.1",
@@ -36,6 +37,7 @@ test = ["pytest"]
 lint = ["ruff"]
 dev = [
     "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
 ]
 
 [tool.ruff]
