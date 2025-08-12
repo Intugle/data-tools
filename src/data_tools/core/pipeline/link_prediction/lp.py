@@ -14,7 +14,12 @@ from tqdm import tqdm
 from data_tools.analysis.models import DataSet
 from data_tools.core import settings
 from data_tools.core.llms.chat import ChatModelLLM
-from data_tools.core.pipeline.link_prediction.utils import dtype_check, extract_innermost_dict, linkage, preprocess_profiling_df
+from data_tools.core.pipeline.link_prediction.utils import (
+    dtype_check,
+    extract_innermost_dict,
+    linkage,
+    preprocess_profiling_df,
+)
 from data_tools.core.utilities.llm_utils import (
     generate_create_table_query,
     read_column_datatypes,
@@ -72,7 +77,7 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
     LLM_CONFIG = {"temperature": 0.2}
 
     PROFILING_COLUMNS_REQUIRED = [
-        "datatype_l1",
+        "datatype",
         "distinct_count",
         "uniqueness",
         "completeness",
@@ -128,7 +133,7 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
                 columns_required=self.PROFILING_COLUMNS_REQUIRED,
                 mapping_dtypes_to_sql=True,
             )
-            for (table_name,), gbydata in profiling_data.groupby(
+            for (table_name,), gbydata in self.profiling_data.groupby(
                 ["table_name"]
             )
         }

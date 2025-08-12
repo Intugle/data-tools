@@ -35,10 +35,16 @@ class Settings(BaseSettings):
 
     # LLM CONFIGS
     LLM_TYPE: str = "azure"
+    LLM_SAMPLE_LIMIT: int = 15
+    STRATA_SAMPLE_LIMIT: int = 4
 
     # LP
     HALLUCINATIONS_MAX_RETRY: int = 2
     UNIQUENESS_THRESHOLD: float = 0.9
+
+    # DATETIME
+    DATE_TIME_FORMAT_LIMIT: int = 25
+    REMOVE_DATETIME_LP: bool = True
 
 
 @lru_cache
