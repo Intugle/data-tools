@@ -1,4 +1,3 @@
-
 import time
 
 from typing import Any, Optional
@@ -7,6 +6,7 @@ import numpy as np
 import pandas as pd
 import pandas.api.types as ptypes
 
+from data_tools.core.pipeline.business_glossary.bg import BusinessGlossary
 from data_tools.core.pipeline.datatype_identification.l2_model import L2Model
 from data_tools.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
 from data_tools.core.pipeline.key_identification.ki import KeyIdentificationLLM
@@ -14,6 +14,8 @@ from data_tools.core.utilities.processing import string_standardization
 from data_tools.dataframes.dataframe import DataFrame
 from data_tools.dataframes.factory import DataFrameFactory
 from data_tools.dataframes.models import (
+    BusinessGlossaryOutput,
+    ColumnGlossary,
     ColumnProfile,
     DataTypeIdentificationL1Output,
     DataTypeIdentificationL2Input,
@@ -26,7 +28,6 @@ from .utils import convert_to_native
 
 
 class PandasDF(DataFrame):
-
     def profile(self, df: pd.DataFrame) -> ProfilingOutput:
         """
         Generates a profile of a pandas DataFrame.
@@ -59,22 +60,16 @@ class PandasDF(DataFrame):
 
         total_count = len(df)
         columns = df.columns.tolist()
-        dtypes = {
-            col: __format_dtype_pandas__(dtype) for col, dtype in df.dtypes.items()
-        }
+        dtypes = {col: __format_dtype_pandas__(dtype) for col, dtype in df.dtypes.items()}
 
         return ProfilingOutput(
             count=total_count,
             columns=columns,
             dtypes=dtypes,
         )
-    
+
     def column_profile(
-        self,
-        df: pd.DataFrame, 
-        table_name: str,
-        column_name: str, 
-        sample_limit: int = 200
+        self, df: pd.DataFrame, table_name: str, column_name: str, sample_limit: int = 200
     ) -> Optional[ColumnProfile]:
         """
         Generates a detailed profile for a single column of a pandas DataFrame.
@@ -155,11 +150,11 @@ class PandasDF(DataFrame):
             dtype_sample=native_dtype_sample,
             ts=time.time() - start_ts,
         )
-    
+
     def datatype_identification_l1(
         self,
-        df: pd.DataFrame, 
-        table_name: str, 
+        df: pd.DataFrame,
+        table_name: str,
         column_stats: dict[str, ColumnProfile],
     ) -> list[DataTypeIdentificationL1Output]:
         """
@@ -179,26 +174,19 @@ class PandasDF(DataFrame):
         """
         records = []
         for column_name, stats in column_stats.items():
-            records.append({
-                "table_name": table_name,
-                "column_name": column_name,
-                "values": stats.dtype_sample
-            })
-                
+            records.append({"table_name": table_name, "column_name": column_name, "values": stats.dtype_sample})
+
         l1_df = pd.DataFrame(records)
         di_pipeline = DataTypeIdentificationPipeline()
         l1_result = di_pipeline(sample_values_df=l1_df)
-        output = [
-            DataTypeIdentificationL1Output(**row)
-            for row in l1_result.to_dict(orient="records")
-        ]
+        output = [DataTypeIdentificationL1Output(**row) for row in l1_result.to_dict(orient="records")]
 
         return output
-    
+
     def datatype_identification_l2(
         self,
-        df: Any, 
-        table_name: str, 
+        df: Any,
+        table_name: str,
         column_stats: list[DataTypeIdentificationL2Input],
     ) -> list[DataTypeIdentificationL1Output]:
         """
@@ -215,16 +203,13 @@ class PandasDF(DataFrame):
         column_values_df = pd.DataFrame([item.model_dump() for item in column_stats])
         l2_model = L2Model()
         l2_result = l2_model(l1_pred=column_values_df)
-        output = [
-            DataTypeIdentificationL2Output(**row)
-            for row in l2_result.to_dict(orient="records")
-        ]
+        output = [DataTypeIdentificationL2Output(**row) for row in l2_result.to_dict(orient="records")]
 
         return output
-    
+
     def key_identification(
         self,
-        table_name: str, 
+        table_name: str,
         column_stats_df: pd.DataFrame,
     ) -> KeyIdentificationOutput:
         """
@@ -244,7 +229,37 @@ class PandasDF(DataFrame):
         ki_result = ki_model()
         output = KeyIdentificationOutput(**ki_result)
         return output
-        
+
+    def generate_business_glossary(
+        self,
+        table_name: str,
+        column_stats: pd.DataFrame,
+        domain: Optional[str] = None,
+    ) -> BusinessGlossaryOutput:
+        """
+        Generates business glossary terms and tags for columns in a pandas DataFrame.
+
+        Args:
+            df: The input pandas DataFrame.
+            table_name: The name of the table the column belongs to.
+
+        Returns:
+            A BusinessGlossaryOutput model containing glossary terms and tags for each column.
+        """
+
+        bg_model = BusinessGlossary(profiling_data=column_stats)
+        table_glossary, glossary_df = bg_model(table_name=table_name, domain=domain)
+        columns_glossary = []
+        for _, row in glossary_df.iterrows():
+            columns_glossary.append(
+                ColumnGlossary(
+                    column_name=row["column_name"],
+                    business_glossary=row.get("business_glossary", ""),
+                    business_tags=row.get("business_tags", []),
+                )
+            )
+        return BusinessGlossaryOutput(table_name=table_name, table_glossary=table_glossary, columns=columns_glossary)
+
 
 def can_handle_pandas(df: Any) -> bool:
     return isinstance(df, pd.DataFrame)

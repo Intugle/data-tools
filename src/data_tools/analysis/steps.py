@@ -111,3 +111,34 @@ class KeyIdentifier(AnalysisStep):
         key = dataset.dataframe_wrapper.key_identification(dataset.name, column_profiles_df)
         dataset.results["key"] = key
 
+
+class BusinessGlossaryGenerator(AnalysisStep):
+    def __init__(self, domain: str):
+        """
+        Initializes the BusinessGlossaryGenerator with optional additional context.
+        
+        :param domain: The industry domain to which the dataset belongs.
+        """
+        self.domain = domain
+
+    def analyze(self, dataset: DataSet) -> None:
+        """
+        Generates business glossary terms and tags for each column in the dataset.
+        """
+        if 'column_datatypes_l1' not in dataset.results:
+            raise RuntimeError("DataTypeIdentifierL1  must be run before Business Glossary Generation.")
+        
+        column_profiles: dict[str, ColumnProfile] = dataset.results['column_profiles']
+        column_profiles_df = pd.DataFrame([col.model_dump() for col in column_profiles.values()])
+
+        glossary_output = dataset.dataframe_wrapper.generate_business_glossary(
+            dataset.name, column_profiles_df, domain=self.domain
+        )
+
+        for column in glossary_output.columns:
+            column_profiles[column.column_name].business_glossary = column.business_glossary
+            column_profiles[column.column_name].business_tags = column.business_tags
+        
+        dataset.results["business_glossary_and_tags"] = glossary_output
+        dataset.results['table_glossary'] = glossary_output.table_glossary
+

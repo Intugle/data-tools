@@ -22,6 +22,7 @@ class Settings(BaseSettings):
     DI_CONFIG: dict = load_model_configuration('DI', {})
     KI_CONFIG: dict = load_model_configuration('KI', {})
     LP_CONFIG: dict = load_model_configuration('LP', {})
+    BG_CONFIG: dict = load_model_configuration('BG', {})
 
     DI_MODEL_VERSION: str = "13052023"
 
