@@ -28,6 +28,8 @@ class ColumnProfile(BaseModel):
     ts: float = Field(..., description="The timestamp indicating how long the profiling took, in seconds.")
     datatype_l1: Optional[str] = Field(default=None, description="The inferred data type for the column, based on the sample data.")
     datatype_l2: Optional[str] = Field(default=None, description="The inferred data type category (dimension/measure) for the column, based on the datatype l1 results")
+    business_glossary: Optional[str] = Field(default=None, description="The business glossary entry for the column, if available.")
+    business_tags: Optional[List[str]] = Field(default=None, description="A list of business tags associated with the column, if any.")
 
 
 class DataTypeIdentificationL1Output(BaseModel):
@@ -73,3 +75,21 @@ class KeyIdentificationOutput(BaseModel):
     
     """
     column_name: str = Field(..., description="The name of the column identified as a primary key.")
+
+
+class ColumnGlossary(BaseModel):
+    """
+    Represents the business glossary and tags for a single column.
+    """
+    column_name: str = Field(..., description="The name of the column.")
+    business_glossary: str = Field(None, description="A business-friendly term for the column.")
+    business_tags: List[str] = Field(default_factory=list, description="A list of business tags associated with the column.")
+
+
+class BusinessGlossaryOutput(BaseModel):
+    """
+    Represents the business glossary and tags for all columns in a dataset.
+    """
+    table_name: str = Field(..., description="The name of the source table or a placeholder (e.g., 'pandas_dataframe').")
+    table_glossary: str = Field(..., description="A business-friendly description for the dataset.")
+    columns: List[ColumnGlossary] = Field(default_factory=list, description="A list of ColumnGlossary objects for each column in the dataset.")

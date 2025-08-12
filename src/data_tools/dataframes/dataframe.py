@@ -4,6 +4,7 @@ from typing import Any
 import pandas as pd
 
 from .models import (
+    BusinessGlossaryOutput,
     ColumnProfile,
     DataTypeIdentificationL1Output,
     DataTypeIdentificationL2Input,
@@ -49,4 +50,13 @@ class DataFrame(ABC):
         table_name: str, 
         column_stats: pd.DataFrame,
     ) -> KeyIdentificationOutput:
+        pass
+
+    @abstractmethod
+    def generate_business_glossary(
+        self,
+        table_name: str,
+        column_stats: pd.DataFrame,
+        domain: str = "",
+    ) -> BusinessGlossaryOutput:
         pass
