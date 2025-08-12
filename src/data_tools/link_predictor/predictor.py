@@ -1,6 +1,9 @@
 import itertools
+import logging
 
 from typing import Any, Dict, List
+
+import pandas as pd
 
 from data_tools.analysis.models import DataSet
 from data_tools.analysis.pipeline import Pipeline
@@ -11,8 +14,11 @@ from data_tools.analysis.steps import (
     KeyIdentifier,
     TableProfiler,
 )
+from data_tools.core.pipeline.link_prediction.lp import LinkPredictionAgentic
 
 from .models import LinkPredictionResult, PredictedLink
+
+log = logging.getLogger(__name__)
 
 
 class LinkPredictor:
@@ -52,6 +58,8 @@ class LinkPredictor:
 
         print(f"LinkPredictor initialized with datasets: {list(self.datasets.keys())}")
 
+        self.already_executed_combo = set()
+
     def _run_prerequisites(self, dataset: DataSet):
         """Runs the prerequisite analysis steps on a given DataSet."""
         for step in self._prerequisite_pipeline.steps:
@@ -77,22 +85,38 @@ class LinkPredictor:
                 print(f"Dataset '{dataset.name}' already processed. Skipping analysis.")
             self.datasets[dataset.name] = dataset
 
-    def _predict_for_pair(self, name_a: str, ds_a: DataSet, name_b: str, ds_b: DataSet) -> List[PredictedLink]:
+    def _create_table_combination_id(self, table_a: str, table_b: str) -> str:
+        assets = [table_a, table_b]
+        assets.sort()
+        return f"{assets[0]}--{assets[1]}"
+
+    def _predict_for_pair(self, name_a: str, dataset_a: DataSet, name_b: str, dataset_b: DataSet) -> List[PredictedLink]:
         """
         Contains the core logic for finding links between TWO dataframes.
         This method can now safely assume that key identification has been run.
         """
-        ds_a.results.get("key")
-        ds_b.results.get("key")
+        table_combination = self._create_table_combination_id(name_a, name_b)
+        if table_combination in self.already_executed_combo:
+            log.warning(f"[!] Skipping already executed combination: {table_combination}")
+            return
+        
+        dataset_a_column_profiles = [col.model_dump() for col in dataset_a.results['column_profiles'].values()]
+        dataset_b_column_profiles = [col.model_dump() for col in dataset_b.results['column_profiles'].values()]
+        profiling_data = pd.concat([pd.DataFrame(dataset_a_column_profiles), pd.DataFrame(dataset_b_column_profiles)], ignore_index=True)
+        pipeline = LinkPredictionAgentic(
+            profiling_data=profiling_data,
+            primary_keys=[(name_a, dataset_a.results['key'].column_name), 
+                            (name_b, dataset_b.results['key'].column_name)],
+        )
+        
+        llm_result, raw_llm_result = pipeline([(dataset_a, dataset_b)])
 
-        # =================================================================
-        # TODO: USER IMPLEMENTATION
-        # Your logic here can now use the identified keys.
-        # e.g., if key_a.column_name == key_b.column_name:
-        #           return [PredictedLink(...)]
-        # =================================================================
-
-        pair_links: List[PredictedLink] = []
+        pair_links: List[PredictedLink] = [PredictedLink(
+            from_dataset=row['table1_name'],
+            from_column=row['column1_name'],
+            to_dataset=row['table2_name'],
+            to_column=row['column2_name'],
+        ) for _, row in llm_result.iterrows()]
         return pair_links
 
     def predict(self) -> LinkPredictionResult:
@@ -105,10 +129,10 @@ class LinkPredictor:
 
         for name_a, name_b in itertools.combinations(dataset_names, 2):
             print(f"\n--- Comparing '{name_a}' <=> '{name_b}' ---")
-            ds_a = self.datasets[name_a]
-            ds_b = self.datasets[name_b]
+            dataset_a = self.datasets[name_a]
+            dataset_b = self.datasets[name_b]
 
-            links_for_pair = self._predict_for_pair(name_a, ds_a, name_b, ds_b)
+            links_for_pair = self._predict_for_pair(name_a, dataset_a, name_b, dataset_b)
 
             if links_for_pair:
                 print(f"Found {len(links_for_pair)} potential link(s).")

@@ -1,3 +1,5 @@
+import logging
+
 from unittest.mock import patch
 
 import pandas as pd
@@ -7,6 +9,7 @@ from data_tools.analysis.models import DataSet
 from data_tools.link_predictor.models import PredictedLink
 from data_tools.link_predictor.predictor import LinkPredictor
 
+logging.basicConfig(level=logging.INFO)
 
 @pytest.fixture
 def mock_predict_for_pair():
@@ -88,3 +91,39 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     # 6. Verify results
     assert mock_predict_for_pair.call_count == 1
     assert len(results.links) == 1
+
+
+def test_predictor_end_to_end():
+    """
+    Tests the LinkPredictor end-to-end without mocking the prediction logic.
+    """
+    # 1. Prepare dummy dataframes with a clear link
+    customers_df = pd.DataFrame({"customer_id": [1, 2, 3], "name": ["A", "B", "C"]})
+    orders_df = pd.DataFrame({"order_id": [101, 102], "cust_id": [1, 3]})
+    reviews_df = pd.DataFrame({"review_id": [10, 20], "user_id": [1, 2]})
+
+    datasets = {
+        "customers": customers_df,
+        "orders": orders_df,
+        "reviews": reviews_df,
+    }
+
+    # 2. Initialize the predictor
+    predictor = LinkPredictor(datasets)
+
+    # 3. Run the prediction
+    results = predictor.predict()
+
+    # 4. Assert that the correct link was found
+    assert len(results.links) >= 1
+    link_found = False
+    for link in results.links:
+        if (
+            link.from_dataset == "customers"
+            and link.from_column == "customer_id"
+            and link.to_dataset == "orders"
+            and link.to_column == "cust_id"
+        ):
+            link_found = True
+            break
+    assert link_found, "Expected link between customers.customer_id and orders.cust_id not found"

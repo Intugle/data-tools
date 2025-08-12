@@ -1,5 +1,7 @@
-from pydantic import BaseModel
 from typing import List
+
+from pydantic import BaseModel
+
 
 class PredictedLink(BaseModel):
     """
@@ -9,8 +11,7 @@ class PredictedLink(BaseModel):
     from_column: str
     to_dataset: str
     to_column: str
-    confidence: float
-    notes: str
+
 
 class LinkPredictionResult(BaseModel):
     """

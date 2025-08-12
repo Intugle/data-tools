@@ -21,6 +21,7 @@ class Settings(BaseSettings):
     
     DI_CONFIG: dict = load_model_configuration('DI', {})
     KI_CONFIG: dict = load_model_configuration('KI', {})
+    LP_CONFIG: dict = load_model_configuration('LP', {})
 
     DI_MODEL_VERSION: str = "13052023"
 
@@ -34,6 +35,10 @@ class Settings(BaseSettings):
 
     # LLM CONFIGS
     LLM_TYPE: str = "azure"
+
+    # LP
+    HALLUCINATIONS_MAX_RETRY: int = 2
+    UNIQUENESS_THRESHOLD: float = 0.9
 
 
 @lru_cache
