@@ -1,0 +1,112 @@
+## Thresholds and values
+RUN: True
+
+
+FEATURES:
+    PARALLEL: False
+    
+THRESHOLD:
+    COMPOSITE_SCORE_THRESHOLD : 0.98
+    WORD_LEN_THRESHOLD : 20
+    CHAR_LEN_THRESHOLD : 200
+    BINARY_MODEL_THRESHOLD : 0.5
+    MULTILABEL_MODEL_THRESHOLD : 0.7
+    NULL_VALUE_THRESHOLD: 0.8
+    
+BINS:
+    BINS_CUTOFF: [-10, 50, 999999999999999999]
+    BINS_LABELS : ['Less than 50',  'Greater than 50']
+    
+FILE_TYPE:
+    FILE_ENCODING: 'utf-8'
+    DTYPE_ENCODING: 'unicode'    
+    
+API_INFO:
+
+
+GROUPS_&_DATATYPECOLUMNS_&_IGNOREGROUPS:
+    DATATYPE_GROUPS_L1 : {
+                          'integer':['group1'],
+                          'float':['group1'],
+                          'open_ended_text':['group2'],
+                          'close_ended_text':['group2'],
+                          'alphanumeric':['group2'],
+                          'range_type':['group3'],
+                          'date & time':['group4'],
+                          'others':['group5']
+                          }
+                          
+    DATATYPE_GROUPS_L2 : {'open_ended_text':['group1'], 
+                          'close_ended_text':['group2'], 
+                          'alphanumeric':['group3'], 
+                          'range_type':['group4'], 
+                          'others':['group5'], 
+                          'integer_dimension':['group6'], 
+                          'integer_measure':['group7'], 
+                          'integer_unknown':['group8'],
+                          'float_dimension':['group9'], 
+                          'float_measure':['group10'], 
+                          'float_unknown':['group11'],
+                          'YYYY-MM-DD':['group12'],
+                          'YYYY-DD-MM':['group13'],
+                          'MM-DD-YYYY':['group14'],
+                          'DD-MM-YYYY':['group15'],
+                          'YYYY-MM-DDTHH:MM:SS':['group16'],
+                          'YYYY-DD-MMTHH:MM:SS':['group17'],
+                          'YYYY-MM-DDTHH:MM:SSZ':['group18'],
+                          'YYYY-DD-MMTHH:MM:SSZ':['group19'],
+                          'YYYY-MM-DDTHH:MM:SS.sssZ':['group20'],
+                          'YYYY-DD-MMTHH:MM:SS.sssZ':['group21'],
+                          'YYYY-MM-DDTHH:MM:SS.sss±HHMM':['group22'],
+                          'YYYY-DD-MMTHH:MM:SS.sss±HHMM':['group23'],
+                          'YYYY-MM-DDTHH:MM:SS.sss±HH':['group24'],
+                          'YYYY-DD-MMTHH:MM:SS.sss±HH':['group25'],
+                          'YYYY-MM-DDTHH:MM':['group26'],
+                          'YYYY-DD-MMTHH:MM':['group27'],
+                          'YYYY-MM-DDTHH:MMZ':['group28'],
+                          'YYYY-DD-MMTHH:MMZ':['group29'],
+                          'YYYY-MM-DDTHH:MM±HHMM':['group30'],
+                          'YYYY-DD-MMTHH:MM±HHMM':['group31'],
+                          'YYYY-MM-DDTHH:MM±HH':['group32'],
+                          'YYYY-DD-MMTHH:MM±HH':['group33'],
+                          'MM-DD-YYYY HH:MM AM/PM':['group34'],
+                          'DD-MM-YYYY HH:MM AM/PM':['group35'],
+                          'MM-DD-YYYY HH:MM':['group36'],
+                          'DD-MM-YYYY HH:MM':['group37'],
+                          'HH:MM:SS +/-HH:MM':['group38'],
+                          'HH:MM +/-HH:MM':['group39'],
+                          'Day of the Week, Month Day, Year':['group40'],
+                          'Day of the Week, Month Day, Year, Time':['group41'],
+                          'Month Day, Year, Time':['group42'],
+                          'HH:MM:SS.sss':['group43'],
+                          'HH:MM:SS.sss AM/PM':['group44'],
+                          'HH:MM':['group45'],
+                          'HH:MM AM/PM':['group46'],
+                          'HH:MM AM/PM (Timezone)':['group47'],
+                          'HH:MM (Timezone)':['group48'],
+                          'YYYY-MM-DDTHH:MM:SS±HHMM':['group49'],
+                          'YYYY-DD-MMTHH:MM:SS±HHMM':['group50'],
+                          'YYYY-MM-DDTHH:MM AM/PM±HHMM':['group51'],
+                          'YYYY-DD-MMTHH:MM AM/PM±HHMM':['group52'],
+                          'date & time':['group53']
+                         }
+                         
+ # group 2,3,6,9,8,1
+                         
+#     DTYPE_COLUMN_NAME : ["predicted_datatype_l1","predicted_datatype_l3"]
+    DTYPE_COLUMN_NAME: ["predicted_datatype_l1","predicted_datatype_l2"]
+    DTYPE_GROUP_IGNORE_LIST : ['group4','group5','group7','group10']
+
+RULES:
+    UNIQ_THRESHOLD_MULTIPLE_KEYS: 0.3
+    UNIQ_THRESHOLD_SINGLE_KEY: 0.9
+    DROP_THRESHOLD: 0.2
+    LLM_PROBABILITY: 0.8
+
+LLM:
+    INCLUDE_DTYPES: True
+
+ML:
+  MODEL_VERSION: "30082023"
+    
+    
