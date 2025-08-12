@@ -1,0 +1,49 @@
+RUN: True
+
+PREPROCESS_CONSTANT:
+  WORD_PATTERN: '[\w+]'
+
+THRESHOLD:
+  OVERALL_SCORE_THRESHOLD: 0.4
+  FUZZ_RATIO_THRESHOLD: 0.3
+  INTERSECT_UNION_THRESHOLD: 0.5
+  DTYPE_COSINE_THRESHOLD: 0.2
+  PROB_THRESHOLD: 0.9
+  FK_RULE_THRESHOLD: 0.5
+  UNDERSAMPLE_PERCENT: 0.1
+
+MODEL:
+  FEATS:
+    [
+      "length-agg-mean",
+      "alphaNumRatio",
+      "numericRatio",
+      "alphaRatio",
+      "dateRatio",
+      "mean_uppercase",
+      "mean_lowercase",
+      "wordlen_mean",
+      "col_entropy",
+      "numeric_cell_nz_count",
+      "text_cell_nz_count",
+      "alphanum_cell_nz_count",
+      "frac_numcells",
+      "frac_textcells",
+      "frac_alphanumcells",
+    ]
+
+CHUNK:
+  NUMBER_OF_CHUNKS: 1000
+
+ML:
+  MODEL_VERSION: "31082023"
+
+LLM:
+  INCLUDE_DTYPES: True
+
+RULES:
+  LLM_PROBABILITY: 1
+
+API_INFO:
+
+AGENTIC_CLUSTER_CONFIG:
