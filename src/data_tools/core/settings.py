@@ -13,7 +13,7 @@ from data_tools.core.utilities.configs import load_model_configuration
 class Settings(BaseSettings):
     """Global Configuration"""
 
-    UPSTREAM_SAMPLE_LIMIT: int = 10000
+    UPSTREAM_SAMPLE_LIMIT: int = 10
     MODEL_DIR_PATH: str = str(Path(os.path.split(os.path.abspath(__file__))[0]).parent.joinpath("artifacts"))
     MODEL_RESULTS_PATH: str = os.path.join("model", "model_results")
 
@@ -24,7 +24,7 @@ class Settings(BaseSettings):
 
     DI_MODEL_VERSION: str = "13052023"
 
-    PROJECT_BASE: str = "/home/juhel-phanju/Documents/backup/MIGRATION/codes/poc/dbt/ecom/ecom/models"
+    PROJECT_BASE: str
 
     MCP_SERVER_NAME: str = "data-tools"
     MCP_SERVER_DESCRIPTION: str = "Data Tools for MCP"

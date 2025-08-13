@@ -5,12 +5,7 @@ from data_tools.common.resources.base import BaseResource
 from data_tools.common.schema import NodeType, SchemaBase
 
 
-class RelationshipSource(SchemaBase):
-    table: str
-    column: str
-
-
-class RelationshipTarget(SchemaBase):
+class RelationshipTable(SchemaBase):
     table: str
     column: str
 
@@ -27,7 +22,7 @@ class RelationshipType(StrEnum):
 
 class Relationship(BaseResource):
     resource_type: NodeType = NodeType.RELATIONSHIP
-    source: RelationshipSource
-    target: RelationshipTarget
+    source: RelationshipTable
+    target: RelationshipTable
     profiling_metrics: Optional[RelationshipProfilingMetrics] = None
     type: RelationshipType

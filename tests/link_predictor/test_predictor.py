@@ -49,7 +49,7 @@ def test_predictor_with_dict_input(mock_predict_for_pair):
     assert isinstance(predictor.datasets["customers"], DataSet)
     # Check that the prerequisite step was completed
     assert "key" in predictor.datasets["customers"].results
-    assert predictor.datasets["customers"].results["key"].column_name == "id"
+    assert predictor.datasets["customers"].results["key"] == "id"
 
     # 4. Run prediction
     results = predictor.predict()
@@ -83,7 +83,7 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     assert "orders" in predictor.datasets
     assert "key" in predictor.datasets["customers"].results
     assert "key" in predictor.datasets["orders"].results
-    assert predictor.datasets["orders"].results["key"].column_name == "order_id"
+    assert predictor.datasets["orders"].results["key"] == "order_id"
 
     # 5. Run prediction
     results = predictor.predict()

@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Any
+from typing import Any, Optional
 
 import pandas as pd
 
@@ -20,7 +20,7 @@ from .models import (
 )
 
 
-class DataframeAdatper(ABC):
+class DataFrame(ABC):
     @abstractmethod
     def profile(self, df: Any) -> ProfilingOutput:
         pass
@@ -31,7 +31,7 @@ class DataframeAdatper(ABC):
         df: Any,
         table_name: str,
         column_name: str,
-        sample_limit: int = 200,
+        sample_limit: int = 10,
     ) -> ColumnProfile:
         pass
 
@@ -94,7 +94,7 @@ class DataframeAdatper(ABC):
         self,
         table_name: str,
         column_stats: pd.DataFrame,
-    ) -> KeyIdentificationOutput:
+    ) -> Optional[str]:
         """
         Identifies potential primary keys in the DataFrame based on column profiles.
 
@@ -104,12 +104,12 @@ class DataframeAdatper(ABC):
                           `column_profile` method.
 
         Returns:
-            A KeyIdentificationOutput model containing the identified primary key column.
+            A string (column name) containing the identified primary key column.
         """
         ki_model = KeyIdentificationLLM(profiling_data=column_stats)
         ki_result = ki_model()
         output = KeyIdentificationOutput(**ki_result)
-        return output
+        return output.column_name
 
     def generate_business_glossary(
         self,

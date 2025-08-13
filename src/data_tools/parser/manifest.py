@@ -100,7 +100,9 @@ class ManifestLoader:
         for src in srcs:
             # Pop the tables key from source as in yaml it contains list of tables 
             # but we require a single source to contain single table
-            tables = src.pop("tables")
+            tables = src.pop("tables", None)
+            if tables is None:
+                tables = [src.pop("table")]
 
             # iterate through each table and get sources
             for table in tables:

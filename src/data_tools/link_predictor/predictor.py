@@ -1,9 +1,12 @@
 import itertools
+import json
 import logging
+import os
 
 from typing import Any, Dict, List
 
 import pandas as pd
+import yaml
 
 from data_tools.analysis.models import DataSet
 from data_tools.analysis.pipeline import Pipeline
@@ -14,7 +17,13 @@ from data_tools.analysis.steps import (
     KeyIdentifier,
     TableProfiler,
 )
+from data_tools.core import settings
 from data_tools.core.pipeline.link_prediction.lp import LinkPredictionAgentic
+from data_tools.models.resources.relationship import (
+    Relationship,
+    RelationshipTable,
+    RelationshipType,
+)
 
 from .models import LinkPredictionResult, PredictedLink
 
@@ -90,7 +99,9 @@ class LinkPredictor:
         assets.sort()
         return f"{assets[0]}--{assets[1]}"
 
-    def _predict_for_pair(self, name_a: str, dataset_a: DataSet, name_b: str, dataset_b: DataSet) -> List[PredictedLink]:
+    def _predict_for_pair(
+        self, name_a: str, dataset_a: DataSet, name_b: str, dataset_b: DataSet
+    ) -> List[PredictedLink]:
         """
         Contains the core logic for finding links between TWO dataframes.
         This method can now safely assume that key identification has been run.
@@ -99,24 +110,35 @@ class LinkPredictor:
         if table_combination in self.already_executed_combo:
             log.warning(f"[!] Skipping already executed combination: {table_combination}")
             return
+
+        dataset_a_column_profiles = [col.model_dump() for col in dataset_a.results["column_profiles"].values()]
+        dataset_b_column_profiles = [col.model_dump() for col in dataset_b.results["column_profiles"].values()]
+        profiling_data = pd.concat(
+            [pd.DataFrame(dataset_a_column_profiles), pd.DataFrame(dataset_b_column_profiles)], ignore_index=True
+        )
+
+        primary_keys = []
+        if dataset_a.results.get("key"):
+            primary_keys.append((name_a, dataset_a.results["key"]))
+        if dataset_b.results.get("key"):
+            primary_keys.append((name_b, dataset_b.results["key"]))
         
-        dataset_a_column_profiles = [col.model_dump() for col in dataset_a.results['column_profiles'].values()]
-        dataset_b_column_profiles = [col.model_dump() for col in dataset_b.results['column_profiles'].values()]
-        profiling_data = pd.concat([pd.DataFrame(dataset_a_column_profiles), pd.DataFrame(dataset_b_column_profiles)], ignore_index=True)
         pipeline = LinkPredictionAgentic(
             profiling_data=profiling_data,
-            primary_keys=[(name_a, dataset_a.results['key'].column_name), 
-                            (name_b, dataset_b.results['key'].column_name)],
+            primary_keys=primary_keys,
         )
-        
+
         llm_result, raw_llm_result = pipeline([(dataset_a, dataset_b)])
 
-        pair_links: List[PredictedLink] = [PredictedLink(
-            from_dataset=row['table1_name'],
-            from_column=row['column1_name'],
-            to_dataset=row['table2_name'],
-            to_column=row['column2_name'],
-        ) for _, row in llm_result.iterrows()]
+        pair_links: List[PredictedLink] = [
+            PredictedLink(
+                from_dataset=row["table1_name"],
+                from_column=row["column1_name"],
+                to_dataset=row["table2_name"],
+                to_column=row["column2_name"],
+            )
+            for _, row in llm_result.iterrows()
+        ]
         return pair_links
 
     def predict(self) -> LinkPredictionResult:
@@ -141,3 +163,34 @@ class LinkPredictor:
                 print("No links found for this pair.")
 
         return LinkPredictionResult(links=all_links)
+
+
+class LinkPredictionSaver:
+    @classmethod
+    def save_yaml(cls, result: LinkPredictionResult, file_path: str) -> None:
+        file_path = os.path.join(settings.PROJECT_BASE, file_path)
+
+        links = result.links
+
+        if len(links) == 0:
+            raise ValueError("No links found to save.")
+
+        relationships = []
+        for link in links:
+            source = RelationshipTable(table=link.from_dataset, column=link.from_column)
+            target = RelationshipTable(table=link.to_dataset, column=link.to_column)
+            relationship = Relationship(
+                name=f"{link.from_dataset}-{link.to_dataset}",
+                description="",
+                source=source,
+                target=target,
+                type=RelationshipType.ONE_TO_MANY,
+            )
+
+            relationships.append(relationship)
+
+        relationships = {"relationships": [json.loads(r.model_dump_json()) for r in relationships]}
+
+        # Save the relationships to a YAML file
+        with open(file_path, "w") as file:
+            yaml.dump(relationships, file, sort_keys=False, default_flow_style=False)
