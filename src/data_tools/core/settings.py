@@ -14,17 +14,31 @@ class Settings(BaseSettings):
     """Global Configuration"""
 
     UPSTREAM_SAMPLE_LIMIT: int = 10000
-    MODEL_DIR_PATH: str = str(Path(os.path.split(os.path.abspath(__file__))[0]).parent.joinpath(
-        "artifacts"
-    ))
+    MODEL_DIR_PATH: str = str(Path(os.path.split(os.path.abspath(__file__))[0]).parent.joinpath("artifacts"))
     MODEL_RESULTS_PATH: str = os.path.join("model", "model_results")
-    
-    DI_CONFIG: dict = load_model_configuration('DI', {})
-    KI_CONFIG: dict = load_model_configuration('KI', {})
-    LP_CONFIG: dict = load_model_configuration('LP', {})
-    BG_CONFIG: dict = load_model_configuration('BG', {})
+
+    DI_CONFIG: dict = load_model_configuration("DI", {})
+    KI_CONFIG: dict = load_model_configuration("KI", {})
+    LP_CONFIG: dict = load_model_configuration("LP", {})
+    BG_CONFIG: dict = load_model_configuration("BG", {})
 
     DI_MODEL_VERSION: str = "13052023"
+
+    PROJECT_BASE: str = "/home/juhel-phanju/Documents/backup/MIGRATION/codes/poc/dbt/ecom/ecom/models"
+
+    MCP_SERVER_NAME: str = "data-tools"
+    MCP_SERVER_DESCRIPTION: str = "Data Tools for MCP"
+    MCP_SERVER_VERSION: str = "1.0.0"
+    MCP_SERVER_AUTHOR: str = "Intugle"
+    MCP_SERVER_STATELESS_HTTP: bool = True
+
+    MCP_SERVER_HOST: str = "0.0.0.0"
+    MCP_SERVER_PORT: int = 8080
+    MCP_SERVER_LOG_LEVEL: str = "info"
+
+    SQL_DIALECT: str = "postgresql"
+    DOMAIN: str = "ecommerce"
+    UNIVERSAL_INSTRUCTIONS: str = ""
 
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -46,6 +60,14 @@ class Settings(BaseSettings):
     # DATETIME
     DATE_TIME_FORMAT_LIMIT: int = 25
     REMOVE_DATETIME_LP: bool = True
+
+    # Adapter
+    POSTGRES_USER: str
+    POSTGRES_PASSWORD: str
+    POSTGRES_HOST: str = "localhost"
+    POSTGRES_DB: str
+    POSTGRES_PORT: int = 5432
+    POSTGRES_SCHEMA: str = "public"
 
 
 @lru_cache

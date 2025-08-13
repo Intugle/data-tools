@@ -1,0 +1,23 @@
+from typing import List, Optional
+
+from pydantic import Field
+
+from data_tools.common.resources.base import BaseResource
+from data_tools.common.schema import NodeType, SchemaBase
+from data_tools.models.resources.model import Column, ModelProfilingMetrics
+
+
+class SourceTables(SchemaBase):
+    name: str
+    description: str
+    tags: Optional[List[str]] = Field(default_factory=list)
+    # details: dict
+    columns: List[Column] = Field(default_factory=list)
+    profiling_metrics: Optional[ModelProfilingMetrics] = None
+
+
+class Source(BaseResource):
+    schema: str
+    database: str
+    resource_type: NodeType = NodeType.SOURCE
+    table: SourceTables = Field(default_factory=list)

@@ -20,7 +20,7 @@ from .models import (
 )
 
 
-class DataFrame(ABC):
+class DataframeAdatper(ABC):
     @abstractmethod
     def profile(self, df: Any) -> ProfilingOutput:
         pass
