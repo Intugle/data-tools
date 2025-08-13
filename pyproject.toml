@@ -21,6 +21,11 @@ dependencies = [
     "langgraph>=0.6.4",
     "nltk>=3.9.1",
     "numpy==1.26.2",
+    "asyncpg>=0.30.0",
+    "fastapi[standard]>=0.116.1",
+    "matplotlib>=3.10.5",
+    "mcp[cli]>=1.12.4",
+    "networkx>=3.4.2",
     "pandas>=2.3.1",
     "pyaml>=25.7.0",
     "pydantic>=2.11.7",
@@ -30,10 +35,16 @@ dependencies = [
     "symspellpy>=6.9.0",
     "trieregex>=1.0.0",
     "xgboost==1.7.5",
+    "pyyaml>=6.0.2",
 ]
 
 [dependency-groups]
-test = ["pytest"]
+test = [
+    "langchain-core>=0.3.74",
+    "langchain-mcp-adapters>=0.1.9",
+    "pytest",
+    "pytest-asyncio>=1.1.0",
+]
 lint = ["ruff"]
 dev = [
     "pytest>=8.4.1",
