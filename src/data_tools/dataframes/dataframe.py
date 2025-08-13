@@ -4,7 +4,7 @@ from typing import Any
 from .models import AssetColumnProfileResponse, ProfilingOutput
 
 
-class DataFrame(ABC):
+class DataframeAdatper(ABC):
     @abstractmethod
     def profile(self, df: Any) -> ProfilingOutput:
         pass

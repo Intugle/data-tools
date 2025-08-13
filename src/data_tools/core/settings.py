@@ -10,12 +10,37 @@ class Settings(BaseSettings):
 
     UPSTREAM_SAMPLE_LIMIT: int = 10000
 
+    PROJECT_BASE: str = "/home/juhel-phanju/Documents/backup/MIGRATION/codes/poc/dbt/ecom/ecom/models"
+
+    MCP_SERVER_NAME: str = "data-tools"
+    MCP_SERVER_DESCRIPTION: str = "Data Tools for MCP"
+    MCP_SERVER_VERSION: str = "1.0.0"
+    MCP_SERVER_AUTHOR: str = "Intugle"
+    MCP_SERVER_STATELESS_HTTP: bool = True
+
+    MCP_SERVER_HOST: str = "0.0.0.0"
+    MCP_SERVER_PORT: int = 8080
+    MCP_SERVER_LOG_LEVEL: str = "info"
+
+    SQL_DIALECT: str = "postgresql"
+    DOMAIN: str = "ecommerce"
+    UNIVERSAL_INSTRUCTIONS: str = ""
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
         extra="ignore",
         case_sensitive=True,
     )
+
+    # Adapter
+    POSTGRES_USER: str
+    POSTGRES_PASSWORD: str
+    POSTGRES_HOST: str = "localhost"
+    POSTGRES_DB: str
+    POSTGRES_PORT: int = 5432
+    POSTGRES_SCHEMA: str = "public"
+
 
    
 @lru_cache
