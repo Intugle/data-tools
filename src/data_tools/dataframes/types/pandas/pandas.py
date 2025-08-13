@@ -59,7 +59,7 @@ class PandasDF(DataFrame):
         )
 
     def column_profile(
-        self, df: pd.DataFrame, table_name: str, column_name: str, sample_limit: int = 200
+        self, df: pd.DataFrame, table_name: str, column_name: str, sample_limit: int = 10, dtype_sample_limit: int = 10000
     ) -> Optional[ColumnProfile]:
         """
         Generates a detailed profile for a single column of a pandas DataFrame.
@@ -98,19 +98,19 @@ class PandasDF(DataFrame):
         # --- Sampling Logic --- #
         # 1. Get a sample of distinct values.
         if distinct_count > 0:
-            distinct_sample_size = min(distinct_count, sample_limit)
+            distinct_sample_size = min(distinct_count, dtype_sample_limit)
             sample_data = list(np.random.choice(distinct_values, distinct_sample_size, replace=False))
         else:
             sample_data = []
 
         # 2. Create a combined sample for data type analysis.
         dtype_sample = None
-        if distinct_count >= sample_limit:
+        if distinct_count >= dtype_sample_limit:
             # If we have enough distinct values, that's the best sample.
             dtype_sample = sample_data
         elif distinct_count > 0 and not_null_count > 0:
             # If distinct values are few, supplement them with random non-distinct values.
-            remaining_sample_size = sample_limit - distinct_count
+            remaining_sample_size = dtype_sample_limit - distinct_count
 
             # Use replace=True in case the number of non-null values is less than the remaining sample size needed.
             additional_samples = list(not_null_series.sample(n=remaining_sample_size, replace=True))
@@ -136,7 +136,7 @@ class PandasDF(DataFrame):
             distinct_count=distinct_count,
             uniqueness=distinct_count / total_count if total_count > 0 else 0.0,
             completeness=not_null_count / total_count if total_count > 0 else 0.0,
-            sample_data=native_sample_data,
+            sample_data=native_sample_data[:sample_limit],
             dtype_sample=native_dtype_sample,
             ts=time.time() - start_ts,
         )

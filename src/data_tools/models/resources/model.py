@@ -1,6 +1,6 @@
 from typing import Any, List, Literal, Optional
 
-from pydantic import Field
+from pydantic import Field, field_validator
 
 from data_tools.common.resources.base import BaseResource
 from data_tools.common.schema import NodeType, SchemaBase
@@ -21,6 +21,13 @@ class Column(SchemaBase):
     tags: Optional[List[str]] = Field(default_factory=list)
     profiling_metrics: Optional[ColumnProfilingMetrics] = None
 
+    @field_validator("category", mode="before")
+    @classmethod
+    def validate_category(cls, value: str) -> Literal["dimension", "measure"]:
+        if value not in ["dimension", "measure"]:
+            return "dimension"
+        return value
+
 
 class ModelProfilingMetrics(SchemaBase):
     count: Optional[int] = None
@@ -30,4 +37,3 @@ class Model(BaseResource):
     resource_type: NodeType = NodeType.MODEL
     columns: List[Column] = Field(default_factory=list)
     profiling_metrics: Optional[ModelProfilingMetrics] = None
-

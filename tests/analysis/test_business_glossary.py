@@ -2,7 +2,13 @@ import pandas as pd
 
 from data_tools.analysis.models import DataSet
 from data_tools.analysis.pipeline import Pipeline
-from data_tools.analysis.steps import BusinessGlossaryGenerator, ColumnProfiler, DataTypeIdentifierL1, TableProfiler
+from data_tools.analysis.steps import (
+    BusinessGlossaryGenerator,
+    ColumnProfiler,
+    DataTypeIdentifierL1,
+    DataTypeIdentifierL2,
+    TableProfiler,
+)
 from data_tools.dataframes.models import BusinessGlossaryOutput, ColumnGlossary
 
 
@@ -15,19 +21,18 @@ def test_business_glossary_generator():
         "product_id": [1, 2, 3],
         "product_name": ["Laptop", "Mouse", "Keyboard"],
         "price": [1200.00, 25.00, 75.00],
-        "last_updated": pd.to_datetime(["2023-01-01", "2023-01-05", "2023-01-10"])
+        "last_updated": pd.to_datetime(["2023-01-01", "2023-01-05", "2023-01-10"]),
     })
     table_name = "products"
     domain = "e-commerce"
 
-    pipeline = Pipeline(
-        [
-            TableProfiler(),
-            ColumnProfiler(),
-            DataTypeIdentifierL1(),
-            BusinessGlossaryGenerator(domain=domain),
-        ]
-    )
+    pipeline = Pipeline([
+        TableProfiler(),
+        ColumnProfiler(),
+        DataTypeIdentifierL1(),
+        DataTypeIdentifierL2(),
+        BusinessGlossaryGenerator(domain=domain),
+    ])
 
     # 2. Initialize DataSet
     dataset = DataSet(df=df, name=table_name)
@@ -59,3 +64,4 @@ def test_business_glossary_generator():
     # Verify that column profiles were updated
     assert dataset.results["column_profiles"]["product_id"].business_glossary is not None
     assert len(dataset.results["column_profiles"]["product_id"].business_tags) > 0
+    dataset.save_yaml()
