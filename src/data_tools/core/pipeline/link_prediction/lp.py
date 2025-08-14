@@ -96,9 +96,8 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
 
         self.llm = (
             ChatModelLLM.get_llm(
-                model_name=settings.LLM_TYPE,
-                api_config=settings.LP_CONFIG,
-                other_config=self.LLM_CONFIG,
+                model_name=settings.LLM_PROVIDER,
+                llm_config=self.LLM_CONFIG,
             )
             if llm is None
             else llm

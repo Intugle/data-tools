@@ -68,7 +68,6 @@ class DataTypeIdentifierL1(AnalysisStep):
         column_profiles: dict[str, ColumnProfile] = dataset.results['column_profiles']
 
         column_datatypes_l1 = dataset.dataframe_wrapper.datatype_identification_l1(dataset.raw_df, dataset.name, column_profiles)
-
         for column in column_datatypes_l1:
             column_profiles[column.column_name].datatype_l1 = column.datatype_l1
 
@@ -85,7 +84,6 @@ class DataTypeIdentifierL2(AnalysisStep):
         # Dependency check
         if 'column_profiles' not in dataset.results:
             raise RuntimeError("TableProfiler and ColumnProfiler  must be run before DatatypeIdentifierL2.")
-
         column_profiles: dict[str, ColumnProfile] = dataset.results['column_profiles']
         columns_with_samples = [DataTypeIdentificationL2Input(**col.model_dump()) for col in column_profiles.values()]
         column_datatypes_l2 = dataset.dataframe_wrapper.datatype_identification_l2(dataset.raw_df, dataset.name, columns_with_samples)

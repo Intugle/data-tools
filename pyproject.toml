@@ -15,7 +15,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "langchain>=0.3.27",
+    "langchain[anthropic,aws,cohere,google-genai,google-vertexai,groq]>=0.3.27",
     "langchain-community>=0.3.21",
     "langchain-openai>=0.3.28",
     "langgraph>=0.6.4",
@@ -26,10 +26,15 @@ dependencies = [
     "pydantic>=2.11.7",
     "pydantic-settings>=2.10.1",
     "pyfunctional>=1.5.0",
+    "python-dotenv>=1.1.1",
     "scikit-learn==1.2.2",
     "symspellpy>=6.9.0",
     "trieregex>=1.0.0",
     "xgboost==1.7.5",
+    "langchain-deepseek>=0.1.4",
+    "langchain-nvidia-ai-endpoints>=0.3.16",
+    "langchain-xai>=0.2.5",
+    "langchain-perplexity>=0.1.2",
 ]
 
 [dependency-groups]
