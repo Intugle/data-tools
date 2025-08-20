@@ -4,12 +4,17 @@ import uuid
 
 from typing import Any, Dict, Optional
 
+import pandas as pd
 import yaml
 
 from data_tools.common.exception import errors
 from data_tools.core import settings
 from data_tools.dataframes.factory import DataFrameFactory
-from data_tools.dataframes.models import ColumnProfile
+from data_tools.dataframes.models import (
+    ColumnProfile,
+    DataTypeIdentificationL2Input,
+    ProfilingOutput,
+)
 from data_tools.models.resources.model import Column, ColumnProfilingMetrics
 from data_tools.models.resources.source import Source, SourceTables
 
@@ -31,6 +36,126 @@ class DataSet:
 
         # A dictionary to store the results of each analysis step
         self.results: Dict[str, Any] = {}
+
+    def profile_table(self) -> "DataSet":
+        """
+        Profiles the table and stores the result in the 'results' dictionary.
+        """
+        self.results["table_profile"] = self.dataframe_wrapper.profile(self.raw_df)
+        return self
+
+    def profile_columns(self) -> dict[str, ColumnProfile]:
+        """
+        Profiles each column in the dataset and stores the results in the 'results' dictionary.
+        This method relies on the 'table_profile' result to get the list of columns.
+        """
+        if "table_profile" not in self.results:
+            raise RuntimeError("TableProfiler must be run before profiling columns.")
+
+        table_profile: ProfilingOutput = self.results["table_profile"]
+        self.results["column_profiles"] = {
+            col_name: self.dataframe_wrapper.column_profile(
+                self.raw_df, self.name, col_name, settings.UPSTREAM_SAMPLE_LIMIT
+            )
+            for col_name in table_profile.columns
+        }
+        return self
+    
+    def identify_datatypes_l1(self) -> "DataSet":
+        """
+        Identifies the data types at Level 1 for each column based on the column profiles.
+        This method relies on the 'column_profiles' result.
+        """
+        if "column_profiles" not in self.results:
+            raise RuntimeError("TableProfiler and ColumnProfiler must be run before data type identification.")
+
+        column_profiles: dict[str, ColumnProfile] = self.results["column_profiles"]
+        column_datatypes_l1 = self.dataframe_wrapper.datatype_identification_l1(self.raw_df, self.name, column_profiles)
+
+        for column in column_datatypes_l1:
+            column_profiles[column.column_name].datatype_l1 = column.datatype_l1
+
+        self.results["column_datatypes_l1"] = column_datatypes_l1
+        return self
+    
+    def identify_datatypes_l2(self) -> "DataSet":
+        """
+        Identifies the data types at Level 2 for each column based on the column profiles.
+        This method relies on the 'column_profiles' result.
+        """
+        if "column_profiles" not in self.results:
+            raise RuntimeError("TableProfiler and ColumnProfiler must be run before data type identification.")
+
+        column_profiles: dict[str, ColumnProfile] = self.results["column_profiles"]
+        columns_with_samples = [DataTypeIdentificationL2Input(**col.model_dump()) for col in column_profiles.values()]
+        column_datatypes_l2 = self.dataframe_wrapper.datatype_identification_l2(
+            self.raw_df, self.name, columns_with_samples
+        )
+
+        for column in column_datatypes_l2:
+            column_profiles[column.column_name].datatype_l2 = column.datatype_l2
+
+        self.results["column_datatypes_l2"] = column_datatypes_l2
+        return self
+    
+    def identify_keys(self) -> "DataSet":
+        """
+        Identifies potential primary keys in the dataset based on column profiles.
+        This method relies on the 'column_profiles' result.
+        """
+        if "column_datatypes_l1" not in self.results or "column_datatypes_l2" not in self.results:
+            raise RuntimeError("DataTypeIdentifierL1 and L2 must be run before KeyIdentifier.")
+
+        column_profiles: dict[str, ColumnProfile] = self.results["column_profiles"]
+        column_profiles_df = pd.DataFrame([col.model_dump() for col in column_profiles.values()])
+
+        key = self.dataframe_wrapper.key_identification(self.name, column_profiles_df)
+        if key is not None:
+            self.results["key"] = key
+        return self
+
+    def profile(self) -> None:
+        """
+        Profiles the dataset including table and columns and stores the result in the 'results' dictionary.
+        This is a convenience method to run profiling on the raw dataframe.
+        """
+        if not self.raw_df:
+            raise ValueError("The raw dataframe is empty. Cannot perform profiling.")
+        self.profile_table().profile_columns()
+        return self
+    
+    def identify_datatypes(self) -> None:
+        """
+        Identifies the data types for the dataset and stores the result in the 'results' dictionary.
+        This is a convenience method to run data type identification on the raw dataframe.
+        """
+        if not self.raw_df:
+            raise ValueError("The raw dataframe is empty. Cannot perform data type identification.")
+        self.identify_datatypes_l1().identify_datatypes_l2()
+        return self
+    
+    def generate_glossary(self, domain: str = "") -> "DataSet":
+        """
+        Generates a business glossary for the dataset and stores the result in the 'results' dictionary.
+        This method relies on the 'column_datatypes_l1' results.
+        """
+        if "column_datatypes_l1" not in self.results:
+            raise RuntimeError("DataTypeIdentifierL1  must be run before Business Glossary Generation.")
+
+        column_profiles: dict[str, ColumnProfile] = self.results["column_profiles"]
+        column_profiles_df = pd.DataFrame([col.model_dump() for col in column_profiles.values()])
+
+        glossary_output = self.dataframe_wrapper.generate_business_glossary(
+            self.name, column_profiles_df, domain=domain
+        )
+
+        for column in glossary_output.columns:
+            column_profiles[column.column_name].business_glossary = column.business_glossary
+            column_profiles[column.column_name].business_tags = column.business_tags
+
+        self.results["business_glossary_and_tags"] = glossary_output
+        self.results["table_glossary"] = glossary_output.table_glossary
+        return self
     
     # FIXME - this is a temporary solution to save the results of the analysis
     # need to use model while executing the pipeline
@@ -77,3 +202,10 @@ class DataSet:
         # Save the YAML representation of the sources
         with open(file_path, "w") as file:
             yaml.dump(sources, file, sort_keys=False, default_flow_style=False)
+
+    def _repr_html_(self):
+        column_profiles = self.results.get("column_profiles")
+        if column_profiles is None:
+            return "<p>No column profiles available.</p>"
+        df = pd.DataFrame([col.model_dump() for col in column_profiles.values()])
+        return df._repr_html_()
