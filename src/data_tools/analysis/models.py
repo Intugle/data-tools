@@ -119,7 +119,7 @@ class DataSet:
         Profiles the dataset including table and columns and stores the result in the 'results' dictionary.
         This is a convenience method to run profiling on the raw dataframe.
         """
-        if not self.raw_df:
+        if self.raw_df.empty:
             raise ValueError("The raw dataframe is empty. Cannot perform profiling.")
         self.profile_table().profile_columns()
         return self
@@ -129,7 +129,7 @@ class DataSet:
         Identifies the data types for the dataset and stores the result in the 'results' dictionary.
         This is a convenience method to run data type identification on the raw dataframe.
         """
-        if not self.raw_df:
+        if self.raw_df.empty:
             raise ValueError("The raw dataframe is empty. Cannot perform data type identification.")
         self.identify_datatypes_l1().identify_datatypes_l2()
         return self
