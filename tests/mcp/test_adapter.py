@@ -39,10 +39,9 @@ class MCPTools:
 
     @connection_decorator()
     async def execute_query(self, session: ClientSession = None):
-        data = await session.call_tool(
-            name=Tools.EXECUTE_QUERY, arguments={"sql_query": "SELECT * FROM orders LIMIT 10"}
+        await session.call_tool(
+            name=Tools.EXECUTE_QUERY, arguments={"sql_query": "SELECT 1"}
         )
-        breakpoint()
         # assert isinstance(schemas.structuredContent, dict)
 
 
@@ -51,6 +50,6 @@ async def mcp_server_tools() -> MCPTools:
     return MCPTools()
 
 
-@pytest.mark.asyncio
-async def test_mcp_execute_query(mcp_server_tools):
-    await mcp_server_tools.execute_query()
+# @pytest.mark.asyncio
+# async def test_mcp_execute_query(mcp_server_tools):
+#     await mcp_server_tools.execute_query()

@@ -1,10 +1,12 @@
 import re
+
 from typing import Callable, Optional
 
 from pydantic import TypeAdapter
 
 from data_tools.libs.query_generator import QueryGenerator, QueryGeneratorModel
 
+from .custom_data_types.OrderedSet import OrderedSet
 from .models.models import (
     CategoryType,
     ETLModel,
@@ -16,9 +18,8 @@ from .models.models import (
 )
 from .utils.cte import CTE
 from .utils.filter import Filter
-from .utils.join import Join
 from .utils.groupby import GroupBy
-from .custom_data_types.OrderedSet import OrderedSet
+from .utils.join import Join
 
 # Regular expression to match the pattern @{number}[Ftext]
 SQL_CODE_REGEX_PATTERN = r"@\{([\d\-]+)\}\[([\w\-\.\`]+)\]"
@@ -248,9 +249,10 @@ class SmartQueryGenerator:
         for asset in assets:
             self.__assets.add(asset)
 
-        for sort in self.__etl.filter.sort_by:
-            field = self.__field_details[sort.id]
-            self.__assets.add(field.asset_id)
+        if self.__etl.filter is not None:
+            for sort in self.__etl.filter.sort_by:
+                field = self.__field_details[sort.id]
+                self.__assets.add(field.asset_id)
 
     def build_calculated_field_base_field(self):
         for field in self.__etl.fields:

@@ -342,9 +342,6 @@ class Join:
         
         graph = self.generate_graph(datasets_data)
 
-        # breakpoint()
-        # self.plot_graph(graph)
-
         path_request = self.sort_path_request(datasets_data, join_opt)
 
         if not self.check_if_join_exists(graph, path_request):

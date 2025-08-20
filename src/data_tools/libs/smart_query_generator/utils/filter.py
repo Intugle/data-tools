@@ -47,7 +47,7 @@ class Filter:
 
     def build_selection(self):
         _filter = self._filter
-        if _filter.selections:
+        if _filter is not None and _filter.selections:
             selections = []
             for selection in _filter.selections:
                 field = self._field_details[selection.id]
@@ -92,7 +92,7 @@ class Filter:
 
     def build_wildcard(self):
         _filter = self._filter
-        if _filter.wildcards:
+        if _filter is not None and _filter.wildcards:
             wildcards = []
             for wildcard in _filter.wildcards:
                 field = self._field_details[wildcard.id]
@@ -125,8 +125,9 @@ class Filter:
         return self._filters
 
     def build_filters(self):
-        self.build_selection()
-        self.build_wildcard()
+        if self._filter is not None:
+            self.build_selection()
+            self.build_wildcard()
 
     def destroy_filters(self):
         self._filters = deepcopy(INITIAL_FILTERS)

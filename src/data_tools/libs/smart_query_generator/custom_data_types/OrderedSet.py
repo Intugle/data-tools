@@ -1,4 +1,4 @@
-from typing import TypeVar, Iterator, MutableSet, Sequence, Iterable, List, overload, Optional
+from typing import Iterable, Iterator, List, MutableSet, Optional, Sequence, TypeVar, overload
 
 SLICE_ALL = slice(None)
 _T = TypeVar("_T")

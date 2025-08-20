@@ -16,6 +16,7 @@ ALLOWED_PIPELINE_NAME = ["KI", "LP", "BG", "DI", "DC"]
 
 CODE_PATH = Path(os.path.split(os.path.abspath(__file__))[0]).parent
 
+
 def load_model_configuration(pipeline_name: str, custom_config: dict):
     '''
         For loading each pipeline configuration

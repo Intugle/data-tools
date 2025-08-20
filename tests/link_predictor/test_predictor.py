@@ -11,6 +11,7 @@ from data_tools.link_predictor.predictor import LinkPredictor
 
 logging.basicConfig(level=logging.INFO)
 
+
 @pytest.fixture
 def mock_predict_for_pair():
     """Mocks the _predict_for_pair method to avoid running actual prediction logic."""
