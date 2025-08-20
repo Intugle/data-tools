@@ -23,7 +23,6 @@ FILE_TYPE:
     
 API_INFO:
 
-
 GROUPS_&_DATATYPECOLUMNS_&_IGNOREGROUPS:
     DATATYPE_GROUPS_L1 : {
                           'integer':['group1'],
