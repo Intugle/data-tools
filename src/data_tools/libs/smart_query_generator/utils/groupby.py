@@ -1,10 +1,11 @@
 from copy import deepcopy
+
 from ..models.models import (
+    CategoryType,
     ETLModel,
     FieldDetailsModel,
-    RangeOptions,
     FieldType,
-    CategoryType,
+    RangeOptions,
 )
 
 INITIAL_FILTERS = {"fields": [], "condition": "AND"}

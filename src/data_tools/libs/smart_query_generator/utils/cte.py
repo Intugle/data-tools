@@ -10,6 +10,7 @@ JOIN type:
 """
 
 import re
+
 from typing import Callable
 
 from pydantic import TypeAdapter
@@ -107,7 +108,6 @@ class CTE:
                 assets[link.target_asset_id].append(link.target_field_id)
 
         return assets
-
 
     def __generate_cte(self):
         join = self.__join
@@ -287,7 +287,6 @@ class CTE:
                     for field in self.__etl.fields:
                         if field.id == field_id:
                             field.id = new_field_id
-
 
         self.__field_details = {**self.__field_details, **__new_calc_field_details}
 

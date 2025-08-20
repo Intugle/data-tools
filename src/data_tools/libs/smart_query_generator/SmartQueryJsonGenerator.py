@@ -20,7 +20,7 @@ STEPS:
     c. User able to change joins
 """
 
-from typing import Callable, Union
+from typing import Callable
 
 from .models.models import ETLModel, FieldDetailsModel, LinkModel, SinkModel
 from .SmartQueryGenerator import SmartQueryGenerator

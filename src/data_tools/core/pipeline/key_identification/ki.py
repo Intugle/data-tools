@@ -60,7 +60,6 @@ INSTRUCTIONS: {format_instructions}"""
             (profiling_data["uniqueness"] >= 0.8) & (profiling_data["datatype_l2"] == "dimension")
         ].reset_index(drop=True)[["table_name", "column_name", "count", "distinct_count", "null_count", "datatype_l1", "sample_data"]]
 
-
     @classmethod
     def fetch_primary_key(cls, llm: ChatModelLLM, profiling_data, table_name):
         response, parsing_success, prompt = llm.invoke(
@@ -130,7 +129,6 @@ INSTRUCTIONS: {format_instructions}"""
         
         ki_llm_result["predicted_key_prob_llm"] = settings.KI_CONFIG["RULES"]["LLM_PROBABILITY"]
         
-
         return ki_llm_result
     
     def __call__(self):
