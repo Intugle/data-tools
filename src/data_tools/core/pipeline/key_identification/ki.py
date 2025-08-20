@@ -47,9 +47,8 @@ INSTRUCTIONS: {format_instructions}"""
                  *args, **kwargs):
 
         self.__chat_llm = ChatModelLLM.build(
-            model_name=settings.LLM_TYPE,
-            api_config=settings.KI_CONFIG,
-            other_config=self.LLM_CONFIG,
+            model_name=settings.LLM_PROVIDER,
+            llm_config=self.LLM_CONFIG,
             prompt_template=PromptTemplate,
             template_string=self.KI_PROMPT_TEMPLATE,
             response_schemas=self.primary_key,

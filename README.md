@@ -15,6 +15,38 @@ By combining these features, Data Tools helps you move from a collection of sepa
 - **Extensible Pipeline Architecture**: Easily add custom analysis steps to the pipeline.
 - **DataFrame Agnostic**: Uses a factory pattern to seamlessly handle different dataframe types (e.g., pandas).
 
+## Installation and Setup
+
+### Installation
+
+To install the library and its dependencies, run the following command:
+
+```bash
+pip install data_tools
+```
+
+### LLM Configuration
+
+This library uses LLMs for features like Business Glossary Generation. It supports any LLM provider compatible with LangChain's `init_chat_model` function. To configure your LLM provider, you need to set environment variables.
+
+The `LLM_CONFIG` environment variable should be set to your desired model, optionally including the provider, in the format `provider:model_name`. If the provider is omitted, it will try to infer the provider.
+
+**For OpenAI:**
+
+```bash
+# Provider is optional
+export LLM_CONFIG="gpt-4"
+export OPENAI_API_KEY="your-super-secret-key"
+```
+
+**For Google GenAI:**
+
+```bash
+export LLM_CONFIG="google_genai:gemini-pro"
+export GOOGLE_API_KEY="your-google-api-key"
+```
+
+
 ## Usage Examples
 
 ### Example 1: Automated Link Prediction (Primary Use Case)

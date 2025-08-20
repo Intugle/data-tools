@@ -123,7 +123,6 @@ class BusinessGlossaryGenerator(AnalysisStep):
     def __init__(self, domain: str):
         """
         Initializes the BusinessGlossaryGenerator with optional additional context.
-
         :param domain: The industry domain to which the dataset belongs.
         """
         self.domain = domain
