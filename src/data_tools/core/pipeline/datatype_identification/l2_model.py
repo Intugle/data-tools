@@ -54,9 +54,8 @@ class L2ModelLLM:
         # langfuse for monitoring
 
         self.chat_llm = ChatModelLLM.build(
-            model_name=settings.LLM_TYPE,
-            api_config=settings.DI_CONFIG,
-            other_config=self.LLM_CONFIG,
+            model_name=settings.LLM_PROVIDER,
+            llm_config=self.LLM_CONFIG,
             template_string=self.DIM_MEASURE_PROMPT,
             response_schemas=self.dm_class_schema,
         )

@@ -48,4 +48,4 @@ def test_key_identification_end_to_end():
     # which contains the identified key information.
     # We expect one identified key.
 
-    assert identified_key.column_name == "order_id"
+    assert identified_key == "order_id"

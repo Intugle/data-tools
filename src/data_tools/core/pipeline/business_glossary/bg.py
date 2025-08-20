@@ -89,9 +89,8 @@ class BusinessGlossary:
         )
 
         self.__table_glossary_llm = ChatModelLLM.build(
-            model_name=settings.LLM_TYPE,
-            api_config=settings.BG_CONFIG["NORMAL_INFERENCE"],
-            other_config=self.LLM_CONFIG_1,
+            model_name=settings.LLM_PROVIDER,
+            llm_config=self.LLM_CONFIG_1,
             response_schemas=table_glossary,
             template_string=BUSINESS_GLOSSARY_PROMPTS[self.TEMPLATE_NAME][
                 "TABLE_GLOSSARY_TEMPLATE"
@@ -100,9 +99,8 @@ class BusinessGlossary:
         )
 
         self.__business_glossary_llm = ChatModelLLM.build(
-            model_name=settings.LLM_TYPE,
-            api_config=settings.BG_CONFIG["NORMAL_INFERENCE"],
-            other_config=self.LLM_CONFIG_2,
+            model_name=settings.LLM_PROVIDER,
+            llm_config=self.LLM_CONFIG_2,
             response_schemas=column_glossary,
             template_string=BUSINESS_GLOSSARY_PROMPTS[self.TEMPLATE_NAME][
                 "BUSINESS_GLOSSARY_TEMPLATE"
@@ -110,9 +108,8 @@ class BusinessGlossary:
             prompt_template=PromptTemplate,
         )
         self.__business_tags_llm = ChatModelLLM.build(
-            model_name=settings.LLM_TYPE,
-            api_config=settings.BG_CONFIG["NORMAL_INFERENCE"],
-            other_config=self.LLM_CONFIG_2,
+            model_name=settings.LLM_PROVIDER,
+            llm_config=self.LLM_CONFIG_2,
             response_schemas=column_tag_glossary,
             template_string=BUSINESS_GLOSSARY_PROMPTS[self.TEMPLATE_NAME][
                 "BUSINESS_TAGS_TEMPLATE"
