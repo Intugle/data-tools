@@ -49,6 +49,8 @@ class PandasDF(DataFrame):
                 return "string"  # Default for other types
 
         total_count = len(df)
+        df.columns = df.columns.astype(str)
+
         columns = df.columns.tolist()
         dtypes = {col: __format_dtype_pandas__(dtype) for col, dtype in df.dtypes.items()}
 

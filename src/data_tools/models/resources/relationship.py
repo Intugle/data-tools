@@ -3,6 +3,7 @@ from typing import Optional
 
 from data_tools.common.resources.base import BaseResource
 from data_tools.common.schema import NodeType, SchemaBase
+from data_tools.libs.smart_query_generator.models.models import LinkModel
 
 
 class RelationshipTable(SchemaBase):
@@ -26,3 +27,16 @@ class Relationship(BaseResource):
     target: RelationshipTable
     profiling_metrics: Optional[RelationshipProfilingMetrics] = None
     type: RelationshipType
+
+    @property
+    def link(self) -> LinkModel:
+        source_field_id = f"{self.source.table}.{self.source.column}"
+        target_field_id = f"{self.target.table}.{self.target.column}"
+        link: LinkModel = LinkModel(
+            id=self.name,
+            source_field_id=source_field_id,
+            source_asset_id=self.source.table,
+            target_field_id=target_field_id,
+            target_asset_id=self.target.table,
+        )
+        return link

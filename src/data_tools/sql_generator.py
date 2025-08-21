@@ -24,7 +24,8 @@ class SqlGenerator:
         # get the links from the manifest
         self.links = self.get_links()
 
-        self.join = Join(self.links, self.field_details)
+        selected_fields = set(self.field_details.keys())
+        self.join = Join(self.links, selected_fields)
 
     def generate_query(self, etl: ETLModel) -> str:
         """Generates a SQL query based on the ETL model.
@@ -135,16 +136,7 @@ class SqlGenerator:
 
         # iterate through each relationship and create a LinkModel
         for relationship in relationships.values():
-            source_field_id = f"{relationship.source.table}.{relationship.source.column}"
-            target_field_id = f"{relationship.target.table}.{relationship.target.column}"
-            link: LinkModel = LinkModel(
-                id=relationship.name,
-                source_field_id=source_field_id,
-                source_asset_id=relationship.source.table,
-                target_field_id=target_field_id,
-                target_asset_id=relationship.target.table,
-            )
-            links.append(link)
+            links.append(relationship.link)
         return links
 
     def plot_graph(self, graph):

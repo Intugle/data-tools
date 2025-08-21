@@ -9,10 +9,9 @@ from ..models.models import JoinOpt, LinkModel
 
 
 class Join:
-    def __init__(self, links: list[LinkModel], field_details: dict):
+    def __init__(self, links: list[LinkModel], selected_fields: list[str]):
         self._links = links
-        self._field_details = field_details
-        self.selected_fields = set(self._field_details.keys())
+        self.selected_fields = set(selected_fields)
 
     def check_if_selected(self, link: LinkModel):
         if (
@@ -129,7 +128,7 @@ class Join:
         return dict(table_weight)
 
     @staticmethod
-    def plot_graph(graph, path=None):
+    def plot_graph(graph, path=None, draw_weight=False):
         import matplotlib.pyplot as plt
         import numpy as np
 
@@ -152,48 +151,49 @@ class Join:
             edge_color="gray",
         )
 
-        # Manually handle and draw edge labels for multiedges
-        edge_labels = {}
-        for u, v, key, data in graph.edges(data=True, keys=True):
-            label = f"w={data['weight']}"
-            if (u, v) not in edge_labels:
-                edge_labels[(u, v)] = []
-            edge_labels[(u, v)].append((key, label))
+        if draw_weight:
+            # Manually handle and draw edge labels for multiedges
+            edge_labels = {}
+            for u, v, key, data in graph.edges(data=True, keys=True):
+                label = f"w={data['weight']}"
+                if (u, v) not in edge_labels:
+                    edge_labels[(u, v)] = []
+                edge_labels[(u, v)].append((key, label))
 
-        # Draw edge labels, considering multiple edges
-        for (u, v), labels in edge_labels.items():
-            for key, label in labels:
-                # For multiple edges, offset the label slightly to avoid overlap
-                x_offset = 0.05 * key  # offset for placing labels of multiple edges
-                y_offset = 0.05 * key
-                label_pos = (
-                    (pos[u][0] + pos[v][0]) / 2 + x_offset,
-                    (pos[u][1] + pos[v][1]) / 2 + y_offset,
-                )
+            # Draw edge labels, considering multiple edges
+            for (u, v), labels in edge_labels.items():
+                for key, label in labels:
+                    # For multiple edges, offset the label slightly to avoid overlap
+                    x_offset = 0.05 * key  # offset for placing labels of multiple edges
+                    y_offset = 0.05 * key
+                    label_pos = (
+                        (pos[u][0] + pos[v][0]) / 2 + x_offset,
+                        (pos[u][1] + pos[v][1]) / 2 + y_offset,
+                    )
+                    plt.text(
+                        label_pos[0],
+                        label_pos[1],
+                        label,
+                        color="red",
+                        fontsize=12,
+                        ha="center",
+                        va="center",
+                    )
+
+            # Manually draw node labels for their weights
+            node_labels = nx.get_node_attributes(graph, "weight")
+            for node, weight in node_labels.items():
+                # Position the weight label slightly above the node
+                label_pos = pos[node]
                 plt.text(
                     label_pos[0],
-                    label_pos[1],
-                    label,
-                    color="red",
+                    label_pos[1] + 0.03,
+                    f"{weight}",
                     fontsize=12,
                     ha="center",
-                    va="center",
+                    va="bottom",
+                    color="green",
                 )
-
-        # Manually draw node labels for their weights
-        node_labels = nx.get_node_attributes(graph, "weight")
-        for node, weight in node_labels.items():
-            # Position the weight label slightly above the node
-            label_pos = pos[node]
-            plt.text(
-                label_pos[0],
-                label_pos[1] + 0.03,
-                f"{weight}",
-                fontsize=12,
-                ha="center",
-                va="bottom",
-                color="green",
-            )
 
         if path:
             path_edges = list(zip(path, path[1:]))

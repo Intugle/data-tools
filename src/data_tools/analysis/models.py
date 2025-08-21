@@ -2,7 +2,7 @@ import json
 import os
 import uuid
 
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Self
 
 import pandas as pd
 import yaml
@@ -37,14 +37,14 @@ class DataSet:
         # A dictionary to store the results of each analysis step
         self.results: Dict[str, Any] = {}
 
-    def profile_table(self) -> "DataSet":
+    def profile_table(self) -> Self:
         """
         Profiles the table and stores the result in the 'results' dictionary.
         """
         self.results["table_profile"] = self.dataframe_wrapper.profile(self.raw_df)
         return self
 
-    def profile_columns(self) -> dict[str, ColumnProfile]:
+    def profile_columns(self) -> Self:
         """
         Profiles each column in the dataset and stores the results in the 'results' dictionary.
         This method relies on the 'table_profile' result to get the list of columns.
@@ -60,7 +60,7 @@ class DataSet:
             for col_name in table_profile.columns
         }
         return self
-    
+
     def identify_datatypes_l1(self) -> "DataSet":
         """
         Identifies the data types at Level 1 for each column based on the column profiles.
@@ -77,7 +77,7 @@ class DataSet:
 
         self.results["column_datatypes_l1"] = column_datatypes_l1
         return self
-    
+
     def identify_datatypes_l2(self) -> "DataSet":
         """
         Identifies the data types at Level 2 for each column based on the column profiles.
@@ -97,8 +97,8 @@ class DataSet:
 
         self.results["column_datatypes_l2"] = column_datatypes_l2
         return self
-    
-    def identify_keys(self) -> "DataSet":
+
+    def identify_keys(self) -> Self:
         """
         Identifies potential primary keys in the dataset based on column profiles.
         This method relies on the 'column_profiles' result.
@@ -114,7 +114,7 @@ class DataSet:
             self.results["key"] = key
         return self
 
-    def profile(self) -> None:
+    def profile(self) -> Self:
         """
         Profiles the dataset including table and columns and stores the result in the 'results' dictionary.
         This is a convenience method to run profiling on the raw dataframe.
@@ -123,8 +123,8 @@ class DataSet:
             raise ValueError("The raw dataframe is empty. Cannot perform profiling.")
         self.profile_table().profile_columns()
         return self
-    
-    def identify_datatypes(self) -> None:
+
+    def identify_datatypes(self) -> Self:
         """
         Identifies the data types for the dataset and stores the result in the 'results' dictionary.
         This is a convenience method to run data type identification on the raw dataframe.
@@ -133,8 +133,8 @@ class DataSet:
             raise ValueError("The raw dataframe is empty. Cannot perform data type identification.")
         self.identify_datatypes_l1().identify_datatypes_l2()
         return self
-    
-    def generate_glossary(self, domain: str = "") -> "DataSet":
+
+    def generate_glossary(self, domain: str = "") -> Self:
         """
         Generates a business glossary for the dataset and stores the result in the 'results' dictionary.
         This method relies on the 'column_datatypes_l1' results.
@@ -156,7 +156,17 @@ class DataSet:
         self.results["business_glossary_and_tags"] = glossary_output
         self.results["table_glossary"] = glossary_output.table_glossary
         return self
-    
+
+    def run(self, domain: str) -> Self:
+        """Run all stages """
+
+        self.profile()\
+            .identify_datatypes()\
+            .identify_keys()\
+            .generate_glossary(domain=domain)
+
+        return self
+
     # FIXME - this is a temporary solution to save the results of the analysis
     # need to use model while executing the pipeline
     def save_yaml(self, file_path: Optional[str] = None) -> None:
@@ -202,10 +212,22 @@ class DataSet:
         # Save the YAML representation of the sources
         with open(file_path, "w") as file:
             yaml.dump(sources, file, sort_keys=False, default_flow_style=False)
-
-    def _repr_html_(self):
+    
+    def result_to_pandas(self):
         column_profiles = self.results.get("column_profiles")
         if column_profiles is None:
             return "<p>No column profiles available.</p>"
         df = pd.DataFrame([col.model_dump() for col in column_profiles.values()])
+        return df
+
+    def _repr_html_(self):
+        df = self.result_to_pandas().head()
         return df._repr_html_()
+    
+    # def __repr__(self):
+    #     column_profiles = self.results.get("column_profiles")
+    #     if column_profiles is None:
+    #         return "<p>No column profiles available.</p>"
+    #     df = pd.DataFrame([col.model_dump() for col in column_profiles.values()]).head()
+    #     return df
+
