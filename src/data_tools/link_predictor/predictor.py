@@ -3,7 +3,7 @@ import json
 import logging
 import os
 
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Self
 
 import pandas as pd
 import yaml
@@ -19,6 +19,7 @@ from data_tools.analysis.steps import (
 )
 from data_tools.core import settings
 from data_tools.core.pipeline.link_prediction.lp import LinkPredictionAgentic
+from data_tools.libs.smart_query_generator.utils.join import Join
 from data_tools.models.resources.relationship import (
     Relationship,
     RelationshipTable,
@@ -54,6 +55,7 @@ class LinkPredictor:
             DataTypeIdentifierL2(),
             KeyIdentifier(),
         ])
+        self.links: list[PredictedLink] = []
 
         if isinstance(data_input, dict):
             self._initialize_from_dict(data_input)
@@ -122,7 +124,7 @@ class LinkPredictor:
             primary_keys.append((name_a, dataset_a.results["key"]))
         if dataset_b.results.get("key"):
             primary_keys.append((name_b, dataset_b.results["key"]))
-        
+
         pipeline = LinkPredictionAgentic(
             profiling_data=profiling_data,
             primary_keys=primary_keys,
@@ -141,7 +143,7 @@ class LinkPredictor:
         ]
         return pair_links
 
-    def predict(self) -> LinkPredictionResult:
+    def predict(self) -> Self:
         """
         Iterates through all unique pairs of datasets, predicts the links for
         each pair, and returns the aggregated results.
@@ -162,7 +164,32 @@ class LinkPredictor:
             else:
                 print("No links found for this pair.")
 
-        return LinkPredictionResult(links=all_links)
+        self.links = all_links
+        return self
+    
+    def get_links_df(self):
+        ...
+    
+    def show_graph(self):
+        links = [link.relationship.link for link in self.links]
+        join = Join(links, [])
+        assets = {dataset.name for dataset in self.datasets.values()}
+
+        graph = join.generate_graph(list(assets), only_connected=False)
+
+        join.plot_graph(graph)
+
+    def save_yaml(self, file_path: str) -> None:
+        file_path = os.path.join(settings.PROJECT_BASE, file_path)
+
+        if len(self.links) == 0:
+            raise ValueError("No links found to save.")
+
+        relationships = {"relationships": [json.loads(link.relationship.model_dump_json()) for link in self.links]}
+
+        # Save the relationships to a YAML file
+        with open(file_path, "w") as file:
+            yaml.dump(relationships, file, sort_keys=False, default_flow_style=False)
 
 
 class LinkPredictionSaver:
@@ -175,7 +202,7 @@ class LinkPredictionSaver:
         if len(links) == 0:
             raise ValueError("No links found to save.")
 
-        relationships = []
+        relationships: list[Relationship] = []
         for link in links:
             source = RelationshipTable(table=link.from_dataset, column=link.from_column)
             target = RelationshipTable(table=link.to_dataset, column=link.to_column)

@@ -280,7 +280,8 @@ class SmartQueryGenerator:
                 # if _f.type != FieldType.calculated_field:
                 #     self.__add_assets(_field, _f, True)
 
-            _join = Join(self.__links, self.__field_details)
+            selected_fields = set(self.__field_details.keys())
+            _join = Join(self.__links, selected_fields)
             join = _join.get_join_json(list(self.__assets), self.__assets_join_opt)
 
         fields = Join.get_fields(join, self.__links)
