@@ -39,7 +39,7 @@ def manual_parsing(keys_name: list, text: str, **kwargs):
         except Exception:
             log.warning("[!] Failed llm parsing also")
 
-    return ""
+    return []
 
 
 def get_additional_context(table_name: str, global_additional_context: str = "", additional_table_context: str = ""):
