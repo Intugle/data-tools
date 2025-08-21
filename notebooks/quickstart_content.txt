@@ -1,0 +1,190 @@
+---
+type: markdown
+---
+# Quickstart: Building a Semantic Layer with Data-Tools
+
+This notebook provides a quick introduction to the `data-tools` project. You'll learn how to use its key features to automatically build a semantic layer over your data.
+
+**What is a Semantic Layer?**
+
+A semantic layer is a business-friendly representation of your data. It hides the complexity of the underlying data sources and provides a unified view of your data using familiar business terms. This makes it easier for business users to understand and query the data without needing to be SQL experts.
+
+**In this notebook, you will learn how to:**
+
+1. **Profile your data:** Analyze your data sources to understand their structure, data types, and other characteristics.
+2. **Automatically predict links:** Use a Large Language Model (LLM) to automatically discover relationships (foreign keys) between tables.
+3. **Generate a semantic layer:** Create a `manifest.json` file that defines your semantic layer.
+4. **Generate SQL queries:** Use the semantic layer to generate SQL queries and retrieve data.
+---
+type: markdown
+---
+## 1. Setup
+
+First, let's install the necessary libraries. This project uses `uv` for package management.
+---
+type: code
+---
+!pip install uv
+!uv pip install -r ../requirements.txt
+---
+type: markdown
+---
+## 2. Data Profiling
+
+The first step in building a semantic layer is to profile your data. This involves analyzing your data sources to understand their structure, data types, and other characteristics. The `data-tools` project provides a pipeline for this purpose.
+---
+type: code
+---
+import pandas as pd
+from data_tools.analysis.models import DataSet
+---
+type: code
+---
+# Load the sample data
+allergies_df = pd.read_csv('../sample_data/healthcare/allergies.csv')
+allergies_df.head()
+---
+type: code
+---
+# Create a DataSet object and run the profiling pipeline
+dataset_allergies = DataSet(allergies_df, "allergies")
+dataset_allergies.run(domain="Healthcare")
+---
+type: markdown
+---
+The `run()` method performs a series of analysis steps, including:
+
+* **Profiling:** Calculates statistics for each column, such as distinct count, uniqueness, and completeness.
+* **Datatype Identification:** Identifies the data type of each column (e.g., integer, string, datetime).
+* **Key Identification:** Identifies potential primary keys.
+* **Glossary Generation:** Generates a business glossary for each column using an LLM.
+
+Let's take a look at the profiling results:
+---
+type: code
+---
+dataset_allergies.profile_df.head()
+---
+type: markdown
+---
+## 3. Automated Link Prediction
+
+Now that we've profiled our data, let's discover the relationships between tables. The `data-tools` project uses a Large Language Model (LLM) to predict links (foreign keys) between tables.
+
+First, we'll load a few more tables from the sample dataset.
+---
+type: code
+---
+table_names = ["patients", "claims", "careplans", "claims_transactions", "medications"]
+datasets = [dataset_allergies]
+
+for table_name in table_names:
+    df = pd.read_csv(f'../sample_data/healthcare/{table_name}.csv')
+    dataset = DataSet(df, table_name)
+    dataset.run(domain="Healthcare")
+    datasets.append(dataset)
+---
+type: markdown
+---
+Now, let's run the link prediction pipeline.
+---
+type: code
+---
+from data_tools.link_predictor import LinkPredictor
+
+# Initialize the predictor
+predictor = LinkPredictor(datasets)
+
+# Run the prediction
+results = predictor.predict()
+results.links
+---
+type: markdown
+---
+The `results` object contains the predicted links between the tables. You can also visualize the relationships as a graph.
+---
+type: code
+---
+results.show_graph()
+---
+type: markdown
+---
+## 4. The Semantic Layer (Manifest)
+
+The profiling and link prediction results are used to generate a `manifest.json` file. This file defines the semantic layer, including the models (tables) and their relationships.
+
+Let's save the datasets and the predicted links to YAML files. These files will be used to generate the manifest.
+---
+type: code
+---
+for ds in datasets:
+    ds.save_yaml()
+
+results.save_yaml("relationships.yml")
+---
+type: markdown
+---
+Now, we can load the YAML files and create a manifest.
+---
+type: code
+---
+from data_tools.parser.manifest import ManifestLoader
+
+# Load the manifest
+manifest_loader = ManifestLoader('.')
+manifest_loader.load()
+manifest = manifest_loader.manifest
+
+# Print the manifest
+print(manifest.json(indent=4))
+---
+type: markdown
+---
+## 5. SQL Generation
+
+Once you have a semantic layer, you can use the `SqlGenerator` to generate SQL queries. This allows you to query the data using business-friendly terms, without having to write complex SQL.
+
+Let's create an ETL model to define the query we want to generate.
+---
+type: code
+---
+from data_tools.libs.smart_query_generator.models.models import ETLModel, FieldModel
+
+# Create an ETL model
+etl_model = ETLModel(
+    fields=[
+        FieldModel(id="patients.FIRST"),
+        FieldModel(id="patients.LAST"),
+        FieldModel(id="claims.TOTAL_CLAIM_COST"),
+    ]
+)
+---
+type: markdown
+---
+Now, let's use the `SqlGenerator` to generate the SQL query.
+---
+type: code
+---
+from data_tools.sql_generator import SqlGenerator
+
+# Create a SqlGenerator
+sql_generator = SqlGenerator('.')
+
+# Generate the query
+sql_query = sql_generator.generate_query(etl_model)
+
+# Print the query
+print(sql_query)
+---
+type: markdown
+---
+## Conclusion
+
+This notebook has provided a brief overview of the `data-tools` project. You've learned how to:
+
+* Profile your data to understand its characteristics.
+* Use an LLM to automatically predict links between tables.
+* Generate a semantic layer (`manifest.json`).
+* Use the semantic layer to generate SQL queries.
+
+This is just a starting point. The `data-tools` project has many other features to explore. We encourage you to try it with your own data and see how it can help you build a powerful semantic layer.
