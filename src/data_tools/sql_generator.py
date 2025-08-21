@@ -1,5 +1,6 @@
 from typing import TYPE_CHECKING
 
+from data_tools.core import settings
 from data_tools.libs.smart_query_generator import SmartQueryGenerator
 from data_tools.libs.smart_query_generator.models.models import ETLModel, FieldDetailsModel, LinkModel
 from data_tools.libs.smart_query_generator.utils.join import Join
@@ -12,7 +13,7 @@ if TYPE_CHECKING:
 class SqlGenerator:
     """Generates SQL queries based on the manifest and ETL configurations."""
 
-    def __init__(self, project_base: str):
+    def __init__(self, project_base: str = settings.PROJECT_BASE):
         self.manifest_loader = ManifestLoader(project_base)
         self.manifest_loader.load()
         self.manifest = self.manifest_loader.manifest
