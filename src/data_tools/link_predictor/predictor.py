@@ -79,7 +79,7 @@ class LinkPredictor:
     def _initialize_from_dict(self, data_dict: Dict[str, Any]):
         """Creates and processes DataSet objects from a dictionary of raw dataframes."""
         for name, df in data_dict.items():
-            dataset = DataSet(df=df, name=name)
+            dataset = DataSet(df, name=name)
             print(f"Running prerequisite analysis for new dataset: '{name}'...")
             self._run_prerequisites(dataset)
             self.datasets[name] = dataset

@@ -2,25 +2,27 @@ import time
 
 from typing import Any, Optional
 
+import duckdb
 import numpy as np
 import pandas as pd
 import pandas.api.types as ptypes
 
-from data_tools.core.utilities.processing import string_standardization
-from data_tools.dataframes.dataframe import DataFrame
-from data_tools.dataframes.factory import DataFrameFactory
-from data_tools.dataframes.models import (
+from data_tools.adapters.adapter import Adapter
+from data_tools.adapters.factory import AdapterFactory
+from data_tools.adapters.models import (
     ColumnProfile,
     ProfilingOutput,
 )
+from data_tools.adapters.types.duckdb.models import DuckdbConfig
+from data_tools.adapters.types.pandas.utils import convert_to_native
+from data_tools.common.exception import errors
+from data_tools.core.utilities.processing import string_standardization
 
-from .utils import convert_to_native
 
-
-class PandasDF(DataFrame):
-    def profile(self, df: pd.DataFrame) -> ProfilingOutput:
+class DuckdbAdapter(Adapter):
+    def profile(self, data: DuckdbConfig) -> ProfilingOutput:
         """
-        Generates a profile of a pandas DataFrame.
+        Generates a profile of a file.
 
         Args:
             df: The input pandas DataFrame.
@@ -31,28 +33,41 @@ class PandasDF(DataFrame):
             - "columns": List of column names.
             - "dtypes": A dictionary mapping column names to generalized data types.
         """
-        if not isinstance(df, pd.DataFrame):
-            raise TypeError("Input must be a pandas DataFrame.")
+        if not isinstance(data, DuckdbConfig):
+            raise TypeError("Input must be a duckdb config.")
 
-        def __format_dtype_pandas__(dtype: Any) -> str:
-            """Maps pandas dtype to a generalized type string."""
-            if ptypes.is_integer_dtype(dtype):
-                return "integer"
-            elif ptypes.is_float_dtype(dtype):
-                return "float"
-            elif ptypes.is_datetime64_any_dtype(dtype) or isinstance(dtype, pd.PeriodDtype):
-                return "date & time"
-            elif ptypes.is_string_dtype(dtype) or dtype == "object":
-                # Fallback to 'object' for mixed types or older pandas versions
-                return "string"
-            else:
-                return "string"  # Default for other types
+        def __format_dtype__(dtype: Any) -> str:
+            """Maps dtype to a generalized type string."""
+            type_map = {
+                "VARCHAR": "string",
+                "DATE": "date & time",
+                "BIGINT": "integer",
+                "DOUBLE": "float",
+                "FLOAT": "float",
+            }
+            return type_map.get(dtype, "string")
 
-        total_count = len(df)
-        df.columns = df.columns.astype(str)
+        table_name = "__profile_table__"
+        self.load(data, table_name)
 
-        columns = df.columns.tolist()
-        dtypes = {col: __format_dtype_pandas__(dtype) for col, dtype in df.dtypes.items()}
+        # Fetching total count of table
+        query = f"""
+        SELECT count(*) as count FROM {table_name}
+        """
+        data = duckdb.execute(query).fetchall()
+
+        total_count = data[0][0]
+
+        # Fetching column name and their data types of table
+        query = """
+        SELECT column_name, data_type
+        FROM duckdb_columns()
+        WHERE table_name = ?
+        """
+        data = duckdb.execute(query, [table_name]).fetchall()
+
+        dtypes = {col: __format_dtype__(dtype) for col, dtype in data}
+        columns = [col for col, _ in data]
 
         return ProfilingOutput(
             count=total_count,
@@ -61,7 +76,13 @@ class PandasDF(DataFrame):
         )
 
     def column_profile(
-        self, df: pd.DataFrame, table_name: str, column_name: str, sample_limit: int = 10, dtype_sample_limit: int = 10000
+        self,
+        data: DuckdbConfig,
+        table_name: str,
+        column_name: str,
+        total_count: int,
+        sample_limit: int = 10,
+        dtype_sample_limit: int = 10000,
     ) -> Optional[ColumnProfile]:
         """
         Generates a detailed profile for a single column of a pandas DataFrame.
@@ -80,25 +101,41 @@ class PandasDF(DataFrame):
             A dictionary containing the profile for the column, or None if the
             column does not exist.
         """
-        if column_name not in df.columns:
-            print(f"Error: Column '{column_name}' not found in DataFrame.")
-            return None
+        if not isinstance(data, DuckdbConfig):
+            raise TypeError("Input must be a duckdb config.")
+        
+        self.load(data, table_name)
 
         start_ts = time.time()
 
-        total_count = len(df)
-        column_series = df[column_name]
-
         # --- Calculations --- #
-        not_null_series = column_series.dropna()
-        not_null_count = len(not_null_series)
-        null_count = total_count - not_null_count
+        query = f"""
+        SELECT 
+            COUNT(DISTINCT {column_name}) AS distinct_count,
+            SUM(CASE WHEN {column_name} IS NULL THEN 1 ELSE 0 END) AS null_count
+        FROM  
+            {table_name}
+        """
+        distinct_null_data = duckdb.execute(query).fetchall()
 
-        distinct_values = not_null_series.unique()
-        distinct_count = len(distinct_values)
+        distinct_count, null_count = distinct_null_data[0]
+        not_null_count = total_count - null_count
 
         # --- Sampling Logic --- #
         # 1. Get a sample of distinct values.
+        sample_query = f"""
+        SELECT 
+            DISTINCT CAST( {column_name} AS VARCHAR) AS sample_values 
+        FROM 
+            {table_name} 
+        WHERE 
+            {column_name} IS NOT NULL LIMIT {dtype_sample_limit}
+        """
+        data = duckdb.execute(sample_query).fetchall()
+        distinct_values = [d[0] for d in data]
+
+        not_null_series = pd.Series(distinct_values)
+
         if distinct_count > 0:
             distinct_sample_size = min(distinct_count, dtype_sample_limit)
             sample_data = list(np.random.choice(distinct_values, distinct_sample_size, replace=False))
@@ -143,10 +180,32 @@ class PandasDF(DataFrame):
             ts=time.time() - start_ts,
         )
 
+    @staticmethod
+    def _get_load_func(data: DuckdbConfig):
+        func = {
+            "csv": "read_csv",
+            "parquet": "read_parquet",
+            "xlsx": "read_xlsx",
+        }
+        ld_func = func.get(data.type)
+        if ld_func is None:
+            raise errors.NotFoundError(f"Type: {data.type} not supported")
+
+        return f"{ld_func}('{data.path}')"
+
+    def load(self, data: DuckdbConfig, table_name: str):
+        ld_func = self._get_load_func(data)
+
+        query = f"""CREATE TABLE IF NOT EXISTS {table_name} AS SELECT * FROM {ld_func};"""
+
+        duckdb.execute(query)
+
+    def execute(): ...
+
 
 def can_handle_pandas(df: Any) -> bool:
-    return isinstance(df, pd.DataFrame)
+    return isinstance(df, DuckdbConfig)
 
 
-def register(factory: DataFrameFactory):
-    factory.register("pandas", can_handle_pandas, PandasDF)
+def register(factory: AdapterFactory):
+    factory.register("duckdb", can_handle_pandas, DuckdbAdapter)

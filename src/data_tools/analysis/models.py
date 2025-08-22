@@ -7,16 +7,28 @@ from typing import Any, Dict, Optional, Self
 import pandas as pd
 import yaml
 
-from data_tools.common.exception import errors
-from data_tools.core import settings
-from data_tools.dataframes.factory import DataFrameFactory
-from data_tools.dataframes.models import (
+from data_tools.adapters.factory import AdapterFactory
+from data_tools.adapters.models import (
+    BusinessGlossaryOutput,
+    ColumnGlossary,
     ColumnProfile,
+    DataTypeIdentificationL1Output,
     DataTypeIdentificationL2Input,
+    DataTypeIdentificationL2Output,
+    KeyIdentificationOutput,
     ProfilingOutput,
 )
+from data_tools.common.exception import errors
+from data_tools.core import settings
+from data_tools.core.pipeline.business_glossary.bg import BusinessGlossary
+from data_tools.core.pipeline.datatype_identification.l2_model import L2Model
+from data_tools.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
+from data_tools.core.pipeline.key_identification.ki import KeyIdentificationLLM
 from data_tools.models.resources.model import Column, ColumnProfilingMetrics
 from data_tools.models.resources.source import Source, SourceTables
+
+# FIXME add type
+DataSetData = pd.DataFrame
 
 
 class DataSet:
@@ -25,14 +37,14 @@ class DataSet:
     This object is passed from one pipeline step to the next.
     """
 
-    def __init__(self, df: Any, name: str):
+    def __init__(self, data: DataSetData, name: str):
         # The original, raw dataframe object (e.g., a pandas DataFrame)
         self.id = uuid.uuid4()
         self.name = name
-        self.raw_df = df
+        self.data = data
 
         # The factory creates the correct wrapper for consistent API access
-        self.dataframe_wrapper = DataFrameFactory().create(df)
+        self.adapter = AdapterFactory().create(data)
 
         # A dictionary to store the results of each analysis step
         self.results: Dict[str, Any] = {}
@@ -41,7 +53,7 @@ class DataSet:
         """
         Profiles the table and stores the result in the 'results' dictionary.
         """
-        self.results["table_profile"] = self.dataframe_wrapper.profile(self.raw_df)
+        self.results["table_profile"] = self.adapter.profile(self.data)
         return self
 
     def profile_columns(self) -> Self:
@@ -52,10 +64,10 @@ class DataSet:
         if "table_profile" not in self.results:
             raise RuntimeError("TableProfiler must be run before profiling columns.")
 
-        table_profile: ProfilingOutput = self.results["table_profile"]
+        table_profile: ProfilingOutput = ProfilingOutput.model_validate(self.results["table_profile"])
         self.results["column_profiles"] = {
-            col_name: self.dataframe_wrapper.column_profile(
-                self.raw_df, self.name, col_name, settings.UPSTREAM_SAMPLE_LIMIT
+            col_name: self.adapter.column_profile(
+                self.data, self.name, col_name, table_profile.count, settings.UPSTREAM_SAMPLE_LIMIT
             )
             for col_name in table_profile.columns
         }
@@ -70,7 +82,15 @@ class DataSet:
             raise RuntimeError("TableProfiler and ColumnProfiler must be run before data type identification.")
 
         column_profiles: dict[str, ColumnProfile] = self.results["column_profiles"]
-        column_datatypes_l1 = self.dataframe_wrapper.datatype_identification_l1(self.raw_df, self.name, column_profiles)
+        records = []
+        for column_name, stats in column_profiles.items():
+            records.append({"table_name": self.name, "column_name": column_name, "values": stats.dtype_sample})
+
+        l1_df = pd.DataFrame(records)
+        di_pipeline = DataTypeIdentificationPipeline()
+        l1_result = di_pipeline(sample_values_df=l1_df)
+
+        column_datatypes_l1 = [DataTypeIdentificationL1Output(**row) for row in l1_result.to_dict(orient="records")]
 
         for column in column_datatypes_l1:
             column_profiles[column.column_name].datatype_l1 = column.datatype_l1
@@ -88,9 +108,11 @@ class DataSet:
 
         column_profiles: dict[str, ColumnProfile] = self.results["column_profiles"]
         columns_with_samples = [DataTypeIdentificationL2Input(**col.model_dump()) for col in column_profiles.values()]
-        column_datatypes_l2 = self.dataframe_wrapper.datatype_identification_l2(
-            self.raw_df, self.name, columns_with_samples
-        )
+
+        column_values_df = pd.DataFrame([item.model_dump() for item in columns_with_samples])
+        l2_model = L2Model()
+        l2_result = l2_model(l1_pred=column_values_df)
+        column_datatypes_l2 = [DataTypeIdentificationL2Output(**row) for row in l2_result.to_dict(orient="records")]
 
         for column in column_datatypes_l2:
             column_profiles[column.column_name].datatype_l2 = column.datatype_l2
@@ -109,7 +131,11 @@ class DataSet:
         column_profiles: dict[str, ColumnProfile] = self.results["column_profiles"]
         column_profiles_df = pd.DataFrame([col.model_dump() for col in column_profiles.values()])
 
-        key = self.dataframe_wrapper.key_identification(self.name, column_profiles_df)
+        ki_model = KeyIdentificationLLM(profiling_data=column_profiles_df)
+        ki_result = ki_model()
+        output = KeyIdentificationOutput(**ki_result)
+        key = output.column_name
+
         if key is not None:
             self.results["key"] = key
         return self
@@ -119,7 +145,7 @@ class DataSet:
         Profiles the dataset including table and columns and stores the result in the 'results' dictionary.
         This is a convenience method to run profiling on the raw dataframe.
         """
-        if self.raw_df.empty:
+        if self.data.empty:
             raise ValueError("The raw dataframe is empty. Cannot perform profiling.")
         self.profile_table().profile_columns()
         return self
@@ -129,7 +155,7 @@ class DataSet:
         Identifies the data types for the dataset and stores the result in the 'results' dictionary.
         This is a convenience method to run data type identification on the raw dataframe.
         """
-        if self.raw_df.empty:
+        if self.data.empty:
             raise ValueError("The raw dataframe is empty. Cannot perform data type identification.")
         self.identify_datatypes_l1().identify_datatypes_l2()
         return self
@@ -145,8 +171,19 @@ class DataSet:
         column_profiles: dict[str, ColumnProfile] = self.results["column_profiles"]
         column_profiles_df = pd.DataFrame([col.model_dump() for col in column_profiles.values()])
 
-        glossary_output = self.dataframe_wrapper.generate_business_glossary(
-            self.name, column_profiles_df, domain=domain
+        bg_model = BusinessGlossary(profiling_data=column_profiles_df)
+        table_glossary, glossary_df = bg_model(table_name=self.name, domain=domain)
+        columns_glossary = []
+        for _, row in glossary_df.iterrows():
+            columns_glossary.append(
+                ColumnGlossary(
+                    column_name=row["column_name"],
+                    business_glossary=row.get("business_glossary", ""),
+                    business_tags=row.get("business_tags", []),
+                )
+            )
+        glossary_output = BusinessGlossaryOutput(
+            table_name=self.name, table_glossary=table_glossary, columns=columns_glossary
         )
 
         for column in glossary_output.columns:
@@ -158,12 +195,9 @@ class DataSet:
         return self
 
     def run(self, domain: str) -> Self:
-        """Run all stages """
+        """Run all stages"""
 
-        self.profile()\
-            .identify_datatypes()\
-            .identify_keys()\
-            .generate_glossary(domain=domain)
+        self.profile().identify_datatypes().identify_keys().generate_glossary(domain=domain)
 
         return self
 
@@ -212,7 +246,7 @@ class DataSet:
         # Save the YAML representation of the sources
         with open(file_path, "w") as file:
             yaml.dump(sources, file, sort_keys=False, default_flow_style=False)
-    
+
     def result_to_pandas(self):
         column_profiles = self.results.get("column_profiles")
         if column_profiles is None:
@@ -223,11 +257,3 @@ class DataSet:
     def _repr_html_(self):
         df = self.result_to_pandas().head()
         return df._repr_html_()
-    
-    # def __repr__(self):
-    #     column_profiles = self.results.get("column_profiles")
-    #     if column_profiles is None:
-    #         return "<p>No column profiles available.</p>"
-    #     df = pd.DataFrame([col.model_dump() for col in column_profiles.values()]).head()
-    #     return df
-

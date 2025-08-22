@@ -19,7 +19,7 @@ def sample_dataframe():
 
 def test_profile(sample_dataframe):
     """Test the profile convenience method."""
-    dataset = DataSet(df=sample_dataframe, name="test_table")
+    dataset = DataSet(sample_dataframe, name="test_table")
     dataset.profile()
 
     assert "table_profile" in dataset.results
@@ -36,7 +36,7 @@ def test_profile(sample_dataframe):
 
 def test_identify_datatypes(sample_dataframe):
     """Test the identify_datatypes convenience method."""
-    dataset = DataSet(df=sample_dataframe, name="test_table")
+    dataset = DataSet(sample_dataframe, name="test_table")
     dataset.profile()
     dataset.identify_datatypes()
 
@@ -53,7 +53,7 @@ def test_identify_datatypes(sample_dataframe):
 
 def test_identify_keys(sample_dataframe):
     """Test the identify_keys method."""
-    dataset = DataSet(df=sample_dataframe, name="test_table")
+    dataset = DataSet(sample_dataframe, name="test_table")
     dataset.profile()
     dataset.identify_datatypes()
     dataset.identify_keys()
@@ -65,7 +65,7 @@ def test_identify_keys(sample_dataframe):
 
 def test_generate_glossary(sample_dataframe):
     """Test the generate_glossary method."""
-    dataset = DataSet(df=sample_dataframe, name="test_table")
+    dataset = DataSet(sample_dataframe, name="test_table")
     dataset.profile()
     dataset.identify_datatypes()
     dataset.generate_glossary(domain="ecommerce")
@@ -80,7 +80,7 @@ def test_generate_glossary(sample_dataframe):
 
 def test_save_yaml(sample_dataframe, tmp_path):
     """Test the save_yaml method."""
-    dataset = DataSet(df=sample_dataframe, name="test_table")
+    dataset = DataSet(sample_dataframe, name="test_table")
     dataset.profile()
     dataset.identify_datatypes()
     dataset.generate_glossary(domain="ecommerce")
