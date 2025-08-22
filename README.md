@@ -1,5 +1,5 @@
 <p align="center">
-      <img src="https://intugle.ai/assets/Icons/intugle.png" alt="Intugle Logo" width="350">
+      <img alt="Intugle Logo" width="350" src="https://github.com/user-attachments/assets/18f4627b-af6c-4133-994b-830c30a9533b" />
  <h3 align="center"><i>The GenAI-powered toolkit for automated data intelligence.</i></h3>
 </p>
 
