@@ -1,4 +1,6 @@
 from data_tools.common.exception import errors
+
+# from data_tools.mcp.manifest import manifest_loader
 from data_tools.core import settings
 from data_tools.parser.manifest import ManifestLoader
 from data_tools.parser.table_schema import TableSchema

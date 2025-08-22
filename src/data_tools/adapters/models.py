@@ -42,7 +42,7 @@ class ColumnProfile(BaseModel):
     )
     datatype_l2: Optional[str] = Field(
         default=None,
-        description="The inferred data type category (dimension/measure) for the column, based on the datatype l1 results",
+        description="The inferred data type category (dimension/measure) for the column, based on the datatype l1 results",  # noqa: E501
     )
     business_glossary: Optional[str] = Field(
         default=None, description="The business glossary entry for the column, if available."
@@ -114,9 +114,7 @@ class KeyIdentificationOutput(BaseModel):
 
     """
 
-    column_name: Optional[str] = Field(
-        default=None, description="The name of the column identified as a primary key."
-    )
+    column_name: Optional[str] = Field(default=None, description="The name of the column identified as a primary key.")
 
 
 class ColumnGlossary(BaseModel):

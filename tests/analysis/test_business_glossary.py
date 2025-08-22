@@ -1,5 +1,6 @@
 import pandas as pd
 
+from data_tools.adapters.models import BusinessGlossaryOutput, ColumnGlossary
 from data_tools.analysis.models import DataSet
 from data_tools.analysis.pipeline import Pipeline
 from data_tools.analysis.steps import (
@@ -9,7 +10,6 @@ from data_tools.analysis.steps import (
     DataTypeIdentifierL2,
     TableProfiler,
 )
-from data_tools.dataframes.models import BusinessGlossaryOutput, ColumnGlossary
 
 
 def test_business_glossary_generator():
@@ -35,7 +35,7 @@ def test_business_glossary_generator():
     ])
 
     # 2. Initialize DataSet
-    dataset = DataSet(df=df, name=table_name)
+    dataset = DataSet(df, name=table_name)
 
     # 3. Run prerequisite steps (TableProfiler, ColumnProfiler)
     dataset = pipeline.run(df, table_name)

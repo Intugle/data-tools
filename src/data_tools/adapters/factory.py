@@ -2,7 +2,7 @@ import importlib
 
 from typing import Any, Callable
 
-from .dataframe import DataFrame
+from .adapter import Adapter
 
 
 class ModuleInterface:
@@ -18,13 +18,14 @@ def import_module(name: str) -> ModuleInterface:
     return importlib.import_module(name)  # type: ignore
 
 
-DEFAULT_PLUGINS = ["data_tools.dataframes.types.pandas.pandas"]
+DEFAULT_PLUGINS = [
+    "data_tools.adapters.types.pandas.pandas",
+    "data_tools.adapters.types.duckdb.duckdb",
+]
 
 
-class DataFrameFactory:
-    dataframe_funcs: dict[
-        str, tuple[Callable[[Any], bool], Callable[..., DataFrame]]
-    ] = {}
+class AdapterFactory:
+    dataframe_funcs: dict[str, tuple[Callable[[Any], bool], Callable[..., Adapter]]] = {}
 
     # LOADER
     def __init__(self, plugins: list[dict] = None):
@@ -42,7 +43,7 @@ class DataFrameFactory:
         cls,
         env_type: str,
         checker_fn: Callable[[Any], bool],
-        creator_fn: Callable[..., DataFrame],
+        creator_fn: Callable[..., Adapter],
     ) -> None:
         """Register a new execution engine type"""
         cls.dataframe_funcs[env_type] = (checker_fn, creator_fn)
@@ -53,7 +54,7 @@ class DataFrameFactory:
         cls.dataframe_funcs.pop(env_type, None)
 
     @classmethod
-    def create(cls, df: Any) -> DataFrame:
+    def create(cls, df: Any) -> Adapter:
         """Create a execution engine type"""
         for checker_fn, creator_fn in cls.dataframe_funcs.values():
             if checker_fn(df):

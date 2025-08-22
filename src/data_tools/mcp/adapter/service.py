@@ -1,6 +1,8 @@
 from data_tools.core.settings import settings
 from data_tools.mcp.adapter.psql import PsqlPool
 
+# from data_tools.parser.manifest import ManifestLoader
+
 
 class AdapterService:
     """
@@ -8,6 +10,7 @@ class AdapterService:
     """
 
     def __init__(self):
+        # self.manifest = ManifestLoader.manifest
         self.psql = PsqlPool(
             user=settings.POSTGRES_USER,
             password=settings.POSTGRES_PASSWORD,

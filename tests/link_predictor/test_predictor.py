@@ -68,13 +68,13 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     """
     # 1. Prepare a fully analyzed DataSet
     customers_df = pd.DataFrame({"id": [1, 2, 3]})
-    processed_dataset = DataSet(df=customers_df, name="customers")
+    processed_dataset = DataSet(customers_df, name="customers")
     # Manually add the key to simulate it being pre-analyzed
     processed_dataset.results["key"] = "id"
 
     # 2. Prepare a raw DataSet that needs analysis
     orders_df = pd.DataFrame({"order_id": [101, 102], "customer_id": [1, 3]})
-    raw_dataset = DataSet(df=orders_df, name="orders")
+    raw_dataset = DataSet(orders_df, name="orders")
 
     # 3. Initialize the predictor with the list
     predictor = LinkPredictor([processed_dataset, raw_dataset])
