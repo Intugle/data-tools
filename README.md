@@ -1,4 +1,7 @@
-# Data-Tools
+<p align="center">
+      <img src="https://intugle.ai/assets/Icons/intugle.png" alt="Intugle Logo" width="350">
+ <h3 align="center"><i>The GenAI-powered toolkit for automated data intelligence.</i></h3>
+</p>
 
 [![Release](https://img.shields.io/github/release/Intugle/data-tools)](https://github.com/Intugle/data-tools/releases/tag/v0.1.0)     
 [![Made with Python](https://img.shields.io/badge/Made_with-Python-blue?logo=python&logoColor=white)](https://www.python.org/)
@@ -11,7 +14,7 @@
 
 ## Overview
 
-Intugle's Data-Tools is a GenAI-powered Python library that simplifies and accelerates the journey from raw data to insights. It empowers data and business teams to build an intelligent semantic layer over their data, enabling self-serve analytics and natural language queries. By automating data profiling, link prediction, and SQL generation, Data-Tools helps you build data products faster and more efficiently than traditional methods.
+Intugle provides a set of GenAI-powered Python tools to simplify and accelerate the journey from raw data to insights. This library empowers data and business teams to build an intelligent semantic layer over their data, enabling self-serve analytics and natural language queries. By automating data profiling, link prediction, and SQL generation, Intugle helps you build data products faster and more efficiently than traditional methods.
 
 ## Who is this for?
 
