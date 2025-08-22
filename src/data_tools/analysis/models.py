@@ -157,13 +157,16 @@ class DataSet:
         self.results["table_glossary"] = glossary_output.table_glossary
         return self
 
-    def run(self, domain: str) -> Self:
+    def run(self, domain: str, save: bool = True) -> Self:
         """Run all stages """
 
         self.profile()\
             .identify_datatypes()\
             .identify_keys()\
             .generate_glossary(domain=domain)
+        
+        if save:
+            self.save_yaml()
 
         return self
 
