@@ -2,8 +2,8 @@ from typing import List
 
 from pydantic import BaseModel
 
-from data_tools.common.exception import errors
-from data_tools.models.resources.relationship import Relationship, RelationshipTable, RelationshipType
+from intugle.common.exception import errors
+from intugle.models.resources.relationship import Relationship, RelationshipTable, RelationshipType
 
 
 class PredictedLink(BaseModel):

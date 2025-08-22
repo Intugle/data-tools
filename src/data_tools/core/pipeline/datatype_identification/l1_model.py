@@ -7,7 +7,7 @@ from datetime import datetime
 import numpy as np
 import pandas as pd
 
-from data_tools.core.settings import settings
+from intugle.core.settings import settings
 
 log = logging.getLogger(__name__)
 

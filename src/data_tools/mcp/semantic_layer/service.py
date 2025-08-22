@@ -1,9 +1,9 @@
-from data_tools.common.exception import errors
+from intugle.common.exception import errors
 
-# from data_tools.mcp.manifest import manifest_loader
-from data_tools.core import settings
-from data_tools.parser.manifest import ManifestLoader
-from data_tools.parser.table_schema import TableSchema
+# from intugle.mcp.manifest import manifest_loader
+from intugle.core import settings
+from intugle.parser.manifest import ManifestLoader
+from intugle.parser.table_schema import TableSchema
 
 
 class SemanticLayerService:

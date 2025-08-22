@@ -22,7 +22,7 @@ import pandas as pd
 # from legoai.datatype_identification.global_state import set_first, reset_first
 # from legoai.datatype_identification.helpers import literal_eval_as_str, keys_to_csv
 # from pyarrow.parquet import ParquetFile
-from data_tools.core.settings import settings
+from intugle.core.settings import settings
 
 log = logging.getLogger(__name__)
 

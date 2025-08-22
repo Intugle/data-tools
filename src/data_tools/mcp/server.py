@@ -7,9 +7,9 @@ import uvicorn
 from starlette.applications import Starlette
 from starlette.routing import Mount
 
-from data_tools.core.settings import settings
-from data_tools.mcp.adapter.router import adapter_mcp
-from data_tools.mcp.semantic_layer.router import semantic_layer_mcp
+from intugle.core.settings import settings
+from intugle.mcp.adapter.router import adapter_mcp
+from intugle.mcp.semantic_layer.router import semantic_layer_mcp
 
 log = getLogger(__name__)
 

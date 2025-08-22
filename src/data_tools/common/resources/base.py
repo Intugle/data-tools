@@ -4,7 +4,7 @@ from typing import List, Optional
 
 from pydantic import Field
 
-from data_tools.common.schema import NodeType, SchemaBase
+from intugle.common.schema import NodeType, SchemaBase
 
 
 class BaseResource(SchemaBase):

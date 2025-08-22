@@ -6,8 +6,8 @@ import pandas as pd
 from langchain.output_parsers import RetryOutputParser
 from langchain_core.prompt_values import StringPromptValue
 
-from data_tools.core import settings
-from data_tools.core.utilities.processing import preprocess_profiling_data
+from intugle.core import settings
+from intugle.core.utilities.processing import preprocess_profiling_data
 
 log = logging.getLogger(__name__)
 

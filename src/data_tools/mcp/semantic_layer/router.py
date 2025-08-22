@@ -1,9 +1,9 @@
 from mcp.server.fastmcp import FastMCP
 
-from data_tools.core.settings import settings
-from data_tools.mcp.adapter.service import adapter_service
-from data_tools.mcp.semantic_layer.prompt import Prompts
-from data_tools.mcp.semantic_layer.service import semantic_layer_service
+from intugle.core.settings import settings
+from intugle.mcp.adapter.service import adapter_service
+from intugle.mcp.semantic_layer.prompt import Prompts
+from intugle.mcp.semantic_layer.service import semantic_layer_service
 
 semantic_layer_mcp = FastMCP(
     name=settings.MCP_SERVER_NAME,

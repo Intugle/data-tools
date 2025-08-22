@@ -1,5 +1,5 @@
-from data_tools.adapters.types.duckdb.models import DuckdbConfig
-from data_tools.analysis.models import DataSet
+from intugle.adapters.types.duckdb.models import DuckdbConfig
+from intugle.analysis.models import DataSet
 
 
 def test_business_glossary_generator():
@@ -8,7 +8,7 @@ def test_business_glossary_generator():
     """
     # 1. Prepare dummy data
     data = DuckdbConfig.model_validate({
-        "path": "/home/juhel-phanju/Documents/intugle/projects/data-tools/data-tools/sample_data/healthcare/allergies.csv",  # noqa: E501
+        "path": "/home/juhel-phanju/Documents/intugle/projects/intugle/intugle/sample_data/healthcare/allergies.csv",  # noqa: E501
         "type": "csv"
     })
     table_name = "allergies"

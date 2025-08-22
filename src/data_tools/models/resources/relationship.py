@@ -1,9 +1,9 @@
 from enum import StrEnum
 from typing import Optional
 
-from data_tools.common.resources.base import BaseResource
-from data_tools.common.schema import NodeType, SchemaBase
-from data_tools.libs.smart_query_generator.models.models import LinkModel
+from intugle.common.resources.base import BaseResource
+from intugle.common.schema import NodeType, SchemaBase
+from intugle.libs.smart_query_generator.models.models import LinkModel
 
 
 class RelationshipTable(SchemaBase):

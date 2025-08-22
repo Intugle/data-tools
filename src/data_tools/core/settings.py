@@ -8,7 +8,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from data_tools.core.utilities.configs import load_model_configuration
+from intugle.core.utilities.configs import load_model_configuration
 
 load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 
@@ -32,7 +32,7 @@ class Settings(BaseSettings):
 
     PROJECT_BASE: str = str(Path(os.getenv("VSCODE_WORKSPACE", os.getcwd())))
 
-    MCP_SERVER_NAME: str = "data-tools"
+    MCP_SERVER_NAME: str = "intugle"
     MCP_SERVER_DESCRIPTION: str = "Data Tools for MCP"
     MCP_SERVER_VERSION: str = "1.0.0"
     MCP_SERVER_AUTHOR: str = "Intugle"

@@ -6,13 +6,13 @@ import numpy as np
 import pandas as pd
 import pandas.api.types as ptypes
 
-from data_tools.adapters.adapter import Adapter
-from data_tools.adapters.factory import AdapterFactory
-from data_tools.adapters.models import (
+from intugle.adapters.adapter import Adapter
+from intugle.adapters.factory import AdapterFactory
+from intugle.adapters.models import (
     ColumnProfile,
     ProfilingOutput,
 )
-from data_tools.core.utilities.processing import string_standardization
+from intugle.core.utilities.processing import string_standardization
 
 from .utils import convert_to_native
 

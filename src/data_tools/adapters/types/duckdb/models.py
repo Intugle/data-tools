@@ -1,4 +1,4 @@
-from data_tools.common.schema import SchemaBase
+from intugle.common.schema import SchemaBase
 
 
 class DuckdbConfig(SchemaBase): 

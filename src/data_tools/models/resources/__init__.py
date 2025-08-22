@@ -1,7 +1,7 @@
-from data_tools.common.resources.base import BaseResource
-from data_tools.models.resources.model import Model
-from data_tools.models.resources.relationship import Relationship
-from data_tools.models.resources.source import Source
+from intugle.common.resources.base import BaseResource
+from intugle.models.resources.model import Model
+from intugle.models.resources.relationship import Relationship
+from intugle.models.resources.source import Source
 
 
 class Resource:

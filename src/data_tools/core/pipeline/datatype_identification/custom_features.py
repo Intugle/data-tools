@@ -16,8 +16,8 @@ from functional import pseq
 from nltk.corpus import words
 from trieregex import TrieRegEx as TRE
 
-from data_tools.core.settings import settings
-from data_tools.core.utilities.processing import compute_stats
+from intugle.core.settings import settings
+from intugle.core.utilities.processing import compute_stats
 
 from .initialize import di_initalizer
 

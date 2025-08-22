@@ -4,7 +4,7 @@ import re
 import numpy as np
 import pandas as pd
 
-from data_tools.core import settings
+from intugle.core import settings
 
 log = logging.getLogger(__name__)
 

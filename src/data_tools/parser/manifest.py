@@ -6,11 +6,11 @@ import yaml
 
 from pydantic import ValidationError
 
-from data_tools.common.exception import errors
-from data_tools.common.resources.base import BaseResource
-from data_tools.models.manifest import Manifest
-from data_tools.models.resources import Resource
-from data_tools.models.resources.source import Source, SourceTables
+from intugle.common.exception import errors
+from intugle.common.resources.base import BaseResource
+from intugle.models.manifest import Manifest
+from intugle.models.resources import Resource
+from intugle.models.resources.source import Source, SourceTables
 
 
 class FileReaderFromFileSystem:

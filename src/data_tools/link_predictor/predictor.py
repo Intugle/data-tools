@@ -8,19 +8,19 @@ from typing import Any, Dict, List, Self
 import pandas as pd
 import yaml
 
-from data_tools.analysis.models import DataSet
-from data_tools.analysis.pipeline import Pipeline
-from data_tools.analysis.steps import (
+from intugle.analysis.models import DataSet
+from intugle.analysis.pipeline import Pipeline
+from intugle.analysis.steps import (
     ColumnProfiler,
     DataTypeIdentifierL1,
     DataTypeIdentifierL2,
     KeyIdentifier,
     TableProfiler,
 )
-from data_tools.core import settings
-from data_tools.core.pipeline.link_prediction.lp import LinkPredictionAgentic
-from data_tools.libs.smart_query_generator.utils.join import Join
-from data_tools.models.resources.relationship import (
+from intugle.core import settings
+from intugle.core.pipeline.link_prediction.lp import LinkPredictionAgentic
+from intugle.libs.smart_query_generator.utils.join import Join
+from intugle.models.resources.relationship import (
     Relationship,
     RelationshipTable,
     RelationshipType,

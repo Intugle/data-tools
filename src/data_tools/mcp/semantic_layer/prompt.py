@@ -1,6 +1,6 @@
 import textwrap
 
-from data_tools.mcp.semantic_layer.schema import SQLDialect
+from intugle.mcp.semantic_layer.schema import SQLDialect
 
 
 class Prompts:

@@ -10,7 +10,7 @@ import nltk
 
 from nltk.corpus import stopwords
 
-from data_tools.core.settings import settings
+from intugle.core.settings import settings
 
 log = logging.getLogger(__name__)
 

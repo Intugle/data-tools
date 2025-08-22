@@ -1,14 +1,14 @@
 import pytest
 
-from data_tools.core.settings import settings
-from data_tools.libs.smart_query_generator.models.models import (
+from intugle.core.settings import settings
+from intugle.libs.smart_query_generator.models.models import (
     ETLModel,
     FieldsModel,
     FilterModel,
     SelectionModel,
     SortByModel,
 )
-from data_tools.sql_generator import SqlGenerator
+from intugle.sql_generator import SqlGenerator
 
 # PROJECT_BASE = "/home/juhel-phanju/Documents/backup/MIGRATION/codes/poc/dbt/ecom/ecom/models"
 
