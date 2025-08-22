@@ -11,7 +11,7 @@
 
 ## Overview
 
-Data-Tools is a Python library that helps you automatically build a semantic layer over your data. It streamlines the process of data profiling, discovering relationships between tables, and generating a business-friendly representation of your data. This makes it easier for both data and business teams to understand and query data without needing to be SQL experts.
+Intugle's Data-Tools is a GenAI-powered Python library that simplifies and accelerates the journey from raw data to insights. It empowers data and business teams to build an intelligent semantic layer over their data, enabling self-serve analytics and natural language queries. By automating data profiling, link prediction, and SQL generation, Data-Tools helps you build data products faster and more efficiently than traditional methods.
 
 ## Who is this for?
 
@@ -25,18 +25,12 @@ This tool is designed for both **data teams** and **business teams**.
 *   **Automated Data Profiling:** Generate detailed statistics for each column in your dataset, including distinct count, uniqueness, completeness, and more.
 *   **Datatype Identification:** Automatically identify the data type of each column (e.g., integer, string, datetime).
 *   **Key Identification:** Identify potential primary keys in your tables.
-*   **LLM-Powered Link Prediction:** Use a Large Language Model (LLM) to automatically discover relationships (foreign keys) between tables.
-*   **Business Glossary Generation:** Generate a business glossary for each column using an LLM, with support for industry-specific domains.
-*   **Semantic Layer Generation:** Create a `manifest.json` file that defines your semantic layer, including models (tables) and their relationships.
+*   **LLM-Powered Link Prediction:** Use GenAI to automatically discover relationships (foreign keys) between tables.
+*   **Business Glossary Generation:** Generate a business glossary for each column, with support for industry-specific domains.
+*   **Semantic Layer Generation:** Create YAML files that defines your semantic layer, including models (tables) and their relationships.
 *   **SQL Generation:** Generate SQL queries from the semantic layer, allowing you to query your data using business-friendly terms.
-*   **Extensible and Configurable:** Configure the tool to work with your specific environment and data sources.
 
 ## Getting Started
-
-### Prerequisites
-
-*   Python 3.10+
-*   pip
 
 ### Installation
 
@@ -46,7 +40,7 @@ pip install data-tools
 
 ### Configuration
 
-Before running the project, you need to configure a Large Language Model (LLM). This is used for tasks like generating business glossaries and predicting links between tables.
+Before running the project, you need to configure a LLM. This is used for tasks like generating business glossaries and predicting links between tables.
 
 You can configure the LLM by setting the following environment variables:
 
@@ -68,14 +62,48 @@ For a detailed, hands-on introduction to the project, please see the [`quickstar
 
 The core workflow of the project involves the following steps:
 
-1.  **Load your data:** Load your data into pandas DataFrames.
-2.  **Create `DataSet` objects:** Create a `DataSet` object for each of your tables.
-3.  **Run the analysis pipeline:** Use the `run()` method to profile your data and generate a business glossary.
-4.  **Predict links:** Use the `LinkPredictor` to discover relationships between your tables.
-5.  **Generate the manifest:** Save the profiling and link prediction results to YAML files and then load them to create a `manifest.json` file.
-6.  **Generate SQL:** Use the `SqlGenerator` to generate SQL queries from the semantic layer.
+1.  **Load your data:** Load your data into a DataSet object.
+2.  **Run the analysis pipeline:** Use the `run()` method to profile your data and generate a business glossary.
+3.  **Predict links:** Use the `LinkPredictor` to discover relationships between your tables.
 
-For detailed code examples, please refer to the [`quickstart.ipynb`](quickstart.ipynb) notebook.
+    ```python
+    from data_tools import LinkPredictor
+
+    # Initialize the predictor
+    predictor = LinkPredictor(datasets)
+
+    # Run the prediction
+    results = predictor.predict()
+    results.show_graph()
+    ```
+
+5.  **Generate SQL:** Use the `SqlGenerator` to generate SQL queries from the semantic layer.
+
+    ```python
+    from data_tools import SqlGenerator
+
+    # Create a SqlGenerator
+    sql_generator = SqlGenerator()
+
+    # Create an ETL model
+    etl = {
+        name": "test_etl",
+        fields": [
+           {"id": "patients.first", "name": "first_name"},
+           {"id": "patients.last", "name": "last_name"},
+           {"id": "allergies.start", "name": "start_date"},
+        ,
+        filter": {
+           "selections": [{"id": "claims.departmentid", "values": ["3", "20"]}],
+        ,
+    }
+
+    # Generate the query
+    sql_query = sql_generator.generate_query(etl_model)
+    print(sql_query)
+    ```
+
+For detailed code examples and a complete walkthrough, please refer to the [`quickstart.ipynb`](quickstart.ipynb) notebook.
 
 ## Contributing
 
