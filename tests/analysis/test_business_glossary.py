@@ -1,9 +1,9 @@
 import pandas as pd
 
-from data_tools.adapters.models import BusinessGlossaryOutput, ColumnGlossary
-from data_tools.analysis.models import DataSet
-from data_tools.analysis.pipeline import Pipeline
-from data_tools.analysis.steps import (
+from intugle.adapters.models import BusinessGlossaryOutput, ColumnGlossary
+from intugle.analysis.models import DataSet
+from intugle.analysis.pipeline import Pipeline
+from intugle.analysis.steps import (
     BusinessGlossaryGenerator,
     ColumnProfiler,
     DataTypeIdentifierL1,

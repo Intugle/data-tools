@@ -1,8 +1,8 @@
 
 import pandas as pd
 
-from data_tools.analysis.pipeline import Pipeline
-from data_tools.analysis.steps import (
+from intugle.analysis.pipeline import Pipeline
+from intugle.analysis.steps import (
     ColumnProfiler,
     DataTypeIdentifierL1,
     DataTypeIdentifierL2,

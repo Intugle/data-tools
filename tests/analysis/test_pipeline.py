@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 
-from data_tools.analysis.pipeline import Pipeline
-from data_tools.analysis.steps import ColumnProfiler, TableProfiler
+from intugle.analysis.pipeline import Pipeline
+from intugle.analysis.steps import ColumnProfiler, TableProfiler
 
 # --- Test Data ---
 # A more complex and realistic DataFrame for testing.

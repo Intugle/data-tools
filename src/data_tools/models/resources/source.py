@@ -2,9 +2,9 @@ from typing import List, Optional
 
 from pydantic import Field
 
-from data_tools.common.resources.base import BaseResource
-from data_tools.common.schema import NodeType, SchemaBase
-from data_tools.models.resources.model import Column, ModelProfilingMetrics
+from intugle.common.resources.base import BaseResource
+from intugle.common.schema import NodeType, SchemaBase
+from intugle.models.resources.model import Column, ModelProfilingMetrics
 
 
 class SourceTables(SchemaBase):

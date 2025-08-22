@@ -7,8 +7,8 @@ from typing import Any, Dict, Optional, Self
 import pandas as pd
 import yaml
 
-from data_tools.adapters.factory import AdapterFactory
-from data_tools.adapters.models import (
+from intugle.adapters.factory import AdapterFactory
+from intugle.adapters.models import (
     BusinessGlossaryOutput,
     ColumnGlossary,
     ColumnProfile,
@@ -18,14 +18,14 @@ from data_tools.adapters.models import (
     KeyIdentificationOutput,
     ProfilingOutput,
 )
-from data_tools.common.exception import errors
-from data_tools.core import settings
-from data_tools.core.pipeline.business_glossary.bg import BusinessGlossary
-from data_tools.core.pipeline.datatype_identification.l2_model import L2Model
-from data_tools.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
-from data_tools.core.pipeline.key_identification.ki import KeyIdentificationLLM
-from data_tools.models.resources.model import Column, ColumnProfilingMetrics
-from data_tools.models.resources.source import Source, SourceTables
+from intugle.common.exception import errors
+from intugle.core import settings
+from intugle.core.pipeline.business_glossary.bg import BusinessGlossary
+from intugle.core.pipeline.datatype_identification.l2_model import L2Model
+from intugle.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
+from intugle.core.pipeline.key_identification.ki import KeyIdentificationLLM
+from intugle.models.resources.model import Column, ColumnProfilingMetrics
+from intugle.models.resources.source import Source, SourceTables
 
 # FIXME add type
 DataSetData = pd.DataFrame

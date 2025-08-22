@@ -11,16 +11,16 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 from tqdm import tqdm
 
-from data_tools.analysis.models import DataSet
-from data_tools.core import settings
-from data_tools.core.llms.chat import ChatModelLLM
-from data_tools.core.pipeline.link_prediction.utils import (
+from intugle.analysis.models import DataSet
+from intugle.core import settings
+from intugle.core.llms.chat import ChatModelLLM
+from intugle.core.pipeline.link_prediction.utils import (
     dtype_check,
     extract_innermost_dict,
     linkage,
     preprocess_profiling_df,
 )
-from data_tools.core.utilities.llm_utils import (
+from intugle.core.utilities.llm_utils import (
     generate_create_table_query,
     read_column_datatypes,
 )

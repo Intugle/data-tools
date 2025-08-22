@@ -2,7 +2,7 @@ import logging
 
 import pandas as pd
 
-from data_tools.core.settings import settings
+from intugle.core.settings import settings
 
 from .feature_creation import DIFeatureCreation
 from .initialize import di_initalizer

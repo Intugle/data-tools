@@ -1,13 +1,13 @@
 from typing import TYPE_CHECKING
 
-from data_tools.core import settings
-from data_tools.libs.smart_query_generator import SmartQueryGenerator
-from data_tools.libs.smart_query_generator.models.models import ETLModel, FieldDetailsModel, LinkModel
-from data_tools.libs.smart_query_generator.utils.join import Join
-from data_tools.parser.manifest import ManifestLoader
+from intugle.core import settings
+from intugle.libs.smart_query_generator import SmartQueryGenerator
+from intugle.libs.smart_query_generator.models.models import ETLModel, FieldDetailsModel, LinkModel
+from intugle.libs.smart_query_generator.utils.join import Join
+from intugle.parser.manifest import ManifestLoader
 
 if TYPE_CHECKING:
-    from data_tools.models.resources.model import Column
+    from intugle.models.resources.model import Column
 
 
 class SqlGenerator:

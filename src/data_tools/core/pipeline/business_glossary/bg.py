@@ -9,9 +9,9 @@ import pandas as pd
 from langchain_core.prompts import PromptTemplate
 from tqdm import tqdm
 
-from data_tools.core import settings
-from data_tools.core.llms.chat import ChatModelLLM
-from data_tools.core.utilities.llm_utils import generate_create_table_query, read_column_datatypes
+from intugle.core import settings
+from intugle.core.llms.chat import ChatModelLLM
+from intugle.core.utilities.llm_utils import generate_create_table_query, read_column_datatypes
 
 from .prompts import (
     BUSINESS_GLOSSARY_PROMPTS,

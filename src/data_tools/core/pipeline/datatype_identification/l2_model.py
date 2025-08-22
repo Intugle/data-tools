@@ -11,9 +11,9 @@ import pandas as pd
 from langchain.output_parsers import ResponseSchema
 from tqdm.auto import tqdm
 
-from data_tools.core.llms.chat import ChatModelLLM
-from data_tools.core.settings import settings
-from data_tools.core.utilities.processing import adjust_sample
+from intugle.core.llms.chat import ChatModelLLM
+from intugle.core.settings import settings
+from intugle.core.utilities.processing import adjust_sample
 
 log = logging.getLogger(__name__)
 

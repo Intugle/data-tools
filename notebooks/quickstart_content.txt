@@ -3,7 +3,7 @@ type: markdown
 ---
 # Quickstart: Building a Semantic Layer with Data-Tools
 
-This notebook provides a quick introduction to the `data-tools` project. You'll learn how to use its key features to automatically build a semantic layer over your data.
+This notebook provides a quick introduction to the `intugle` project. You'll learn how to use its key features to automatically build a semantic layer over your data.
 
 **What is a Semantic Layer?**
 
@@ -67,12 +67,12 @@ type: markdown
 ---
 ## 3. Data Profiling
 
-The first step in building a semantic layer is to profile your data. This involves analyzing your data sources to understand their structure, data types, and other characteristics. The `data-tools` project provides a pipeline for this purpose.
+The first step in building a semantic layer is to profile your data. This involves analyzing your data sources to understand their structure, data types, and other characteristics. The `intugle` project provides a pipeline for this purpose.
 ---
 type: code
 ---
 import pandas as pd
-from data_tools.analysis.models import DataSet
+from intugle.analysis.models import DataSet
 ---
 type: code
 ---
@@ -109,7 +109,7 @@ type: markdown
 ---
 ## 4. Automated Link Prediction
 
-Now that we've profiled our data, let's discover the relationships between tables. The `data-tools` project uses a Large Language Model (LLM) to predict links (foreign keys) between tables.
+Now that we've profiled our data, let's discover the relationships between tables. The `intugle` project uses a Large Language Model (LLM) to predict links (foreign keys) between tables.
 
 First, we'll load a few more tables from the sample dataset.
 ---
@@ -130,7 +130,7 @@ Now, let's run the link prediction pipeline.
 ---
 type: code
 ---
-from data_tools.link_predictor import LinkPredictor
+from intugle.link_predictor import LinkPredictor
 
 # Initialize the predictor
 predictor = LinkPredictor(datasets)
@@ -168,7 +168,7 @@ Now, we can load the YAML files and create a manifest.
 ---
 type: code
 ---
-from data_tools.parser.manifest import ManifestLoader
+from intugle.parser.manifest import ManifestLoader
 
 # Load the manifest
 manifest_loader = ManifestLoader('.')
@@ -188,7 +188,7 @@ Let's create an ETL model to define the query we want to generate.
 ---
 type: code
 ---
-from data_tools.libs.smart_query_generator.models.models import ETLModel, FieldModel
+from intugle.libs.smart_query_generator.models.models import ETLModel, FieldModel
 
 # Create an ETL model
 etl_model = ETLModel(
@@ -205,7 +205,7 @@ Now, let's use the `SqlGenerator` to generate the SQL query.
 ---
 type: code
 ---
-from data_tools.sql_generator import SqlGenerator
+from intugle.sql_generator import SqlGenerator
 
 # Create a SqlGenerator
 sql_generator = SqlGenerator('.')
@@ -220,7 +220,7 @@ type: markdown
 ---
 ## Conclusion
 
-This notebook has provided a brief overview of the `data-tools` project. You've learned how to:
+This notebook has provided a brief overview of the `intugle` project. You've learned how to:
 
 * Configure your LLM provider.
 * Profile your data to understand its characteristics.
@@ -228,4 +228,4 @@ This notebook has provided a brief overview of the `data-tools` project. You've 
 * Generate a semantic layer (`manifest.json`).
 * Use the semantic layer to generate SQL queries.
 
-This is just a starting point. The `data-tools` project has many other features to explore. We encourage you to try it with your own data and see how it can help you build a powerful semantic layer.
+This is just a starting point. The `intugle` project has many other features to explore. We encourage you to try it with your own data and see how it can help you build a powerful semantic layer.

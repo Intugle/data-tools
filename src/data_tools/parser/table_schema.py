@@ -1,5 +1,5 @@
-from data_tools.common.exception import errors
-from data_tools.models.manifest import Manifest
+from intugle.common.exception import errors
+from intugle.models.manifest import Manifest
 
 
 class TableSchema:

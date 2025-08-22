@@ -5,9 +5,9 @@ from unittest.mock import patch
 import pandas as pd
 import pytest
 
-from data_tools.analysis.models import DataSet
-from data_tools.link_predictor.models import PredictedLink
-from data_tools.link_predictor.predictor import LinkPredictor
+from intugle.analysis.models import DataSet
+from intugle.link_predictor.models import PredictedLink
+from intugle.link_predictor.predictor import LinkPredictor
 
 logging.basicConfig(level=logging.INFO)
 
@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO)
 def mock_predict_for_pair():
     """Mocks the _predict_for_pair method to avoid running actual prediction logic."""
     with patch(
-        "data_tools.link_predictor.predictor.LinkPredictor._predict_for_pair",
+        "intugle.link_predictor.predictor.LinkPredictor._predict_for_pair",
         return_value=[
             PredictedLink(
                 from_dataset="customers",

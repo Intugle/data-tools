@@ -4,7 +4,7 @@ from typing import Callable, Optional
 
 from pydantic import TypeAdapter
 
-from data_tools.libs.query_generator import QueryGenerator, QueryGeneratorModel
+from intugle.libs.query_generator import QueryGenerator, QueryGeneratorModel
 
 from .custom_data_types.OrderedSet import OrderedSet
 from .models.models import (

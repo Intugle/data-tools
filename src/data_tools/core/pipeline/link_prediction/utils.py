@@ -6,8 +6,8 @@ import pandas as pd
 
 from pydantic import BaseModel, Field
 
-from data_tools.core import settings
-from data_tools.core.utilities.processing import classify_datetime_format, preprocess_profiling_data
+from intugle.core import settings
+from intugle.core.utilities.processing import classify_datetime_format, preprocess_profiling_data
 
 log = logging.getLogger(__name__)
 

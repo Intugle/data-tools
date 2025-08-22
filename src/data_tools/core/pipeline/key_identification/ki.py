@@ -7,8 +7,8 @@ from langchain.output_parsers import ResponseSchema
 from langchain_core.prompts import PromptTemplate
 from tqdm import tqdm
 
-from data_tools.core.llms.chat import ChatModelLLM
-from data_tools.core.settings import settings
+from intugle.core.llms.chat import ChatModelLLM
+from intugle.core.settings import settings
 
 log = logging.getLogger(__name__)
 

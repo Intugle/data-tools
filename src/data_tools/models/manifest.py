@@ -1,9 +1,9 @@
 from pydantic import Field
 
-from data_tools.common.schema import SchemaBase
-from data_tools.models.resources.model import Model
-from data_tools.models.resources.relationship import Relationship
-from data_tools.models.resources.source import Source
+from intugle.common.schema import SchemaBase
+from intugle.models.resources.model import Model
+from intugle.models.resources.relationship import Relationship
+from intugle.models.resources.source import Source
 
 
 class Manifest(SchemaBase):

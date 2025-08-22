@@ -13,8 +13,8 @@ from datetime import datetime
 import nltk
 import numpy as np
 
-from data_tools.core.settings import settings
-from data_tools.core.utilities.processing import compute_stats
+from intugle.core.settings import settings
+from intugle.core.utilities.processing import compute_stats
 
 from .global_state import is_first
 

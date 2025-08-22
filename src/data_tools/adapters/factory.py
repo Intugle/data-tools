@@ -19,8 +19,8 @@ def import_module(name: str) -> ModuleInterface:
 
 
 DEFAULT_PLUGINS = [
-    "data_tools.adapters.types.pandas.pandas",
-    "data_tools.adapters.types.duckdb.duckdb",
+    "intugle.adapters.types.pandas.pandas",
+    "intugle.adapters.types.duckdb.duckdb",
 ]
 
 

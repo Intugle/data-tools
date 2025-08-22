@@ -1,5 +1,5 @@
-from data_tools.core import settings
-from data_tools.parser.manifest import ManifestLoader
+from intugle.core import settings
+from intugle.parser.manifest import ManifestLoader
 
 
 def test_manifet():

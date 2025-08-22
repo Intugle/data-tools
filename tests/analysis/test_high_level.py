@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from data_tools.analysis.models import DataSet
+from intugle.analysis.models import DataSet
 
 
 @pytest.fixture

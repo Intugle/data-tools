@@ -1,5 +1,5 @@
 
-from data_tools.common.resources.base import BaseResource
+from intugle.common.resources.base import BaseResource
 
 
 class Fewshot(BaseResource): ...

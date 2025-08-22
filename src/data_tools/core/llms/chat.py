@@ -7,7 +7,7 @@ from langchain.output_parsers import ResponseSchema, StructuredOutputParser
 from langchain.prompts import BaseChatPromptTemplate, ChatPromptTemplate
 from langchain_core.rate_limiters import InMemoryRateLimiter
 
-from data_tools.core import settings
+from intugle.core import settings
 
 log = logging.getLogger(__name__)
 

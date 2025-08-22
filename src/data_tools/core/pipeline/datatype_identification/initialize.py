@@ -1,7 +1,7 @@
 import logging
 import os
 
-from data_tools.core import settings
+from intugle.core import settings
 
 log = logging.getLogger(__name__)
 

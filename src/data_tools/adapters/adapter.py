@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Any
 
-from data_tools.adapters.models import (
+from intugle.adapters.models import (
     ColumnProfile,
     ProfilingOutput,
 )

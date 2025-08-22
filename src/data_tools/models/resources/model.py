@@ -2,8 +2,8 @@ from typing import Any, List, Literal, Optional
 
 from pydantic import Field, field_validator
 
-from data_tools.common.resources.base import BaseResource
-from data_tools.common.schema import NodeType, SchemaBase
+from intugle.common.resources.base import BaseResource
+from intugle.common.schema import NodeType, SchemaBase
 
 
 class ColumnProfilingMetrics(SchemaBase):

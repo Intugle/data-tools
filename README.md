@@ -35,7 +35,7 @@ This tool is designed for both **data teams** and **business teams**.
 ### Installation
 
 ```bash
-pip install data-tools
+pip install intugle
 ```
 
 ### Configuration
@@ -67,7 +67,7 @@ The core workflow of the project involves the following steps:
 3.  **Predict links:** Use the `LinkPredictor` to discover relationships between your tables.
 
     ```python
-    from data_tools import LinkPredictor
+    from intugle import LinkPredictor
 
     # Initialize the predictor
     predictor = LinkPredictor(datasets)
@@ -80,7 +80,7 @@ The core workflow of the project involves the following steps:
 5.  **Generate SQL:** Use the `SqlGenerator` to generate SQL queries from the semantic layer.
 
     ```python
-    from data_tools import SqlGenerator
+    from intugle import SqlGenerator
 
     # Create a SqlGenerator
     sql_generator = SqlGenerator()

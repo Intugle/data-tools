@@ -1,7 +1,7 @@
-from data_tools.core.settings import settings
-from data_tools.mcp.adapter.psql import PsqlPool
+from intugle.core.settings import settings
+from intugle.mcp.adapter.psql import PsqlPool
 
-# from data_tools.parser.manifest import ManifestLoader
+# from intugle.parser.manifest import ManifestLoader
 
 
 class AdapterService:

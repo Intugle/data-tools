@@ -11,7 +11,7 @@ import pandas as pd
 from functional import pseq
 from tqdm.auto import tqdm
 
-from data_tools.core.settings import settings
+from intugle.core.settings import settings
 
 from .functional import extract_features
 from .preprocessing import (

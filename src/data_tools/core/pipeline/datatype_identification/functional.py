@@ -12,7 +12,7 @@ from datetime import datetime
 from functional import pseq
 from symspellpy.symspellpy import SymSpell
 
-from data_tools.core.settings import settings
+from intugle.core.settings import settings
 
 from .bag_of_words import (
     extract_bag_of_words_features,

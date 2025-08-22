@@ -1,7 +1,7 @@
 from mcp.server.fastmcp import FastMCP
 
-from data_tools.core.settings import settings
-from data_tools.mcp.adapter.service import adapter_service
+from intugle.core.settings import settings
+from intugle.mcp.adapter.service import adapter_service
 
 adapter_mcp = FastMCP(
     name=settings.MCP_SERVER_NAME,
