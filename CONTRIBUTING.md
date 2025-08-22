@@ -10,11 +10,11 @@ There are many ways to contribute, from writing tutorials or blog posts, improvi
 
 ### Reporting Bugs
 
-If you find a bug, please open an issue on our [GitHub repository](https://github.com/Intugle/intugle/issues). Please include a clear and concise description of the bug, as well as steps to reproduce it.
+If you find a bug, please open an issue on our [GitHub repository](https://github.com/Intugle/data-tools/issues). Please include a clear and concise description of the bug, as well as steps to reproduce it.
 
 ### Submitting Feature Requests
 
-If you have an idea for a new feature, please open an issue on our [GitHub repository](https://github.com/Intugle/intugle/issues). Please include a clear and concise description of the feature, as well as a justification for why it would be a good addition to the project.
+If you have an idea for a new feature, please open an issue on our [GitHub repository](https://github.com/Intugle/data-tools/issues). Please include a clear and concise description of the feature, as well as a justification for why it would be a good addition to the project.
 
 ### Writing Code
 
@@ -66,7 +66,7 @@ If you want to contribute code to the project, please follow the steps below.
     git push origin my-new-feature
     ```
 
-6.  Open a pull request on the [Intugle repository](https://github.com/Intugle/intugle/pulls).
+6.  Open a pull request on the [Intugle repository](https://github.com/Intugle/data-tools/pulls).
 
 ## Coding Style
 
