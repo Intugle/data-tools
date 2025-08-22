@@ -1,142 +1,114 @@
-# Data Tools: Automated Data Understanding and Integration
+# Data-Tools
 
-Data Tools is a Python library designed to automate the complex process of understanding and connecting siloed datasets. In modern data environments, tables are often disconnected and poorly documented. This library tackles that challenge head-on by providing two primary capabilities:
+[![Release](https://img.shields.io/github/release/Intugle/data-tools)](https://github.com/Intugle/data-tools/releases/tag/v0.1.0)     
+[![Made with Python](https://img.shields.io/badge/Made_with-Python-blue?logo=python&logoColor=white)](https://www.python.org/)
+![contributions - welcome](https://img.shields.io/badge/contributions-welcome-blue)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Open Issues](https://img.shields.io/github/issues-raw/Intugle/data-tools)](https://github.com/Intugle/data-tools/issues)
+[![GitHub star chart](https://img.shields.io/github/stars/Intugle/data-tools?style=social)](https://github.com/Intugle/data-tools/stargazers)
 
-1.  **Automated Link Prediction**: Its flagship feature, the `LinkPredictor`, analyzes multiple datasets, identifies primary keys, and automatically predicts relationships (foreign key links) between them.
-2.  **In-Depth Data Profiling**: A flexible, multi-step analysis pipeline that creates a rich profile for each dataset, including data types, column statistics, and generating a business glossary.
+*Automated Data Profiling, Link Prediction, and Semantic Layer Generation*
 
-By combining these features, Data Tools helps you move from a collection of separate tables to a fully documented and interconnected data model, ready for integration or analysis.
+## Overview
 
-## Core Features
+Intugle's Data-Tools is a GenAI-powered Python library that simplifies and accelerates the journey from raw data to insights. It empowers data and business teams to build an intelligent semantic layer over their data, enabling self-serve analytics and natural language queries. By automating data profiling, link prediction, and SQL generation, Data-Tools helps you build data products faster and more efficiently than traditional methods.
 
-- **Automated Link Prediction**: Intelligently discovers potential foreign key relationships across multiple datasets.
-- **In-Depth Data Profiling**: A multi-step pipeline that identifies keys, profiles columns, and determines data types.
-- **Business Glossary Generation**: Automatically generates business-friendly descriptions and tags for columns and tables based on a provided domain.
-- **Extensible Pipeline Architecture**: Easily add custom analysis steps to the pipeline.
-- **DataFrame Agnostic**: Uses a factory pattern to seamlessly handle different dataframe types (e.g., pandas).
+## Who is this for?
 
-## Installation and Setup
+This tool is designed for both **data teams** and **business teams**.
+
+*   **Data teams** can use it to automate data profiling, schema discovery, and documentation, significantly accelerating their workflow.
+*   **Business teams** can use it to gain a better understanding of their data and to perform self-service analytics without needing to write complex SQL queries.
+
+## Features
+
+*   **Automated Data Profiling:** Generate detailed statistics for each column in your dataset, including distinct count, uniqueness, completeness, and more.
+*   **Datatype Identification:** Automatically identify the data type of each column (e.g., integer, string, datetime).
+*   **Key Identification:** Identify potential primary keys in your tables.
+*   **LLM-Powered Link Prediction:** Use GenAI to automatically discover relationships (foreign keys) between tables.
+*   **Business Glossary Generation:** Generate a business glossary for each column, with support for industry-specific domains.
+*   **Semantic Layer Generation:** Create YAML files that defines your semantic layer, including models (tables) and their relationships.
+*   **SQL Generation:** Generate SQL queries from the semantic layer, allowing you to query your data using business-friendly terms.
+
+## Getting Started
 
 ### Installation
 
-To install the library and its dependencies, run the following command:
+```bash
+pip install data-tools
+```
+
+### Configuration
+
+Before running the project, you need to configure a LLM. This is used for tasks like generating business glossaries and predicting links between tables.
+
+You can configure the LLM by setting the following environment variables:
+
+*   `LLM_PROVIDER`: The LLM provider and model to use (e.g., `openai:gpt-3.5-turbo`).
+*   `OPENAI_API_KEY`: Your API key for the LLM provider.
+
+Here's an example of how to set these variables in your environment:
 
 ```bash
-pip install data_tools
+export LLM_PROVIDER="openai:gpt-3.5-turbo"
+export OPENAI_API_KEY="your-openai-api-key"
 ```
 
-### LLM Configuration
+## Quickstart
 
-This library uses LLMs for features like Business Glossary Generation. It supports any LLM provider compatible with LangChain's `init_chat_model` function. To configure your LLM provider, you need to set environment variables.
+For a detailed, hands-on introduction to the project, please see the [`quickstart.ipynb`](notebooks/quickstart.ipynb) notebook. It will walk you through the entire process of profiling your data, predicting links, generating a semantic layer, and querying your data.
 
-The `LLM_CONFIG` environment variable should be set to your desired model, optionally including the provider, in the format `provider:model_name`. If the provider is omitted, it will try to infer the provider.
+## Usage
 
-**For OpenAI:**
+The core workflow of the project involves the following steps:
 
-```bash
-# Provider is optional
-export LLM_CONFIG="gpt-4"
-export OPENAI_API_KEY="your-super-secret-key"
-```
+1.  **Load your data:** Load your data into a DataSet object.
+2.  **Run the analysis pipeline:** Use the `run()` method to profile your data and generate a business glossary.
+3.  **Predict links:** Use the `LinkPredictor` to discover relationships between your tables.
 
-**For Google GenAI:**
+    ```python
+    from data_tools import LinkPredictor
 
-```bash
-export LLM_CONFIG="google_genai:gemini-pro"
-export GOOGLE_API_KEY="your-google-api-key"
-```
+    # Initialize the predictor
+    predictor = LinkPredictor(datasets)
 
+    # Run the prediction
+    results = predictor.predict()
+    results.show_graph()
+    ```
 
-## Usage Examples
+5.  **Generate SQL:** Use the `SqlGenerator` to generate SQL queries from the semantic layer.
 
-### Example 1: Automated Link Prediction (Primary Use Case)
+    ```python
+    from data_tools import SqlGenerator
 
-This is the most direct way to use the library. Provide a dictionary of named dataframes, and the `LinkPredictor` will automatically run all prerequisite analysis steps and predict the links.
+    # Create a SqlGenerator
+    sql_generator = SqlGenerator()
 
-```python
-import pandas as pd
-from data_tools.link_predictor.predictor import LinkPredictor
+    # Create an ETL model
+    etl = {
+        name": "test_etl",
+        fields": [
+           {"id": "patients.first", "name": "first_name"},
+           {"id": "patients.last", "name": "last_name"},
+           {"id": "allergies.start", "name": "start_date"},
+        ,
+        filter": {
+           "selections": [{"id": "claims.departmentid", "values": ["3", "20"]}],
+        ,
+    }
 
-# 1. Prepare your collection of dataframes
-customers_df = pd.DataFrame({"id": [1, 2, 3], "name": ["A", "B", "C"]})
-orders_df = pd.DataFrame({"order_id": [101, 102], "customer_id": [1, 3]})
+    # Generate the query
+    sql_query = sql_generator.generate_query(etl_model)
+    print(sql_query)
+    ```
 
-datasets = {
-    "customers": customers_df,
-    "orders": orders_df
-}
+For detailed code examples and a complete walkthrough, please refer to the [`quickstart.ipynb`](quickstart.ipynb) notebook.
 
-# 2. Initialize the predictor
-# This automatically runs profiling, key identification, etc., for you.
-link_predictor = LinkPredictor(datasets)
+## Contributing
 
-# 3. Predict the links
-# (This example assumes you have implemented the logic in _predict_for_pair)
-prediction_results = link_predictor.predict()
-
-# 4. Review the results
-print(prediction_results.model_dump_json(indent=2))
-```
-
-### Example 2: In-Depth Analysis with the Pipeline
-
-If you want to perform a deep analysis on a single dataset, you can use the pipeline directly. This gives you fine-grained control over the analysis steps.
-
-```python
-import pandas as pd
-from data_tools.analysis.pipeline import Pipeline
-from data_tools.analysis.steps import (
-    TableProfiler,
-    KeyIdentifier,
-    BusinessGlossaryGenerator
-)
-
-# 1. Define your analysis pipeline
-pipeline = Pipeline([
-    TableProfiler(),
-    KeyIdentifier(),
-    BusinessGlossaryGenerator(domain="e-commerce") # Provide context for the glossary
-])
-
-# 2. Prepare your dataframe
-products_df = pd.DataFrame({
-    "product_id": [10, 20, 30],
-    "name": ["Laptop", "Mouse", "Keyboard"],
-    "unit_price": [1200, 25, 75]
-})
-
-# 3. Run the pipeline
-# The pipeline creates and returns a DataSet object
-product_dataset = pipeline.run(df=products_df, name="products")
-
-# 4. Access the rich analysis results
-print(f"Identified Key: {product_dataset.results['key'].column_name}")
-print("\n--- Table Glossary ---")
-print(product_dataset.results['table_glossary'])
-```
-
-## Available Analysis Steps
-
-You can construct a custom `Pipeline` using any combination of the following steps:
-
-- `TableProfiler`: Gathers basic table-level statistics (row count, column names).
-- `ColumnProfiler`: Runs detailed profiling for each column (null counts, distinct counts, samples).
-- `DataTypeIdentifierL1` & `L2`: Determines the logical data type for each column through multiple levels of analysis.
-- `KeyIdentifier`: Analyzes the profiled data to predict the primary key of the dataset.
-- `BusinessGlossaryGenerator(domain: str)`: Generates business-friendly descriptions and tags for all columns and the table itself, using the provided `domain` for context.
-
-## Running Tests
-
-To run the test suite, first install the testing dependencies and then execute `pytest` via `uv`.
-
-```bash
-# Install testing library
-uv pip install pytest
-
-# Run tests
-uv run pytest
-```
+Contributions are welcome! Please see the [`CONTRIBUTING.md`](CONTRIBUTING.md) file for guidelines.
 
 ## License
 
-This project is licensed under the terms of the LICENSE file.
+This project is licensed under the MIT License. See the [`LICENSE`](LICENSE) file for details.

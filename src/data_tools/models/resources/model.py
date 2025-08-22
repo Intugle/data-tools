@@ -17,7 +17,7 @@ class Column(SchemaBase):
     name: str
     type: Optional[str] = None
     category: Literal["dimension", "measure"] = "dimension"
-    description: str
+    description: Optional[str] = None
     tags: Optional[List[str]] = Field(default_factory=list)
     profiling_metrics: Optional[ColumnProfilingMetrics] = None
 

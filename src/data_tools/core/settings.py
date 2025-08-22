@@ -30,7 +30,7 @@ class Settings(BaseSettings):
 
     DI_MODEL_VERSION: str = "13052023"
 
-    PROJECT_BASE: str
+    PROJECT_BASE: str = str(Path(os.getenv("VSCODE_WORKSPACE", os.getcwd())))
 
     MCP_SERVER_NAME: str = "data-tools"
     MCP_SERVER_DESCRIPTION: str = "Data Tools for MCP"

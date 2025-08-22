@@ -143,7 +143,7 @@ class LinkPredictor:
         ]
         return pair_links
 
-    def predict(self) -> Self:
+    def predict(self, filename='relationships.yml') -> Self:
         """
         Iterates through all unique pairs of datasets, predicts the links for
         each pair, and returns the aggregated results.
@@ -165,6 +165,7 @@ class LinkPredictor:
                 print("No links found for this pair.")
 
         self.links = all_links
+        self.save_yaml(file_path=filename)
         return self
     
     def get_links_df(self):
