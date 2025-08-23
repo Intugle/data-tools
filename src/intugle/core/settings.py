@@ -4,6 +4,7 @@ import os
 
 from functools import lru_cache
 from pathlib import Path
+from typing import Optional
 
 from dotenv import load_dotenv
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -85,12 +86,12 @@ class Settings(BaseSettings):
     REMOVE_DATETIME_LP: bool = True
 
     # Adapter
-    POSTGRES_USER: str
-    POSTGRES_PASSWORD: str
-    POSTGRES_HOST: str = "localhost"
-    POSTGRES_DB: str
+    POSTGRES_USER: Optional[str] = None
+    POSTGRES_PASSWORD: Optional[str] = None
+    POSTGRES_HOST: Optional[str] = "localhost"
+    POSTGRES_DB: Optional[str] = None
     POSTGRES_PORT: int = 5432
-    POSTGRES_SCHEMA: str = "public"
+    POSTGRES_SCHEMA: Optional[str] = "public"
 
 
 @lru_cache
