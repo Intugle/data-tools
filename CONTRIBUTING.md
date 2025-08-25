@@ -1,6 +1,6 @@
 # Contributing to Intugle
 
-First off, thank you for considering contributing to Intugle! It's people like you that make Intugle such a great tool.
+First off, thank you for considering contributing to Intugle! It's people like you that make it such a great tool.
 
 Intugle is an open source project and we love to receive contributions from our community — you!
 
