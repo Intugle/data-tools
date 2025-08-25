@@ -58,6 +58,9 @@ dependencies = [
 "Homepage" = "https://github.com/Intugle/data-tools"
 "Bug Tracker" = "https://github.com/Intugle/data-tools/issues"
 
+[project.scripts]
+intugle-mcp = "intugle.mcp.server:main"
+
 [dependency-groups]
 test = [
     "langchain-core>=0.3.74",
