@@ -36,7 +36,7 @@ app = Starlette(
 )
 
 
-if __name__ == "__main__":
+def main():
     log.info(f"[*] MCP server started at {settings.MCP_SERVER_HOST}:{settings.MCP_SERVER_PORT}")
     uvicorn.run(
         app,
@@ -45,3 +45,6 @@ if __name__ == "__main__":
         log_level=settings.MCP_SERVER_LOG_LEVEL,
         # reload=True,
     )
+
+if __name__ == "__main__":
+    main()

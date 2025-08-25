@@ -218,6 +218,40 @@ print(sql_query)
 ---
 type: markdown
 ---
+## 7. MCP Server: Interacting with Your Semantic Layer
+
+Now that you have a semantic layer, you can serve it as a MCP server to interact with it using natural language. The MCP server exposes your semantic layer as a set of tools that can be used by any MCP client.
+
+### Starting the MCP Server
+
+To start the MCP server, run the following command in your terminal:
+
+```bash
+intugle-mcp
+```
+
+This will start a server on `localhost:8000`.
+
+### Connecting to the MCP Server
+
+Once the server is running, you can connect to it from any MCP client. The endpoint for the MCP server is:
+
+`http://localhost:8000/semantic_layer/mcp`
+
+You can use a variety of MCP clients to connect to the server, such as Claude Desktop, Gemini CLI etc.
+
+### Use Cases
+
+Once connected, you can interact with your semantic layer using natural language. Here are some exciting applications:
+
+*   **Generate SQL Queries:** Ask questions in natural language and have the MCP server generate the corresponding SQL query.
+*   **Data Discovery:** Ask questions about the tables and columns in your semantic layer to better understand your data.
+
+> To execute the generated SQL queries, you can also connect your database instance as a MCP tool to your client.
+
+---
+type: markdown
+---
 ## Conclusion
 
 This notebook has provided a brief overview of the `intugle` project. You've learned how to:
@@ -227,5 +261,6 @@ This notebook has provided a brief overview of the `intugle` project. You've lea
 * Use an LLM to automatically predict links between tables.
 * Generate a semantic layer (`manifest.json`).
 * Use the semantic layer to generate SQL queries.
+* Interact with your semantic layer using the MCP server.
 
 This is just a starting point. The `intugle` project has many other features to explore. We encourage you to try it with your own data and see how it can help you build a powerful semantic layer.
