@@ -59,7 +59,7 @@ export OPENAI_API_KEY="your-openai-api-key"
 
 ## Quickstart
 
-For a detailed, hands-on introduction to the project, please see the [`quickstart.ipynb`](notebooks/quickstart.ipynb) notebook. It will walk you through the entire process of profiling your data, predicting links, generating a semantic layer, and querying your data.
+For a detailed, hands-on introduction to the project, please see the [`quickstart.ipynb`](quickstart.ipynb) notebook. It will walk you through the entire process of profiling your data, predicting links, generating a semantic layer, and querying your data.
 
 ## Usage
 
