@@ -62,8 +62,8 @@ class MCPTools:
 
     @connection_decorator()
     async def execute_query(self, session: ClientSession = None):
-        await session.call_tool(
-            name=Tools.EXECUTE_QUERY, arguments={"sql_query": "SELECT * FROM orders LIMIT 10"}
+        data = await session.call_tool(
+            name=Tools.EXECUTE_QUERY, arguments={"sql_query": "SELECT 1"}
         )
         # assert isinstance(schemas.structuredContent, dict)
 

@@ -1,7 +1,14 @@
 from enum import Enum
 from typing import Any, List, Optional
 
+import pandas as pd
+
 from pydantic import BaseModel, Field
+
+from intugle.adapters.types.duckdb.models import DuckdbConfig
+
+# FIXME load dynamically
+DataSetData = pd.DataFrame | DuckdbConfig
 
 
 class ProfilingOutput(BaseModel):

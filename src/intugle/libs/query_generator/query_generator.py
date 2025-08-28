@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 from .operators import Operators
 from .transformation import Transformations
-from .utils import get_formatted_dataset_field
+from .utils import get_formatted_dataset_field, get_formatted_name
 
 
 class QueryGeneratorModel(BaseModel):
@@ -53,7 +53,7 @@ class QueryGenerator:
 
                 renameCol = field.get("renameCol", None)
                 if renameCol:
-                    expr = f"{expr} as `{renameCol}`"
+                    expr = f"{expr} as {get_formatted_name(renameCol)}"
 
                 selectedFields.append(expr)
             selectedFieldsExpr = ", ".join(selectedFields)
@@ -70,7 +70,7 @@ class QueryGenerator:
         for _i in range(tbl_cnt):
             i = str(_i)
             if _i == 0:
-                join_query += f"`{joinFields[i]['dataset']}`"
+                join_query += f"{get_formatted_name(joinFields[i]['dataset'])}"
             else:
                 joining_cndns = []
                 for join_col in joinFields[i]["fields"]:
@@ -92,7 +92,7 @@ class QueryGenerator:
                     " "
                     + joinFields[i].get("join_type", "").upper()
                     + " JOIN "
-                    + f"`{joinFields[i]['dataset']}`"
+                    + f"{get_formatted_name(joinFields[i]['dataset'])}"
                     + " ON "
                     + str(joining_cndn)
                 )
@@ -132,7 +132,7 @@ class QueryGenerator:
                 # if _dataset is not None:
                 #     _dataset_field = get_formatted_dataset_field(_dataset, _field)
                 # else:
-                #     _dataset_field = f"`{_field}`"
+                #     _dataset_field = f"{_field}"
 
                 # _func = field.get("function", None)
                 # if _func is not None:
@@ -140,7 +140,7 @@ class QueryGenerator:
                 #     _dataset_field = f"{_func}({_dataset_field})"
                 renameCol = field.get("renameCol", None)
                 if renameCol is not None:
-                    _dataset_field = f"`{renameCol}`"
+                    _dataset_field = get_formatted_name(renameCol)
                 else:
                     _dataset_field = field["sql_code"]
                 groupbyCols.append(_dataset_field)
@@ -163,7 +163,7 @@ class QueryGenerator:
             for sortField in sortFields:
                 renameCol = sortField.get("renameCol", None)
                 if renameCol is not None:
-                    sortCol = f"`{renameCol}`"
+                    sortCol = get_formatted_name(renameCol)
                 else:
                     sortCol = get_formatted_dataset_field(
                         sortField["dataset"], sortField["field"]
@@ -200,7 +200,7 @@ class QueryGenerator:
 
         # From dataset
         # if "from" in config:
-        #     sqlQuery = sqlQuery + " FROM " + f"`{config['from']}`"
+        #     sqlQuery = sqlQuery + " FROM " + f"{config['from']}"
 
         if config.join != {}:
             sqlQuery += cls.get_join_expr(config.join)

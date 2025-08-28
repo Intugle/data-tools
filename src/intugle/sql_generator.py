@@ -1,5 +1,6 @@
 from typing import TYPE_CHECKING
 
+from intugle.analysis.models import DataSet
 from intugle.core import settings
 from intugle.libs.smart_query_generator import SmartQueryGenerator
 from intugle.libs.smart_query_generator.models.models import ETLModel, FieldDetailsModel, LinkModel
@@ -28,6 +29,16 @@ class SqlGenerator:
         selected_fields = set(self.field_details.keys())
         self.join = Join(self.links, selected_fields)
 
+        self.load_all()
+
+    def load_all(self):
+        sources = self.manifest.sources
+        for source in sources.values():
+            table_name = source.table.name
+            details = source.table.details
+
+            DataSet(data=details, name=table_name)
+
     def generate_query(self, etl: ETLModel) -> str:
         """Generates a SQL query based on the ETL model.
 
@@ -37,6 +48,8 @@ class SqlGenerator:
         Returns:
             str: The generated SQL query.
         """
+        etl = ETLModel.model_validate(etl)
+
         # get the field details fetcher function (Not required now as we are getting all field details)
         # and all field details
         field_details_fetcher = self.get_field_details_fetcher()
@@ -45,8 +58,28 @@ class SqlGenerator:
         sql_builder = SmartQueryGenerator(etl, field_details_fetcher, self.links, self.field_details)
         sql_builder.build()
         sql_query = sql_builder.get_query()
-
         return sql_query
+        
+    def generate_product(self, etl: ETLModel) -> DataSet:
+        """Generates a dataset on the ETL model.
+
+        Args:
+            etl (ETLModel): The ETL model containing the configuration for the query.
+
+        Returns:
+            Dataset: The dataset.
+        """
+        etl = ETLModel.model_validate(etl)
+
+        sql_query = self.generate_query(etl)
+
+        data = {
+            "path": sql_query,
+            "type": "query"
+        }
+        print(etl.name)
+        dataset = DataSet(data, etl.name)
+        return dataset
 
     def get_all_field_details(self) -> dict[str, FieldDetailsModel]:
         """Fetches all field details from the manifest."""
@@ -149,3 +182,4 @@ class SqlGenerator:
         graph = self.join.generate_graph(list(assets), only_connected=False)
 
         self.plot_graph(graph)
+    

@@ -3,13 +3,14 @@ from typing import Any
 
 from intugle.adapters.models import (
     ColumnProfile,
+    DataSetData,
     ProfilingOutput,
 )
 
 
 class Adapter(ABC):
     @abstractmethod
-    def profile(self, data: Any) -> ProfilingOutput:
+    def profile(self, data: Any, table_name: str) -> ProfilingOutput:
         pass
 
     @abstractmethod
@@ -31,3 +32,10 @@ class Adapter(ABC):
     @abstractmethod
     def execute():
         raise NotImplementedError()
+    
+    @abstractmethod
+    def to_df(self: DataSetData, date, table_name: str):
+        raise NotImplementedError()
+    
+    def get_details(self, _: DataSetData):
+        return None
