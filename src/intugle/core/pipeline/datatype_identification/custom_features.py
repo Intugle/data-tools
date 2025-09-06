@@ -17,7 +17,7 @@ from nltk.corpus import words
 from trieregex import TrieRegEx as TRE
 
 from intugle.core.settings import settings
-from intugle.core.utilities.processing import compute_stats
+from intugle.core.utilities.processing import compute_stats, to_high_precision_array
 
 from .initialize import di_initalizer
 
@@ -613,7 +613,8 @@ def additional_features(col_values: list, date_samples: int = 1000) -> list:
         if val == 1
     ]
     # int_type = list(int_type)
-    int_type = np.array(int_type, dtype=np.float128)
+    int_type = to_high_precision_array(int_type)
+
     # Iterate through each elements and get the float type data for feature creation
     log.info("Custom feature creation checkFloat started:%s", datetime.now())
     float_data = pseq(
@@ -625,7 +626,7 @@ def additional_features(col_values: list, date_samples: int = 1000) -> list:
         if val == 1
     ]
     # float_type = list(float_type)
-    float_type = np.array(float_type, dtype=np.float128)
+    float_type = to_high_precision_array(float_type)
 
     # Iterate through each elements and get the range type data for feature creation
     log.info("Custom feature creation checkRange started:%s", datetime.now())
