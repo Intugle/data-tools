@@ -49,6 +49,12 @@ For macOS users, you may need to install the `libomp` library:
 brew install libomp
 ```
 
+You may also need to install SSL certificates by running the following command in your terminal. Please replace `3.XX` with your specific Python version:
+
+```bash
+/Applications/Python\ 3.XX/Install\ Certificates.command
+```
+
 ### Configuration
 
 Before running the project, you need to configure a LLM. This is used for tasks like generating business glossaries and predicting links between tables.
