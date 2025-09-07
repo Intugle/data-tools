@@ -41,6 +41,14 @@ This tool is designed for both **data teams** and **business teams**.
 pip install intugle
 ```
 
+#### macOS
+
+For macOS users, you may need to install the `libomp` library:
+
+```bash
+brew install libomp
+```
+
 ### Configuration
 
 Before running the project, you need to configure a LLM. This is used for tasks like generating business glossaries and predicting links between tables.
