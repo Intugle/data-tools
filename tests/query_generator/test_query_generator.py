@@ -10,8 +10,6 @@ from intugle.libs.smart_query_generator.models.models import (
 )
 from intugle.sql_generator import SqlGenerator
 
-# PROJECT_BASE = "/home/juhel-phanju/Documents/backup/MIGRATION/codes/poc/dbt/ecom/ecom/models"
-
 
 def get_test_data():
     inputs = {

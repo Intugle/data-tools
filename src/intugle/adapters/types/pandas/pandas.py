@@ -12,9 +12,8 @@ from intugle.adapters.models import (
     ColumnProfile,
     ProfilingOutput,
 )
+from intugle.adapters.utils import convert_to_native
 from intugle.core.utilities.processing import string_standardization
-
-from .utils import convert_to_native
 
 
 class PandasAdapter(Adapter):

@@ -36,7 +36,6 @@ class SqlGenerator:
         for source in sources.values():
             table_name = source.table.name
             details = source.table.details
-
             DataSet(data=details, name=table_name)
 
     def generate_query(self, etl: ETLModel) -> str:

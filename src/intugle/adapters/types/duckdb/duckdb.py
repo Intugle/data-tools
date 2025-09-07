@@ -13,7 +13,7 @@ from intugle.adapters.models import (
     ProfilingOutput,
 )
 from intugle.adapters.types.duckdb.models import DuckdbConfig
-from intugle.adapters.types.pandas.utils import convert_to_native
+from intugle.adapters.utils import convert_to_native
 from intugle.common.exception import errors
 from intugle.core.utilities.processing import string_standardization
 
@@ -241,8 +241,11 @@ class DuckdbAdapter(Adapter):
 
 
 def can_handle_pandas(df: Any) -> bool:
-    df = DuckdbAdapter.check_data(df)
-    return isinstance(df, DuckdbConfig)
+    try:
+        df = DuckdbAdapter.check_data(df)
+    except Exception:
+        return False
+    return True
 
 
 def register(factory: AdapterFactory):

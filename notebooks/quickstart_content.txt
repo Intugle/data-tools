@@ -1,13 +1,13 @@
 ---
 type: markdown
 ---
-# Quickstart: Building a Semantic Layer with Data-Tools
+# Quickstart: Building a Semantic Layer with Intugle
 
-This notebook provides a quick introduction to the `intugle` project. You'll learn how to use its key features to automatically build a semantic layer over your data.
+This notebook provides a quick introduction to this project. You'll learn how to use its key features to automatically build a semantic layer over your data.
 
 **What is a Semantic Layer?**
 
-A semantic layer is a business-friendly representation of your data. It hides the complexity of the underlying data sources and provides a unified view of your data using familiar business terms. This makes it easier for business users to understand and query the data without needing to be SQL experts.
+A semantic layer is a business-friendly representation of your data. It hides the complexity of the underlying data sources and provides a unified view of your data using familiar business terms. This makes it easier for both business users and data teams to understand and query the data, accelerating data-driven insights.
 
 **Who is this for?**
 
@@ -18,32 +18,21 @@ This tool is designed for both **data teams** and **business teams**.
 
 **In this notebook, you will learn how to:**
 
-1. **Configure your LLM Provider:** Set up the Large Language Model that will power the automated features.
-2. **Profile your data:** Analyze your data sources to understand their structure, data types, and other characteristics.
-3. **Automatically predict links:** Use a Large Language Model (LLM) to automatically discover relationships (foreign keys) between tables.
-4. **Generate a semantic layer:** Create a `manifest.json` file that defines your semantic layer.
-5. **Generate SQL queries:** Use the semantic layer to generate SQL queries and retrieve data.
+1. **Profile your data:** Analyze your data sources to understand their structure, data types, and other characteristics.
+2. **Business Glossary Generation:** Generate a business glossary for each column, with support for industry-specific domains.
+2. **Automatically predict links:** Use a Large Language Model (LLM) to automatically discover relationships (foreign keys) between tables.
+3. **Generate a semantic layer:** Create YAML files file that defines your semantic layer.
+4. **Generate SQL queries:** Use the semantic layer to generate SQL queries and retrieve data.
 ---
 type: markdown
 ---
-## 1. Setup
-
-First, let's install the necessary libraries. This project uses `uv` for package management.
----
-type: code
----
-!pip install uv
-!uv pip install -r ../requirements.txt
----
-type: markdown
----
-## 2. LLM Configuration
+## 1. LLM Configuration
 
 Before running the project, you need to configure a Large Language Model (LLM). This is used for tasks like generating business glossaries and predicting links between tables.
 
 You can configure the LLM by setting the following environment variables:
 
-* `LLM_PROVIDER`: The LLM provider and model to use (e.g., `openai:gpt-3.5-turbo`).
+* `LLM_PROVIDER`: The LLM provider and model to use (e.g., `openai:gpt-3.5-turbo`). The format follows langchain's format for initializing chat models. Checkout how to specify your model [here](https://python.langchain.com/docs/integrations/chat/) 
 * `OPENAI_API_KEY`: Your API key for the LLM provider.
 
 Here's an example of how to set these variables in your environment:
@@ -60,31 +49,35 @@ type: code
 import os
 
 os.environ["LLM_PROVIDER"] = "openai:gpt-3.5-turbo"
-os.environ["OPENAI_API_KEY"] = "your-openai-api-key" # Replace with your actual key
+os.environ["OPENAI_API_KEY"] = "your-openai-api-key"  # Replace with your actual key
 
 ---
 type: markdown
 ---
-## 3. Data Profiling
+> Currently the langchain packages for OpenAI, Anthropic and Gemini is installed by default. For additional models, make sure you have the integration packages installed. E.g. you should have langchain-deepseek installed to use a DeepSeek model. You can get these packages here: [LangChain Chat Models](https://python.langchain.com/docs/integrations/chat/)
+---
+type: markdown
+---
+## 2. Data Profiling and Glossary Generation
 
-The first step in building a semantic layer is to profile your data. This involves analyzing your data sources to understand their structure, data types, and other characteristics. The `intugle` project provides a pipeline for this purpose.
+The first step in building a semantic layer is to profile your data. This involves analyzing your data sources to understand their structure, data types, and other characteristics. This tool provides a pipeline for this purpose. It can also generate business glossary for your data.
 ---
 type: code
 ---
-import pandas as pd
-from intugle.analysis.models import DataSet
+# from intugle import DataSet
 ---
 type: code
 ---
-# Load the sample data
-allergies_df = pd.read_csv('../sample_data/healthcare/allergies.csv')
-allergies_df.head()
----
-type: code
----
-# Create a DataSet object and run the profiling pipeline
-dataset_allergies = DataSet(allergies_df, "allergies")
-dataset_allergies.run(domain="Healthcare")
+# allergies_data = {
+#     "path": "https://raw.githubusercontent.com/Intugle/data-tools/refs/heads/main/sample_data/healthcare/allergies.csv",
+#     "type": "csv"
+# }
+# # Create a DataSet object and run the profiling pipeline
+# dataset_allergies = DataSet(allergies_data, "allergies")
+# dataset_allergies.run(domain="Healthcare")
+
+# Or you can run each step manually:
+# dataset_allergies.profile().identify_datatypes().identify_keys().generate_glossary(domain="Healthcare")
 ---
 type: markdown
 ---
@@ -95,34 +88,46 @@ The `run()` method performs a series of analysis steps, including:
 * **Key Identification:** Identifies potential primary keys.
 * **Glossary Generation:** Generates a business glossary for each column using an LLM.
 
-**The `domain` parameter**
-
-The `domain` parameter helps the LLM generate a more contextual business glossary. It specifies the industry domain that the dataset belongs to (e.g., "Healthcare", "Finance", "E-commerce").
-
-Let's take a look at the profiling results:
+> The `domain` parameter helps the LLM generate a more contextual business glossary. It specifies the industry domain that the dataset belongs to (e.g., "Healthcare", "Finance", "E-commerce").
 ---
 type: code
 ---
-dataset_allergies.profile_df.head()
+# dataset_allergies.result_to_pandas()[["business_glossary"]]
+---
+type: code
+---
+# dataset_allergies.to_df()
+---
+type: code
+---
+from intugle.core.settings import settings
+
+settings.PROJECT_BASE
 ---
 type: markdown
 ---
-## 4. Automated Link Prediction
+## 3. Automated Link Prediction
 
-Now that we've profiled our data, let's discover the relationships between tables. The `intugle` project uses a Large Language Model (LLM) to predict links (foreign keys) between tables.
+Now that we've profiled our data, let's discover the relationships between tables. This tool uses an LLM to predict links (foreign keys) between tables.
 
 First, we'll load a few more tables from the sample dataset.
 ---
 type: code
 ---
-table_names = ["patients", "claims", "careplans", "claims_transactions", "medications"]
-datasets = [dataset_allergies]
+def generate_config(table_name: str) -> str:
+    """Append the base URL to the table name."""
+    return {
+        "path": f"https://raw.githubusercontent.com/Intugle/data-tools/refs/heads/main/sample_data/healthcare/{table_name}.csv",
+        "type": "csv"
+    }
 
-for table_name in table_names:
-    df = pd.read_csv(f'../sample_data/healthcare/{table_name}.csv')
-    dataset = DataSet(df, table_name)
-    dataset.run(domain="Healthcare")
-    datasets.append(dataset)
+
+# table_names = ["allergies", "patients", "claims", "careplans", "claims_transactions", "medications"]
+table_names = ["allergies", "patients", "claims", "careplans"]
+datasets = {table: generate_config(table) for table in table_names}
+---
+type: code
+---
 ---
 type: markdown
 ---
@@ -130,14 +135,13 @@ Now, let's run the link prediction pipeline.
 ---
 type: code
 ---
-from intugle.link_predictor import LinkPredictor
+from intugle import KnowledgeBuilder
 
-# Initialize the predictor
-predictor = LinkPredictor(datasets)
+# Initialize the knowledge builder
+kb = KnowledgeBuilder(datasets, domain="Healthcare")
 
 # Run the prediction
-results = predictor.predict()
-results.links
+kb.build()
 ---
 type: markdown
 ---
@@ -145,42 +149,30 @@ The `results` object contains the predicted links between the tables. You can al
 ---
 type: code
 ---
-results.show_graph()
+kb.visualize()
 ---
 type: markdown
 ---
-## 5. The Semantic Layer (Manifest)
+## 4. The Semantic Layer
 
-The profiling and link prediction results are used to generate a `manifest.json` file. This file defines the semantic layer, including the models (tables) and their relationships.
+The profiling and link prediction results are used to generate YAML files which are saved automatically. These files defines the semantic layer, including the models (tables) and their relationships. 
 
-Let's save the datasets and the predicted links to YAML files. By default, these files are saved in a `sources` directory in the current working directory. You can configure this path by setting the `PROJECT_BASE` environment variable.
+By default, these files are saved in the current working directory. You can configure this path by setting the `PROJECT_BASE` environment variable. They can also be saved manually as shown below:
 ---
 type: code
 ---
-for ds in datasets:
-    ds.save_yaml()
+# for ds in datasets:
+#     ds.save_yaml()
 
-results.save_yaml("relationships.yml")
+# results.save_yaml("relationships.yml")
 ---
 type: markdown
 ---
 Now, we can load the YAML files and create a manifest.
 ---
-type: code
----
-from intugle.parser.manifest import ManifestLoader
-
-# Load the manifest
-manifest_loader = ManifestLoader('.')
-manifest_loader.load()
-manifest = manifest_loader.manifest
-
-# Print the manifest
-print(manifest.json(indent=4))
----
 type: markdown
 ---
-## 6. SQL Generation
+## 5. SQL Generation
 
 Once you have a semantic layer, you can use the `SqlGenerator` to generate SQL queries. This allows you to query the data using business-friendly terms, without having to write complex SQL.
 
@@ -188,16 +180,18 @@ Let's create an ETL model to define the query we want to generate.
 ---
 type: code
 ---
-from intugle.libs.smart_query_generator.models.models import ETLModel, FieldModel
 
-# Create an ETL model
-etl_model = ETLModel(
-    fields=[
-        FieldModel(id="patients.FIRST"),
-        FieldModel(id="patients.LAST"),
-        FieldModel(id="claims.TOTAL_CLAIM_COST"),
-    ]
-)
+etl = {
+    "name": "patient_names",
+    "fields": [
+        {"id": "patients.first", "name": "first_name"},
+        {"id": "patients.last", "name": "last_name"},
+        {"id": "allergies.start", "name": "start_date"},
+    ],
+    "filter": {
+        "selections": [{"id": "claims.departmentid", "values": ["3", "20"]}],
+    },
+}
 ---
 type: markdown
 ---
@@ -206,19 +200,30 @@ Now, let's use the `SqlGenerator` to generate the SQL query.
 type: code
 ---
 from intugle.sql_generator import SqlGenerator
+---
+type: code
+---
 
 # Create a SqlGenerator
-sql_generator = SqlGenerator('.')
+sql_generator = SqlGenerator()
 
 # Generate the query
-sql_query = sql_generator.generate_query(etl_model)
+test_etl = sql_generator.generate_product(etl)
 
 # Print the query
-print(sql_query)
+test_etl.data
+---
+type: code
+---
+test_etl.to_df()
+---
+type: code
+---
+sql_generator.plot_sources_graph()
 ---
 type: markdown
 ---
-## 7. MCP Server: Interacting with Your Semantic Layer
+## 6. MCP Server: Interacting with Your Semantic Layer
 
 Now that you have a semantic layer, you can serve it as a MCP server to interact with it using natural language. The MCP server exposes your semantic layer as a set of tools that can be used by any MCP client.
 
@@ -248,19 +253,18 @@ Once connected, you can interact with your semantic layer using natural language
 *   **Data Discovery:** Ask questions about the tables and columns in your semantic layer to better understand your data.
 
 > To execute the generated SQL queries, you can also connect your database instance as a MCP tool to your client.
-
 ---
 type: markdown
 ---
 ## Conclusion
 
-This notebook has provided a brief overview of the `intugle` project. You've learned how to:
+You've learned how to:
 
 * Configure your LLM provider.
 * Profile your data to understand its characteristics.
 * Use an LLM to automatically predict links between tables.
-* Generate a semantic layer (`manifest.json`).
+* Generate a semantic layer.
 * Use the semantic layer to generate SQL queries.
 * Interact with your semantic layer using the MCP server.
 
-This is just a starting point. The `intugle` project has many other features to explore. We encourage you to try it with your own data and see how it can help you build a powerful semantic layer.
+This is just a starting point. This project has many other features to explore. We encourage you to try it with your own data and see how it can help you build a powerful semantic layer.
