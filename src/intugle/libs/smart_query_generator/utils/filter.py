@@ -62,7 +62,7 @@ class Filter:
                         "sql_code": field.sql_code,
                         "operator": "not_in" if selection.exclude else "in",
                         "md5_hash": field.is_pii and not self._can_view_pii,
-                        "params": {"value": selection.values},
+                        "params": {"value": selection.values, "type": "list"},
                     }
                     if selection.dimFunc:
                         sel["isFunction"] = True
@@ -76,7 +76,7 @@ class Filter:
                         "sql_code": field.sql_code,
                         "operator": "is_not_null" if selection.exclude else "is_null",
                         "md5_hash": field.is_pii and not self._can_view_pii,
-                        "params": {"value": ""},
+                        "params": {"value": "", "type": "list"},
                     }
                     if selection.dimFunc:
                         sel_null["isFunction"] = True

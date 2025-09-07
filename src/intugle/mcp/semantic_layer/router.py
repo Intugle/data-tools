@@ -56,7 +56,7 @@ async def prompt() -> str:
     return Prompts.raw_executor_prompt(settings.SQL_DIALECT, settings.DOMAIN, settings.UNIVERSAL_INSTRUCTIONS)
 
 
-# @semantic_layer_mcp.tool(name="execute_query", description="Return the result of a query execution")
-# async def execute_query(sql_query: str) -> list[dict]: 
-#     data = await adapter_service.execute_query(sql_query)
-#     return data
+@semantic_layer_mcp.tool(name="execute_query", description="Return the result of a query execution")
+async def execute_query(sql_query: str) -> list[dict]: 
+    data = await adapter_service.execute_query(sql_query)
+    return data

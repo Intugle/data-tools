@@ -1,7 +1,7 @@
-from intugle.core.settings import settings
-from intugle.mcp.adapter.psql import PsqlPool
-
-# from intugle.parser.manifest import ManifestLoader
+# from intugle.adapters.factory import AdapterFactory
+from intugle.adapters.types.duckdb.duckdb import DuckdbAdapter
+from intugle.analysis.models import DataSet
+from intugle.mcp.manifest import manifest_loader
 
 
 class AdapterService:
@@ -9,16 +9,19 @@ class AdapterService:
     Adapter service for executing queries.
     """
 
-    def __init__(self):
-        # self.manifest = ManifestLoader.manifest
-        self.psql = PsqlPool(
-            user=settings.POSTGRES_USER,
-            password=settings.POSTGRES_PASSWORD,
-            host=settings.POSTGRES_HOST,
-            database=settings.POSTGRES_DB,
-            port=settings.POSTGRES_PORT,
-            schema=settings.POSTGRES_SCHEMA,
-        )
+    # Not good way to do it Need to create extandable and properly couple with adapter
+    def __init__(self, adapter: str = "duckdb"):
+        self.manifest = manifest_loader.manifest
+        self.adapter = DuckdbAdapter()
+        self.load_all()
+
+    def load_all(self):
+        sources = self.manifest.sources
+        for source in sources.values():
+            table_name = source.table.name
+            details = source.table.details
+
+            DataSet(data=details, name=table_name)
 
     async def execute_query(self, sql_query: str) -> list[dict]:
         """
@@ -31,7 +34,7 @@ class AdapterService:
             list[dict]: The result of the query execution.
         """
 
-        data = await self.psql.fetch(sql_query)
+        data = self.adapter.execute(sql_query)
 
         data = [dict(record) for record in data] if data else []
 
