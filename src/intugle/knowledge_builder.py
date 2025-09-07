@@ -45,7 +45,8 @@ class KnowledgeBuilder:
         self.link_predictor = LinkPredictor(list(self.datasets.values()))
 
         # Run the prediction
-        self.links: list[PredictedLink] = self.link_predictor.predict().links
+        self.link_predictor.predict(save=True)
+        self.links: list[PredictedLink] = self.link_predictor.links
         return self
     
     def visualize(self):

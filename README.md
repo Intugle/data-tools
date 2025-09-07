@@ -31,7 +31,7 @@ This tool is designed for both **data teams** and **business teams**.
 *   **LLM-Powered Link Prediction:** Use GenAI to automatically discover relationships (foreign keys) between tables.
 *   **Business Glossary Generation:** Generate a business glossary for each column, with support for industry-specific domains.
 *   **Semantic Layer Generation:** Create YAML files that defines your semantic layer, including models (tables) and their relationships.
-*   **SQL Generation:** Generate SQL queries from the semantic layer, allowing you to query your data using business-friendly terms.
+*   **Data Product Creation:** Generate data products from the semantic layer, allowing you to query your data using business-friendly terms.
 
 ## Getting Started
 
@@ -59,52 +59,51 @@ export OPENAI_API_KEY="your-openai-api-key"
 
 ## Quickstart
 
-For a detailed, hands-on introduction to the project, please see the [`quickstart.ipynb`](quickstart.ipynb) notebook. It will walk you through the entire process of profiling your data, predicting links, generating a semantic layer, and querying your data.
+For a detailed, hands-on introduction to the project, please see the [`quickstart.ipynb`](quickstart.ipynb) notebook. It will walk you through the entire process of building a semantic layer, including:
+
+*   **Building a Knowledge Base:** Use the `KnowledgeBuilder` to automatically profile your data, generate a business glossary, and predict links between tables.
+*   **Accessing Enriched Metadata:** Learn how to access the profiling results and business glossary for each dataset.
+*   **Visualizing Relationships:** Visualize the predicted links between your tables.
+*   **Generating Data Products:** Use the semantic layer to generate data products and retrieve data.
+*   **Serving the Semantic Layer:** Learn how to start the MCP server to interact with your semantic layer using natural language.
 
 ## Usage
 
-The core workflow of the project involves the following steps:
+The core workflow of the project involves using the `KnowledgeBuilder` to build a semantic layer, and then using the `DataProductBuilder` to generate data products from that layer.
 
-1.  **Load your data:** Load your data into a DataSet object.
-2.  **Run the analysis pipeline:** Use the `run()` method to profile your data and generate a business glossary.
-3.  **Predict links:** Use the `LinkPredictor` to discover relationships between your tables.
+```python
+from intugle import KnowledgeBuilder, DataProductBuilder
 
-    ```python
-    from intugle import LinkPredictor
+# Define your datasets
+datasets = {
+    "allergies": {"path": "path/to/allergies.csv", "type": "csv"},
+    "patients": {"path": "path/to/patients.csv", "type": "csv"},
+    # ... add other datasets
+}
 
-    # Initialize the predictor
-    predictor = LinkPredictor(datasets)
+# Build the knowledge base
+kb = KnowledgeBuilder(datasets, domain="Healthcare")
+kb.build()
 
-    # Run the prediction
-    results = predictor.predict()
-    results.show_graph()
-    ```
+# Create a DataProductBuilder
+dp_builder = DataProductBuilder()
 
-5.  **Generate SQL:** Use the `SqlGenerator` to generate SQL queries from the semantic layer.
+# Define an ETL model
+etl = {
+    "name": "patient_allergies",
+    "fields": [
+        {"id": "patients.first", "name": "first_name"},
+        {"id": "patients.last", "name": "last_name"},
+        {"id": "allergies.description", "name": "allergy"},
+    ],
+}
 
-    ```python
-    from intugle import SqlGenerator
+# Generate the data product
+data_product = dp_builder.build(etl)
 
-    # Create a SqlGenerator
-    sql_generator = SqlGenerator()
-
-    # Create an ETL model
-    etl = {
-        name": "test_etl",
-        fields": [
-           {"id": "patients.first", "name": "first_name"},
-           {"id": "patients.last", "name": "last_name"},
-           {"id": "allergies.start", "name": "start_date"},
-        ,
-        filter": {
-           "selections": [{"id": "claims.departmentid", "values": ["3", "20"]}],
-        ,
-    }
-
-    # Generate the query
-    sql_query = sql_generator.generate_query(etl_model)
-    print(sql_query)
-    ```
+# View the data product as a DataFrame
+print(data_product.to_df())
+```
 
 For detailed code examples and a complete walkthrough, please refer to the [`quickstart.ipynb`](quickstart.ipynb) notebook.
 

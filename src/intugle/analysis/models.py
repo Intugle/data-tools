@@ -48,6 +48,12 @@ class DataSet:
         self.results: Dict[str, Any] = {}
 
         self.load()
+
+    @property
+    def sql_query(self):
+        if 'type' in self.data and self.data['type'] == 'query':
+            return self.data['path']
+        return None
     
     def load(self):
         try:
@@ -259,7 +265,8 @@ class DataSet:
     def to_df(self):
         return self.adapter.to_df(self.data, self.name)
 
-    def result_to_pandas(self):
+    @property
+    def profiling_df(self):
         column_profiles = self.results.get("column_profiles")
         if column_profiles is None:
             return "<p>No column profiles available.</p>"
@@ -267,5 +274,5 @@ class DataSet:
         return df
 
     def _repr_html_(self):
-        df = self.result_to_pandas().head()
+        df = self.profiling_df.head()
         return df._repr_html_()

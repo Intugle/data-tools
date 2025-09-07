@@ -11,29 +11,29 @@ A semantic layer is a business-friendly representation of your data. It hides th
 
 **Who is this for?**
 
-This tool is designed for both **data teams** and **business teams**. 
+This tool is designed for both **data teams** and **business teams**.
 
-* **Data teams** can use it to automate data profiling, schema discovery, and documentation, significantly accelerating their workflow.
-* **Business teams** can use it to gain a better understanding of their data and to perform self-service analytics without needing to write complex SQL queries.
+*   **Data teams** can use it to automate data profiling, schema discovery, and documentation, significantly accelerating their workflow.
+*   **Business teams** can use it to gain a better understanding of their data and to perform self-service analytics without needing to write complex SQL queries.
 
 **In this notebook, you will learn how to:**
 
-1. **Profile your data:** Analyze your data sources to understand their structure, data types, and other characteristics.
-2. **Business Glossary Generation:** Generate a business glossary for each column, with support for industry-specific domains.
-2. **Automatically predict links:** Use a Large Language Model (LLM) to automatically discover relationships (foreign keys) between tables.
-3. **Generate a semantic layer:** Create YAML files file that defines your semantic layer.
-4. **Generate SQL queries:** Use the semantic layer to generate SQL queries and retrieve data.
+1.  **Build a Knowledge Base:** Use the `KnowledgeBuilder` to automatically profile your data, generate a business glossary, and predict links between tables.
+2.  **Generate Data Products:** Use the semantic layer to generate data products and retrieve data.
+3.  **Serve the Semantic Layer:** Learn how to start the MCP server to interact with your semantic layer using natural language.
+
 ---
 type: markdown
 ---
+
 ## 1. LLM Configuration
 
 Before running the project, you need to configure a Large Language Model (LLM). This is used for tasks like generating business glossaries and predicting links between tables.
 
 You can configure the LLM by setting the following environment variables:
 
-* `LLM_PROVIDER`: The LLM provider and model to use (e.g., `openai:gpt-3.5-turbo`). The format follows langchain's format for initializing chat models. Checkout how to specify your model [here](https://python.langchain.com/docs/integrations/chat/) 
-* `OPENAI_API_KEY`: Your API key for the LLM provider.
+*   `LLM_PROVIDER`: The LLM provider and model to use (e.g., `openai:gpt-3.5-turbo`). The format follows langchain's format for initializing chat models. Checkout how to specify your model [here](https://python.langchain.com/docs/integrations/chat/)
+*   `OPENAI_API_KEY`: Your API key for the LLM provider.
 
 Here's an example of how to set these variables in your environment:
 
@@ -43,9 +43,11 @@ export OPENAI_API_KEY="your-openai-api-key"
 ```
 
 Alternatively, you can set them in the notebook like this:
+
 ---
 type: code
 ---
+
 import os
 
 os.environ["LLM_PROVIDER"] = "openai:gpt-3.5-turbo"
@@ -54,66 +56,29 @@ os.environ["OPENAI_API_KEY"] = "your-openai-api-key"  # Replace with your actual
 ---
 type: markdown
 ---
+
 > Currently the langchain packages for OpenAI, Anthropic and Gemini is installed by default. For additional models, make sure you have the integration packages installed. E.g. you should have langchain-deepseek installed to use a DeepSeek model. You can get these packages here: [LangChain Chat Models](https://python.langchain.com/docs/integrations/chat/)
+
 ---
 type: markdown
 ---
-## 2. Data Profiling and Glossary Generation
 
-The first step in building a semantic layer is to profile your data. This involves analyzing your data sources to understand their structure, data types, and other characteristics. This tool provides a pipeline for this purpose. It can also generate business glossary for your data.
+## 2. Building the Knowledge Base
+
+The `KnowledgeBuilder` is the entry point for building your semantic layer. It takes a dictionary of datasets as input and performs the following steps:
+
+1.  **Data Profiling:** Calculates statistics for each column, such as distinct count, uniqueness, and completeness.
+2.  **Datatype Identification:** Identifies the data type of each column (e.g., integer, string, datetime).
+3.  **Key Identification:** Identifies potential primary keys.
+4.  **Glossary Generation:** Generates a business glossary for each column using an LLM.
+5.  **Link Prediction:** Predicts the relationships (foreign keys) between tables.
+
+Let's start by defining the datasets we want to use:
+
 ---
 type: code
 ---
-# from intugle import DataSet
----
-type: code
----
-# allergies_data = {
-#     "path": "https://raw.githubusercontent.com/Intugle/data-tools/refs/heads/main/sample_data/healthcare/allergies.csv",
-#     "type": "csv"
-# }
-# # Create a DataSet object and run the profiling pipeline
-# dataset_allergies = DataSet(allergies_data, "allergies")
-# dataset_allergies.run(domain="Healthcare")
 
-# Or you can run each step manually:
-# dataset_allergies.profile().identify_datatypes().identify_keys().generate_glossary(domain="Healthcare")
----
-type: markdown
----
-The `run()` method performs a series of analysis steps, including:
-
-* **Profiling:** Calculates statistics for each column, such as distinct count, uniqueness, and completeness.
-* **Datatype Identification:** Identifies the data type of each column (e.g., integer, string, datetime).
-* **Key Identification:** Identifies potential primary keys.
-* **Glossary Generation:** Generates a business glossary for each column using an LLM.
-
-> The `domain` parameter helps the LLM generate a more contextual business glossary. It specifies the industry domain that the dataset belongs to (e.g., "Healthcare", "Finance", "E-commerce").
----
-type: code
----
-# dataset_allergies.result_to_pandas()[["business_glossary"]]
----
-type: code
----
-# dataset_allergies.to_df()
----
-type: code
----
-from intugle.core.settings import settings
-
-settings.PROJECT_BASE
----
-type: markdown
----
-## 3. Automated Link Prediction
-
-Now that we've profiled our data, let's discover the relationships between tables. This tool uses an LLM to predict links (foreign keys) between tables.
-
-First, we'll load a few more tables from the sample dataset.
----
-type: code
----
 def generate_config(table_name: str) -> str:
     """Append the base URL to the table name."""
     return {
@@ -122,19 +87,19 @@ def generate_config(table_name: str) -> str:
     }
 
 
-# table_names = ["allergies", "patients", "claims", "careplans", "claims_transactions", "medications"]
 table_names = ["allergies", "patients", "claims", "careplans"]
 datasets = {table: generate_config(table) for table in table_names}
----
-type: code
----
+
 ---
 type: markdown
 ---
-Now, let's run the link prediction pipeline.
+
+Now, let's use the `KnowledgeBuilder` to build our semantic layer:
+
 ---
 type: code
 ---
+
 from intugle import KnowledgeBuilder
 
 # Initialize the knowledge builder
@@ -142,41 +107,82 @@ kb = KnowledgeBuilder(datasets, domain="Healthcare")
 
 # Run the prediction
 kb.build()
+
 ---
 type: markdown
 ---
-The `results` object contains the predicted links between the tables. You can also visualize the relationships as a graph.
+
+## 3. Accessing Enriched Metadata
+
+Now that the knowledge base is built, you can easily access the enriched metadata for each dataset.
+
+### Accessing a Dataset
+
+You can access a specific dataset by its name from the `kb.datasets` dictionary:
+
 ---
 type: code
 ---
-kb.visualize()
+
+allergies_dataset = kb.datasets['allergies']
+
 ---
 type: markdown
 ---
+
+### Viewing Profiling Results
+
+The profiling results can be accessed through the `profiling_df` property of the `DataSet` object. It's a pandas DataFrame that you can easily explore:
+> The business glossary is also available in the `profile_df`:
+---
+type: code
+---
+
+allergies_dataset.profiling_df
+
+---
+type: markdown
+---
+
+### Visualizing Relationships
+
+The `KnowledgeBuilder` automatically discovers the relationships between your tables. You can access the predicted links as a list of `PredictedLink` objects:
+
+---
+type: code
+---
+
+kb.links
+
+---
+type: markdown
+---
+
+You can visualize these relationships as a graph:
+---
+type: code
+---
+
+kb.visualize()
+
+---
+type: markdown
+---
+
 ## 4. The Semantic Layer
 
-The profiling and link prediction results are used to generate YAML files which are saved automatically. These files defines the semantic layer, including the models (tables) and their relationships. 
+The KnowledgeBuilder results are used to generate YAML files which are saved automatically. These files defines the semantic layer, including the models (tables) and their relationships. 
 
-By default, these files are saved in the current working directory. You can configure this path by setting the `PROJECT_BASE` environment variable. They can also be saved manually as shown below:
----
-type: code
----
-# for ds in datasets:
-#     ds.save_yaml()
+By default, these files are saved in the current working directory. You can configure this path by setting the `PROJECT_BASE` environment variable.
 
-# results.save_yaml("relationships.yml")
----
-type: markdown
----
-Now, we can load the YAML files and create a manifest.
----
-type: markdown
----
-## 5. SQL Generation
+## 5. Data Product Creation
 
-Once you have a semantic layer, you can use the `SqlGenerator` to generate SQL queries. This allows you to query the data using business-friendly terms, without having to write complex SQL.
+The semantic layer serves as a foundation for the DataProductBuilder, which streamlines the creation of reusable data products. This allows you
+to encapsulate business logic and create standardized, trustworthy data assets that can be easily shared and reused across different teams and 
+applications.
 
-Let's create an ETL model to define the query we want to generate.
+Let's define the model for the data product we want to build:
+
 ---
 type: code
 ---
@@ -192,37 +198,44 @@ etl = {
         "selections": [{"id": "claims.departmentid", "values": ["3", "20"]}],
     },
 }
+
 ---
 type: markdown
 ---
-Now, let's use the `SqlGenerator` to generate the SQL query.
----
-type: code
----
-from intugle.sql_generator import SqlGenerator
+
+Now, let's use the `DataProductBuilder` to generate the data product:
+
 ---
 type: code
 ---
 
-# Create a SqlGenerator
-sql_generator = SqlGenerator()
+from intugle.dp_builder import DataProductBuilder
 
-# Generate the query
-test_etl = sql_generator.generate_product(etl)
+# Create a DataProductBuilder
+dp_builder = DataProductBuilder()
 
-# Print the query
-test_etl.data
----
-type: code
----
-test_etl.to_df()
----
-type: code
----
-sql_generator.plot_sources_graph()
+# Generate the data product
+data_product = dp_builder.build(etl)
+
+# Print the generated SQL query
+print(data_product.data['path'])
+
 ---
 type: markdown
 ---
+
+The `generate_product` function returns a `DataSet` object. You can use the `to_df()` method to view the data product as a pandas DataFrame:
+
+---
+type: code
+---
+
+data_product.to_df()
+
+---
+type: markdown
+---
+
 ## 6. MCP Server: Interacting with Your Semantic Layer
 
 Now that you have a semantic layer, you can serve it as a MCP server to interact with it using natural language. The MCP server exposes your semantic layer as a set of tools that can be used by any MCP client.
@@ -249,22 +262,21 @@ You can use a variety of MCP clients to connect to the server, such as Claude De
 
 Once connected, you can interact with your semantic layer using natural language. Here are some exciting applications:
 
-*   **Generate SQL Queries:** Ask questions in natural language and have the MCP server generate the corresponding SQL query.
+*   **Generate and Execute SQL Queries:** Ask questions in natural language and have the MCP server generate and execute the corresponding SQL query.
 *   **Data Discovery:** Ask questions about the tables and columns in your semantic layer to better understand your data.
 
-> To execute the generated SQL queries, you can also connect your database instance as a MCP tool to your client.
 ---
 type: markdown
 ---
+
 ## Conclusion
 
 You've learned how to:
 
-* Configure your LLM provider.
-* Profile your data to understand its characteristics.
-* Use an LLM to automatically predict links between tables.
-* Generate a semantic layer.
-* Use the semantic layer to generate SQL queries.
-* Interact with your semantic layer using the MCP server.
+*   Configure your LLM provider.
+*   Build a knowledge base using the `KnowledgeBuilder`.
+*   Access enriched metadata, business glossaries and visualize the relationships between your tables.
+*   Generate data products from the semantic layer using the `DataProductBuilder`.
+*   Interact with your semantic layer using the MCP server.
 
 This is just a starting point. This project has many other features to explore. We encourage you to try it with your own data and see how it can help you build a powerful semantic layer.

@@ -11,8 +11,8 @@ if TYPE_CHECKING:
     from intugle.models.resources.model import Column
 
 
-class SqlGenerator:
-    """Generates SQL queries based on the manifest and ETL configurations."""
+class DataProductBuilder:
+    """Generates data products based on the manifest and ETL configurations."""
 
     def __init__(self, project_base: str = settings.PROJECT_BASE):
         self.manifest_loader = ManifestLoader(project_base)
@@ -59,7 +59,7 @@ class SqlGenerator:
         sql_query = sql_builder.get_query()
         return sql_query
         
-    def generate_product(self, etl: ETLModel) -> DataSet:
+    def build(self, etl: ETLModel) -> DataSet:
         """Generates a dataset on the ETL model.
 
         Args:
