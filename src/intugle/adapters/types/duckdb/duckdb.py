@@ -20,6 +20,10 @@ from intugle.core.utilities.processing import string_standardization
 
 class DuckdbAdapter(Adapter):
 
+    def __init__(self):
+        duckdb.install_extension('httpfs')
+        duckdb.load_extension('httpfs')        
+
     @staticmethod
     def check_data(data: Any) -> DuckdbConfig:
         try:
