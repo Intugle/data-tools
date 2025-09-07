@@ -56,7 +56,7 @@ Before running the project, you need to configure a LLM. This is used for tasks 
 You can configure the LLM by setting the following environment variables:
 
 *   `LLM_PROVIDER`: The LLM provider and model to use (e.g., `openai:gpt-3.5-turbo`) following LangChain's [conventions](https://python.langchain.com/docs/integrations/chat/)
-*   `OPENAI_API_KEY`: Your API key for the LLM provider.
+*   `API_KEY`: Your API key for the LLM provider. The exact name of the variable may vary from provider to provider.
 
 Here's an example of how to set these variables in your environment:
 
