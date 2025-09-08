@@ -32,6 +32,15 @@ Intugle’s GenAI-powered open-source Python library builds an intelligent seman
 
 ### Installation
 
+Before installing, it is recommended to create a virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+Then, install the package:
+
 ```bash
 pip install intugle
 ```
@@ -44,7 +53,7 @@ For macOS users, you may need to install the `libomp` library:
 brew install libomp
 ```
 
-You may also need to install SSL certificates by running the following command in your terminal. Please replace `3.XX` with your specific Python version:
+If you installed Python using the official installer from python.org, you may also need to install SSL certificates by running the following command in your terminal. Please replace `3.XX` with your specific Python version. This step is not necessary if you installed Python using Homebrew.
 
 ```bash
 /Applications/Python\ 3.XX/Install\ Certificates.command
