@@ -1,0 +1,1001 @@
+Order ID,Customer Name,Order Date,Order Status,Order Value ($),Order Qty,Product Name,Product Desc,Product Family,Ship to Country,Bill to Country,Party ID,Product ID
+ORD-41502,Shaw-Perez,2025-05-13,Returned,1613,20,CloudEdge,Next-gen firewall,Analytics,Brazil,USA,CUST-10080,PROD-11284
+ORD-42587,"Poole, Sutton and King",2025-04-04,Returned,11291,6,CloudEdge,Wi‑Fi 6 access point,Networking,Australia,Australia,CUST-10080,PROD-11679
+ORD-42654,"Klein, Rodriguez and Chapman",2025-07-31,Delivered,21089,35,CloudEdge,Wi‑Fi 6 access point,Cloud Infra,India,Germany,CUST-10752,PROD-11125
+ORD-41056,"Jones, Hardy and Harris",2024-11-24,Cancelled,1795,8,DataSphere,Next-gen firewall,AI Solutions,UAE,India,CUST-10307,PROD-11489
+ORD-40706,Ross LLC,2025-06-27,Cancelled,1061,2,NetConnect,Wi‑Fi 6 access point,Storage,India,India,CUST-10138,PROD-11667
+ORD-40107,Ellison-Coleman,2025-06-01,In Progress,5361,50,NetConnect,Next-gen firewall,Storage,Singapore,India,CUST-10883,PROD-11885
+ORD-40590,"Bush, Carter and Ramsey",2025-07-07,Returned,21083,29,Insight360,48-port managed switch,Cloud Infra,UAE,Singapore,CUST-10741,PROD-11147
+ORD-42469,Wilkins-Pham,2024-12-29,In Progress,14133,12,DataSphere,AI-powered analytics core,Security,Australia,Brazil,CUST-10434,PROD-11129
+ORD-42414,Wolf Group,2025-04-20,Returned,24979,26,NetConnect,AI-powered analytics core,Analytics,Australia,Brazil,CUST-10629,PROD-11491
+ORD-41601,"Richardson, Price and Lyons",2025-07-15,Returned,19167,50,CoreAnalytics,Wi‑Fi 6 access point,Cloud Infra,Germany,USA,CUST-10796,PROD-11411
+ORD-42465,Berry-Bates,2024-10-21,Cancelled,4060,45,Insight360,Wi‑Fi 6 access point,Wireless,UAE,India,CUST-10150,PROD-11959
+ORD-40229,Austin-Davies,2025-06-26,Delivered,4580,50,CloudEdge,Hybrid cloud gateway,Security,UAE,Singapore,CUST-10815,PROD-11949
+ORD-40916,York-Ross,2024-10-15,In Progress,24376,18,Insight360,Wi‑Fi 6 access point,Wireless,UK,Brazil,CUST-10990,PROD-11970
+ORD-40795,"Thomas, Smith and Cook",2025-02-03,Cancelled,15856,42,CloudEdge,AI-powered analytics core,Security,UAE,USA,CUST-10205,PROD-11254
+ORD-43022,Evans Ltd,2025-05-23,Returned,23963,46,DataSphere,Hybrid cloud gateway,AI Solutions,USA,Germany,CUST-10666,PROD-11879
+ORD-43544,Allen-Fuller,2025-06-25,Shipped,3305,12,CloudEdge,AI-powered analytics core,Networking,USA,Brazil,CUST-10725,PROD-11022
+ORD-41074,Daugherty-Pruitt,2025-07-04,Shipped,21730,17,NetConnect,Hybrid cloud gateway,Wireless,USA,Brazil,CUST-10806,PROD-11236
+ORD-43352,Moss LLC,2025-04-03,Returned,21121,13,CloudEdge,AI-powered analytics core,AI Solutions,UK,Singapore,CUST-10462,PROD-11421
+ORD-41745,Sosa PLC,2024-12-19,In Progress,24453,11,CloudEdge,Next-gen firewall,Storage,India,USA,CUST-10964,PROD-11749
+ORD-41085,Roberts-Chase,2025-04-03,In Progress,14631,9,CoreAnalytics,Next-gen firewall,Analytics,UAE,USA,CUST-10208,PROD-11288
+ORD-40927,"Owens, Morrison and Clark",2024-11-23,Delivered,19603,19,DataSphere,High-speed enterprise router,Security,Brazil,UK,CUST-10472,PROD-11099
+ORD-43050,Anderson-Moss,2024-11-12,Cancelled,7762,34,DataSphere,High-speed enterprise router,Storage,Brazil,UAE,CUST-10182,PROD-11678
+ORD-41118,Richardson Group,2025-03-16,Returned,9487,28,NetConnect,Hybrid cloud gateway,Networking,Germany,Brazil,CUST-10034,PROD-11692
+ORD-40643,Dunn-Anderson,2025-04-12,Shipped,3225,30,CoreAnalytics,High-speed enterprise router,Wireless,India,Australia,CUST-10185,PROD-11522
+ORD-44768,"Adams, Johnson and Davis",2025-06-26,In Progress,6354,23,CloudEdge,Hybrid cloud gateway,Networking,Germany,India,CUST-10867,PROD-11972
+ORD-40502,Rogers-Miller,2024-12-01,Returned,20591,45,CoreAnalytics,Next-gen firewall,Wireless,Singapore,Germany,CUST-10251,PROD-11861
+ORD-44067,Dunn-Anderson,2025-05-15,Cancelled,18203,40,Insight360,48-port managed switch,Networking,UK,USA,CUST-10405,PROD-11950
+ORD-40334,Cox-Taylor,2025-07-27,In Progress,24634,27,DataSphere,AI-powered analytics core,AI Solutions,Singapore,Brazil,CUST-10463,PROD-11182
+ORD-44685,"Rogers, Figueroa and Patton",2024-11-29,Returned,4475,38,Insight360,48-port managed switch,AI Solutions,UK,Brazil,CUST-10409,PROD-11363
+ORD-40487,Sanders-Howard,2025-03-04,Returned,3558,37,Insight360,High-speed enterprise router,Analytics,Brazil,USA,CUST-10639,PROD-11954
+ORD-41963,Jackson-Sherman,2025-05-26,Cancelled,10469,46,DataSphere,High-speed enterprise router,Wireless,India,Brazil,CUST-10786,PROD-11400
+ORD-40394,"Moore, Hansen and Lewis",2025-03-05,Returned,14634,41,CloudEdge,Wi‑Fi 6 access point,Storage,UAE,UK,CUST-10667,PROD-11254
+ORD-44843,Larsen and Sons,2025-04-12,Shipped,9790,28,NetConnect,AI-powered analytics core,Wireless,UK,UAE,CUST-10910,PROD-11774
+ORD-44867,Moore and Sons,2024-09-05,Shipped,16218,19,Insight360,Hybrid cloud gateway,AI Solutions,USA,Singapore,CUST-10372,PROD-11074
+ORD-41756,"Wilson, Ramirez and Lester",2024-09-23,Cancelled,24104,19,DataSphere,AI-powered analytics core,Analytics,USA,USA,CUST-10983,PROD-11128
+ORD-42516,Griffith Ltd,2025-01-11,Delivered,8717,46,DataSphere,High-speed enterprise router,Wireless,UAE,USA,CUST-10660,PROD-11924
+ORD-43586,"Wilson, Ramirez and Lester",2025-02-01,In Progress,12089,33,NetConnect,High-speed enterprise router,Cloud Infra,UAE,USA,CUST-10001,PROD-11621
+ORD-44316,Smith Inc,2025-01-03,Shipped,10283,49,Insight360,High-speed enterprise router,Storage,UAE,Singapore,CUST-10095,PROD-11450
+ORD-44967,"Lopez, Snyder and Kaufman",2025-08-04,Shipped,14044,6,NetConnect,Hybrid cloud gateway,Storage,Brazil,Brazil,CUST-10267,PROD-11420
+ORD-42100,Greene Group,2025-03-26,Cancelled,13715,40,NetConnect,Hybrid cloud gateway,Analytics,UK,Brazil,CUST-10226,PROD-11021
+ORD-43600,"Kelley, Snow and Elliott",2024-12-18,Cancelled,19945,44,CloudEdge,Wi‑Fi 6 access point,Wireless,UK,UAE,CUST-10726,PROD-11887
+ORD-44122,"Lynch, Lynch and Mitchell",2024-09-12,Shipped,3435,11,CloudEdge,48-port managed switch,Networking,India,Germany,CUST-10750,PROD-11979
+ORD-40030,Benitez and Sons,2025-05-13,Shipped,5551,45,CloudEdge,AI-powered analytics core,Networking,UK,Brazil,CUST-10876,PROD-11422
+ORD-40066,Rogers-Cervantes,2025-04-12,In Progress,14032,47,CoreAnalytics,High-speed enterprise router,Storage,UK,India,CUST-10058,PROD-11137
+ORD-40839,Davis Ltd,2025-06-07,Shipped,7897,19,NetConnect,48-port managed switch,Storage,Australia,Australia,CUST-10493,PROD-11173
+ORD-43907,"Freeman, Jones and Hall",2024-12-26,Returned,5545,48,CloudEdge,Wi‑Fi 6 access point,Cloud Infra,India,India,CUST-10545,PROD-11211
+ORD-43774,"Martin, Stevenson and Meadows",2024-11-29,Returned,8894,40,DataSphere,48-port managed switch,Cloud Infra,UAE,UK,CUST-10127,PROD-11266
+ORD-44636,Buchanan and Sons,2025-06-02,In Progress,6751,12,DataSphere,Wi‑Fi 6 access point,Networking,UK,USA,CUST-10938,PROD-11382
+ORD-43162,"Hall, Davis and Butler",2025-02-27,Cancelled,6576,27,Insight360,Next-gen firewall,Wireless,USA,India,CUST-10323,PROD-11147
+ORD-42660,"Lopez, Bowen and Brown",2024-11-02,Shipped,21714,32,DataSphere,48-port managed switch,Cloud Infra,Singapore,India,CUST-10207,PROD-11251
+ORD-44616,Reed-Scott,2025-01-21,Delivered,24054,38,NetConnect,Wi‑Fi 6 access point,AI Solutions,India,USA,CUST-10149,PROD-11444
+ORD-44629,Simmons Ltd,2025-04-09,Returned,15440,4,CloudEdge,48-port managed switch,Security,USA,Brazil,CUST-10731,PROD-11365
+ORD-42452,Chen-Stanton,2024-12-30,Delivered,10138,20,Insight360,Hybrid cloud gateway,Cloud Infra,UAE,UAE,CUST-10063,PROD-11838
+ORD-42847,Jones-Mays,2025-07-22,Delivered,12863,20,CoreAnalytics,High-speed enterprise router,Analytics,USA,UAE,CUST-10561,PROD-11019
+ORD-41145,Rodriguez Group,2025-04-30,Delivered,18300,44,Insight360,AI-powered analytics core,Networking,Germany,Australia,CUST-10958,PROD-11460
+ORD-43079,Smith and Sons,2024-12-10,Delivered,3139,20,CloudEdge,AI-powered analytics core,Security,UAE,Germany,CUST-10836,PROD-11750
+ORD-41104,Barker-Fuentes,2025-02-26,Delivered,20498,50,CoreAnalytics,AI-powered analytics core,Wireless,UAE,USA,CUST-10260,PROD-11685
+ORD-40169,"Rice, Phillips and Smith",2025-05-27,Shipped,6303,11,CloudEdge,Next-gen firewall,Storage,Brazil,India,CUST-10625,PROD-11404
+ORD-41671,Delacruz and Sons,2025-05-31,Returned,12644,47,CoreAnalytics,Next-gen firewall,Analytics,India,Singapore,CUST-10400,PROD-11510
+ORD-42571,Barrera-Moody,2025-07-25,Cancelled,17605,40,CloudEdge,Wi‑Fi 6 access point,Analytics,Germany,UK,CUST-10224,PROD-11352
+ORD-42378,"Lopez, Bates and Phillips",2025-04-20,Delivered,10686,22,Insight360,Next-gen firewall,Cloud Infra,Germany,USA,CUST-10382,PROD-11792
+ORD-44396,Padilla-Wang,2025-03-14,Cancelled,5145,31,Insight360,48-port managed switch,AI Solutions,India,Brazil,CUST-10908,PROD-11056
+ORD-44258,Chavez-Lopez,2025-07-05,In Progress,21321,36,NetConnect,High-speed enterprise router,Wireless,UAE,Germany,CUST-10248,PROD-11824
+ORD-43863,Morales Inc,2025-06-21,Delivered,2733,28,NetConnect,Wi‑Fi 6 access point,AI Solutions,Singapore,Australia,CUST-10736,PROD-11092
+ORD-40024,Barnes PLC,2024-11-04,Shipped,10966,13,CoreAnalytics,Wi‑Fi 6 access point,Networking,India,Brazil,CUST-10824,PROD-11393
+ORD-42634,"Williams, Pierce and Burke",2025-08-30,Cancelled,5631,35,CoreAnalytics,High-speed enterprise router,Storage,Singapore,Germany,CUST-10763,PROD-11402
+ORD-43341,Jimenez-Gaines,2024-10-23,Delivered,16673,31,Insight360,Hybrid cloud gateway,Networking,UAE,UK,CUST-10494,PROD-11902
+ORD-42216,Wilcox LLC,2025-01-18,Delivered,20425,9,Insight360,48-port managed switch,Analytics,UK,Germany,CUST-10671,PROD-11004
+ORD-43683,"Lopez, Cunningham and Wells",2025-06-29,Returned,8898,42,CloudEdge,AI-powered analytics core,AI Solutions,Singapore,UK,CUST-10798,PROD-11656
+ORD-44725,"Grant, Johnson and Jordan",2025-07-05,Cancelled,7300,3,DataSphere,48-port managed switch,Security,Germany,UK,CUST-10067,PROD-11015
+ORD-41908,Rogers-Pugh,2025-03-17,Delivered,14148,38,CloudEdge,High-speed enterprise router,Analytics,UAE,Australia,CUST-10473,PROD-11920
+ORD-40085,"Jackson, Krueger and Lee",2024-09-30,Returned,18648,31,CoreAnalytics,48-port managed switch,AI Solutions,UK,UAE,CUST-10346,PROD-11113
+ORD-40228,Gomez-Wallace,2024-10-02,Shipped,19133,17,NetConnect,Wi‑Fi 6 access point,Storage,Germany,USA,CUST-10762,PROD-11662
+ORD-40297,Watkins Ltd,2025-02-11,Cancelled,4710,23,NetConnect,High-speed enterprise router,Security,UK,India,CUST-10516,PROD-11033
+ORD-41002,Garcia-Anderson,2024-11-18,Returned,18666,3,CoreAnalytics,48-port managed switch,Analytics,UK,Brazil,CUST-10315,PROD-11024
+ORD-42139,"Gonzales, Allen and Carpenter",2024-11-04,In Progress,12493,48,CoreAnalytics,Hybrid cloud gateway,Cloud Infra,USA,India,CUST-10006,PROD-11113
+ORD-40712,"Murphy, Sanchez and Perez",2024-10-26,In Progress,15384,2,Insight360,AI-powered analytics core,Storage,Brazil,UK,CUST-10254,PROD-11668
+ORD-42802,Black Ltd,2025-01-12,Shipped,8873,22,Insight360,AI-powered analytics core,Networking,Australia,USA,CUST-10548,PROD-11913
+ORD-42528,Davis Group,2025-04-26,Cancelled,5189,23,Insight360,AI-powered analytics core,Cloud Infra,India,UK,CUST-10740,PROD-11241
+ORD-43753,Trujillo-Daniel,2024-09-02,In Progress,10178,35,CloudEdge,Next-gen firewall,Analytics,USA,Germany,CUST-10342,PROD-11201
+ORD-43322,"Jackson, Krueger and Lee",2025-02-23,Delivered,18855,28,CloudEdge,48-port managed switch,Analytics,UK,USA,CUST-10942,PROD-11545
+ORD-43182,Smith PLC,2024-12-08,Cancelled,3489,47,NetConnect,48-port managed switch,Storage,Germany,India,CUST-10624,PROD-11766
+ORD-44184,Brown-Carroll,2024-12-31,Delivered,21427,22,CloudEdge,Next-gen firewall,Wireless,UAE,Brazil,CUST-10985,PROD-11892
+ORD-41616,Riley-Berry,2025-01-19,In Progress,14279,25,Insight360,High-speed enterprise router,Analytics,Germany,UK,CUST-10268,PROD-11954
+ORD-43025,Fisher PLC,2024-11-15,Delivered,23094,12,DataSphere,Next-gen firewall,Storage,Singapore,Australia,CUST-10759,PROD-11124
+ORD-41414,"Meyers, King and Munoz",2024-11-03,Shipped,7938,1,Insight360,Next-gen firewall,Cloud Infra,Singapore,USA,CUST-10170,PROD-11506
+ORD-40764,Kidd Ltd,2025-03-12,Shipped,11869,32,CloudEdge,Wi‑Fi 6 access point,Cloud Infra,UK,UK,CUST-10699,PROD-11930
+ORD-40656,Perez-Campbell,2025-06-17,Cancelled,10938,46,DataSphere,AI-powered analytics core,Storage,USA,Singapore,CUST-10931,PROD-11034
+ORD-44798,Perkins-Turner,2024-09-11,Shipped,2622,43,CoreAnalytics,Wi‑Fi 6 access point,Analytics,Germany,USA,CUST-10607,PROD-11768
+ORD-43850,Schneider and Sons,2025-02-24,In Progress,14759,10,CloudEdge,48-port managed switch,Wireless,Brazil,Brazil,CUST-10927,PROD-11175
+ORD-44154,"Murphy, Thompson and Reese",2024-10-10,Delivered,6535,11,CloudEdge,AI-powered analytics core,Cloud Infra,UAE,USA,CUST-10295,PROD-11323
+ORD-40469,Glover Group,2024-09-30,Delivered,16319,32,DataSphere,48-port managed switch,Cloud Infra,Germany,Singapore,CUST-10038,PROD-11110
+ORD-40158,Griffith Ltd,2025-01-22,Delivered,8854,13,NetConnect,AI-powered analytics core,Storage,Australia,India,CUST-10678,PROD-11693
+ORD-41296,Williamson Group,2025-03-22,Returned,9409,1,CoreAnalytics,AI-powered analytics core,Networking,UAE,India,CUST-10671,PROD-11620
+ORD-40498,Brennan-Hill,2025-05-24,Cancelled,13474,20,NetConnect,Hybrid cloud gateway,AI Solutions,Brazil,UAE,CUST-10510,PROD-11963
+ORD-44741,"Lewis, Cross and Huber",2024-11-04,In Progress,13038,31,NetConnect,Wi‑Fi 6 access point,Security,Australia,Australia,CUST-10831,PROD-11426
+ORD-42941,"Ashley, Garrett and Morrison",2025-01-28,Cancelled,1760,1,NetConnect,48-port managed switch,Storage,India,USA,CUST-10782,PROD-11420
+ORD-43457,"Nelson, Walker and Reyes",2025-06-16,Shipped,17740,24,NetConnect,Next-gen firewall,AI Solutions,Germany,UAE,CUST-10408,PROD-11308
+ORD-40374,Gross Ltd,2025-08-10,Delivered,8908,40,CloudEdge,Wi‑Fi 6 access point,Networking,UK,UK,CUST-10312,PROD-11063
+ORD-40080,"Gonzalez, Matthews and Hunter",2025-03-04,Delivered,23569,7,CoreAnalytics,AI-powered analytics core,Security,India,Australia,CUST-10147,PROD-11834
+ORD-41554,Osborn-Sharp,2025-08-09,Cancelled,3417,7,CloudEdge,AI-powered analytics core,Wireless,India,Germany,CUST-10059,PROD-11494
+ORD-41670,"Klein, Rodriguez and Chapman",2025-07-30,Shipped,13896,22,CloudEdge,Wi‑Fi 6 access point,Cloud Infra,Singapore,Singapore,CUST-10069,PROD-11677
+ORD-42132,"Esparza, Peterson and Campbell",2024-10-02,In Progress,15577,18,DataSphere,High-speed enterprise router,Analytics,Singapore,Brazil,CUST-10524,PROD-11069
+ORD-44440,Leon and Sons,2025-05-01,Cancelled,17955,28,CoreAnalytics,Hybrid cloud gateway,Storage,Germany,Australia,CUST-10412,PROD-11971
+ORD-40466,Gomez-Wallace,2025-04-15,Delivered,23079,12,NetConnect,Wi‑Fi 6 access point,Cloud Infra,Brazil,USA,CUST-10468,PROD-11997
+ORD-40249,"Rosario, Reeves and Velez",2024-12-20,Shipped,11528,3,CoreAnalytics,Next-gen firewall,Security,UK,UK,CUST-10183,PROD-11674
+ORD-40932,"Baker, Ross and Singh",2025-08-09,Delivered,18861,33,NetConnect,AI-powered analytics core,Cloud Infra,USA,Brazil,CUST-10328,PROD-11114
+ORD-41336,Gomez-Ellis,2025-02-01,Delivered,12245,47,CoreAnalytics,AI-powered analytics core,Wireless,UK,UK,CUST-10178,PROD-11122
+ORD-44525,Lewis-Patel,2024-12-03,Returned,3718,30,NetConnect,Wi‑Fi 6 access point,Storage,India,Australia,CUST-10243,PROD-11724
+ORD-41339,Brooks LLC,2025-01-13,Cancelled,1393,17,CloudEdge,48-port managed switch,Networking,UAE,India,CUST-10857,PROD-11209
+ORD-41407,Carter Inc,2025-03-27,Shipped,11716,49,CloudEdge,Next-gen firewall,Storage,Brazil,UAE,CUST-10458,PROD-11888
+ORD-41091,Mccoy Inc,2025-02-14,Returned,2437,6,Insight360,48-port managed switch,Analytics,Australia,Germany,CUST-10465,PROD-11564
+ORD-44210,Anderson-Lowe,2025-06-10,Cancelled,5994,4,NetConnect,AI-powered analytics core,Analytics,Singapore,UK,CUST-10914,PROD-11295
+ORD-40743,"Campbell, Bennett and Carrillo",2024-12-28,Cancelled,13340,48,CloudEdge,High-speed enterprise router,Networking,India,UK,CUST-10236,PROD-11918
+ORD-42324,Hood Inc,2024-09-10,Delivered,19276,6,CloudEdge,48-port managed switch,AI Solutions,Brazil,Germany,CUST-10277,PROD-11345
+ORD-43602,Miller Ltd,2025-02-02,Delivered,11424,9,NetConnect,Wi‑Fi 6 access point,Networking,Brazil,UK,CUST-10331,PROD-11001
+ORD-42124,Harvey PLC,2025-06-10,Delivered,1302,32,CoreAnalytics,Next-gen firewall,Wireless,India,Australia,CUST-10827,PROD-11908
+ORD-42095,Simmons Ltd,2025-08-11,Cancelled,14203,13,Insight360,48-port managed switch,AI Solutions,Brazil,Brazil,CUST-10383,PROD-11790
+ORD-40241,"Herrera, Morton and Bell",2025-05-08,In Progress,18493,33,NetConnect,High-speed enterprise router,Security,Singapore,Brazil,CUST-10867,PROD-11043
+ORD-42352,Moore and Sons,2025-05-13,In Progress,20560,5,NetConnect,Next-gen firewall,Networking,USA,Singapore,CUST-10844,PROD-11693
+ORD-41371,Hansen-Gordon,2024-11-12,Returned,4476,7,CoreAnalytics,AI-powered analytics core,Wireless,Singapore,UK,CUST-10993,PROD-11395
+ORD-41058,Walker-Mcdonald,2025-02-23,Returned,24409,16,CloudEdge,Hybrid cloud gateway,Networking,Germany,Germany,CUST-10097,PROD-11252
+ORD-44817,Flores-Townsend,2024-12-04,Returned,23621,28,DataSphere,Hybrid cloud gateway,Analytics,UK,Singapore,CUST-10621,PROD-11939
+ORD-40200,Mcdaniel-Moore,2024-10-01,Shipped,11944,32,NetConnect,Wi‑Fi 6 access point,Networking,UK,UAE,CUST-10532,PROD-11415
+ORD-42281,Brown-Carroll,2025-04-17,Delivered,11289,28,CoreAnalytics,Wi‑Fi 6 access point,Analytics,Australia,Australia,CUST-10751,PROD-11368
+ORD-44750,"Adams, Osborne and Hall",2025-07-04,Shipped,5536,22,Insight360,48-port managed switch,Networking,Brazil,Singapore,CUST-10753,PROD-11152
+ORD-42221,Murray LLC,2024-09-12,In Progress,13541,41,CoreAnalytics,AI-powered analytics core,Networking,Australia,UK,CUST-10484,PROD-11157
+ORD-44772,Johnson and Sons,2025-04-25,Cancelled,17818,6,CoreAnalytics,AI-powered analytics core,Security,Germany,UK,CUST-10838,PROD-11808
+ORD-42820,Johnson-Chang,2024-11-06,Returned,10648,4,CloudEdge,Next-gen firewall,AI Solutions,UAE,Germany,CUST-10430,PROD-11429
+ORD-43151,Ray Inc,2025-01-19,Delivered,8397,17,Insight360,Next-gen firewall,Wireless,Brazil,India,CUST-10821,PROD-11511
+ORD-44257,Anderson Inc,2025-04-27,Cancelled,15988,18,DataSphere,48-port managed switch,Wireless,India,UK,CUST-10049,PROD-11952
+ORD-43108,Roberts-Chase,2025-01-01,In Progress,23784,14,CloudEdge,Wi‑Fi 6 access point,Security,UAE,USA,CUST-10823,PROD-11387
+ORD-41974,Robbins-Cole,2025-06-02,Delivered,20347,17,NetConnect,Wi‑Fi 6 access point,Analytics,Singapore,Singapore,CUST-10535,PROD-11173
+ORD-41376,Hubbard Group,2025-02-12,Shipped,20869,49,NetConnect,48-port managed switch,AI Solutions,Australia,Australia,CUST-10605,PROD-11899
+ORD-43969,"Reeves, Harris and White",2025-06-08,Returned,24851,22,Insight360,Next-gen firewall,Analytics,India,UK,CUST-10245,PROD-11073
+ORD-44063,Jordan-Hamilton,2025-07-26,Delivered,14155,16,NetConnect,48-port managed switch,Networking,Australia,Singapore,CUST-10980,PROD-11975
+ORD-44446,Mason-Curry,2025-08-19,Returned,20234,38,DataSphere,48-port managed switch,Cloud Infra,Singapore,UAE,CUST-10736,PROD-11556
+ORD-43558,Myers LLC,2024-09-09,Returned,23948,42,Insight360,AI-powered analytics core,Networking,Brazil,UAE,CUST-10418,PROD-11743
+ORD-40965,Ramos Inc,2025-07-07,Cancelled,3281,46,CoreAnalytics,Next-gen firewall,Networking,UAE,UK,CUST-10427,PROD-11806
+ORD-40180,Smith Group,2025-03-24,In Progress,18010,21,CloudEdge,Next-gen firewall,Networking,Singapore,Brazil,CUST-10233,PROD-11325
+ORD-43699,Baker-Johnson,2024-09-18,Shipped,10220,33,CloudEdge,High-speed enterprise router,Analytics,UK,Singapore,CUST-10452,PROD-11095
+ORD-43822,Santos Group,2025-04-08,Returned,12961,13,DataSphere,Next-gen firewall,Security,Singapore,UK,CUST-10335,PROD-11343
+ORD-44879,"Andrews, Roberts and King",2025-01-08,Cancelled,2525,21,CloudEdge,Next-gen firewall,Cloud Infra,UK,UAE,CUST-10432,PROD-11679
+ORD-43900,Murray-Johnson,2025-08-10,Cancelled,6919,48,CoreAnalytics,48-port managed switch,Storage,Singapore,Singapore,CUST-10510,PROD-11350
+ORD-44488,Romero Ltd,2025-07-14,Shipped,18502,7,NetConnect,48-port managed switch,Cloud Infra,UAE,India,CUST-10207,PROD-11179
+ORD-43239,Reid-Bowman,2025-06-10,In Progress,11320,23,CoreAnalytics,Hybrid cloud gateway,Analytics,Germany,Australia,CUST-10410,PROD-11416
+ORD-42975,"Garcia, Marshall and Gibson",2025-07-05,Returned,20155,42,DataSphere,Hybrid cloud gateway,Wireless,Australia,Brazil,CUST-10186,PROD-11251
+ORD-43581,Goodwin-Fowler,2025-03-09,Returned,7529,23,DataSphere,High-speed enterprise router,Wireless,UK,India,CUST-10265,PROD-11924
+ORD-42888,"Freeman, Jones and Hall",2024-09-03,Delivered,11465,4,DataSphere,Next-gen firewall,Cloud Infra,Germany,UAE,CUST-10506,PROD-11976
+ORD-42576,"Wilkins, Odom and Harvey",2024-09-22,Delivered,20079,44,CloudEdge,High-speed enterprise router,Analytics,USA,Australia,CUST-10792,PROD-11094
+ORD-41420,Hodge Ltd,2024-11-04,Shipped,17471,38,Insight360,High-speed enterprise router,Cloud Infra,Brazil,UK,CUST-10969,PROD-11430
+ORD-43908,"Flores, Wallace and Garza",2024-11-24,Cancelled,24922,32,DataSphere,High-speed enterprise router,Security,India,UAE,CUST-10502,PROD-11611
+ORD-44674,"Ryan, Murphy and Williamson",2024-09-19,Cancelled,4908,19,NetConnect,Hybrid cloud gateway,Wireless,USA,Germany,CUST-10946,PROD-11693
+ORD-44903,Wilson-Maxwell,2025-08-24,Delivered,12279,47,DataSphere,48-port managed switch,Analytics,USA,Germany,CUST-10574,PROD-11392
+ORD-41861,Kennedy-Campbell,2025-02-01,In Progress,23784,41,CloudEdge,High-speed enterprise router,Analytics,UK,India,CUST-10820,PROD-11421
+ORD-40009,Nguyen PLC,2024-10-31,In Progress,4836,40,DataSphere,48-port managed switch,AI Solutions,USA,UAE,CUST-10846,PROD-11560
+ORD-42895,"Henderson, Johnson and Johnson",2025-08-16,Cancelled,12753,19,CloudEdge,Wi‑Fi 6 access point,Analytics,UAE,UAE,CUST-10935,PROD-11003
+ORD-42848,Lewis-Lopez,2024-10-03,Shipped,4197,22,NetConnect,AI-powered analytics core,Analytics,UAE,Australia,CUST-10419,PROD-11477
+ORD-43665,Brennan Group,2025-09-01,Returned,3305,47,NetConnect,High-speed enterprise router,Wireless,Singapore,Germany,CUST-10907,PROD-11547
+ORD-40145,"Woods, Kelly and Richardson",2024-10-25,Delivered,24594,35,CloudEdge,Hybrid cloud gateway,AI Solutions,Singapore,Brazil,CUST-10020,PROD-11958
+ORD-42105,Taylor Group,2024-12-12,Delivered,22901,39,Insight360,Next-gen firewall,Security,Brazil,UAE,CUST-10164,PROD-11601
+ORD-43144,Sutton and Sons,2025-06-27,Delivered,18908,23,CoreAnalytics,AI-powered analytics core,Storage,USA,UK,CUST-10301,PROD-11971
+ORD-40842,White-Palmer,2025-08-15,Delivered,8303,44,CoreAnalytics,Hybrid cloud gateway,Wireless,UAE,India,CUST-10556,PROD-11889
+ORD-41129,"Ward, Woods and Rasmussen",2025-02-16,In Progress,12773,45,NetConnect,48-port managed switch,Analytics,Singapore,UK,CUST-10419,PROD-11859
+ORD-40152,Fox Group,2025-08-02,Cancelled,5898,44,DataSphere,48-port managed switch,Networking,Germany,India,CUST-10008,PROD-11660
+ORD-43592,"Wilson, Mcclure and Wright",2024-10-09,Shipped,11489,20,CloudEdge,Wi‑Fi 6 access point,Security,Australia,Singapore,CUST-10427,PROD-11169
+ORD-41053,Schultz-Vargas,2024-12-20,In Progress,12306,47,CoreAnalytics,AI-powered analytics core,Analytics,USA,Singapore,CUST-10866,PROD-11167
+ORD-41591,Watkins LLC,2024-11-06,Cancelled,16978,11,CloudEdge,48-port managed switch,Storage,USA,UK,CUST-10482,PROD-11909
+ORD-43009,Garcia-Anderson,2025-08-03,Cancelled,12388,28,Insight360,High-speed enterprise router,Wireless,Germany,USA,CUST-10665,PROD-11375
+ORD-42030,"Mueller, Swanson and Rogers",2024-10-11,Shipped,6628,30,NetConnect,Wi‑Fi 6 access point,Networking,India,Australia,CUST-10773,PROD-11772
+ORD-43419,"Hobbs, Carlson and Hughes",2025-01-02,Returned,23661,21,Insight360,Next-gen firewall,Wireless,Singapore,UK,CUST-10285,PROD-11588
+ORD-41808,Clark Group,2025-07-04,Shipped,23000,17,DataSphere,AI-powered analytics core,Security,India,UK,CUST-10040,PROD-11561
+ORD-42697,Choi Ltd,2025-01-22,Delivered,2338,16,NetConnect,Hybrid cloud gateway,Analytics,Brazil,USA,CUST-10974,PROD-11265
+ORD-43040,Griffin-Neal,2025-07-05,Cancelled,8243,45,NetConnect,Hybrid cloud gateway,Networking,UAE,Germany,CUST-10433,PROD-11814
+ORD-40473,Rogers LLC,2025-05-11,Delivered,13917,46,DataSphere,High-speed enterprise router,AI Solutions,USA,India,CUST-10644,PROD-11178
+ORD-43290,Jackson-Fowler,2025-04-23,Cancelled,11940,27,CloudEdge,48-port managed switch,Security,USA,Germany,CUST-10577,PROD-11807
+ORD-44075,Flores-Townsend,2025-06-16,Delivered,7584,13,CloudEdge,Hybrid cloud gateway,Storage,Brazil,India,CUST-10001,PROD-11203
+ORD-43497,Clark Ltd,2024-11-13,Cancelled,16237,13,CoreAnalytics,Wi‑Fi 6 access point,Cloud Infra,UAE,USA,CUST-10220,PROD-11193
+ORD-40280,Miller Ltd,2025-02-03,Delivered,14359,9,Insight360,48-port managed switch,Storage,Brazil,UK,CUST-10258,PROD-11342
+ORD-41742,Walker-Gonzalez,2024-12-21,Returned,21931,28,DataSphere,Hybrid cloud gateway,Security,India,Germany,CUST-10168,PROD-11558
+ORD-44625,Lewis-Patel,2025-02-11,In Progress,22969,47,CoreAnalytics,48-port managed switch,Analytics,Brazil,India,CUST-10988,PROD-11723
+ORD-42887,Turner Inc,2024-11-24,In Progress,23113,7,CloudEdge,Hybrid cloud gateway,Wireless,Germany,Australia,CUST-10643,PROD-11421
+ORD-41942,Thompson Ltd,2025-08-26,Delivered,21687,19,Insight360,Hybrid cloud gateway,Analytics,UAE,USA,CUST-10929,PROD-11506
+ORD-40101,Kemp Inc,2025-07-06,Cancelled,22772,48,CoreAnalytics,High-speed enterprise router,Analytics,UAE,Singapore,CUST-10166,PROD-11469
+ORD-42805,Tyler-Brown,2025-06-03,In Progress,1543,42,Insight360,Next-gen firewall,Cloud Infra,USA,Singapore,CUST-10382,PROD-11430
+ORD-43571,"Lewis, Morse and Nielsen",2025-08-11,Returned,24771,23,NetConnect,Wi‑Fi 6 access point,AI Solutions,USA,USA,CUST-10649,PROD-11078
+ORD-43685,Choi Ltd,2024-09-12,Shipped,18660,20,CloudEdge,High-speed enterprise router,Cloud Infra,Brazil,Australia,CUST-10338,PROD-11842
+ORD-43662,"Stewart, Moreno and Gray",2024-10-31,In Progress,5147,1,Insight360,Next-gen firewall,Wireless,India,Singapore,CUST-10301,PROD-11825
+ORD-40531,Chang-Chen,2024-11-23,Returned,14605,48,NetConnect,48-port managed switch,Wireless,UK,UAE,CUST-10030,PROD-11214
+ORD-41887,Berger Group,2025-03-20,Shipped,4423,12,NetConnect,High-speed enterprise router,Networking,Australia,India,CUST-10789,PROD-11956
+ORD-40682,Green LLC,2024-12-04,Delivered,13095,13,CloudEdge,Next-gen firewall,Storage,UAE,Brazil,CUST-10793,PROD-11175
+ORD-43795,"Lee, Taylor and Roman",2025-01-26,Shipped,12318,29,CoreAnalytics,48-port managed switch,Networking,Singapore,India,CUST-10472,PROD-11019
+ORD-43945,Harrington Ltd,2025-06-08,In Progress,7223,29,Insight360,Wi‑Fi 6 access point,Cloud Infra,Germany,USA,CUST-10377,PROD-11004
+ORD-44667,"Morrison, Brown and Wilson",2024-10-23,Returned,2950,30,CloudEdge,48-port managed switch,Security,Brazil,UK,CUST-10051,PROD-11701
+ORD-42019,Hunter-Smith,2025-02-13,In Progress,22930,13,Insight360,High-speed enterprise router,Security,India,Germany,CUST-10117,PROD-11811
+ORD-41097,"Moore, Hansen and Lewis",2025-01-15,In Progress,9351,38,NetConnect,Wi‑Fi 6 access point,AI Solutions,Germany,USA,CUST-10801,PROD-11692
+ORD-40830,Humphrey and Sons,2025-01-30,Cancelled,21190,11,NetConnect,Wi‑Fi 6 access point,AI Solutions,UAE,Singapore,CUST-10034,PROD-11401
+ORD-42806,Barnes PLC,2025-05-25,Cancelled,8630,22,DataSphere,Hybrid cloud gateway,Analytics,UK,UK,CUST-10598,PROD-11338
+ORD-43830,Jackson Inc,2025-03-04,Returned,1725,15,CloudEdge,Wi‑Fi 6 access point,Cloud Infra,Germany,USA,CUST-10961,PROD-11722
+ORD-44382,"Rodriguez, Hill and Hopkins",2025-08-25,Delivered,16509,28,Insight360,Hybrid cloud gateway,Security,UK,USA,CUST-10590,PROD-11271
+ORD-43892,"Hamilton, Wilson and Colon",2025-01-01,Delivered,4957,17,CloudEdge,High-speed enterprise router,Wireless,USA,Germany,CUST-10410,PROD-11202
+ORD-40765,Foster-Kim,2024-11-05,In Progress,16273,20,DataSphere,48-port managed switch,Cloud Infra,Singapore,UAE,CUST-10525,PROD-11020
+ORD-42768,Booth-Morris,2024-10-23,Delivered,15670,16,CloudEdge,High-speed enterprise router,Wireless,Australia,UAE,CUST-10246,PROD-11337
+ORD-44329,"Cabrera, Walker and Davenport",2025-02-26,Returned,12074,50,DataSphere,High-speed enterprise router,Wireless,Brazil,UAE,CUST-10833,PROD-11239
+ORD-43296,Brown LLC,2025-08-21,Returned,20256,22,NetConnect,Hybrid cloud gateway,Wireless,Brazil,USA,CUST-10179,PROD-11191
+ORD-42195,Baker-Johnson,2024-10-19,Returned,8824,17,DataSphere,High-speed enterprise router,AI Solutions,USA,Brazil,CUST-10977,PROD-11917
+ORD-42358,"Hughes, Watts and Arnold",2025-01-18,Returned,16733,10,CloudEdge,Hybrid cloud gateway,AI Solutions,UAE,USA,CUST-10313,PROD-11807
+ORD-43426,Dixon and Sons,2025-02-09,Returned,8695,21,CoreAnalytics,High-speed enterprise router,AI Solutions,Germany,USA,CUST-10641,PROD-11058
+ORD-43980,Harris-Brown,2024-10-15,Delivered,2369,33,NetConnect,Next-gen firewall,Networking,India,Brazil,CUST-10336,PROD-11440
+ORD-40912,"Martinez, Carpenter and Green",2025-08-21,Cancelled,17520,43,CoreAnalytics,Hybrid cloud gateway,Cloud Infra,Brazil,UAE,CUST-10006,PROD-11402
+ORD-43146,Austin-Davies,2024-09-30,Cancelled,5468,1,CloudEdge,Wi‑Fi 6 access point,Storage,Brazil,Brazil,CUST-10354,PROD-11949
+ORD-41000,Mitchell-Mendez,2025-08-28,Shipped,20470,16,NetConnect,High-speed enterprise router,Wireless,Brazil,India,CUST-10090,PROD-11688
+ORD-43654,Meyer-Frazier,2025-01-02,Cancelled,2002,44,NetConnect,Hybrid cloud gateway,AI Solutions,India,Australia,CUST-10120,PROD-11032
+ORD-42484,Barker PLC,2025-05-08,Shipped,2846,45,CloudEdge,Wi‑Fi 6 access point,Wireless,Brazil,UK,CUST-10661,PROD-11394
+ORD-44077,Walton-Hoover,2025-07-04,Shipped,24635,16,DataSphere,Hybrid cloud gateway,Networking,USA,India,CUST-10519,PROD-11493
+ORD-42371,"Turner, Butler and Morgan",2025-02-03,Cancelled,11155,6,CloudEdge,High-speed enterprise router,AI Solutions,Germany,UAE,CUST-10183,PROD-11254
+ORD-44839,Howell-Lawson,2025-05-21,Delivered,11078,8,NetConnect,48-port managed switch,Analytics,India,Brazil,CUST-10481,PROD-11148
+ORD-40034,Morgan-Navarro,2025-07-17,In Progress,16858,26,CloudEdge,Hybrid cloud gateway,Security,Germany,Brazil,CUST-10960,PROD-11509
+ORD-43790,"Andrews, Roberts and King",2025-07-27,Shipped,20954,36,CoreAnalytics,High-speed enterprise router,Security,UK,UAE,CUST-10064,PROD-11160
+ORD-41021,"Wilson, Ramirez and Lester",2025-04-14,Shipped,3660,15,DataSphere,Wi‑Fi 6 access point,AI Solutions,UAE,Singapore,CUST-10440,PROD-11756
+ORD-41648,Griffith-Glass,2025-07-22,Returned,16970,2,DataSphere,Next-gen firewall,Analytics,India,Germany,CUST-10724,PROD-11719
+ORD-40734,Lewis-Anderson,2025-05-06,In Progress,9506,38,DataSphere,Wi‑Fi 6 access point,Analytics,UAE,India,CUST-10573,PROD-11451
+ORD-44583,Tran PLC,2025-08-07,Delivered,18626,44,NetConnect,48-port managed switch,Security,UAE,UAE,CUST-10091,PROD-11296
+ORD-43275,Crane-Cole,2025-05-22,Delivered,21936,42,Insight360,Wi‑Fi 6 access point,Cloud Infra,Brazil,Singapore,CUST-10873,PROD-11220
+ORD-41621,"Goodwin, Williams and Kerr",2025-01-05,Delivered,12263,48,DataSphere,Next-gen firewall,Security,UAE,Singapore,CUST-10714,PROD-11130
+ORD-43136,Silva and Sons,2025-01-24,Shipped,10693,34,CoreAnalytics,High-speed enterprise router,Storage,Germany,Brazil,CUST-10915,PROD-11272
+ORD-42690,"Moreno, Johnson and Espinoza",2025-06-03,Delivered,15947,21,NetConnect,Wi‑Fi 6 access point,AI Solutions,USA,USA,CUST-10595,PROD-11250
+ORD-42708,"Lopez, Cunningham and Wells",2025-08-24,Delivered,21349,46,CloudEdge,Hybrid cloud gateway,Wireless,Germany,Singapore,CUST-10468,PROD-11871
+ORD-40298,Kemp Inc,2025-08-13,Returned,9099,40,DataSphere,Wi‑Fi 6 access point,Security,Singapore,UAE,CUST-10378,PROD-11721
+ORD-42340,Christensen-Fisher,2025-08-07,In Progress,13032,25,CoreAnalytics,High-speed enterprise router,Storage,Singapore,USA,CUST-10713,PROD-11645
+ORD-40654,Stokes-Roberts,2024-10-27,Returned,24224,5,Insight360,Hybrid cloud gateway,Cloud Infra,Australia,Brazil,CUST-10472,PROD-11341
+ORD-43775,"Stephens, Smith and Ballard",2025-01-16,Returned,22469,40,CloudEdge,High-speed enterprise router,Wireless,Australia,UK,CUST-10129,PROD-11509
+ORD-41256,Wolf Group,2024-09-22,Delivered,23121,35,Insight360,Hybrid cloud gateway,Wireless,Germany,Singapore,CUST-10037,PROD-11181
+ORD-44521,Gomez-Wallace,2025-03-27,Delivered,15925,16,NetConnect,Wi‑Fi 6 access point,AI Solutions,Brazil,Singapore,CUST-10088,PROD-11401
+ORD-40231,"Cole, Barron and Smith",2025-02-08,Returned,12703,7,NetConnect,Hybrid cloud gateway,Wireless,Germany,UAE,CUST-10800,PROD-11847
+ORD-43277,Key-Anderson,2025-06-21,Shipped,6874,16,NetConnect,48-port managed switch,Storage,Brazil,Brazil,CUST-10939,PROD-11831
+ORD-43231,Jackson LLC,2025-06-11,Cancelled,17066,1,CloudEdge,Wi‑Fi 6 access point,Storage,Germany,USA,CUST-10020,PROD-11059
+ORD-40692,Garcia Group,2024-10-27,Returned,11407,16,CoreAnalytics,Next-gen firewall,Security,UAE,USA,CUST-10391,PROD-11603
+ORD-42755,Peters-Garrett,2024-12-12,In Progress,5916,5,Insight360,AI-powered analytics core,AI Solutions,India,Brazil,CUST-10626,PROD-11935
+ORD-44864,"Crawford, Hayes and Tapia",2025-08-29,Returned,14811,40,CloudEdge,Next-gen firewall,Cloud Infra,India,India,CUST-10315,PROD-11254
+ORD-40970,Taylor Inc,2024-11-04,In Progress,10505,19,CloudEdge,Wi‑Fi 6 access point,Security,Australia,India,CUST-10877,PROD-11365
+ORD-40634,Torres Ltd,2024-11-06,Delivered,19826,24,NetConnect,Hybrid cloud gateway,Networking,Germany,Germany,CUST-10811,PROD-11190
+ORD-44093,"Evans, Olson and Allen",2025-01-09,In Progress,13379,48,NetConnect,AI-powered analytics core,Wireless,India,UK,CUST-10514,PROD-11658
+ORD-44078,Duncan Inc,2025-01-13,Returned,7876,18,CloudEdge,Hybrid cloud gateway,AI Solutions,USA,Germany,CUST-10146,PROD-11377
+ORD-41322,Harris-Brown,2025-05-17,Shipped,3944,1,CoreAnalytics,High-speed enterprise router,AI Solutions,UAE,India,CUST-10988,PROD-11896
+ORD-41832,Torres Ltd,2025-07-31,Returned,3068,25,DataSphere,Wi‑Fi 6 access point,Analytics,Australia,USA,CUST-10023,PROD-11020
+ORD-42179,Carlson PLC,2025-04-11,Cancelled,14724,18,CloudEdge,High-speed enterprise router,AI Solutions,USA,UAE,CUST-10354,PROD-11394
+ORD-41418,"Roberts, Thompson and Brown",2025-04-17,Delivered,13995,7,Insight360,High-speed enterprise router,Networking,Australia,India,CUST-10153,PROD-11141
+ORD-41783,"Castillo, Miller and Blackwell",2025-03-01,Shipped,22620,28,CoreAnalytics,Wi‑Fi 6 access point,Security,India,Singapore,CUST-10500,PROD-11364
+ORD-44716,Thomas PLC,2025-02-22,Cancelled,13888,24,Insight360,Wi‑Fi 6 access point,Cloud Infra,Australia,Singapore,CUST-10736,PROD-11877
+ORD-44702,"Singh, Porter and Moore",2025-08-14,Returned,24109,34,CloudEdge,High-speed enterprise router,Analytics,USA,India,CUST-10852,PROD-11314
+ORD-44119,Fisher PLC,2024-12-09,Shipped,8463,16,Insight360,Hybrid cloud gateway,Security,Brazil,Germany,CUST-10071,PROD-11836
+ORD-41653,"Payne, Holland and White",2025-04-29,Delivered,15773,19,DataSphere,Hybrid cloud gateway,Security,Germany,India,CUST-10746,PROD-11580
+ORD-41484,"Blair, Carey and Henderson",2025-03-01,In Progress,17113,2,NetConnect,High-speed enterprise router,Networking,UAE,USA,CUST-10636,PROD-11784
+ORD-42276,"King, Reynolds and Kennedy",2025-02-26,Shipped,4963,8,DataSphere,Wi‑Fi 6 access point,Analytics,Australia,UK,CUST-10120,PROD-11676
+ORD-40878,James-Carter,2025-07-18,Returned,19827,29,CloudEdge,AI-powered analytics core,Cloud Infra,USA,Australia,CUST-10236,PROD-11431
+ORD-43526,"Keith, Cisneros and Hendricks",2025-01-14,In Progress,5127,11,CoreAnalytics,48-port managed switch,Storage,Germany,USA,CUST-10720,PROD-11005
+ORD-42017,Ibarra-Adams,2025-05-15,Delivered,20228,43,Insight360,Next-gen firewall,Cloud Infra,USA,Australia,CUST-10475,PROD-11955
+ORD-40427,Kennedy-Campbell,2025-02-26,Cancelled,10711,20,DataSphere,48-port managed switch,Security,Singapore,Brazil,CUST-10788,PROD-11549
+ORD-40627,Browning-Brooks,2024-12-22,Shipped,1383,36,CloudEdge,High-speed enterprise router,AI Solutions,USA,Germany,CUST-10528,PROD-11369
+ORD-41590,Molina Ltd,2025-07-11,Returned,17227,10,CloudEdge,Hybrid cloud gateway,AI Solutions,Brazil,Germany,CUST-10696,PROD-11993
+ORD-42224,Dunn-Anderson,2025-05-05,Returned,16023,2,CoreAnalytics,Hybrid cloud gateway,Storage,Brazil,Singapore,CUST-10425,PROD-11661
+ORD-42218,Diaz Group,2024-11-30,Returned,7929,33,Insight360,Next-gen firewall,Analytics,UK,Brazil,CUST-10384,PROD-11500
+ORD-44484,Ray Inc,2025-02-25,Returned,23164,16,DataSphere,Next-gen firewall,Cloud Infra,India,Germany,CUST-10567,PROD-11678
+ORD-41486,Faulkner-Frazier,2025-06-25,In Progress,5680,45,NetConnect,AI-powered analytics core,Wireless,Brazil,UAE,CUST-10535,PROD-11195
+ORD-41740,Wilkins-Moore,2025-05-11,Cancelled,16038,29,CloudEdge,48-port managed switch,Security,UAE,Australia,CUST-10612,PROD-11972
+ORD-42481,Hodge Ltd,2025-03-02,In Progress,3539,47,DataSphere,Wi‑Fi 6 access point,AI Solutions,Brazil,Singapore,CUST-10171,PROD-11489
+ORD-42585,Kelly PLC,2024-10-22,Returned,22671,20,CoreAnalytics,48-port managed switch,Storage,Germany,Singapore,CUST-10656,PROD-11050
+ORD-42894,"Smith, Adams and Lee",2024-11-17,Cancelled,24074,1,CoreAnalytics,AI-powered analytics core,Storage,Brazil,Australia,CUST-10979,PROD-11808
+ORD-40150,Watson PLC,2025-05-08,Delivered,13091,33,DataSphere,Wi‑Fi 6 access point,Security,UAE,Australia,CUST-10419,PROD-11611
+ORD-40677,Smith-Grant,2025-03-04,Cancelled,5020,45,NetConnect,Wi‑Fi 6 access point,Storage,UAE,Brazil,CUST-10150,PROD-11291
+ORD-41262,Smith-Woods,2025-04-02,Cancelled,15834,38,DataSphere,High-speed enterprise router,Analytics,India,UK,CUST-10677,PROD-11240
+ORD-44918,Trujillo-Walker,2025-06-12,Returned,24356,22,CloudEdge,AI-powered analytics core,Wireless,USA,Australia,CUST-10639,PROD-11749
+ORD-40013,Gutierrez LLC,2025-03-23,In Progress,2212,18,DataSphere,AI-powered analytics core,Wireless,UK,Brazil,CUST-10896,PROD-11663
+ORD-41834,Bryant-Lawson,2025-05-28,Cancelled,17516,45,Insight360,Next-gen firewall,AI Solutions,Brazil,India,CUST-10776,PROD-11781
+ORD-43249,Moreno Inc,2024-09-15,Delivered,3733,7,CloudEdge,AI-powered analytics core,Wireless,Brazil,Australia,CUST-10145,PROD-11947
+ORD-41492,"Sexton, Banks and Diaz",2024-11-27,Shipped,14331,26,Insight360,AI-powered analytics core,Storage,UK,Germany,CUST-10206,PROD-11564
+ORD-42728,Pierce Inc,2025-08-04,Cancelled,4230,6,CoreAnalytics,High-speed enterprise router,Cloud Infra,Singapore,Singapore,CUST-10042,PROD-11593
+ORD-43687,Chavez-Lopez,2025-02-16,Cancelled,20697,42,DataSphere,AI-powered analytics core,Analytics,Germany,Singapore,CUST-10409,PROD-11933
+ORD-41425,Taylor Ltd,2025-05-31,Cancelled,8723,3,CoreAnalytics,Next-gen firewall,Storage,India,Germany,CUST-10737,PROD-11695
+ORD-44606,"Singh, Porter and Moore",2025-05-05,Shipped,7796,21,NetConnect,Next-gen firewall,Storage,Australia,Australia,CUST-10991,PROD-11774
+ORD-44596,"Cruz, Sullivan and Howard",2025-08-27,Cancelled,12777,48,DataSphere,High-speed enterprise router,Storage,India,Brazil,CUST-10063,PROD-11879
+ORD-40732,"Burke, Ward and Gibson",2025-08-09,Returned,6798,40,CloudEdge,AI-powered analytics core,Storage,Australia,USA,CUST-10137,PROD-11254
+ORD-41232,Miller Inc,2025-03-04,Delivered,17556,36,CloudEdge,AI-powered analytics core,Wireless,USA,India,CUST-10176,PROD-11993
+ORD-41635,"Sanford, Williams and Hunt",2024-10-15,In Progress,6772,4,CloudEdge,AI-powered analytics core,AI Solutions,Singapore,USA,CUST-10585,PROD-11837
+ORD-43937,Benson-Phillips,2025-06-12,In Progress,2782,2,CloudEdge,Next-gen firewall,Security,Brazil,India,CUST-10770,PROD-11918
+ORD-41211,Gibson Group,2025-05-19,Shipped,14910,36,CoreAnalytics,AI-powered analytics core,Networking,India,Germany,CUST-10050,PROD-11737
+ORD-43269,Choi Ltd,2024-12-31,Cancelled,13218,5,CloudEdge,Hybrid cloud gateway,Security,Australia,India,CUST-10657,PROD-11591
+ORD-41935,Tate-Lindsey,2025-01-23,Cancelled,12584,32,CloudEdge,Hybrid cloud gateway,Cloud Infra,Singapore,UAE,CUST-10198,PROD-11918
+ORD-40554,"Parks, Clark and Schultz",2024-12-01,Returned,2941,2,DataSphere,Hybrid cloud gateway,Analytics,Germany,Brazil,CUST-10622,PROD-11036
+ORD-40492,Ray and Sons,2025-05-24,Returned,16196,50,DataSphere,48-port managed switch,Analytics,Singapore,UK,CUST-10555,PROD-11878
+ORD-42963,"Stein, Randolph and Carter",2024-11-21,Cancelled,12350,28,Insight360,Next-gen firewall,Storage,USA,Singapore,CUST-10875,PROD-11437
+ORD-42330,"Lewis, Johnson and Gilmore",2024-10-14,Cancelled,8197,29,CloudEdge,Wi‑Fi 6 access point,Security,UAE,Brazil,CUST-10854,PROD-11211
+ORD-42196,"Kelly, Davis and Nolan",2025-08-02,Shipped,12658,43,Insight360,Hybrid cloud gateway,Storage,USA,India,CUST-10915,PROD-11557
+ORD-43065,Porter-Martin,2025-02-10,Cancelled,4737,38,CloudEdge,Hybrid cloud gateway,Wireless,Singapore,USA,CUST-10709,PROD-11424
+ORD-40658,"Harrell, Conway and Tucker",2025-08-28,Returned,23783,8,NetConnect,AI-powered analytics core,Wireless,UK,India,CUST-10984,PROD-11803
+ORD-42375,Santos Group,2025-02-24,Shipped,8065,9,Insight360,Wi‑Fi 6 access point,Security,Australia,USA,CUST-10327,PROD-11485
+ORD-42226,Rivas-Perkins,2025-05-14,Shipped,4504,35,CloudEdge,Wi‑Fi 6 access point,Analytics,Singapore,India,CUST-10687,PROD-11003
+ORD-44265,Singh-Miller,2025-01-29,Delivered,24519,1,NetConnect,Wi‑Fi 6 access point,Security,Singapore,India,CUST-10640,PROD-11621
+ORD-41171,"Campbell, Bennett and Carrillo",2025-03-26,Shipped,21123,25,Insight360,Next-gen firewall,Security,Germany,India,CUST-10118,PROD-11200
+ORD-40133,Moreno Inc,2025-07-10,Shipped,17992,18,Insight360,High-speed enterprise router,Wireless,India,Australia,CUST-10397,PROD-11487
+ORD-40472,"Ingram, Bush and Adams",2025-06-12,Shipped,10835,42,DataSphere,High-speed enterprise router,Storage,Singapore,UAE,CUST-10903,PROD-11456
+ORD-43226,Griffith Ltd,2025-02-02,Delivered,18403,30,CloudEdge,High-speed enterprise router,Security,Brazil,Australia,CUST-10655,PROD-11038
+ORD-41406,Acosta-Matthews,2024-11-27,Returned,15219,31,DataSphere,High-speed enterprise router,Analytics,Germany,Germany,CUST-10455,PROD-11217
+ORD-42877,Thompson Ltd,2025-08-12,Shipped,13129,4,Insight360,AI-powered analytics core,Analytics,Germany,Brazil,CUST-10105,PROD-11511
+ORD-44505,Perez PLC,2025-04-20,In Progress,15415,33,NetConnect,Next-gen firewall,Networking,Australia,Singapore,CUST-10193,PROD-11864
+ORD-44693,Waters Group,2024-12-08,Delivered,21544,6,DataSphere,Hybrid cloud gateway,Cloud Infra,Australia,UK,CUST-10038,PROD-11446
+ORD-42827,Hill-Brooks,2024-12-22,Delivered,3622,4,CoreAnalytics,AI-powered analytics core,Wireless,Germany,Singapore,CUST-10852,PROD-11087
+ORD-40288,Bennett-Costa,2025-03-04,Returned,19926,9,Insight360,Next-gen firewall,Security,Germany,UAE,CUST-10176,PROD-11347
+ORD-41870,Aguilar-Crawford,2025-07-20,Cancelled,2385,32,NetConnect,High-speed enterprise router,Security,Brazil,Singapore,CUST-10493,PROD-11814
+ORD-43115,"Daniels, Hubbard and Sweeney",2024-12-21,Delivered,14632,28,DataSphere,48-port managed switch,Wireless,Singapore,UAE,CUST-10952,PROD-11550
+ORD-43626,Adkins PLC,2025-07-17,In Progress,4502,17,CloudEdge,48-port managed switch,Analytics,India,India,CUST-10362,PROD-11209
+ORD-42313,"Bowman, Martin and Atkins",2025-04-23,In Progress,9682,13,CloudEdge,High-speed enterprise router,Cloud Infra,Brazil,Australia,CUST-10851,PROD-11063
+ORD-44924,Benitez and Sons,2025-06-20,In Progress,3675,14,NetConnect,AI-powered analytics core,Security,Germany,Germany,CUST-10046,PROD-11662
+ORD-41619,Coleman-Welch,2025-06-07,Cancelled,23689,36,CoreAnalytics,48-port managed switch,Analytics,USA,UAE,CUST-10066,PROD-11134
+ORD-40995,"Miranda, Lee and Orozco",2024-12-04,Cancelled,20357,39,CoreAnalytics,AI-powered analytics core,Storage,UK,Australia,CUST-10621,PROD-11154
+ORD-41804,Brennan Group,2024-09-19,Delivered,13467,40,DataSphere,Next-gen firewall,Security,Germany,Singapore,CUST-10472,PROD-11532
+ORD-42643,Williams and Sons,2024-12-01,Shipped,6964,39,Insight360,48-port managed switch,Wireless,UK,UAE,CUST-10935,PROD-11177
+ORD-44803,"Gardner, Ford and Wells",2024-10-13,In Progress,16115,50,CloudEdge,Wi‑Fi 6 access point,Security,UAE,USA,CUST-10402,PROD-11260
+ORD-43536,"Miller, Whitaker and Joseph",2025-03-22,In Progress,8634,50,Insight360,High-speed enterprise router,Networking,UAE,Brazil,CUST-10701,PROD-11241
+ORD-44832,"Munoz, Rogers and Nunez",2025-05-07,In Progress,17318,7,DataSphere,Wi‑Fi 6 access point,Wireless,USA,UAE,CUST-10342,PROD-11532
+ORD-43912,Odom Inc,2025-05-02,Returned,17644,16,CoreAnalytics,AI-powered analytics core,AI Solutions,USA,Germany,CUST-10731,PROD-11482
+ORD-42108,Hernandez Inc,2024-10-27,In Progress,11339,44,Insight360,Wi‑Fi 6 access point,Cloud Infra,Brazil,UK,CUST-10431,PROD-11713
+ORD-43045,"Stevens, Rodriguez and Long",2025-08-06,Delivered,9665,23,CoreAnalytics,AI-powered analytics core,Storage,UAE,Australia,CUST-10338,PROD-11115
+ORD-40417,Huff-Roach,2024-11-23,Shipped,17168,38,CloudEdge,AI-powered analytics core,AI Solutions,UAE,UK,CUST-10757,PROD-11374
+ORD-40978,Rodriguez Group,2024-10-04,In Progress,15511,13,CoreAnalytics,Wi‑Fi 6 access point,Storage,Brazil,Germany,CUST-10654,PROD-11616
+ORD-42418,"Wolfe, Williams and Evans",2025-05-24,Delivered,7691,15,Insight360,Wi‑Fi 6 access point,AI Solutions,Brazil,UK,CUST-10857,PROD-11460
+ORD-40506,"West, Johnson and Becker",2024-10-16,Cancelled,8539,11,CloudEdge,Hybrid cloud gateway,AI Solutions,UK,Germany,CUST-10963,PROD-11972
+ORD-44153,"Griffin, Watkins and Ward",2025-05-20,Cancelled,19489,8,CoreAnalytics,Next-gen firewall,Analytics,Germany,Singapore,CUST-10481,PROD-11768
+ORD-44256,Johnson Group,2024-10-04,Returned,24672,19,Insight360,High-speed enterprise router,Wireless,USA,UAE,CUST-10267,PROD-11371
+ORD-43942,Walsh-Powell,2025-03-07,Shipped,20354,14,Insight360,Next-gen firewall,Analytics,Brazil,Brazil,CUST-10848,PROD-11121
+ORD-40415,Morris-Hall,2025-05-09,Cancelled,10092,42,CloudEdge,48-port managed switch,Analytics,India,Germany,CUST-10063,PROD-11727
+ORD-44149,"Terry, Robertson and Pruitt",2024-11-08,Delivered,7920,36,Insight360,AI-powered analytics core,Networking,Germany,USA,CUST-10803,PROD-11713
+ORD-41184,Fox Group,2025-08-16,In Progress,6780,29,Insight360,Wi‑Fi 6 access point,Analytics,Brazil,UK,CUST-10224,PROD-11825
+ORD-40486,Schultz-Reyes,2025-03-30,In Progress,20442,34,Insight360,Next-gen firewall,Storage,USA,UK,CUST-10732,PROD-11176
+ORD-40894,Mitchell-Mendez,2025-08-17,Delivered,19781,2,Insight360,Next-gen firewall,Analytics,UK,Australia,CUST-10260,PROD-11255
+ORD-40806,"Kelley, Martinez and Miranda",2025-05-08,In Progress,2710,46,Insight360,High-speed enterprise router,Wireless,Singapore,UK,CUST-10865,PROD-11792
+ORD-40556,Alvarez Inc,2025-06-05,Returned,7198,10,CloudEdge,High-speed enterprise router,AI Solutions,USA,Australia,CUST-10043,PROD-11424
+ORD-43826,Nguyen PLC,2024-10-04,Shipped,9018,38,CloudEdge,Next-gen firewall,AI Solutions,Australia,Germany,CUST-10804,PROD-11084
+ORD-41198,"Spears, Decker and Chavez",2025-08-08,In Progress,24152,50,DataSphere,Wi‑Fi 6 access point,Storage,Australia,Australia,CUST-10282,PROD-11055
+ORD-44254,Mitchell-Mendez,2025-04-18,Cancelled,14606,36,CloudEdge,48-port managed switch,Storage,Singapore,UK,CUST-10538,PROD-11569
+ORD-44059,Harris-Walsh,2025-04-20,Cancelled,13756,17,CloudEdge,High-speed enterprise router,Storage,India,Brazil,CUST-10441,PROD-11333
+ORD-41294,Walker-Shea,2025-02-09,Shipped,6260,10,NetConnect,AI-powered analytics core,Wireless,Singapore,India,CUST-10089,PROD-11480
+ORD-42222,"Franklin, Martin and White",2024-12-05,Returned,17008,28,DataSphere,Next-gen firewall,Storage,Australia,UK,CUST-10121,PROD-11753
+ORD-43505,"Rivera, Mclaughlin and Wilson",2024-09-07,Delivered,17671,35,DataSphere,48-port managed switch,Cloud Infra,Germany,USA,CUST-10510,PROD-11101
+ORD-43655,Hernandez-Tucker,2025-03-23,In Progress,10731,6,CoreAnalytics,48-port managed switch,Analytics,USA,Singapore,CUST-10924,PROD-11024
+ORD-44759,Williams-Cisneros,2024-09-14,Shipped,19746,4,DataSphere,Wi‑Fi 6 access point,Storage,Germany,India,CUST-10278,PROD-11548
+ORD-43007,Miller-Perez,2025-02-22,Shipped,12275,27,NetConnect,High-speed enterprise router,Networking,Singapore,UK,CUST-10837,PROD-11139
+ORD-42094,"Hill, Beck and Garcia",2025-03-10,Cancelled,2028,39,CoreAnalytics,Hybrid cloud gateway,Cloud Infra,Singapore,Singapore,CUST-10822,PROD-11759
+ORD-42188,Porter-Johnson,2025-02-06,In Progress,15289,4,CoreAnalytics,Next-gen firewall,Wireless,Australia,Australia,CUST-10697,PROD-11788
+ORD-43037,"Wong, Hamilton and Smith",2025-05-20,Cancelled,12019,19,Insight360,AI-powered analytics core,Networking,Australia,USA,CUST-10678,PROD-11121
+ORD-43919,Hernandez PLC,2024-11-07,Returned,22117,42,CoreAnalytics,48-port managed switch,Analytics,Australia,Australia,CUST-10744,PROD-11623
+ORD-41273,"Hughes, Fitzgerald and Scott",2025-03-08,Shipped,2472,7,Insight360,AI-powered analytics core,AI Solutions,USA,UK,CUST-10071,PROD-11811
+ORD-40291,Benson Ltd,2025-05-22,In Progress,12789,3,CloudEdge,Wi‑Fi 6 access point,Storage,Singapore,Singapore,CUST-10917,PROD-11077
+ORD-44828,Barrera-Moody,2024-11-24,In Progress,18088,37,DataSphere,Wi‑Fi 6 access point,Networking,Germany,Australia,CUST-10081,PROD-11951
+ORD-40253,Browning-Brooks,2024-10-20,Returned,24461,7,CoreAnalytics,48-port managed switch,Analytics,UK,Australia,CUST-10710,PROD-11530
+ORD-43246,Gonzalez LLC,2025-03-05,Returned,17728,23,NetConnect,Next-gen firewall,Cloud Infra,USA,Brazil,CUST-10630,PROD-11956
+ORD-40351,Barker PLC,2025-01-16,In Progress,6031,34,CloudEdge,Next-gen firewall,Analytics,Singapore,Germany,CUST-10221,PROD-11943
+ORD-41188,"Baxter, Thomas and Cordova",2025-01-10,Returned,20354,27,CoreAnalytics,Wi‑Fi 6 access point,Wireless,Australia,UAE,CUST-10066,PROD-11964
+ORD-41962,Sanchez and Sons,2025-04-16,In Progress,21940,34,CloudEdge,High-speed enterprise router,Wireless,Brazil,Germany,CUST-10027,PROD-11570
+ORD-40423,English Group,2024-11-15,Shipped,6066,9,CloudEdge,48-port managed switch,Analytics,Germany,Singapore,CUST-10999,PROD-11862
+ORD-40091,Huff-Smith,2024-11-09,Cancelled,18124,35,CoreAnalytics,48-port managed switch,Networking,Singapore,UAE,CUST-10381,PROD-11122
+ORD-43730,Vega Ltd,2024-09-03,Delivered,21993,11,CloudEdge,Wi‑Fi 6 access point,Storage,India,UK,CUST-10853,PROD-11439
+ORD-42237,Miller Ltd,2025-03-04,Shipped,19796,43,DataSphere,Hybrid cloud gateway,Analytics,Brazil,Australia,CUST-10989,PROD-11942
+ORD-40671,Green Inc,2024-09-11,Shipped,3406,8,NetConnect,Wi‑Fi 6 access point,Cloud Infra,Australia,UAE,CUST-10640,PROD-11195
+ORD-43041,"Yoder, Bowen and Thompson",2025-03-22,Delivered,3583,34,Insight360,AI-powered analytics core,Networking,Australia,Brazil,CUST-10956,PROD-11646
+ORD-40027,Moore Group,2025-06-22,In Progress,17811,49,NetConnect,Next-gen firewall,Wireless,Germany,UAE,CUST-10039,PROD-11774
+ORD-40430,"Lee, Taylor and Roman",2024-09-22,Returned,3495,5,CoreAnalytics,High-speed enterprise router,Analytics,UK,India,CUST-10758,PROD-11290
+ORD-40684,Castro-Williams,2024-09-28,In Progress,15351,27,Insight360,Wi‑Fi 6 access point,Wireless,Singapore,Singapore,CUST-10777,PROD-11072
+ORD-44464,Baker Inc,2025-06-11,Cancelled,2840,11,Insight360,High-speed enterprise router,Cloud Infra,UK,UAE,CUST-10662,PROD-12000
+ORD-43946,"Miranda, Martin and Erickson",2024-11-10,Delivered,19657,45,CoreAnalytics,AI-powered analytics core,Security,India,Singapore,CUST-10358,PROD-11321
+ORD-43524,Byrd Inc,2024-12-22,Returned,4552,32,Insight360,Hybrid cloud gateway,Security,Brazil,Germany,CUST-10642,PROD-11607
+ORD-41542,Reynolds-Woods,2025-05-26,Delivered,6384,45,Insight360,48-port managed switch,Networking,Brazil,UAE,CUST-10871,PROD-11366
+ORD-42032,"Scott, Perez and Cohen",2025-01-29,Returned,7043,49,DataSphere,48-port managed switch,Cloud Infra,Germany,UK,CUST-10559,PROD-11486
+ORD-42233,"Green, Hudson and Lara",2025-06-12,Cancelled,17606,47,NetConnect,High-speed enterprise router,AI Solutions,UK,Singapore,CUST-10831,PROD-11165
+ORD-44121,Wilson-Maxwell,2025-01-22,Cancelled,11625,45,Insight360,Hybrid cloud gateway,Wireless,UK,India,CUST-10916,PROD-11594
+ORD-43236,Fleming-Lee,2024-09-07,Returned,15212,17,Insight360,High-speed enterprise router,Analytics,Germany,Germany,CUST-10659,PROD-11152
+ORD-40255,Hensley Ltd,2025-06-13,Delivered,6718,38,CloudEdge,48-port managed switch,Storage,Germany,Australia,CUST-10769,PROD-11352
+ORD-41030,Weaver PLC,2024-09-01,Cancelled,15801,37,CloudEdge,Wi‑Fi 6 access point,Security,Australia,USA,CUST-10528,PROD-11684
+ORD-44393,Kemp Inc,2025-03-12,In Progress,2440,32,CoreAnalytics,Wi‑Fi 6 access point,Security,Germany,Brazil,CUST-10466,PROD-11411
+ORD-43801,King-Buchanan,2025-08-05,Returned,10077,32,NetConnect,Next-gen firewall,AI Solutions,UAE,USA,CUST-10901,PROD-11579
+ORD-44311,Sanders-Howard,2025-08-28,Returned,3215,11,CloudEdge,Hybrid cloud gateway,Storage,India,Brazil,CUST-10812,PROD-11887
+ORD-42510,Barrera-Moody,2025-07-14,Returned,24087,43,DataSphere,Hybrid cloud gateway,Analytics,Australia,UAE,CUST-10213,PROD-11093
+ORD-42293,Griffith Ltd,2025-03-02,Delivered,17970,8,DataSphere,Wi‑Fi 6 access point,Analytics,USA,Brazil,CUST-10517,PROD-11034
+ORD-41324,"Campbell, Bennett and Carrillo",2024-11-13,Returned,14132,28,NetConnect,High-speed enterprise router,Storage,Brazil,Australia,CUST-10620,PROD-11308
+ORD-41551,Hernandez Inc,2025-04-19,Shipped,8911,24,CloudEdge,48-port managed switch,Wireless,Singapore,UAE,CUST-10991,PROD-11632
+ORD-44648,"Bartlett, Ross and Reynolds",2025-04-22,In Progress,22951,26,Insight360,48-port managed switch,Wireless,Germany,Australia,CUST-10418,PROD-11347
+ORD-40316,Fox Group,2025-03-11,In Progress,5135,21,NetConnect,48-port managed switch,Cloud Infra,USA,India,CUST-10564,PROD-11765
+ORD-41243,Ramos-Hernandez,2024-12-15,Shipped,3093,22,CoreAnalytics,High-speed enterprise router,Security,Brazil,UK,CUST-10700,PROD-11770
+ORD-42451,Thompson Ltd,2025-02-07,Returned,22638,16,Insight360,High-speed enterprise router,Cloud Infra,Singapore,India,CUST-10727,PROD-11940
+ORD-41579,Fox Group,2025-02-13,Cancelled,3011,19,NetConnect,48-port managed switch,Security,Singapore,Australia,CUST-10100,PROD-11926
+ORD-44626,Park PLC,2025-05-13,Cancelled,18965,18,CoreAnalytics,Wi‑Fi 6 access point,AI Solutions,Australia,Australia,CUST-10973,PROD-11046
+ORD-43117,"Keller, Nielsen and Martin",2025-05-01,Returned,22140,35,DataSphere,Next-gen firewall,Networking,UAE,UK,CUST-10331,PROD-11552
+ORD-40070,Daugherty-Pruitt,2025-01-20,Cancelled,19180,8,NetConnect,Next-gen firewall,Storage,India,India,CUST-10888,PROD-11173
+ORD-40860,Simpson Group,2025-03-08,In Progress,23747,41,Insight360,AI-powered analytics core,Wireless,UK,Brazil,CUST-10712,PROD-11322
+ORD-42754,Young Ltd,2025-08-17,In Progress,4379,5,CoreAnalytics,Hybrid cloud gateway,Storage,Australia,Brazil,CUST-10780,PROD-11085
+ORD-41633,"Gilmore, Johnson and Walker",2024-09-06,Shipped,23520,45,CoreAnalytics,48-port managed switch,Storage,India,UK,CUST-10502,PROD-11996
+ORD-41651,Johns Group,2025-04-10,Delivered,13607,40,CoreAnalytics,48-port managed switch,AI Solutions,Brazil,Australia,CUST-10639,PROD-11783
+ORD-43861,Bailey LLC,2024-10-12,Returned,18612,39,Insight360,48-port managed switch,Security,Germany,Australia,CUST-10873,PROD-11626
+ORD-43107,"Jensen, Klein and Carter",2025-03-14,Shipped,1466,9,DataSphere,48-port managed switch,AI Solutions,USA,Germany,CUST-10690,PROD-11311
+ORD-41075,Jimenez-Gaines,2025-06-14,Cancelled,10506,28,DataSphere,Hybrid cloud gateway,Security,Germany,India,CUST-10239,PROD-11751
+ORD-44002,Osborne-Clements,2025-05-12,Delivered,11563,23,DataSphere,High-speed enterprise router,Security,UK,Germany,CUST-10867,PROD-11313
+ORD-40788,"Thomas, Arnold and Morris",2025-07-04,Cancelled,15150,14,DataSphere,48-port managed switch,Wireless,Singapore,USA,CUST-10205,PROD-11287
+ORD-42606,"Cruz, Sullivan and Howard",2025-04-30,Delivered,9149,15,Insight360,AI-powered analytics core,AI Solutions,Germany,Singapore,CUST-10862,PROD-11844
+ORD-43631,"Campbell, Brown and Odonnell",2025-06-03,Returned,21256,33,DataSphere,48-port managed switch,Networking,USA,USA,CUST-10492,PROD-11566
+ORD-42122,Porter-Martin,2025-06-14,Delivered,10820,23,CloudEdge,48-port managed switch,Analytics,Brazil,Brazil,CUST-10203,PROD-11136
+ORD-41875,Norris-Riley,2024-10-09,Cancelled,21349,11,Insight360,Wi‑Fi 6 access point,Security,USA,India,CUST-10616,PROD-11498
+ORD-40812,Garcia Group,2025-05-27,Shipped,16715,6,CloudEdge,High-speed enterprise router,Storage,India,Singapore,CUST-10659,PROD-11845
+ORD-40388,Silva PLC,2025-01-19,Returned,19307,22,Insight360,Next-gen firewall,Cloud Infra,Brazil,Germany,CUST-10240,PROD-11781
+ORD-42883,Boyle-Mack,2025-03-13,Shipped,15086,16,Insight360,48-port managed switch,AI Solutions,Brazil,Brazil,CUST-10543,PROD-11108
+ORD-41176,"Herrera, Morton and Bell",2025-01-05,Cancelled,3803,45,CoreAnalytics,48-port managed switch,Wireless,UAE,UK,CUST-10460,PROD-11793
+ORD-43198,Morris PLC,2025-08-28,In Progress,22280,18,NetConnect,High-speed enterprise router,AI Solutions,Brazil,USA,CUST-10774,PROD-11716
+ORD-42624,Mckenzie-Schroeder,2025-01-29,Cancelled,12028,34,Insight360,48-port managed switch,AI Solutions,UAE,Singapore,CUST-10271,PROD-11955
+ORD-41352,"Franklin, Rodriguez and Harris",2024-10-31,In Progress,17923,39,Insight360,Hybrid cloud gateway,Security,Brazil,UK,CUST-10755,PROD-11322
+ORD-40411,James Group,2024-10-17,Delivered,13067,30,NetConnect,Hybrid cloud gateway,Cloud Infra,UAE,UAE,CUST-10591,PROD-11433
+ORD-44213,Johnson-Bradshaw,2025-05-16,Shipped,19681,38,Insight360,Wi‑Fi 6 access point,Cloud Infra,Germany,Australia,CUST-10249,PROD-11628
+ORD-40110,Gibson Group,2025-03-07,Delivered,23824,50,CloudEdge,High-speed enterprise router,Analytics,USA,Australia,CUST-10243,PROD-11095
+ORD-44996,Nguyen PLC,2024-11-12,Cancelled,20863,50,Insight360,Next-gen firewall,Storage,Germany,Singapore,CUST-10856,PROD-11594
+ORD-43430,"Leblanc, Thompson and Sullivan",2025-04-11,Shipped,10006,49,CoreAnalytics,Next-gen firewall,Analytics,USA,Singapore,CUST-10028,PROD-11551
+ORD-42810,Shelton-Smith,2025-01-24,In Progress,8386,17,CloudEdge,Hybrid cloud gateway,Analytics,Brazil,India,CUST-10557,PROD-11786
+ORD-42595,"Ryan, Murphy and Williamson",2024-10-18,In Progress,12575,32,DataSphere,Next-gen firewall,Analytics,India,Brazil,CUST-10301,PROD-11706
+ORD-42837,"Ramirez, Gates and Stephenson",2025-01-23,Returned,2862,19,CloudEdge,48-port managed switch,Wireless,Brazil,Brazil,CUST-10646,PROD-11828
+ORD-42373,Pearson Inc,2024-12-14,Cancelled,16170,30,CoreAnalytics,Hybrid cloud gateway,Cloud Infra,UAE,UAE,CUST-10491,PROD-11005
+ORD-41236,Johnson and Sons,2025-01-15,Returned,24078,36,CoreAnalytics,Wi‑Fi 6 access point,AI Solutions,Australia,Singapore,CUST-10958,PROD-11616
+ORD-42147,Green-Erickson,2025-04-07,Returned,13676,40,Insight360,AI-powered analytics core,Storage,Singapore,India,CUST-10047,PROD-11664
+ORD-44976,"Stephens, Smith and Ballard",2025-01-09,In Progress,9636,43,Insight360,Wi‑Fi 6 access point,AI Solutions,UK,Germany,CUST-10905,PROD-11829
+ORD-40600,Glover Group,2025-04-23,Returned,19856,45,NetConnect,Hybrid cloud gateway,Security,Singapore,Australia,CUST-10585,PROD-11858
+ORD-41435,"Aguilar, Love and Graham",2025-03-21,Returned,13251,6,Insight360,Next-gen firewall,Networking,Brazil,India,CUST-10949,PROD-11153
+ORD-44997,Shelton-Smith,2024-11-12,In Progress,5793,25,CloudEdge,Next-gen firewall,Cloud Infra,UK,Singapore,CUST-10338,PROD-11905
+ORD-40539,Gallegos-Kennedy,2025-03-27,Returned,12779,2,DataSphere,Hybrid cloud gateway,Analytics,Germany,Brazil,CUST-10749,PROD-11901
+ORD-40722,Phillips Group,2024-10-02,Cancelled,23449,8,CloudEdge,AI-powered analytics core,Wireless,Germany,India,CUST-10501,PROD-11183
+ORD-44411,Choi Ltd,2025-02-23,Cancelled,7837,41,NetConnect,AI-powered analytics core,Wireless,Australia,Australia,CUST-10392,PROD-11043
+ORD-41873,Reyes-Gordon,2025-06-27,In Progress,14092,27,NetConnect,Hybrid cloud gateway,AI Solutions,Australia,Germany,CUST-10428,PROD-11815
+ORD-42846,Porter-Johnson,2024-11-23,Shipped,1868,29,CoreAnalytics,High-speed enterprise router,Cloud Infra,Brazil,UAE,CUST-10318,PROD-11783
+ORD-42054,White-Strong,2025-03-30,Delivered,24070,37,Insight360,AI-powered analytics core,Security,Singapore,India,CUST-10246,PROD-11820
+ORD-42908,"Contreras, Williams and Valdez",2025-05-20,Returned,20411,26,Insight360,Next-gen firewall,AI Solutions,Singapore,UK,CUST-10128,PROD-11354
+ORD-42255,Hall-Anderson,2025-01-14,Returned,20960,46,CoreAnalytics,Hybrid cloud gateway,AI Solutions,Germany,Germany,CUST-10596,PROD-11402
+ORD-43913,Rodgers LLC,2025-05-02,Returned,13387,17,CloudEdge,High-speed enterprise router,Networking,Australia,Germany,CUST-10421,PROD-11789
+ORD-40178,Martinez LLC,2024-11-07,Delivered,4651,11,CoreAnalytics,High-speed enterprise router,AI Solutions,UK,UAE,CUST-10505,PROD-11672
+ORD-42891,Williams LLC,2025-01-23,Shipped,7604,29,NetConnect,48-port managed switch,Analytics,UK,UK,CUST-10738,PROD-11597
+ORD-43674,"Solis, Garcia and Smith",2025-07-29,Shipped,1309,1,CloudEdge,Wi‑Fi 6 access point,AI Solutions,Brazil,Brazil,CUST-10920,PROD-11794
+ORD-40081,Dunn-Anderson,2025-02-21,Delivered,17371,6,NetConnect,Wi‑Fi 6 access point,Analytics,Germany,Singapore,CUST-10454,PROD-11863
+ORD-42562,Mcintosh Inc,2024-12-23,Delivered,15785,36,NetConnect,Hybrid cloud gateway,Storage,India,UAE,CUST-10569,PROD-11666
+ORD-41724,Chavez-Lopez,2025-06-21,In Progress,14074,32,CoreAnalytics,48-port managed switch,Wireless,UK,Brazil,CUST-10812,PROD-11134
+ORD-41618,Rogers-Cervantes,2025-05-21,Shipped,18390,49,DataSphere,High-speed enterprise router,AI Solutions,India,UAE,CUST-10623,PROD-11660
+ORD-41655,Hernandez Ltd,2024-11-29,Shipped,22224,42,CoreAnalytics,Hybrid cloud gateway,Security,Australia,UK,CUST-10309,PROD-11122
+ORD-42329,Snyder-Chang,2025-02-02,Delivered,14970,24,Insight360,Wi‑Fi 6 access point,Analytics,India,Australia,CUST-10937,PROD-11844
+ORD-44614,Johnson-Fitzgerald,2025-05-22,Shipped,24606,45,CoreAnalytics,Hybrid cloud gateway,Security,Australia,UK,CUST-10689,PROD-11586
+ORD-40222,"Anderson, Herrera and Welch",2025-07-14,In Progress,3570,23,CloudEdge,48-port managed switch,Wireless,Brazil,Singapore,CUST-10054,PROD-11012
+ORD-40094,Nelson LLC,2025-08-07,Returned,18168,5,DataSphere,High-speed enterprise router,Cloud Infra,USA,Australia,CUST-10490,PROD-11738
+ORD-42610,Gray-Davis,2024-12-01,Shipped,16429,4,DataSphere,48-port managed switch,Wireless,India,UAE,CUST-10439,PROD-11817
+ORD-43383,"Evans, Olson and Allen",2025-01-31,Delivered,15858,14,NetConnect,Hybrid cloud gateway,Security,UK,India,CUST-10539,PROD-11475
+ORD-44416,Dunlap Ltd,2025-06-29,Returned,17046,22,CloudEdge,48-port managed switch,Storage,Singapore,Australia,CUST-10078,PROD-11800
+ORD-41398,Brennan-Hill,2025-06-21,Shipped,5638,28,CloudEdge,48-port managed switch,Security,India,UK,CUST-10536,PROD-11059
+ORD-44687,Smith Group,2025-01-20,Delivered,7957,20,NetConnect,AI-powered analytics core,Wireless,UAE,Australia,CUST-10579,PROD-11332
+ORD-41293,Odom Inc,2025-07-29,Cancelled,15947,9,CoreAnalytics,High-speed enterprise router,Networking,Brazil,Germany,CUST-10626,PROD-11661
+ORD-42165,Castro-Williams,2024-12-29,In Progress,20709,41,CloudEdge,Hybrid cloud gateway,Storage,UK,UAE,CUST-10683,PROD-11722
+ORD-42940,"Robinson, Shaw and Acosta",2024-10-16,In Progress,5670,15,NetConnect,AI-powered analytics core,Cloud Infra,Germany,UAE,CUST-10064,PROD-11401
+ORD-43669,"Reid, Hamilton and Evans",2025-05-29,Returned,2662,33,DataSphere,48-port managed switch,Networking,Singapore,Australia,CUST-10199,PROD-11606
+ORD-40813,Davis Ltd,2025-08-07,Shipped,11040,46,NetConnect,48-port managed switch,Storage,Germany,Singapore,CUST-10101,PROD-11765
+ORD-41259,"Rodriguez, Hill and Hopkins",2024-09-18,In Progress,1351,17,Insight360,AI-powered analytics core,Cloud Infra,Germany,USA,CUST-10480,PROD-11153
+ORD-40890,Odonnell-Hill,2025-03-13,Shipped,15496,28,NetConnect,Wi‑Fi 6 access point,Cloud Infra,India,Australia,CUST-10628,PROD-11139
+ORD-41452,"Baldwin, Brown and Walters",2025-04-13,Delivered,7549,11,CoreAnalytics,48-port managed switch,Analytics,Singapore,UK,CUST-10309,PROD-11655
+ORD-43317,Wright Ltd,2025-07-17,In Progress,12335,29,DataSphere,Next-gen firewall,Networking,Brazil,Germany,CUST-10130,PROD-11817
+ORD-42560,Williamson and Sons,2025-03-29,Cancelled,1486,50,NetConnect,High-speed enterprise router,Wireless,Germany,Australia,CUST-10115,PROD-11658
+ORD-43575,Mcdonald-Fernandez,2024-10-17,Returned,13590,16,DataSphere,Hybrid cloud gateway,Cloud Infra,India,Singapore,CUST-10573,PROD-11636
+ORD-42681,Perez LLC,2025-08-29,Delivered,20098,2,CloudEdge,AI-powered analytics core,Wireless,India,India,CUST-10923,PROD-11031
+ORD-44652,Anderson Inc,2024-10-08,Shipped,16346,25,CloudEdge,Next-gen firewall,Security,Brazil,India,CUST-10514,PROD-11042
+ORD-44812,Bryant Group,2025-06-24,Shipped,1127,40,CoreAnalytics,Wi‑Fi 6 access point,Cloud Infra,Brazil,India,CUST-10421,PROD-11783
+ORD-44680,Santiago-Dominguez,2025-06-13,Returned,18480,32,CloudEdge,48-port managed switch,Storage,India,UAE,CUST-10467,PROD-11850
+ORD-42965,"Turner, Butler and Morgan",2025-05-14,Shipped,22062,25,NetConnect,Next-gen firewall,Storage,UK,UK,CUST-10415,PROD-11963
+ORD-42673,"Ortiz, Perkins and May",2024-10-21,Delivered,4926,39,CoreAnalytics,Wi‑Fi 6 access point,Analytics,Germany,Australia,CUST-10071,PROD-11245
+ORD-40562,Walker and Sons,2025-07-06,Delivered,11416,24,CloudEdge,High-speed enterprise router,Analytics,Singapore,Australia,CUST-10854,PROD-11136
+ORD-42779,"Le, Murray and Reid",2024-10-13,Returned,17035,2,CoreAnalytics,Hybrid cloud gateway,Cloud Infra,USA,India,CUST-10304,PROD-11328
+ORD-42949,Hampton and Sons,2025-02-01,Shipped,23697,12,CloudEdge,48-port managed switch,AI Solutions,Germany,Brazil,CUST-10272,PROD-11525
+ORD-42818,"Williams, White and Boyd",2025-07-12,Delivered,9895,25,NetConnect,Wi‑Fi 6 access point,AI Solutions,UAE,UAE,CUST-10623,PROD-11302
+ORD-42759,"Gonzalez, Matthews and Hunter",2025-03-09,Returned,5752,15,DataSphere,Wi‑Fi 6 access point,Storage,Australia,Australia,CUST-10113,PROD-11851
+ORD-41757,Taylor PLC,2025-03-23,Returned,11872,16,CloudEdge,Wi‑Fi 6 access point,Networking,USA,Singapore,CUST-10971,PROD-11497
+ORD-40725,Powell Inc,2025-03-09,Shipped,7532,20,NetConnect,Hybrid cloud gateway,Storage,USA,Singapore,CUST-10779,PROD-11214
+ORD-40220,"Fox, Johns and Deleon",2024-12-17,Delivered,15622,26,Insight360,AI-powered analytics core,Cloud Infra,Singapore,Singapore,CUST-10726,PROD-11234
+ORD-44140,Roberts-Chase,2025-05-08,Shipped,16890,35,CoreAnalytics,AI-powered analytics core,Storage,UAE,Singapore,CUST-10866,PROD-11562
+ORD-43958,Benson-Phillips,2024-12-08,In Progress,14690,26,CloudEdge,High-speed enterprise router,AI Solutions,Brazil,UAE,CUST-10109,PROD-11443
+ORD-41589,Frank-Hodge,2024-10-16,In Progress,3665,19,DataSphere,Hybrid cloud gateway,Cloud Infra,Singapore,Singapore,CUST-10032,PROD-11097
+ORD-43348,Porter-Martin,2025-07-29,Cancelled,23176,15,NetConnect,Wi‑Fi 6 access point,Networking,Brazil,UAE,CUST-10074,PROD-11773
+ORD-43971,"Hughes, Watts and Arnold",2024-09-11,In Progress,5597,48,Insight360,Hybrid cloud gateway,Networking,USA,UK,CUST-10773,PROD-11156
+ORD-44708,Carter-Martin,2025-04-15,Cancelled,13983,34,CloudEdge,Next-gen firewall,Security,Australia,UK,CUST-10240,PROD-11599
+ORD-40044,Rogers and Sons,2025-04-01,Returned,23789,8,DataSphere,AI-powered analytics core,Storage,Singapore,UK,CUST-10909,PROD-11034
+ORD-43002,Smith and Sons,2024-09-27,Cancelled,12761,37,CloudEdge,High-speed enterprise router,Wireless,Germany,Brazil,CUST-10820,PROD-11574
+ORD-40211,"Jackson, Krueger and Lee",2025-03-02,In Progress,3584,15,CoreAnalytics,AI-powered analytics core,Wireless,Singapore,UAE,CUST-10037,PROD-11768
+ORD-40678,Shelton-Smith,2025-07-21,Shipped,2321,45,CoreAnalytics,Hybrid cloud gateway,Storage,USA,India,CUST-10364,PROD-11948
+ORD-40355,"Wilkins, Odom and Harvey",2025-01-20,Shipped,23979,26,DataSphere,Hybrid cloud gateway,Analytics,Australia,Australia,CUST-10718,PROD-11182
+ORD-41434,"Sanford, Williams and Hunt",2025-03-04,Cancelled,16745,9,NetConnect,Wi‑Fi 6 access point,Security,Brazil,UAE,CUST-10582,PROD-11772
+ORD-40950,Williamson and Sons,2025-07-18,Cancelled,23960,39,DataSphere,48-port managed switch,Cloud Infra,Brazil,Australia,CUST-10717,PROD-11636
+ORD-42844,"Lee, Taylor and Roman",2025-06-24,Delivered,6070,18,DataSphere,High-speed enterprise router,Storage,India,Brazil,CUST-10668,PROD-11244
+ORD-40578,Baker LLC,2025-01-05,Cancelled,15161,46,Insight360,48-port managed switch,AI Solutions,Germany,India,CUST-10086,PROD-11264
+ORD-43929,"Watson, Ford and Wagner",2025-08-25,Returned,14817,44,DataSphere,AI-powered analytics core,Security,UAE,Singapore,CUST-10460,PROD-11172
+ORD-40545,"Medina, Lucas and Johnson",2025-01-10,Returned,11514,23,Insight360,Hybrid cloud gateway,Storage,Germany,USA,CUST-10191,PROD-11994
+ORD-40368,Hensley Ltd,2025-07-01,Shipped,8446,42,DataSphere,Hybrid cloud gateway,Storage,Australia,Brazil,CUST-10237,PROD-11293
+ORD-41613,Thomas-Graham,2024-12-01,Cancelled,14041,36,DataSphere,48-port managed switch,Wireless,Singapore,Australia,CUST-10092,PROD-11660
+ORD-43551,Walker-Shea,2025-05-07,In Progress,18895,37,CoreAnalytics,High-speed enterprise router,AI Solutions,Germany,USA,CUST-10219,PROD-11159
+ORD-43717,Clements-Maynard,2024-10-01,Shipped,5765,46,DataSphere,48-port managed switch,Networking,USA,Singapore,CUST-10924,PROD-11917
+ORD-43780,"Jones, Holloway and Chan",2025-02-04,Delivered,3757,30,DataSphere,Wi‑Fi 6 access point,AI Solutions,India,Singapore,CUST-10837,PROD-11099
+ORD-40136,Brown-Carroll,2025-08-26,Delivered,23011,21,CoreAnalytics,48-port managed switch,Wireless,Australia,Singapore,CUST-10881,PROD-11503
+ORD-44481,Taylor PLC,2025-01-09,Returned,9595,34,DataSphere,Hybrid cloud gateway,Storage,Singapore,India,CUST-10333,PROD-11580
+ORD-41438,Horton-Meyer,2025-02-26,Delivered,11551,27,NetConnect,Next-gen firewall,Wireless,UAE,USA,CUST-10605,PROD-11317
+ORD-40048,Dominguez-Farrell,2025-04-08,Cancelled,8147,44,Insight360,Next-gen firewall,Analytics,UK,Germany,CUST-10093,PROD-11362
+ORD-41361,Carr-Alvarado,2025-02-22,Returned,6037,18,Insight360,Hybrid cloud gateway,Cloud Infra,USA,UK,CUST-10106,PROD-11583
+ORD-40735,Perez PLC,2024-10-30,In Progress,19172,25,CoreAnalytics,Wi‑Fi 6 access point,Cloud Infra,Singapore,Australia,CUST-10793,PROD-11039
+ORD-41535,Wilson-Long,2025-04-23,In Progress,19175,9,NetConnect,Next-gen firewall,Wireless,Germany,Brazil,CUST-10005,PROD-11870
+ORD-42005,"Garcia, Phillips and Robertson",2024-09-03,In Progress,24644,44,CloudEdge,High-speed enterprise router,AI Solutions,UK,Brazil,CUST-10982,PROD-11081
+ORD-43796,"Gordon, Dyer and Tran",2024-09-04,Delivered,23936,10,CloudEdge,Next-gen firewall,AI Solutions,Brazil,Singapore,CUST-10218,PROD-11567
+ORD-42520,"Thomas, Smith and Cook",2025-04-09,Delivered,24778,30,CloudEdge,Hybrid cloud gateway,Security,Australia,USA,CUST-10436,PROD-11897
+ORD-41973,Miller Ltd,2024-09-11,Shipped,5425,14,NetConnect,48-port managed switch,AI Solutions,Brazil,USA,CUST-10315,PROD-11126
+ORD-40997,Santiago-Dominguez,2024-11-28,Cancelled,9997,5,CoreAnalytics,AI-powered analytics core,Cloud Infra,UK,Brazil,CUST-10052,PROD-11912
+ORD-40062,Davis-Lopez,2025-03-31,Cancelled,24855,31,DataSphere,48-port managed switch,Wireless,Brazil,USA,CUST-10798,PROD-11276
+ORD-41109,Andrade-Moore,2024-09-12,Shipped,7775,9,CloudEdge,High-speed enterprise router,Analytics,UK,USA,CUST-10919,PROD-11739
+ORD-42406,Davis-Tucker,2025-06-30,Delivered,22799,27,Insight360,Hybrid cloud gateway,Networking,UAE,Brazil,CUST-10096,PROD-11526
+ORD-40096,Smith-Bentley,2025-01-02,Cancelled,14755,28,CoreAnalytics,Next-gen firewall,Analytics,India,UK,CUST-10517,PROD-11988
+ORD-40479,Perkins-Powell,2024-11-27,In Progress,9930,47,DataSphere,Hybrid cloud gateway,AI Solutions,Germany,Australia,CUST-10910,PROD-11069
+ORD-44360,"Lewis, Morse and Nielsen",2024-10-10,In Progress,1462,34,CoreAnalytics,Next-gen firewall,Analytics,USA,India,CUST-10498,PROD-11912
+ORD-44113,Hall PLC,2024-10-04,Shipped,10914,5,DataSphere,48-port managed switch,Networking,USA,USA,CUST-10307,PROD-11143
+ORD-43708,Lane-Garner,2024-10-10,Cancelled,9546,13,Insight360,Next-gen firewall,Analytics,Germany,Australia,CUST-10958,PROD-11187
+ORD-41102,Grant-Lozano,2024-09-27,Cancelled,3558,7,CoreAnalytics,AI-powered analytics core,Security,UAE,UK,CUST-10161,PROD-11087
+ORD-42747,Taylor Ltd,2024-10-18,Delivered,6689,47,CoreAnalytics,Next-gen firewall,Networking,India,UAE,CUST-10662,PROD-11988
+ORD-42171,Moreno and Sons,2025-06-29,In Progress,15656,30,CloudEdge,Wi‑Fi 6 access point,AI Solutions,USA,UK,CUST-10264,PROD-11306
+ORD-40323,"Santiago, Hall and Lara",2025-07-23,In Progress,20719,38,DataSphere,High-speed enterprise router,Wireless,Brazil,Australia,CUST-10720,PROD-11939
+ORD-44255,"Lewis, Morse and Nielsen",2025-08-03,In Progress,8861,4,DataSphere,Hybrid cloud gateway,Wireless,Singapore,Australia,CUST-10599,PROD-11849
+ORD-43143,Underwood Group,2025-01-23,In Progress,14114,12,NetConnect,Wi‑Fi 6 access point,Analytics,India,USA,CUST-10212,PROD-11061
+ORD-43538,"Davis, Martin and Miller",2025-08-18,Cancelled,13103,49,DataSphere,AI-powered analytics core,Storage,Germany,Germany,CUST-10449,PROD-11492
+ORD-44926,"Garcia, Phillips and Robertson",2025-05-22,Shipped,1566,41,CloudEdge,Next-gen firewall,Wireless,UAE,UK,CUST-10031,PROD-11949
+ORD-42925,"White, Horton and Bender",2024-10-31,Cancelled,14773,11,CoreAnalytics,High-speed enterprise router,Networking,UAE,Australia,CUST-10415,PROD-11685
+ORD-41150,Ware-Walker,2025-07-07,In Progress,20555,2,Insight360,Wi‑Fi 6 access point,Storage,Germany,India,CUST-10426,PROD-11280
+ORD-43618,Johnson PLC,2025-01-19,Returned,22257,41,CoreAnalytics,Next-gen firewall,AI Solutions,Germany,Singapore,CUST-10395,PROD-11058
+ORD-40292,Drake-Parker,2024-12-09,Cancelled,21259,9,Insight360,48-port managed switch,AI Solutions,Brazil,India,CUST-10124,PROD-11748
+ORD-43750,Scott-Newman,2024-12-07,Returned,3395,15,NetConnect,48-port managed switch,Security,UK,USA,CUST-10575,PROD-11297
+ORD-43587,Cobb-Marsh,2025-04-16,Cancelled,12618,2,DataSphere,AI-powered analytics core,AI Solutions,Brazil,India,CUST-10169,PROD-11014
+ORD-40534,"Raymond, Lara and Daniel",2025-08-04,In Progress,5389,1,CoreAnalytics,48-port managed switch,Security,India,USA,CUST-10517,PROD-11655
+ORD-43608,"Matthews, Bradley and Brady",2025-07-08,Returned,13955,31,DataSphere,AI-powered analytics core,Cloud Infra,Australia,India,CUST-10543,PROD-11146
+ORD-42649,Hale LLC,2025-07-19,Returned,11746,16,CoreAnalytics,Hybrid cloud gateway,Networking,India,UAE,CUST-10801,PROD-11865
+ORD-44811,"Le, Murray and Reid",2025-07-12,Shipped,20050,24,DataSphere,Next-gen firewall,AI Solutions,Germany,India,CUST-10922,PROD-11311
+ORD-41984,"Richards, Campbell and Ryan",2025-07-26,Shipped,23836,32,CloudEdge,AI-powered analytics core,Cloud Infra,UAE,UAE,CUST-10232,PROD-11345
+ORD-42933,Perez PLC,2025-07-04,Shipped,3006,2,CoreAnalytics,Next-gen firewall,Cloud Infra,Germany,Singapore,CUST-10586,PROD-11889
+ORD-41537,Taylor Inc,2025-03-22,Returned,18146,40,CloudEdge,Hybrid cloud gateway,AI Solutions,Singapore,India,CUST-10968,PROD-11369
+ORD-44535,"Peterson, Wright and Hamilton",2024-11-10,Cancelled,9913,8,NetConnect,High-speed enterprise router,Storage,USA,Germany,CUST-10151,PROD-11963
+ORD-44173,Frank-Hodge,2024-10-28,Delivered,23183,12,Insight360,High-speed enterprise router,Wireless,India,Germany,CUST-10963,PROD-11487
+ORD-43361,Diaz Group,2024-11-19,Cancelled,13137,31,CloudEdge,Hybrid cloud gateway,Networking,India,Brazil,CUST-10123,PROD-11376
+ORD-43666,Anderson Inc,2024-09-03,Shipped,19960,37,CloudEdge,High-speed enterprise router,Cloud Infra,UAE,UK,CUST-10824,PROD-11468
+ORD-44006,"Mack, Ferguson and Carpenter",2024-11-09,Returned,1902,38,CoreAnalytics,Next-gen firewall,Wireless,Brazil,Australia,CUST-10636,PROD-11971
+ORD-43627,Ware-Walker,2025-06-06,Cancelled,16837,13,Insight360,Next-gen firewall,Security,Brazil,UK,CUST-10150,PROD-11844
+ORD-40587,Porter-Martin,2024-09-05,Shipped,19858,7,CloudEdge,Wi‑Fi 6 access point,Security,UAE,Singapore,CUST-10362,PROD-11031
+ORD-43257,"Allen, Hernandez and Tyler",2025-03-13,Cancelled,20582,10,NetConnect,Hybrid cloud gateway,Security,Australia,Brazil,CUST-10930,PROD-11946
+ORD-42299,"Everett, Ortiz and Smith",2024-09-21,Returned,9800,12,NetConnect,Next-gen firewall,Storage,USA,Singapore,CUST-10168,PROD-11662
+ORD-43989,"Spears, Decker and Chavez",2025-01-06,Shipped,6568,50,CoreAnalytics,AI-powered analytics core,Cloud Infra,UK,Brazil,CUST-10754,PROD-11674
+ORD-40585,Jordan-Hamilton,2025-07-20,Returned,19513,38,CoreAnalytics,Hybrid cloud gateway,Wireless,Germany,USA,CUST-10207,PROD-11393
+ORD-42424,"Douglas, Cook and Perez",2025-03-19,Shipped,15999,34,Insight360,High-speed enterprise router,Cloud Infra,India,UAE,CUST-10437,PROD-11906
+ORD-41392,Guzman Group,2025-04-06,Cancelled,18040,8,CloudEdge,AI-powered analytics core,Cloud Infra,Singapore,Brazil,CUST-10836,PROD-11348
+ORD-44526,"Perez, Mccoy and Ramirez",2025-08-18,In Progress,7153,14,DataSphere,High-speed enterprise router,Networking,UK,UK,CUST-10510,PROD-11524
+ORD-44921,Gallegos-Kennedy,2024-10-20,Shipped,8431,46,DataSphere,Hybrid cloud gateway,Networking,Brazil,UAE,CUST-10978,PROD-11795
+ORD-44801,Humphrey and Sons,2025-07-31,Returned,10834,35,NetConnect,Hybrid cloud gateway,Networking,Australia,UAE,CUST-10320,PROD-11295
+ORD-43241,Wood LLC,2025-04-12,In Progress,8279,48,NetConnect,AI-powered analytics core,Analytics,India,UAE,CUST-10911,PROD-11990
+ORD-44282,Jimenez and Sons,2024-10-12,Cancelled,19201,31,CloudEdge,AI-powered analytics core,Security,UK,USA,CUST-10362,PROD-11718
+ORD-43339,Wu-Nguyen,2025-04-28,Cancelled,10966,42,CoreAnalytics,High-speed enterprise router,Cloud Infra,Singapore,USA,CUST-10616,PROD-11674
+ORD-43221,Gross Ltd,2024-09-20,Returned,18714,36,CoreAnalytics,High-speed enterprise router,Storage,Singapore,Singapore,CUST-10073,PROD-11378
+ORD-42112,Chang-Chen,2024-12-03,Delivered,6331,40,NetConnect,Next-gen firewall,Networking,Australia,Australia,CUST-10580,PROD-11355
+ORD-41175,Hernandez-Carter,2024-12-16,In Progress,4055,46,CloudEdge,AI-powered analytics core,Storage,India,Germany,CUST-10497,PROD-11151
+ORD-44863,"Douglas, Cook and Perez",2025-04-29,Delivered,18235,36,Insight360,Hybrid cloud gateway,Analytics,USA,India,CUST-10876,PROD-11517
+ORD-43812,Powers Ltd,2025-02-19,Cancelled,6771,29,Insight360,AI-powered analytics core,Wireless,UK,Brazil,CUST-10329,PROD-11487
+ORD-41868,Soto LLC,2025-01-07,Cancelled,11381,36,NetConnect,Hybrid cloud gateway,Wireless,Brazil,Australia,CUST-10841,PROD-11166
+ORD-42615,Bryant-Lawson,2024-09-15,In Progress,11428,21,CloudEdge,Hybrid cloud gateway,Security,India,USA,CUST-10780,PROD-11183
+ORD-43867,"Adams, Johnson and Davis",2025-01-20,Returned,24120,4,CloudEdge,Next-gen firewall,Networking,Australia,India,CUST-10712,PROD-11445
+ORD-44886,Smith Group,2025-03-14,Returned,11095,17,NetConnect,Hybrid cloud gateway,Wireless,Brazil,Singapore,CUST-10085,PROD-11082
+ORD-43779,Drake-Parker,2024-12-05,Delivered,24427,23,Insight360,High-speed enterprise router,Analytics,India,Brazil,CUST-10077,PROD-11953
+ORD-43847,"Brown, Lynch and Ritter",2024-11-26,Delivered,19622,8,NetConnect,Hybrid cloud gateway,AI Solutions,Australia,USA,CUST-10883,PROD-11021
+ORD-42417,Hardy Group,2025-01-04,Delivered,8342,36,NetConnect,High-speed enterprise router,Networking,UAE,India,CUST-10974,PROD-11932
+ORD-40071,Case and Sons,2025-04-22,Cancelled,22013,31,CoreAnalytics,Hybrid cloud gateway,Security,Singapore,India,CUST-10977,PROD-11019
+ORD-44881,Davis Inc,2025-01-19,In Progress,4811,9,DataSphere,High-speed enterprise router,Analytics,Brazil,India,CUST-10924,PROD-11558
+ORD-41127,"Franklin, Martin and White",2025-03-20,Delivered,17591,23,NetConnect,Next-gen firewall,AI Solutions,Germany,Singapore,CUST-10067,PROD-11079
+ORD-44025,"Clark, Ramirez and Chambers",2024-09-06,In Progress,10262,23,NetConnect,Hybrid cloud gateway,AI Solutions,Singapore,UK,CUST-10782,PROD-11716
+ORD-43251,Rogers LLC,2025-04-21,Cancelled,9997,50,DataSphere,Wi‑Fi 6 access point,Storage,UK,India,CUST-10422,PROD-11099
+ORD-43902,Burke Group,2025-03-03,In Progress,19078,34,DataSphere,AI-powered analytics core,Security,USA,UAE,CUST-10605,PROD-11976
+ORD-41096,Norris-Riley,2025-07-12,Cancelled,10989,19,CloudEdge,AI-powered analytics core,Cloud Infra,Singapore,Brazil,CUST-10884,PROD-11211
+ORD-44546,"Mccann, Dawson and Macias",2024-11-16,Returned,12248,21,NetConnect,High-speed enterprise router,Cloud Infra,Brazil,USA,CUST-10492,PROD-11079
+ORD-41213,Webster Ltd,2024-11-23,Shipped,19419,14,NetConnect,Next-gen firewall,AI Solutions,UK,USA,CUST-10653,PROD-11426
+ORD-43922,"Bush, Carter and Ramsey",2025-06-20,Returned,3904,20,CloudEdge,Next-gen firewall,Networking,UAE,UK,CUST-10317,PROD-11632
+ORD-41426,Strickland Ltd,2024-12-21,Delivered,15504,38,DataSphere,High-speed enterprise router,Storage,Brazil,Singapore,CUST-10688,PROD-11939
+ORD-43067,Brennan-Hill,2025-07-02,Shipped,16180,25,CoreAnalytics,High-speed enterprise router,Storage,Singapore,UAE,CUST-10168,PROD-11999
+ORD-44520,Andrade-Moore,2024-10-10,Shipped,13549,26,Insight360,Wi‑Fi 6 access point,Storage,UK,Australia,CUST-10583,PROD-11177
+ORD-42101,Norman Inc,2025-08-31,Returned,7556,5,DataSphere,Wi‑Fi 6 access point,Cloud Infra,USA,UK,CUST-10823,PROD-11706
+ORD-40808,Coffey Group,2025-06-30,In Progress,13492,12,Insight360,High-speed enterprise router,Wireless,UK,Singapore,CUST-10179,PROD-11790
+ORD-44744,Mcdonald-Fernandez,2024-12-28,Delivered,16125,1,CloudEdge,48-port managed switch,Networking,India,Brazil,CUST-10653,PROD-11525
+ORD-43751,Moore-Smith,2024-12-22,Shipped,24890,20,CoreAnalytics,Next-gen firewall,Security,Brazil,Germany,CUST-10856,PROD-11623
+ORD-41363,Green Inc,2025-01-19,Returned,15596,21,CoreAnalytics,Hybrid cloud gateway,AI Solutions,UK,Singapore,CUST-10240,PROD-11490
+ORD-42318,"Ramirez, Lee and Rodriguez",2025-07-02,Delivered,18976,7,Insight360,Hybrid cloud gateway,Analytics,UK,Australia,CUST-10661,PROD-11478
+ORD-44582,Dunn-Anderson,2025-06-27,Returned,9053,49,CoreAnalytics,Hybrid cloud gateway,Wireless,UAE,USA,CUST-10135,PROD-11672
+ORD-44742,"Lynch, Lynch and Mitchell",2025-05-13,In Progress,21455,28,DataSphere,Next-gen firewall,AI Solutions,Brazil,India,CUST-10283,PROD-11240
+ORD-41026,Meyer-Frazier,2024-11-04,Delivered,18757,27,CoreAnalytics,AI-powered analytics core,Networking,UK,Singapore,CUST-10897,PROD-11272
+ORD-43110,Fisher LLC,2025-03-12,Cancelled,15088,22,CloudEdge,48-port managed switch,Storage,Brazil,UAE,CUST-10181,PROD-11869
+ORD-42111,"Massey, Wells and Herrera",2025-04-20,Shipped,2909,44,DataSphere,Hybrid cloud gateway,Wireless,Singapore,Australia,CUST-10546,PROD-11683
+ORD-41042,Choi Ltd,2024-12-22,Shipped,23555,15,CloudEdge,Hybrid cloud gateway,Cloud Infra,Australia,India,CUST-10151,PROD-11749
+ORD-41877,"Richards, Ortega and David",2025-07-02,Cancelled,8569,14,NetConnect,High-speed enterprise router,AI Solutions,India,Germany,CUST-10249,PROD-11518
+ORD-40882,"Wilkinson, Lane and Fields",2025-07-07,Cancelled,3670,31,Insight360,Hybrid cloud gateway,AI Solutions,USA,Germany,CUST-10516,PROD-11080
+ORD-44300,"Garcia, Mcmillan and Chaney",2025-03-18,Shipped,23646,41,CoreAnalytics,Wi‑Fi 6 access point,Storage,Brazil,UAE,CUST-10745,PROD-11157
+ORD-41193,Haas-Morgan,2025-06-02,Returned,7557,36,CoreAnalytics,AI-powered analytics core,Cloud Infra,Germany,UAE,CUST-10338,PROD-11039
+ORD-44588,"Jones, Martinez and Evans",2024-09-13,Returned,16036,13,CoreAnalytics,AI-powered analytics core,AI Solutions,USA,UK,CUST-10636,PROD-11358
+ORD-44511,Palmer-Barrett,2025-06-07,Delivered,20948,19,Insight360,Hybrid cloud gateway,AI Solutions,Brazil,India,CUST-10228,PROD-11797
+ORD-43671,"Gonzalez, Williams and Moreno",2025-07-12,Delivered,8922,31,CloudEdge,Next-gen firewall,Analytics,Germany,Australia,CUST-10549,PROD-11163
+ORD-40625,Johnson and Sons,2025-02-01,Returned,8072,7,CloudEdge,Wi‑Fi 6 access point,Networking,UK,UK,CUST-10288,PROD-11184
+ORD-42797,Villegas LLC,2025-01-09,Returned,3650,30,CoreAnalytics,48-port managed switch,Security,Germany,UK,CUST-10428,PROD-11257
+ORD-44292,"Jackson, Johns and Duarte",2025-04-05,In Progress,7525,45,NetConnect,Next-gen firewall,Analytics,Germany,UK,CUST-10259,PROD-11454
+ORD-44969,Meyer-Frazier,2024-12-11,Delivered,15379,25,NetConnect,48-port managed switch,Cloud Infra,Singapore,UK,CUST-10718,PROD-11082
+ORD-40234,Brennan Group,2025-03-19,Delivered,1545,8,Insight360,Hybrid cloud gateway,AI Solutions,India,Australia,CUST-10460,PROD-11280
+ORD-44567,Castro LLC,2025-06-02,Returned,23191,8,DataSphere,Hybrid cloud gateway,Analytics,Australia,UAE,CUST-10280,PROD-11128
+ORD-41663,"Beasley, Mills and Vazquez",2024-12-14,In Progress,15435,45,DataSphere,AI-powered analytics core,Analytics,Brazil,India,CUST-10277,PROD-11678
+ORD-40416,"Terry, Robertson and Pruitt",2025-06-03,Returned,2818,25,NetConnect,48-port managed switch,Storage,USA,India,CUST-10092,PROD-11207
+ORD-44247,"Roberson, Lewis and Mills",2024-11-02,Returned,24647,39,DataSphere,48-port managed switch,AI Solutions,Australia,Singapore,CUST-10552,PROD-11399
+ORD-42174,"Garcia, Marshall and Gibson",2024-12-03,In Progress,20909,12,Insight360,AI-powered analytics core,Networking,UK,UAE,CUST-10784,PROD-11221
+ORD-41457,Walker-Shea,2025-05-28,Cancelled,7462,21,CoreAnalytics,Wi‑Fi 6 access point,Analytics,Brazil,UAE,CUST-10812,PROD-11107
+ORD-40747,Jackson-Fowler,2025-08-01,Shipped,16937,9,CoreAnalytics,AI-powered analytics core,Analytics,USA,Australia,CUST-10453,PROD-11277
+ORD-40018,Black Ltd,2025-04-26,Delivered,16784,26,CloudEdge,High-speed enterprise router,Cloud Infra,India,India,CUST-10898,PROD-11501
+ORD-41201,"Montoya, Wilson and Jones",2024-09-07,Shipped,1935,21,DataSphere,High-speed enterprise router,Security,Germany,Australia,CUST-10905,PROD-11689
+ORD-41700,Baker Inc,2025-06-01,In Progress,24091,4,NetConnect,Next-gen firewall,AI Solutions,Singapore,Australia,CUST-10329,PROD-11355
+ORD-43254,Jordan-Lee,2025-05-03,Returned,16759,1,CloudEdge,Wi‑Fi 6 access point,Networking,UAE,Germany,CUST-10083,PROD-11845
+ORD-40597,"Fernandez, Williams and Johnson",2025-05-21,Shipped,21523,15,DataSphere,48-port managed switch,Cloud Infra,Singapore,Germany,CUST-10211,PROD-11757
+ORD-43227,Walker-Shea,2025-06-24,Shipped,13134,22,Insight360,Next-gen firewall,AI Solutions,USA,Singapore,CUST-10622,PROD-11227
+ORD-44406,"Richardson, Smith and Rodriguez",2025-07-12,Delivered,19803,29,Insight360,Wi‑Fi 6 access point,Networking,UAE,UK,CUST-10732,PROD-11023
+ORD-44720,Smith-Morton,2025-02-19,Delivered,7539,13,DataSphere,Wi‑Fi 6 access point,Wireless,India,India,CUST-10547,PROD-11622
+ORD-41506,Palmer-Barrett,2025-04-25,Shipped,21635,19,DataSphere,Hybrid cloud gateway,Cloud Infra,Germany,UAE,CUST-10735,PROD-11883
+ORD-41413,Davis-Doyle,2025-06-02,Shipped,5622,37,CoreAnalytics,High-speed enterprise router,Networking,Brazil,Singapore,CUST-10748,PROD-11770
+ORD-41966,"Mcguire, Hines and Johnson",2024-10-18,Shipped,19614,10,NetConnect,48-port managed switch,Analytics,Brazil,Brazil,CUST-10688,PROD-11188
+ORD-40372,Cruz-Mckenzie,2024-11-21,In Progress,6807,19,Insight360,AI-powered analytics core,Security,USA,UK,CUST-10513,PROD-11487
+ORD-41341,Hernandez-Vargas,2025-05-22,Cancelled,24495,47,NetConnect,Next-gen firewall,Wireless,Australia,India,CUST-10572,PROD-11142
+ORD-40599,Allen Ltd,2025-06-01,Shipped,24119,43,CloudEdge,Wi‑Fi 6 access point,AI Solutions,UK,UAE,CUST-10826,PROD-11947
+ORD-40239,Ray Inc,2024-10-03,Delivered,10431,3,CloudEdge,48-port managed switch,Storage,UK,UK,CUST-10821,PROD-11252
+ORD-43401,Scott-Newman,2025-02-22,Cancelled,18984,6,DataSphere,AI-powered analytics core,AI Solutions,Singapore,Germany,CUST-10637,PROD-11882
+ORD-42068,Martinez Ltd,2025-03-10,Returned,23820,45,NetConnect,Wi‑Fi 6 access point,Analytics,Brazil,UK,CUST-10356,PROD-11802
+ORD-40811,Singh-Miller,2024-09-28,Cancelled,11491,2,CloudEdge,48-port managed switch,Security,UK,Australia,CUST-10266,PROD-11905
+ORD-41095,Lane-Garner,2024-12-05,Cancelled,14551,14,Insight360,Hybrid cloud gateway,Networking,India,USA,CUST-10107,PROD-11479
+ORD-44325,Watson PLC,2024-10-11,Cancelled,4766,39,CoreAnalytics,Hybrid cloud gateway,Wireless,UAE,Australia,CUST-10013,PROD-11447
+ORD-44761,"Curtis, Johnson and Kemp",2025-02-01,In Progress,8016,2,Insight360,Hybrid cloud gateway,Cloud Infra,India,Singapore,CUST-10238,PROD-11487
+ORD-43677,"Brooks, Ho and Carr",2025-02-18,Shipped,5596,50,NetConnect,48-port managed switch,Storage,USA,USA,CUST-10744,PROD-11127
+ORD-43465,Santana Group,2025-06-23,Delivered,5171,32,CloudEdge,AI-powered analytics core,Wireless,Brazil,Germany,CUST-10566,PROD-11263
+ORD-43104,Gutierrez LLC,2025-01-11,Cancelled,3881,41,CloudEdge,AI-powered analytics core,Security,Australia,Australia,CUST-10048,PROD-11462
+ORD-42750,"Davis, Martin and Miller",2025-01-03,In Progress,19243,13,DataSphere,Next-gen firewall,Storage,Germany,Australia,CUST-10639,PROD-11010
+ORD-42296,"Woods, Kelly and Richardson",2025-02-07,In Progress,17476,28,DataSphere,Next-gen firewall,Cloud Infra,Australia,India,CUST-10054,PROD-11370
+ORD-44193,Harris-Walsh,2024-12-21,In Progress,23561,7,NetConnect,Next-gen firewall,Networking,Australia,Brazil,CUST-10218,PROD-11103
+ORD-43709,Patterson-Dennis,2025-05-29,Shipped,8826,21,CoreAnalytics,High-speed enterprise router,Security,India,Singapore,CUST-10486,PROD-11167
+ORD-43019,"Lewis, Johnson and Gilmore",2025-08-31,Cancelled,5758,38,NetConnect,Wi‑Fi 6 access point,Cloud Infra,UK,Brazil,CUST-10651,PROD-11195
+ORD-44253,Kennedy-Delgado,2024-09-17,In Progress,22495,50,DataSphere,Next-gen firewall,Analytics,Australia,Brazil,CUST-10965,PROD-11923
+ORD-40804,Bartlett PLC,2025-03-19,Returned,9914,11,Insight360,Next-gen firewall,AI Solutions,Germany,Singapore,CUST-10918,PROD-11557
+ORD-44191,"Garcia, Marshall and Gibson",2025-02-20,In Progress,14159,35,NetConnect,Hybrid cloud gateway,Networking,Australia,Germany,CUST-10335,PROD-11963
+ORD-43706,"Clay, Schroeder and Rojas",2025-05-26,Returned,17882,14,CoreAnalytics,Next-gen firewall,Security,UK,UK,CUST-10932,PROD-11759
+ORD-40752,"Gonzales, Allen and Carpenter",2025-08-27,Cancelled,4211,32,CoreAnalytics,High-speed enterprise router,Wireless,UK,Brazil,CUST-10132,PROD-11793
+ORD-44645,Brooks LLC,2025-01-03,Cancelled,16771,3,NetConnect,Next-gen firewall,Storage,Brazil,Germany,CUST-10679,PROD-11126
+ORD-42532,"Duncan, Powers and Thompson",2024-12-20,Cancelled,22121,14,NetConnect,Next-gen firewall,Wireless,UK,UAE,CUST-10819,PROD-11491
+ORD-40622,Dunn-Anderson,2025-06-16,Cancelled,11054,27,NetConnect,Hybrid cloud gateway,Wireless,USA,Brazil,CUST-10659,PROD-11174
+ORD-42298,"Johnson, Holt and Williamson",2025-03-17,Delivered,12570,37,NetConnect,High-speed enterprise router,Analytics,Brazil,Germany,CUST-10632,PROD-11420
+ORD-43829,Evans-Mora,2024-12-02,Returned,5670,32,Insight360,Next-gen firewall,Storage,UK,Germany,CUST-10794,PROD-11922
+ORD-40567,"Grant, Johnson and Jordan",2025-05-04,In Progress,9304,39,Insight360,48-port managed switch,Analytics,Australia,Singapore,CUST-10220,PROD-11004
+ORD-41136,Bautista Ltd,2025-01-17,Cancelled,3831,35,Insight360,Hybrid cloud gateway,Cloud Infra,USA,USA,CUST-10878,PROD-11617
+ORD-41205,"Johnson, Ortega and Solomon",2024-12-29,Cancelled,20870,10,DataSphere,AI-powered analytics core,Networking,USA,Singapore,CUST-10750,PROD-11499
+ORD-41048,Arroyo PLC,2024-12-08,Returned,8779,1,NetConnect,High-speed enterprise router,AI Solutions,Germany,India,CUST-10390,PROD-11335
+ORD-40052,Harris Group,2025-02-10,Returned,23355,22,DataSphere,AI-powered analytics core,AI Solutions,Australia,India,CUST-10246,PROD-11683
+ORD-43652,"Howard, Morris and Patterson",2025-02-23,Delivered,9208,12,DataSphere,48-port managed switch,Networking,Singapore,UK,CUST-10762,PROD-11266
+ORD-41045,Moss LLC,2024-12-24,Returned,4390,19,CloudEdge,High-speed enterprise router,Networking,UK,Singapore,CUST-10888,PROD-11513
+ORD-42182,Anderson Inc,2025-01-05,Returned,8486,18,Insight360,Next-gen firewall,Storage,UK,USA,CUST-10323,PROD-11998
+ORD-42689,Frazier-Goodman,2025-05-29,Returned,19854,18,CloudEdge,Wi‑Fi 6 access point,Cloud Infra,UAE,Germany,CUST-10278,PROD-11840
+ORD-40535,"Campbell, Clark and Reese",2025-07-28,Returned,6073,10,CoreAnalytics,High-speed enterprise router,Wireless,Brazil,India,CUST-10589,PROD-11770
+ORD-43185,"Beasley, Mills and Vazquez",2025-05-25,Shipped,4180,23,Insight360,Wi‑Fi 6 access point,Security,Germany,Brazil,CUST-10555,PROD-11848
+ORD-43858,Thomas Group,2025-03-30,Shipped,5574,23,CloudEdge,Hybrid cloud gateway,Networking,Australia,USA,CUST-10501,PROD-11125
+ORD-40444,Barry-Garcia,2024-11-23,Returned,11256,26,Insight360,Hybrid cloud gateway,Cloud Infra,Brazil,Germany,CUST-10762,PROD-11955
+ORD-43605,Lane-Garner,2024-10-13,Cancelled,1504,27,NetConnect,AI-powered analytics core,Security,Brazil,Germany,CUST-10223,PROD-11179
+ORD-40196,"Brooks, Ho and Carr",2025-03-29,Returned,1300,36,DataSphere,Wi‑Fi 6 access point,Analytics,Brazil,UAE,CUST-10751,PROD-11952
+ORD-41116,Thompson-Atkinson,2025-07-01,Shipped,18701,40,DataSphere,AI-powered analytics core,AI Solutions,Germany,UK,CUST-10539,PROD-11799
+ORD-40766,Murray LLC,2025-05-19,In Progress,23485,9,CoreAnalytics,Next-gen firewall,Analytics,India,Australia,CUST-10459,PROD-11087
+ORD-41946,"Valdez, Pittman and Gordon",2024-11-17,Cancelled,11526,11,Insight360,48-port managed switch,Networking,USA,Singapore,CUST-10406,PROD-11403
+ORD-43248,"Aguilar, Love and Graham",2024-11-20,In Progress,6840,31,CoreAnalytics,48-port managed switch,Security,Singapore,USA,CUST-10557,PROD-11896
+ORD-43003,Williams and Sons,2024-10-14,Delivered,9549,46,DataSphere,AI-powered analytics core,Storage,Brazil,Germany,CUST-11000,PROD-11706
+ORD-41433,Osborn-Sharp,2024-12-04,Returned,5808,14,NetConnect,Next-gen firewall,Wireless,USA,USA,CUST-10278,PROD-11190
+ORD-44201,Sanchez and Sons,2025-06-21,In Progress,6947,9,DataSphere,High-speed enterprise router,Security,India,UK,CUST-10212,PROD-11305
+ORD-43096,Phillips Group,2024-12-28,Cancelled,11958,46,Insight360,48-port managed switch,Wireless,UK,USA,CUST-10911,PROD-11453
+ORD-42923,Baird-Krause,2025-03-23,In Progress,16165,24,NetConnect,Next-gen firewall,Analytics,UAE,UK,CUST-10861,PROD-11463
+ORD-40645,Watson-Small,2024-11-17,Shipped,16714,30,CloudEdge,AI-powered analytics core,Storage,Australia,Brazil,CUST-10902,PROD-11323
+ORD-41050,Gordon PLC,2025-02-13,Delivered,13868,36,Insight360,Hybrid cloud gateway,Analytics,USA,UK,CUST-10335,PROD-11836
+ORD-43746,Porter-Johnson,2024-12-21,Cancelled,6764,38,Insight360,AI-powered analytics core,Cloud Infra,Singapore,UK,CUST-10228,PROD-11624
+ORD-44094,Reid-Bowman,2024-11-29,Returned,5451,2,Insight360,48-port managed switch,Security,Brazil,India,CUST-10409,PROD-11030
+ORD-44404,Myers Ltd,2025-08-31,Cancelled,19884,30,CoreAnalytics,High-speed enterprise router,Analytics,USA,UK,CUST-10165,PROD-11159
+ORD-40121,Watkins Ltd,2025-01-12,Cancelled,5128,17,DataSphere,Next-gen firewall,Cloud Infra,Germany,Brazil,CUST-10681,PROD-11817
+ORD-42053,Brennan-Brown,2025-08-31,Returned,19856,38,DataSphere,Hybrid cloud gateway,Security,Australia,India,CUST-10311,PROD-11065
+ORD-44259,Gardner Inc,2025-02-07,Cancelled,23688,14,Insight360,Next-gen firewall,Networking,UK,UAE,CUST-10535,PROD-11792
+ORD-44889,Morris PLC,2025-07-16,Cancelled,11194,11,CoreAnalytics,48-port managed switch,Storage,USA,India,CUST-10760,PROD-11019
+ORD-44335,Jackson-Sherman,2024-12-18,In Progress,20194,7,Insight360,Hybrid cloud gateway,Storage,India,Singapore,CUST-10178,PROD-11626
+ORD-44692,Barker PLC,2025-05-20,Returned,23423,8,Insight360,High-speed enterprise router,Analytics,Brazil,Brazil,CUST-10090,PROD-11322
+ORD-40135,"Cole, Barron and Smith",2025-02-05,In Progress,18315,17,CoreAnalytics,AI-powered analytics core,Networking,UAE,Singapore,CUST-10539,PROD-11107
+ORD-42461,"Waters, Dickson and Cox",2024-09-13,Cancelled,20754,13,Insight360,AI-powered analytics core,Analytics,Germany,Australia,CUST-10219,PROD-11047
+ORD-41955,"Parrish, Miller and Cooper",2025-07-19,Cancelled,15281,14,DataSphere,Next-gen firewall,Cloud Infra,Australia,Australia,CUST-10714,PROD-11282
+ORD-42464,Miller Ltd,2025-06-09,Shipped,18646,19,CloudEdge,Wi‑Fi 6 access point,Networking,Singapore,Australia,CUST-10053,PROD-11807
+ORD-40185,"Martin, Stevenson and Meadows",2025-05-05,Returned,6389,42,CloudEdge,AI-powered analytics core,Wireless,UAE,USA,CUST-10948,PROD-11977
+ORD-41393,Reynolds-Woods,2024-11-08,Shipped,13485,3,Insight360,Wi‑Fi 6 access point,Security,India,USA,CUST-10542,PROD-11950
+ORD-42277,"Wolfe, Williams and Evans",2025-02-09,Shipped,16089,12,DataSphere,Wi‑Fi 6 access point,Networking,Brazil,UK,CUST-10627,PROD-11249
+ORD-40512,Foster-Blair,2025-06-11,Shipped,1028,10,Insight360,Hybrid cloud gateway,Cloud Infra,Germany,UK,CUST-10248,PROD-11961
+ORD-44730,Short Group,2025-01-01,In Progress,23332,41,DataSphere,Wi‑Fi 6 access point,Cloud Infra,Australia,USA,CUST-10653,PROD-11647
+ORD-44055,"Jimenez, Rubio and Jimenez",2025-07-18,Returned,8112,23,NetConnect,AI-powered analytics core,Cloud Infra,Singapore,Singapore,CUST-10116,PROD-11697
+ORD-43138,Hall-Anderson,2025-02-02,Cancelled,7953,43,CloudEdge,High-speed enterprise router,Storage,Singapore,Brazil,CUST-10854,PROD-11909
+ORD-42670,"Green, Hudson and Lara",2025-04-14,In Progress,9157,11,Insight360,Hybrid cloud gateway,AI Solutions,UK,Australia,CUST-10438,PROD-11487
+ORD-44774,Green-Hoffman,2025-06-23,Cancelled,3813,14,CloudEdge,Next-gen firewall,Analytics,Brazil,Australia,CUST-10614,PROD-11228
+ORD-44862,"Pruitt, Johnson and Hoffman",2025-03-11,Shipped,23062,14,Insight360,High-speed enterprise router,Networking,Singapore,UK,CUST-10202,PROD-11316
+ORD-42118,"Spears, Decker and Chavez",2024-11-12,In Progress,9926,7,Insight360,High-speed enterprise router,Security,UK,Singapore,CUST-10096,PROD-11231
+ORD-40252,Bryant-Lawson,2025-08-08,Shipped,6730,26,CloudEdge,Wi‑Fi 6 access point,Wireless,USA,USA,CUST-10506,PROD-11525
+ORD-43527,House-Ramirez,2025-03-28,Delivered,2399,24,CloudEdge,AI-powered analytics core,Cloud Infra,India,Singapore,CUST-10525,PROD-11281
+ORD-43560,Lambert Inc,2025-01-28,Shipped,15647,13,DataSphere,48-port managed switch,Analytics,Singapore,Germany,CUST-10407,PROD-11146
+ORD-44012,"Benson, Bright and Sandoval",2025-05-26,Shipped,14276,24,CloudEdge,48-port managed switch,Security,Singapore,Germany,CUST-10924,PROD-11261
+ORD-41508,"West, Evans and Gilbert",2025-03-05,In Progress,24177,20,DataSphere,Next-gen firewall,Wireless,UK,Australia,CUST-10068,PROD-11548
+ORD-40123,Rogers and Sons,2025-02-16,Delivered,16886,17,CoreAnalytics,High-speed enterprise router,Networking,Australia,UK,CUST-10563,PROD-11764
+ORD-44260,Hale PLC,2025-06-25,Cancelled,3942,31,DataSphere,48-port managed switch,Wireless,USA,UAE,CUST-10319,PROD-11951
+ORD-43334,Bowman-Sanders,2025-08-28,Delivered,10848,13,NetConnect,Hybrid cloud gateway,Security,Germany,USA,CUST-10894,PROD-11854
+ORD-41872,"Aguirre, Schroeder and King",2025-08-22,Returned,2667,11,CoreAnalytics,Hybrid cloud gateway,Wireless,Brazil,USA,CUST-10557,PROD-11088
+ORD-43693,Bush Inc,2025-03-08,Delivered,5666,22,CloudEdge,Wi‑Fi 6 access point,Networking,UK,UAE,CUST-10069,PROD-11497
+ORD-40568,Hansen-Gordon,2025-02-04,In Progress,17940,36,CoreAnalytics,Wi‑Fi 6 access point,AI Solutions,Brazil,UAE,CUST-10584,PROD-11294
+ORD-41372,"Richards, Campbell and Ryan",2025-06-27,Shipped,16362,21,Insight360,AI-powered analytics core,AI Solutions,Germany,UAE,CUST-10044,PROD-11216
+ORD-43186,Green-Hoffman,2024-09-12,Returned,12649,6,NetConnect,Wi‑Fi 6 access point,Storage,Brazil,Singapore,CUST-10881,PROD-11830
+ORD-43956,"Everett, Ortiz and Smith",2025-01-31,In Progress,4231,40,CoreAnalytics,48-port managed switch,Cloud Infra,India,UK,CUST-10368,PROD-11272
+ORD-41057,"Munoz, Rogers and Nunez",2025-04-30,Shipped,23247,18,Insight360,Wi‑Fi 6 access point,Cloud Infra,UAE,India,CUST-10121,PROD-11628
+ORD-40857,"Mcclain, Roberts and Wright",2024-09-08,Delivered,15862,26,CoreAnalytics,Wi‑Fi 6 access point,AI Solutions,Singapore,Singapore,CUST-10543,PROD-11416
+ORD-43839,Galloway-Crawford,2025-05-30,Returned,23742,42,CloudEdge,48-port managed switch,AI Solutions,UAE,Australia,CUST-10610,PROD-11947
+ORD-42861,Bennett-Flores,2025-03-04,Delivered,11908,31,DataSphere,Hybrid cloud gateway,Wireless,UK,USA,CUST-10875,PROD-11182
+ORD-44770,Scott-Newman,2024-09-10,Returned,16523,34,DataSphere,Next-gen firewall,Security,Germany,India,CUST-10697,PROD-11625
+ORD-40777,"Mccann, Becker and Franklin",2024-12-12,Delivered,6334,33,NetConnect,Hybrid cloud gateway,Cloud Infra,UAE,Brazil,CUST-10612,PROD-11774
+ORD-40721,Barker-Fuentes,2025-02-03,Cancelled,15491,6,CoreAnalytics,High-speed enterprise router,AI Solutions,Australia,Germany,CUST-10425,PROD-11222
+ORD-42711,"Poole, Sutton and King",2025-02-13,Cancelled,11557,13,DataSphere,48-port managed switch,AI Solutions,Germany,India,CUST-10285,PROD-11049
+ORD-42655,Davis-Lopez,2024-09-03,Shipped,13792,34,Insight360,AI-powered analytics core,Security,Brazil,UAE,CUST-10679,PROD-11602
+ORD-44878,"Kline, Kaiser and Garrett",2025-05-22,Cancelled,12300,3,NetConnect,AI-powered analytics core,Networking,India,Brazil,CUST-10120,PROD-11480
+ORD-40603,Smith-Grant,2025-02-09,Returned,24438,50,Insight360,Next-gen firewall,Cloud Infra,UAE,Germany,CUST-10308,PROD-11961
+ORD-43823,Villegas LLC,2025-07-18,Returned,6548,43,DataSphere,AI-powered analytics core,Analytics,Brazil,Singapore,CUST-10404,PROD-11531
+ORD-41245,"Diaz, Lindsey and Adams",2025-04-17,In Progress,11208,43,Insight360,Wi‑Fi 6 access point,Wireless,Singapore,UAE,CUST-10951,PROD-11485
+ORD-44846,Williams-Wolf,2025-03-13,Shipped,16496,24,NetConnect,High-speed enterprise router,Security,India,Singapore,CUST-10379,PROD-11173
+ORD-44842,Ward PLC,2025-05-20,Cancelled,7206,37,DataSphere,High-speed enterprise router,Security,Australia,UK,CUST-10418,PROD-11893
+ORD-40319,"Richards, Ortega and David",2025-03-23,Returned,15207,41,Insight360,Hybrid cloud gateway,Wireless,India,Australia,CUST-10533,PROD-11720
+ORD-40829,Townsend-Gould,2025-04-07,Returned,3732,7,CloudEdge,High-speed enterprise router,Wireless,Singapore,UK,CUST-10215,PROD-11534
+ORD-43264,Watkins Ltd,2024-12-11,In Progress,21783,12,Insight360,High-speed enterprise router,Security,Australia,UAE,CUST-10822,PROD-11441
+ORD-40275,"Lewis, Morse and Nielsen",2025-01-09,Delivered,16383,44,Insight360,Next-gen firewall,Analytics,Brazil,Brazil,CUST-10748,PROD-11074
+ORD-42665,Suarez LLC,2024-11-03,Cancelled,21069,21,CloudEdge,Wi‑Fi 6 access point,Wireless,UK,India,CUST-10336,PROD-11702
+ORD-40550,Hall PLC,2025-05-14,Returned,9711,27,Insight360,Wi‑Fi 6 access point,Cloud Infra,USA,Australia,CUST-10356,PROD-11519
+ORD-43642,"Herrera, Morton and Bell",2025-06-11,Delivered,24809,26,CoreAnalytics,AI-powered analytics core,Networking,UK,UK,CUST-10521,PROD-11793
+ORD-44054,"Schneider, Brown and Ellison",2025-04-01,Cancelled,7213,46,CloudEdge,Hybrid cloud gateway,Storage,UK,India,CUST-10086,PROD-11684
+ORD-44893,Keller-Burns,2025-07-31,Returned,13566,40,CloudEdge,AI-powered analytics core,AI Solutions,Singapore,UK,CUST-10475,PROD-11169
+ORD-42935,Bradley-Merritt,2024-10-05,Returned,13590,2,CloudEdge,Hybrid cloud gateway,Cloud Infra,Singapore,UAE,CUST-10389,PROD-11168
+ORD-40606,"Simpson, Elliott and Wolfe",2024-10-16,Returned,3846,28,Insight360,Wi‑Fi 6 access point,Storage,UK,Germany,CUST-10953,PROD-11197
+ORD-40897,Robinson PLC,2025-01-15,Shipped,24505,24,CloudEdge,48-port managed switch,AI Solutions,Germany,UK,CUST-10439,PROD-11353
+ORD-40528,Adkins PLC,2024-10-21,Shipped,6959,37,CloudEdge,AI-powered analytics core,Cloud Infra,UK,UAE,CUST-10545,PROD-11648
+ORD-44608,"Fox, Johns and Deleon",2025-01-18,Shipped,2862,28,CloudEdge,Next-gen firewall,Storage,India,Germany,CUST-10278,PROD-11203
+ORD-42348,Hendrix Ltd,2025-03-28,Delivered,16567,1,CloudEdge,AI-powered analytics core,Wireless,Australia,India,CUST-10067,PROD-11754
+ORD-43440,"Lowe, Rosario and Garcia",2025-05-25,In Progress,21434,40,CloudEdge,48-port managed switch,Storage,Brazil,India,CUST-10758,PROD-11791
+ORD-44999,"Jackson, Rosales and Hernandez",2025-07-07,Delivered,20502,28,DataSphere,Hybrid cloud gateway,Networking,India,UK,CUST-10665,PROD-11240
+ORD-44827,"Robinson, Gamble and Palmer",2024-11-10,In Progress,11649,11,Insight360,High-speed enterprise router,AI Solutions,UAE,Germany,CUST-10563,PROD-11588
+ORD-43923,"Mcclain, Roberts and Wright",2025-04-06,Cancelled,15113,35,NetConnect,48-port managed switch,Wireless,Singapore,USA,CUST-10812,PROD-11061
+ORD-40299,Norris-Riley,2025-01-07,Delivered,16701,28,NetConnect,Hybrid cloud gateway,AI Solutions,Brazil,UK,CUST-10430,PROD-11162
+ORD-42120,"Hill, Brown and Jackson",2025-07-17,In Progress,24685,36,NetConnect,AI-powered analytics core,Analytics,UAE,UAE,CUST-10773,PROD-11621
+ORD-42537,Brooks-Bolton,2025-06-06,Returned,5256,27,DataSphere,48-port managed switch,Wireless,Australia,UAE,CUST-10952,PROD-11380
+ORD-44204,Ramos-Hernandez,2024-09-29,In Progress,23407,43,Insight360,Next-gen firewall,Analytics,UAE,UAE,CUST-10474,PROD-11280
+ORD-43255,"Roberson, Lewis and Mills",2025-04-11,Delivered,14327,8,Insight360,Hybrid cloud gateway,Cloud Infra,UAE,UAE,CUST-10479,PROD-11289
+ORD-43726,Hernandez PLC,2025-06-08,In Progress,19202,28,CloudEdge,Next-gen firewall,Networking,Germany,Singapore,CUST-10698,PROD-11292
+ORD-41261,Drake-Parker,2025-05-31,In Progress,12594,15,CoreAnalytics,Hybrid cloud gateway,Wireless,Singapore,UAE,CUST-10381,PROD-11723
+ORD-41559,"Cain, Davis and Pratt",2025-09-01,Shipped,19338,15,DataSphere,Wi‑Fi 6 access point,Cloud Infra,USA,India,CUST-10427,PROD-11282
+ORD-43270,Rogers and Sons,2025-06-03,In Progress,7770,9,NetConnect,High-speed enterprise router,Cloud Infra,Singapore,Brazil,CUST-10529,PROD-11610
+ORD-44047,James-Carter,2025-07-30,Cancelled,8481,18,DataSphere,48-port managed switch,Storage,UK,UAE,CUST-10368,PROD-11728
+ORD-40757,"Johnson, Holt and Williamson",2024-12-28,Returned,20914,6,Insight360,48-port managed switch,Analytics,Germany,Australia,CUST-10634,PROD-11563
+ORD-41011,"Weber, Lynch and Little",2024-09-25,Returned,6398,40,Insight360,High-speed enterprise router,Cloud Infra,USA,USA,CUST-10709,PROD-11781
+ORD-42795,"Jackson, Rosales and Hernandez",2025-05-02,Cancelled,5782,22,Insight360,AI-powered analytics core,Cloud Infra,Australia,India,CUST-10512,PROD-11626
+ORD-42906,"Briggs, Bryant and Martin",2025-04-12,Shipped,4485,37,DataSphere,AI-powered analytics core,Networking,USA,USA,CUST-10913,PROD-11876
+ORD-41871,"Nelson, Young and Dyer",2025-04-16,Returned,5924,7,NetConnect,Next-gen firewall,Cloud Infra,India,Australia,CUST-10908,PROD-11078
+ORD-42230,"Jennings, Lester and Brooks",2025-05-03,Cancelled,24138,27,NetConnect,48-port managed switch,Security,India,Germany,CUST-10746,PROD-11079
+ORD-41174,Parker PLC,2025-01-23,Returned,7956,29,CoreAnalytics,Wi‑Fi 6 access point,Security,USA,Australia,CUST-10758,PROD-11788
+ORD-41833,Frazier-Goodman,2025-07-28,Shipped,20189,41,DataSphere,Wi‑Fi 6 access point,AI Solutions,Australia,UAE,CUST-10320,PROD-11622
+ORD-40377,Tate-Lindsey,2025-02-18,Cancelled,23054,27,Insight360,Wi‑Fi 6 access point,Networking,UK,Brazil,CUST-10321,PROD-11934
+ORD-43854,Powers Ltd,2024-12-25,Shipped,10792,29,NetConnect,Next-gen firewall,Storage,Germany,Australia,CUST-10723,PROD-11164
+ORD-43617,Rivera-Barnes,2024-09-24,Delivered,13381,1,CloudEdge,48-port managed switch,AI Solutions,Singapore,UK,CUST-10215,PROD-11467
+ORD-40799,Simpson-Ray,2025-07-12,Shipped,20917,5,CloudEdge,Wi‑Fi 6 access point,Storage,Australia,Brazil,CUST-10918,PROD-11840
+ORD-40379,"Yoder, Bowen and Thompson",2025-04-26,In Progress,17551,49,CoreAnalytics,Next-gen firewall,Networking,Brazil,Australia,CUST-10259,PROD-11898
+ORD-41159,"Lewis, Morse and Nielsen",2025-05-18,Cancelled,23237,18,DataSphere,48-port managed switch,Storage,Australia,India,CUST-10278,PROD-11218
+ORD-43820,"Hamilton, Wilson and Colon",2025-02-05,Shipped,16758,32,NetConnect,High-speed enterprise router,Wireless,Brazil,UK,CUST-10645,PROD-11297
+ORD-42793,"Torres, Walls and Orozco",2024-09-17,In Progress,17490,41,CoreAnalytics,AI-powered analytics core,Cloud Infra,Germany,UAE,CUST-10329,PROD-11633
+ORD-42241,"Stevens, Rodriguez and Long",2024-10-16,Shipped,8713,12,NetConnect,Next-gen firewall,Security,UAE,USA,CUST-10863,PROD-11859
+ORD-44036,"Krueger, Johnson and Barnes",2024-11-13,In Progress,3294,22,CloudEdge,48-port managed switch,Analytics,Brazil,UAE,CUST-10469,PROD-11514
+ORD-42663,Anderson-Lowe,2024-09-16,Shipped,8684,33,CloudEdge,Wi‑Fi 6 access point,Wireless,Germany,Brazil,CUST-10960,PROD-11263
+ORD-44013,"Jackson, Johns and Duarte",2024-09-20,Delivered,6559,34,Insight360,High-speed enterprise router,Networking,India,Germany,CUST-10425,PROD-11460
+ORD-42958,"Krueger, Johnson and Barnes",2025-05-11,Cancelled,16254,30,CloudEdge,AI-powered analytics core,Wireless,Brazil,Australia,CUST-10058,PROD-11867
+ORD-43928,"Rodriguez, Hill and Hopkins",2025-06-24,Returned,24894,17,CloudEdge,Next-gen firewall,Wireless,UAE,Singapore,CUST-10170,PROD-11038
+ORD-41039,Solis Inc,2025-01-24,Delivered,15179,17,Insight360,Hybrid cloud gateway,Analytics,Brazil,Australia,CUST-10384,PROD-11316
+ORD-43260,Townsend-Gould,2025-08-11,Shipped,13789,21,CloudEdge,AI-powered analytics core,Security,Singapore,Singapore,CUST-10358,PROD-11022
+ORD-41345,"Lewis, Morse and Nielsen",2025-02-09,In Progress,21472,18,CloudEdge,Wi‑Fi 6 access point,Networking,Australia,Australia,CUST-10535,PROD-11943
+ORD-42506,Perkins-Powell,2025-04-16,Returned,2556,48,Insight360,48-port managed switch,Analytics,Australia,UK,CUST-10800,PROD-11588
+ORD-41722,"Clark, Lozano and Jimenez",2025-08-19,Delivered,6069,29,CoreAnalytics,Wi‑Fi 6 access point,Networking,UAE,UAE,CUST-10397,PROD-11193
+ORD-44664,Hendrix Ltd,2024-12-24,Cancelled,19625,27,CloudEdge,Next-gen firewall,Analytics,Singapore,Brazil,CUST-10132,PROD-11259
+ORD-40176,Taylor Ltd,2025-03-17,In Progress,24232,38,CloudEdge,Next-gen firewall,AI Solutions,Brazil,USA,CUST-10815,PROD-11513
+ORD-44894,"Singh, Porter and Moore",2025-03-15,Cancelled,6084,20,NetConnect,Hybrid cloud gateway,Cloud Infra,USA,Singapore,CUST-10074,PROD-11164
+ORD-41910,Chandler Group,2025-03-07,In Progress,20506,13,Insight360,High-speed enterprise router,Cloud Infra,Singapore,Singapore,CUST-10185,PROD-11269
+ORD-40046,"Singh, Porter and Moore",2025-01-24,Shipped,12811,10,CoreAnalytics,Next-gen firewall,Security,Australia,India,CUST-10113,PROD-11465
+ORD-43410,Serrano-Smith,2024-10-10,Returned,19012,48,CoreAnalytics,Hybrid cloud gateway,Cloud Infra,Germany,UK,CUST-10136,PROD-11593
+ORD-44675,"Douglas, Hill and Hancock",2025-04-17,Returned,8124,8,Insight360,AI-powered analytics core,Storage,Australia,Singapore,CUST-10436,PROD-11588
+ORD-41076,"Campos, Soto and Williams",2025-03-27,Shipped,12654,41,Insight360,Next-gen firewall,Cloud Infra,UK,Brazil,CUST-10666,PROD-11230
+ORD-42830,Carlson PLC,2025-08-16,Delivered,5836,47,Insight360,48-port managed switch,Wireless,USA,UAE,CUST-10315,PROD-11902
+ORD-41505,Garrett-Harrell,2025-06-01,Returned,10348,20,DataSphere,Wi‑Fi 6 access point,Analytics,UAE,Germany,CUST-10404,PROD-11548
+ORD-42310,Buckley LLC,2025-02-22,Cancelled,4477,7,NetConnect,48-port managed switch,Storage,Brazil,Singapore,CUST-10792,PROD-11480
+ORD-41437,"Hughes, Mills and Sullivan",2025-03-06,Cancelled,24126,27,CloudEdge,Hybrid cloud gateway,AI Solutions,Singapore,Australia,CUST-10433,PROD-11467
+ORD-42419,Edwards-Stanley,2024-09-07,Delivered,22152,5,NetConnect,Wi‑Fi 6 access point,AI Solutions,Germany,UK,CUST-10373,PROD-11872
+ORD-43987,Mckenzie-Schroeder,2025-01-18,In Progress,16739,3,Insight360,Hybrid cloud gateway,Networking,India,Singapore,CUST-10873,PROD-11322
+ORD-43099,Taylor PLC,2025-01-04,Delivered,24565,29,CloudEdge,AI-powered analytics core,AI Solutions,UAE,Australia,CUST-10706,PROD-11228
+ORD-44589,Baker LLC,2024-09-27,In Progress,16870,47,CloudEdge,AI-powered analytics core,Cloud Infra,Singapore,India,CUST-10093,PROD-11787
+ORD-40284,"Mcguire, Hines and Johnson",2025-05-08,Cancelled,21718,43,Insight360,AI-powered analytics core,Networking,UAE,UK,CUST-10484,PROD-11341
+ORD-44919,Davis Group,2025-02-05,Cancelled,22920,28,CoreAnalytics,Hybrid cloud gateway,Storage,Germany,Australia,CUST-10039,PROD-11808
+ORD-40843,Willis Inc,2025-02-15,In Progress,21421,29,CoreAnalytics,High-speed enterprise router,Cloud Infra,Brazil,UAE,CUST-10169,PROD-11395
+ORD-41514,Williams LLC,2025-03-26,Shipped,3352,31,NetConnect,Hybrid cloud gateway,Cloud Infra,Singapore,India,CUST-10861,PROD-11021
+ORD-41169,Williams and Sons,2025-07-16,Shipped,15105,9,CloudEdge,High-speed enterprise router,Analytics,Germany,UK,CUST-10957,PROD-11100
+ORD-41593,Baker Group,2024-11-18,Delivered,11585,9,NetConnect,Hybrid cloud gateway,Analytics,UAE,Singapore,CUST-10486,PROD-11658
+ORD-43461,Anderson-Lowe,2024-10-18,In Progress,6771,18,Insight360,Wi‑Fi 6 access point,Storage,USA,India,CUST-10216,PROD-11280
+ORD-43166,Allen PLC,2025-07-31,In Progress,12648,22,CoreAnalytics,48-port managed switch,Wireless,Germany,Brazil,CUST-10504,PROD-11248
+ORD-42285,"Sanchez, Price and Johnston",2025-01-22,Returned,9624,17,NetConnect,Next-gen firewall,Wireless,India,Singapore,CUST-10802,PROD-11605
+ORD-43576,"Blackwell, Odonnell and Mcdowell",2024-12-06,In Progress,5733,39,NetConnect,Hybrid cloud gateway,Analytics,India,Germany,CUST-10337,PROD-11491
+ORD-44871,Murray-Johnson,2024-12-04,Delivered,16518,21,DataSphere,48-port managed switch,Security,USA,Germany,CUST-10809,PROD-11721
+ORD-42306,Robinson-Warner,2024-09-12,Delivered,2130,12,NetConnect,High-speed enterprise router,Cloud Infra,Germany,UAE,CUST-10684,PROD-11126
+ORD-40953,Hodge Ltd,2025-08-04,In Progress,4269,45,Insight360,Next-gen firewall,Networking,UAE,Australia,CUST-10025,PROD-11617
+ORD-44943,"Hopkins, Erickson and Gilbert",2025-08-05,Returned,24340,18,CloudEdge,AI-powered analytics core,AI Solutions,UK,UAE,CUST-10767,PROD-11385
+ORD-43054,"Adams, Johnson and Davis",2025-07-07,Shipped,24791,34,CloudEdge,High-speed enterprise router,Networking,India,UK,CUST-10900,PROD-11600
+ORD-44560,"Sanford, Williams and Hunt",2025-03-09,Delivered,16128,5,Insight360,Wi‑Fi 6 access point,AI Solutions,Australia,Australia,CUST-10912,PROD-11950
+ORD-42686,Benson Ltd,2025-07-16,Shipped,6473,4,DataSphere,AI-powered analytics core,Wireless,UAE,Singapore,CUST-10876,PROD-11182
+ORD-41490,Castillo and Sons,2025-04-08,In Progress,19737,3,CloudEdge,Next-gen firewall,Cloud Infra,Brazil,UK,CUST-10682,PROD-11533
+ORD-40928,Meyer-Frazier,2024-10-06,Shipped,2271,30,DataSphere,48-port managed switch,Analytics,Australia,India,CUST-10295,PROD-11218
+ORD-41210,"Beasley, Mills and Vazquez",2025-04-01,Cancelled,5954,46,Insight360,AI-powered analytics core,Cloud Infra,Australia,USA,CUST-10904,PROD-11642
+ORD-43974,Miller Ltd,2025-05-21,Delivered,21510,4,CoreAnalytics,AI-powered analytics core,Analytics,UAE,India,CUST-10334,PROD-11368
+ORD-43546,Kennedy-Campbell,2024-10-14,Shipped,15074,44,NetConnect,AI-powered analytics core,Networking,Singapore,Singapore,CUST-10139,PROD-11716
+ORD-44362,Walker-Shea,2025-08-17,Shipped,2826,48,CoreAnalytics,48-port managed switch,Storage,Brazil,India,CUST-10347,PROD-11159
+ORD-41922,Murray LLC,2025-01-17,Cancelled,24798,7,CoreAnalytics,High-speed enterprise router,Wireless,Australia,Singapore,CUST-10799,PROD-11530
+ORD-40352,White LLC,2024-11-17,Returned,3791,2,DataSphere,Next-gen firewall,Storage,Singapore,USA,CUST-10408,PROD-11755
+ORD-44899,Bell Ltd,2025-01-04,Cancelled,4348,1,CoreAnalytics,High-speed enterprise router,AI Solutions,Germany,Singapore,CUST-10260,PROD-11912
+ORD-43394,"Wong, Hamilton and Smith",2025-02-02,In Progress,10037,10,Insight360,Wi‑Fi 6 access point,Networking,USA,Germany,CUST-10210,PROD-11970
+ORD-42722,Gross Ltd,2025-06-15,Shipped,13039,29,NetConnect,High-speed enterprise router,Security,USA,USA,CUST-10129,PROD-11729
+ORD-44982,"Medina, Lucas and Johnson",2025-01-08,Shipped,11200,48,CloudEdge,Next-gen firewall,Cloud Infra,USA,India,CUST-10446,PROD-11545
+ORD-40719,Hansen-Gordon,2025-07-19,Delivered,22968,11,CoreAnalytics,AI-powered analytics core,Wireless,Brazil,UK,CUST-10553,PROD-11123
+ORD-42703,Harvey PLC,2025-04-02,Returned,10922,24,CoreAnalytics,High-speed enterprise router,Storage,UK,USA,CUST-10511,PROD-11310
+ORD-42723,Reid-Bowman,2025-04-16,In Progress,12687,26,Insight360,Hybrid cloud gateway,AI Solutions,UAE,UAE,CUST-10702,PROD-11037
+ORD-44562,"Garcia, Phillips and Robertson",2024-11-01,Cancelled,16369,31,DataSphere,Next-gen firewall,Security,USA,UAE,CUST-10747,PROD-11293
+ORD-40309,Brennan-Hill,2025-07-11,Delivered,23516,38,CoreAnalytics,High-speed enterprise router,Wireless,India,USA,CUST-10169,PROD-11638
+ORD-41676,"Bowman, Martin and Atkins",2025-04-13,Returned,16255,27,Insight360,Next-gen firewall,AI Solutions,Germany,Australia,CUST-10508,PROD-11057
+ORD-40834,Schneider and Sons,2025-04-18,Delivered,14125,40,DataSphere,Hybrid cloud gateway,Security,Germany,UAE,CUST-10122,PROD-11414
+ORD-40367,Davis Group,2024-09-03,Delivered,24812,19,DataSphere,High-speed enterprise router,Cloud Infra,UAE,USA,CUST-10551,PROD-11089
+ORD-44507,Harris-Reed,2025-07-17,Cancelled,11119,29,DataSphere,AI-powered analytics core,Cloud Infra,UK,Germany,CUST-10992,PROD-11755
+ORD-42079,Sandoval Group,2024-10-02,In Progress,24246,40,NetConnect,Next-gen firewall,Analytics,Germany,Australia,CUST-10459,PROD-11398
+ORD-44039,"Santiago, Hall and Lara",2025-04-01,In Progress,10778,24,Insight360,Next-gen firewall,Analytics,India,USA,CUST-10290,PROD-11407
+ORD-44847,Bryant-Wang,2024-10-09,Returned,1795,27,NetConnect,High-speed enterprise router,Storage,UAE,India,CUST-10290,PROD-11539
+ORD-44480,Nunez and Sons,2024-10-22,In Progress,17659,22,CloudEdge,Next-gen firewall,Networking,Brazil,USA,CUST-10836,PROD-11029
+ORD-41747,"Watson, Ford and Wagner",2025-01-02,Delivered,20097,19,CloudEdge,48-port managed switch,Cloud Infra,Australia,Germany,CUST-10911,PROD-11228
+ORD-40020,Harris Group,2025-04-20,Returned,6646,29,CloudEdge,AI-powered analytics core,Analytics,India,Singapore,CUST-10060,PROD-11203
+ORD-41323,Bailey Group,2024-12-04,Cancelled,17234,49,NetConnect,Hybrid cloud gateway,Storage,USA,Australia,CUST-10167,PROD-11987
+ORD-43568,Lambert Inc,2025-04-07,Shipped,10140,10,DataSphere,Next-gen firewall,Storage,UK,Singapore,CUST-10941,PROD-11849
+ORD-42522,"Murphy, Thompson and Reese",2025-03-11,Returned,17380,22,CoreAnalytics,Hybrid cloud gateway,Cloud Infra,Australia,USA,CUST-10680,PROD-11381
+ORD-40219,"Blair, Carey and Henderson",2025-08-14,Shipped,10677,49,CoreAnalytics,High-speed enterprise router,Cloud Infra,USA,Australia,CUST-10044,PROD-11841
+ORD-41488,Fisher PLC,2025-03-07,Cancelled,19477,22,Insight360,Hybrid cloud gateway,Storage,Brazil,Germany,CUST-10933,PROD-11198
+ORD-40439,Kelly-Lynch,2024-10-28,Shipped,13460,25,Insight360,Wi‑Fi 6 access point,Wireless,India,UAE,CUST-10216,PROD-11978
+ORD-44175,Galloway-Crawford,2025-04-08,In Progress,12612,19,NetConnect,Wi‑Fi 6 access point,Cloud Infra,Australia,USA,CUST-10266,PROD-11433
+ORD-42751,"Montoya, Wilson and Jones",2024-11-25,In Progress,24155,48,DataSphere,Next-gen firewall,Analytics,Brazil,Australia,CUST-10397,PROD-11883
+ORD-43289,Smith Group,2025-05-25,Cancelled,10959,22,DataSphere,AI-powered analytics core,AI Solutions,Australia,Singapore,CUST-10293,PROD-11130
+ORD-43434,Clark-Hurst,2025-02-28,Cancelled,3189,35,CloudEdge,AI-powered analytics core,Security,UAE,UK,CUST-10437,PROD-11095
+ORD-42526,Patton and Sons,2025-02-27,Cancelled,12649,42,Insight360,High-speed enterprise router,Storage,Australia,USA,CUST-10192,PROD-11185
+ORD-44651,Anderson-Lowe,2024-11-02,Cancelled,2754,5,Insight360,High-speed enterprise router,Security,Germany,UK,CUST-10970,PROD-11206
+ORD-43689,Rose-Tran,2024-11-16,Cancelled,13093,42,CoreAnalytics,48-port managed switch,Cloud Infra,Singapore,UK,CUST-10107,PROD-11999
+ORD-42764,"Shepherd, Martinez and Hernandez",2025-01-26,Returned,11951,44,CloudEdge,Hybrid cloud gateway,Cloud Infra,UAE,UK,CUST-10517,PROD-11694
+ORD-40803,Brown LLC,2024-10-21,Delivered,5715,5,NetConnect,Wi‑Fi 6 access point,Networking,Australia,India,CUST-10137,PROD-11587
+ORD-42998,Jackson-Sherman,2025-06-06,Returned,20824,24,CloudEdge,High-speed enterprise router,Networking,Australia,USA,CUST-10576,PROD-11794
+ORD-42229,Dunlap Ltd,2025-06-09,Returned,19783,47,CoreAnalytics,High-speed enterprise router,Storage,UAE,Singapore,CUST-10173,PROD-11672
+ORD-44786,Taylor-Taylor,2025-05-17,Returned,18980,30,DataSphere,Hybrid cloud gateway,Analytics,Australia,UK,CUST-10887,PROD-11311
+ORD-42078,Brown-Mora,2025-08-08,Delivered,13665,19,CoreAnalytics,Hybrid cloud gateway,Networking,USA,USA,CUST-10324,PROD-11490
+ORD-40583,Dorsey-Edwards,2024-11-01,Shipped,8147,36,CoreAnalytics,AI-powered analytics core,Networking,UAE,Brazil,CUST-10235,PROD-11941
+ORD-40204,Weaver-Graves,2025-07-13,In Progress,23503,4,DataSphere,48-port managed switch,Analytics,USA,UK,CUST-10017,PROD-11884
+ORD-44347,Guerrero Ltd,2024-12-30,Shipped,21740,37,CoreAnalytics,Wi‑Fi 6 access point,Wireless,UK,UAE,CUST-10151,PROD-11257
+ORD-43479,Johnson-Chang,2025-08-05,In Progress,2295,26,CloudEdge,High-speed enterprise router,Wireless,Australia,UK,CUST-10021,PROD-11424
+ORD-42930,"Evans, Olson and Allen",2024-11-08,Shipped,9401,29,CloudEdge,High-speed enterprise router,Wireless,India,Australia,CUST-10507,PROD-11931
+ORD-43086,Frazier-Goodman,2025-02-25,In Progress,1495,13,CloudEdge,Wi‑Fi 6 access point,Analytics,Singapore,Germany,CUST-10826,PROD-11352
+ORD-41019,Moore-Evans,2025-05-17,Shipped,9064,42,CoreAnalytics,High-speed enterprise router,Storage,India,India,CUST-10126,PROD-11116
+ORD-41584,Huff-Smith,2024-12-02,Returned,15628,17,CloudEdge,Next-gen firewall,Networking,Australia,Germany,CUST-10392,PROD-11194
+ORD-41033,"Mcclain, Roberts and Wright",2025-07-12,Returned,3573,7,CoreAnalytics,AI-powered analytics core,Networking,Australia,Singapore,CUST-10107,PROD-11708
+ORD-41719,"Hardy, Sanchez and Manning",2025-05-24,Delivered,8449,42,DataSphere,Hybrid cloud gateway,Storage,UK,Singapore,CUST-10198,PROD-11951
+ORD-41282,Moyer-Moyer,2025-03-05,Delivered,2802,23,CoreAnalytics,High-speed enterprise router,Networking,Singapore,UK,CUST-10450,PROD-11764
+ORD-42499,Christensen-Fisher,2024-10-20,Delivered,9451,22,Insight360,Wi‑Fi 6 access point,Storage,Brazil,UAE,CUST-10321,PROD-11836
+ORD-43351,Scott-Meadows,2025-08-17,In Progress,13399,49,CloudEdge,48-port managed switch,Analytics,Australia,UK,CUST-10495,PROD-11423
+ORD-40518,Garcia-Anderson,2024-09-07,Shipped,18601,13,CloudEdge,High-speed enterprise router,Networking,Singapore,Germany,CUST-10826,PROD-11410
+ORD-41748,Haas Ltd,2025-04-25,Shipped,21570,35,NetConnect,High-speed enterprise router,Cloud Infra,UK,Singapore,CUST-10681,PROD-11997
+ORD-44653,Carter-Mcintyre,2025-08-01,Cancelled,16667,50,CoreAnalytics,High-speed enterprise router,Cloud Infra,Brazil,Germany,CUST-10067,PROD-11290
+ORD-43733,Bishop-Salas,2025-08-01,In Progress,7467,44,NetConnect,Wi‑Fi 6 access point,Analytics,USA,Singapore,CUST-10339,PROD-11987
+ORD-40669,Park PLC,2024-12-31,Cancelled,18013,41,DataSphere,Hybrid cloud gateway,Storage,UAE,Brazil,CUST-10241,PROD-11172
+ORD-44060,Garcia Group,2025-07-18,Delivered,6718,30,CoreAnalytics,AI-powered analytics core,Security,UK,India,CUST-10289,PROD-11464
+ORD-43027,Howell-Lawson,2024-11-24,Returned,9565,14,CloudEdge,Wi‑Fi 6 access point,AI Solutions,USA,Australia,CUST-10390,PROD-11151
+ORD-44933,Johnson and Sons,2024-10-29,Returned,10667,8,Insight360,Next-gen firewall,Security,UK,Singapore,CUST-10031,PROD-11868
+ORD-43287,"Peterson, Wright and Hamilton",2025-05-27,Cancelled,13091,18,Insight360,Next-gen firewall,Security,USA,USA,CUST-10437,PROD-11258
+ORD-42651,Dixon-Lewis,2024-12-10,In Progress,4612,43,CloudEdge,48-port managed switch,Wireless,India,UK,CUST-10932,PROD-11016
+ORD-44454,Torres Ltd,2025-01-03,In Progress,9625,23,CoreAnalytics,Hybrid cloud gateway,Wireless,Brazil,Singapore,CUST-10701,PROD-11604
+ORD-43193,Osborn-Sharp,2025-05-05,Returned,12898,35,CloudEdge,Wi‑Fi 6 access point,Storage,Australia,Brazil,CUST-10579,PROD-11333
+ORD-42125,Hill-Brooks,2025-03-16,Cancelled,14301,8,DataSphere,AI-powered analytics core,Security,Australia,UAE,CUST-10547,PROD-11015
+ORD-43376,Hicks PLC,2025-05-07,Cancelled,5664,39,CloudEdge,Wi‑Fi 6 access point,Networking,Brazil,USA,CUST-10962,PROD-11306
+ORD-43393,Friedman-Mann,2025-01-22,Delivered,18510,8,CoreAnalytics,AI-powered analytics core,Wireless,USA,UK,CUST-10048,PROD-11378
+ORD-43486,"Wilson, Ramirez and Lester",2025-02-28,Cancelled,9626,2,CoreAnalytics,AI-powered analytics core,AI Solutions,India,Singapore,CUST-10863,PROD-11438
+ORD-40760,Peters-Garrett,2025-01-16,Cancelled,11337,32,CoreAnalytics,AI-powered analytics core,Cloud Infra,UK,Australia,CUST-10028,PROD-11154
+ORD-43380,"Perez, Mccoy and Ramirez",2025-08-03,Delivered,1043,1,CloudEdge,48-port managed switch,Cloud Infra,Australia,Germany,CUST-10891,PROD-11125
+ORD-44441,Jones-Mays,2024-11-12,Cancelled,9438,25,NetConnect,Wi‑Fi 6 access point,Networking,Germany,UK,CUST-10757,PROD-11803
+ORD-42527,King-Buchanan,2025-03-02,In Progress,18288,13,CloudEdge,48-port managed switch,Security,Germany,Brazil,CUST-10495,PROD-11897
+ORD-44859,"Watson, Ford and Wagner",2025-01-17,Delivered,13847,46,CoreAnalytics,AI-powered analytics core,Analytics,Brazil,Australia,CUST-10515,PROD-11411
+ORD-40908,Martinez-Clark,2024-11-11,In Progress,21827,23,CoreAnalytics,High-speed enterprise router,Cloud Infra,Singapore,Australia,CUST-10659,PROD-11633
+ORD-42684,Rogers and Sons,2025-05-14,In Progress,3307,39,Insight360,Next-gen firewall,Cloud Infra,Singapore,Australia,CUST-10445,PROD-11619
+ORD-40215,Mcintosh PLC,2025-08-16,Shipped,21316,4,CoreAnalytics,Next-gen firewall,Analytics,Germany,Singapore,CUST-10714,PROD-11140
+ORD-43332,Walker and Sons,2024-09-25,Returned,21832,36,Insight360,48-port managed switch,Storage,Germany,Brazil,CUST-10735,PROD-11517
+ORD-44459,Green-Erickson,2025-05-24,Cancelled,10070,29,NetConnect,Wi‑Fi 6 access point,Storage,Australia,Brazil,CUST-10282,PROD-11477
+ORD-40694,"Harris, Lewis and Chavez",2024-11-06,Shipped,8286,18,CoreAnalytics,Wi‑Fi 6 access point,Cloud Infra,Singapore,UK,CUST-10371,PROD-11540
+ORD-41504,Smith-Cruz,2025-04-01,Delivered,4078,35,CoreAnalytics,Hybrid cloud gateway,Wireless,India,UAE,CUST-10607,PROD-11298
+ORD-42415,Taylor-White,2024-10-21,In Progress,20236,1,NetConnect,48-port managed switch,Cloud Infra,UK,India,CUST-10546,PROD-11398
+ORD-42119,"Harrell, Conway and Tucker",2025-06-15,In Progress,3187,35,NetConnect,Hybrid cloud gateway,AI Solutions,India,India,CUST-10824,PROD-11463
+ORD-43859,"Moran, Smith and Martinez",2024-10-08,In Progress,3910,26,NetConnect,48-port managed switch,AI Solutions,Brazil,USA,CUST-10478,PROD-11412
+ORD-42463,"Clark, Ramirez and Chambers",2024-10-07,Cancelled,16234,37,NetConnect,AI-powered analytics core,Analytics,Singapore,Brazil,CUST-10157,PROD-11911
+ORD-43636,Durham-Cantu,2025-09-01,In Progress,9431,2,CoreAnalytics,Wi‑Fi 6 access point,Analytics,Singapore,UAE,CUST-10032,PROD-11974
+ORD-44106,"Campos, Soto and Williams",2024-10-23,Cancelled,6996,19,Insight360,Next-gen firewall,Wireless,Brazil,USA,CUST-10890,PROD-11342
+ORD-44479,"Jackson, Rosales and Hernandez",2024-09-22,Delivered,21695,10,NetConnect,Hybrid cloud gateway,Cloud Infra,USA,Brazil,CUST-10835,PROD-11967
+ORD-40197,Leon and Sons,2024-12-15,Delivered,18675,12,CloudEdge,AI-powered analytics core,Storage,Australia,UAE,CUST-10570,PROD-11223
+ORD-44668,Evans Ltd,2025-06-30,Cancelled,15133,34,CoreAnalytics,AI-powered analytics core,Networking,UK,Germany,CUST-10336,PROD-11968
+ORD-41544,"Harris, Lewis and Chavez",2024-12-14,Returned,15912,6,NetConnect,Hybrid cloud gateway,AI Solutions,UAE,Germany,CUST-10055,PROD-11420
+ORD-41331,Watson-Gardner,2024-11-20,In Progress,15293,26,DataSphere,Wi‑Fi 6 access point,Networking,UK,UK,CUST-10616,PROD-11384
+ORD-40880,Santos Group,2025-07-26,Cancelled,6065,13,CoreAnalytics,AI-powered analytics core,Analytics,USA,Brazil,CUST-10338,PROD-11447
+ORD-44503,"Rosario, Reeves and Velez",2025-02-20,Shipped,7871,26,DataSphere,48-port managed switch,Storage,Brazil,UK,CUST-10143,PROD-11299
+ORD-43502,"Rivera, Mclaughlin and Wilson",2025-06-26,Shipped,9783,26,Insight360,Hybrid cloud gateway,Storage,Germany,UAE,CUST-10043,PROD-12000
+ORD-43895,Lambert Inc,2024-10-04,Returned,1769,2,CoreAnalytics,Wi‑Fi 6 access point,Analytics,Brazil,UK,CUST-10711,PROD-11109
+ORD-44991,"Ramirez, Gates and Stephenson",2025-03-17,Returned,9951,4,CloudEdge,Hybrid cloud gateway,Security,Germany,Singapore,CUST-10591,PROD-11421
+ORD-40888,Ware-Walker,2024-12-08,Returned,6610,49,CoreAnalytics,Wi‑Fi 6 access point,Cloud Infra,UAE,Australia,CUST-10003,PROD-11669
+ORD-41346,"Wiley, Perez and Ruiz",2024-11-14,Delivered,10640,16,Insight360,AI-powered analytics core,Wireless,USA,Brazil,CUST-10428,PROD-11624
+ORD-40069,Johns Group,2025-07-26,In Progress,8580,6,CloudEdge,AI-powered analytics core,Wireless,Australia,Australia,CUST-10276,PROD-11281
+ORD-44211,Berry-Bates,2025-02-10,Cancelled,8639,26,Insight360,High-speed enterprise router,Security,USA,Australia,CUST-10955,PROD-12000
+ORD-41816,"Crawford, Fernandez and Williams",2024-10-24,Shipped,11117,16,CoreAnalytics,AI-powered analytics core,Security,Australia,Germany,CUST-10299,PROD-11389
+ORD-40569,"Yoder, Bowen and Thompson",2025-03-09,Shipped,5816,24,CoreAnalytics,AI-powered analytics core,Storage,UAE,Brazil,CUST-10370,PROD-11890
+ORD-42168,Williams and Sons,2025-03-05,Returned,21603,34,NetConnect,48-port managed switch,Storage,UK,Brazil,CUST-10305,PROD-11442
+ORD-40097,Roberts-Chase,2025-05-10,Delivered,8863,34,CoreAnalytics,48-port managed switch,Security,Australia,Australia,CUST-10408,PROD-11889
+ORD-44182,"Matthews, Bradley and Brady",2025-06-30,Shipped,4888,44,NetConnect,48-port managed switch,Networking,UK,UK,CUST-10898,PROD-11477
+ORD-43354,Murray LLC,2024-12-19,Delivered,21112,16,CloudEdge,Next-gen firewall,Wireless,USA,UAE,CUST-10641,PROD-11209
+ORD-40140,"Mueller, Swanson and Rogers",2025-02-22,Cancelled,21778,5,Insight360,Hybrid cloud gateway,AI Solutions,Singapore,UAE,CUST-10458,PROD-11624
+ORD-44955,Hodges-Kirk,2025-08-15,Cancelled,20323,24,NetConnect,Hybrid cloud gateway,Security,USA,UK,CUST-10812,PROD-11559
+ORD-42603,"Richards, Ortega and David",2024-11-02,Returned,10890,1,Insight360,48-port managed switch,Wireless,Germany,UAE,CUST-10815,PROD-11224
+ORD-44024,Ray Inc,2025-07-29,Shipped,23338,15,NetConnect,Next-gen firewall,Storage,India,Brazil,CUST-10609,PROD-11444
+ORD-44773,Jones-Mays,2025-06-24,Cancelled,7631,6,CoreAnalytics,Hybrid cloud gateway,Analytics,USA,Brazil,CUST-10651,PROD-11586
+ORD-41607,Miller Ltd,2025-06-28,In Progress,4900,21,Insight360,AI-powered analytics core,Security,Singapore,India,CUST-10856,PROD-11746
+ORD-41630,Booth-Morris,2025-01-27,Shipped,20305,44,DataSphere,48-port managed switch,Storage,UAE,USA,CUST-10199,PROD-11373
+ORD-41540,"Jefferson, Riggs and Morrow",2024-12-07,Shipped,17475,41,NetConnect,Hybrid cloud gateway,Analytics,India,USA,CUST-10866,PROD-11383
+ORD-41695,Hernandez-Carter,2025-08-27,Cancelled,14878,26,CloudEdge,Hybrid cloud gateway,Cloud Infra,India,India,CUST-10301,PROD-11394
+ORD-42060,Shaw-Perez,2025-01-01,Cancelled,3160,45,NetConnect,Wi‑Fi 6 access point,AI Solutions,Australia,Brazil,CUST-10113,PROD-11207
+ORD-40464,Fritz Group,2024-12-11,Cancelled,18331,5,CoreAnalytics,AI-powered analytics core,Security,Australia,UAE,CUST-10327,PROD-11723
+ORD-42331,Bush Inc,2024-10-28,In Progress,24531,13,NetConnect,AI-powered analytics core,Analytics,India,USA,CUST-10965,PROD-11165
+ORD-43044,Stout PLC,2025-02-04,Shipped,4847,6,Insight360,High-speed enterprise router,Analytics,USA,UK,CUST-10953,PROD-11646
+ORD-44735,"Kline, Kaiser and Garrett",2024-09-28,Shipped,14303,12,NetConnect,Hybrid cloud gateway,Cloud Infra,Australia,Singapore,CUST-10905,PROD-11480
+ORD-40595,Bauer Inc,2025-01-21,Delivered,3101,48,CloudEdge,Wi‑Fi 6 access point,Storage,USA,Australia,CUST-10089,PROD-11887
+ORD-43815,Sanchez and Sons,2025-06-25,Cancelled,13652,4,CloudEdge,High-speed enterprise router,Security,UK,Germany,CUST-10224,PROD-11591
+ORD-40626,Martinez-Hart,2025-03-02,Cancelled,22030,5,CoreAnalytics,48-port managed switch,Security,UK,Brazil,CUST-10186,PROD-11364
+ORD-40451,Hernandez-Carter,2025-07-03,Cancelled,15122,6,Insight360,Wi‑Fi 6 access point,Storage,USA,Brazil,CUST-10846,PROD-11940
+ORD-41500,"Lopez, Bates and Phillips",2025-01-30,Shipped,15641,18,CloudEdge,Next-gen firewall,Networking,Germany,UK,CUST-10580,PROD-11918
+ORD-42457,Boyle-Mack,2025-08-10,In Progress,9935,10,DataSphere,Wi‑Fi 6 access point,Analytics,India,Singapore,CUST-10075,PROD-11334
+ORD-44723,"Le, Murray and Reid",2025-07-03,Delivered,8224,3,DataSphere,Wi‑Fi 6 access point,Storage,UAE,Germany,CUST-10330,PROD-11400
+ORD-42985,"Hamilton, Wilson and Colon",2024-10-04,Returned,15624,49,CloudEdge,High-speed enterprise router,Cloud Infra,Singapore,Germany,CUST-10297,PROD-11083
+ORD-41570,Gibson Group,2025-03-11,Delivered,17056,18,CoreAnalytics,Wi‑Fi 6 access point,Cloud Infra,UAE,India,CUST-10010,PROD-11873
+ORD-41035,"Lopez, Cunningham and Wells",2024-11-05,Shipped,21733,26,NetConnect,AI-powered analytics core,Analytics,Singapore,India,CUST-10614,PROD-11162
+ORD-43519,Mckenzie-Schroeder,2025-04-21,Returned,17966,14,CloudEdge,Wi‑Fi 6 access point,Analytics,UAE,Brazil,CUST-10718,PROD-11125
+ORD-41558,Rodriguez Group,2024-12-12,In Progress,6484,7,Insight360,Wi‑Fi 6 access point,Networking,UAE,Germany,CUST-10451,PROD-11838
+ORD-43625,Evans Ltd,2025-02-19,Delivered,10653,11,CoreAnalytics,Wi‑Fi 6 access point,AI Solutions,USA,Singapore,CUST-10808,PROD-11248
+ORD-44665,"Diaz, Lindsey and Adams",2025-04-24,Cancelled,16434,2,CloudEdge,High-speed enterprise router,AI Solutions,Singapore,UAE,CUST-10292,PROD-11306
+ORD-40151,Crane-Cole,2025-02-27,Cancelled,3776,29,CloudEdge,AI-powered analytics core,Networking,Germany,Australia,CUST-10639,PROD-11842
+ORD-41421,Brooks PLC,2024-12-20,Delivered,4594,31,DataSphere,Hybrid cloud gateway,Wireless,Australia,Germany,CUST-10202,PROD-11561
+ORD-42012,Martin-Alvarado,2025-06-22,Delivered,1145,27,CloudEdge,Wi‑Fi 6 access point,Networking,Singapore,India,CUST-10259,PROD-11434
+ORD-42687,King-Buchanan,2025-06-01,In Progress,21124,45,CloudEdge,High-speed enterprise router,AI Solutions,India,USA,CUST-10131,PROD-11905
+ORD-41787,"Johnson, Harrison and Farrell",2024-11-21,Returned,5303,34,CoreAnalytics,Wi‑Fi 6 access point,Wireless,USA,USA,CUST-10952,PROD-11510
+ORD-40089,Rivera-Barnes,2025-08-27,Delivered,2669,21,Insight360,Next-gen firewall,Wireless,Germany,Brazil,CUST-10866,PROD-11241
+ORD-40458,Singh-Miller,2024-11-30,Returned,20298,14,CloudEdge,Wi‑Fi 6 access point,Analytics,Australia,Australia,CUST-10441,PROD-11312
+ORD-41306,Weaver-Graves,2025-02-17,Returned,4346,38,CloudEdge,AI-powered analytics core,Analytics,Brazil,Brazil,CUST-10651,PROD-11348
+ORD-42926,Brown-Carroll,2025-05-22,Returned,18221,47,DataSphere,Wi‑Fi 6 access point,Storage,USA,Australia,CUST-10375,PROD-11010
+ORD-43271,Dixon and Sons,2024-10-21,Shipped,8570,48,DataSphere,AI-powered analytics core,Analytics,USA,USA,CUST-10140,PROD-11119
+ORD-43228,Walker-Mcdonald,2024-10-17,Returned,7883,16,DataSphere,Next-gen firewall,Cloud Infra,UK,India,CUST-10831,PROD-11240
+ORD-41989,Daniel LLC,2024-12-25,In Progress,5721,7,DataSphere,Next-gen firewall,Storage,Australia,UK,CUST-10387,PROD-11400
+ORD-43755,Austin-Davies,2024-09-21,Shipped,1260,17,DataSphere,High-speed enterprise router,Storage,Brazil,USA,CUST-10463,PROD-11180
+ORD-43647,"Gonzalez, Williams and Moreno",2024-10-12,Delivered,19183,42,NetConnect,AI-powered analytics core,Networking,UK,USA,CUST-10001,PROD-11383
+ORD-40832,Osborn Inc,2024-11-20,In Progress,16334,13,Insight360,High-speed enterprise router,Security,Australia,USA,CUST-10755,PROD-11619
+ORD-40240,"Watson, Ford and Wagner",2025-05-11,Cancelled,7431,28,CoreAnalytics,High-speed enterprise router,Analytics,USA,Germany,CUST-10525,PROD-11013
+ORD-44682,Moore LLC,2025-06-21,Shipped,2227,12,CloudEdge,48-port managed switch,Networking,USA,UK,CUST-10655,PROD-11413
+ORD-43023,"Vincent, Russell and Joseph",2025-03-31,Shipped,17901,38,DataSphere,AI-powered analytics core,Security,Brazil,Australia,CUST-10298,PROD-11933
+ORD-43149,Grant-Lozano,2024-11-30,Shipped,10989,32,CloudEdge,High-speed enterprise router,Wireless,Germany,Australia,CUST-10407,PROD-11694
+ORD-41947,Taylor-Hamilton,2025-06-16,Shipped,12855,12,CloudEdge,AI-powered analytics core,Storage,Germany,UAE,CUST-10753,PROD-11786
+ORD-42776,"Chaney, Arellano and Miller",2024-09-01,Delivered,9730,44,DataSphere,Next-gen firewall,Storage,UAE,India,CUST-10283,PROD-11933
+ORD-40193,Booker-Herrera,2024-11-07,Cancelled,3913,8,Insight360,48-port managed switch,Wireless,India,India,CUST-10216,PROD-11056
+ORD-44850,Kelly-Lynch,2025-02-08,Cancelled,13239,33,Insight360,Hybrid cloud gateway,Analytics,Singapore,Brazil,CUST-10131,PROD-11219
+ORD-44940,Delacruz and Sons,2024-11-28,Returned,22874,45,Insight360,Wi‑Fi 6 access point,Analytics,Singapore,Australia,CUST-11000,PROD-11805
+ORD-40945,"Carroll, Mendoza and Hoffman",2025-06-15,In Progress,13658,30,Insight360,AI-powered analytics core,Security,UK,Australia,CUST-10755,PROD-11417
+ORD-41269,Silva-Lee,2025-08-12,In Progress,20421,46,DataSphere,Wi‑Fi 6 access point,AI Solutions,Australia,Australia,CUST-10368,PROD-11486
+ORD-44232,Gonzalez LLC,2025-03-23,Returned,14788,7,CloudEdge,High-speed enterprise router,Networking,India,UK,CUST-10824,PROD-11203
+ORD-42308,"Ingram, Bush and Adams",2025-07-28,In Progress,7864,31,DataSphere,Hybrid cloud gateway,Security,UK,Germany,CUST-10278,PROD-11884
+ORD-44425,Young Ltd,2025-08-28,Cancelled,18576,45,CoreAnalytics,Next-gen firewall,Cloud Infra,UK,UK,CUST-10289,PROD-11372
+ORD-44712,Meyer-Frazier,2025-03-31,Cancelled,13534,15,Insight360,Wi‑Fi 6 access point,Security,Germany,Germany,CUST-10958,PROD-11602
+ORD-42314,"Morris, Cole and Flowers",2024-09-08,Returned,18969,43,CoreAnalytics,Next-gen firewall,Security,USA,Australia,CUST-10888,PROD-11590
+ORD-43215,"Jones, Hardy and Harris",2024-09-06,In Progress,8976,5,Insight360,Next-gen firewall,Wireless,India,Singapore,CUST-10221,PROD-11341
+ORD-42733,"Parks, Clark and Schultz",2025-03-24,Returned,21495,15,CoreAnalytics,High-speed enterprise router,Storage,USA,Brazil,CUST-10126,PROD-11586
+ORD-41927,Lee-Mueller,2024-11-06,Cancelled,23897,6,DataSphere,Hybrid cloud gateway,AI Solutions,USA,Australia,CUST-10616,PROD-11170

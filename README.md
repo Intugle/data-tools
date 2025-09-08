@@ -79,7 +79,12 @@ export OPENAI_API_KEY="your-openai-api-key"
 
 ## Quickstart
 
-For a detailed, hands-on introduction to the project, please see the [`quickstart.ipynb`](quickstart.ipynb) notebook. It will walk you through the entire process of building a semantic layer, including:
+We provide two hands-on notebooks to demonstrate how to use the project for different use cases:
+
+*   **Healthcare Use Case:** See the [`quickstart_healthcare.ipynb`](quickstart_healthcare.ipynb) notebook for a detailed walkthrough of building a semantic layer on healthcare data.
+*   **B2B Technology Manufacturing Use Case:** [`quickstart_healthcare.ipynb`](quickstart_technology_manufacturing.ipynb) A notebook demonstrating how to apply semantic intelligence to Technology Manufacturing data.
+
+Both notebooks will walk you through the entire process of building a semantic layer, including:
 
 *   **Building a Knowledge Base:** Use the `KnowledgeBuilder` to automatically profile your data, generate a business glossary, and predict links between tables.
 *   **Accessing Enriched Metadata:** Learn how to access the profiling results and business glossary for each dataset.
@@ -147,7 +152,15 @@ data_product = dp_builder.build(etl)
 print(data_product.to_df())
 ```
 
-For detailed code examples and a complete walkthrough, please refer to the [`quickstart.ipynb`](quickstart.ipynb) notebook.
+For detailed code examples and a complete walkthrough, please refer to our quickstart notebooks.
+
+## Community
+
+Join our community to ask questions, share your projects, and connect with other users.
+
+*   [Join our Slack](https://join.slack.com/share/enQtOTQ4NDc1MzYzOTg2MC02OTc2MTU1Njg3NDEyZjQwN2IzMzEwMjc5NmU4MjhiZmJlMDdiMzMzYjI5YWJiNDhkYWM4ODU0MGY4NTUyNjhi)
+*   [Join our Discord](https://discord.gg/4PNPsQVA)
+
 
 ## Contributing
 

@@ -1,0 +1,1001 @@
+NPS_ID,Customer Feedback,Survey Score,Incident ID,Return_ID,Customer_ID,Survey Date,Channel,Region,Surveyor / Agent
+NPS-90001,Would definitely recommend,2,SR-80101,RET-50701,CUST-10367,2025-01-19,Phone,Asia-Pacific,Chelsea Cook
+NPS-90002,"Great support, quick resolution",4,SR-83882,RET-50119,CUST-10484,2025-08-19,In-store,Middle East,Caroline Wilson
+NPS-90003,Would definitely recommend,9,SR-84378,RET-50336,CUST-10904,2025-06-11,Web App,Asia-Pacific,Kendra Mccoy
+NPS-90004,Would definitely recommend,9,SR-82775,RET-50475,CUST-10806,2025-03-13,Phone,Middle East,Cynthia Garcia
+NPS-90005,Excellent delivery experience,1,SR-83329,RET-50083,CUST-10248,2025-07-23,Email,North America,Brandon Patton
+NPS-90006,"Great support, quick resolution",2,SR-80404,RET-50457,CUST-10690,2025-03-17,Email,Asia-Pacific,Monique Miller
+NPS-90007,Product setup was confusing,2,SR-83692,RET-50586,CUST-10203,2025-06-07,SMS,Middle East,Catherine Diaz
+NPS-90008,Average service,9,SR-84510,RET-50173,CUST-10542,2025-07-19,SMS,Latin America,Holly Rodriguez
+NPS-90009,"Great support, quick resolution",10,SR-83864,RET-50173,CUST-10831,2025-08-29,Phone,Europe,Eric Nguyen
+NPS-90010,Product setup was confusing,8,SR-80380,RET-50372,CUST-10738,2025-03-12,In-store,Asia-Pacific,Sarah Simmons
+NPS-90011,Average service,7,SR-81434,RET-50910,CUST-10592,2025-03-01,Email,Middle East,Larry Jones
+NPS-90012,Would definitely recommend,8,SR-80941,RET-50306,CUST-10140,2025-08-08,Email,Middle East,Roy Vance
+NPS-90013,Average service,5,SR-82450,RET-50254,CUST-10164,2025-04-12,Phone,Asia-Pacific,Theresa Carpenter
+NPS-90014,"Great support, quick resolution",2,SR-81768,RET-50526,CUST-10786,2025-03-30,Phone,North America,Miss Jessica White
+NPS-90015,Average service,9,SR-83423,RET-50495,CUST-10055,2025-02-14,Email,North America,Mr. James Miller
+NPS-90016,Would definitely recommend,5,SR-80869,RET-50691,CUST-10137,2025-04-18,In-store,Europe,Marco Snyder
+NPS-90017,Average service,2,SR-81154,RET-50447,CUST-10454,2025-01-08,SMS,North America,Kimberly Smith
+NPS-90018,"Great support, quick resolution",6,SR-80743,RET-50701,CUST-10218,2025-08-27,SMS,Middle East,Joshua Jones
+NPS-90019,"Great support, quick resolution",9,SR-80128,RET-50582,CUST-10848,2025-07-06,Email,Europe,David Wagner
+NPS-90020,Product setup was confusing,5,SR-82344,RET-50927,CUST-10371,2025-01-20,Web App,Latin America,Joseph Baldwin
+NPS-90021,Excellent delivery experience,4,SR-80471,RET-50914,CUST-10173,2025-03-02,SMS,North America,Brian Brown
+NPS-90022,Average service,5,SR-83851,RET-50563,CUST-10991,2025-05-09,In-store,Asia-Pacific,Belinda Walsh
+NPS-90023,Average service,0,SR-81750,RET-50018,CUST-10658,2025-06-11,Web App,Middle East,David Hendricks
+NPS-90024,Would definitely recommend,8,SR-80826,RET-50394,CUST-10546,2025-08-16,SMS,Latin America,Sandra Henson
+NPS-90025,Would definitely recommend,5,SR-80430,RET-50748,CUST-10165,2025-02-17,Email,North America,Jennifer Christian
+NPS-90026,Excellent delivery experience,2,SR-83859,RET-50541,CUST-10434,2025-07-07,Web App,North America,Christopher Gordon
+NPS-90027,Product setup was confusing,1,SR-83103,RET-50061,CUST-10155,2025-05-11,SMS,Latin America,Peter Reyes
+NPS-90028,Product setup was confusing,7,SR-83755,RET-50673,CUST-10560,2025-08-01,Email,North America,Richard Nguyen
+NPS-90029,"Great support, quick resolution",8,SR-80725,RET-50105,CUST-10028,2025-07-05,SMS,North America,Adam Martinez
+NPS-90030,Excellent delivery experience,6,SR-80237,RET-50928,CUST-10177,2025-08-08,Email,Europe,Ivan Shelton
+NPS-90031,"Great support, quick resolution",4,SR-83997,RET-50990,CUST-10475,2025-08-12,Phone,Europe,Christopher Norris
+NPS-90032,Excellent delivery experience,10,SR-81797,RET-50199,CUST-10584,2025-06-08,SMS,Europe,Charles Clark
+NPS-90033,Product setup was confusing,10,SR-81579,RET-50125,CUST-10095,2025-07-07,In-store,Latin America,Michael Singleton
+NPS-90034,Would definitely recommend,4,SR-80483,RET-50754,CUST-10975,2025-03-07,In-store,Asia-Pacific,Russell Owen
+NPS-90035,"Great support, quick resolution",7,SR-83724,RET-50997,CUST-10220,2025-08-22,SMS,Middle East,Edgar Stephens
+NPS-90036,Product setup was confusing,6,SR-80537,RET-50876,CUST-10025,2025-01-20,Email,North America,David Ortega
+NPS-90037,Would definitely recommend,9,SR-80132,RET-50849,CUST-10384,2025-05-10,Web App,Middle East,Melody Mcgee
+NPS-90038,Excellent delivery experience,7,SR-84610,RET-50558,CUST-10870,2025-02-21,Email,North America,Jacob Ferguson
+NPS-90039,Average service,5,SR-83801,RET-50064,CUST-10142,2025-04-24,SMS,Latin America,Dawn Kline
+NPS-90040,"Great support, quick resolution",3,SR-84950,RET-50003,CUST-10940,2025-08-07,In-store,Europe,Christopher Cortez
+NPS-90041,Would definitely recommend,8,SR-82430,RET-50846,CUST-10494,2025-03-03,Email,North America,Jose Norton
+NPS-90042,"Great support, quick resolution",5,SR-84242,RET-50507,CUST-10752,2025-06-23,Phone,Asia-Pacific,Phillip Berry
+NPS-90043,Product setup was confusing,10,SR-84578,RET-50319,CUST-10724,2025-01-09,SMS,Europe,Brandon Carlson Jr.
+NPS-90044,Average service,3,SR-84298,RET-50963,CUST-10509,2025-02-11,SMS,Middle East,Laura Mclaughlin
+NPS-90045,Would definitely recommend,8,SR-80060,RET-50402,CUST-10296,2025-06-09,Email,North America,Rebecca Robbins
+NPS-90046,Would definitely recommend,5,SR-80855,RET-50627,CUST-10884,2025-03-28,In-store,Asia-Pacific,Trevor Wilson
+NPS-90047,Product setup was confusing,2,SR-82321,RET-50987,CUST-10175,2025-03-23,Email,Asia-Pacific,Terrence Lopez
+NPS-90048,Would definitely recommend,4,SR-81722,RET-50035,CUST-10151,2025-05-06,In-store,Middle East,Kenneth Barker
+NPS-90049,Excellent delivery experience,5,SR-84973,RET-50751,CUST-10126,2025-04-23,Phone,North America,Tonya Hull
+NPS-90050,Product setup was confusing,2,SR-80735,RET-50018,CUST-10967,2025-01-08,SMS,North America,Ryan Maxwell
+NPS-90051,Excellent delivery experience,8,SR-83692,RET-50656,CUST-10718,2025-01-11,In-store,Europe,Kathy Ashley
+NPS-90052,Average service,3,SR-82267,RET-50670,CUST-10345,2025-01-02,Phone,Middle East,Tonya Burke
+NPS-90053,Would definitely recommend,0,SR-80306,RET-50071,CUST-10342,2025-03-08,Web App,Middle East,Christina Carter MD
+NPS-90054,Average service,8,SR-81588,RET-50974,CUST-10435,2025-04-27,Phone,Asia-Pacific,Sophia Miles
+NPS-90055,Would definitely recommend,10,SR-80298,RET-50081,CUST-10032,2025-03-03,Email,Latin America,Anthony Holt
+NPS-90056,"Great support, quick resolution",1,SR-80475,RET-50039,CUST-10427,2025-05-28,Email,Middle East,Jose Robinson
+NPS-90057,Excellent delivery experience,6,SR-82320,RET-50973,CUST-10145,2025-06-22,SMS,Asia-Pacific,Christopher Kelley
+NPS-90058,Average service,4,SR-84309,RET-50190,CUST-10963,2025-03-11,In-store,Europe,Todd Brown
+NPS-90059,Excellent delivery experience,8,SR-82296,RET-50299,CUST-10117,2025-08-26,Phone,Asia-Pacific,Ronald Calderon
+NPS-90060,Would definitely recommend,10,SR-83893,RET-50149,CUST-10693,2025-07-10,Web App,Middle East,Benjamin Wood
+NPS-90061,Would definitely recommend,9,SR-84823,RET-50256,CUST-10226,2025-06-21,SMS,Asia-Pacific,Christina Gordon
+NPS-90062,Would definitely recommend,10,SR-80362,RET-50779,CUST-10844,2025-02-14,Web App,Middle East,Jacob Porter
+NPS-90063,Average service,0,SR-80001,RET-50091,CUST-10273,2025-08-06,In-store,Europe,John Richardson
+NPS-90064,Average service,10,SR-83538,RET-50457,CUST-10824,2025-06-15,Web App,Middle East,Gina Hernandez
+NPS-90065,Excellent delivery experience,1,SR-80819,RET-50122,CUST-10804,2025-07-16,SMS,Middle East,John Rasmussen
+NPS-90066,Excellent delivery experience,1,SR-81953,RET-50575,CUST-10032,2025-01-03,SMS,Middle East,Whitney Acosta
+NPS-90067,Would definitely recommend,9,SR-81719,RET-50749,CUST-10381,2025-08-24,In-store,Middle East,Katie Holden
+NPS-90068,Product setup was confusing,1,SR-80805,RET-50028,CUST-10477,2025-01-03,Web App,Europe,Mark Thomas
+NPS-90069,Average service,3,SR-81956,RET-50372,CUST-10605,2025-01-16,SMS,Latin America,Deborah Miller MD
+NPS-90070,Would definitely recommend,10,SR-80821,RET-50830,CUST-10178,2025-01-10,In-store,North America,Jessica Dalton
+NPS-90071,Excellent delivery experience,8,SR-80451,RET-50882,CUST-10899,2025-03-22,Email,North America,Alexa Wallace
+NPS-90072,Excellent delivery experience,2,SR-84696,RET-50641,CUST-10696,2025-06-27,Web App,Latin America,Mary Mendoza
+NPS-90073,"Great support, quick resolution",3,SR-81863,RET-50838,CUST-10051,2025-07-28,In-store,Latin America,Cory Kline
+NPS-90074,"Great support, quick resolution",4,SR-84002,RET-50340,CUST-10255,2025-08-24,Email,Middle East,Anita Wagner
+NPS-90075,Would definitely recommend,2,SR-81759,RET-50915,CUST-10368,2025-04-28,Email,Europe,Heidi Gardner
+NPS-90076,Excellent delivery experience,7,SR-80769,RET-50790,CUST-10347,2025-02-14,SMS,North America,Robert Reeves
+NPS-90077,Excellent delivery experience,0,SR-80240,RET-50105,CUST-10472,2025-08-03,In-store,Latin America,Kyle Thomas
+NPS-90078,"Great support, quick resolution",5,SR-80617,RET-50558,CUST-10304,2025-02-19,SMS,Asia-Pacific,Robert Schmidt
+NPS-90079,Average service,9,SR-84123,RET-50786,CUST-10494,2025-05-24,Web App,Latin America,David Garcia
+NPS-90080,"Great support, quick resolution",4,SR-83339,RET-50283,CUST-10214,2025-04-20,Web App,North America,Amanda Flowers
+NPS-90081,Would definitely recommend,0,SR-82080,RET-50273,CUST-10559,2025-03-24,Phone,Europe,Jason Johnson
+NPS-90082,Average service,3,SR-82457,RET-50208,CUST-10896,2025-07-06,In-store,Latin America,Sharon Armstrong
+NPS-90083,Excellent delivery experience,3,SR-81041,RET-50262,CUST-10488,2025-04-29,Email,Asia-Pacific,Audrey Simmons
+NPS-90084,Average service,10,SR-82041,RET-50911,CUST-10596,2025-04-20,Phone,Middle East,Daniel Smith
+NPS-90085,Would definitely recommend,10,SR-83688,RET-50315,CUST-10308,2025-07-31,Phone,Middle East,Elizabeth Henderson
+NPS-90086,Excellent delivery experience,1,SR-81076,RET-50797,CUST-10752,2025-07-17,In-store,Latin America,Cassandra Johnson
+NPS-90087,Would definitely recommend,1,SR-81271,RET-50191,CUST-10706,2025-04-05,SMS,Middle East,Kelsey Aguilar
+NPS-90088,Product setup was confusing,4,SR-81157,RET-50827,CUST-10465,2025-01-02,In-store,Middle East,Lori Phillips
+NPS-90089,Would definitely recommend,2,SR-84608,RET-50943,CUST-10158,2025-06-28,Web App,Middle East,Selena Short
+NPS-90090,Excellent delivery experience,6,SR-80721,RET-50381,CUST-10392,2025-02-14,In-store,North America,Madeline Perkins
+NPS-90091,"Great support, quick resolution",3,SR-84617,RET-50923,CUST-10516,2025-07-11,SMS,Europe,Catherine Mckay
+NPS-90092,"Great support, quick resolution",10,SR-83324,RET-50995,CUST-10822,2025-03-09,SMS,Middle East,Joseph Robinson
+NPS-90093,Would definitely recommend,10,SR-81565,RET-50322,CUST-10135,2025-08-29,Phone,Latin America,Jeremy Thompson
+NPS-90094,Excellent delivery experience,8,SR-82630,RET-50766,CUST-10967,2025-03-17,Web App,North America,Brandon Chavez
+NPS-90095,"Great support, quick resolution",9,SR-81870,RET-50724,CUST-10511,2025-03-15,In-store,Latin America,Christine Davis
+NPS-90096,Excellent delivery experience,8,SR-83557,RET-50124,CUST-10810,2025-08-04,Email,North America,Collin Holmes
+NPS-90097,Average service,3,SR-80267,RET-50316,CUST-10192,2025-08-27,Email,Latin America,Diana Smith
+NPS-90098,Product setup was confusing,3,SR-83946,RET-50447,CUST-10001,2025-07-04,In-store,Asia-Pacific,Rebecca Powers
+NPS-90099,Average service,10,SR-80788,RET-50873,CUST-10544,2025-02-23,SMS,Latin America,Steve Oliver
+NPS-90100,Average service,7,SR-83227,RET-50439,CUST-10159,2025-01-06,Email,Middle East,Thomas Coleman
+NPS-90101,Product setup was confusing,5,SR-84936,RET-50706,CUST-10380,2025-05-12,Phone,North America,Amanda Jones
+NPS-90102,Product setup was confusing,0,SR-80540,RET-50795,CUST-10472,2025-01-18,Email,Middle East,Heather Garrett
+NPS-90103,Would definitely recommend,4,SR-82863,RET-50144,CUST-10094,2025-07-01,Email,Middle East,Brandon Rivers
+NPS-90104,"Great support, quick resolution",0,SR-82242,RET-50188,CUST-10669,2025-03-17,Web App,Europe,Kevin Jones
+NPS-90105,Would definitely recommend,9,SR-81333,RET-50558,CUST-10224,2025-07-12,Phone,Asia-Pacific,Joseph Adams
+NPS-90106,Average service,8,SR-84182,RET-50486,CUST-10165,2025-02-06,Web App,Asia-Pacific,Jake Fletcher
+NPS-90107,Excellent delivery experience,6,SR-84383,RET-50334,CUST-10976,2025-08-21,SMS,Middle East,Dr. David Torres
+NPS-90108,Product setup was confusing,0,SR-83694,RET-50292,CUST-10077,2025-06-03,Web App,Latin America,Tiffany Lewis
+NPS-90109,"Great support, quick resolution",6,SR-84356,RET-50655,CUST-10060,2025-08-11,Web App,Middle East,David Rasmussen
+NPS-90110,"Great support, quick resolution",8,SR-81016,RET-50189,CUST-10639,2025-05-07,In-store,Europe,Ashley Hardy
+NPS-90111,Would definitely recommend,4,SR-81355,RET-50046,CUST-10163,2025-05-12,Phone,Asia-Pacific,Joshua White
+NPS-90112,Would definitely recommend,6,SR-80990,RET-50741,CUST-10579,2025-01-29,Email,Asia-Pacific,Monique Johnson
+NPS-90113,"Great support, quick resolution",3,SR-84861,RET-50600,CUST-10287,2025-03-21,Web App,Middle East,Matthew Mitchell
+NPS-90114,Excellent delivery experience,1,SR-80312,RET-50019,CUST-10109,2025-05-16,Phone,North America,Carl Watson
+NPS-90115,Would definitely recommend,6,SR-84464,RET-50935,CUST-10075,2025-06-04,Email,Middle East,Erica Parks
+NPS-90116,Average service,8,SR-81547,RET-50226,CUST-10661,2025-08-17,In-store,Middle East,Roberta Perry
+NPS-90117,Would definitely recommend,1,SR-84841,RET-50742,CUST-10882,2025-04-06,Email,Asia-Pacific,Paula Cooper
+NPS-90118,Excellent delivery experience,9,SR-83460,RET-50455,CUST-10170,2025-02-08,In-store,Middle East,Carolyn Carey
+NPS-90119,"Great support, quick resolution",9,SR-84488,RET-50297,CUST-10520,2025-04-21,Email,North America,Nicole Summers
+NPS-90120,Excellent delivery experience,8,SR-80251,RET-50612,CUST-10362,2025-08-17,Phone,North America,James Jimenez
+NPS-90121,Average service,3,SR-83493,RET-50252,CUST-10665,2025-05-01,Phone,Middle East,Joseph Montoya
+NPS-90122,Would definitely recommend,6,SR-83199,RET-50893,CUST-10708,2025-04-19,Web App,Asia-Pacific,Aaron Richardson
+NPS-90123,Product setup was confusing,2,SR-82825,RET-50510,CUST-10449,2025-01-29,In-store,Asia-Pacific,Jeffery Taylor
+NPS-90124,Product setup was confusing,4,SR-84878,RET-50678,CUST-10620,2025-02-21,SMS,Europe,Jessica Abbott
+NPS-90125,Excellent delivery experience,5,SR-83205,RET-50980,CUST-10158,2025-01-05,SMS,Middle East,Alicia Young
+NPS-90126,Average service,8,SR-81349,RET-50082,CUST-10858,2025-03-31,In-store,Latin America,Joshua Robinson
+NPS-90127,Average service,5,SR-83960,RET-50931,CUST-10034,2025-02-03,SMS,North America,Kelli Gordon
+NPS-90128,Would definitely recommend,8,SR-80659,RET-50336,CUST-10329,2025-02-05,SMS,Europe,Ray Butler
+NPS-90129,Would definitely recommend,7,SR-80688,RET-50241,CUST-10140,2025-07-28,Web App,Asia-Pacific,Bryan Rivas
+NPS-90130,"Great support, quick resolution",7,SR-84996,RET-50150,CUST-10971,2025-07-10,Phone,North America,Tina Rodriguez
+NPS-90131,Excellent delivery experience,1,SR-84386,RET-50679,CUST-10962,2025-05-03,Phone,Europe,Rita Frost
+NPS-90132,Excellent delivery experience,8,SR-82201,RET-50361,CUST-10179,2025-03-29,Phone,Middle East,Bradley Garner
+NPS-90133,Would definitely recommend,6,SR-83284,RET-50212,CUST-10947,2025-04-26,Phone,Latin America,Suzanne Mcguire
+NPS-90134,Average service,2,SR-82664,RET-50490,CUST-10358,2025-05-02,Phone,North America,Ashley Murray
+NPS-90135,Would definitely recommend,7,SR-82762,RET-50945,CUST-10777,2025-02-16,Web App,Asia-Pacific,Lisa Barnes
+NPS-90136,Excellent delivery experience,0,SR-84909,RET-50606,CUST-10623,2025-06-10,In-store,Asia-Pacific,Michael Golden
+NPS-90137,Product setup was confusing,4,SR-83468,RET-50405,CUST-10504,2025-03-13,In-store,Middle East,Michelle Cabrera
+NPS-90138,"Great support, quick resolution",8,SR-83425,RET-50412,CUST-10941,2025-04-14,Phone,Europe,Natalie Howard
+NPS-90139,Would definitely recommend,8,SR-82764,RET-50627,CUST-10702,2025-05-05,Phone,Latin America,Alexander Williams
+NPS-90140,Average service,1,SR-84081,RET-50462,CUST-10591,2025-01-14,SMS,Middle East,Audrey Hess
+NPS-90141,Product setup was confusing,3,SR-82483,RET-50121,CUST-10494,2025-01-15,Email,North America,Rick Taylor
+NPS-90142,Product setup was confusing,7,SR-83121,RET-50735,CUST-10287,2025-06-13,In-store,Asia-Pacific,Chad Johnson
+NPS-90143,Product setup was confusing,1,SR-84217,RET-50614,CUST-10379,2025-07-23,Email,Asia-Pacific,Jason King
+NPS-90144,"Great support, quick resolution",4,SR-84307,RET-50827,CUST-10860,2025-05-18,SMS,Europe,Ashley Nelson
+NPS-90145,Would definitely recommend,1,SR-80032,RET-50407,CUST-10416,2025-06-03,SMS,Middle East,Derrick Singleton
+NPS-90146,Average service,10,SR-80597,RET-50262,CUST-10041,2025-02-17,SMS,Middle East,Abigail Cortez
+NPS-90147,Would definitely recommend,10,SR-80916,RET-50394,CUST-10399,2025-05-12,Email,Latin America,Bruce Stewart
+NPS-90148,Excellent delivery experience,5,SR-84586,RET-50663,CUST-10786,2025-04-16,Web App,Middle East,Gina Freeman
+NPS-90149,"Great support, quick resolution",4,SR-84977,RET-50499,CUST-10908,2025-01-15,Email,Asia-Pacific,Keith Strong
+NPS-90150,Excellent delivery experience,8,SR-80868,RET-50937,CUST-10475,2025-05-14,In-store,North America,Philip Ramirez
+NPS-90151,Excellent delivery experience,3,SR-81973,RET-50527,CUST-10497,2025-04-22,SMS,Latin America,Joseph Gordon
+NPS-90152,Product setup was confusing,4,SR-84628,RET-50946,CUST-10800,2025-02-27,SMS,Europe,Todd Davis
+NPS-90153,Would definitely recommend,4,SR-80481,RET-50096,CUST-10213,2025-03-07,Email,Latin America,Frances Mitchell
+NPS-90154,"Great support, quick resolution",2,SR-80580,RET-50426,CUST-10646,2025-05-07,In-store,North America,Troy Blair
+NPS-90155,Average service,3,SR-83040,RET-50718,CUST-10346,2025-06-18,Web App,North America,Jason Smith
+NPS-90156,Would definitely recommend,5,SR-81436,RET-50136,CUST-10974,2025-05-22,Phone,Latin America,Manuel Gomez
+NPS-90157,"Great support, quick resolution",6,SR-81028,RET-50619,CUST-10544,2025-03-24,Web App,Europe,Margaret West
+NPS-90158,Average service,7,SR-83578,RET-50630,CUST-10307,2025-04-22,Web App,Latin America,Dan Reynolds
+NPS-90159,Average service,7,SR-80702,RET-50682,CUST-10416,2025-01-05,In-store,Latin America,Caleb Perry
+NPS-90160,Product setup was confusing,9,SR-84585,RET-50786,CUST-10901,2025-02-28,In-store,Europe,Laura Houston
+NPS-90161,Average service,3,SR-81801,RET-50229,CUST-10248,2025-05-07,Phone,Middle East,Sarah Palmer
+NPS-90162,Would definitely recommend,8,SR-83108,RET-50292,CUST-10470,2025-04-01,Phone,Asia-Pacific,Karen Campbell
+NPS-90163,Would definitely recommend,4,SR-83208,RET-50790,CUST-10126,2025-01-10,Phone,Asia-Pacific,Sydney Nielsen
+NPS-90164,Excellent delivery experience,3,SR-81950,RET-50499,CUST-10030,2025-06-10,Phone,Asia-Pacific,Thomas Warren
+NPS-90165,Excellent delivery experience,9,SR-80464,RET-50371,CUST-10082,2025-03-12,Web App,North America,Gerald Martin
+NPS-90166,Excellent delivery experience,6,SR-82575,RET-50245,CUST-10232,2025-06-15,In-store,Middle East,Caitlin Larson
+NPS-90167,Product setup was confusing,1,SR-82085,RET-50526,CUST-10653,2025-07-26,Email,Latin America,Ann Gentry
+NPS-90168,"Great support, quick resolution",4,SR-82384,RET-50893,CUST-10388,2025-04-05,SMS,North America,Julian Camacho
+NPS-90169,"Great support, quick resolution",1,SR-83040,RET-50091,CUST-10955,2025-01-13,Web App,Asia-Pacific,Douglas Wilson
+NPS-90170,Would definitely recommend,2,SR-84673,RET-50624,CUST-10879,2025-01-21,Email,Asia-Pacific,Jesse Evans
+NPS-90171,Excellent delivery experience,6,SR-83967,RET-50572,CUST-10115,2025-01-30,Web App,Asia-Pacific,Michael Fox
+NPS-90172,Would definitely recommend,8,SR-80016,RET-50042,CUST-10783,2025-01-06,SMS,Middle East,Olivia Acosta
+NPS-90173,Would definitely recommend,6,SR-81218,RET-50936,CUST-10150,2025-05-07,SMS,Europe,Mark White
+NPS-90174,"Great support, quick resolution",7,SR-80799,RET-50465,CUST-10569,2025-02-19,In-store,Middle East,Paul Sims
+NPS-90175,Product setup was confusing,8,SR-80218,RET-50582,CUST-10228,2025-06-22,SMS,Middle East,Kathryn Garrett
+NPS-90176,Average service,9,SR-80025,RET-50975,CUST-10844,2025-05-16,Email,Latin America,Elizabeth White MD
+NPS-90177,Average service,5,SR-80344,RET-50139,CUST-10225,2025-08-01,Phone,Europe,Mary Goodman
+NPS-90178,Average service,9,SR-84248,RET-50088,CUST-10821,2025-01-19,Email,Asia-Pacific,Angelica Thomas
+NPS-90179,Excellent delivery experience,1,SR-81273,RET-50907,CUST-10183,2025-03-20,Web App,Middle East,Joann Bautista
+NPS-90180,Average service,5,SR-80501,RET-50792,CUST-10711,2025-05-05,Phone,Europe,Louis Bates
+NPS-90181,Product setup was confusing,7,SR-83256,RET-50830,CUST-10345,2025-02-19,In-store,Latin America,Alexander Williams
+NPS-90182,"Great support, quick resolution",3,SR-84457,RET-50580,CUST-10921,2025-01-28,In-store,Middle East,Benjamin Garcia
+NPS-90183,"Great support, quick resolution",0,SR-81304,RET-50858,CUST-10212,2025-01-20,Email,Asia-Pacific,Shelley Martinez
+NPS-90184,"Great support, quick resolution",10,SR-81178,RET-50975,CUST-10410,2025-03-21,SMS,Middle East,Valerie Montgomery
+NPS-90185,Would definitely recommend,10,SR-84576,RET-50425,CUST-10641,2025-03-26,In-store,Latin America,Mark Gregory
+NPS-90186,"Great support, quick resolution",9,SR-80050,RET-50436,CUST-10911,2025-08-13,Web App,North America,Matthew Hopkins
+NPS-90187,Average service,6,SR-83547,RET-50517,CUST-10543,2025-08-24,In-store,Latin America,Justin Hartman
+NPS-90188,Average service,8,SR-82024,RET-50588,CUST-10645,2025-08-25,SMS,North America,Tammie Spencer
+NPS-90189,Would definitely recommend,0,SR-81820,RET-50580,CUST-10230,2025-06-25,In-store,Asia-Pacific,Amanda Woodard
+NPS-90190,Average service,6,SR-84031,RET-50158,CUST-10279,2025-05-21,SMS,Asia-Pacific,Sarah Jones
+NPS-90191,Would definitely recommend,4,SR-82389,RET-50156,CUST-10054,2025-05-31,SMS,Latin America,Terry Sutton
+NPS-90192,Excellent delivery experience,3,SR-83377,RET-50050,CUST-10054,2025-03-26,Phone,Asia-Pacific,Valerie Le
+NPS-90193,Would definitely recommend,5,SR-84504,RET-50225,CUST-10506,2025-04-15,Phone,North America,James Allen
+NPS-90194,Average service,5,SR-81707,RET-50662,CUST-10417,2025-08-27,Email,Middle East,Taylor Walker
+NPS-90195,Excellent delivery experience,9,SR-83012,RET-50340,CUST-10760,2025-03-11,Web App,North America,George Sosa
+NPS-90196,Excellent delivery experience,8,SR-82634,RET-50872,CUST-10819,2025-05-07,In-store,Asia-Pacific,Cody Deleon
+NPS-90197,Would definitely recommend,5,SR-81850,RET-50351,CUST-10217,2025-04-04,SMS,North America,Paul Davis
+NPS-90198,Product setup was confusing,1,SR-83274,RET-50635,CUST-10887,2025-04-16,Web App,Europe,Rhonda Fowler
+NPS-90199,Would definitely recommend,9,SR-80572,RET-50599,CUST-10247,2025-07-28,In-store,Middle East,Amanda Cunningham
+NPS-90200,Average service,7,SR-84064,RET-50850,CUST-10300,2025-06-12,Web App,Asia-Pacific,Robert Sullivan
+NPS-90201,Product setup was confusing,5,SR-82577,RET-50393,CUST-10748,2025-04-25,Email,Europe,Lisa Owen
+NPS-90202,Average service,10,SR-80091,RET-50145,CUST-10782,2025-04-13,Phone,Asia-Pacific,Clifford Hinton
+NPS-90203,Average service,9,SR-80424,RET-50610,CUST-10463,2025-01-29,In-store,Middle East,Jennifer Rodriguez
+NPS-90204,Product setup was confusing,2,SR-80303,RET-50035,CUST-10020,2025-03-07,In-store,North America,Christopher Hess
+NPS-90205,Product setup was confusing,1,SR-84893,RET-50415,CUST-10442,2025-01-23,In-store,Latin America,Tony Nelson
+NPS-90206,"Great support, quick resolution",8,SR-82636,RET-50179,CUST-10123,2025-02-12,In-store,Europe,Lisa Murphy
+NPS-90207,Would definitely recommend,6,SR-82478,RET-50577,CUST-10927,2025-04-22,Phone,North America,Julia Holland
+NPS-90208,"Great support, quick resolution",1,SR-84419,RET-50865,CUST-10835,2025-04-07,In-store,North America,Peter Stokes
+NPS-90209,"Great support, quick resolution",1,SR-81530,RET-50927,CUST-10280,2025-05-07,Web App,Latin America,Brian Warren
+NPS-90210,Excellent delivery experience,5,SR-80174,RET-50682,CUST-10190,2025-01-19,Email,Latin America,Megan Schaefer
+NPS-90211,Would definitely recommend,1,SR-82493,RET-50185,CUST-10415,2025-05-24,Web App,Asia-Pacific,Stacy Moss
+NPS-90212,Excellent delivery experience,10,SR-81171,RET-50576,CUST-10132,2025-04-23,Web App,Asia-Pacific,Kathleen Patterson
+NPS-90213,Product setup was confusing,5,SR-83419,RET-50558,CUST-10684,2025-05-28,Phone,Europe,Tiffany Pacheco
+NPS-90214,Average service,4,SR-82284,RET-50866,CUST-10002,2025-07-25,Web App,Middle East,Jason Krueger
+NPS-90215,Product setup was confusing,7,SR-82681,RET-50334,CUST-10449,2025-01-27,Email,Europe,Joseph Dunlap
+NPS-90216,Excellent delivery experience,2,SR-83269,RET-50630,CUST-10220,2025-04-16,SMS,Middle East,Erin Maldonado
+NPS-90217,Excellent delivery experience,9,SR-81667,RET-50701,CUST-10609,2025-05-01,SMS,North America,Dylan Martin
+NPS-90218,Average service,2,SR-81837,RET-50588,CUST-10937,2025-02-17,SMS,Middle East,Amy Jones
+NPS-90219,Would definitely recommend,0,SR-83872,RET-50543,CUST-10873,2025-01-06,Email,Asia-Pacific,Sandra Schultz
+NPS-90220,Product setup was confusing,7,SR-83549,RET-50652,CUST-10899,2025-08-02,Phone,Middle East,Bradley Munoz
+NPS-90221,Average service,1,SR-82944,RET-50018,CUST-10861,2025-07-21,Web App,Latin America,Christopher King
+NPS-90222,"Great support, quick resolution",2,SR-83425,RET-50632,CUST-10104,2025-06-14,SMS,Latin America,Leslie Lawrence
+NPS-90223,"Great support, quick resolution",8,SR-80096,RET-50589,CUST-10179,2025-06-12,In-store,Europe,Deborah Short
+NPS-90224,"Great support, quick resolution",8,SR-82732,RET-50004,CUST-10588,2025-01-23,SMS,Latin America,Jackie Hinton
+NPS-90225,Product setup was confusing,9,SR-81387,RET-50401,CUST-10521,2025-03-14,Web App,Latin America,Angela Wheeler
+NPS-90226,Excellent delivery experience,9,SR-80137,RET-50785,CUST-10469,2025-01-01,SMS,Asia-Pacific,Christopher Duran
+NPS-90227,Excellent delivery experience,5,SR-80657,RET-50846,CUST-10907,2025-07-07,Email,Latin America,Karen Harvey
+NPS-90228,Average service,4,SR-80013,RET-50389,CUST-10148,2025-06-28,Email,Europe,John Bowen
+NPS-90229,Excellent delivery experience,0,SR-82303,RET-50559,CUST-10741,2025-08-07,Phone,Europe,Peter Smith
+NPS-90230,"Great support, quick resolution",2,SR-81623,RET-50835,CUST-10395,2025-08-13,Email,Latin America,Cathy Hanson
+NPS-90231,Excellent delivery experience,6,SR-83685,RET-50105,CUST-10839,2025-05-03,SMS,North America,Steven Miller
+NPS-90232,"Great support, quick resolution",3,SR-80091,RET-50109,CUST-10664,2025-03-22,Phone,North America,Lauren Myers
+NPS-90233,Would definitely recommend,6,SR-80714,RET-50928,CUST-10437,2025-04-21,SMS,Latin America,Thomas Newman
+NPS-90234,"Great support, quick resolution",3,SR-80035,RET-50902,CUST-10088,2025-04-07,In-store,Asia-Pacific,Erik Miller
+NPS-90235,Average service,5,SR-81883,RET-50087,CUST-10795,2025-03-09,In-store,Middle East,Christopher Clark
+NPS-90236,Product setup was confusing,2,SR-83198,RET-50469,CUST-10203,2025-06-16,Web App,Asia-Pacific,Chelsea Munoz
+NPS-90237,Average service,1,SR-81598,RET-50460,CUST-10048,2025-04-13,SMS,Middle East,Belinda Wilson
+NPS-90238,Product setup was confusing,7,SR-84664,RET-50943,CUST-10013,2025-03-05,Email,Asia-Pacific,Maria Hernandez
+NPS-90239,Excellent delivery experience,6,SR-81847,RET-50303,CUST-10010,2025-02-03,In-store,North America,Douglas Fuentes
+NPS-90240,Product setup was confusing,0,SR-82945,RET-50656,CUST-10036,2025-08-04,Phone,North America,Emily Williams
+NPS-90241,Excellent delivery experience,7,SR-84837,RET-50309,CUST-10992,2025-03-04,Web App,Asia-Pacific,Krista Thomas
+NPS-90242,"Great support, quick resolution",0,SR-83984,RET-50960,CUST-10784,2025-04-27,Web App,Asia-Pacific,Elizabeth Davies
+NPS-90243,Excellent delivery experience,8,SR-84976,RET-50490,CUST-10956,2025-02-21,In-store,North America,Joan Smith
+NPS-90244,Average service,9,SR-82318,RET-50794,CUST-10626,2025-01-01,In-store,Latin America,Mitchell Burke
+NPS-90245,Product setup was confusing,8,SR-82940,RET-50942,CUST-10041,2025-03-18,Phone,Middle East,Jennifer Bowen
+NPS-90246,Excellent delivery experience,3,SR-83697,RET-50122,CUST-10573,2025-03-06,In-store,North America,Veronica Patterson
+NPS-90247,Average service,5,SR-84855,RET-50761,CUST-10276,2025-02-11,Phone,Asia-Pacific,John Price
+NPS-90248,"Great support, quick resolution",1,SR-83260,RET-50554,CUST-10762,2025-02-19,Phone,Latin America,Christopher Simon
+NPS-90249,Would definitely recommend,8,SR-83462,RET-50742,CUST-10116,2025-02-09,Phone,Asia-Pacific,Joseph Bartlett
+NPS-90250,Product setup was confusing,9,SR-84488,RET-50117,CUST-10754,2025-08-21,In-store,Middle East,Jody Holden
+NPS-90251,Excellent delivery experience,8,SR-83751,RET-50108,CUST-10760,2025-08-18,Phone,North America,Adam Cook
+NPS-90252,"Great support, quick resolution",3,SR-83007,RET-50131,CUST-10714,2025-01-25,In-store,North America,David Sanders
+NPS-90253,Excellent delivery experience,0,SR-82862,RET-50247,CUST-10646,2025-01-07,In-store,North America,James Ayala
+NPS-90254,Would definitely recommend,9,SR-82497,RET-50758,CUST-10069,2025-06-26,Web App,Europe,Hayley Delgado
+NPS-90255,"Great support, quick resolution",5,SR-83467,RET-50049,CUST-10902,2025-07-26,Email,Europe,Alex Osborne
+NPS-90256,Excellent delivery experience,6,SR-84477,RET-50558,CUST-10874,2025-02-25,Web App,Europe,Roger Sexton
+NPS-90257,Would definitely recommend,9,SR-81375,RET-50646,CUST-10247,2025-03-27,Email,Asia-Pacific,Darrell Flowers
+NPS-90258,Excellent delivery experience,7,SR-82858,RET-50922,CUST-10627,2025-07-06,Email,Europe,Jordan Dunn
+NPS-90259,Would definitely recommend,4,SR-81396,RET-50140,CUST-10286,2025-02-09,Phone,Europe,Charles Jones
+NPS-90260,"Great support, quick resolution",3,SR-82723,RET-50002,CUST-10423,2025-02-19,Phone,Middle East,Ricardo Hall
+NPS-90261,"Great support, quick resolution",10,SR-83399,RET-50835,CUST-10187,2025-03-08,Email,Europe,Andrew Riggs
+NPS-90262,Product setup was confusing,7,SR-80317,RET-50275,CUST-10873,2025-02-13,In-store,Middle East,Lisa Alexander MD
+NPS-90263,Would definitely recommend,0,SR-84324,RET-50221,CUST-10668,2025-06-22,SMS,Europe,Alexis Sanders
+NPS-90264,Average service,5,SR-84622,RET-50014,CUST-10970,2025-07-03,Web App,Middle East,Scott Wood
+NPS-90265,"Great support, quick resolution",6,SR-80580,RET-50494,CUST-10924,2025-07-09,Email,North America,Angel Gonzalez
+NPS-90266,Product setup was confusing,2,SR-80721,RET-50947,CUST-10199,2025-08-27,Email,North America,Mackenzie Howard
+NPS-90267,Average service,0,SR-84290,RET-50673,CUST-10641,2025-08-15,Web App,Europe,Michael Hill
+NPS-90268,Excellent delivery experience,5,SR-81541,RET-50501,CUST-10519,2025-01-30,Email,Latin America,Kimberly Nash
+NPS-90269,"Great support, quick resolution",4,SR-83646,RET-50204,CUST-10092,2025-07-18,In-store,North America,Casey Robinson
+NPS-90270,Would definitely recommend,1,SR-84277,RET-50464,CUST-10184,2025-08-14,SMS,Europe,Lisa Arellano
+NPS-90271,Average service,5,SR-81830,RET-50085,CUST-10658,2025-02-24,SMS,Europe,Barry Becker
+NPS-90272,Would definitely recommend,2,SR-82956,RET-50108,CUST-10674,2025-01-27,Email,Europe,Elizabeth Haynes
+NPS-90273,Product setup was confusing,2,SR-84762,RET-50660,CUST-10792,2025-07-11,In-store,North America,Karen Curtis
+NPS-90274,"Great support, quick resolution",6,SR-84682,RET-50601,CUST-10502,2025-06-03,In-store,Asia-Pacific,Emma Silva
+NPS-90275,"Great support, quick resolution",5,SR-84619,RET-50095,CUST-10732,2025-06-16,Phone,Asia-Pacific,Keith Reed
+NPS-90276,Would definitely recommend,0,SR-84995,RET-50647,CUST-10218,2025-04-03,Email,Latin America,Karen Johnson
+NPS-90277,Average service,10,SR-83003,RET-50567,CUST-10106,2025-04-18,In-store,Latin America,Mark Miller DDS
+NPS-90278,"Great support, quick resolution",7,SR-84704,RET-50225,CUST-10216,2025-03-23,In-store,Europe,Edward Miller
+NPS-90279,Product setup was confusing,6,SR-84066,RET-50002,CUST-10014,2025-05-10,Email,Asia-Pacific,Russell Cantrell
+NPS-90280,"Great support, quick resolution",4,SR-83275,RET-50095,CUST-10528,2025-08-30,Web App,Latin America,Casey Jones
+NPS-90281,Average service,7,SR-84537,RET-50691,CUST-10254,2025-08-18,Email,Latin America,Erika Skinner
+NPS-90282,"Great support, quick resolution",5,SR-81933,RET-50089,CUST-10746,2025-03-21,Phone,Europe,Robert Strickland
+NPS-90283,Product setup was confusing,8,SR-81469,RET-50500,CUST-10766,2025-08-19,SMS,Middle East,Shawn Mendoza
+NPS-90284,Average service,7,SR-81693,RET-50188,CUST-10842,2025-01-02,Web App,Middle East,Anthony Wilson
+NPS-90285,"Great support, quick resolution",2,SR-80583,RET-50481,CUST-10476,2025-02-18,Email,Asia-Pacific,Melissa Thompson
+NPS-90286,Average service,2,SR-81991,RET-50195,CUST-10883,2025-07-02,Web App,Europe,Jeanette Young
+NPS-90287,Excellent delivery experience,5,SR-83768,RET-50765,CUST-10149,2025-05-08,Email,North America,Matthew Smith
+NPS-90288,Would definitely recommend,10,SR-80705,RET-50699,CUST-10200,2025-02-28,Phone,North America,Dr. Ralph Gardner
+NPS-90289,Excellent delivery experience,0,SR-81667,RET-50583,CUST-10856,2025-03-02,SMS,North America,Kari Duke
+NPS-90290,Product setup was confusing,1,SR-81319,RET-50438,CUST-10946,2025-08-14,Phone,Middle East,Elizabeth Nunez
+NPS-90291,Would definitely recommend,4,SR-82728,RET-50679,CUST-10353,2025-05-19,In-store,Middle East,Kristina Mendez
+NPS-90292,"Great support, quick resolution",0,SR-83498,RET-50860,CUST-10754,2025-05-20,Web App,Latin America,James Bailey
+NPS-90293,Would definitely recommend,2,SR-80055,RET-50839,CUST-10211,2025-05-04,Phone,North America,Karen Simon
+NPS-90294,Excellent delivery experience,0,SR-81889,RET-50273,CUST-10593,2025-06-18,Phone,Latin America,Lori Robinson
+NPS-90295,Product setup was confusing,7,SR-83426,RET-50964,CUST-10711,2025-04-09,Email,Europe,Candace Garner
+NPS-90296,"Great support, quick resolution",4,SR-82012,RET-50022,CUST-10481,2025-04-12,Phone,Asia-Pacific,Natalie Murphy
+NPS-90297,Would definitely recommend,7,SR-84127,RET-50052,CUST-10860,2025-03-23,In-store,Europe,Rhonda Boyle
+NPS-90298,"Great support, quick resolution",6,SR-84786,RET-50180,CUST-10165,2025-05-13,Web App,Latin America,Mr. Brian Vargas Jr.
+NPS-90299,Average service,3,SR-84886,RET-50950,CUST-10957,2025-02-13,SMS,Middle East,Charles Velez
+NPS-90300,Average service,5,SR-83675,RET-50415,CUST-10760,2025-01-28,Email,North America,Olivia Mayer
+NPS-90301,"Great support, quick resolution",10,SR-80592,RET-50587,CUST-10253,2025-04-15,Phone,Asia-Pacific,Lisa Rodriguez
+NPS-90302,Product setup was confusing,10,SR-81338,RET-50048,CUST-10043,2025-01-06,SMS,Middle East,Barbara Espinoza
+NPS-90303,Excellent delivery experience,0,SR-80503,RET-50028,CUST-10584,2025-02-26,In-store,Middle East,Brittany Molina
+NPS-90304,Average service,6,SR-83637,RET-50184,CUST-10258,2025-03-09,Web App,Europe,Gregory Fisher DDS
+NPS-90305,Excellent delivery experience,6,SR-83949,RET-50958,CUST-10016,2025-06-27,SMS,Middle East,Lisa Davis
+NPS-90306,Would definitely recommend,4,SR-81828,RET-50176,CUST-10863,2025-05-01,Email,Latin America,Daniel Gray
+NPS-90307,Product setup was confusing,9,SR-82933,RET-50470,CUST-10201,2025-07-06,Phone,Asia-Pacific,Regina Barber
+NPS-90308,Product setup was confusing,3,SR-82948,RET-50544,CUST-10026,2025-05-10,In-store,Europe,Peter Lowe
+NPS-90309,Product setup was confusing,9,SR-83150,RET-50697,CUST-10820,2025-02-04,Phone,Middle East,Sarah Harris
+NPS-90310,Average service,6,SR-81882,RET-50704,CUST-10250,2025-05-12,SMS,Europe,Vanessa Everett
+NPS-90311,Excellent delivery experience,7,SR-81485,RET-50552,CUST-10335,2025-04-26,In-store,Asia-Pacific,Natasha Johnson
+NPS-90312,Average service,4,SR-83466,RET-50766,CUST-10216,2025-02-26,Web App,Europe,Maria Phelps
+NPS-90313,Would definitely recommend,10,SR-80416,RET-50761,CUST-10987,2025-08-23,In-store,Latin America,Linda Wright
+NPS-90314,Would definitely recommend,2,SR-84687,RET-50131,CUST-10441,2025-08-16,Email,Middle East,Kathryn Richardson
+NPS-90315,Average service,4,SR-84303,RET-50552,CUST-10441,2025-05-09,Web App,Latin America,James Bowers
+NPS-90316,Product setup was confusing,8,SR-84460,RET-50136,CUST-10913,2025-06-29,SMS,Europe,James Jones
+NPS-90317,"Great support, quick resolution",6,SR-82273,RET-50847,CUST-10744,2025-03-29,In-store,Asia-Pacific,Dawn Scott
+NPS-90318,Would definitely recommend,2,SR-82812,RET-50765,CUST-10023,2025-05-23,In-store,Middle East,Mr. Michael King
+NPS-90319,"Great support, quick resolution",6,SR-81767,RET-50266,CUST-10647,2025-08-01,Phone,Latin America,Sue Bullock
+NPS-90320,"Great support, quick resolution",4,SR-83156,RET-50973,CUST-10428,2025-07-10,Web App,Europe,Lindsey White
+NPS-90321,"Great support, quick resolution",8,SR-82588,RET-50534,CUST-10067,2025-06-19,Phone,Latin America,Jessica Fleming
+NPS-90322,Average service,8,SR-81758,RET-50114,CUST-10329,2025-05-01,In-store,Latin America,Angela Jordan
+NPS-90323,"Great support, quick resolution",7,SR-82836,RET-50531,CUST-10036,2025-04-19,In-store,Latin America,Christopher Park
+NPS-90324,Product setup was confusing,1,SR-82890,RET-50909,CUST-10728,2025-05-14,Phone,Latin America,Albert Miles
+NPS-90325,Product setup was confusing,5,SR-81685,RET-50194,CUST-10719,2025-05-08,Email,Latin America,Douglas Martinez
+NPS-90326,"Great support, quick resolution",0,SR-84603,RET-50678,CUST-10971,2025-02-14,In-store,Latin America,Steven Nguyen
+NPS-90327,Product setup was confusing,9,SR-81453,RET-50340,CUST-10602,2025-05-16,Email,Europe,Patrick Terry
+NPS-90328,"Great support, quick resolution",7,SR-82709,RET-50328,CUST-10661,2025-01-16,SMS,Asia-Pacific,Cynthia Wood
+NPS-90329,Average service,9,SR-80711,RET-50292,CUST-10011,2025-05-19,Email,Latin America,Nicholas Hansen
+NPS-90330,Would definitely recommend,2,SR-80944,RET-50033,CUST-10311,2025-07-04,Email,Asia-Pacific,Linda Hopkins
+NPS-90331,Average service,2,SR-81997,RET-50018,CUST-10434,2025-08-31,Email,North America,Robin Rodriguez
+NPS-90332,"Great support, quick resolution",1,SR-80298,RET-50209,CUST-10313,2025-03-23,In-store,Latin America,Jasmine Lopez
+NPS-90333,"Great support, quick resolution",9,SR-80824,RET-50719,CUST-10905,2025-07-20,SMS,Latin America,Ana Deleon
+NPS-90334,Would definitely recommend,0,SR-82822,RET-50755,CUST-10999,2025-06-21,Phone,Asia-Pacific,Jodi Simon
+NPS-90335,Product setup was confusing,6,SR-80434,RET-50781,CUST-10108,2025-02-22,Web App,Latin America,Tristan Adams
+NPS-90336,Would definitely recommend,2,SR-80845,RET-50427,CUST-10117,2025-06-29,Email,Asia-Pacific,Joseph Vazquez
+NPS-90337,"Great support, quick resolution",10,SR-83584,RET-50499,CUST-10775,2025-04-05,Email,Asia-Pacific,Kimberly Lyons
+NPS-90338,Excellent delivery experience,5,SR-84966,RET-50719,CUST-10589,2025-07-01,SMS,Middle East,Marissa Morris
+NPS-90339,Excellent delivery experience,4,SR-84522,RET-50520,CUST-10922,2025-04-10,Phone,North America,Richard Gomez
+NPS-90340,Product setup was confusing,0,SR-83604,RET-50556,CUST-10248,2025-01-13,Email,Middle East,Pamela Daniels
+NPS-90341,Excellent delivery experience,8,SR-80521,RET-50936,CUST-10377,2025-02-25,Web App,North America,Erica Ortiz
+NPS-90342,Would definitely recommend,2,SR-82825,RET-50903,CUST-10784,2025-02-18,Email,Latin America,Keith Drake
+NPS-90343,Excellent delivery experience,2,SR-83936,RET-50180,CUST-10140,2025-04-25,Email,Europe,Glenn Mccormick
+NPS-90344,Excellent delivery experience,4,SR-84312,RET-50098,CUST-10073,2025-04-07,SMS,Middle East,Shane Morris
+NPS-90345,Product setup was confusing,6,SR-82414,RET-50578,CUST-10398,2025-08-05,SMS,Latin America,Linda Glenn
+NPS-90346,"Great support, quick resolution",7,SR-84256,RET-50672,CUST-10911,2025-04-06,In-store,Asia-Pacific,Joseph Hunter
+NPS-90347,Would definitely recommend,2,SR-80868,RET-50994,CUST-10028,2025-08-13,Phone,Middle East,Samantha Greene
+NPS-90348,"Great support, quick resolution",5,SR-80407,RET-50264,CUST-10078,2025-02-25,Web App,Middle East,Richard Kennedy
+NPS-90349,Product setup was confusing,7,SR-83053,RET-50766,CUST-10047,2025-07-20,Phone,Middle East,Megan Ortiz
+NPS-90350,Product setup was confusing,9,SR-80966,RET-50318,CUST-10021,2025-08-03,In-store,North America,Roberta Lowe
+NPS-90351,Would definitely recommend,4,SR-84216,RET-50616,CUST-10702,2025-05-12,SMS,Europe,Sheri Diaz
+NPS-90352,Excellent delivery experience,6,SR-82935,RET-50271,CUST-10062,2025-04-21,In-store,Latin America,Christine Stewart
+NPS-90353,Product setup was confusing,9,SR-80571,RET-50307,CUST-10028,2025-06-09,Email,Middle East,Ashley Hamilton
+NPS-90354,Average service,7,SR-84666,RET-50207,CUST-10442,2025-01-02,Phone,Europe,Amanda Sutton
+NPS-90355,Excellent delivery experience,5,SR-82458,RET-50023,CUST-10039,2025-06-01,Email,Asia-Pacific,Brett Gross
+NPS-90356,Product setup was confusing,6,SR-83578,RET-50027,CUST-10117,2025-02-08,Phone,Asia-Pacific,Tonya Johns
+NPS-90357,Product setup was confusing,1,SR-82175,RET-50777,CUST-10307,2025-01-17,In-store,Asia-Pacific,Albert Hughes
+NPS-90358,"Great support, quick resolution",9,SR-82881,RET-50516,CUST-10838,2025-03-12,Web App,Middle East,Leah Harris
+NPS-90359,Product setup was confusing,4,SR-83968,RET-50568,CUST-10693,2025-06-22,SMS,North America,Adam Peters
+NPS-90360,Average service,10,SR-83244,RET-50257,CUST-10382,2025-01-21,In-store,Middle East,Matthew Watson
+NPS-90361,Would definitely recommend,7,SR-80849,RET-50411,CUST-10642,2025-06-18,Phone,Latin America,Megan Proctor
+NPS-90362,Would definitely recommend,2,SR-83351,RET-50433,CUST-10067,2025-01-17,Web App,North America,Carl Morris
+NPS-90363,Average service,10,SR-80854,RET-50172,CUST-10132,2025-04-30,Web App,Asia-Pacific,Dr. Christopher Hall
+NPS-90364,Product setup was confusing,9,SR-83488,RET-50434,CUST-10324,2025-01-07,In-store,Latin America,Jason Mooney
+NPS-90365,Product setup was confusing,2,SR-84345,RET-50914,CUST-10225,2025-05-01,Email,Europe,Joel Fuller
+NPS-90366,Would definitely recommend,8,SR-80161,RET-50711,CUST-10175,2025-08-18,Web App,Asia-Pacific,Brian Clarke
+NPS-90367,Would definitely recommend,8,SR-84705,RET-50884,CUST-10332,2025-04-01,In-store,Asia-Pacific,Albert Duffy
+NPS-90368,Average service,1,SR-84041,RET-50299,CUST-10579,2025-04-09,SMS,North America,Ashley Bell
+NPS-90369,Product setup was confusing,1,SR-84545,RET-50440,CUST-10957,2025-08-16,Phone,Europe,Krista Frye
+NPS-90370,Product setup was confusing,4,SR-80005,RET-50524,CUST-10267,2025-05-15,Phone,Europe,Elizabeth Coleman
+NPS-90371,Product setup was confusing,3,SR-81873,RET-50423,CUST-10984,2025-05-08,In-store,Asia-Pacific,Stacy Gilbert
+NPS-90372,"Great support, quick resolution",0,SR-81198,RET-50389,CUST-10982,2025-03-21,SMS,Latin America,Luis Jacobs
+NPS-90373,Would definitely recommend,10,SR-82523,RET-50520,CUST-10425,2025-02-06,Phone,Latin America,Scott Jordan
+NPS-90374,Excellent delivery experience,9,SR-83905,RET-50955,CUST-10010,2025-04-17,SMS,Europe,Joshua Norris
+NPS-90375,Average service,8,SR-80208,RET-50744,CUST-10602,2025-06-17,Phone,Latin America,Brent Garcia
+NPS-90376,Product setup was confusing,2,SR-80476,RET-50069,CUST-10899,2025-03-10,Email,Latin America,Katrina Perez
+NPS-90377,Would definitely recommend,0,SR-80463,RET-50070,CUST-10769,2025-04-17,SMS,Middle East,James Cruz
+NPS-90378,Product setup was confusing,1,SR-80808,RET-50053,CUST-10697,2025-04-16,Email,Latin America,Samantha Martinez
+NPS-90379,"Great support, quick resolution",4,SR-82343,RET-50743,CUST-10810,2025-06-17,Phone,Latin America,Noah Harvey
+NPS-90380,"Great support, quick resolution",2,SR-80500,RET-50872,CUST-10007,2025-08-27,In-store,Europe,Monique Williams
+NPS-90381,"Great support, quick resolution",4,SR-82066,RET-50301,CUST-10601,2025-08-22,Phone,North America,Scott Mora
+NPS-90382,Average service,6,SR-83085,RET-50178,CUST-10498,2025-04-08,SMS,Asia-Pacific,Juan Poole
+NPS-90383,Average service,9,SR-83848,RET-50636,CUST-10982,2025-02-23,Phone,Middle East,Allison Henderson
+NPS-90384,"Great support, quick resolution",1,SR-82928,RET-50780,CUST-10795,2025-07-22,Phone,Asia-Pacific,Jessica Gomez
+NPS-90385,Would definitely recommend,0,SR-82948,RET-50622,CUST-10733,2025-07-01,Web App,Latin America,Megan Johnson
+NPS-90386,Product setup was confusing,2,SR-80985,RET-50286,CUST-10341,2025-05-14,Web App,Latin America,Terrance Smith
+NPS-90387,Average service,10,SR-80125,RET-50881,CUST-10890,2025-02-19,In-store,Asia-Pacific,Tina Richardson
+NPS-90388,Excellent delivery experience,2,SR-80459,RET-50753,CUST-10021,2025-06-28,In-store,Europe,Jodi West
+NPS-90389,Product setup was confusing,2,SR-80684,RET-50158,CUST-10907,2025-01-10,SMS,Latin America,Amy Padilla
+NPS-90390,Excellent delivery experience,1,SR-81240,RET-50006,CUST-10707,2025-01-31,Web App,North America,Angela Lopez
+NPS-90391,Average service,1,SR-80931,RET-50723,CUST-10064,2025-01-12,In-store,Middle East,Robert Figueroa
+NPS-90392,Average service,9,SR-82664,RET-50047,CUST-10777,2025-04-21,Web App,Europe,James Thomas
+NPS-90393,Excellent delivery experience,9,SR-83199,RET-50931,CUST-10076,2025-04-10,SMS,North America,Gregory Pena
+NPS-90394,Excellent delivery experience,9,SR-81114,RET-50938,CUST-10958,2025-08-16,Phone,Asia-Pacific,Christian Lambert
+NPS-90395,Would definitely recommend,5,SR-80523,RET-50997,CUST-10958,2025-03-27,In-store,Asia-Pacific,Mallory Sherman
+NPS-90396,Excellent delivery experience,0,SR-84579,RET-50553,CUST-10501,2025-04-30,In-store,Latin America,Gabriel Williams
+NPS-90397,"Great support, quick resolution",7,SR-82779,RET-50178,CUST-10548,2025-08-14,In-store,Latin America,Jonathan Dawson
+NPS-90398,Would definitely recommend,2,SR-80976,RET-50021,CUST-10546,2025-08-03,Email,Asia-Pacific,Haley Eaton
+NPS-90399,Would definitely recommend,9,SR-82202,RET-50157,CUST-10640,2025-05-13,Phone,Asia-Pacific,Bryan Alexander
+NPS-90400,Would definitely recommend,9,SR-83493,RET-50301,CUST-10043,2025-03-01,SMS,Middle East,Bradley Ewing
+NPS-90401,"Great support, quick resolution",0,SR-81981,RET-50008,CUST-10875,2025-08-10,SMS,Middle East,Alexandria Shepherd
+NPS-90402,Product setup was confusing,5,SR-82845,RET-50865,CUST-10739,2025-06-10,SMS,Asia-Pacific,Christopher Buchanan
+NPS-90403,"Great support, quick resolution",6,SR-83308,RET-50956,CUST-10518,2025-04-22,Web App,Europe,Michael Johnson
+NPS-90404,Product setup was confusing,7,SR-83947,RET-50773,CUST-10395,2025-03-30,SMS,Middle East,Casey Mejia
+NPS-90405,Excellent delivery experience,4,SR-81285,RET-50032,CUST-10006,2025-08-30,SMS,Asia-Pacific,Michael Hogan
+NPS-90406,Would definitely recommend,4,SR-84333,RET-50197,CUST-10728,2025-01-05,Email,Asia-Pacific,Robin Williams
+NPS-90407,Product setup was confusing,1,SR-80318,RET-50473,CUST-10161,2025-07-18,In-store,Latin America,Jennifer Jordan
+NPS-90408,"Great support, quick resolution",1,SR-83989,RET-50206,CUST-10963,2025-06-19,Web App,Latin America,Logan Quinn
+NPS-90409,Would definitely recommend,8,SR-81195,RET-50453,CUST-10801,2025-07-10,Email,Middle East,Kristopher Coleman
+NPS-90410,Excellent delivery experience,9,SR-82601,RET-50109,CUST-10027,2025-05-02,Phone,Europe,Adam Barnes
+NPS-90411,Average service,1,SR-80046,RET-50997,CUST-10937,2025-06-12,In-store,Middle East,Susan Burton
+NPS-90412,Average service,2,SR-81376,RET-50562,CUST-10592,2025-05-10,Web App,Asia-Pacific,Stacy Page
+NPS-90413,Average service,10,SR-80122,RET-50622,CUST-10597,2025-05-04,In-store,Asia-Pacific,Terry Aguirre
+NPS-90414,"Great support, quick resolution",4,SR-82337,RET-50289,CUST-10109,2025-04-24,In-store,Europe,Jesse Fuentes
+NPS-90415,Excellent delivery experience,9,SR-84461,RET-50298,CUST-10177,2025-06-25,Phone,North America,Sherry Ball
+NPS-90416,"Great support, quick resolution",2,SR-82937,RET-50135,CUST-10535,2025-01-31,SMS,Asia-Pacific,Brittany Byrd
+NPS-90417,"Great support, quick resolution",0,SR-82899,RET-50451,CUST-10929,2025-02-24,Email,Europe,Monica Black
+NPS-90418,Excellent delivery experience,2,SR-83470,RET-50669,CUST-10672,2025-08-19,Email,Middle East,Ryan Page
+NPS-90419,Would definitely recommend,5,SR-83065,RET-50009,CUST-10093,2025-07-01,Email,Latin America,Samantha Garcia
+NPS-90420,Excellent delivery experience,4,SR-81105,RET-50514,CUST-10598,2025-02-20,Web App,North America,Karina Moore
+NPS-90421,Would definitely recommend,1,SR-82939,RET-50368,CUST-10189,2025-01-11,In-store,North America,Ralph Weber
+NPS-90422,Product setup was confusing,0,SR-82311,RET-50246,CUST-10877,2025-07-24,Email,Europe,Phillip Haas
+NPS-90423,"Great support, quick resolution",8,SR-84883,RET-50987,CUST-10544,2025-08-23,SMS,Asia-Pacific,Miss Jessica Holloway
+NPS-90424,Excellent delivery experience,7,SR-80717,RET-50129,CUST-10928,2025-06-17,SMS,Latin America,Cynthia Holmes
+NPS-90425,Excellent delivery experience,5,SR-80074,RET-50973,CUST-10517,2025-02-23,Phone,Middle East,Melanie Zamora
+NPS-90426,Excellent delivery experience,6,SR-81887,RET-50667,CUST-10819,2025-02-28,Phone,Europe,Casey Armstrong
+NPS-90427,Excellent delivery experience,5,SR-84908,RET-50645,CUST-10271,2025-08-02,Email,Middle East,Cesar Williams
+NPS-90428,Would definitely recommend,1,SR-81233,RET-50630,CUST-10233,2025-02-04,Web App,Middle East,Kendra Holmes
+NPS-90429,Excellent delivery experience,6,SR-82818,RET-50396,CUST-10952,2025-03-04,Phone,Asia-Pacific,Elizabeth Abbott
+NPS-90430,Average service,9,SR-81880,RET-50859,CUST-10214,2025-06-24,SMS,North America,Rebecca Blackburn
+NPS-90431,"Great support, quick resolution",2,SR-84318,RET-50372,CUST-10243,2025-05-09,Web App,Middle East,Luis Williams
+NPS-90432,Average service,7,SR-81739,RET-50304,CUST-10222,2025-06-03,SMS,Asia-Pacific,Melissa Pope
+NPS-90433,"Great support, quick resolution",10,SR-81912,RET-50925,CUST-10911,2025-03-19,Email,Latin America,Kristopher Fernandez
+NPS-90434,Would definitely recommend,5,SR-80102,RET-50094,CUST-10490,2025-05-09,Email,Latin America,Jenna Hartman
+NPS-90435,Would definitely recommend,4,SR-83138,RET-50358,CUST-10652,2025-06-08,Web App,Middle East,Austin Frederick
+NPS-90436,"Great support, quick resolution",9,SR-81623,RET-50510,CUST-10050,2025-07-14,Web App,Latin America,Jennifer Hardy
+NPS-90437,"Great support, quick resolution",9,SR-80388,RET-50947,CUST-10561,2025-01-24,Web App,Middle East,Andrew Smith
+NPS-90438,"Great support, quick resolution",9,SR-82499,RET-50435,CUST-10813,2025-08-07,SMS,Europe,Amy Mcmillan
+NPS-90439,Excellent delivery experience,8,SR-82895,RET-50489,CUST-10226,2025-03-14,Web App,Europe,Christine Wong
+NPS-90440,Average service,6,SR-84680,RET-50298,CUST-10541,2025-06-03,Web App,North America,Jennifer Green
+NPS-90441,Average service,0,SR-81777,RET-50544,CUST-10003,2025-08-26,Email,Asia-Pacific,Jonathon Lopez
+NPS-90442,Excellent delivery experience,4,SR-81731,RET-50295,CUST-10097,2025-01-26,SMS,North America,Glenda Gross
+NPS-90443,Would definitely recommend,10,SR-82889,RET-50220,CUST-10701,2025-04-22,Phone,Latin America,Michael Martinez
+NPS-90444,Excellent delivery experience,9,SR-80727,RET-50089,CUST-10836,2025-05-17,Email,Asia-Pacific,Tracy Hudson
+NPS-90445,Product setup was confusing,5,SR-82570,RET-50334,CUST-10460,2025-07-09,Web App,Middle East,Kristine Davis
+NPS-90446,Excellent delivery experience,7,SR-83775,RET-50880,CUST-10555,2025-01-09,In-store,Latin America,Jody Miranda
+NPS-90447,Excellent delivery experience,0,SR-81246,RET-50948,CUST-10401,2025-04-03,Phone,North America,Robert Olson
+NPS-90448,Average service,8,SR-83427,RET-50621,CUST-10823,2025-06-17,Phone,Asia-Pacific,Dana Simmons
+NPS-90449,Would definitely recommend,1,SR-84047,RET-50214,CUST-10092,2025-05-20,SMS,Europe,Gabriella Lopez
+NPS-90450,"Great support, quick resolution",9,SR-84917,RET-50929,CUST-10533,2025-05-13,Email,North America,Charlotte Walker
+NPS-90451,"Great support, quick resolution",2,SR-84584,RET-50911,CUST-10239,2025-01-24,Email,Middle East,Wayne Riley
+NPS-90452,"Great support, quick resolution",2,SR-80801,RET-50548,CUST-10818,2025-05-10,Phone,North America,Elizabeth Mathews
+NPS-90453,Would definitely recommend,10,SR-81989,RET-50713,CUST-10487,2025-01-15,Web App,Europe,Lori Hampton
+NPS-90454,Product setup was confusing,4,SR-83869,RET-50692,CUST-10709,2025-01-24,Phone,North America,Erin Hernandez
+NPS-90455,"Great support, quick resolution",1,SR-84307,RET-50059,CUST-10765,2025-04-14,Phone,Europe,David Smith
+NPS-90456,Would definitely recommend,3,SR-82871,RET-50360,CUST-10391,2025-03-08,Phone,North America,Elizabeth Bond
+NPS-90457,Product setup was confusing,5,SR-81877,RET-50027,CUST-10846,2025-01-19,Phone,Europe,Kimberly Mendoza
+NPS-90458,Would definitely recommend,8,SR-81404,RET-50217,CUST-10229,2025-08-15,Web App,Asia-Pacific,Steven Smith
+NPS-90459,Excellent delivery experience,2,SR-83282,RET-50791,CUST-10084,2025-04-28,Web App,North America,Matthew Montgomery
+NPS-90460,Average service,10,SR-80112,RET-50982,CUST-10451,2025-02-25,Web App,Europe,Steven Matthews
+NPS-90461,Average service,1,SR-80953,RET-50083,CUST-10971,2025-03-29,In-store,Latin America,Richard Salas
+NPS-90462,Would definitely recommend,7,SR-84743,RET-50693,CUST-10038,2025-01-27,Web App,Asia-Pacific,John Welch
+NPS-90463,Excellent delivery experience,7,SR-83872,RET-50004,CUST-10840,2025-04-22,Phone,Asia-Pacific,Jessica Rodriguez
+NPS-90464,Excellent delivery experience,0,SR-84980,RET-50238,CUST-10427,2025-07-06,Email,Asia-Pacific,Chad Ward
+NPS-90465,Average service,4,SR-80094,RET-50537,CUST-10080,2025-08-12,Web App,North America,Scott Jones
+NPS-90466,Excellent delivery experience,0,SR-80681,RET-50290,CUST-10338,2025-03-22,In-store,Middle East,David Greer PhD
+NPS-90467,"Great support, quick resolution",2,SR-84180,RET-50687,CUST-10123,2025-06-15,SMS,Europe,James Mack
+NPS-90468,Product setup was confusing,3,SR-84864,RET-50071,CUST-10054,2025-08-04,Web App,Latin America,Steven Walker
+NPS-90469,Average service,0,SR-83207,RET-50017,CUST-10766,2025-01-03,SMS,Europe,Kimberly Richard
+NPS-90470,Product setup was confusing,7,SR-81682,RET-50187,CUST-10259,2025-05-30,Web App,Middle East,Pedro Lester
+NPS-90471,"Great support, quick resolution",2,SR-83990,RET-50726,CUST-10159,2025-03-10,In-store,Asia-Pacific,Cynthia Clark
+NPS-90472,"Great support, quick resolution",8,SR-84463,RET-50014,CUST-10231,2025-04-02,SMS,Latin America,Michael Martinez
+NPS-90473,"Great support, quick resolution",10,SR-83935,RET-50709,CUST-10218,2025-05-27,In-store,Middle East,Diane Russell
+NPS-90474,Product setup was confusing,0,SR-84008,RET-50657,CUST-10573,2025-04-29,In-store,Asia-Pacific,John Serrano
+NPS-90475,Would definitely recommend,3,SR-84869,RET-50658,CUST-10040,2025-01-23,Phone,Latin America,Emily Robinson
+NPS-90476,Product setup was confusing,3,SR-82363,RET-50377,CUST-10461,2025-04-30,In-store,Asia-Pacific,Robert Yu
+NPS-90477,"Great support, quick resolution",7,SR-83275,RET-50059,CUST-10235,2025-05-05,In-store,Europe,Paula Dougherty
+NPS-90478,Product setup was confusing,2,SR-83441,RET-50523,CUST-10652,2025-05-25,Phone,North America,Erik Dunn
+NPS-90479,Excellent delivery experience,7,SR-83596,RET-50539,CUST-10586,2025-08-26,Phone,Latin America,Cory Riley
+NPS-90480,Would definitely recommend,1,SR-82185,RET-50668,CUST-10129,2025-01-31,In-store,Europe,Jane Ward
+NPS-90481,Product setup was confusing,1,SR-84102,RET-50096,CUST-10503,2025-08-28,In-store,Middle East,Theresa Thomas
+NPS-90482,Excellent delivery experience,4,SR-83392,RET-50150,CUST-10003,2025-04-05,SMS,Europe,Danielle Clarke
+NPS-90483,Product setup was confusing,5,SR-80807,RET-50278,CUST-10530,2025-08-23,In-store,Latin America,Jane Mccarthy
+NPS-90484,Product setup was confusing,7,SR-81181,RET-50082,CUST-10527,2025-01-27,Email,Middle East,Dakota Stewart
+NPS-90485,Average service,8,SR-81186,RET-50681,CUST-10488,2025-07-21,Email,Europe,Julia Garcia
+NPS-90486,Would definitely recommend,2,SR-83019,RET-50149,CUST-10089,2025-08-22,In-store,North America,Rachel Brown
+NPS-90487,Excellent delivery experience,2,SR-80340,RET-50441,CUST-10727,2025-05-23,Web App,North America,Robert Miles
+NPS-90488,"Great support, quick resolution",9,SR-84618,RET-50030,CUST-10803,2025-06-04,Web App,North America,Julie Sullivan
+NPS-90489,Average service,5,SR-84898,RET-50180,CUST-10240,2025-02-11,Web App,Latin America,Robert Mejia
+NPS-90490,"Great support, quick resolution",7,SR-82164,RET-50186,CUST-10182,2025-01-09,Email,Asia-Pacific,Brian Floyd
+NPS-90491,Product setup was confusing,10,SR-82762,RET-50201,CUST-10170,2025-03-21,Phone,Middle East,Jessica Ramirez
+NPS-90492,Average service,7,SR-82221,RET-50173,CUST-10513,2025-06-01,Web App,Europe,John Oneill
+NPS-90493,Excellent delivery experience,2,SR-83322,RET-50692,CUST-10946,2025-01-01,Email,Middle East,Zachary Robles
+NPS-90494,Product setup was confusing,2,SR-84860,RET-50499,CUST-10744,2025-01-16,In-store,North America,Amy Wallace
+NPS-90495,"Great support, quick resolution",0,SR-84895,RET-50538,CUST-10771,2025-06-25,Email,Latin America,Mrs. Laura Davis
+NPS-90496,"Great support, quick resolution",5,SR-83038,RET-50818,CUST-10984,2025-05-29,Email,Europe,William Buchanan
+NPS-90497,Product setup was confusing,0,SR-80970,RET-50167,CUST-10276,2025-01-21,Web App,North America,Clayton Steele
+NPS-90498,Product setup was confusing,1,SR-82313,RET-50428,CUST-10978,2025-08-12,Web App,Europe,Dr. Erica Garcia
+NPS-90499,Excellent delivery experience,10,SR-82265,RET-50804,CUST-10217,2025-03-23,In-store,Europe,Hannah White
+NPS-90500,"Great support, quick resolution",6,SR-80204,RET-50910,CUST-10172,2025-08-17,In-store,North America,John Rogers
+NPS-90501,Would definitely recommend,6,SR-84338,RET-50338,CUST-10916,2025-03-03,Web App,North America,Molly Hodges
+NPS-90502,Would definitely recommend,0,SR-84934,RET-50666,CUST-10575,2025-04-13,In-store,Asia-Pacific,Miss Susan Conrad
+NPS-90503,Excellent delivery experience,6,SR-81643,RET-50083,CUST-10833,2025-01-29,Web App,Middle East,Nicole Baker
+NPS-90504,Would definitely recommend,4,SR-84865,RET-50328,CUST-10276,2025-03-22,Phone,Europe,Elizabeth Moore
+NPS-90505,"Great support, quick resolution",10,SR-84014,RET-50655,CUST-10211,2025-02-23,In-store,Middle East,Heather Smith
+NPS-90506,Average service,6,SR-83408,RET-50249,CUST-10626,2025-01-22,Phone,Asia-Pacific,Gary Gutierrez Jr.
+NPS-90507,"Great support, quick resolution",4,SR-81258,RET-50736,CUST-10602,2025-05-19,Web App,Middle East,Brandon Day
+NPS-90508,Excellent delivery experience,0,SR-81423,RET-50318,CUST-10073,2025-05-13,In-store,Europe,Joann Santiago
+NPS-90509,"Great support, quick resolution",1,SR-84648,RET-50764,CUST-10067,2025-02-03,Email,Europe,Brandon Rodriguez
+NPS-90510,Would definitely recommend,0,SR-80257,RET-50753,CUST-10883,2025-02-04,Web App,Middle East,Mr. Ryan Mccoy
+NPS-90511,Excellent delivery experience,9,SR-80914,RET-50054,CUST-10503,2025-04-29,In-store,Latin America,Kimberly Lane
+NPS-90512,Excellent delivery experience,3,SR-81994,RET-50216,CUST-10526,2025-01-26,Phone,North America,Vanessa Parker
+NPS-90513,Excellent delivery experience,6,SR-81872,RET-50971,CUST-10517,2025-04-05,Web App,Europe,Joe Johnson
+NPS-90514,Excellent delivery experience,5,SR-83636,RET-50237,CUST-10085,2025-05-04,Phone,Latin America,Ronald Thornton
+NPS-90515,Excellent delivery experience,6,SR-80189,RET-50210,CUST-10917,2025-08-08,SMS,North America,Matthew Raymond
+NPS-90516,Excellent delivery experience,9,SR-81900,RET-50006,CUST-10258,2025-05-28,In-store,Middle East,Kimberly Moreno
+NPS-90517,Product setup was confusing,6,SR-82279,RET-50236,CUST-10832,2025-03-30,In-store,Middle East,Joshua Donovan
+NPS-90518,Would definitely recommend,8,SR-83323,RET-50610,CUST-10795,2025-04-30,In-store,Asia-Pacific,Lawrence Kane
+NPS-90519,Would definitely recommend,7,SR-84200,RET-50226,CUST-10176,2025-05-10,In-store,Middle East,Luke Smith
+NPS-90520,Would definitely recommend,3,SR-81271,RET-50792,CUST-10121,2025-06-01,Web App,Middle East,Jonathan Rojas
+NPS-90521,Would definitely recommend,10,SR-81550,RET-50729,CUST-10678,2025-08-09,Phone,Europe,Robert Lopez
+NPS-90522,Product setup was confusing,7,SR-80232,RET-50355,CUST-10397,2025-05-25,Phone,North America,Troy Diaz
+NPS-90523,Product setup was confusing,9,SR-84155,RET-50729,CUST-10140,2025-03-12,Web App,Middle East,Chris Horton
+NPS-90524,Would definitely recommend,7,SR-81397,RET-50801,CUST-10436,2025-04-04,In-store,Latin America,John Stewart
+NPS-90525,Excellent delivery experience,9,SR-84481,RET-50301,CUST-10296,2025-06-25,SMS,North America,Kevin Ramirez
+NPS-90526,"Great support, quick resolution",7,SR-84279,RET-50627,CUST-10208,2025-08-23,In-store,Europe,Troy Anderson
+NPS-90527,"Great support, quick resolution",9,SR-83412,RET-50240,CUST-10303,2025-03-23,SMS,Europe,Terry Thomas
+NPS-90528,Excellent delivery experience,10,SR-84925,RET-50259,CUST-10336,2025-06-14,Email,North America,Paul Huang
+NPS-90529,Would definitely recommend,9,SR-83651,RET-50819,CUST-10795,2025-01-30,Web App,Middle East,Bryan Parks
+NPS-90530,Excellent delivery experience,6,SR-82771,RET-50831,CUST-10031,2025-07-23,SMS,North America,Perry Newman
+NPS-90531,Average service,4,SR-83752,RET-50967,CUST-10694,2025-02-18,Web App,Middle East,Jose Oconnell
+NPS-90532,Excellent delivery experience,7,SR-81067,RET-50419,CUST-10801,2025-01-27,SMS,Latin America,Justin Bell
+NPS-90533,Would definitely recommend,6,SR-80939,RET-50147,CUST-10366,2025-02-14,Email,Europe,Harold Hall
+NPS-90534,Would definitely recommend,9,SR-82610,RET-50605,CUST-10932,2025-03-10,In-store,Asia-Pacific,Brandon Pearson
+NPS-90535,Average service,2,SR-84013,RET-50748,CUST-10845,2025-02-12,Phone,Latin America,Darlene West
+NPS-90536,Excellent delivery experience,2,SR-82816,RET-50119,CUST-10336,2025-04-11,Phone,Asia-Pacific,Curtis Martinez
+NPS-90537,Excellent delivery experience,2,SR-81874,RET-50930,CUST-10428,2025-01-16,Phone,Latin America,Mary Park
+NPS-90538,Would definitely recommend,1,SR-83546,RET-50332,CUST-10635,2025-04-27,Email,North America,Gregory Houston
+NPS-90539,Excellent delivery experience,9,SR-80837,RET-50973,CUST-10197,2025-02-02,Phone,Europe,Robert Gutierrez
+NPS-90540,Would definitely recommend,8,SR-82431,RET-50543,CUST-10756,2025-01-08,SMS,Asia-Pacific,John Long
+NPS-90541,"Great support, quick resolution",0,SR-80135,RET-50411,CUST-10437,2025-07-02,Web App,Middle East,Tonya Frazier
+NPS-90542,Excellent delivery experience,10,SR-83631,RET-50015,CUST-10911,2025-01-20,Email,Latin America,Christopher Ballard
+NPS-90543,"Great support, quick resolution",3,SR-83449,RET-50046,CUST-10570,2025-04-16,Phone,Asia-Pacific,Melissa Walton
+NPS-90544,Product setup was confusing,2,SR-84762,RET-50579,CUST-10418,2025-02-27,SMS,Latin America,Jay Curtis
+NPS-90545,Average service,2,SR-82547,RET-50841,CUST-10391,2025-03-03,SMS,Europe,Dr. William Weeks
+NPS-90546,Average service,4,SR-82120,RET-50238,CUST-10668,2025-06-05,Web App,Asia-Pacific,Mark White
+NPS-90547,"Great support, quick resolution",8,SR-83468,RET-50648,CUST-10728,2025-05-21,SMS,North America,Alexandra Randolph
+NPS-90548,Product setup was confusing,6,SR-81248,RET-50314,CUST-10213,2025-01-23,Phone,Europe,Benjamin Sanchez
+NPS-90549,Excellent delivery experience,6,SR-81576,RET-50921,CUST-10685,2025-07-14,Phone,Asia-Pacific,Stephanie Wolfe
+NPS-90550,Product setup was confusing,1,SR-81245,RET-50095,CUST-10334,2025-01-21,SMS,Asia-Pacific,Jordan Sherman
+NPS-90551,"Great support, quick resolution",10,SR-82182,RET-50153,CUST-10736,2025-06-07,In-store,North America,Carol Franco
+NPS-90552,Average service,1,SR-80341,RET-50512,CUST-10484,2025-06-18,Email,Europe,Stacey Martinez
+NPS-90553,Product setup was confusing,6,SR-81560,RET-50223,CUST-10400,2025-04-17,In-store,Middle East,Sheryl Thomas
+NPS-90554,Excellent delivery experience,5,SR-83414,RET-50442,CUST-10363,2025-02-04,Web App,North America,Joshua Long
+NPS-90555,"Great support, quick resolution",2,SR-82186,RET-50237,CUST-11000,2025-03-22,SMS,Middle East,Michael Garner
+NPS-90556,"Great support, quick resolution",5,SR-83850,RET-50622,CUST-10581,2025-08-04,Phone,Europe,Melissa Young
+NPS-90557,"Great support, quick resolution",6,SR-83736,RET-50190,CUST-10138,2025-03-15,SMS,Middle East,Kyle Pope
+NPS-90558,Product setup was confusing,7,SR-83092,RET-50838,CUST-10636,2025-03-30,Web App,Asia-Pacific,Russell Cruz
+NPS-90559,"Great support, quick resolution",7,SR-80952,RET-50648,CUST-10381,2025-06-30,SMS,Middle East,Mr. Brian Hopkins MD
+NPS-90560,Excellent delivery experience,1,SR-81599,RET-50073,CUST-10976,2025-06-14,SMS,Asia-Pacific,Emma Estes
+NPS-90561,Would definitely recommend,1,SR-84676,RET-50480,CUST-10963,2025-05-26,Email,Latin America,Angela Smith
+NPS-90562,"Great support, quick resolution",2,SR-84791,RET-50692,CUST-10789,2025-08-06,Web App,North America,Thomas Petty
+NPS-90563,Product setup was confusing,0,SR-81363,RET-50253,CUST-10681,2025-07-30,Web App,Europe,Sherry Martinez
+NPS-90564,Would definitely recommend,6,SR-80478,RET-50930,CUST-10679,2025-03-22,Email,Latin America,Daniel Solomon
+NPS-90565,"Great support, quick resolution",10,SR-81467,RET-50382,CUST-10562,2025-06-23,Email,Middle East,Gloria Hayden
+NPS-90566,Would definitely recommend,3,SR-83813,RET-50518,CUST-10351,2025-05-12,Web App,Asia-Pacific,Henry Krueger
+NPS-90567,Would definitely recommend,10,SR-82228,RET-50784,CUST-10150,2025-03-26,SMS,North America,David Schwartz
+NPS-90568,Would definitely recommend,7,SR-81497,RET-50556,CUST-10011,2025-05-21,In-store,Asia-Pacific,April Wells
+NPS-90569,Would definitely recommend,4,SR-80233,RET-50681,CUST-10841,2025-07-29,SMS,North America,Drew Smith
+NPS-90570,Product setup was confusing,10,SR-80771,RET-50725,CUST-10915,2025-01-12,In-store,Europe,Roberto Chang
+NPS-90571,Average service,8,SR-81008,RET-50809,CUST-10631,2025-02-19,Email,Asia-Pacific,Nathan Perez
+NPS-90572,"Great support, quick resolution",9,SR-83226,RET-50654,CUST-10590,2025-07-30,In-store,North America,Shelly Paul
+NPS-90573,"Great support, quick resolution",2,SR-83844,RET-50396,CUST-10161,2025-06-28,In-store,Asia-Pacific,Shawn Williams
+NPS-90574,"Great support, quick resolution",8,SR-83250,RET-50443,CUST-10293,2025-05-26,Phone,North America,Jeremiah Clayton
+NPS-90575,Excellent delivery experience,10,SR-84335,RET-50389,CUST-10382,2025-03-21,Email,Latin America,Katherine Hutchinson
+NPS-90576,Average service,0,SR-80657,RET-50366,CUST-10743,2025-04-10,In-store,Latin America,Eric Robles
+NPS-90577,Excellent delivery experience,1,SR-82484,RET-50937,CUST-10721,2025-04-10,Email,Europe,Peter Baldwin
+NPS-90578,Excellent delivery experience,9,SR-83157,RET-50187,CUST-10082,2025-08-21,Web App,North America,Christopher Bray
+NPS-90579,Would definitely recommend,2,SR-82149,RET-50060,CUST-10485,2025-06-29,Web App,Middle East,Samantha Horne
+NPS-90580,Product setup was confusing,9,SR-81654,RET-50231,CUST-10455,2025-04-03,SMS,Middle East,Daniel Banks
+NPS-90581,Average service,1,SR-81103,RET-50079,CUST-10214,2025-01-10,Email,Europe,Bianca Branch
+NPS-90582,"Great support, quick resolution",3,SR-81378,RET-50725,CUST-10488,2025-06-26,SMS,Europe,Erin Smith
+NPS-90583,"Great support, quick resolution",3,SR-82123,RET-50523,CUST-10144,2025-05-27,Phone,North America,Collin Davis
+NPS-90584,Would definitely recommend,6,SR-81350,RET-50477,CUST-10536,2025-07-23,Web App,Europe,Brad Rivera
+NPS-90585,Product setup was confusing,1,SR-84423,RET-50395,CUST-10829,2025-03-03,SMS,Latin America,Matthew Nolan
+NPS-90586,"Great support, quick resolution",8,SR-81006,RET-50586,CUST-10209,2025-04-22,Email,Middle East,Jason Butler
+NPS-90587,Product setup was confusing,0,SR-83349,RET-50796,CUST-10791,2025-07-17,In-store,Europe,Thomas Juarez
+NPS-90588,Excellent delivery experience,3,SR-80493,RET-50910,CUST-10184,2025-03-29,Web App,Latin America,Jennifer King
+NPS-90589,Excellent delivery experience,1,SR-80503,RET-50534,CUST-10540,2025-08-19,Email,North America,Dr. Joann Black MD
+NPS-90590,Would definitely recommend,10,SR-80890,RET-50344,CUST-10392,2025-01-13,In-store,Latin America,Tara Mckinney
+NPS-90591,"Great support, quick resolution",7,SR-82689,RET-50589,CUST-10223,2025-04-30,Email,Middle East,Melinda Jensen
+NPS-90592,Product setup was confusing,5,SR-83144,RET-50291,CUST-10424,2025-03-28,In-store,Latin America,Becky Knight DDS
+NPS-90593,Product setup was confusing,6,SR-83939,RET-50681,CUST-10042,2025-05-14,Web App,Europe,Megan Hawkins
+NPS-90594,Excellent delivery experience,10,SR-84316,RET-50848,CUST-10907,2025-04-29,Phone,Europe,Natalie Chen
+NPS-90595,"Great support, quick resolution",8,SR-83909,RET-50620,CUST-10744,2025-05-27,In-store,Middle East,Anthony Reilly
+NPS-90596,"Great support, quick resolution",5,SR-84347,RET-50647,CUST-10877,2025-05-29,Web App,Latin America,Sierra Kim
+NPS-90597,"Great support, quick resolution",8,SR-81759,RET-50012,CUST-10084,2025-01-26,In-store,Latin America,Jennifer Brooks
+NPS-90598,Would definitely recommend,5,SR-80205,RET-50386,CUST-10195,2025-05-19,Web App,Latin America,Jessica Wolfe
+NPS-90599,Average service,10,SR-81690,RET-50451,CUST-10599,2025-06-30,Web App,Europe,Julie Flores
+NPS-90600,Average service,1,SR-84970,RET-50029,CUST-10604,2025-03-08,In-store,Asia-Pacific,Emily Page
+NPS-90601,Excellent delivery experience,1,SR-84156,RET-50129,CUST-10200,2025-05-09,In-store,Latin America,Brenda Smith
+NPS-90602,Product setup was confusing,8,SR-82609,RET-50650,CUST-10708,2025-04-07,Email,Latin America,Amanda Dennis
+NPS-90603,Product setup was confusing,3,SR-82463,RET-50056,CUST-10424,2025-08-16,In-store,Latin America,Kenneth Freeman
+NPS-90604,Average service,9,SR-80681,RET-50723,CUST-10764,2025-06-04,Web App,Asia-Pacific,Blake Nelson
+NPS-90605,Average service,8,SR-83301,RET-50522,CUST-10841,2025-08-12,Web App,Latin America,Philip Brown
+NPS-90606,Would definitely recommend,4,SR-83435,RET-50089,CUST-10366,2025-07-10,SMS,Europe,Summer Green
+NPS-90607,"Great support, quick resolution",7,SR-82033,RET-50994,CUST-10155,2025-07-06,Email,Europe,Charles Ayala
+NPS-90608,Average service,3,SR-82821,RET-50958,CUST-10952,2025-03-26,Web App,Latin America,Joyce Roberts
+NPS-90609,Excellent delivery experience,4,SR-80748,RET-50844,CUST-10972,2025-08-28,SMS,Europe,Stephen Parker
+NPS-90610,Excellent delivery experience,0,SR-83624,RET-50089,CUST-10853,2025-04-21,Email,Middle East,Allen Cooper
+NPS-90611,"Great support, quick resolution",2,SR-82373,RET-50650,CUST-10153,2025-06-17,Email,North America,Mr. Cole West
+NPS-90612,"Great support, quick resolution",8,SR-81004,RET-50215,CUST-10016,2025-06-22,Web App,North America,Jennifer Huerta
+NPS-90613,Excellent delivery experience,7,SR-81578,RET-50157,CUST-10365,2025-05-24,SMS,Asia-Pacific,William Wallace
+NPS-90614,"Great support, quick resolution",8,SR-83821,RET-50760,CUST-10150,2025-05-10,SMS,Middle East,Tammy Mcfarland
+NPS-90615,Average service,2,SR-80069,RET-50278,CUST-10226,2025-05-24,Web App,Asia-Pacific,Thomas Sullivan
+NPS-90616,"Great support, quick resolution",4,SR-82338,RET-50264,CUST-10273,2025-03-23,In-store,Middle East,Andrew Curtis
+NPS-90617,Average service,5,SR-82834,RET-50103,CUST-10361,2025-08-22,Web App,Latin America,Jonathan Brown
+NPS-90618,"Great support, quick resolution",10,SR-83770,RET-50800,CUST-10911,2025-07-19,In-store,Middle East,Miguel Foley
+NPS-90619,Excellent delivery experience,4,SR-80955,RET-50567,CUST-10994,2025-03-22,Email,Europe,Michael Meza
+NPS-90620,Would definitely recommend,1,SR-80864,RET-50665,CUST-10550,2025-02-12,SMS,Europe,Michaela Schwartz
+NPS-90621,"Great support, quick resolution",2,SR-83777,RET-50304,CUST-11000,2025-05-18,In-store,Middle East,Christopher Sanchez
+NPS-90622,Would definitely recommend,1,SR-82723,RET-50280,CUST-10664,2025-07-24,In-store,Latin America,Keith Jones
+NPS-90623,Excellent delivery experience,10,SR-83775,RET-50904,CUST-10374,2025-02-02,SMS,Asia-Pacific,Gregory Diaz
+NPS-90624,Would definitely recommend,8,SR-83042,RET-50946,CUST-10677,2025-07-01,Web App,Middle East,Carlos Smith
+NPS-90625,Excellent delivery experience,5,SR-84225,RET-50397,CUST-10401,2025-03-01,Web App,Latin America,Shelley James
+NPS-90626,Average service,7,SR-83157,RET-50727,CUST-10014,2025-06-07,Email,Asia-Pacific,Peter Curry
+NPS-90627,Excellent delivery experience,2,SR-83863,RET-50126,CUST-10371,2025-01-08,SMS,Latin America,Christopher Koch
+NPS-90628,Product setup was confusing,0,SR-83258,RET-50355,CUST-10766,2025-01-11,Phone,North America,Brian Stevenson
+NPS-90629,Average service,3,SR-81344,RET-50842,CUST-10593,2025-06-16,SMS,Asia-Pacific,James Klein
+NPS-90630,Average service,9,SR-82947,RET-50001,CUST-10466,2025-02-14,Phone,North America,Rachel Cardenas
+NPS-90631,Average service,1,SR-80424,RET-50345,CUST-10680,2025-05-03,In-store,Europe,Sarah Holland
+NPS-90632,"Great support, quick resolution",8,SR-84422,RET-50427,CUST-10233,2025-04-30,SMS,Asia-Pacific,Rachel Hardin
+NPS-90633,"Great support, quick resolution",6,SR-80469,RET-50424,CUST-10717,2025-04-18,In-store,Middle East,Jason Hodges
+NPS-90634,Product setup was confusing,0,SR-84442,RET-50192,CUST-10374,2025-08-27,In-store,Europe,Joseph Miller
+NPS-90635,Excellent delivery experience,5,SR-83764,RET-50304,CUST-10696,2025-02-18,In-store,North America,Barbara Hughes
+NPS-90636,Product setup was confusing,2,SR-83478,RET-50991,CUST-10048,2025-08-29,Email,Asia-Pacific,Sherri Lowery
+NPS-90637,Excellent delivery experience,3,SR-81827,RET-50040,CUST-10168,2025-08-12,In-store,Europe,Justin Hines
+NPS-90638,Excellent delivery experience,3,SR-83898,RET-50833,CUST-10697,2025-03-11,In-store,North America,Jeremy Jones
+NPS-90639,Excellent delivery experience,8,SR-80222,RET-50538,CUST-10911,2025-04-10,In-store,Latin America,Brandon Everett
+NPS-90640,Product setup was confusing,2,SR-80404,RET-50750,CUST-10093,2025-05-28,Web App,Latin America,Tonya Webb
+NPS-90641,Would definitely recommend,0,SR-80925,RET-50463,CUST-10436,2025-04-16,Email,North America,Amber Meyers
+NPS-90642,Would definitely recommend,3,SR-80068,RET-50941,CUST-10898,2025-05-12,In-store,Middle East,Elizabeth Gardner
+NPS-90643,Average service,8,SR-84226,RET-50769,CUST-10612,2025-08-01,Web App,North America,David Owen
+NPS-90644,Product setup was confusing,5,SR-81506,RET-50559,CUST-10764,2025-05-13,SMS,Middle East,Kevin Wilson
+NPS-90645,Product setup was confusing,5,SR-83507,RET-50690,CUST-10814,2025-04-23,Phone,Asia-Pacific,Kaitlin Nguyen
+NPS-90646,Average service,8,SR-81356,RET-50619,CUST-10419,2025-02-21,In-store,Asia-Pacific,Jessica Reed
+NPS-90647,Would definitely recommend,2,SR-83353,RET-50331,CUST-10297,2025-04-17,Phone,Middle East,Dr. Paul Gomez
+NPS-90648,"Great support, quick resolution",1,SR-81238,RET-50172,CUST-10872,2025-01-20,Email,Asia-Pacific,Kyle Parsons
+NPS-90649,Average service,7,SR-84019,RET-50011,CUST-10195,2025-06-20,Web App,Asia-Pacific,Michelle Ferguson
+NPS-90650,"Great support, quick resolution",9,SR-82621,RET-50212,CUST-10734,2025-01-04,Phone,Europe,Seth Klein
+NPS-90651,Excellent delivery experience,2,SR-80194,RET-50377,CUST-10520,2025-05-03,SMS,Europe,Brian Barnes
+NPS-90652,Product setup was confusing,7,SR-84831,RET-50318,CUST-10646,2025-03-15,Phone,Middle East,Jeffrey Travis
+NPS-90653,Average service,3,SR-84026,RET-50368,CUST-10069,2025-07-29,Web App,North America,Dawn King
+NPS-90654,Would definitely recommend,7,SR-83076,RET-50773,CUST-10523,2025-05-22,Phone,Middle East,Melissa Burns
+NPS-90655,Would definitely recommend,7,SR-81260,RET-50251,CUST-10276,2025-01-18,SMS,Latin America,Sandy Huang
+NPS-90656,"Great support, quick resolution",9,SR-81233,RET-50185,CUST-10409,2025-05-31,Email,Europe,Alyssa Miranda
+NPS-90657,Product setup was confusing,7,SR-81433,RET-50808,CUST-10169,2025-05-03,Web App,Europe,Joe Holmes
+NPS-90658,"Great support, quick resolution",10,SR-82613,RET-50689,CUST-10309,2025-08-10,In-store,Europe,Robert Stephens
+NPS-90659,Would definitely recommend,0,SR-84260,RET-50993,CUST-10088,2025-04-04,In-store,Asia-Pacific,Christina Black
+NPS-90660,Product setup was confusing,4,SR-82262,RET-50756,CUST-10571,2025-07-10,Web App,Asia-Pacific,Jose Meza
+NPS-90661,Excellent delivery experience,2,SR-80897,RET-50496,CUST-10202,2025-01-28,Web App,Latin America,Elizabeth Steele
+NPS-90662,Would definitely recommend,4,SR-82416,RET-50750,CUST-10709,2025-05-07,Web App,North America,Katherine Gibson
+NPS-90663,Excellent delivery experience,7,SR-83657,RET-50810,CUST-10825,2025-06-12,SMS,North America,Michael Woodward
+NPS-90664,Average service,7,SR-82586,RET-50423,CUST-10521,2025-01-06,SMS,Europe,Caroline Sims
+NPS-90665,Average service,9,SR-80042,RET-50088,CUST-10192,2025-08-09,Email,Europe,Joshua Moore
+NPS-90666,Would definitely recommend,4,SR-81506,RET-50244,CUST-10768,2025-01-06,Phone,Middle East,Kevin Mccarty
+NPS-90667,Product setup was confusing,3,SR-80925,RET-50146,CUST-10364,2025-02-21,Phone,Asia-Pacific,Kelly Chandler
+NPS-90668,"Great support, quick resolution",5,SR-81705,RET-50696,CUST-10603,2025-05-16,Email,Europe,Charles Choi
+NPS-90669,"Great support, quick resolution",2,SR-82657,RET-50782,CUST-10914,2025-08-27,Web App,North America,Colton Huerta
+NPS-90670,Product setup was confusing,7,SR-80974,RET-50899,CUST-10631,2025-06-02,In-store,North America,Derrick Huff
+NPS-90671,"Great support, quick resolution",5,SR-84603,RET-50907,CUST-10052,2025-01-21,Phone,Latin America,Keith Delgado
+NPS-90672,"Great support, quick resolution",7,SR-81705,RET-50141,CUST-10513,2025-02-27,SMS,North America,Heather Jacobson
+NPS-90673,"Great support, quick resolution",9,SR-81640,RET-50300,CUST-10396,2025-08-05,Web App,Latin America,Crystal Valencia
+NPS-90674,Excellent delivery experience,7,SR-82760,RET-50650,CUST-10250,2025-07-24,In-store,North America,Jean Moran
+NPS-90675,Average service,8,SR-82042,RET-50903,CUST-10380,2025-06-15,Web App,North America,Mr. Steven Ward
+NPS-90676,Excellent delivery experience,5,SR-83564,RET-50259,CUST-10178,2025-06-28,SMS,Latin America,Dr. Chloe Mendez DDS
+NPS-90677,Average service,5,SR-82523,RET-50136,CUST-10196,2025-01-27,Web App,North America,Jeffrey Walker
+NPS-90678,Excellent delivery experience,10,SR-83459,RET-50233,CUST-10776,2025-02-01,Web App,North America,Andrea Hays
+NPS-90679,"Great support, quick resolution",7,SR-83879,RET-50339,CUST-10852,2025-04-04,SMS,North America,Robert Jones
+NPS-90680,Would definitely recommend,2,SR-80414,RET-50427,CUST-10143,2025-03-19,Web App,Middle East,Carolyn Gonzalez
+NPS-90681,Average service,2,SR-82463,RET-50195,CUST-10740,2025-07-09,Email,Europe,David Glover
+NPS-90682,"Great support, quick resolution",4,SR-80556,RET-50429,CUST-10885,2025-04-30,Email,North America,Victoria Cisneros
+NPS-90683,Would definitely recommend,6,SR-81813,RET-50497,CUST-10429,2025-03-11,In-store,North America,Dana Miller
+NPS-90684,Product setup was confusing,7,SR-83411,RET-50624,CUST-10793,2025-07-11,Email,Middle East,Kayla Willis
+NPS-90685,Would definitely recommend,4,SR-80851,RET-50892,CUST-10642,2025-06-28,Email,Latin America,Michael Chan
+NPS-90686,Excellent delivery experience,8,SR-82621,RET-50709,CUST-10032,2025-07-05,Email,Asia-Pacific,Mark Miller
+NPS-90687,Excellent delivery experience,6,SR-84103,RET-50268,CUST-10738,2025-07-04,Web App,Middle East,Suzanne Petersen
+NPS-90688,Product setup was confusing,1,SR-80364,RET-50790,CUST-10265,2025-08-08,SMS,Europe,Elijah Gomez
+NPS-90689,"Great support, quick resolution",9,SR-81900,RET-50143,CUST-10225,2025-08-22,In-store,Latin America,Kyle Kelly
+NPS-90690,"Great support, quick resolution",7,SR-84466,RET-50037,CUST-10618,2025-04-07,Email,Asia-Pacific,Maria Myers
+NPS-90691,Average service,1,SR-82225,RET-50847,CUST-10563,2025-05-05,SMS,Latin America,Jason Norton
+NPS-90692,Excellent delivery experience,1,SR-82170,RET-50324,CUST-10571,2025-04-04,SMS,Latin America,Jason Arnold
+NPS-90693,Excellent delivery experience,1,SR-80360,RET-50651,CUST-10634,2025-01-08,Phone,Europe,Erin Cook
+NPS-90694,Would definitely recommend,1,SR-84491,RET-50340,CUST-10466,2025-05-07,Phone,Europe,Tammy English
+NPS-90695,Excellent delivery experience,8,SR-81025,RET-50421,CUST-11000,2025-01-06,Web App,Middle East,Jennifer Martin
+NPS-90696,Would definitely recommend,3,SR-83558,RET-50036,CUST-10399,2025-08-09,SMS,Middle East,Jill Garcia
+NPS-90697,"Great support, quick resolution",7,SR-84082,RET-50308,CUST-10872,2025-03-30,SMS,Europe,Seth Nelson
+NPS-90698,Product setup was confusing,10,SR-83402,RET-50605,CUST-10761,2025-05-20,Web App,Middle East,Justin Brown
+NPS-90699,Would definitely recommend,0,SR-83558,RET-50151,CUST-10741,2025-08-14,Email,Middle East,Robert Haynes
+NPS-90700,Would definitely recommend,0,SR-84997,RET-50890,CUST-10859,2025-01-19,Web App,Latin America,Andrew Holmes
+NPS-90701,Would definitely recommend,5,SR-81220,RET-50991,CUST-10917,2025-05-30,Phone,North America,Carly Miller
+NPS-90702,Product setup was confusing,9,SR-80402,RET-50872,CUST-10640,2025-04-14,Email,Asia-Pacific,Randy Nash
+NPS-90703,Excellent delivery experience,4,SR-81704,RET-50610,CUST-10287,2025-05-28,SMS,Middle East,Clifford Pugh
+NPS-90704,Would definitely recommend,5,SR-82449,RET-50719,CUST-10656,2025-08-04,Phone,Latin America,Steven Mcbride
+NPS-90705,Product setup was confusing,2,SR-81508,RET-50226,CUST-10381,2025-03-11,Email,Latin America,Sean Sexton
+NPS-90706,Would definitely recommend,0,SR-84793,RET-50467,CUST-10132,2025-03-06,Phone,Latin America,Andrea Fernandez
+NPS-90707,Excellent delivery experience,1,SR-82577,RET-50404,CUST-10765,2025-01-13,Phone,Europe,Samantha Harrington
+NPS-90708,"Great support, quick resolution",8,SR-82183,RET-50959,CUST-10161,2025-06-06,Web App,Asia-Pacific,Tony Ruiz
+NPS-90709,"Great support, quick resolution",3,SR-82008,RET-50571,CUST-10592,2025-02-01,Email,Europe,Victoria Chen
+NPS-90710,Average service,1,SR-84384,RET-50975,CUST-10851,2025-06-20,Web App,Middle East,Nathaniel Jones
+NPS-90711,Average service,5,SR-80855,RET-50899,CUST-10038,2025-04-18,In-store,North America,Daniel Ellis
+NPS-90712,"Great support, quick resolution",3,SR-82695,RET-50421,CUST-10846,2025-04-25,In-store,Latin America,Barry Jackson
+NPS-90713,"Great support, quick resolution",6,SR-80441,RET-50045,CUST-10234,2025-06-24,Web App,Asia-Pacific,Jonathan Richardson
+NPS-90714,Product setup was confusing,0,SR-84753,RET-50012,CUST-10933,2025-02-17,SMS,Europe,Anthony Bailey
+NPS-90715,Excellent delivery experience,8,SR-83757,RET-50791,CUST-10335,2025-03-11,Web App,Europe,Alison Williamson
+NPS-90716,"Great support, quick resolution",4,SR-84993,RET-50683,CUST-10038,2025-07-14,In-store,North America,Adam Porter
+NPS-90717,Average service,10,SR-81672,RET-50749,CUST-10399,2025-02-01,SMS,Middle East,Adam Stokes
+NPS-90718,Average service,1,SR-84855,RET-50707,CUST-10091,2025-01-15,In-store,North America,Pamela Moore
+NPS-90719,Average service,4,SR-82932,RET-50972,CUST-10146,2025-06-20,In-store,Latin America,James Long
+NPS-90720,"Great support, quick resolution",5,SR-84159,RET-50965,CUST-10114,2025-06-06,Phone,Middle East,Sonya Brown
+NPS-90721,Excellent delivery experience,9,SR-82069,RET-50096,CUST-10744,2025-03-21,SMS,Asia-Pacific,Eric Johnson
+NPS-90722,Average service,10,SR-84034,RET-50235,CUST-10478,2025-02-20,Email,North America,Karen Miller
+NPS-90723,Product setup was confusing,0,SR-83945,RET-50287,CUST-10308,2025-02-17,SMS,Middle East,Betty Miles
+NPS-90724,"Great support, quick resolution",8,SR-84019,RET-50589,CUST-10181,2025-03-18,Phone,Latin America,John Weber
+NPS-90725,Average service,2,SR-81865,RET-50067,CUST-10006,2025-01-13,Web App,Middle East,Jennifer Garcia
+NPS-90726,Product setup was confusing,0,SR-82618,RET-50994,CUST-10204,2025-01-22,In-store,Europe,Kristen Krueger
+NPS-90727,Product setup was confusing,10,SR-84409,RET-50068,CUST-10051,2025-02-16,Phone,Latin America,Aaron Leach
+NPS-90728,"Great support, quick resolution",2,SR-83604,RET-50329,CUST-10635,2025-03-10,SMS,Middle East,Joseph Jones
+NPS-90729,Would definitely recommend,3,SR-82114,RET-50894,CUST-10663,2025-03-09,Web App,Middle East,Jennifer Martinez
+NPS-90730,Average service,6,SR-83061,RET-50394,CUST-10131,2025-06-17,SMS,Middle East,Nicole Baldwin
+NPS-90731,Excellent delivery experience,6,SR-81531,RET-50995,CUST-10344,2025-02-24,Web App,Europe,John Little
+NPS-90732,"Great support, quick resolution",5,SR-84029,RET-50689,CUST-10515,2025-01-21,Web App,Middle East,Carl Lowe
+NPS-90733,Product setup was confusing,5,SR-83657,RET-50348,CUST-10391,2025-03-19,In-store,Europe,Donna Cabrera
+NPS-90734,Average service,6,SR-83243,RET-50282,CUST-10773,2025-08-05,Phone,North America,Matthew Medina
+NPS-90735,Average service,8,SR-80285,RET-50714,CUST-10874,2025-05-17,In-store,Middle East,Jeremiah Luna
+NPS-90736,"Great support, quick resolution",10,SR-81269,RET-50081,CUST-10291,2025-03-16,In-store,Europe,Mrs. Michelle Gentry
+NPS-90737,"Great support, quick resolution",1,SR-84526,RET-50948,CUST-10856,2025-03-09,SMS,Middle East,Melanie Thomas
+NPS-90738,"Great support, quick resolution",2,SR-84768,RET-50111,CUST-10307,2025-07-27,In-store,North America,Mercedes Richardson
+NPS-90739,Would definitely recommend,2,SR-84170,RET-50999,CUST-10532,2025-04-23,In-store,Latin America,Brian Johnson
+NPS-90740,Would definitely recommend,5,SR-82526,RET-50413,CUST-10553,2025-01-12,Email,Asia-Pacific,Mark Skinner
+NPS-90741,"Great support, quick resolution",2,SR-83982,RET-50599,CUST-10451,2025-03-13,Email,Europe,Kurt Sanchez
+NPS-90742,Average service,6,SR-80834,RET-50962,CUST-10120,2025-05-10,Phone,Latin America,Chris Nguyen
+NPS-90743,Product setup was confusing,0,SR-83318,RET-50945,CUST-10454,2025-05-01,Web App,North America,Jennifer Ingram
+NPS-90744,"Great support, quick resolution",10,SR-82196,RET-50606,CUST-10642,2025-01-26,Web App,Europe,Larry Ford
+NPS-90745,Average service,5,SR-81382,RET-50944,CUST-10672,2025-06-16,Phone,North America,Larry Bartlett
+NPS-90746,"Great support, quick resolution",10,SR-81785,RET-50721,CUST-10180,2025-01-27,Web App,Europe,Austin Jones
+NPS-90747,Average service,4,SR-82893,RET-50845,CUST-10197,2025-05-31,Web App,North America,Jacob Odonnell
+NPS-90748,Product setup was confusing,7,SR-81991,RET-50525,CUST-10608,2025-02-23,In-store,Asia-Pacific,Ian Hall
+NPS-90749,Would definitely recommend,2,SR-84585,RET-50225,CUST-10390,2025-04-17,Web App,Europe,Mrs. Kelly Chavez
+NPS-90750,Average service,10,SR-82697,RET-50841,CUST-10527,2025-02-25,SMS,Asia-Pacific,Ms. Susan Dominguez
+NPS-90751,Average service,2,SR-80905,RET-50113,CUST-10572,2025-05-28,In-store,Asia-Pacific,Jennifer Dyer
+NPS-90752,Average service,7,SR-84813,RET-50361,CUST-10207,2025-04-11,Web App,Middle East,Bernard Soto
+NPS-90753,Average service,0,SR-82337,RET-50458,CUST-10958,2025-02-21,Web App,Asia-Pacific,Jeff Young
+NPS-90754,"Great support, quick resolution",7,SR-80799,RET-50629,CUST-10168,2025-05-22,SMS,Latin America,Sean Gomez
+NPS-90755,Product setup was confusing,4,SR-82072,RET-50086,CUST-10866,2025-03-31,In-store,Latin America,Aaron Silva
+NPS-90756,Would definitely recommend,9,SR-83840,RET-50233,CUST-10494,2025-08-30,Phone,Middle East,Matthew Martin
+NPS-90757,"Great support, quick resolution",7,SR-80966,RET-50901,CUST-10138,2025-06-14,SMS,Asia-Pacific,Larry Wiggins
+NPS-90758,Excellent delivery experience,9,SR-81381,RET-50809,CUST-10865,2025-05-31,Web App,North America,Rebecca Rowe
+NPS-90759,Product setup was confusing,10,SR-80014,RET-50579,CUST-10295,2025-05-28,Email,Middle East,Larry Reyes PhD
+NPS-90760,Average service,1,SR-83175,RET-50707,CUST-10379,2025-08-26,Email,Middle East,Ricky Rogers
+NPS-90761,"Great support, quick resolution",4,SR-81686,RET-50741,CUST-10955,2025-03-26,In-store,Asia-Pacific,Donna Lynch
+NPS-90762,"Great support, quick resolution",0,SR-84155,RET-50569,CUST-10746,2025-01-22,Phone,North America,Sean Turner
+NPS-90763,"Great support, quick resolution",8,SR-84332,RET-50888,CUST-10903,2025-08-02,SMS,Europe,Tonya Mckinney
+NPS-90764,Excellent delivery experience,8,SR-80860,RET-50490,CUST-10300,2025-08-29,In-store,Asia-Pacific,Lisa Miller
+NPS-90765,Average service,2,SR-83107,RET-50777,CUST-10665,2025-03-22,Phone,Latin America,Megan Chambers
+NPS-90766,Excellent delivery experience,4,SR-83152,RET-50527,CUST-10965,2025-03-11,Phone,Europe,Valerie Pennington
+NPS-90767,Excellent delivery experience,4,SR-84017,RET-50570,CUST-10363,2025-05-27,Web App,Middle East,Aaron Martinez
+NPS-90768,Excellent delivery experience,0,SR-84102,RET-50926,CUST-10925,2025-05-20,SMS,Asia-Pacific,Alyssa Washington
+NPS-90769,Average service,3,SR-81960,RET-50155,CUST-10927,2025-08-27,In-store,Middle East,Tracy Johnson
+NPS-90770,Average service,10,SR-80853,RET-50415,CUST-10753,2025-05-21,SMS,Latin America,Joseph Johnson
+NPS-90771,Excellent delivery experience,7,SR-82295,RET-50581,CUST-10742,2025-01-21,SMS,Asia-Pacific,Donald Gomez
+NPS-90772,"Great support, quick resolution",8,SR-80398,RET-50597,CUST-10373,2025-04-15,Phone,Middle East,Kelly Casey
+NPS-90773,"Great support, quick resolution",8,SR-82722,RET-50399,CUST-10354,2025-01-03,Web App,Latin America,Diana Duncan
+NPS-90774,Product setup was confusing,9,SR-84230,RET-50596,CUST-10868,2025-02-05,Phone,Middle East,Monica Bonilla
+NPS-90775,"Great support, quick resolution",8,SR-84642,RET-50200,CUST-10538,2025-02-28,Web App,Middle East,Teresa Fernandez
+NPS-90776,Product setup was confusing,7,SR-82797,RET-50986,CUST-10586,2025-06-05,In-store,Latin America,Miranda Foley
+NPS-90777,Average service,5,SR-80995,RET-50226,CUST-10765,2025-07-23,In-store,Middle East,Stephanie Oconnell
+NPS-90778,Excellent delivery experience,8,SR-83939,RET-50291,CUST-10773,2025-04-07,Web App,Middle East,Robert Chapman
+NPS-90779,Average service,6,SR-84834,RET-50714,CUST-10697,2025-02-03,Phone,Europe,Edward Clark
+NPS-90780,Excellent delivery experience,5,SR-84196,RET-50489,CUST-10555,2025-07-12,Email,Europe,David Kirby
+NPS-90781,Would definitely recommend,7,SR-82619,RET-50886,CUST-10933,2025-03-30,Email,North America,Jamie Wolf
+NPS-90782,Excellent delivery experience,6,SR-82048,RET-50342,CUST-10644,2025-03-08,Web App,Europe,Andrew Freeman
+NPS-90783,Product setup was confusing,8,SR-80450,RET-50271,CUST-10784,2025-02-14,Phone,North America,Shannon Martin
+NPS-90784,Product setup was confusing,1,SR-82836,RET-50514,CUST-10646,2025-01-24,SMS,Asia-Pacific,Zachary Silva
+NPS-90785,Average service,0,SR-82666,RET-50084,CUST-10818,2025-07-27,Phone,Middle East,Heather Cooper
+NPS-90786,Excellent delivery experience,7,SR-80878,RET-50012,CUST-10617,2025-07-09,Phone,Europe,Cristina Simmons
+NPS-90787,Would definitely recommend,7,SR-83186,RET-50212,CUST-10331,2025-05-14,SMS,Latin America,Richard Anderson MD
+NPS-90788,Average service,0,SR-80555,RET-50906,CUST-10682,2025-07-20,SMS,Middle East,Virginia Elliott
+NPS-90789,Product setup was confusing,5,SR-84585,RET-50506,CUST-10497,2025-08-26,Web App,Latin America,Bobby Smith
+NPS-90790,Excellent delivery experience,4,SR-81289,RET-50585,CUST-10517,2025-04-26,Phone,North America,Sara Ruiz
+NPS-90791,Excellent delivery experience,2,SR-84801,RET-50422,CUST-10561,2025-02-03,Web App,Asia-Pacific,Michael Webb
+NPS-90792,"Great support, quick resolution",9,SR-82720,RET-50752,CUST-10391,2025-02-17,Email,North America,Melissa Moyer DVM
+NPS-90793,Average service,2,SR-84554,RET-50806,CUST-10731,2025-06-14,Email,Middle East,Michael Harris
+NPS-90794,"Great support, quick resolution",8,SR-81132,RET-50601,CUST-10981,2025-07-15,SMS,North America,Diane Lozano DVM
+NPS-90795,Average service,6,SR-83158,RET-50971,CUST-10203,2025-04-17,Email,Middle East,Dr. Kelly Nunez
+NPS-90796,Excellent delivery experience,5,SR-82990,RET-50636,CUST-10878,2025-08-23,In-store,Europe,David Cain
+NPS-90797,Excellent delivery experience,6,SR-81803,RET-50182,CUST-10265,2025-01-18,Email,Europe,Robert Navarro
+NPS-90798,Would definitely recommend,8,SR-80548,RET-50200,CUST-10308,2025-01-18,Phone,Europe,Thomas Jones
+NPS-90799,"Great support, quick resolution",1,SR-84493,RET-50755,CUST-10396,2025-03-28,Phone,Latin America,Jacob Russell
+NPS-90800,Product setup was confusing,7,SR-81590,RET-50574,CUST-10813,2025-06-01,Email,Latin America,Darryl Myers
+NPS-90801,Product setup was confusing,1,SR-81127,RET-50350,CUST-10705,2025-01-11,SMS,Europe,Daniel Sanchez
+NPS-90802,"Great support, quick resolution",8,SR-80815,RET-50693,CUST-10208,2025-07-22,SMS,Latin America,Alison Luna
+NPS-90803,Excellent delivery experience,8,SR-80706,RET-50748,CUST-10196,2025-03-19,In-store,Asia-Pacific,Jane Watson
+NPS-90804,Would definitely recommend,3,SR-81193,RET-50441,CUST-10626,2025-05-16,SMS,Middle East,Robert Parsons
+NPS-90805,Average service,0,SR-80479,RET-50234,CUST-10769,2025-07-04,In-store,Asia-Pacific,Alex Bailey
+NPS-90806,Product setup was confusing,9,SR-84215,RET-50050,CUST-10389,2025-06-23,Email,Asia-Pacific,Peter Olson
+NPS-90807,Average service,0,SR-83257,RET-50190,CUST-10268,2025-01-02,Email,Europe,Tracey Anthony
+NPS-90808,Product setup was confusing,10,SR-84929,RET-50211,CUST-10708,2025-07-18,Web App,Latin America,Jason Cunningham
+NPS-90809,Would definitely recommend,2,SR-82621,RET-50744,CUST-10955,2025-01-06,Email,Latin America,Michael Alexander
+NPS-90810,Would definitely recommend,2,SR-81205,RET-50447,CUST-10592,2025-02-08,Email,Middle East,Brenda Fisher
+NPS-90811,Average service,0,SR-81229,RET-50952,CUST-10711,2025-08-26,Web App,Asia-Pacific,Ashley Cooley
+NPS-90812,Would definitely recommend,5,SR-80530,RET-50454,CUST-10680,2025-04-12,SMS,Latin America,Carmen Benson
+NPS-90813,Product setup was confusing,1,SR-81176,RET-50713,CUST-10130,2025-06-13,In-store,Latin America,Samuel Miles
+NPS-90814,Product setup was confusing,9,SR-81595,RET-50564,CUST-10145,2025-04-23,SMS,Europe,Terry Leach
+NPS-90815,"Great support, quick resolution",4,SR-84946,RET-50051,CUST-10161,2025-02-23,Phone,Latin America,Bruce Andrews
+NPS-90816,Product setup was confusing,10,SR-80210,RET-50014,CUST-10259,2025-03-16,In-store,Latin America,Nathan Chaney
+NPS-90817,Would definitely recommend,2,SR-84829,RET-50210,CUST-10506,2025-04-17,Phone,Europe,Frank Lopez
+NPS-90818,Excellent delivery experience,3,SR-81905,RET-50897,CUST-10122,2025-03-29,Web App,Europe,Christopher Curry
+NPS-90819,Would definitely recommend,8,SR-84629,RET-50056,CUST-10642,2025-04-17,SMS,North America,Carolyn Conner
+NPS-90820,Excellent delivery experience,6,SR-82079,RET-50972,CUST-10094,2025-08-12,Web App,Europe,Michael Mills
+NPS-90821,Excellent delivery experience,8,SR-84676,RET-50554,CUST-10270,2025-01-01,SMS,Asia-Pacific,Adam Faulkner
+NPS-90822,Average service,1,SR-83546,RET-50746,CUST-10639,2025-01-04,Email,Middle East,Shawna Davidson
+NPS-90823,Would definitely recommend,5,SR-83360,RET-50923,CUST-10579,2025-01-26,Web App,Middle East,Michael Miller
+NPS-90824,Product setup was confusing,6,SR-83185,RET-50381,CUST-10441,2025-05-01,Web App,Asia-Pacific,Alyssa Hancock
+NPS-90825,"Great support, quick resolution",6,SR-82968,RET-50826,CUST-10007,2025-05-12,Email,Asia-Pacific,Kenneth Zuniga
+NPS-90826,Excellent delivery experience,4,SR-80894,RET-50412,CUST-10848,2025-06-10,Web App,Asia-Pacific,Heather Miller
+NPS-90827,Excellent delivery experience,2,SR-84688,RET-50106,CUST-10829,2025-06-03,Web App,North America,Daniel Cobb
+NPS-90828,Average service,7,SR-80391,RET-50140,CUST-10277,2025-05-14,Email,North America,Mrs. Melissa Diaz
+NPS-90829,"Great support, quick resolution",3,SR-80549,RET-50185,CUST-10007,2025-01-05,In-store,Asia-Pacific,Caitlin Thompson
+NPS-90830,"Great support, quick resolution",3,SR-81677,RET-50064,CUST-10565,2025-08-25,In-store,Middle East,Steven Vasquez
+NPS-90831,Excellent delivery experience,0,SR-84894,RET-50206,CUST-10179,2025-04-03,SMS,Middle East,Veronica Andrews
+NPS-90832,Excellent delivery experience,9,SR-84115,RET-50480,CUST-10574,2025-06-02,Web App,Europe,Nancy Kennedy
+NPS-90833,Would definitely recommend,6,SR-83592,RET-50261,CUST-10092,2025-01-20,Web App,Asia-Pacific,Robert Wright
+NPS-90834,Average service,2,SR-81764,RET-50340,CUST-10226,2025-08-26,In-store,Latin America,Katrina Medina
+NPS-90835,Product setup was confusing,2,SR-82649,RET-50803,CUST-10114,2025-04-29,Email,Europe,Robert Cruz
+NPS-90836,Product setup was confusing,8,SR-83686,RET-50212,CUST-10917,2025-02-27,Web App,North America,Taylor Mcdonald
+NPS-90837,Product setup was confusing,0,SR-81990,RET-50016,CUST-10196,2025-05-28,In-store,North America,Randall Davis
+NPS-90838,Would definitely recommend,2,SR-80795,RET-50989,CUST-10092,2025-04-02,Email,Latin America,Justin Greene
+NPS-90839,Average service,10,SR-80147,RET-50405,CUST-10668,2025-02-19,Web App,Latin America,Lisa Estrada
+NPS-90840,Would definitely recommend,7,SR-84483,RET-50198,CUST-10542,2025-05-07,Email,Europe,Michael Williamson
+NPS-90841,Excellent delivery experience,0,SR-83461,RET-50792,CUST-10790,2025-01-01,Email,Middle East,Michael Compton
+NPS-90842,Would definitely recommend,6,SR-82331,RET-50581,CUST-10136,2025-04-14,Web App,Latin America,Crystal Wilkins
+NPS-90843,Product setup was confusing,10,SR-84786,RET-50450,CUST-10397,2025-06-08,In-store,Europe,Matthew Cain
+NPS-90844,Average service,7,SR-83481,RET-50212,CUST-10234,2025-06-22,Email,Latin America,Jesse Jimenez
+NPS-90845,Average service,4,SR-83564,RET-50949,CUST-10181,2025-07-09,Web App,Latin America,Patrick Day
+NPS-90846,Product setup was confusing,1,SR-84375,RET-50651,CUST-10115,2025-07-02,Phone,Europe,Rachel Chapman
+NPS-90847,"Great support, quick resolution",10,SR-83493,RET-50607,CUST-10672,2025-06-21,SMS,North America,Brian Lewis
+NPS-90848,Excellent delivery experience,3,SR-81251,RET-50280,CUST-10964,2025-02-01,SMS,Europe,Robert Gonzalez
+NPS-90849,"Great support, quick resolution",6,SR-80179,RET-50672,CUST-10706,2025-07-10,Web App,Europe,Tyler Huerta
+NPS-90850,Product setup was confusing,3,SR-83091,RET-50563,CUST-10933,2025-03-15,In-store,Middle East,Tracy Scott
+NPS-90851,Excellent delivery experience,10,SR-83019,RET-50793,CUST-10364,2025-01-28,SMS,Middle East,Brian Martin
+NPS-90852,"Great support, quick resolution",7,SR-80925,RET-50655,CUST-10666,2025-03-03,Web App,Europe,Gregory Moore
+NPS-90853,Average service,5,SR-82430,RET-50575,CUST-10213,2025-01-17,SMS,Europe,Travis Haynes V
+NPS-90854,"Great support, quick resolution",0,SR-83994,RET-50925,CUST-10233,2025-01-23,In-store,North America,Mary Chang
+NPS-90855,Excellent delivery experience,9,SR-80055,RET-50397,CUST-10175,2025-01-14,Phone,Asia-Pacific,Steven Robinson
+NPS-90856,Excellent delivery experience,9,SR-81595,RET-50317,CUST-10836,2025-06-15,In-store,Middle East,James Robertson
+NPS-90857,"Great support, quick resolution",4,SR-84207,RET-50770,CUST-10320,2025-03-13,Email,North America,Bradley Morales
+NPS-90858,Product setup was confusing,7,SR-81645,RET-50169,CUST-10501,2025-07-23,In-store,Middle East,Dustin Allen
+NPS-90859,Would definitely recommend,9,SR-80653,RET-50455,CUST-10681,2025-03-10,Phone,Middle East,Lee Russo
+NPS-90860,Product setup was confusing,3,SR-82584,RET-50458,CUST-10648,2025-02-23,In-store,Middle East,Meredith Sanchez
+NPS-90861,Product setup was confusing,9,SR-80149,RET-50553,CUST-10615,2025-05-01,Email,Latin America,Dr. Joshua Hernandez MD
+NPS-90862,Would definitely recommend,2,SR-84872,RET-50042,CUST-10186,2025-07-31,SMS,Europe,William Weiss
+NPS-90863,Excellent delivery experience,6,SR-82739,RET-50121,CUST-10241,2025-04-17,Email,Middle East,Michele Butler
+NPS-90864,"Great support, quick resolution",9,SR-82426,RET-50730,CUST-10886,2025-06-30,Email,Europe,Kristen Davis
+NPS-90865,Product setup was confusing,6,SR-82578,RET-50707,CUST-10057,2025-04-02,Phone,Latin America,Ryan Stone
+NPS-90866,Product setup was confusing,3,SR-82327,RET-50567,CUST-10115,2025-04-06,SMS,Asia-Pacific,Tyrone Mcdonald
+NPS-90867,Excellent delivery experience,1,SR-81225,RET-50407,CUST-10864,2025-05-06,In-store,Latin America,Sheila Clark
+NPS-90868,"Great support, quick resolution",3,SR-82105,RET-50424,CUST-10966,2025-05-25,Email,Middle East,Adrian Montgomery
+NPS-90869,"Great support, quick resolution",8,SR-83466,RET-50236,CUST-10956,2025-08-17,Email,Europe,Christopher Ramos
+NPS-90870,Average service,4,SR-80932,RET-50963,CUST-10534,2025-04-29,In-store,Europe,Daniel Stanley
+NPS-90871,"Great support, quick resolution",3,SR-80151,RET-50336,CUST-10933,2025-01-13,Web App,Latin America,Claudia Kline
+NPS-90872,Average service,5,SR-80239,RET-50541,CUST-10926,2025-04-15,Phone,North America,Kathryn Keith
+NPS-90873,Average service,4,SR-80158,RET-50900,CUST-10771,2025-04-11,In-store,Asia-Pacific,Theresa Harris
+NPS-90874,Product setup was confusing,9,SR-82549,RET-50398,CUST-10128,2025-03-29,Email,Latin America,Christopher Savage
+NPS-90875,Average service,9,SR-84024,RET-50350,CUST-10214,2025-06-07,Web App,Middle East,Adriana Hudson
+NPS-90876,"Great support, quick resolution",2,SR-80070,RET-50444,CUST-10198,2025-06-21,Web App,North America,Danny Sullivan
+NPS-90877,Would definitely recommend,6,SR-81687,RET-50381,CUST-10207,2025-03-14,In-store,Asia-Pacific,Melanie Cooper
+NPS-90878,Product setup was confusing,3,SR-81380,RET-50923,CUST-10483,2025-01-11,In-store,North America,Ashlee Rubio
+NPS-90879,Would definitely recommend,1,SR-81048,RET-50798,CUST-10719,2025-03-01,Phone,Middle East,Dominique Burton
+NPS-90880,Average service,10,SR-83621,RET-50940,CUST-10318,2025-07-28,SMS,Middle East,Sarah Oneill
+NPS-90881,Would definitely recommend,1,SR-82778,RET-50060,CUST-10027,2025-08-02,Email,North America,Christopher Williams
+NPS-90882,Average service,4,SR-80199,RET-50363,CUST-10405,2025-05-26,Web App,North America,Juan Becker
+NPS-90883,Product setup was confusing,6,SR-81081,RET-50614,CUST-10223,2025-05-02,SMS,Middle East,Morgan Davenport
+NPS-90884,Average service,5,SR-83249,RET-50101,CUST-10933,2025-04-13,Web App,Latin America,Jon Gray
+NPS-90885,Average service,6,SR-80910,RET-50167,CUST-10214,2025-05-24,Phone,Latin America,Marc Martinez
+NPS-90886,Average service,2,SR-83390,RET-50595,CUST-10886,2025-08-20,In-store,Middle East,Danielle Castro
+NPS-90887,Would definitely recommend,6,SR-84518,RET-50028,CUST-10350,2025-04-06,SMS,Asia-Pacific,Peter Barrera
+NPS-90888,Excellent delivery experience,3,SR-84373,RET-50139,CUST-10700,2025-06-06,Web App,Europe,Jenna Marsh
+NPS-90889,Would definitely recommend,2,SR-84420,RET-50949,CUST-10045,2025-01-17,Phone,North America,Rebecca Ferguson
+NPS-90890,Excellent delivery experience,10,SR-84810,RET-50783,CUST-10153,2025-02-25,SMS,Europe,Christopher Molina
+NPS-90891,"Great support, quick resolution",0,SR-81285,RET-50046,CUST-10486,2025-03-31,Email,North America,Jacqueline Mendez
+NPS-90892,Product setup was confusing,10,SR-80933,RET-50027,CUST-10184,2025-07-16,SMS,Europe,Xavier Duncan
+NPS-90893,"Great support, quick resolution",9,SR-81526,RET-50175,CUST-10895,2025-06-03,Email,Asia-Pacific,Adrian Johnson
+NPS-90894,Average service,9,SR-82801,RET-50096,CUST-10472,2025-06-21,SMS,Latin America,Nicholas Wallace
+NPS-90895,Would definitely recommend,10,SR-83068,RET-50614,CUST-10555,2025-01-17,Phone,Latin America,Joseph Chavez
+NPS-90896,Would definitely recommend,3,SR-83644,RET-50449,CUST-10301,2025-03-13,Phone,Middle East,Cheryl Elliott
+NPS-90897,"Great support, quick resolution",3,SR-82128,RET-50802,CUST-10161,2025-04-21,Phone,Middle East,Kenneth Guzman
+NPS-90898,Excellent delivery experience,3,SR-83960,RET-50622,CUST-10813,2025-06-12,In-store,Latin America,Brittany Williams
+NPS-90899,Average service,8,SR-84768,RET-50672,CUST-10056,2025-01-22,Email,North America,Scott Clark
+NPS-90900,"Great support, quick resolution",2,SR-81868,RET-50865,CUST-10673,2025-02-27,Phone,Latin America,Courtney Lee
+NPS-90901,Excellent delivery experience,10,SR-83609,RET-50375,CUST-10653,2025-01-08,In-store,Latin America,Anita Carney
+NPS-90902,Average service,3,SR-84948,RET-50115,CUST-10257,2025-06-07,Phone,Asia-Pacific,Linda Gardner
+NPS-90903,"Great support, quick resolution",10,SR-82352,RET-50379,CUST-10696,2025-01-27,Web App,Middle East,Gloria Cox
+NPS-90904,Average service,10,SR-80185,RET-50649,CUST-10741,2025-01-18,Email,Europe,Jared Rivera
+NPS-90905,Average service,9,SR-84457,RET-50152,CUST-10308,2025-03-29,In-store,North America,Susan Peterson
+NPS-90906,Would definitely recommend,2,SR-82740,RET-50810,CUST-10415,2025-08-16,In-store,Latin America,Sarah Allen
+NPS-90907,"Great support, quick resolution",6,SR-81276,RET-50558,CUST-10144,2025-01-01,SMS,Asia-Pacific,Garrett Andrade
+NPS-90908,Excellent delivery experience,10,SR-84379,RET-50032,CUST-10839,2025-06-27,SMS,Asia-Pacific,James Garcia
+NPS-90909,Product setup was confusing,6,SR-84937,RET-50795,CUST-10572,2025-06-25,Web App,North America,Derek Davis
+NPS-90910,"Great support, quick resolution",6,SR-80346,RET-50194,CUST-10545,2025-03-08,Phone,Asia-Pacific,Dale West
+NPS-90911,Excellent delivery experience,6,SR-81516,RET-50152,CUST-10653,2025-01-12,In-store,Asia-Pacific,Brittany Hamilton
+NPS-90912,Would definitely recommend,7,SR-83729,RET-50104,CUST-10824,2025-07-09,SMS,Europe,Tammy Jones
+NPS-90913,"Great support, quick resolution",6,SR-81226,RET-50303,CUST-10481,2025-08-16,Web App,Europe,Megan Martin
+NPS-90914,Would definitely recommend,9,SR-82048,RET-50180,CUST-10592,2025-05-01,SMS,Middle East,Michael Dunn MD
+NPS-90915,"Great support, quick resolution",9,SR-80707,RET-50152,CUST-10831,2025-04-27,Phone,Europe,Miss Stephanie Mitchell
+NPS-90916,Product setup was confusing,5,SR-83766,RET-50555,CUST-10014,2025-08-24,In-store,Asia-Pacific,Spencer Sanchez
+NPS-90917,Average service,7,SR-80923,RET-50497,CUST-10613,2025-04-04,Web App,Europe,Philip Ramos DDS
+NPS-90918,Product setup was confusing,1,SR-81394,RET-50848,CUST-10082,2025-08-20,In-store,Asia-Pacific,Claudia Hancock
+NPS-90919,"Great support, quick resolution",4,SR-84618,RET-50511,CUST-10520,2025-02-28,Web App,Latin America,Heather Hodges
+NPS-90920,Would definitely recommend,10,SR-83090,RET-50710,CUST-10946,2025-06-30,Phone,Europe,Jessica Ball
+NPS-90921,"Great support, quick resolution",4,SR-82154,RET-50282,CUST-10466,2025-06-18,Email,North America,Michael Keith
+NPS-90922,Average service,8,SR-81178,RET-50502,CUST-10776,2025-02-21,Email,North America,David Evans
+NPS-90923,Product setup was confusing,2,SR-84813,RET-50801,CUST-10994,2025-03-30,Phone,Latin America,Pamela Smith
+NPS-90924,Product setup was confusing,2,SR-84200,RET-50134,CUST-10302,2025-07-28,Email,Europe,Ronald Robbins
+NPS-90925,Excellent delivery experience,3,SR-82023,RET-50795,CUST-10708,2025-05-04,Email,Europe,Tara King
+NPS-90926,Excellent delivery experience,7,SR-83136,RET-50585,CUST-10455,2025-02-04,Email,Middle East,Autumn Gray
+NPS-90927,"Great support, quick resolution",6,SR-83183,RET-50608,CUST-10338,2025-07-26,Email,Europe,James Tran
+NPS-90928,"Great support, quick resolution",1,SR-84574,RET-50126,CUST-10402,2025-05-11,Email,Middle East,Shelia Evans
+NPS-90929,Would definitely recommend,5,SR-84220,RET-50582,CUST-10290,2025-05-24,In-store,Latin America,Robert Wilson
+NPS-90930,Would definitely recommend,1,SR-81192,RET-50103,CUST-10722,2025-04-14,Email,Europe,Kelsey Summers
+NPS-90931,Average service,8,SR-81698,RET-50372,CUST-10426,2025-02-07,In-store,North America,Sheila Daniel
+NPS-90932,Excellent delivery experience,4,SR-80804,RET-50446,CUST-10035,2025-04-02,In-store,Latin America,Robert Gilbert
+NPS-90933,"Great support, quick resolution",10,SR-83907,RET-50711,CUST-10364,2025-06-12,In-store,North America,Donald Clements
+NPS-90934,Excellent delivery experience,0,SR-83401,RET-50629,CUST-10283,2025-02-15,In-store,Middle East,April Zimmerman
+NPS-90935,Average service,7,SR-84613,RET-50163,CUST-10414,2025-05-24,Web App,Europe,Heather Herring
+NPS-90936,Product setup was confusing,5,SR-82291,RET-50687,CUST-10372,2025-03-23,SMS,Europe,Adam Gonzalez
+NPS-90937,Excellent delivery experience,7,SR-82753,RET-50907,CUST-10628,2025-07-01,Email,North America,Brooke Anderson
+NPS-90938,Would definitely recommend,9,SR-81975,RET-50287,CUST-10367,2025-08-07,In-store,Latin America,Christopher Drake
+NPS-90939,Average service,3,SR-84750,RET-50117,CUST-10885,2025-07-14,Email,Europe,Tanya Bennett
+NPS-90940,Excellent delivery experience,2,SR-83512,RET-50534,CUST-10748,2025-06-07,Phone,Europe,Priscilla Lee
+NPS-90941,Average service,5,SR-80048,RET-50768,CUST-10913,2025-04-23,Phone,Europe,Amber Thomas
+NPS-90942,Product setup was confusing,4,SR-84288,RET-50725,CUST-10212,2025-01-07,Phone,Middle East,Terry Cuevas
+NPS-90943,Product setup was confusing,9,SR-84001,RET-50039,CUST-10749,2025-01-29,Web App,North America,Mary Harris
+NPS-90944,Product setup was confusing,7,SR-81941,RET-50460,CUST-10676,2025-07-07,Email,Asia-Pacific,Megan Powell
+NPS-90945,Average service,9,SR-83042,RET-50861,CUST-10581,2025-04-19,Email,North America,Mariah Pham
+NPS-90946,Product setup was confusing,6,SR-83709,RET-50358,CUST-10608,2025-05-18,Email,Europe,Michelle Harris
+NPS-90947,Average service,6,SR-84560,RET-50950,CUST-10508,2025-01-13,SMS,Middle East,William Logan
+NPS-90948,Product setup was confusing,7,SR-81899,RET-50135,CUST-10529,2025-06-16,In-store,North America,Justin Newman
+NPS-90949,Would definitely recommend,0,SR-81586,RET-50342,CUST-10200,2025-02-14,SMS,Asia-Pacific,Jonathan White
+NPS-90950,Would definitely recommend,5,SR-80764,RET-50835,CUST-10693,2025-07-25,Web App,North America,Shane Ward
+NPS-90951,"Great support, quick resolution",5,SR-80168,RET-50421,CUST-10437,2025-03-23,SMS,Middle East,Jason Collins
+NPS-90952,"Great support, quick resolution",9,SR-80429,RET-50194,CUST-10739,2025-05-16,Phone,Middle East,Michael Mitchell
+NPS-90953,Average service,0,SR-83090,RET-50516,CUST-10248,2025-04-06,In-store,Middle East,Jon Figueroa
+NPS-90954,Would definitely recommend,7,SR-80603,RET-50664,CUST-10729,2025-08-28,Phone,Latin America,Amy Myers
+NPS-90955,Average service,1,SR-80621,RET-50091,CUST-10394,2025-04-21,SMS,Latin America,Jonathon Butler
+NPS-90956,Would definitely recommend,9,SR-80241,RET-50191,CUST-10283,2025-06-13,Web App,North America,Teresa Joseph
+NPS-90957,Product setup was confusing,8,SR-84312,RET-50063,CUST-10538,2025-01-07,Web App,Middle East,Jesse Kemp
+NPS-90958,Would definitely recommend,9,SR-82284,RET-50538,CUST-10464,2025-01-14,Web App,Latin America,Olivia Watkins
+NPS-90959,Would definitely recommend,5,SR-83166,RET-50876,CUST-10700,2025-03-22,Web App,Europe,Evelyn Davis
+NPS-90960,Excellent delivery experience,5,SR-80937,RET-50623,CUST-10454,2025-03-14,Phone,North America,Richard Robinson
+NPS-90961,Average service,2,SR-82333,RET-50951,CUST-10621,2025-04-08,SMS,Asia-Pacific,Jeffery Stephens
+NPS-90962,Average service,4,SR-81889,RET-50869,CUST-10038,2025-08-17,SMS,Latin America,Angela Maldonado
+NPS-90963,Product setup was confusing,7,SR-80666,RET-50080,CUST-10623,2025-05-15,Email,Middle East,Ashley Ford MD
+NPS-90964,"Great support, quick resolution",7,SR-82812,RET-50931,CUST-10162,2025-08-30,Phone,Asia-Pacific,Sarah Russell
+NPS-90965,Would definitely recommend,8,SR-81691,RET-50907,CUST-10357,2025-07-20,SMS,Europe,Ralph Andrews
+NPS-90966,Excellent delivery experience,1,SR-83611,RET-50335,CUST-10584,2025-06-07,SMS,Europe,Ralph Mcdaniel
+NPS-90967,Product setup was confusing,9,SR-84216,RET-50900,CUST-10168,2025-01-19,Phone,North America,Anna Mcgee
+NPS-90968,Excellent delivery experience,5,SR-81014,RET-50106,CUST-10478,2025-05-04,Web App,Asia-Pacific,Anna Rivera
+NPS-90969,Excellent delivery experience,9,SR-84784,RET-50363,CUST-10375,2025-03-17,In-store,North America,Veronica Mccarthy
+NPS-90970,Excellent delivery experience,1,SR-82250,RET-50847,CUST-10090,2025-02-26,In-store,Europe,Ann Joseph
+NPS-90971,Average service,4,SR-82228,RET-50073,CUST-10543,2025-05-23,In-store,Latin America,Aaron Reed
+NPS-90972,Excellent delivery experience,2,SR-80028,RET-50201,CUST-10916,2025-01-13,SMS,Middle East,Paul King
+NPS-90973,Would definitely recommend,1,SR-82011,RET-50031,CUST-10213,2025-07-04,Phone,Europe,Jamie Duncan
+NPS-90974,Excellent delivery experience,5,SR-81272,RET-50957,CUST-10116,2025-01-01,Email,Europe,Deanna Young
+NPS-90975,Excellent delivery experience,9,SR-83183,RET-50594,CUST-10634,2025-01-05,Web App,Middle East,Kenneth Martinez
+NPS-90976,"Great support, quick resolution",4,SR-81551,RET-50040,CUST-10534,2025-05-03,SMS,Europe,David Hunter
+NPS-90977,Would definitely recommend,1,SR-83474,RET-50687,CUST-10329,2025-03-10,Email,Latin America,Amanda Solomon
+NPS-90978,Product setup was confusing,5,SR-84304,RET-50989,CUST-10857,2025-05-28,Phone,North America,Scott Harvey
+NPS-90979,Product setup was confusing,0,SR-83248,RET-50683,CUST-10659,2025-05-20,Web App,Europe,Joshua Stephens
+NPS-90980,Would definitely recommend,3,SR-82906,RET-50511,CUST-10036,2025-07-02,In-store,Europe,Mrs. Abigail Jackson
+NPS-90981,Would definitely recommend,1,SR-80646,RET-50076,CUST-10021,2025-01-18,Phone,North America,Angel Morris
+NPS-90982,Excellent delivery experience,3,SR-81489,RET-50836,CUST-10905,2025-06-29,Email,Asia-Pacific,Anthony Ellis
+NPS-90983,Product setup was confusing,10,SR-80209,RET-50668,CUST-10790,2025-04-22,In-store,North America,Amanda Clark
+NPS-90984,Would definitely recommend,9,SR-84737,RET-50100,CUST-10169,2025-08-01,SMS,Asia-Pacific,Audrey Lowery
+NPS-90985,Average service,8,SR-83551,RET-50419,CUST-10311,2025-03-06,Web App,North America,Lauren Fisher
+NPS-90986,Would definitely recommend,7,SR-84369,RET-50212,CUST-10414,2025-04-09,Email,Latin America,Michael Delacruz
+NPS-90987,Product setup was confusing,7,SR-83139,RET-50783,CUST-10899,2025-07-25,SMS,Middle East,Lucas Griffin Jr.
+NPS-90988,Would definitely recommend,6,SR-81071,RET-50258,CUST-10521,2025-01-19,In-store,North America,Brittany Spence
+NPS-90989,Excellent delivery experience,4,SR-80235,RET-50585,CUST-10838,2025-01-12,Web App,North America,Anthony Watson
+NPS-90990,"Great support, quick resolution",8,SR-83037,RET-50710,CUST-10435,2025-07-08,SMS,North America,James Day
+NPS-90991,"Great support, quick resolution",6,SR-83234,RET-50392,CUST-10101,2025-03-09,In-store,Latin America,Dr. Justin Hartman
+NPS-90992,Excellent delivery experience,8,SR-83539,RET-50144,CUST-10547,2025-01-16,In-store,Europe,John Rogers
+NPS-90993,Would definitely recommend,9,SR-82711,RET-50413,CUST-10937,2025-07-11,SMS,Latin America,Kathy Jacobs
+NPS-90994,Product setup was confusing,6,SR-80648,RET-50837,CUST-10683,2025-06-21,In-store,Asia-Pacific,Jessica Chambers
+NPS-90995,Would definitely recommend,7,SR-81185,RET-50594,CUST-10530,2025-04-25,Phone,Europe,Lisa Cook
+NPS-90996,Would definitely recommend,3,SR-84690,RET-50446,CUST-10928,2025-04-09,Email,Latin America,James Gomez
+NPS-90997,Product setup was confusing,1,SR-84294,RET-50541,CUST-10089,2025-02-20,Web App,North America,Claudia White
+NPS-90998,"Great support, quick resolution",0,SR-84573,RET-50374,CUST-10809,2025-08-15,In-store,North America,Jade Kirby
+NPS-90999,Would definitely recommend,9,SR-83710,RET-50411,CUST-10300,2025-07-27,Web App,Middle East,Timothy Baker
+NPS-91000,Product setup was confusing,5,SR-81714,RET-50834,CUST-10989,2025-06-24,In-store,Europe,Daniel Carter

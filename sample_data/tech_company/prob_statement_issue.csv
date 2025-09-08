@@ -1,0 +1,1001 @@
+Problem Statement,Description,Issue ID,Summary,Customer Name,Product Name,SR ID,Pd_ID
+API timeout errors,Dashboard page crashes intermittently,ISS-70001,UI crash,Watkins-Freeman,CloudEdge,SR-83668,PROD-11059
+Login failures after upgrade,API call fails after 30s,ISS-70002,Sync issue,Cruz-Mckenzie,NetConnect,SR-83326,PROD-11256
+API timeout errors,Dashboard page crashes intermittently,ISS-70003,Login issue post-upgrade,Smith PLC,DataSphere,SR-81867,PROD-11285
+Login failures after upgrade,Average response time exceeds 10s,ISS-70004,Sync issue,"Jensen, Klein and Carter",CloudEdge,SR-84909,PROD-11283
+Slow system response,Data not syncing between apps,ISS-70005,Performance degradation,Buchanan and Sons,DataSphere,SR-80731,PROD-11636
+Login failures after upgrade,API call fails after 30s,ISS-70006,Login issue post-upgrade,Sutton and Sons,NetConnect,SR-80538,PROD-11394
+Missing data sync,API call fails after 30s,ISS-70007,API latency,Diaz-Atkinson,DataSphere,SR-83889,PROD-11341
+Missing data sync,Dashboard page crashes intermittently,ISS-70008,UI crash,"Poole, Sutton and King",CloudEdge,SR-81365,PROD-11632
+API timeout errors,Average response time exceeds 10s,ISS-70009,Login issue post-upgrade,Thomas-Graham,DataSphere,SR-80567,PROD-11353
+Dashboard not loading,Average response time exceeds 10s,ISS-70010,API latency,Castro-Williams,Insight360,SR-82448,PROD-11031
+Dashboard not loading,Data not syncing between apps,ISS-70011,Sync issue,"Jones, Oconnor and Carr",DataSphere,SR-81740,PROD-11485
+API timeout errors,Average response time exceeds 10s,ISS-70012,API latency,Brown-Mora,DataSphere,SR-83742,PROD-12000
+Slow system response,Dashboard page crashes intermittently,ISS-70013,Performance degradation,Gutierrez LLC,Insight360,SR-82746,PROD-11611
+API timeout errors,Data not syncing between apps,ISS-70014,Sync issue,Allen PLC,DataSphere,SR-84954,PROD-11617
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70015,Performance degradation,Grant-Lozano,NetConnect,SR-82064,PROD-11857
+Slow system response,Data not syncing between apps,ISS-70016,Sync issue,Hill-Brooks,CoreAnalytics,SR-84895,PROD-11622
+Slow system response,Data not syncing between apps,ISS-70017,UI crash,"Jackson, Krueger and Lee",Insight360,SR-80690,PROD-11034
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70018,Sync issue,Harris-Reed,NetConnect,SR-84600,PROD-11903
+API timeout errors,Dashboard page crashes intermittently,ISS-70019,Login issue post-upgrade,Stokes-Roberts,NetConnect,SR-82993,PROD-11541
+Login failures after upgrade,API call fails after 30s,ISS-70020,UI crash,"Flores, Wallace and Garza",DataSphere,SR-81220,PROD-11786
+API timeout errors,Data not syncing between apps,ISS-70021,Sync issue,"Benson, Bright and Sandoval",CloudEdge,SR-81241,PROD-11277
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70022,Sync issue,"Adams, Osborne and Hall",NetConnect,SR-80029,PROD-11818
+Dashboard not loading,Average response time exceeds 10s,ISS-70023,API latency,"Clay, Schroeder and Rojas",Insight360,SR-83303,PROD-11043
+Dashboard not loading,API call fails after 30s,ISS-70024,Login issue post-upgrade,"Lopez, Bowen and Brown",CoreAnalytics,SR-81041,PROD-11253
+Login failures after upgrade,Average response time exceeds 10s,ISS-70025,Performance degradation,Guerrero Ltd,NetConnect,SR-82568,PROD-11068
+Slow system response,Data not syncing between apps,ISS-70026,Sync issue,Powell-Benitez,Insight360,SR-84640,PROD-11035
+Missing data sync,Dashboard page crashes intermittently,ISS-70027,Performance degradation,Foster-Blair,Insight360,SR-84325,PROD-11653
+Missing data sync,API call fails after 30s,ISS-70028,UI crash,Mason Ltd,CloudEdge,SR-84258,PROD-11714
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70029,Login issue post-upgrade,Sanchez-Graham,NetConnect,SR-83476,PROD-11345
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70030,UI crash,Austin-Davies,CoreAnalytics,SR-80937,PROD-11357
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70031,API latency,Silva-Lee,CoreAnalytics,SR-84096,PROD-11723
+Missing data sync,Data not syncing between apps,ISS-70032,Login issue post-upgrade,Moore PLC,Insight360,SR-83948,PROD-11205
+Login failures after upgrade,API call fails after 30s,ISS-70033,API latency,Bush Inc,NetConnect,SR-83958,PROD-11841
+Slow system response,Average response time exceeds 10s,ISS-70034,Sync issue,Brennan Group,CloudEdge,SR-84913,PROD-11520
+Missing data sync,Dashboard page crashes intermittently,ISS-70035,Sync issue,"Beasley, Diaz and Martin",NetConnect,SR-83348,PROD-11130
+API timeout errors,Data not syncing between apps,ISS-70036,Login issue post-upgrade,Gonzalez-Collins,CoreAnalytics,SR-84074,PROD-11473
+Slow system response,Data not syncing between apps,ISS-70037,UI crash,"Burke, Ward and Gibson",CoreAnalytics,SR-82237,PROD-11372
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70038,API latency,"Hall, Davis and Butler",DataSphere,SR-82211,PROD-11458
+Dashboard not loading,API call fails after 30s,ISS-70039,Login issue post-upgrade,Perez PLC,DataSphere,SR-80976,PROD-11589
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70040,UI crash,"Griffin, Watkins and Ward",Insight360,SR-81058,PROD-11083
+Login failures after upgrade,Average response time exceeds 10s,ISS-70041,UI crash,"Jefferson, Riggs and Morrow",DataSphere,SR-84408,PROD-11878
+API timeout errors,Dashboard page crashes intermittently,ISS-70042,Sync issue,Logan-Smith,NetConnect,SR-83250,PROD-11819
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70043,Sync issue,Moore PLC,DataSphere,SR-83197,PROD-11784
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70044,UI crash,Osborn Inc,CoreAnalytics,SR-82726,PROD-11946
+Slow system response,Users unable to log in after v2.3 patch,ISS-70045,Performance degradation,Hernandez-Carter,Insight360,SR-81856,PROD-11956
+Slow system response,API call fails after 30s,ISS-70046,Login issue post-upgrade,"Garcia, Mcmillan and Chaney",DataSphere,SR-81442,PROD-11552
+Slow system response,Average response time exceeds 10s,ISS-70047,Performance degradation,Johnson-Fitzgerald,CoreAnalytics,SR-80204,PROD-11396
+Missing data sync,Average response time exceeds 10s,ISS-70048,Performance degradation,Hart LLC,CloudEdge,SR-81680,PROD-11634
+API timeout errors,Average response time exceeds 10s,ISS-70049,Sync issue,"Arellano, Lopez and Huerta",NetConnect,SR-80791,PROD-11567
+API timeout errors,API call fails after 30s,ISS-70050,Login issue post-upgrade,"Cole, Barron and Smith",CoreAnalytics,SR-82245,PROD-11059
+Dashboard not loading,API call fails after 30s,ISS-70051,Login issue post-upgrade,Walker-Shea,NetConnect,SR-84686,PROD-11554
+API timeout errors,Data not syncing between apps,ISS-70052,API latency,Smith-Bentley,CloudEdge,SR-80167,PROD-11147
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70053,Login issue post-upgrade,Byrd Inc,DataSphere,SR-84585,PROD-11875
+API timeout errors,Dashboard page crashes intermittently,ISS-70054,UI crash,Barnes PLC,CoreAnalytics,SR-80983,PROD-11854
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70055,API latency,Myers-Smith,Insight360,SR-80599,PROD-11513
+Missing data sync,Data not syncing between apps,ISS-70056,Performance degradation,Bishop-Gonzalez,DataSphere,SR-83395,PROD-11234
+Slow system response,API call fails after 30s,ISS-70057,Login issue post-upgrade,Moore Group,CloudEdge,SR-83541,PROD-11989
+Slow system response,Users unable to log in after v2.3 patch,ISS-70058,Performance degradation,Sandoval Group,CloudEdge,SR-80560,PROD-12000
+Login failures after upgrade,Data not syncing between apps,ISS-70059,UI crash,Wolf Group,NetConnect,SR-82231,PROD-11584
+Missing data sync,Dashboard page crashes intermittently,ISS-70060,UI crash,Andrade-Moore,DataSphere,SR-81742,PROD-11303
+Missing data sync,Data not syncing between apps,ISS-70061,Sync issue,Davis-Tucker,DataSphere,SR-82836,PROD-11216
+API timeout errors,API call fails after 30s,ISS-70062,API latency,"Fox, Johns and Deleon",NetConnect,SR-84494,PROD-11989
+API timeout errors,Average response time exceeds 10s,ISS-70063,UI crash,"Schneider, Brown and Ellison",CloudEdge,SR-80710,PROD-11085
+Login failures after upgrade,Average response time exceeds 10s,ISS-70064,Sync issue,Ibarra-Adams,NetConnect,SR-80645,PROD-11607
+Dashboard not loading,API call fails after 30s,ISS-70065,UI crash,"Hill, Beck and Garcia",NetConnect,SR-84506,PROD-11632
+Missing data sync,API call fails after 30s,ISS-70066,API latency,"Carter, Hughes and Brooks",Insight360,SR-82824,PROD-11982
+Missing data sync,Data not syncing between apps,ISS-70067,API latency,Myers Group,CoreAnalytics,SR-80927,PROD-11835
+Login failures after upgrade,Average response time exceeds 10s,ISS-70068,Login issue post-upgrade,"Lopez, Bates and Phillips",NetConnect,SR-81816,PROD-11119
+Slow system response,Users unable to log in after v2.3 patch,ISS-70069,Sync issue,Williamson-Kelly,NetConnect,SR-83706,PROD-11999
+Dashboard not loading,API call fails after 30s,ISS-70070,Performance degradation,Smith and Sons,NetConnect,SR-83915,PROD-11452
+API timeout errors,Dashboard page crashes intermittently,ISS-70071,Performance degradation,Foster-Blair,CloudEdge,SR-81677,PROD-11247
+Slow system response,Dashboard page crashes intermittently,ISS-70072,API latency,"Thomas, Smith and Cook",NetConnect,SR-84399,PROD-11680
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70073,UI crash,"Hall, Davis and Butler",NetConnect,SR-82479,PROD-11417
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70074,API latency,Miranda-Dennis,Insight360,SR-81585,PROD-11422
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70075,Performance degradation,"Reid, Hamilton and Evans",DataSphere,SR-81878,PROD-11812
+Dashboard not loading,API call fails after 30s,ISS-70076,API latency,Simpson-Peterson,Insight360,SR-80731,PROD-11238
+API timeout errors,Average response time exceeds 10s,ISS-70077,Login issue post-upgrade,Roman LLC,Insight360,SR-82329,PROD-11795
+API timeout errors,Dashboard page crashes intermittently,ISS-70078,API latency,"Gonzalez, Davis and Bonilla",NetConnect,SR-83662,PROD-11895
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70079,API latency,Wells LLC,CloudEdge,SR-80212,PROD-11325
+Dashboard not loading,Average response time exceeds 10s,ISS-70080,UI crash,Davis Group,Insight360,SR-83858,PROD-11675
+Dashboard not loading,Average response time exceeds 10s,ISS-70081,UI crash,"Jenkins, Barrett and Klein",CoreAnalytics,SR-83296,PROD-11026
+Slow system response,Dashboard page crashes intermittently,ISS-70082,UI crash,Mitchell-Mendez,CoreAnalytics,SR-81856,PROD-11899
+Dashboard not loading,API call fails after 30s,ISS-70083,Login issue post-upgrade,Chaney-Lozano,CloudEdge,SR-84446,PROD-11519
+Slow system response,Data not syncing between apps,ISS-70084,Login issue post-upgrade,Gutierrez LLC,CoreAnalytics,SR-84679,PROD-11076
+Login failures after upgrade,Data not syncing between apps,ISS-70085,Sync issue,"Hernandez, White and Burgess",CoreAnalytics,SR-84646,PROD-11765
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70086,Login issue post-upgrade,"Thomas, Yates and Chen",NetConnect,SR-81384,PROD-11200
+Slow system response,API call fails after 30s,ISS-70087,UI crash,"Payne, Holland and White",DataSphere,SR-84134,PROD-11896
+Missing data sync,API call fails after 30s,ISS-70088,API latency,"Murphy, Thompson and Reese",CloudEdge,SR-80806,PROD-11266
+Missing data sync,Average response time exceeds 10s,ISS-70089,Sync issue,Ibarra-Adams,CloudEdge,SR-84113,PROD-11156
+Missing data sync,Dashboard page crashes intermittently,ISS-70090,Performance degradation,Gray-Davis,DataSphere,SR-80810,PROD-11899
+Missing data sync,Data not syncing between apps,ISS-70091,UI crash,"Morris, Tate and Woods",CloudEdge,SR-80459,PROD-11867
+Slow system response,Data not syncing between apps,ISS-70092,Login issue post-upgrade,Bryant-Lawson,Insight360,SR-82229,PROD-11502
+Slow system response,API call fails after 30s,ISS-70093,UI crash,"Patel, Roberts and Hall",DataSphere,SR-80271,PROD-11845
+Login failures after upgrade,Average response time exceeds 10s,ISS-70094,API latency,"Stein, Randolph and Carter",DataSphere,SR-84193,PROD-11483
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70095,Performance degradation,Bartlett PLC,DataSphere,SR-82068,PROD-11462
+Slow system response,Dashboard page crashes intermittently,ISS-70096,UI crash,Riggs-Hawkins,Insight360,SR-80729,PROD-11475
+Missing data sync,API call fails after 30s,ISS-70097,UI crash,Park PLC,CoreAnalytics,SR-84091,PROD-11457
+Missing data sync,Dashboard page crashes intermittently,ISS-70098,Performance degradation,"Jennings, Lester and Brooks",Insight360,SR-83503,PROD-11186
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70099,UI crash,"Waller, Stephens and Alvarez",DataSphere,SR-80467,PROD-11789
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70100,API latency,Carlson PLC,Insight360,SR-82433,PROD-11179
+Login failures after upgrade,Average response time exceeds 10s,ISS-70101,Performance degradation,Wolf Group,CoreAnalytics,SR-82587,PROD-11397
+Login failures after upgrade,Average response time exceeds 10s,ISS-70102,Sync issue,"Reynolds, Joyce and Mercer",CloudEdge,SR-82769,PROD-11957
+Missing data sync,Average response time exceeds 10s,ISS-70103,Login issue post-upgrade,Clark-Hurst,Insight360,SR-84522,PROD-11575
+Slow system response,Data not syncing between apps,ISS-70104,UI crash,Carroll Inc,NetConnect,SR-82911,PROD-11754
+Missing data sync,Data not syncing between apps,ISS-70105,Login issue post-upgrade,Bennett-Flores,CloudEdge,SR-84792,PROD-11014
+Login failures after upgrade,Average response time exceeds 10s,ISS-70106,API latency,Butler-Stewart,CoreAnalytics,SR-81873,PROD-11569
+Login failures after upgrade,Data not syncing between apps,ISS-70107,Login issue post-upgrade,"Miranda, Martin and Erickson",NetConnect,SR-84062,PROD-11545
+Missing data sync,Average response time exceeds 10s,ISS-70108,UI crash,Kemp Inc,Insight360,SR-80762,PROD-11836
+Dashboard not loading,Data not syncing between apps,ISS-70109,API latency,Gilbert-Smith,Insight360,SR-83107,PROD-11707
+Missing data sync,Data not syncing between apps,ISS-70110,UI crash,"Ramos, Young and Olson",NetConnect,SR-82026,PROD-11687
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70111,UI crash,Chaney-Lozano,Insight360,SR-82402,PROD-11987
+Login failures after upgrade,Data not syncing between apps,ISS-70112,UI crash,Bradley-Merritt,NetConnect,SR-81033,PROD-11236
+Slow system response,Dashboard page crashes intermittently,ISS-70113,Performance degradation,"Gonzales, Allen and Carpenter",CloudEdge,SR-80340,PROD-11723
+Missing data sync,Dashboard page crashes intermittently,ISS-70114,Sync issue,"Campbell, Clark and Reese",CoreAnalytics,SR-80722,PROD-11509
+API timeout errors,Data not syncing between apps,ISS-70115,UI crash,Howell-Lawson,CloudEdge,SR-80437,PROD-11798
+Slow system response,Average response time exceeds 10s,ISS-70116,Sync issue,Watson PLC,NetConnect,SR-80279,PROD-11712
+API timeout errors,Average response time exceeds 10s,ISS-70117,Login issue post-upgrade,"Raymond, Lara and Daniel",CoreAnalytics,SR-83880,PROD-11304
+Slow system response,API call fails after 30s,ISS-70118,UI crash,Soto LLC,NetConnect,SR-81135,PROD-11719
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70119,Login issue post-upgrade,Thomas PLC,CoreAnalytics,SR-83871,PROD-11538
+API timeout errors,API call fails after 30s,ISS-70120,Login issue post-upgrade,Frazier-Goodman,NetConnect,SR-84149,PROD-11407
+API timeout errors,API call fails after 30s,ISS-70121,Performance degradation,Price and Sons,CloudEdge,SR-81168,PROD-11962
+API timeout errors,API call fails after 30s,ISS-70122,UI crash,"Santiago, Hall and Lara",Insight360,SR-81982,PROD-11979
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70123,Sync issue,Baker Inc,Insight360,SR-81069,PROD-11635
+Slow system response,Data not syncing between apps,ISS-70124,API latency,Carlson PLC,NetConnect,SR-82551,PROD-11458
+Missing data sync,API call fails after 30s,ISS-70125,API latency,Smith-Cruz,Insight360,SR-81087,PROD-11731
+Login failures after upgrade,Average response time exceeds 10s,ISS-70126,Performance degradation,Ramos Inc,DataSphere,SR-80531,PROD-11106
+API timeout errors,Data not syncing between apps,ISS-70127,UI crash,Harris-Reed,CoreAnalytics,SR-84118,PROD-11445
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70128,UI crash,Bautista Ltd,CloudEdge,SR-83774,PROD-11827
+Login failures after upgrade,Data not syncing between apps,ISS-70129,UI crash,Wright-Shaw,CoreAnalytics,SR-82951,PROD-11500
+Slow system response,Users unable to log in after v2.3 patch,ISS-70130,Sync issue,"Klein, Rodriguez and Chapman",NetConnect,SR-80206,PROD-11708
+API timeout errors,API call fails after 30s,ISS-70131,Performance degradation,Anderson Inc,DataSphere,SR-83119,PROD-11680
+Missing data sync,Data not syncing between apps,ISS-70132,Sync issue,"Green, Hudson and Lara",CoreAnalytics,SR-81111,PROD-11489
+Missing data sync,API call fails after 30s,ISS-70133,Performance degradation,Rogers LLC,Insight360,SR-84483,PROD-11540
+Login failures after upgrade,Average response time exceeds 10s,ISS-70134,API latency,Suarez LLC,DataSphere,SR-82792,PROD-11005
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70135,UI crash,"Henderson, Johnson and Johnson",DataSphere,SR-83674,PROD-11544
+Dashboard not loading,API call fails after 30s,ISS-70136,Login issue post-upgrade,Burke Group,NetConnect,SR-84808,PROD-11238
+Dashboard not loading,Data not syncing between apps,ISS-70137,API latency,Powell-English,DataSphere,SR-83688,PROD-11471
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70138,Sync issue,"Beard, Cox and Nguyen",CoreAnalytics,SR-82562,PROD-11789
+Dashboard not loading,Average response time exceeds 10s,ISS-70139,UI crash,Pierce Inc,CoreAnalytics,SR-81598,PROD-11918
+Slow system response,API call fails after 30s,ISS-70140,UI crash,"Jefferson, Riggs and Morrow",NetConnect,SR-82311,PROD-11100
+Slow system response,Dashboard page crashes intermittently,ISS-70141,Performance degradation,"Garcia, Mcmillan and Chaney",CoreAnalytics,SR-81678,PROD-11432
+Login failures after upgrade,Average response time exceeds 10s,ISS-70142,Login issue post-upgrade,Brown-Jones,CoreAnalytics,SR-83032,PROD-11923
+Slow system response,API call fails after 30s,ISS-70143,Sync issue,Maynard-Johnson,Insight360,SR-80648,PROD-11781
+Slow system response,Users unable to log in after v2.3 patch,ISS-70144,Sync issue,"Baxter, Thomas and Cordova",CloudEdge,SR-81768,PROD-11582
+Dashboard not loading,Data not syncing between apps,ISS-70145,API latency,Lee PLC,CloudEdge,SR-80841,PROD-11267
+Missing data sync,API call fails after 30s,ISS-70146,Performance degradation,Adkins PLC,CloudEdge,SR-82664,PROD-11782
+Dashboard not loading,Average response time exceeds 10s,ISS-70147,API latency,"Gallagher, Daniel and Valenzuela",NetConnect,SR-83802,PROD-11134
+Dashboard not loading,Average response time exceeds 10s,ISS-70148,API latency,Bradley-Merritt,CloudEdge,SR-82306,PROD-11882
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70149,UI crash,Miller Inc,DataSphere,SR-81373,PROD-11293
+API timeout errors,API call fails after 30s,ISS-70150,API latency,"Robinson, Gamble and Palmer",CloudEdge,SR-84584,PROD-11400
+API timeout errors,API call fails after 30s,ISS-70151,Login issue post-upgrade,"Daniels, Hubbard and Sweeney",CloudEdge,SR-80270,PROD-11667
+Slow system response,Average response time exceeds 10s,ISS-70152,UI crash,Riggs-Hawkins,CloudEdge,SR-83944,PROD-11358
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70153,Performance degradation,Ortiz Ltd,NetConnect,SR-82340,PROD-11770
+Missing data sync,Dashboard page crashes intermittently,ISS-70154,UI crash,"Solis, Garcia and Smith",CoreAnalytics,SR-83640,PROD-11763
+API timeout errors,Dashboard page crashes intermittently,ISS-70155,Performance degradation,Barrera-Moody,CloudEdge,SR-81757,PROD-11876
+API timeout errors,Average response time exceeds 10s,ISS-70156,Sync issue,Hunter-Church,CloudEdge,SR-80093,PROD-11435
+Login failures after upgrade,Average response time exceeds 10s,ISS-70157,Sync issue,Murray and Sons,NetConnect,SR-82038,PROD-11170
+Slow system response,API call fails after 30s,ISS-70158,Performance degradation,Gonzalez-Collins,CloudEdge,SR-84678,PROD-11722
+Slow system response,API call fails after 30s,ISS-70159,Login issue post-upgrade,"Bush, Carter and Ramsey",CoreAnalytics,SR-80196,PROD-11961
+Slow system response,Data not syncing between apps,ISS-70160,Login issue post-upgrade,"Wong, Hamilton and Smith",CloudEdge,SR-84933,PROD-11672
+Missing data sync,API call fails after 30s,ISS-70161,UI crash,"Reid, Hamilton and Evans",CoreAnalytics,SR-80211,PROD-11359
+API timeout errors,API call fails after 30s,ISS-70162,Sync issue,Hicks-Owen,Insight360,SR-80675,PROD-11544
+Slow system response,Data not syncing between apps,ISS-70163,Sync issue,Hinton-Dixon,Insight360,SR-80731,PROD-11164
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70164,API latency,Taylor Group,CloudEdge,SR-83617,PROD-11883
+Missing data sync,Dashboard page crashes intermittently,ISS-70165,Performance degradation,Baker-Johnson,NetConnect,SR-83469,PROD-11474
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70166,Performance degradation,"Ryan, Murphy and Williamson",NetConnect,SR-83841,PROD-11472
+Missing data sync,Data not syncing between apps,ISS-70167,UI crash,Smith-Grant,CoreAnalytics,SR-82827,PROD-11254
+API timeout errors,Average response time exceeds 10s,ISS-70168,Sync issue,Harris-Williams,Insight360,SR-84196,PROD-11734
+Slow system response,Average response time exceeds 10s,ISS-70169,Performance degradation,Myers Group,CoreAnalytics,SR-81656,PROD-11626
+API timeout errors,Average response time exceeds 10s,ISS-70170,API latency,Solis Inc,DataSphere,SR-81794,PROD-11443
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70171,UI crash,"Bruce, Jensen and Carroll",Insight360,SR-82265,PROD-11081
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70172,Performance degradation,Evans Ltd,Insight360,SR-84427,PROD-11916
+API timeout errors,API call fails after 30s,ISS-70173,API latency,Cruz-Martinez,CoreAnalytics,SR-82206,PROD-11065
+Login failures after upgrade,Data not syncing between apps,ISS-70174,UI crash,Woodward-Davis,CoreAnalytics,SR-82461,PROD-11391
+Login failures after upgrade,Average response time exceeds 10s,ISS-70175,API latency,"Cain, Davis and Pratt",CloudEdge,SR-83289,PROD-11343
+Slow system response,Data not syncing between apps,ISS-70176,API latency,Long-Johnson,CloudEdge,SR-84328,PROD-11006
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70177,API latency,"Smith, Sweeney and Burch",CoreAnalytics,SR-83570,PROD-11793
+Missing data sync,Dashboard page crashes intermittently,ISS-70178,Performance degradation,Roman LLC,Insight360,SR-83759,PROD-11055
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70179,Login issue post-upgrade,Wilson PLC,CloudEdge,SR-84013,PROD-11822
+Dashboard not loading,Data not syncing between apps,ISS-70180,UI crash,"Green, Hudson and Lara",DataSphere,SR-80328,PROD-11552
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70181,API latency,Rogers and Sons,DataSphere,SR-82340,PROD-11148
+Missing data sync,Dashboard page crashes intermittently,ISS-70182,Login issue post-upgrade,Turner Inc,CoreAnalytics,SR-81802,PROD-11583
+Login failures after upgrade,Data not syncing between apps,ISS-70183,Sync issue,Hernandez-Carter,Insight360,SR-84709,PROD-11927
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70184,Login issue post-upgrade,Mcknight Group,Insight360,SR-84725,PROD-11440
+Login failures after upgrade,Average response time exceeds 10s,ISS-70185,Performance degradation,"Shannon, Collins and Sutton",Insight360,SR-80901,PROD-11163
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70186,Sync issue,Perez LLC,DataSphere,SR-84337,PROD-11938
+API timeout errors,Data not syncing between apps,ISS-70187,Login issue post-upgrade,Gutierrez LLC,NetConnect,SR-82607,PROD-11242
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70188,Sync issue,Jackson-Harmon,DataSphere,SR-83935,PROD-11844
+Missing data sync,Average response time exceeds 10s,ISS-70189,UI crash,Stanley Inc,CloudEdge,SR-84739,PROD-11201
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70190,Login issue post-upgrade,"Herrera, Morton and Bell",Insight360,SR-83835,PROD-11046
+API timeout errors,API call fails after 30s,ISS-70191,Login issue post-upgrade,Kemp Inc,Insight360,SR-83902,PROD-11928
+Slow system response,Users unable to log in after v2.3 patch,ISS-70192,Sync issue,Johnson-Nelson,CoreAnalytics,SR-81060,PROD-11496
+Slow system response,Users unable to log in after v2.3 patch,ISS-70193,API latency,Caldwell Ltd,CloudEdge,SR-82833,PROD-11804
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70194,Sync issue,Porter-Martin,CloudEdge,SR-80221,PROD-11040
+Missing data sync,Data not syncing between apps,ISS-70195,Sync issue,Johns Group,NetConnect,SR-81770,PROD-11093
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70196,API latency,Stout PLC,Insight360,SR-80682,PROD-11410
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70197,Sync issue,Jones-Rios,CoreAnalytics,SR-81689,PROD-11522
+API timeout errors,API call fails after 30s,ISS-70198,API latency,"Morris, Cole and Flowers",CloudEdge,SR-82562,PROD-11079
+API timeout errors,Data not syncing between apps,ISS-70199,API latency,Wright-Shaw,CloudEdge,SR-84362,PROD-11822
+Login failures after upgrade,API call fails after 30s,ISS-70200,API latency,Ibarra-Adams,CloudEdge,SR-84391,PROD-11524
+Dashboard not loading,Average response time exceeds 10s,ISS-70201,Performance degradation,"Ashley, Garrett and Morrison",CoreAnalytics,SR-81538,PROD-11375
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70202,Sync issue,Haas Ltd,CloudEdge,SR-80331,PROD-11341
+Missing data sync,Data not syncing between apps,ISS-70203,Login issue post-upgrade,Simmons Ltd,NetConnect,SR-83784,PROD-11699
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70204,Login issue post-upgrade,Rodriguez-Stewart,DataSphere,SR-82739,PROD-11479
+Slow system response,Users unable to log in after v2.3 patch,ISS-70205,API latency,"Zimmerman, Smith and Orr",CloudEdge,SR-83000,PROD-11187
+API timeout errors,API call fails after 30s,ISS-70206,API latency,Wilson-Maxwell,CoreAnalytics,SR-80423,PROD-11145
+API timeout errors,Dashboard page crashes intermittently,ISS-70207,Performance degradation,Williams LLC,CloudEdge,SR-82534,PROD-11714
+Missing data sync,API call fails after 30s,ISS-70208,UI crash,"Clark, Smith and Anderson",DataSphere,SR-83348,PROD-11032
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70209,Sync issue,Wood LLC,NetConnect,SR-84428,PROD-11404
+Dashboard not loading,API call fails after 30s,ISS-70210,Performance degradation,Norris-Riley,DataSphere,SR-84557,PROD-11290
+Dashboard not loading,API call fails after 30s,ISS-70211,Performance degradation,"Harris, Lewis and Chavez",NetConnect,SR-83057,PROD-11010
+Dashboard not loading,Data not syncing between apps,ISS-70212,UI crash,Pennington Inc,NetConnect,SR-82304,PROD-11834
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70213,Login issue post-upgrade,Short Group,CloudEdge,SR-81045,PROD-11197
+Dashboard not loading,Data not syncing between apps,ISS-70214,Performance degradation,Landry and Sons,DataSphere,SR-84871,PROD-11384
+Slow system response,Data not syncing between apps,ISS-70215,API latency,Martinez-Clark,CloudEdge,SR-83488,PROD-11780
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70216,Login issue post-upgrade,Howell-Lawson,CloudEdge,SR-81734,PROD-11300
+Slow system response,Data not syncing between apps,ISS-70217,Login issue post-upgrade,Smith-Jones,Insight360,SR-84002,PROD-11747
+Slow system response,API call fails after 30s,ISS-70218,Login issue post-upgrade,Allen PLC,CoreAnalytics,SR-80080,PROD-11131
+Missing data sync,Average response time exceeds 10s,ISS-70219,Sync issue,"Weber, Lynch and Little",Insight360,SR-83059,PROD-11178
+API timeout errors,Average response time exceeds 10s,ISS-70220,UI crash,Thomas-Graham,Insight360,SR-81265,PROD-11120
+API timeout errors,API call fails after 30s,ISS-70221,API latency,York-Ross,NetConnect,SR-80799,PROD-11305
+Slow system response,Data not syncing between apps,ISS-70222,Login issue post-upgrade,"Martin, Stevenson and Meadows",NetConnect,SR-80458,PROD-11115
+Login failures after upgrade,API call fails after 30s,ISS-70223,API latency,Arroyo PLC,NetConnect,SR-82598,PROD-11235
+Missing data sync,API call fails after 30s,ISS-70224,UI crash,"Robinson, Shaw and Acosta",DataSphere,SR-81306,PROD-11172
+API timeout errors,API call fails after 30s,ISS-70225,Sync issue,Gilbert-Smith,DataSphere,SR-81284,PROD-11370
+API timeout errors,Data not syncing between apps,ISS-70226,API latency,Ramos-Hernandez,Insight360,SR-80122,PROD-11072
+API timeout errors,Dashboard page crashes intermittently,ISS-70227,UI crash,Suarez LLC,Insight360,SR-84520,PROD-11229
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70228,Login issue post-upgrade,"Zimmerman, Collins and Jackson",CloudEdge,SR-82322,PROD-11183
+Slow system response,Average response time exceeds 10s,ISS-70229,UI crash,Vega Ltd,NetConnect,SR-83584,PROD-11354
+Dashboard not loading,Average response time exceeds 10s,ISS-70230,Performance degradation,"Rosario, Reeves and Velez",CloudEdge,SR-82085,PROD-11913
+Slow system response,Data not syncing between apps,ISS-70231,Performance degradation,Hampton and Sons,Insight360,SR-84017,PROD-11586
+Missing data sync,API call fails after 30s,ISS-70232,API latency,Taylor Group,NetConnect,SR-82921,PROD-11145
+API timeout errors,Data not syncing between apps,ISS-70233,Login issue post-upgrade,Flores-Townsend,DataSphere,SR-83856,PROD-11448
+Missing data sync,Average response time exceeds 10s,ISS-70234,API latency,"Hernandez, White and Burgess",CloudEdge,SR-84750,PROD-11837
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70235,Login issue post-upgrade,"Bowman, Davis and Cox",DataSphere,SR-81303,PROD-11666
+Dashboard not loading,Data not syncing between apps,ISS-70236,Performance degradation,Blake and Sons,NetConnect,SR-80429,PROD-11397
+Missing data sync,Average response time exceeds 10s,ISS-70237,Login issue post-upgrade,"Miller, Hardy and Watkins",DataSphere,SR-84021,PROD-11102
+Missing data sync,Average response time exceeds 10s,ISS-70238,Sync issue,York-Ross,CloudEdge,SR-84395,PROD-11192
+Slow system response,Data not syncing between apps,ISS-70239,Performance degradation,"Nelson, Young and Dyer",Insight360,SR-83362,PROD-11765
+Missing data sync,Data not syncing between apps,ISS-70240,UI crash,Guerrero Ltd,CloudEdge,SR-83775,PROD-11942
+Slow system response,API call fails after 30s,ISS-70241,Performance degradation,"Williams, Anderson and Rosales",Insight360,SR-80924,PROD-11567
+Slow system response,API call fails after 30s,ISS-70242,Performance degradation,Lambert Inc,Insight360,SR-84945,PROD-11722
+Slow system response,Users unable to log in after v2.3 patch,ISS-70243,API latency,Schultz-Reyes,CloudEdge,SR-84796,PROD-11650
+API timeout errors,API call fails after 30s,ISS-70244,Sync issue,Barker-Fuentes,NetConnect,SR-83920,PROD-11489
+API timeout errors,API call fails after 30s,ISS-70245,Login issue post-upgrade,Mcdaniel Inc,CoreAnalytics,SR-80789,PROD-11097
+Missing data sync,Data not syncing between apps,ISS-70246,UI crash,"Kim, Buckley and Espinoza",Insight360,SR-84349,PROD-11060
+Slow system response,Average response time exceeds 10s,ISS-70247,Performance degradation,"White, Horton and Bender",Insight360,SR-80780,PROD-11486
+API timeout errors,Data not syncing between apps,ISS-70248,UI crash,Hale PLC,CloudEdge,SR-84438,PROD-11252
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70249,Performance degradation,Dennis-Duffy,CloudEdge,SR-84465,PROD-11456
+Slow system response,Data not syncing between apps,ISS-70250,API latency,Watkins-Freeman,CloudEdge,SR-83392,PROD-11174
+Dashboard not loading,Data not syncing between apps,ISS-70251,Sync issue,Hensley Ltd,CoreAnalytics,SR-84777,PROD-11519
+Missing data sync,Dashboard page crashes intermittently,ISS-70252,Login issue post-upgrade,Bautista Ltd,Insight360,SR-83731,PROD-11595
+Slow system response,Dashboard page crashes intermittently,ISS-70253,Performance degradation,"Hall, Davis and Butler",CloudEdge,SR-82289,PROD-11880
+Missing data sync,Average response time exceeds 10s,ISS-70254,Login issue post-upgrade,"Keith, Cisneros and Hendricks",DataSphere,SR-82331,PROD-11363
+Missing data sync,API call fails after 30s,ISS-70255,Login issue post-upgrade,"Miranda, Martin and Erickson",Insight360,SR-80526,PROD-11163
+Missing data sync,Dashboard page crashes intermittently,ISS-70256,Sync issue,Reed-James,CloudEdge,SR-84990,PROD-11148
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70257,Sync issue,Lewis-Lopez,Insight360,SR-81565,PROD-11796
+Missing data sync,Average response time exceeds 10s,ISS-70258,API latency,Mason Ltd,Insight360,SR-84480,PROD-11815
+Login failures after upgrade,API call fails after 30s,ISS-70259,UI crash,"Vargas, Smith and Walker",Insight360,SR-83411,PROD-11998
+Slow system response,Average response time exceeds 10s,ISS-70260,Sync issue,Jackson-Vasquez,NetConnect,SR-80118,PROD-11881
+Missing data sync,Average response time exceeds 10s,ISS-70261,UI crash,Park PLC,DataSphere,SR-82086,PROD-11923
+Missing data sync,API call fails after 30s,ISS-70262,Sync issue,Hernandez PLC,CloudEdge,SR-80099,PROD-11357
+Login failures after upgrade,Data not syncing between apps,ISS-70263,Performance degradation,Mitchell-Parker,CoreAnalytics,SR-84135,PROD-11717
+Missing data sync,Data not syncing between apps,ISS-70264,UI crash,Christensen Ltd,CloudEdge,SR-83046,PROD-11377
+Slow system response,Users unable to log in after v2.3 patch,ISS-70265,API latency,Simpson-Ray,CoreAnalytics,SR-82831,PROD-11831
+Slow system response,Data not syncing between apps,ISS-70266,Performance degradation,Coleman-Welch,NetConnect,SR-81732,PROD-11027
+Missing data sync,Average response time exceeds 10s,ISS-70267,Sync issue,Hardy Group,DataSphere,SR-82060,PROD-11218
+Slow system response,Average response time exceeds 10s,ISS-70268,API latency,"Diaz, Lindsey and Adams",CoreAnalytics,SR-83085,PROD-11739
+Login failures after upgrade,Data not syncing between apps,ISS-70269,Performance degradation,Edwards-Day,Insight360,SR-80269,PROD-11395
+Login failures after upgrade,Average response time exceeds 10s,ISS-70270,Performance degradation,Lewis-Patel,NetConnect,SR-83063,PROD-11160
+Login failures after upgrade,Data not syncing between apps,ISS-70271,Sync issue,"Robinson, Shaw and Acosta",DataSphere,SR-83255,PROD-11603
+API timeout errors,API call fails after 30s,ISS-70272,Performance degradation,"Cooper, Swanson and Pierce",CloudEdge,SR-83666,PROD-11151
+Login failures after upgrade,Average response time exceeds 10s,ISS-70273,Login issue post-upgrade,Miller-Knight,Insight360,SR-80606,PROD-11532
+API timeout errors,Dashboard page crashes intermittently,ISS-70274,Sync issue,Poole-Kelley,CloudEdge,SR-84790,PROD-11514
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70275,UI crash,"Peterson, Wright and Hamilton",DataSphere,SR-84688,PROD-11283
+API timeout errors,Data not syncing between apps,ISS-70276,Login issue post-upgrade,"Johnson, Ortega and Solomon",CoreAnalytics,SR-80280,PROD-11982
+Missing data sync,Average response time exceeds 10s,ISS-70277,Login issue post-upgrade,Lee PLC,Insight360,SR-84262,PROD-11955
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70278,Login issue post-upgrade,Giles-Gallagher,Insight360,SR-82479,PROD-11929
+Dashboard not loading,Average response time exceeds 10s,ISS-70279,Login issue post-upgrade,Williams-Myers,Insight360,SR-80757,PROD-11593
+Slow system response,Average response time exceeds 10s,ISS-70280,Performance degradation,"Duarte, Reese and Gonzalez",Insight360,SR-83260,PROD-11050
+Login failures after upgrade,API call fails after 30s,ISS-70281,UI crash,Harris Group,Insight360,SR-81543,PROD-11566
+Login failures after upgrade,Data not syncing between apps,ISS-70282,Sync issue,Peters-Garrett,Insight360,SR-83627,PROD-11766
+Slow system response,API call fails after 30s,ISS-70283,UI crash,"Campbell, Bennett and Carrillo",CoreAnalytics,SR-81062,PROD-11109
+Dashboard not loading,API call fails after 30s,ISS-70284,Login issue post-upgrade,Mcdaniel-Moore,CloudEdge,SR-83559,PROD-11072
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70285,API latency,Baird-Krause,Insight360,SR-80692,PROD-11391
+Slow system response,Average response time exceeds 10s,ISS-70286,API latency,Whitney-Hernandez,NetConnect,SR-81516,PROD-11980
+Missing data sync,Average response time exceeds 10s,ISS-70287,Sync issue,Poole-Kelley,Insight360,SR-82796,PROD-11138
+API timeout errors,Dashboard page crashes intermittently,ISS-70288,Login issue post-upgrade,"Bruce, Jensen and Carroll",Insight360,SR-81011,PROD-11261
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70289,Login issue post-upgrade,"Freeman, Jones and Hall",DataSphere,SR-83738,PROD-11480
+Missing data sync,API call fails after 30s,ISS-70290,Sync issue,"Mueller, Swanson and Rogers",CloudEdge,SR-81945,PROD-11964
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70291,UI crash,"West, Evans and Gilbert",CoreAnalytics,SR-82346,PROD-11026
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70292,UI crash,"Jackson, Krueger and Lee",CloudEdge,SR-82064,PROD-11726
+Missing data sync,Data not syncing between apps,ISS-70293,UI crash,"Lopez, Cunningham and Wells",NetConnect,SR-80583,PROD-11982
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70294,Login issue post-upgrade,Murray LLC,DataSphere,SR-84070,PROD-11373
+Login failures after upgrade,Data not syncing between apps,ISS-70295,API latency,Randall Inc,DataSphere,SR-82168,PROD-11093
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70296,UI crash,Padilla-Wang,NetConnect,SR-84794,PROD-11548
+Missing data sync,API call fails after 30s,ISS-70297,Login issue post-upgrade,Phillips Group,Insight360,SR-82711,PROD-11572
+API timeout errors,API call fails after 30s,ISS-70298,Login issue post-upgrade,"Jefferson, Riggs and Morrow",CoreAnalytics,SR-81897,PROD-11647
+Slow system response,Users unable to log in after v2.3 patch,ISS-70299,Login issue post-upgrade,"Schneider, Brown and Ellison",CloudEdge,SR-81923,PROD-11810
+Missing data sync,Dashboard page crashes intermittently,ISS-70300,Performance degradation,"Miller, Chapman and Dickerson",DataSphere,SR-81960,PROD-11407
+Login failures after upgrade,Average response time exceeds 10s,ISS-70301,Login issue post-upgrade,"Wilkinson, Lane and Fields",CloudEdge,SR-81808,PROD-11738
+API timeout errors,Dashboard page crashes intermittently,ISS-70302,Performance degradation,Pope-Hopkins,DataSphere,SR-83545,PROD-11340
+API timeout errors,Data not syncing between apps,ISS-70303,Sync issue,Moyer-Moyer,Insight360,SR-81287,PROD-11673
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70304,API latency,Mcdaniel Inc,CloudEdge,SR-84230,PROD-11497
+Slow system response,API call fails after 30s,ISS-70305,Performance degradation,Schroeder Group,CloudEdge,SR-82318,PROD-11639
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70306,Sync issue,"Ramirez, Lee and Rodriguez",NetConnect,SR-84615,PROD-11221
+Missing data sync,Average response time exceeds 10s,ISS-70307,API latency,Parker PLC,DataSphere,SR-82837,PROD-11427
+Login failures after upgrade,Average response time exceeds 10s,ISS-70308,UI crash,"Brown, Lynch and Ritter",CoreAnalytics,SR-83678,PROD-11621
+Slow system response,Average response time exceeds 10s,ISS-70309,Login issue post-upgrade,Cantrell-Martinez,CloudEdge,SR-82619,PROD-11793
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70310,UI crash,"Spencer, Wiley and Martin",Insight360,SR-81419,PROD-11624
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70311,Sync issue,Leon and Sons,DataSphere,SR-80708,PROD-11055
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70312,Sync issue,Taylor Ltd,CloudEdge,SR-82878,PROD-11435
+API timeout errors,Dashboard page crashes intermittently,ISS-70313,Sync issue,Rogers-Miller,Insight360,SR-81658,PROD-11826
+Missing data sync,Dashboard page crashes intermittently,ISS-70314,UI crash,Page-Warner,Insight360,SR-81065,PROD-11902
+Dashboard not loading,Data not syncing between apps,ISS-70315,UI crash,Barker PLC,Insight360,SR-82424,PROD-11603
+Login failures after upgrade,Average response time exceeds 10s,ISS-70316,API latency,Williams-Cisneros,CoreAnalytics,SR-84861,PROD-11998
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70317,Performance degradation,Johnson and Sons,CloudEdge,SR-83996,PROD-11860
+Dashboard not loading,Data not syncing between apps,ISS-70318,Sync issue,"Lopez, Snyder and Kaufman",NetConnect,SR-83850,PROD-11047
+Slow system response,Dashboard page crashes intermittently,ISS-70319,Performance degradation,Kennedy-Campbell,CloudEdge,SR-80775,PROD-11887
+Missing data sync,API call fails after 30s,ISS-70320,API latency,Griffith Ltd,Insight360,SR-80236,PROD-11739
+API timeout errors,API call fails after 30s,ISS-70321,API latency,Morris-Mcclain,NetConnect,SR-81363,PROD-11465
+API timeout errors,API call fails after 30s,ISS-70322,Performance degradation,Kent-Logan,CloudEdge,SR-84075,PROD-11147
+Login failures after upgrade,Average response time exceeds 10s,ISS-70323,API latency,Coleman-Welch,Insight360,SR-82702,PROD-11782
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70324,Performance degradation,Williamson Group,NetConnect,SR-82702,PROD-11860
+Login failures after upgrade,API call fails after 30s,ISS-70325,Performance degradation,"Yang, Robinson and Ward",Insight360,SR-83109,PROD-11464
+API timeout errors,Data not syncing between apps,ISS-70326,API latency,Hansen-Gordon,CloudEdge,SR-83797,PROD-11166
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70327,UI crash,Diaz Group,Insight360,SR-81524,PROD-11516
+Missing data sync,API call fails after 30s,ISS-70328,Login issue post-upgrade,"Graham, Patterson and Simmons",DataSphere,SR-84009,PROD-11978
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70329,Login issue post-upgrade,Strickland Ltd,Insight360,SR-81512,PROD-11094
+API timeout errors,Average response time exceeds 10s,ISS-70330,UI crash,Mccoy Inc,CloudEdge,SR-84482,PROD-11510
+Slow system response,API call fails after 30s,ISS-70331,Sync issue,Kennedy-Campbell,Insight360,SR-80709,PROD-11226
+Dashboard not loading,API call fails after 30s,ISS-70332,Performance degradation,"Wilson, Ramirez and Lester",NetConnect,SR-82463,PROD-11893
+API timeout errors,Average response time exceeds 10s,ISS-70333,Performance degradation,Johnson and Sons,CloudEdge,SR-84032,PROD-11732
+Slow system response,Data not syncing between apps,ISS-70334,Performance degradation,Turner and Sons,NetConnect,SR-84416,PROD-11283
+Dashboard not loading,API call fails after 30s,ISS-70335,Login issue post-upgrade,"Jackson, Foster and Parker",Insight360,SR-84383,PROD-11548
+API timeout errors,API call fails after 30s,ISS-70336,Performance degradation,Osborn-Sharp,Insight360,SR-83152,PROD-11516
+Login failures after upgrade,API call fails after 30s,ISS-70337,Performance degradation,"Smith, Sweeney and Burch",CoreAnalytics,SR-83824,PROD-11048
+API timeout errors,Data not syncing between apps,ISS-70338,API latency,Benitez and Sons,CoreAnalytics,SR-83852,PROD-11157
+Missing data sync,Dashboard page crashes intermittently,ISS-70339,Login issue post-upgrade,Williamson-Kelly,CloudEdge,SR-83645,PROD-11573
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70340,Performance degradation,Wilson PLC,CloudEdge,SR-82224,PROD-11876
+Login failures after upgrade,Average response time exceeds 10s,ISS-70341,API latency,"Duncan, Powers and Thompson",DataSphere,SR-84520,PROD-11943
+API timeout errors,Average response time exceeds 10s,ISS-70342,UI crash,"Richardson, Smith and Rodriguez",CoreAnalytics,SR-82927,PROD-11402
+Missing data sync,API call fails after 30s,ISS-70343,Login issue post-upgrade,"Miranda, Lee and Orozco",Insight360,SR-84678,PROD-11048
+Login failures after upgrade,API call fails after 30s,ISS-70344,Sync issue,"Kline, Kaiser and Garrett",CoreAnalytics,SR-83273,PROD-11836
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70345,API latency,"Lopez, Bowen and Brown",Insight360,SR-82351,PROD-11588
+Slow system response,Average response time exceeds 10s,ISS-70346,API latency,Thompson-Johnson,DataSphere,SR-84858,PROD-11066
+API timeout errors,API call fails after 30s,ISS-70347,Sync issue,Green-Hoffman,CoreAnalytics,SR-80190,PROD-11143
+API timeout errors,Average response time exceeds 10s,ISS-70348,UI crash,Watkins LLC,CoreAnalytics,SR-80123,PROD-11822
+Dashboard not loading,API call fails after 30s,ISS-70349,UI crash,"Gordon, Dyer and Tran",DataSphere,SR-82336,PROD-11509
+Missing data sync,API call fails after 30s,ISS-70350,Performance degradation,Moss LLC,Insight360,SR-84903,PROD-11890
+Missing data sync,Data not syncing between apps,ISS-70351,UI crash,Williamson Group,NetConnect,SR-83661,PROD-11377
+API timeout errors,Dashboard page crashes intermittently,ISS-70352,Sync issue,Jordan-Hamilton,CoreAnalytics,SR-84215,PROD-11198
+Missing data sync,Dashboard page crashes intermittently,ISS-70353,UI crash,Alvarez Inc,NetConnect,SR-81856,PROD-11744
+API timeout errors,Average response time exceeds 10s,ISS-70354,Login issue post-upgrade,Allen Group,NetConnect,SR-84195,PROD-11177
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70355,Login issue post-upgrade,Hunter-Smith,NetConnect,SR-80594,PROD-11151
+Login failures after upgrade,Data not syncing between apps,ISS-70356,Performance degradation,"Smith, Melendez and Huff",Insight360,SR-82183,PROD-11744
+API timeout errors,Data not syncing between apps,ISS-70357,Sync issue,Browning-Brooks,CoreAnalytics,SR-84180,PROD-11138
+Slow system response,Dashboard page crashes intermittently,ISS-70358,UI crash,"Ashley, Garrett and Morrison",CloudEdge,SR-81859,PROD-11257
+Slow system response,API call fails after 30s,ISS-70359,Performance degradation,Price and Sons,Insight360,SR-82204,PROD-11387
+API timeout errors,Data not syncing between apps,ISS-70360,API latency,Warren and Sons,NetConnect,SR-84200,PROD-11916
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70361,API latency,Johnson and Sons,CloudEdge,SR-81280,PROD-11385
+Missing data sync,Dashboard page crashes intermittently,ISS-70362,API latency,Lane-Garner,CloudEdge,SR-81451,PROD-11946
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70363,Performance degradation,Powers Ltd,DataSphere,SR-83625,PROD-11656
+Slow system response,Average response time exceeds 10s,ISS-70364,Sync issue,Lane-Garner,DataSphere,SR-80468,PROD-11974
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70365,API latency,"Leblanc, Thompson and Sullivan",DataSphere,SR-81628,PROD-11482
+Missing data sync,API call fails after 30s,ISS-70366,API latency,Perez PLC,Insight360,SR-84313,PROD-11477
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70367,UI crash,Silva and Sons,DataSphere,SR-82539,PROD-11353
+Missing data sync,Average response time exceeds 10s,ISS-70368,Login issue post-upgrade,Beasley-Collins,CloudEdge,SR-80628,PROD-11563
+Missing data sync,API call fails after 30s,ISS-70369,Performance degradation,Owens Group,DataSphere,SR-82176,PROD-11879
+Login failures after upgrade,Average response time exceeds 10s,ISS-70370,UI crash,"Burke, Ward and Gibson",NetConnect,SR-84688,PROD-11028
+Login failures after upgrade,Data not syncing between apps,ISS-70371,UI crash,"Lynch, Lynch and Mitchell",CloudEdge,SR-80283,PROD-11631
+Dashboard not loading,Average response time exceeds 10s,ISS-70372,Performance degradation,Daniel LLC,CoreAnalytics,SR-84737,PROD-11759
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70373,Login issue post-upgrade,Haas-Morgan,CloudEdge,SR-83750,PROD-11824
+API timeout errors,Dashboard page crashes intermittently,ISS-70374,Performance degradation,"Carter, Hughes and Brooks",CoreAnalytics,SR-81658,PROD-11661
+Dashboard not loading,Average response time exceeds 10s,ISS-70375,Performance degradation,Kelly PLC,NetConnect,SR-81122,PROD-11335
+Missing data sync,Average response time exceeds 10s,ISS-70376,UI crash,"Rhodes, Foster and Martinez",Insight360,SR-82411,PROD-11838
+Missing data sync,Dashboard page crashes intermittently,ISS-70377,Performance degradation,Suarez LLC,CloudEdge,SR-80017,PROD-11488
+Slow system response,API call fails after 30s,ISS-70378,API latency,"Morris, Cole and Flowers",NetConnect,SR-83480,PROD-11932
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70379,API latency,"Aguilar, Love and Graham",CoreAnalytics,SR-80950,PROD-11328
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70380,UI crash,Schroeder Group,DataSphere,SR-83082,PROD-11284
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70381,API latency,"Vaughan, Erickson and Navarro",NetConnect,SR-81235,PROD-11727
+API timeout errors,Data not syncing between apps,ISS-70382,Performance degradation,Cole PLC,DataSphere,SR-80430,PROD-11022
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70383,API latency,Cunningham PLC,NetConnect,SR-83398,PROD-11301
+Missing data sync,Dashboard page crashes intermittently,ISS-70384,API latency,"Bartlett, Ross and Reynolds",CloudEdge,SR-83908,PROD-11629
+Slow system response,Average response time exceeds 10s,ISS-70385,Login issue post-upgrade,"Hobbs, Carlson and Hughes",DataSphere,SR-80535,PROD-11784
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70386,API latency,"Stein, Randolph and Carter",DataSphere,SR-82363,PROD-11598
+Dashboard not loading,Data not syncing between apps,ISS-70387,UI crash,Watkins-Freeman,Insight360,SR-82670,PROD-11819
+Missing data sync,Data not syncing between apps,ISS-70388,API latency,"Santiago, Hall and Lara",CoreAnalytics,SR-82254,PROD-11549
+API timeout errors,API call fails after 30s,ISS-70389,API latency,"Robinson, Shaw and Acosta",Insight360,SR-80185,PROD-11240
+API timeout errors,Average response time exceeds 10s,ISS-70390,Performance degradation,Walton-Hoover,DataSphere,SR-80339,PROD-11465
+Dashboard not loading,API call fails after 30s,ISS-70391,UI crash,Boone-Salinas,CoreAnalytics,SR-82696,PROD-11099
+Dashboard not loading,Data not syncing between apps,ISS-70392,Performance degradation,Gibson Group,CloudEdge,SR-84032,PROD-11254
+Login failures after upgrade,Data not syncing between apps,ISS-70393,Sync issue,"Williams, White and Boyd",CloudEdge,SR-81092,PROD-11373
+Dashboard not loading,Average response time exceeds 10s,ISS-70394,UI crash,Rodriguez-Stewart,CoreAnalytics,SR-82933,PROD-11907
+Missing data sync,Average response time exceeds 10s,ISS-70395,Login issue post-upgrade,Davis Ltd,DataSphere,SR-80912,PROD-11062
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70396,Performance degradation,"Chaney, Arellano and Miller",NetConnect,SR-82871,PROD-11643
+Login failures after upgrade,Data not syncing between apps,ISS-70397,API latency,Gordon PLC,CoreAnalytics,SR-80198,PROD-11550
+Slow system response,Users unable to log in after v2.3 patch,ISS-70398,UI crash,"Ward, Woods and Rasmussen",CloudEdge,SR-82413,PROD-11132
+Login failures after upgrade,Average response time exceeds 10s,ISS-70399,API latency,Patterson-Dennis,DataSphere,SR-81296,PROD-11153
+Dashboard not loading,API call fails after 30s,ISS-70400,Sync issue,Norris-Riley,Insight360,SR-84103,PROD-11044
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70401,Sync issue,"Franklin, Martin and White",NetConnect,SR-81965,PROD-11661
+Dashboard not loading,API call fails after 30s,ISS-70402,Login issue post-upgrade,"Terry, Robertson and Pruitt",CloudEdge,SR-80878,PROD-11208
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70403,API latency,"Jennings, Lester and Brooks",DataSphere,SR-84494,PROD-11690
+Login failures after upgrade,API call fails after 30s,ISS-70404,Sync issue,Sosa PLC,Insight360,SR-83338,PROD-11862
+Missing data sync,Average response time exceeds 10s,ISS-70405,Performance degradation,"Stephens, Smith and Ballard",Insight360,SR-81282,PROD-11445
+Missing data sync,Data not syncing between apps,ISS-70406,Performance degradation,"Mora, York and Johnson",CoreAnalytics,SR-83701,PROD-11492
+Missing data sync,Average response time exceeds 10s,ISS-70407,Performance degradation,Mitchell-Mendez,NetConnect,SR-84815,PROD-11533
+API timeout errors,Dashboard page crashes intermittently,ISS-70408,Performance degradation,Ward PLC,CloudEdge,SR-83512,PROD-11225
+Dashboard not loading,Data not syncing between apps,ISS-70409,Performance degradation,English Group,NetConnect,SR-80874,PROD-11102
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70410,API latency,York-Ross,NetConnect,SR-80967,PROD-11372
+Slow system response,Users unable to log in after v2.3 patch,ISS-70411,Performance degradation,Williams PLC,DataSphere,SR-81114,PROD-11899
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70412,UI crash,"Johnson, Ortega and Solomon",Insight360,SR-81037,PROD-11416
+Login failures after upgrade,API call fails after 30s,ISS-70413,UI crash,Martin-Alvarado,Insight360,SR-84626,PROD-11358
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70414,API latency,Moreno and Sons,DataSphere,SR-80179,PROD-11310
+Missing data sync,Average response time exceeds 10s,ISS-70415,Performance degradation,"Blair, Carey and Henderson",CloudEdge,SR-81042,PROD-11458
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70416,UI crash,"Ramos, Young and Olson",CloudEdge,SR-80526,PROD-11737
+Slow system response,Average response time exceeds 10s,ISS-70417,UI crash,"Gonzales, Allen and Carpenter",DataSphere,SR-80739,PROD-11977
+Slow system response,Users unable to log in after v2.3 patch,ISS-70418,Performance degradation,Jackson-Sherman,Insight360,SR-82319,PROD-11940
+Slow system response,API call fails after 30s,ISS-70419,Sync issue,Howell-Lawson,CloudEdge,SR-83626,PROD-11811
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70420,Performance degradation,Riggs-Hawkins,NetConnect,SR-84372,PROD-11631
+Login failures after upgrade,Data not syncing between apps,ISS-70421,API latency,Brown-Lowe,CoreAnalytics,SR-81538,PROD-11414
+API timeout errors,API call fails after 30s,ISS-70422,Performance degradation,Wilson PLC,NetConnect,SR-80422,PROD-11564
+Missing data sync,Average response time exceeds 10s,ISS-70423,API latency,Bartlett PLC,CoreAnalytics,SR-84796,PROD-11372
+Slow system response,Users unable to log in after v2.3 patch,ISS-70424,Sync issue,Rush LLC,CloudEdge,SR-80733,PROD-11335
+Login failures after upgrade,Data not syncing between apps,ISS-70425,Performance degradation,Bennett-Costa,CloudEdge,SR-81331,PROD-11108
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70426,Performance degradation,"Daniels, Hubbard and Sweeney",CoreAnalytics,SR-81915,PROD-11703
+Missing data sync,API call fails after 30s,ISS-70427,API latency,Sanchez and Sons,DataSphere,SR-84623,PROD-11079
+Dashboard not loading,Data not syncing between apps,ISS-70428,API latency,Ellison-Coleman,NetConnect,SR-82570,PROD-11754
+API timeout errors,Dashboard page crashes intermittently,ISS-70429,Sync issue,Walton-Hoover,DataSphere,SR-81919,PROD-11473
+Slow system response,Users unable to log in after v2.3 patch,ISS-70430,Performance degradation,"Hicks, Pruitt and Cole",CloudEdge,SR-84341,PROD-11833
+Dashboard not loading,Average response time exceeds 10s,ISS-70431,UI crash,"Aguirre, Schroeder and King",Insight360,SR-81819,PROD-11541
+Login failures after upgrade,Average response time exceeds 10s,ISS-70432,Sync issue,Allen-Miller,CloudEdge,SR-80101,PROD-11421
+Slow system response,Data not syncing between apps,ISS-70433,API latency,Gross Inc,CoreAnalytics,SR-82671,PROD-11573
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70434,Performance degradation,Kidd Ltd,Insight360,SR-83376,PROD-11746
+Slow system response,Data not syncing between apps,ISS-70435,API latency,"Gonzalez, Matthews and Hunter",CoreAnalytics,SR-83205,PROD-11195
+Slow system response,Data not syncing between apps,ISS-70436,UI crash,Wilson-Long,Insight360,SR-84534,PROD-11647
+Dashboard not loading,Data not syncing between apps,ISS-70437,UI crash,"Wilkins, Odom and Harvey",DataSphere,SR-82479,PROD-11015
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70438,API latency,"Blair, Carey and Henderson",NetConnect,SR-83717,PROD-11108
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70439,Performance degradation,"Brown, Lynch and Ritter",DataSphere,SR-80553,PROD-11947
+API timeout errors,Data not syncing between apps,ISS-70440,Login issue post-upgrade,"Rice, Phillips and Smith",CoreAnalytics,SR-81691,PROD-11923
+API timeout errors,API call fails after 30s,ISS-70441,Login issue post-upgrade,Mcguire and Sons,CloudEdge,SR-83478,PROD-11551
+Slow system response,Users unable to log in after v2.3 patch,ISS-70442,UI crash,Nguyen PLC,Insight360,SR-82671,PROD-11212
+Slow system response,Data not syncing between apps,ISS-70443,Login issue post-upgrade,"Bush, Carter and Ramsey",CoreAnalytics,SR-80781,PROD-11425
+Missing data sync,Dashboard page crashes intermittently,ISS-70444,API latency,Romero Ltd,Insight360,SR-83029,PROD-11004
+Dashboard not loading,Data not syncing between apps,ISS-70445,Performance degradation,"Freeman, Jones and Hall",DataSphere,SR-83558,PROD-11565
+Slow system response,Dashboard page crashes intermittently,ISS-70446,Performance degradation,Price and Sons,DataSphere,SR-83623,PROD-11942
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70447,Performance degradation,Caldwell Ltd,DataSphere,SR-82980,PROD-11095
+Missing data sync,Data not syncing between apps,ISS-70448,Sync issue,Roberts-Chase,Insight360,SR-82321,PROD-11754
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70449,Performance degradation,Benson-Allison,CoreAnalytics,SR-84380,PROD-11682
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70450,Performance degradation,Mcguire Group,CoreAnalytics,SR-84955,PROD-11490
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70451,Sync issue,Caldwell Ltd,DataSphere,SR-80656,PROD-11105
+API timeout errors,Dashboard page crashes intermittently,ISS-70452,UI crash,Porter-Martin,NetConnect,SR-82741,PROD-11538
+Dashboard not loading,API call fails after 30s,ISS-70453,Performance degradation,Powell Inc,Insight360,SR-81002,PROD-11491
+API timeout errors,Average response time exceeds 10s,ISS-70454,Sync issue,Taylor-Hamilton,DataSphere,SR-82238,PROD-11247
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70455,Sync issue,Sanchez and Sons,Insight360,SR-82481,PROD-11423
+Missing data sync,API call fails after 30s,ISS-70456,UI crash,Mccoy Inc,CloudEdge,SR-81553,PROD-11559
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70457,API latency,Haas-Morgan,DataSphere,SR-82913,PROD-11949
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70458,UI crash,"Richardson, Price and Lyons",CoreAnalytics,SR-83302,PROD-11716
+Dashboard not loading,Data not syncing between apps,ISS-70459,UI crash,Jones-Mays,DataSphere,SR-83600,PROD-11616
+Dashboard not loading,Average response time exceeds 10s,ISS-70460,Sync issue,"Garcia, Phillips and Robertson",Insight360,SR-82147,PROD-11271
+Slow system response,Users unable to log in after v2.3 patch,ISS-70461,API latency,Lee-Ashley,CoreAnalytics,SR-82235,PROD-11538
+Slow system response,Data not syncing between apps,ISS-70462,Login issue post-upgrade,Roberts PLC,NetConnect,SR-84389,PROD-11573
+Slow system response,Data not syncing between apps,ISS-70463,Performance degradation,Powell-English,DataSphere,SR-84489,PROD-11304
+Login failures after upgrade,Average response time exceeds 10s,ISS-70464,API latency,Harvey PLC,NetConnect,SR-84712,PROD-11892
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70465,Login issue post-upgrade,Park PLC,DataSphere,SR-82278,PROD-11141
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70466,Login issue post-upgrade,Sanchez and Sons,CoreAnalytics,SR-80383,PROD-11154
+API timeout errors,Dashboard page crashes intermittently,ISS-70467,Sync issue,Hernandez-Carter,DataSphere,SR-83327,PROD-11663
+Missing data sync,API call fails after 30s,ISS-70468,UI crash,Rodriguez-Mcdonald,NetConnect,SR-82710,PROD-11715
+Dashboard not loading,API call fails after 30s,ISS-70469,UI crash,Caldwell Ltd,CoreAnalytics,SR-80242,PROD-11772
+Missing data sync,Data not syncing between apps,ISS-70470,Login issue post-upgrade,"Miller, Hardy and Watkins",CoreAnalytics,SR-83376,PROD-11425
+Slow system response,Dashboard page crashes intermittently,ISS-70471,Performance degradation,"Wilkinson, Lane and Fields",NetConnect,SR-84785,PROD-11440
+Dashboard not loading,Data not syncing between apps,ISS-70472,API latency,"Poole, Sutton and King",CloudEdge,SR-84712,PROD-11924
+Slow system response,Data not syncing between apps,ISS-70473,Login issue post-upgrade,"Lewis, Morse and Nielsen",CloudEdge,SR-81616,PROD-11723
+Slow system response,Users unable to log in after v2.3 patch,ISS-70474,UI crash,"Ross, Doyle and Burton",NetConnect,SR-84799,PROD-11830
+Dashboard not loading,Average response time exceeds 10s,ISS-70475,Performance degradation,Johnson PLC,DataSphere,SR-84192,PROD-11371
+Dashboard not loading,Data not syncing between apps,ISS-70476,Login issue post-upgrade,Ortiz Ltd,CoreAnalytics,SR-80305,PROD-11134
+Slow system response,Users unable to log in after v2.3 patch,ISS-70477,Sync issue,Green Inc,NetConnect,SR-82971,PROD-11330
+Dashboard not loading,Average response time exceeds 10s,ISS-70478,Login issue post-upgrade,Hood Inc,Insight360,SR-82741,PROD-11061
+Slow system response,Users unable to log in after v2.3 patch,ISS-70479,UI crash,Evans LLC,NetConnect,SR-80088,PROD-11861
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70480,UI crash,Key-Anderson,CloudEdge,SR-80220,PROD-11062
+Slow system response,Users unable to log in after v2.3 patch,ISS-70481,Sync issue,Frazier-Goodman,NetConnect,SR-82164,PROD-11495
+API timeout errors,Dashboard page crashes intermittently,ISS-70482,Sync issue,French Group,NetConnect,SR-82958,PROD-11626
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70483,Sync issue,Lozano-Smith,Insight360,SR-81388,PROD-11298
+API timeout errors,API call fails after 30s,ISS-70484,UI crash,"Baxter, Thomas and Cordova",CoreAnalytics,SR-84792,PROD-11841
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70485,Sync issue,Parker PLC,CoreAnalytics,SR-84932,PROD-11588
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70486,Sync issue,Austin-Davies,CloudEdge,SR-82210,PROD-11806
+Login failures after upgrade,Data not syncing between apps,ISS-70487,Performance degradation,Pierce Inc,Insight360,SR-81652,PROD-11788
+API timeout errors,Average response time exceeds 10s,ISS-70488,Performance degradation,Flowers-Vasquez,NetConnect,SR-82845,PROD-11525
+Slow system response,Dashboard page crashes intermittently,ISS-70489,UI crash,Mcdonald-Fernandez,CloudEdge,SR-82213,PROD-11401
+Slow system response,Data not syncing between apps,ISS-70490,Performance degradation,Collins and Sons,DataSphere,SR-84278,PROD-11649
+Slow system response,Data not syncing between apps,ISS-70491,Performance degradation,Rodriguez Group,CoreAnalytics,SR-80663,PROD-11200
+API timeout errors,API call fails after 30s,ISS-70492,API latency,Thompson Ltd,NetConnect,SR-82353,PROD-11546
+Slow system response,Dashboard page crashes intermittently,ISS-70493,API latency,"Brown, Holmes and Farrell",DataSphere,SR-80006,PROD-11158
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70494,Performance degradation,House-Ramirez,Insight360,SR-82077,PROD-11280
+Slow system response,Average response time exceeds 10s,ISS-70495,Sync issue,Carlson PLC,NetConnect,SR-81258,PROD-11045
+Dashboard not loading,Data not syncing between apps,ISS-70496,Login issue post-upgrade,Adkins PLC,CoreAnalytics,SR-81034,PROD-11645
+Login failures after upgrade,Average response time exceeds 10s,ISS-70497,API latency,Smith-Morton,CloudEdge,SR-83642,PROD-11658
+Dashboard not loading,Average response time exceeds 10s,ISS-70498,UI crash,"Hampton, Mcclain and Arroyo",DataSphere,SR-80319,PROD-11175
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70499,Performance degradation,"Franklin, Chung and Perez",CloudEdge,SR-80072,PROD-11112
+Slow system response,Dashboard page crashes intermittently,ISS-70500,Performance degradation,"Shepherd, Martinez and Hernandez",NetConnect,SR-84165,PROD-11145
+Slow system response,Users unable to log in after v2.3 patch,ISS-70501,Sync issue,Gonzalez-Collins,NetConnect,SR-81910,PROD-11719
+Missing data sync,Average response time exceeds 10s,ISS-70502,Login issue post-upgrade,Webster Ltd,CloudEdge,SR-81018,PROD-11338
+Slow system response,Average response time exceeds 10s,ISS-70503,Login issue post-upgrade,"Padilla, Spears and Baker",CoreAnalytics,SR-82544,PROD-11030
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70504,Performance degradation,Wright-Randolph,Insight360,SR-80807,PROD-11711
+Slow system response,Data not syncing between apps,ISS-70505,Performance degradation,Johnson PLC,Insight360,SR-84926,PROD-11934
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70506,API latency,Strickland Ltd,CloudEdge,SR-80053,PROD-11262
+Dashboard not loading,Average response time exceeds 10s,ISS-70507,API latency,"Brown, Holmes and Farrell",NetConnect,SR-83757,PROD-11144
+Dashboard not loading,Data not syncing between apps,ISS-70508,API latency,Silva-Lee,NetConnect,SR-80780,PROD-11931
+API timeout errors,Dashboard page crashes intermittently,ISS-70509,Login issue post-upgrade,Powell-Long,Insight360,SR-83965,PROD-11652
+Slow system response,Dashboard page crashes intermittently,ISS-70510,Sync issue,"Cain, Davis and Pratt",Insight360,SR-82927,PROD-11698
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70511,Performance degradation,Perkins-Powell,Insight360,SR-80090,PROD-11632
+API timeout errors,Average response time exceeds 10s,ISS-70512,Login issue post-upgrade,"Harris, Lewis and Chavez",CoreAnalytics,SR-83071,PROD-11568
+Dashboard not loading,Data not syncing between apps,ISS-70513,Login issue post-upgrade,"Bailey, Charles and Diaz",CloudEdge,SR-84288,PROD-11747
+Dashboard not loading,Average response time exceeds 10s,ISS-70514,API latency,Cook PLC,CloudEdge,SR-81283,PROD-11104
+API timeout errors,Dashboard page crashes intermittently,ISS-70515,UI crash,Cobb-Marsh,NetConnect,SR-80308,PROD-11478
+Dashboard not loading,API call fails after 30s,ISS-70516,API latency,"Murphy, Sanchez and Perez",Insight360,SR-84652,PROD-11971
+Slow system response,Average response time exceeds 10s,ISS-70517,Sync issue,"Jackson, Foster and Parker",Insight360,SR-84390,PROD-11433
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70518,API latency,"Lewis, Johnson and Gilmore",DataSphere,SR-80413,PROD-11095
+Missing data sync,Average response time exceeds 10s,ISS-70519,Login issue post-upgrade,Moore-Evans,CoreAnalytics,SR-84035,PROD-11500
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70520,Sync issue,Miller-Perez,NetConnect,SR-82204,PROD-11095
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70521,Login issue post-upgrade,Humphrey and Sons,NetConnect,SR-81739,PROD-11238
+Slow system response,Users unable to log in after v2.3 patch,ISS-70522,Performance degradation,Mcmahon-Smith,DataSphere,SR-83376,PROD-11140
+API timeout errors,API call fails after 30s,ISS-70523,Sync issue,Fleming-Lee,NetConnect,SR-83949,PROD-11135
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70524,Login issue post-upgrade,Powell-English,DataSphere,SR-80520,PROD-11687
+API timeout errors,Data not syncing between apps,ISS-70525,Sync issue,"Williams, Peterson and Green",CoreAnalytics,SR-81712,PROD-11158
+Missing data sync,Data not syncing between apps,ISS-70526,Performance degradation,Adkins-Frazier,DataSphere,SR-80605,PROD-11780
+API timeout errors,Dashboard page crashes intermittently,ISS-70527,Login issue post-upgrade,"Brown, Anderson and Gonzales",NetConnect,SR-83218,PROD-11057
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70528,UI crash,Padilla-Wang,DataSphere,SR-80801,PROD-11350
+API timeout errors,API call fails after 30s,ISS-70529,Performance degradation,Rodriguez-Stewart,CloudEdge,SR-84679,PROD-11192
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70530,UI crash,Nelson LLC,DataSphere,SR-83260,PROD-11634
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70531,Performance degradation,Hodge Ltd,NetConnect,SR-81481,PROD-11433
+Missing data sync,Data not syncing between apps,ISS-70532,Login issue post-upgrade,"Williams, White and Boyd",CoreAnalytics,SR-82916,PROD-11648
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70533,Login issue post-upgrade,Maynard-Johnson,Insight360,SR-82846,PROD-11067
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70534,UI crash,Castro LLC,NetConnect,SR-84935,PROD-11808
+Missing data sync,Dashboard page crashes intermittently,ISS-70535,UI crash,Boone-Salinas,DataSphere,SR-83853,PROD-11342
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70536,UI crash,Moreno and Sons,CloudEdge,SR-83207,PROD-11270
+Dashboard not loading,Data not syncing between apps,ISS-70537,Sync issue,"Raymond, Lara and Daniel",NetConnect,SR-84733,PROD-11394
+Missing data sync,Dashboard page crashes intermittently,ISS-70538,Login issue post-upgrade,Schultz-Reyes,NetConnect,SR-81427,PROD-11647
+Missing data sync,Average response time exceeds 10s,ISS-70539,API latency,"Jones, Oconnor and Carr",CoreAnalytics,SR-82733,PROD-11111
+API timeout errors,Data not syncing between apps,ISS-70540,Sync issue,"Schneider, Brown and Ellison",CoreAnalytics,SR-83464,PROD-11278
+API timeout errors,Average response time exceeds 10s,ISS-70541,API latency,"White, Horton and Bender",CoreAnalytics,SR-83524,PROD-11201
+Slow system response,Users unable to log in after v2.3 patch,ISS-70542,UI crash,Villegas LLC,CloudEdge,SR-80946,PROD-11431
+Login failures after upgrade,API call fails after 30s,ISS-70543,Login issue post-upgrade,Wolf Group,Insight360,SR-84426,PROD-11670
+API timeout errors,API call fails after 30s,ISS-70544,Sync issue,Perkins-Powell,CloudEdge,SR-82218,PROD-11056
+Dashboard not loading,API call fails after 30s,ISS-70545,Performance degradation,Clark Group,Insight360,SR-82602,PROD-11092
+Dashboard not loading,Data not syncing between apps,ISS-70546,Performance degradation,Mcknight Group,CloudEdge,SR-82693,PROD-11444
+Slow system response,Users unable to log in after v2.3 patch,ISS-70547,API latency,Duncan Inc,CloudEdge,SR-82458,PROD-11126
+Missing data sync,Dashboard page crashes intermittently,ISS-70548,Login issue post-upgrade,Roman LLC,DataSphere,SR-84166,PROD-11705
+API timeout errors,Average response time exceeds 10s,ISS-70549,Sync issue,Simpson-Ray,CloudEdge,SR-80725,PROD-11054
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70550,Performance degradation,Rogers-Pugh,CoreAnalytics,SR-84230,PROD-11579
+Slow system response,Dashboard page crashes intermittently,ISS-70551,Login issue post-upgrade,"Terry, Robertson and Pruitt",Insight360,SR-84589,PROD-11665
+Missing data sync,Average response time exceeds 10s,ISS-70552,API latency,Fisher PLC,Insight360,SR-82572,PROD-11842
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70553,Performance degradation,Blankenship-Macdonald,Insight360,SR-84678,PROD-11815
+Login failures after upgrade,Average response time exceeds 10s,ISS-70554,API latency,"May, Molina and Ramirez",Insight360,SR-83047,PROD-11684
+Slow system response,Dashboard page crashes intermittently,ISS-70555,Performance degradation,"Cox, Bradford and Trevino",NetConnect,SR-83828,PROD-11417
+Missing data sync,Dashboard page crashes intermittently,ISS-70556,Login issue post-upgrade,Chandler Group,NetConnect,SR-84983,PROD-11763
+API timeout errors,API call fails after 30s,ISS-70557,Login issue post-upgrade,Brown-Carroll,CloudEdge,SR-83246,PROD-11557
+Missing data sync,Data not syncing between apps,ISS-70558,Sync issue,"Johns, Moore and Williams",CloudEdge,SR-82957,PROD-11515
+Dashboard not loading,API call fails after 30s,ISS-70559,Login issue post-upgrade,"Wilkinson, Lane and Fields",CloudEdge,SR-81734,PROD-11198
+Missing data sync,Data not syncing between apps,ISS-70560,Sync issue,"Strickland, Johnson and Castillo",NetConnect,SR-81970,PROD-11724
+API timeout errors,Average response time exceeds 10s,ISS-70561,API latency,Cortez-Moore,CloudEdge,SR-83643,PROD-11346
+Slow system response,Users unable to log in after v2.3 patch,ISS-70562,Sync issue,"Lopez, Snyder and Kaufman",CloudEdge,SR-80342,PROD-11397
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70563,Sync issue,Salas-Bennett,Insight360,SR-83043,PROD-11357
+Login failures after upgrade,Data not syncing between apps,ISS-70564,UI crash,Castillo and Sons,Insight360,SR-82121,PROD-11254
+Missing data sync,API call fails after 30s,ISS-70565,API latency,"Morgan, Brooks and Rogers",CloudEdge,SR-81276,PROD-11464
+Slow system response,Users unable to log in after v2.3 patch,ISS-70566,Performance degradation,Baird-Krause,Insight360,SR-80472,PROD-11726
+Slow system response,Dashboard page crashes intermittently,ISS-70567,Sync issue,Wilkins-Pham,Insight360,SR-81419,PROD-11117
+API timeout errors,Data not syncing between apps,ISS-70568,UI crash,Snyder Ltd,CoreAnalytics,SR-82022,PROD-11361
+API timeout errors,API call fails after 30s,ISS-70569,API latency,"Scott, Perez and Cohen",Insight360,SR-80176,PROD-11560
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70570,Performance degradation,"Lynch, Lynch and Mitchell",CloudEdge,SR-83893,PROD-11520
+Slow system response,Dashboard page crashes intermittently,ISS-70571,Sync issue,Shelton-Smith,Insight360,SR-84192,PROD-11114
+API timeout errors,API call fails after 30s,ISS-70572,API latency,Rogers-Miller,CloudEdge,SR-84503,PROD-11845
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70573,API latency,Rogers-Cervantes,Insight360,SR-84279,PROD-11849
+API timeout errors,Dashboard page crashes intermittently,ISS-70574,UI crash,Monroe Ltd,CoreAnalytics,SR-84661,PROD-11203
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70575,Performance degradation,"Howe, Drake and Robinson",DataSphere,SR-81118,PROD-11677
+Slow system response,Average response time exceeds 10s,ISS-70576,API latency,Simpson Group,CloudEdge,SR-81495,PROD-11528
+Slow system response,Dashboard page crashes intermittently,ISS-70577,Sync issue,Johnson-Nelson,NetConnect,SR-83490,PROD-11431
+Slow system response,Dashboard page crashes intermittently,ISS-70578,Sync issue,Williams-Johnson,Insight360,SR-82195,PROD-11294
+API timeout errors,API call fails after 30s,ISS-70579,UI crash,Fritz Group,CloudEdge,SR-84329,PROD-11248
+Login failures after upgrade,Data not syncing between apps,ISS-70580,Sync issue,Thompson and Sons,CoreAnalytics,SR-82419,PROD-11981
+Login failures after upgrade,Data not syncing between apps,ISS-70581,UI crash,Johns Group,Insight360,SR-81815,PROD-11063
+Slow system response,Data not syncing between apps,ISS-70582,Performance degradation,Hernandez Ltd,DataSphere,SR-83469,PROD-11385
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70583,Login issue post-upgrade,Coleman-Welch,NetConnect,SR-82578,PROD-11305
+Slow system response,Data not syncing between apps,ISS-70584,API latency,Collins and Sons,CloudEdge,SR-80735,PROD-11203
+Dashboard not loading,API call fails after 30s,ISS-70585,UI crash,Santana Group,DataSphere,SR-81519,PROD-11600
+Dashboard not loading,Average response time exceeds 10s,ISS-70586,Sync issue,Doyle and Sons,DataSphere,SR-80298,PROD-11482
+API timeout errors,API call fails after 30s,ISS-70587,Login issue post-upgrade,Choi Ltd,CoreAnalytics,SR-81398,PROD-11942
+Slow system response,Users unable to log in after v2.3 patch,ISS-70588,Performance degradation,Serrano-Smith,CoreAnalytics,SR-81596,PROD-11546
+API timeout errors,Data not syncing between apps,ISS-70589,UI crash,Gordon PLC,CoreAnalytics,SR-83232,PROD-11316
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70590,UI crash,"Ross, Doyle and Burton",CloudEdge,SR-81970,PROD-11994
+Missing data sync,Data not syncing between apps,ISS-70591,Login issue post-upgrade,Rogers-Cervantes,NetConnect,SR-84377,PROD-11555
+Slow system response,API call fails after 30s,ISS-70592,UI crash,"Morris, Curtis and Turner",CloudEdge,SR-80103,PROD-11117
+Login failures after upgrade,API call fails after 30s,ISS-70593,API latency,Miller Inc,DataSphere,SR-82968,PROD-11884
+Login failures after upgrade,Data not syncing between apps,ISS-70594,Login issue post-upgrade,Waters Group,DataSphere,SR-82236,PROD-11882
+Missing data sync,Data not syncing between apps,ISS-70595,API latency,Pope-Hopkins,CloudEdge,SR-82792,PROD-11242
+Slow system response,Average response time exceeds 10s,ISS-70596,API latency,Key-Anderson,NetConnect,SR-83466,PROD-11383
+Slow system response,Average response time exceeds 10s,ISS-70597,Login issue post-upgrade,Taylor LLC,DataSphere,SR-80570,PROD-11028
+Slow system response,Users unable to log in after v2.3 patch,ISS-70598,Login issue post-upgrade,Brown LLC,CoreAnalytics,SR-83096,PROD-11547
+Login failures after upgrade,API call fails after 30s,ISS-70599,Sync issue,"Cox, Bradford and Trevino",DataSphere,SR-81462,PROD-11518
+Dashboard not loading,Data not syncing between apps,ISS-70600,Sync issue,"Conner, Stone and Lynch",CoreAnalytics,SR-84227,PROD-11659
+Dashboard not loading,API call fails after 30s,ISS-70601,Login issue post-upgrade,"Mccann, Dawson and Macias",CloudEdge,SR-80461,PROD-11178
+API timeout errors,Data not syncing between apps,ISS-70602,Sync issue,Osborn-Sharp,CoreAnalytics,SR-81318,PROD-11816
+Missing data sync,Dashboard page crashes intermittently,ISS-70603,Sync issue,Hicks PLC,Insight360,SR-82199,PROD-11612
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70604,UI crash,Hampton and Sons,CoreAnalytics,SR-80429,PROD-11869
+Slow system response,Data not syncing between apps,ISS-70605,Login issue post-upgrade,Foster-Blair,NetConnect,SR-83933,PROD-11949
+Dashboard not loading,Average response time exceeds 10s,ISS-70606,Performance degradation,Thompson Ltd,Insight360,SR-81051,PROD-11261
+API timeout errors,Average response time exceeds 10s,ISS-70607,Performance degradation,Collins and Sons,CloudEdge,SR-81578,PROD-11801
+Slow system response,Dashboard page crashes intermittently,ISS-70608,API latency,"Thomas, Mcdonald and Miller",DataSphere,SR-83728,PROD-11158
+API timeout errors,Data not syncing between apps,ISS-70609,Sync issue,Clark Group,CoreAnalytics,SR-83175,PROD-11420
+API timeout errors,Dashboard page crashes intermittently,ISS-70610,Sync issue,Turner-Olson,NetConnect,SR-83520,PROD-11529
+Slow system response,API call fails after 30s,ISS-70611,Performance degradation,Weaver PLC,CloudEdge,SR-82311,PROD-11699
+API timeout errors,Data not syncing between apps,ISS-70612,API latency,Rodriguez Group,Insight360,SR-84191,PROD-11945
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70613,Performance degradation,Garrett-Harrell,CloudEdge,SR-84205,PROD-11844
+Dashboard not loading,Data not syncing between apps,ISS-70614,UI crash,Hernandez Ltd,NetConnect,SR-82322,PROD-11006
+Missing data sync,Dashboard page crashes intermittently,ISS-70615,Login issue post-upgrade,"Gordon, Dyer and Tran",NetConnect,SR-80869,PROD-11711
+Dashboard not loading,Data not syncing between apps,ISS-70616,Login issue post-upgrade,"Poole, Sutton and King",DataSphere,SR-84887,PROD-11932
+Slow system response,Average response time exceeds 10s,ISS-70617,Sync issue,"Johnson, Harrison and Farrell",NetConnect,SR-82122,PROD-11039
+Missing data sync,API call fails after 30s,ISS-70618,Performance degradation,Robbins-Cole,Insight360,SR-82957,PROD-11274
+API timeout errors,Dashboard page crashes intermittently,ISS-70619,Sync issue,Evans-Mora,Insight360,SR-82062,PROD-11047
+Missing data sync,Dashboard page crashes intermittently,ISS-70620,Login issue post-upgrade,Anderson Ltd,CloudEdge,SR-80799,PROD-11688
+Login failures after upgrade,Average response time exceeds 10s,ISS-70621,UI crash,"Lopez, Snyder and Kaufman",CoreAnalytics,SR-83933,PROD-11786
+Slow system response,API call fails after 30s,ISS-70622,Performance degradation,"Gallagher, Daniel and Valenzuela",DataSphere,SR-83737,PROD-11955
+API timeout errors,Average response time exceeds 10s,ISS-70623,Performance degradation,"Kline, Kaiser and Garrett",Insight360,SR-80990,PROD-11656
+API timeout errors,Dashboard page crashes intermittently,ISS-70624,UI crash,Moore PLC,CloudEdge,SR-83664,PROD-11447
+Login failures after upgrade,Data not syncing between apps,ISS-70625,Login issue post-upgrade,Thomas-Graham,DataSphere,SR-82901,PROD-11205
+Missing data sync,API call fails after 30s,ISS-70626,API latency,"Morrison, Brown and Wilson",DataSphere,SR-84937,PROD-11973
+Login failures after upgrade,Average response time exceeds 10s,ISS-70627,UI crash,Davis Inc,CoreAnalytics,SR-81637,PROD-11757
+API timeout errors,Data not syncing between apps,ISS-70628,UI crash,Johnson-Chang,Insight360,SR-84926,PROD-11796
+Login failures after upgrade,Average response time exceeds 10s,ISS-70629,Performance degradation,"Castillo, Miller and Blackwell",NetConnect,SR-83728,PROD-11023
+API timeout errors,Dashboard page crashes intermittently,ISS-70630,API latency,Walker-Torres,CoreAnalytics,SR-82444,PROD-11584
+Missing data sync,Data not syncing between apps,ISS-70631,Sync issue,Bryant Group,CoreAnalytics,SR-83838,PROD-11166
+Slow system response,API call fails after 30s,ISS-70632,Login issue post-upgrade,Tran PLC,Insight360,SR-84487,PROD-11044
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70633,UI crash,Douglas Ltd,Insight360,SR-81660,PROD-11825
+Login failures after upgrade,Data not syncing between apps,ISS-70634,API latency,"Blackwell, Odonnell and Mcdowell",CoreAnalytics,SR-84222,PROD-11632
+Missing data sync,API call fails after 30s,ISS-70635,Sync issue,"Morris, Curtis and Turner",CloudEdge,SR-80059,PROD-11977
+Login failures after upgrade,API call fails after 30s,ISS-70636,Performance degradation,"Cain, Davis and Pratt",Insight360,SR-83532,PROD-11260
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70637,Performance degradation,"Jackson, Rosales and Hernandez",DataSphere,SR-83749,PROD-11049
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70638,Performance degradation,Hale PLC,CloudEdge,SR-81398,PROD-11452
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70639,UI crash,Browning-Brooks,CoreAnalytics,SR-83375,PROD-11850
+Dashboard not loading,API call fails after 30s,ISS-70640,Sync issue,Haas Ltd,Insight360,SR-84067,PROD-11839
+API timeout errors,API call fails after 30s,ISS-70641,Sync issue,Tanner-Brown,NetConnect,SR-81365,PROD-11402
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70642,Performance degradation,"Hughes, Watts and Arnold",CloudEdge,SR-81897,PROD-11731
+Dashboard not loading,Average response time exceeds 10s,ISS-70643,API latency,Thomas Ltd,DataSphere,SR-82032,PROD-11893
+API timeout errors,Dashboard page crashes intermittently,ISS-70644,UI crash,White LLC,NetConnect,SR-83774,PROD-11998
+API timeout errors,API call fails after 30s,ISS-70645,UI crash,Powell-Long,DataSphere,SR-83871,PROD-11357
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70646,Sync issue,Roman LLC,Insight360,SR-82302,PROD-11678
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70647,Sync issue,Baker Group,CloudEdge,SR-82300,PROD-11806
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70648,Performance degradation,Jones-Mays,CoreAnalytics,SR-84446,PROD-11799
+Slow system response,Average response time exceeds 10s,ISS-70649,API latency,"Fisher, Rose and Pineda",NetConnect,SR-81362,PROD-11079
+Slow system response,Users unable to log in after v2.3 patch,ISS-70650,UI crash,"Castro, Evans and Anderson",NetConnect,SR-83446,PROD-11164
+Dashboard not loading,API call fails after 30s,ISS-70651,Sync issue,Christensen Ltd,NetConnect,SR-80002,PROD-11831
+Slow system response,API call fails after 30s,ISS-70652,Sync issue,Houston-Barnes,DataSphere,SR-82542,PROD-11022
+Slow system response,API call fails after 30s,ISS-70653,Sync issue,"Chung, Velez and Hall",CoreAnalytics,SR-80568,PROD-11521
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70654,API latency,Harris-Williams,NetConnect,SR-84869,PROD-11194
+API timeout errors,Dashboard page crashes intermittently,ISS-70655,Sync issue,Ray Inc,Insight360,SR-83444,PROD-11075
+Dashboard not loading,Data not syncing between apps,ISS-70656,Sync issue,"Gonzalez, Williams and Moreno",DataSphere,SR-83684,PROD-11975
+Dashboard not loading,Data not syncing between apps,ISS-70657,UI crash,Davis Group,NetConnect,SR-82048,PROD-11180
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70658,Performance degradation,Henderson PLC,CloudEdge,SR-84086,PROD-11983
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70659,Sync issue,Tyler-Brown,DataSphere,SR-83077,PROD-11604
+API timeout errors,Dashboard page crashes intermittently,ISS-70660,Performance degradation,Walton-Hoover,DataSphere,SR-82795,PROD-11315
+Slow system response,API call fails after 30s,ISS-70661,Sync issue,Singh-Miller,NetConnect,SR-81923,PROD-11761
+Slow system response,Data not syncing between apps,ISS-70662,Login issue post-upgrade,Lee-Perez,CloudEdge,SR-80333,PROD-11203
+API timeout errors,Average response time exceeds 10s,ISS-70663,UI crash,Hale LLC,CloudEdge,SR-83897,PROD-11069
+Slow system response,Users unable to log in after v2.3 patch,ISS-70664,API latency,Johnson and Sons,Insight360,SR-84791,PROD-11903
+API timeout errors,Dashboard page crashes intermittently,ISS-70665,Login issue post-upgrade,Anderson Inc,NetConnect,SR-83838,PROD-11292
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70666,Login issue post-upgrade,Miller-York,CoreAnalytics,SR-83382,PROD-11692
+Login failures after upgrade,API call fails after 30s,ISS-70667,Performance degradation,Smith and Sons,DataSphere,SR-80187,PROD-11742
+Missing data sync,API call fails after 30s,ISS-70668,Login issue post-upgrade,Carr-Alvarado,NetConnect,SR-82800,PROD-11326
+Login failures after upgrade,API call fails after 30s,ISS-70669,Sync issue,Huff-Roach,CoreAnalytics,SR-83568,PROD-11727
+API timeout errors,Data not syncing between apps,ISS-70670,Sync issue,Porter-Johnson,Insight360,SR-81523,PROD-11342
+Login failures after upgrade,Data not syncing between apps,ISS-70671,Performance degradation,Barry-Garcia,DataSphere,SR-82369,PROD-11959
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70672,Login issue post-upgrade,Jones-Mays,NetConnect,SR-82019,PROD-11870
+Slow system response,Data not syncing between apps,ISS-70673,UI crash,Vaughan PLC,CoreAnalytics,SR-82644,PROD-11617
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70674,Login issue post-upgrade,"Kelley, Snow and Elliott",CloudEdge,SR-83465,PROD-11146
+Missing data sync,API call fails after 30s,ISS-70675,Performance degradation,"Keith, Burke and Rogers",Insight360,SR-80846,PROD-11128
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70676,Performance degradation,"Howard, Morris and Patterson",Insight360,SR-82554,PROD-11209
+Slow system response,API call fails after 30s,ISS-70677,UI crash,Bishop-Salas,CoreAnalytics,SR-83318,PROD-11917
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70678,UI crash,Ray Inc,CoreAnalytics,SR-83382,PROD-11590
+Missing data sync,Average response time exceeds 10s,ISS-70679,Performance degradation,Adkins PLC,Insight360,SR-82787,PROD-11202
+Login failures after upgrade,API call fails after 30s,ISS-70680,API latency,Ellison-Coleman,CloudEdge,SR-84868,PROD-11883
+Slow system response,Users unable to log in after v2.3 patch,ISS-70681,UI crash,Hubbard Group,CloudEdge,SR-82534,PROD-11437
+API timeout errors,API call fails after 30s,ISS-70682,Sync issue,Silva-Lee,CoreAnalytics,SR-82838,PROD-11892
+Slow system response,API call fails after 30s,ISS-70683,Performance degradation,"Fisher, Rose and Pineda",NetConnect,SR-82385,PROD-11415
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70684,Sync issue,Foster-Kim,NetConnect,SR-82301,PROD-11500
+API timeout errors,Dashboard page crashes intermittently,ISS-70685,Performance degradation,"Shepherd, Martinez and Hernandez",NetConnect,SR-81481,PROD-11612
+Login failures after upgrade,Data not syncing between apps,ISS-70686,Performance degradation,Johnson PLC,CloudEdge,SR-83917,PROD-11331
+Missing data sync,API call fails after 30s,ISS-70687,Performance degradation,"Douglas, Hill and Hancock",CoreAnalytics,SR-83363,PROD-11240
+Missing data sync,Dashboard page crashes intermittently,ISS-70688,Login issue post-upgrade,Powell-Long,Insight360,SR-83882,PROD-11160
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70689,UI crash,"Hughes, Fitzgerald and Scott",CloudEdge,SR-81361,PROD-11868
+Slow system response,Average response time exceeds 10s,ISS-70690,Performance degradation,Benitez and Sons,NetConnect,SR-80711,PROD-11060
+Slow system response,API call fails after 30s,ISS-70691,API latency,Hunter-Smith,Insight360,SR-82741,PROD-11674
+Missing data sync,API call fails after 30s,ISS-70692,API latency,Pearson Inc,DataSphere,SR-84656,PROD-11143
+API timeout errors,Data not syncing between apps,ISS-70693,UI crash,Williams-Wolf,DataSphere,SR-83136,PROD-11491
+Missing data sync,Data not syncing between apps,ISS-70694,Performance degradation,Williams Ltd,CloudEdge,SR-80356,PROD-11256
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70695,Sync issue,Jacobson PLC,CoreAnalytics,SR-82526,PROD-11708
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70696,Performance degradation,"Velasquez, Willis and Parker",CloudEdge,SR-81581,PROD-11708
+Slow system response,Users unable to log in after v2.3 patch,ISS-70697,Login issue post-upgrade,Patterson-Dennis,CoreAnalytics,SR-80301,PROD-11668
+Missing data sync,Average response time exceeds 10s,ISS-70698,Login issue post-upgrade,Thomas Group,CoreAnalytics,SR-83351,PROD-11289
+Missing data sync,Dashboard page crashes intermittently,ISS-70699,API latency,"Strickland, Johnson and Castillo",CloudEdge,SR-83950,PROD-11560
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70700,Sync issue,Edwards-Day,NetConnect,SR-83370,PROD-11288
+Slow system response,Dashboard page crashes intermittently,ISS-70701,UI crash,Pierce Inc,CoreAnalytics,SR-82997,PROD-11595
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70702,Performance degradation,"Simpson, Elliott and Wolfe",DataSphere,SR-81804,PROD-11669
+Slow system response,Data not syncing between apps,ISS-70703,UI crash,"Hardy, Sanchez and Manning",NetConnect,SR-83702,PROD-11686
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70704,Performance degradation,"Melton, Lewis and Brown",DataSphere,SR-84707,PROD-11577
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70705,Sync issue,Haas-Morgan,CoreAnalytics,SR-84318,PROD-11202
+Login failures after upgrade,Average response time exceeds 10s,ISS-70706,Performance degradation,Miller-Knight,Insight360,SR-80456,PROD-11082
+API timeout errors,Average response time exceeds 10s,ISS-70707,Sync issue,"Pierce, Avila and Waller",CoreAnalytics,SR-84022,PROD-11755
+API timeout errors,Average response time exceeds 10s,ISS-70708,Login issue post-upgrade,Wood LLC,CoreAnalytics,SR-83867,PROD-11764
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70709,API latency,Allen Ltd,NetConnect,SR-82099,PROD-11326
+Login failures after upgrade,Data not syncing between apps,ISS-70710,Performance degradation,"Esparza, Peterson and Campbell",CloudEdge,SR-80319,PROD-11807
+API timeout errors,Data not syncing between apps,ISS-70711,Sync issue,Walker-Gonzalez,CoreAnalytics,SR-84219,PROD-11282
+Dashboard not loading,API call fails after 30s,ISS-70712,API latency,Beasley-Collins,CloudEdge,SR-84803,PROD-11296
+Dashboard not loading,Average response time exceeds 10s,ISS-70713,Sync issue,Elliott Ltd,DataSphere,SR-81907,PROD-11384
+API timeout errors,Dashboard page crashes intermittently,ISS-70714,Sync issue,"Medina, Lucas and Johnson",CoreAnalytics,SR-82950,PROD-11341
+Slow system response,Data not syncing between apps,ISS-70715,Performance degradation,Murphy LLC,Insight360,SR-82098,PROD-11277
+Dashboard not loading,Average response time exceeds 10s,ISS-70716,UI crash,"Mccann, Dawson and Macias",CoreAnalytics,SR-80559,PROD-11377
+API timeout errors,Data not syncing between apps,ISS-70717,Sync issue,Jackson LLC,DataSphere,SR-82922,PROD-11386
+Slow system response,Average response time exceeds 10s,ISS-70718,Login issue post-upgrade,Johnson-Bradshaw,Insight360,SR-84391,PROD-11316
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70719,Performance degradation,"Poole, Sutton and King",NetConnect,SR-80543,PROD-11559
+Slow system response,Average response time exceeds 10s,ISS-70720,Performance degradation,Jimenez-Gaines,CloudEdge,SR-81803,PROD-11365
+Dashboard not loading,API call fails after 30s,ISS-70721,API latency,Camacho Inc,DataSphere,SR-81731,PROD-11882
+Dashboard not loading,Average response time exceeds 10s,ISS-70722,Login issue post-upgrade,Watson PLC,DataSphere,SR-83908,PROD-11174
+Login failures after upgrade,Average response time exceeds 10s,ISS-70723,UI crash,Ellison-Coleman,DataSphere,SR-80483,PROD-11097
+Login failures after upgrade,Average response time exceeds 10s,ISS-70724,Sync issue,Jackson-Sherman,CoreAnalytics,SR-82977,PROD-11692
+API timeout errors,API call fails after 30s,ISS-70725,API latency,"Hess, Moreno and Miller",DataSphere,SR-81092,PROD-11974
+Missing data sync,Data not syncing between apps,ISS-70726,Login issue post-upgrade,"Turner, Butler and Morgan",NetConnect,SR-84002,PROD-11801
+API timeout errors,Dashboard page crashes intermittently,ISS-70727,Sync issue,"Yang, Robinson and Ward",NetConnect,SR-84499,PROD-11972
+Slow system response,Dashboard page crashes intermittently,ISS-70728,Performance degradation,Williams Ltd,Insight360,SR-84870,PROD-11820
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70729,Sync issue,Anderson Ltd,Insight360,SR-80036,PROD-11595
+Missing data sync,Average response time exceeds 10s,ISS-70730,UI crash,Bradley-Merritt,Insight360,SR-81979,PROD-11304
+API timeout errors,Average response time exceeds 10s,ISS-70731,Performance degradation,Taylor-Hamilton,DataSphere,SR-83976,PROD-11650
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70732,Sync issue,Watkins-Freeman,NetConnect,SR-84223,PROD-11238
+Missing data sync,Dashboard page crashes intermittently,ISS-70733,API latency,Tran PLC,NetConnect,SR-80686,PROD-11351
+Missing data sync,Dashboard page crashes intermittently,ISS-70734,API latency,Powers Ltd,Insight360,SR-83863,PROD-11640
+Dashboard not loading,Average response time exceeds 10s,ISS-70735,Performance degradation,"Ramirez, Gates and Stephenson",CloudEdge,SR-82035,PROD-11615
+Missing data sync,Data not syncing between apps,ISS-70736,UI crash,"Ashley, Garrett and Morrison",NetConnect,SR-83416,PROD-11189
+Slow system response,API call fails after 30s,ISS-70737,Sync issue,"Solis, Brown and Campbell",CloudEdge,SR-82613,PROD-11052
+Missing data sync,Average response time exceeds 10s,ISS-70738,UI crash,"Carter, Turner and Wright",DataSphere,SR-83814,PROD-11825
+Slow system response,API call fails after 30s,ISS-70739,API latency,Logan-Smith,CloudEdge,SR-82598,PROD-11110
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70740,Sync issue,"Hicks, Pruitt and Cole",DataSphere,SR-80008,PROD-11615
+Dashboard not loading,Data not syncing between apps,ISS-70741,Performance degradation,"Morgan, Brooks and Rogers",CoreAnalytics,SR-84670,PROD-11333
+API timeout errors,Dashboard page crashes intermittently,ISS-70742,Sync issue,Green-Hoffman,CoreAnalytics,SR-81759,PROD-11091
+Missing data sync,Dashboard page crashes intermittently,ISS-70743,API latency,"Clay, Schroeder and Rojas",Insight360,SR-83398,PROD-11808
+Slow system response,Dashboard page crashes intermittently,ISS-70744,UI crash,"Hess, Moreno and Miller",DataSphere,SR-84867,PROD-11183
+Missing data sync,Average response time exceeds 10s,ISS-70745,Sync issue,"Gutierrez, Myers and Davis",NetConnect,SR-83647,PROD-11669
+Missing data sync,Data not syncing between apps,ISS-70746,UI crash,Douglas PLC,DataSphere,SR-82350,PROD-11105
+Dashboard not loading,Average response time exceeds 10s,ISS-70747,Performance degradation,Smith-Bentley,NetConnect,SR-82572,PROD-11325
+Missing data sync,Average response time exceeds 10s,ISS-70748,UI crash,Johnson and Sons,NetConnect,SR-82865,PROD-11095
+Missing data sync,Data not syncing between apps,ISS-70749,Login issue post-upgrade,"Grant, Johnson and Jordan",DataSphere,SR-83093,PROD-11727
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70750,UI crash,Smith-Woods,DataSphere,SR-83024,PROD-11554
+Slow system response,Users unable to log in after v2.3 patch,ISS-70751,API latency,Byrd Inc,CoreAnalytics,SR-80591,PROD-11350
+Slow system response,Dashboard page crashes intermittently,ISS-70752,UI crash,Watson-Gardner,DataSphere,SR-84424,PROD-11081
+Slow system response,Dashboard page crashes intermittently,ISS-70753,Sync issue,Gross Inc,CloudEdge,SR-84718,PROD-11148
+Missing data sync,Data not syncing between apps,ISS-70754,Sync issue,Barry-Garcia,CloudEdge,SR-84714,PROD-11263
+Missing data sync,Average response time exceeds 10s,ISS-70755,Login issue post-upgrade,Castro-Williams,NetConnect,SR-81657,PROD-11362
+Login failures after upgrade,Average response time exceeds 10s,ISS-70756,Performance degradation,"Jimenez, Rubio and Jimenez",CoreAnalytics,SR-80041,PROD-11485
+Login failures after upgrade,Average response time exceeds 10s,ISS-70757,UI crash,Carter Inc,CoreAnalytics,SR-82936,PROD-11562
+Dashboard not loading,Average response time exceeds 10s,ISS-70758,Login issue post-upgrade,Mccoy Inc,CloudEdge,SR-81032,PROD-11567
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70759,Performance degradation,Cortez-Moore,DataSphere,SR-84258,PROD-11971
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70760,UI crash,Anderson Inc,DataSphere,SR-81948,PROD-11383
+Missing data sync,Average response time exceeds 10s,ISS-70761,Login issue post-upgrade,Jackson-Cooper,NetConnect,SR-83691,PROD-11256
+Missing data sync,Data not syncing between apps,ISS-70762,Login issue post-upgrade,Smith-Woods,DataSphere,SR-82720,PROD-11235
+Login failures after upgrade,Average response time exceeds 10s,ISS-70763,Sync issue,Black Ltd,CoreAnalytics,SR-82824,PROD-11246
+Dashboard not loading,Data not syncing between apps,ISS-70764,Sync issue,Johns Group,DataSphere,SR-84748,PROD-11206
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70765,Sync issue,Byrd Inc,Insight360,SR-81804,PROD-11633
+API timeout errors,Dashboard page crashes intermittently,ISS-70766,API latency,Nunez and Sons,NetConnect,SR-83042,PROD-11180
+Login failures after upgrade,API call fails after 30s,ISS-70767,Login issue post-upgrade,Griffith-Glass,NetConnect,SR-80056,PROD-11771
+API timeout errors,Average response time exceeds 10s,ISS-70768,UI crash,Bailey LLC,CoreAnalytics,SR-81351,PROD-11490
+API timeout errors,Dashboard page crashes intermittently,ISS-70769,Sync issue,Harris-Reed,DataSphere,SR-83688,PROD-11846
+Slow system response,Users unable to log in after v2.3 patch,ISS-70770,Performance degradation,Rodriguez-Mcdonald,NetConnect,SR-80811,PROD-11640
+Missing data sync,API call fails after 30s,ISS-70771,Sync issue,"Moreno, Johnson and Espinoza",CloudEdge,SR-84209,PROD-11676
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70772,Login issue post-upgrade,Buchanan and Sons,CloudEdge,SR-83366,PROD-11934
+Dashboard not loading,API call fails after 30s,ISS-70773,Sync issue,Owens-Hunt,NetConnect,SR-82127,PROD-11735
+Login failures after upgrade,Average response time exceeds 10s,ISS-70774,Performance degradation,Schroeder Group,DataSphere,SR-82669,PROD-11195
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70775,API latency,Perez-Campbell,Insight360,SR-84627,PROD-11773
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70776,API latency,"Ramirez, Gates and Stephenson",DataSphere,SR-81617,PROD-11242
+API timeout errors,Data not syncing between apps,ISS-70777,Performance degradation,Ibarra-Adams,Insight360,SR-84948,PROD-11537
+Slow system response,API call fails after 30s,ISS-70778,Sync issue,"Johnson, Harrison and Farrell",CloudEdge,SR-81130,PROD-11949
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70779,API latency,Moreno Inc,NetConnect,SR-83293,PROD-11524
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70780,Login issue post-upgrade,Kennedy-Campbell,DataSphere,SR-84699,PROD-11017
+Missing data sync,API call fails after 30s,ISS-70781,Login issue post-upgrade,Johnson-Fitzgerald,CoreAnalytics,SR-82925,PROD-11949
+Login failures after upgrade,Average response time exceeds 10s,ISS-70782,Performance degradation,"Vincent, Russell and Joseph",Insight360,SR-80155,PROD-11685
+Slow system response,Dashboard page crashes intermittently,ISS-70783,UI crash,Diaz Group,DataSphere,SR-83328,PROD-11205
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70784,Login issue post-upgrade,Walker-Torres,DataSphere,SR-80049,PROD-11688
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70785,Sync issue,Price and Sons,CloudEdge,SR-80876,PROD-11365
+Missing data sync,Data not syncing between apps,ISS-70786,UI crash,"Mccann, Becker and Franklin",NetConnect,SR-82352,PROD-11928
+Dashboard not loading,Data not syncing between apps,ISS-70787,Sync issue,"Huang, Collins and Santos",NetConnect,SR-84223,PROD-11529
+API timeout errors,Dashboard page crashes intermittently,ISS-70788,Login issue post-upgrade,Cantrell-Martinez,CloudEdge,SR-82274,PROD-11292
+Login failures after upgrade,Average response time exceeds 10s,ISS-70789,API latency,Collins and Sons,CoreAnalytics,SR-84176,PROD-11288
+Dashboard not loading,Average response time exceeds 10s,ISS-70790,Performance degradation,"Reid, Hamilton and Evans",CoreAnalytics,SR-83263,PROD-11819
+Slow system response,Users unable to log in after v2.3 patch,ISS-70791,API latency,"Brown, Holmes and Farrell",CloudEdge,SR-80106,PROD-11009
+Missing data sync,API call fails after 30s,ISS-70792,Sync issue,Schroeder Group,CloudEdge,SR-81989,PROD-11633
+Dashboard not loading,API call fails after 30s,ISS-70793,Login issue post-upgrade,Mason Ltd,CoreAnalytics,SR-84966,PROD-11827
+API timeout errors,Dashboard page crashes intermittently,ISS-70794,Performance degradation,Harris-Reed,CoreAnalytics,SR-81019,PROD-11616
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70795,Sync issue,Morales Ltd,CloudEdge,SR-81781,PROD-11638
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70796,API latency,Moore Group,DataSphere,SR-80915,PROD-11684
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70797,API latency,Berry-Bates,CoreAnalytics,SR-82029,PROD-11167
+Missing data sync,Average response time exceeds 10s,ISS-70798,Login issue post-upgrade,Thompson-Johnson,CloudEdge,SR-81002,PROD-11718
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70799,UI crash,Rivas-Perkins,Insight360,SR-82032,PROD-11189
+API timeout errors,Data not syncing between apps,ISS-70800,Sync issue,York-Ross,Insight360,SR-82769,PROD-11450
+Slow system response,Data not syncing between apps,ISS-70801,Performance degradation,"Yang, Robinson and Ward",Insight360,SR-82158,PROD-11668
+API timeout errors,Average response time exceeds 10s,ISS-70802,Login issue post-upgrade,Murray and Sons,DataSphere,SR-83705,PROD-11931
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70803,UI crash,Williams and Sons,NetConnect,SR-81575,PROD-11818
+Dashboard not loading,Average response time exceeds 10s,ISS-70804,Performance degradation,Barker PLC,DataSphere,SR-81927,PROD-11257
+Login failures after upgrade,Data not syncing between apps,ISS-70805,Performance degradation,Singleton-Joseph,CloudEdge,SR-83388,PROD-11192
+API timeout errors,API call fails after 30s,ISS-70806,UI crash,"Cain, Davis and Pratt",CloudEdge,SR-82560,PROD-11033
+Slow system response,API call fails after 30s,ISS-70807,Performance degradation,"Medina, Lucas and Johnson",DataSphere,SR-82742,PROD-11762
+API timeout errors,Data not syncing between apps,ISS-70808,Sync issue,"Schneider, Brown and Ellison",CloudEdge,SR-83737,PROD-11245
+API timeout errors,API call fails after 30s,ISS-70809,Login issue post-upgrade,Torres Inc,CoreAnalytics,SR-80803,PROD-11349
+Dashboard not loading,API call fails after 30s,ISS-70810,Sync issue,Benson Group,DataSphere,SR-80501,PROD-11034
+API timeout errors,Dashboard page crashes intermittently,ISS-70811,UI crash,Cox-Taylor,CoreAnalytics,SR-80077,PROD-11697
+API timeout errors,Dashboard page crashes intermittently,ISS-70812,UI crash,Booker-Herrera,CloudEdge,SR-80230,PROD-11097
+Slow system response,Dashboard page crashes intermittently,ISS-70813,Performance degradation,Cruz-Mckenzie,Insight360,SR-80686,PROD-11243
+Slow system response,Average response time exceeds 10s,ISS-70814,API latency,"Curtis, Johnson and Kemp",NetConnect,SR-83649,PROD-11943
+Login failures after upgrade,API call fails after 30s,ISS-70815,UI crash,Rogers-Cervantes,CoreAnalytics,SR-81850,PROD-11094
+Missing data sync,Average response time exceeds 10s,ISS-70816,Sync issue,"Stein, Randolph and Carter",CoreAnalytics,SR-82435,PROD-11640
+Missing data sync,API call fails after 30s,ISS-70817,Sync issue,Norman Inc,CoreAnalytics,SR-81940,PROD-11195
+API timeout errors,Dashboard page crashes intermittently,ISS-70818,Login issue post-upgrade,"Blackwell, Odonnell and Mcdowell",CoreAnalytics,SR-84556,PROD-11441
+Login failures after upgrade,API call fails after 30s,ISS-70819,Performance degradation,Page-Warner,Insight360,SR-81212,PROD-11617
+Login failures after upgrade,API call fails after 30s,ISS-70820,UI crash,Simpson-Peterson,CloudEdge,SR-81010,PROD-11459
+Dashboard not loading,Average response time exceeds 10s,ISS-70821,UI crash,Chavez-Hernandez,NetConnect,SR-83627,PROD-11523
+Login failures after upgrade,Average response time exceeds 10s,ISS-70822,UI crash,"Riley, Pena and Wells",CoreAnalytics,SR-83086,PROD-11606
+Slow system response,Users unable to log in after v2.3 patch,ISS-70823,Login issue post-upgrade,Bryant Group,CoreAnalytics,SR-80594,PROD-11886
+Login failures after upgrade,API call fails after 30s,ISS-70824,Sync issue,"Strickland, Johnson and Castillo",DataSphere,SR-80661,PROD-11973
+Slow system response,Average response time exceeds 10s,ISS-70825,UI crash,Serrano-Smith,CloudEdge,SR-82042,PROD-11266
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70826,Sync issue,"Carroll, Mendoza and Hoffman",DataSphere,SR-80006,PROD-11005
+Slow system response,Average response time exceeds 10s,ISS-70827,UI crash,Padilla-Wang,CloudEdge,SR-80972,PROD-11582
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70828,API latency,Miller-Perez,CoreAnalytics,SR-84329,PROD-11499
+Missing data sync,Dashboard page crashes intermittently,ISS-70829,Login issue post-upgrade,"Conner, Stone and Lynch",Insight360,SR-81850,PROD-11110
+Login failures after upgrade,Average response time exceeds 10s,ISS-70830,Performance degradation,Clements-Maynard,CoreAnalytics,SR-82044,PROD-11906
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70831,Performance degradation,"Bush, Carter and Ramsey",Insight360,SR-82331,PROD-11385
+Login failures after upgrade,Average response time exceeds 10s,ISS-70832,Sync issue,"Martin, Stevenson and Meadows",DataSphere,SR-81801,PROD-11563
+Dashboard not loading,Average response time exceeds 10s,ISS-70833,Login issue post-upgrade,Wilson Group,CoreAnalytics,SR-81596,PROD-11912
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70834,API latency,Chambers-Arnold,DataSphere,SR-80243,PROD-11831
+Login failures after upgrade,Data not syncing between apps,ISS-70835,Login issue post-upgrade,"Rice, Phillips and Smith",NetConnect,SR-81339,PROD-11094
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70836,API latency,"Nichols, Chapman and Smith",DataSphere,SR-82459,PROD-11535
+Login failures after upgrade,API call fails after 30s,ISS-70837,UI crash,Lopez-Duran,DataSphere,SR-81625,PROD-11134
+Slow system response,Data not syncing between apps,ISS-70838,Sync issue,"Spencer, Wiley and Martin",NetConnect,SR-84981,PROD-11197
+Login failures after upgrade,Data not syncing between apps,ISS-70839,Sync issue,Williams-Alexander,CloudEdge,SR-80414,PROD-11460
+API timeout errors,Dashboard page crashes intermittently,ISS-70840,UI crash,"Santiago, Hall and Lara",NetConnect,SR-81800,PROD-11719
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70841,UI crash,Schroeder Group,DataSphere,SR-83776,PROD-11231
+Login failures after upgrade,Data not syncing between apps,ISS-70842,UI crash,"Wilson, Mcclure and Wright",CoreAnalytics,SR-80503,PROD-11582
+Login failures after upgrade,Data not syncing between apps,ISS-70843,Performance degradation,Kemp Inc,NetConnect,SR-84133,PROD-11453
+Slow system response,Average response time exceeds 10s,ISS-70844,Login issue post-upgrade,Chung-Harrington,NetConnect,SR-84787,PROD-11198
+Slow system response,Average response time exceeds 10s,ISS-70845,API latency,Simpson-Peterson,NetConnect,SR-83322,PROD-11804
+Missing data sync,Dashboard page crashes intermittently,ISS-70846,UI crash,"Smith, Smith and Stein",DataSphere,SR-84159,PROD-11123
+Missing data sync,Data not syncing between apps,ISS-70847,Sync issue,Osborn Inc,Insight360,SR-80316,PROD-11398
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70848,Sync issue,Gonzalez-Walker,DataSphere,SR-80354,PROD-11044
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70849,API latency,Ward PLC,CloudEdge,SR-80356,PROD-11320
+Dashboard not loading,API call fails after 30s,ISS-70850,UI crash,York-Ross,CoreAnalytics,SR-80789,PROD-11559
+Slow system response,Average response time exceeds 10s,ISS-70851,Sync issue,"Rogers, Figueroa and Patton",NetConnect,SR-81285,PROD-11425
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70852,Performance degradation,"Wolfe, Williams and Evans",NetConnect,SR-83524,PROD-11345
+Missing data sync,Dashboard page crashes intermittently,ISS-70853,Login issue post-upgrade,"Carroll, Parsons and Romero",CoreAnalytics,SR-80517,PROD-11072
+API timeout errors,Data not syncing between apps,ISS-70854,Performance degradation,Harris-Brown,CloudEdge,SR-83970,PROD-11867
+Dashboard not loading,API call fails after 30s,ISS-70855,Sync issue,Warren and Sons,Insight360,SR-82541,PROD-11828
+Slow system response,Dashboard page crashes intermittently,ISS-70856,Sync issue,Torres Inc,CloudEdge,SR-80220,PROD-11455
+API timeout errors,API call fails after 30s,ISS-70857,Sync issue,Hall-Murray,DataSphere,SR-82821,PROD-11638
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70858,UI crash,"Franklin, Rodriguez and Harris",DataSphere,SR-84387,PROD-11004
+Login failures after upgrade,Data not syncing between apps,ISS-70859,Performance degradation,"Contreras, Williams and Valdez",CloudEdge,SR-81488,PROD-11101
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70860,Login issue post-upgrade,Williams-Rose,DataSphere,SR-84671,PROD-11591
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70861,UI crash,Cox LLC,NetConnect,SR-82776,PROD-11899
+Slow system response,Dashboard page crashes intermittently,ISS-70862,UI crash,Taylor Inc,DataSphere,SR-83417,PROD-11615
+Dashboard not loading,Data not syncing between apps,ISS-70863,API latency,Taylor PLC,Insight360,SR-82908,PROD-11129
+Login failures after upgrade,API call fails after 30s,ISS-70864,Sync issue,Bartlett PLC,CloudEdge,SR-80154,PROD-11627
+Missing data sync,Dashboard page crashes intermittently,ISS-70865,Sync issue,"Gonzalez, Matthews and Hunter",CloudEdge,SR-81954,PROD-11742
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70866,Login issue post-upgrade,Walker and Sons,CloudEdge,SR-82386,PROD-11452
+Missing data sync,Dashboard page crashes intermittently,ISS-70867,API latency,"Phillips, Lin and Ward",Insight360,SR-84927,PROD-11640
+Login failures after upgrade,Data not syncing between apps,ISS-70868,Performance degradation,"Thomas, Mcdonald and Miller",Insight360,SR-84333,PROD-11664
+Slow system response,Data not syncing between apps,ISS-70869,Performance degradation,"Bell, Conway and Adams",DataSphere,SR-81962,PROD-11720
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70870,Login issue post-upgrade,"Wilson, Atkins and Reyes",DataSphere,SR-81188,PROD-11921
+Dashboard not loading,Data not syncing between apps,ISS-70871,Performance degradation,Sanchez-Graham,NetConnect,SR-82091,PROD-11232
+API timeout errors,Average response time exceeds 10s,ISS-70872,API latency,Friedman-Mann,DataSphere,SR-81341,PROD-11493
+Slow system response,API call fails after 30s,ISS-70873,UI crash,"Douglas, Hill and Hancock",CoreAnalytics,SR-81533,PROD-11688
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70874,API latency,Allen-Fuller,NetConnect,SR-84700,PROD-11057
+Dashboard not loading,API call fails after 30s,ISS-70875,Sync issue,Rogers-Miller,Insight360,SR-84954,PROD-11146
+API timeout errors,API call fails after 30s,ISS-70876,API latency,"Owens, Morrison and Clark",DataSphere,SR-82621,PROD-11618
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70877,Performance degradation,"Poole, Sutton and King",DataSphere,SR-83120,PROD-11783
+Slow system response,Average response time exceeds 10s,ISS-70878,UI crash,Rivas-Perkins,Insight360,SR-82533,PROD-11945
+Slow system response,Data not syncing between apps,ISS-70879,Login issue post-upgrade,"Howe, Drake and Robinson",CloudEdge,SR-82372,PROD-11906
+Missing data sync,Data not syncing between apps,ISS-70880,API latency,Johnson-Nelson,CoreAnalytics,SR-84778,PROD-11806
+Missing data sync,Average response time exceeds 10s,ISS-70881,Sync issue,"Taylor, Thomas and Quinn",NetConnect,SR-84447,PROD-11297
+Missing data sync,Dashboard page crashes intermittently,ISS-70882,Login issue post-upgrade,"Beasley, Diaz and Martin",NetConnect,SR-81654,PROD-11370
+API timeout errors,Average response time exceeds 10s,ISS-70883,API latency,Gibson Group,CoreAnalytics,SR-80982,PROD-11982
+Missing data sync,Dashboard page crashes intermittently,ISS-70884,Performance degradation,Gomez-Wallace,CloudEdge,SR-80182,PROD-11636
+Slow system response,Dashboard page crashes intermittently,ISS-70885,Sync issue,"Vaughan, Erickson and Navarro",CloudEdge,SR-82496,PROD-11458
+Slow system response,API call fails after 30s,ISS-70886,UI crash,"Keith, Burke and Rogers",CoreAnalytics,SR-84544,PROD-11976
+Login failures after upgrade,Data not syncing between apps,ISS-70887,Login issue post-upgrade,Hernandez Inc,CloudEdge,SR-80063,PROD-11369
+Missing data sync,Data not syncing between apps,ISS-70888,Performance degradation,"Aguirre, Jackson and Graves",DataSphere,SR-81068,PROD-11174
+Login failures after upgrade,Data not syncing between apps,ISS-70889,Performance degradation,"Wiley, Perez and Ruiz",CoreAnalytics,SR-82692,PROD-11281
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70890,Sync issue,"Keith, Cisneros and Hendricks",NetConnect,SR-83339,PROD-11502
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70891,API latency,"Morgan, Brooks and Rogers",CoreAnalytics,SR-84115,PROD-11387
+API timeout errors,Data not syncing between apps,ISS-70892,UI crash,Miller Ltd,CloudEdge,SR-82839,PROD-11825
+API timeout errors,Average response time exceeds 10s,ISS-70893,Performance degradation,"Nichols, Chapman and Smith",Insight360,SR-82124,PROD-11795
+Missing data sync,Average response time exceeds 10s,ISS-70894,Login issue post-upgrade,Williamson-Kelly,CoreAnalytics,SR-80647,PROD-11556
+Slow system response,Dashboard page crashes intermittently,ISS-70895,UI crash,Waters Group,CloudEdge,SR-80163,PROD-11967
+API timeout errors,Data not syncing between apps,ISS-70896,Performance degradation,Jackson-Vasquez,NetConnect,SR-80189,PROD-11719
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70897,Sync issue,Henderson PLC,DataSphere,SR-80012,PROD-11265
+Slow system response,Users unable to log in after v2.3 patch,ISS-70898,API latency,Baker Group,CoreAnalytics,SR-84660,PROD-11642
+Missing data sync,Average response time exceeds 10s,ISS-70899,Performance degradation,Thomas PLC,CoreAnalytics,SR-82401,PROD-11983
+Dashboard not loading,Data not syncing between apps,ISS-70900,Login issue post-upgrade,Taylor and Sons,CoreAnalytics,SR-82344,PROD-11153
+Slow system response,Average response time exceeds 10s,ISS-70901,API latency,Johnson-Young,Insight360,SR-84953,PROD-11461
+Slow system response,Users unable to log in after v2.3 patch,ISS-70902,Login issue post-upgrade,Hendrix Ltd,CloudEdge,SR-82090,PROD-11582
+Slow system response,Dashboard page crashes intermittently,ISS-70903,UI crash,"Crawford, Fernandez and Williams",CloudEdge,SR-83906,PROD-11054
+Login failures after upgrade,Data not syncing between apps,ISS-70904,Login issue post-upgrade,Cox-Taylor,CloudEdge,SR-83074,PROD-11598
+Missing data sync,Data not syncing between apps,ISS-70905,Login issue post-upgrade,"Douglas, Hill and Hancock",DataSphere,SR-82257,PROD-11510
+Dashboard not loading,API call fails after 30s,ISS-70906,Performance degradation,Brown LLC,NetConnect,SR-80783,PROD-11936
+API timeout errors,Average response time exceeds 10s,ISS-70907,Sync issue,"Adams, Osborne and Hall",Insight360,SR-80304,PROD-11120
+API timeout errors,Users unable to log in after v2.3 patch,ISS-70908,Performance degradation,"Torres, Walls and Orozco",CloudEdge,SR-80065,PROD-11778
+Dashboard not loading,Average response time exceeds 10s,ISS-70909,Sync issue,Gilbert-Smith,DataSphere,SR-84546,PROD-11938
+API timeout errors,API call fails after 30s,ISS-70910,Performance degradation,Bishop-Salas,CloudEdge,SR-81267,PROD-11973
+Login failures after upgrade,Data not syncing between apps,ISS-70911,UI crash,"Esparza, Peterson and Campbell",DataSphere,SR-81581,PROD-11147
+Slow system response,Dashboard page crashes intermittently,ISS-70912,API latency,Reyes-Gordon,DataSphere,SR-84541,PROD-11931
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70913,UI crash,Williams LLC,Insight360,SR-83436,PROD-11099
+Slow system response,API call fails after 30s,ISS-70914,Sync issue,Faulkner-Frazier,Insight360,SR-84067,PROD-11955
+Dashboard not loading,Data not syncing between apps,ISS-70915,UI crash,Allen Group,Insight360,SR-81914,PROD-11551
+Login failures after upgrade,Data not syncing between apps,ISS-70916,API latency,Simpson Group,Insight360,SR-84666,PROD-11480
+Dashboard not loading,API call fails after 30s,ISS-70917,Login issue post-upgrade,Murray-Johnson,CoreAnalytics,SR-84791,PROD-11496
+Missing data sync,Dashboard page crashes intermittently,ISS-70918,Sync issue,"Curtis, Johnson and Kemp",CloudEdge,SR-82134,PROD-11546
+API timeout errors,Data not syncing between apps,ISS-70919,Performance degradation,Barnes PLC,CloudEdge,SR-83692,PROD-11303
+Login failures after upgrade,API call fails after 30s,ISS-70920,Login issue post-upgrade,Randall Inc,CloudEdge,SR-84368,PROD-11904
+Dashboard not loading,Average response time exceeds 10s,ISS-70921,Login issue post-upgrade,Parker PLC,NetConnect,SR-84274,PROD-11979
+Missing data sync,Data not syncing between apps,ISS-70922,Sync issue,Maynard-Johnson,CoreAnalytics,SR-80071,PROD-11977
+Slow system response,Dashboard page crashes intermittently,ISS-70923,Performance degradation,Smith and Sons,NetConnect,SR-84564,PROD-11850
+Dashboard not loading,Data not syncing between apps,ISS-70924,UI crash,Morris-Mcclain,CloudEdge,SR-82696,PROD-11094
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70925,Performance degradation,Baker LLC,CloudEdge,SR-82351,PROD-11965
+Slow system response,Average response time exceeds 10s,ISS-70926,Sync issue,Austin-Davies,CloudEdge,SR-80385,PROD-11095
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70927,UI crash,Schultz-Reyes,CoreAnalytics,SR-80026,PROD-11069
+Slow system response,Average response time exceeds 10s,ISS-70928,UI crash,Cruz-Glover,DataSphere,SR-82975,PROD-11086
+API timeout errors,Average response time exceeds 10s,ISS-70929,Login issue post-upgrade,Phillips Group,DataSphere,SR-81911,PROD-11499
+Missing data sync,Data not syncing between apps,ISS-70930,API latency,"Thomas, Smith and Cook",NetConnect,SR-82171,PROD-11241
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70931,API latency,Nunez and Sons,NetConnect,SR-84472,PROD-11314
+Slow system response,Users unable to log in after v2.3 patch,ISS-70932,Performance degradation,"Lewis, Cross and Huber",Insight360,SR-81740,PROD-11909
+Slow system response,API call fails after 30s,ISS-70933,Sync issue,Reynolds-Woods,DataSphere,SR-80928,PROD-11086
+API timeout errors,Dashboard page crashes intermittently,ISS-70934,UI crash,Gonzalez-Walker,CoreAnalytics,SR-80222,PROD-11401
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70935,Login issue post-upgrade,"Stephens, Smith and Ballard",Insight360,SR-84266,PROD-11693
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70936,Performance degradation,"Lopez, Campbell and Smith",CoreAnalytics,SR-80271,PROD-11649
+Dashboard not loading,API call fails after 30s,ISS-70937,UI crash,"Poole, Sutton and King",NetConnect,SR-83598,PROD-11025
+Slow system response,Average response time exceeds 10s,ISS-70938,Sync issue,Huff-Roach,NetConnect,SR-84907,PROD-11822
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70939,Login issue post-upgrade,"Miranda, Lee and Orozco",CloudEdge,SR-83174,PROD-11456
+Slow system response,Dashboard page crashes intermittently,ISS-70940,Sync issue,Stokes-Roberts,DataSphere,SR-84591,PROD-11377
+Login failures after upgrade,API call fails after 30s,ISS-70941,Performance degradation,"Smith, Adams and Lee",CloudEdge,SR-82588,PROD-11215
+Missing data sync,Average response time exceeds 10s,ISS-70942,UI crash,Benson Ltd,NetConnect,SR-83846,PROD-11618
+Missing data sync,Average response time exceeds 10s,ISS-70943,API latency,"Stewart, Moreno and Gray",NetConnect,SR-84238,PROD-11768
+Missing data sync,Dashboard page crashes intermittently,ISS-70944,Login issue post-upgrade,Anderson Ltd,NetConnect,SR-84886,PROD-11120
+Missing data sync,Dashboard page crashes intermittently,ISS-70945,UI crash,"Jones, Hardy and Harris",NetConnect,SR-82458,PROD-11880
+Missing data sync,API call fails after 30s,ISS-70946,API latency,Kemp Inc,Insight360,SR-83569,PROD-11085
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70947,Login issue post-upgrade,Roberts PLC,CoreAnalytics,SR-80997,PROD-11936
+Login failures after upgrade,Average response time exceeds 10s,ISS-70948,Login issue post-upgrade,Hart LLC,DataSphere,SR-81455,PROD-11301
+Slow system response,Data not syncing between apps,ISS-70949,Login issue post-upgrade,Walker-Mcdonald,CoreAnalytics,SR-81565,PROD-11384
+Slow system response,Average response time exceeds 10s,ISS-70950,Sync issue,Bishop-Salas,NetConnect,SR-84511,PROD-11109
+Missing data sync,Data not syncing between apps,ISS-70951,UI crash,Smith Group,CloudEdge,SR-81248,PROD-11306
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70952,Sync issue,"Shepherd, Martinez and Hernandez",Insight360,SR-81660,PROD-11610
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70953,Sync issue,Page-Watkins,Insight360,SR-83159,PROD-11595
+Slow system response,Dashboard page crashes intermittently,ISS-70954,UI crash,Palmer-Barrett,NetConnect,SR-81462,PROD-11942
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70955,Login issue post-upgrade,Daugherty-Pruitt,CloudEdge,SR-81902,PROD-11036
+Missing data sync,Average response time exceeds 10s,ISS-70956,Sync issue,Carter-Mcintyre,CloudEdge,SR-82604,PROD-11598
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70957,Sync issue,Sampson Group,DataSphere,SR-82445,PROD-11975
+Missing data sync,API call fails after 30s,ISS-70958,Login issue post-upgrade,Hale LLC,Insight360,SR-83323,PROD-11657
+Login failures after upgrade,Data not syncing between apps,ISS-70959,Performance degradation,Meyer-Frazier,NetConnect,SR-83580,PROD-11186
+Slow system response,Data not syncing between apps,ISS-70960,UI crash,Harvey PLC,NetConnect,SR-84763,PROD-11777
+Missing data sync,Average response time exceeds 10s,ISS-70961,Sync issue,"Wilkinson, Lane and Fields",Insight360,SR-80229,PROD-11962
+Dashboard not loading,Dashboard page crashes intermittently,ISS-70962,Sync issue,Jackson-Harmon,DataSphere,SR-85000,PROD-11446
+Login failures after upgrade,Data not syncing between apps,ISS-70963,UI crash,Guzman Group,Insight360,SR-82886,PROD-11031
+Slow system response,Average response time exceeds 10s,ISS-70964,Login issue post-upgrade,Rodriguez-Stewart,Insight360,SR-83140,PROD-11014
+Login failures after upgrade,API call fails after 30s,ISS-70965,Login issue post-upgrade,Carroll Inc,CoreAnalytics,SR-84096,PROD-11580
+Dashboard not loading,Data not syncing between apps,ISS-70966,API latency,Garcia Group,CoreAnalytics,SR-81139,PROD-11371
+Missing data sync,Average response time exceeds 10s,ISS-70967,Login issue post-upgrade,Harris-Reed,CoreAnalytics,SR-81683,PROD-11881
+Missing data sync,Average response time exceeds 10s,ISS-70968,Login issue post-upgrade,"Daniels, Hubbard and Sweeney",CloudEdge,SR-82587,PROD-11070
+Slow system response,Data not syncing between apps,ISS-70969,API latency,"Clark, Lozano and Jimenez",CoreAnalytics,SR-80122,PROD-11357
+Login failures after upgrade,Users unable to log in after v2.3 patch,ISS-70970,UI crash,Stout PLC,CoreAnalytics,SR-81038,PROD-11278
+Login failures after upgrade,API call fails after 30s,ISS-70971,API latency,"Douglas, Hill and Hancock",CloudEdge,SR-80837,PROD-11751
+Missing data sync,Average response time exceeds 10s,ISS-70972,Sync issue,Jimenez-Gaines,DataSphere,SR-83852,PROD-11990
+Slow system response,Data not syncing between apps,ISS-70973,Performance degradation,Barry-Garcia,CloudEdge,SR-83319,PROD-11182
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70974,UI crash,Snyder Ltd,NetConnect,SR-80558,PROD-11883
+Missing data sync,API call fails after 30s,ISS-70975,Performance degradation,"Gutierrez, Myers and Davis",NetConnect,SR-83887,PROD-11601
+Missing data sync,Dashboard page crashes intermittently,ISS-70976,UI crash,Robinson PLC,Insight360,SR-84177,PROD-11066
+Dashboard not loading,Users unable to log in after v2.3 patch,ISS-70977,Performance degradation,Moore PLC,Insight360,SR-82187,PROD-11118
+API timeout errors,API call fails after 30s,ISS-70978,Login issue post-upgrade,Moore Group,NetConnect,SR-84382,PROD-11693
+Slow system response,API call fails after 30s,ISS-70979,Login issue post-upgrade,Roman LLC,DataSphere,SR-83473,PROD-11176
+API timeout errors,Average response time exceeds 10s,ISS-70980,Sync issue,Chaney-Lozano,CloudEdge,SR-81372,PROD-11114
+Missing data sync,Dashboard page crashes intermittently,ISS-70981,API latency,Moreno Inc,Insight360,SR-82707,PROD-11588
+Login failures after upgrade,Data not syncing between apps,ISS-70982,Sync issue,Anderson Inc,NetConnect,SR-83965,PROD-11617
+Slow system response,Average response time exceeds 10s,ISS-70983,API latency,Page-Watkins,Insight360,SR-84100,PROD-11340
+Dashboard not loading,Average response time exceeds 10s,ISS-70984,Sync issue,Jackson-Sherman,CloudEdge,SR-80157,PROD-11114
+Missing data sync,Users unable to log in after v2.3 patch,ISS-70985,UI crash,"Stevens, Rodriguez and Long",CloudEdge,SR-83823,PROD-11176
+Missing data sync,Average response time exceeds 10s,ISS-70986,UI crash,Hayes LLC,NetConnect,SR-81065,PROD-11745
+API timeout errors,Dashboard page crashes intermittently,ISS-70987,API latency,Snyder Ltd,Insight360,SR-83351,PROD-11317
+Missing data sync,Average response time exceeds 10s,ISS-70988,API latency,Thompson-Johnson,CoreAnalytics,SR-84536,PROD-11622
+Slow system response,API call fails after 30s,ISS-70989,API latency,"Lynch, Lynch and Mitchell",DataSphere,SR-83297,PROD-11644
+Dashboard not loading,API call fails after 30s,ISS-70990,API latency,Hubbard Group,Insight360,SR-80226,PROD-11032
+Missing data sync,API call fails after 30s,ISS-70991,API latency,"Kelley, Snow and Elliott",NetConnect,SR-80591,PROD-11612
+Slow system response,API call fails after 30s,ISS-70992,Login issue post-upgrade,Park PLC,DataSphere,SR-80149,PROD-11101
+Login failures after upgrade,Dashboard page crashes intermittently,ISS-70993,UI crash,"West, Johnson and Becker",CloudEdge,SR-81908,PROD-11604
+API timeout errors,API call fails after 30s,ISS-70994,UI crash,"Howe, Drake and Robinson",CoreAnalytics,SR-80687,PROD-11623
+API timeout errors,API call fails after 30s,ISS-70995,Sync issue,Davis Inc,DataSphere,SR-81468,PROD-11761
+Dashboard not loading,Average response time exceeds 10s,ISS-70996,API latency,Jackson-Fowler,DataSphere,SR-81767,PROD-11202
+API timeout errors,Data not syncing between apps,ISS-70997,API latency,"Huang, Collins and Santos",CloudEdge,SR-84227,PROD-11983
+Slow system response,Users unable to log in after v2.3 patch,ISS-70998,Login issue post-upgrade,Williamson-Kelly,Insight360,SR-80248,PROD-11831
+Missing data sync,Data not syncing between apps,ISS-70999,UI crash,Myers Group,Insight360,SR-80661,PROD-11253
+API timeout errors,Dashboard page crashes intermittently,ISS-71000,UI crash,Barrera-Moody,CloudEdge,SR-80530,PROD-11017

@@ -1,0 +1,1001 @@
+Inventory ID,Product Name,Inventory (Units),Quantity,Inventory Location,Inventory Status,Prod_ID,Last Updated Date,Supplier Name,Reorder Threshold,Storage Condition
+INV-90001,CloudHub Gateway,496,17,London Hub,In Transit,PROD-11149,2025-08-08,GlobalNet Supplies,35,Climate-Controlled
+INV-90002,CloudHub Gateway,249,168,London Hub,On Hold,PROD-11168,2025-03-24,GlobalNet Supplies,50,Climate-Controlled
+INV-90003,CloudHub Gateway,55,118,Bangalore WH,In Transit,PROD-11931,2025-08-18,CloudWave Ltd,17,Normal
+INV-90004,SmartEdge Router,131,131,Singapore DC,Damaged,PROD-11123,2025-04-23,CloudWave Ltd,11,Restricted
+INV-90005,VisionX Switch,333,185,Singapore DC,In Transit,PROD-11484,2025-07-16,GlobalNet Supplies,29,Restricted
+INV-90006,CloudHub Gateway,48,134,Singapore DC,Damaged,PROD-11451,2025-03-10,SecureLine Distributors,38,Restricted
+INV-90007,StreamLine AP,122,187,New York DC,Available,PROD-11501,2025-01-21,SecureLine Distributors,37,Normal
+INV-90008,CloudHub Gateway,463,79,New York DC,On Hold,PROD-11983,2025-06-08,CloudWave Ltd,11,Normal
+INV-90009,StreamLine AP,404,16,London Hub,In Transit,PROD-11777,2025-04-20,GlobalNet Supplies,25,Normal
+INV-90010,Nova Firewall,30,4,Berlin DC,Available,PROD-11919,2025-07-12,SecureLine Distributors,25,Restricted
+INV-90011,VisionX Switch,31,111,Bangalore WH,In Transit,PROD-11746,2025-04-18,SecureLine Distributors,23,Normal
+INV-90012,CloudHub Gateway,363,189,London Hub,Damaged,PROD-11409,2025-08-09,NetWorld Partners,20,Climate-Controlled
+INV-90013,CloudHub Gateway,64,29,New York DC,Available,PROD-11456,2025-03-19,SecureLine Distributors,11,Restricted
+INV-90014,SmartEdge Router,443,13,Singapore DC,Damaged,PROD-11718,2025-03-10,GlobalNet Supplies,36,Normal
+INV-90015,Nova Firewall,86,118,Singapore DC,In Transit,PROD-11774,2025-07-15,GlobalNet Supplies,11,Normal
+INV-90016,VisionX Switch,176,63,Bangalore WH,Available,PROD-11959,2025-04-23,GlobalNet Supplies,13,Climate-Controlled
+INV-90017,Nova Firewall,302,88,Singapore DC,In Transit,PROD-11808,2025-02-11,CloudWave Ltd,25,Restricted
+INV-90018,Nova Firewall,307,111,Bangalore WH,Available,PROD-11740,2025-06-04,CloudWave Ltd,41,Normal
+INV-90019,StreamLine AP,130,160,New York DC,Available,PROD-11825,2025-08-09,CloudWave Ltd,56,Normal
+INV-90020,Nova Firewall,91,11,New York DC,Available,PROD-11769,2025-03-14,CloudWave Ltd,50,Restricted
+INV-90021,SmartEdge Router,163,20,Berlin DC,Reserved,PROD-11523,2025-02-12,NetWorld Partners,30,Climate-Controlled
+INV-90022,VisionX Switch,318,49,Singapore DC,Reserved,PROD-11168,2025-04-16,SecureLine Distributors,54,Normal
+INV-90023,Nova Firewall,116,25,Bangalore WH,Reserved,PROD-11712,2025-06-21,CloudWave Ltd,41,Climate-Controlled
+INV-90024,SmartEdge Router,209,22,Berlin DC,Damaged,PROD-11762,2025-06-30,TechSource Inc,33,Climate-Controlled
+INV-90025,StreamLine AP,100,180,Bangalore WH,On Hold,PROD-11545,2025-02-27,TechSource Inc,46,Restricted
+INV-90026,StreamLine AP,352,93,Bangalore WH,Damaged,PROD-11391,2025-02-25,CloudWave Ltd,46,Restricted
+INV-90027,CloudHub Gateway,454,111,London Hub,Available,PROD-11637,2025-01-24,GlobalNet Supplies,36,Climate-Controlled
+INV-90028,VisionX Switch,454,101,Berlin DC,On Hold,PROD-11598,2025-08-18,GlobalNet Supplies,53,Restricted
+INV-90029,Nova Firewall,160,84,Bangalore WH,In Transit,PROD-11627,2025-04-26,SecureLine Distributors,31,Restricted
+INV-90030,SmartEdge Router,213,22,New York DC,Damaged,PROD-11277,2025-03-13,GlobalNet Supplies,43,Restricted
+INV-90031,SmartEdge Router,316,172,Bangalore WH,Available,PROD-11688,2025-03-17,TechSource Inc,53,Climate-Controlled
+INV-90032,SmartEdge Router,236,94,Bangalore WH,Available,PROD-11523,2025-02-24,NetWorld Partners,12,Restricted
+INV-90033,SmartEdge Router,228,12,Bangalore WH,In Transit,PROD-11467,2025-01-06,GlobalNet Supplies,43,Restricted
+INV-90034,SmartEdge Router,265,45,Singapore DC,Damaged,PROD-11211,2025-06-09,TechSource Inc,33,Restricted
+INV-90035,StreamLine AP,121,137,Singapore DC,Available,PROD-11215,2025-04-20,GlobalNet Supplies,20,Restricted
+INV-90036,SmartEdge Router,222,59,London Hub,Reserved,PROD-11918,2025-07-16,NetWorld Partners,26,Climate-Controlled
+INV-90037,SmartEdge Router,450,78,Singapore DC,Available,PROD-11823,2025-08-09,GlobalNet Supplies,12,Normal
+INV-90038,Nova Firewall,441,142,Bangalore WH,In Transit,PROD-11804,2025-04-20,GlobalNet Supplies,31,Normal
+INV-90039,CloudHub Gateway,196,87,Berlin DC,On Hold,PROD-11210,2025-03-17,TechSource Inc,25,Climate-Controlled
+INV-90040,Nova Firewall,447,44,Singapore DC,Available,PROD-11845,2025-02-07,CloudWave Ltd,32,Climate-Controlled
+INV-90041,Nova Firewall,93,190,Bangalore WH,Damaged,PROD-11669,2025-03-15,CloudWave Ltd,45,Climate-Controlled
+INV-90042,CloudHub Gateway,222,114,Berlin DC,On Hold,PROD-11490,2025-01-12,GlobalNet Supplies,38,Normal
+INV-90043,StreamLine AP,23,14,Bangalore WH,Reserved,PROD-11807,2025-06-22,CloudWave Ltd,28,Restricted
+INV-90044,StreamLine AP,365,79,Singapore DC,Reserved,PROD-11676,2025-07-09,SecureLine Distributors,47,Normal
+INV-90045,SmartEdge Router,340,116,Bangalore WH,Damaged,PROD-11536,2025-03-31,TechSource Inc,23,Restricted
+INV-90046,VisionX Switch,285,160,Singapore DC,On Hold,PROD-11724,2025-01-13,GlobalNet Supplies,40,Climate-Controlled
+INV-90047,SmartEdge Router,354,48,New York DC,Available,PROD-11438,2025-04-20,SecureLine Distributors,21,Normal
+INV-90048,Nova Firewall,151,161,New York DC,Reserved,PROD-11092,2025-05-16,TechSource Inc,48,Restricted
+INV-90049,StreamLine AP,249,73,London Hub,On Hold,PROD-11164,2025-04-01,NetWorld Partners,47,Climate-Controlled
+INV-90050,SmartEdge Router,286,155,Berlin DC,Available,PROD-11787,2025-05-09,CloudWave Ltd,59,Restricted
+INV-90051,SmartEdge Router,403,171,London Hub,Reserved,PROD-11877,2025-06-27,GlobalNet Supplies,39,Restricted
+INV-90052,StreamLine AP,262,38,London Hub,Damaged,PROD-11536,2025-02-11,TechSource Inc,26,Restricted
+INV-90053,StreamLine AP,11,128,New York DC,On Hold,PROD-11395,2025-05-06,GlobalNet Supplies,23,Restricted
+INV-90054,CloudHub Gateway,200,72,New York DC,Reserved,PROD-11488,2025-08-27,NetWorld Partners,36,Normal
+INV-90055,Nova Firewall,121,86,New York DC,Reserved,PROD-11333,2025-04-04,SecureLine Distributors,12,Climate-Controlled
+INV-90056,StreamLine AP,122,45,Singapore DC,In Transit,PROD-11618,2025-05-29,GlobalNet Supplies,10,Restricted
+INV-90057,Nova Firewall,293,71,Berlin DC,On Hold,PROD-11596,2025-05-05,TechSource Inc,22,Normal
+INV-90058,CloudHub Gateway,163,180,London Hub,In Transit,PROD-11093,2025-04-12,TechSource Inc,46,Climate-Controlled
+INV-90059,SmartEdge Router,125,195,New York DC,In Transit,PROD-11592,2025-08-20,CloudWave Ltd,52,Climate-Controlled
+INV-90060,CloudHub Gateway,88,59,New York DC,Damaged,PROD-11587,2025-06-03,CloudWave Ltd,38,Restricted
+INV-90061,Nova Firewall,290,50,Singapore DC,Damaged,PROD-11348,2025-05-26,SecureLine Distributors,55,Normal
+INV-90062,CloudHub Gateway,152,65,Bangalore WH,On Hold,PROD-11314,2025-07-16,CloudWave Ltd,32,Restricted
+INV-90063,StreamLine AP,313,184,New York DC,Available,PROD-11542,2025-06-23,GlobalNet Supplies,32,Normal
+INV-90064,CloudHub Gateway,118,186,Bangalore WH,Reserved,PROD-11071,2025-08-21,GlobalNet Supplies,40,Normal
+INV-90065,Nova Firewall,370,167,London Hub,In Transit,PROD-11759,2025-08-08,NetWorld Partners,32,Normal
+INV-90066,SmartEdge Router,251,138,Singapore DC,Damaged,PROD-11767,2025-01-17,GlobalNet Supplies,30,Restricted
+INV-90067,Nova Firewall,462,153,New York DC,Damaged,PROD-11826,2025-04-29,NetWorld Partners,54,Normal
+INV-90068,SmartEdge Router,407,118,New York DC,Damaged,PROD-11011,2025-03-28,NetWorld Partners,12,Restricted
+INV-90069,Nova Firewall,449,184,Bangalore WH,Reserved,PROD-11270,2025-04-14,NetWorld Partners,51,Climate-Controlled
+INV-90070,CloudHub Gateway,213,87,New York DC,In Transit,PROD-11452,2025-02-26,TechSource Inc,30,Climate-Controlled
+INV-90071,SmartEdge Router,347,130,Berlin DC,On Hold,PROD-11967,2025-08-04,NetWorld Partners,45,Restricted
+INV-90072,VisionX Switch,11,119,Bangalore WH,Damaged,PROD-11797,2025-04-04,SecureLine Distributors,33,Restricted
+INV-90073,Nova Firewall,489,52,Singapore DC,Available,PROD-11785,2025-03-29,TechSource Inc,39,Normal
+INV-90074,StreamLine AP,155,9,New York DC,In Transit,PROD-11751,2025-05-30,CloudWave Ltd,22,Climate-Controlled
+INV-90075,Nova Firewall,375,14,Bangalore WH,In Transit,PROD-11469,2025-01-20,SecureLine Distributors,50,Normal
+INV-90076,Nova Firewall,147,48,London Hub,In Transit,PROD-11121,2025-05-08,CloudWave Ltd,13,Climate-Controlled
+INV-90077,VisionX Switch,89,121,Bangalore WH,In Transit,PROD-11145,2025-02-21,CloudWave Ltd,52,Climate-Controlled
+INV-90078,SmartEdge Router,308,98,London Hub,On Hold,PROD-11634,2025-02-12,SecureLine Distributors,12,Climate-Controlled
+INV-90079,VisionX Switch,412,102,Bangalore WH,Available,PROD-11102,2025-08-04,NetWorld Partners,12,Restricted
+INV-90080,StreamLine AP,187,28,Bangalore WH,Available,PROD-11178,2025-07-26,CloudWave Ltd,17,Normal
+INV-90081,CloudHub Gateway,295,105,London Hub,Available,PROD-11545,2025-03-04,CloudWave Ltd,28,Climate-Controlled
+INV-90082,SmartEdge Router,413,39,London Hub,Reserved,PROD-11953,2025-05-14,SecureLine Distributors,59,Climate-Controlled
+INV-90083,Nova Firewall,166,89,London Hub,Reserved,PROD-11615,2025-04-03,CloudWave Ltd,42,Restricted
+INV-90084,VisionX Switch,294,104,London Hub,Damaged,PROD-11531,2025-07-06,TechSource Inc,35,Climate-Controlled
+INV-90085,StreamLine AP,237,197,Bangalore WH,Damaged,PROD-11935,2025-04-02,NetWorld Partners,29,Normal
+INV-90086,StreamLine AP,378,60,Singapore DC,Available,PROD-11982,2025-06-17,NetWorld Partners,27,Restricted
+INV-90087,VisionX Switch,364,116,Berlin DC,Damaged,PROD-11156,2025-06-24,CloudWave Ltd,23,Normal
+INV-90088,VisionX Switch,411,148,London Hub,In Transit,PROD-11552,2025-02-22,TechSource Inc,40,Normal
+INV-90089,Nova Firewall,246,93,New York DC,Reserved,PROD-11398,2025-05-30,CloudWave Ltd,46,Normal
+INV-90090,CloudHub Gateway,476,53,London Hub,Damaged,PROD-11761,2025-08-30,GlobalNet Supplies,17,Climate-Controlled
+INV-90091,Nova Firewall,214,49,New York DC,In Transit,PROD-11501,2025-04-17,CloudWave Ltd,19,Climate-Controlled
+INV-90092,CloudHub Gateway,231,56,London Hub,On Hold,PROD-11358,2025-02-05,TechSource Inc,52,Restricted
+INV-90093,StreamLine AP,168,148,Singapore DC,In Transit,PROD-11198,2025-07-30,TechSource Inc,19,Climate-Controlled
+INV-90094,VisionX Switch,80,66,Singapore DC,On Hold,PROD-11561,2025-05-29,GlobalNet Supplies,30,Normal
+INV-90095,VisionX Switch,250,158,New York DC,Available,PROD-11969,2025-08-04,SecureLine Distributors,24,Climate-Controlled
+INV-90096,CloudHub Gateway,233,158,New York DC,Reserved,PROD-11681,2025-06-12,TechSource Inc,21,Restricted
+INV-90097,SmartEdge Router,371,139,London Hub,Available,PROD-11923,2025-06-14,CloudWave Ltd,15,Climate-Controlled
+INV-90098,Nova Firewall,490,59,Bangalore WH,Damaged,PROD-11910,2025-02-21,CloudWave Ltd,53,Climate-Controlled
+INV-90099,Nova Firewall,493,184,Berlin DC,Reserved,PROD-11751,2025-07-04,CloudWave Ltd,25,Normal
+INV-90100,SmartEdge Router,114,92,London Hub,Available,PROD-11278,2025-05-01,NetWorld Partners,32,Normal
+INV-90101,SmartEdge Router,136,71,London Hub,Available,PROD-11035,2025-02-13,CloudWave Ltd,26,Climate-Controlled
+INV-90102,Nova Firewall,162,77,Bangalore WH,Reserved,PROD-11639,2025-05-07,GlobalNet Supplies,10,Restricted
+INV-90103,StreamLine AP,492,171,New York DC,In Transit,PROD-11004,2025-06-29,GlobalNet Supplies,59,Restricted
+INV-90104,CloudHub Gateway,476,144,London Hub,Available,PROD-11348,2025-05-24,GlobalNet Supplies,37,Climate-Controlled
+INV-90105,VisionX Switch,313,29,New York DC,Reserved,PROD-11805,2025-05-11,CloudWave Ltd,47,Restricted
+INV-90106,VisionX Switch,324,146,Bangalore WH,Reserved,PROD-11242,2025-02-05,SecureLine Distributors,19,Normal
+INV-90107,Nova Firewall,335,61,Berlin DC,On Hold,PROD-11065,2025-07-29,NetWorld Partners,17,Climate-Controlled
+INV-90108,SmartEdge Router,470,152,New York DC,On Hold,PROD-11065,2025-07-17,SecureLine Distributors,40,Restricted
+INV-90109,CloudHub Gateway,159,159,London Hub,Damaged,PROD-11293,2025-08-24,NetWorld Partners,41,Normal
+INV-90110,CloudHub Gateway,86,198,New York DC,On Hold,PROD-11031,2025-05-26,CloudWave Ltd,20,Restricted
+INV-90111,StreamLine AP,336,116,New York DC,Available,PROD-11929,2025-01-30,NetWorld Partners,59,Restricted
+INV-90112,CloudHub Gateway,495,13,London Hub,Reserved,PROD-11479,2025-05-20,CloudWave Ltd,23,Climate-Controlled
+INV-90113,SmartEdge Router,407,161,Bangalore WH,In Transit,PROD-11933,2025-06-27,CloudWave Ltd,21,Normal
+INV-90114,CloudHub Gateway,452,58,New York DC,In Transit,PROD-11114,2025-08-28,SecureLine Distributors,55,Restricted
+INV-90115,VisionX Switch,332,47,Singapore DC,On Hold,PROD-11176,2025-04-11,NetWorld Partners,24,Restricted
+INV-90116,SmartEdge Router,371,38,Singapore DC,On Hold,PROD-11600,2025-01-10,NetWorld Partners,59,Climate-Controlled
+INV-90117,CloudHub Gateway,124,136,Bangalore WH,Damaged,PROD-11071,2025-04-22,NetWorld Partners,10,Climate-Controlled
+INV-90118,CloudHub Gateway,446,58,Bangalore WH,In Transit,PROD-11362,2025-02-08,NetWorld Partners,23,Climate-Controlled
+INV-90119,VisionX Switch,57,176,Bangalore WH,Available,PROD-11655,2025-08-19,SecureLine Distributors,27,Normal
+INV-90120,SmartEdge Router,119,76,Bangalore WH,Reserved,PROD-11246,2025-06-29,CloudWave Ltd,18,Climate-Controlled
+INV-90121,StreamLine AP,328,191,Singapore DC,On Hold,PROD-11095,2025-08-11,SecureLine Distributors,59,Climate-Controlled
+INV-90122,Nova Firewall,170,137,New York DC,Available,PROD-11061,2025-08-03,TechSource Inc,37,Climate-Controlled
+INV-90123,CloudHub Gateway,96,53,Bangalore WH,Reserved,PROD-11369,2025-01-11,SecureLine Distributors,37,Restricted
+INV-90124,SmartEdge Router,339,130,New York DC,On Hold,PROD-11045,2025-06-06,TechSource Inc,32,Restricted
+INV-90125,CloudHub Gateway,299,151,Berlin DC,Reserved,PROD-11081,2025-03-25,GlobalNet Supplies,50,Restricted
+INV-90126,CloudHub Gateway,246,84,Berlin DC,In Transit,PROD-11846,2025-03-23,CloudWave Ltd,13,Normal
+INV-90127,StreamLine AP,35,35,Bangalore WH,Available,PROD-11452,2025-03-20,CloudWave Ltd,26,Restricted
+INV-90128,SmartEdge Router,90,19,Berlin DC,In Transit,PROD-11155,2025-04-03,NetWorld Partners,15,Restricted
+INV-90129,StreamLine AP,328,185,Singapore DC,In Transit,PROD-11077,2025-03-17,SecureLine Distributors,35,Normal
+INV-90130,VisionX Switch,123,106,Singapore DC,Damaged,PROD-11373,2025-05-13,CloudWave Ltd,28,Restricted
+INV-90131,CloudHub Gateway,11,44,Bangalore WH,In Transit,PROD-11584,2025-04-13,CloudWave Ltd,35,Restricted
+INV-90132,Nova Firewall,269,73,New York DC,Damaged,PROD-11228,2025-05-06,SecureLine Distributors,54,Normal
+INV-90133,VisionX Switch,32,118,Berlin DC,In Transit,PROD-11250,2025-08-22,NetWorld Partners,34,Restricted
+INV-90134,VisionX Switch,222,58,Berlin DC,Reserved,PROD-11611,2025-08-27,GlobalNet Supplies,46,Climate-Controlled
+INV-90135,Nova Firewall,452,101,London Hub,Damaged,PROD-11188,2025-02-14,GlobalNet Supplies,10,Climate-Controlled
+INV-90136,VisionX Switch,80,136,Berlin DC,Reserved,PROD-11843,2025-05-05,TechSource Inc,46,Climate-Controlled
+INV-90137,VisionX Switch,376,97,Berlin DC,In Transit,PROD-11131,2025-06-30,GlobalNet Supplies,48,Restricted
+INV-90138,StreamLine AP,431,153,Singapore DC,Reserved,PROD-11626,2025-03-18,TechSource Inc,41,Normal
+INV-90139,VisionX Switch,366,139,London Hub,In Transit,PROD-11427,2025-03-17,CloudWave Ltd,43,Normal
+INV-90140,CloudHub Gateway,288,127,Bangalore WH,Reserved,PROD-11076,2025-08-18,NetWorld Partners,37,Normal
+INV-90141,StreamLine AP,488,121,Singapore DC,Damaged,PROD-11816,2025-02-23,TechSource Inc,34,Climate-Controlled
+INV-90142,Nova Firewall,318,144,Singapore DC,Available,PROD-11869,2025-08-13,GlobalNet Supplies,48,Climate-Controlled
+INV-90143,CloudHub Gateway,76,198,Berlin DC,Damaged,PROD-11147,2025-07-10,GlobalNet Supplies,33,Restricted
+INV-90144,CloudHub Gateway,13,8,New York DC,On Hold,PROD-11852,2025-01-10,NetWorld Partners,37,Climate-Controlled
+INV-90145,StreamLine AP,14,19,Bangalore WH,On Hold,PROD-11510,2025-06-03,TechSource Inc,45,Restricted
+INV-90146,Nova Firewall,45,157,Berlin DC,Damaged,PROD-11124,2025-05-13,CloudWave Ltd,35,Normal
+INV-90147,CloudHub Gateway,162,2,New York DC,Reserved,PROD-11602,2025-05-25,CloudWave Ltd,11,Normal
+INV-90148,StreamLine AP,440,20,London Hub,On Hold,PROD-11763,2025-07-03,CloudWave Ltd,20,Climate-Controlled
+INV-90149,Nova Firewall,411,174,London Hub,Available,PROD-11976,2025-08-01,SecureLine Distributors,20,Normal
+INV-90150,SmartEdge Router,262,110,Berlin DC,On Hold,PROD-11359,2025-07-19,TechSource Inc,41,Climate-Controlled
+INV-90151,SmartEdge Router,479,91,Berlin DC,Available,PROD-11373,2025-08-03,TechSource Inc,29,Restricted
+INV-90152,CloudHub Gateway,255,46,New York DC,Damaged,PROD-11569,2025-02-01,TechSource Inc,25,Normal
+INV-90153,Nova Firewall,226,25,Singapore DC,In Transit,PROD-11638,2025-07-27,GlobalNet Supplies,23,Restricted
+INV-90154,StreamLine AP,103,26,Berlin DC,In Transit,PROD-11941,2025-08-01,SecureLine Distributors,39,Restricted
+INV-90155,Nova Firewall,74,139,New York DC,On Hold,PROD-11047,2025-02-09,SecureLine Distributors,56,Normal
+INV-90156,SmartEdge Router,292,179,Berlin DC,Damaged,PROD-11316,2025-08-07,SecureLine Distributors,31,Climate-Controlled
+INV-90157,VisionX Switch,262,199,New York DC,On Hold,PROD-11958,2025-01-20,NetWorld Partners,38,Normal
+INV-90158,StreamLine AP,99,18,Singapore DC,On Hold,PROD-11399,2025-03-31,SecureLine Distributors,60,Restricted
+INV-90159,StreamLine AP,389,41,New York DC,Available,PROD-11007,2025-03-04,TechSource Inc,42,Normal
+INV-90160,Nova Firewall,16,69,New York DC,On Hold,PROD-11634,2025-04-13,NetWorld Partners,59,Normal
+INV-90161,VisionX Switch,350,0,London Hub,On Hold,PROD-11600,2025-08-30,GlobalNet Supplies,39,Restricted
+INV-90162,SmartEdge Router,404,27,Berlin DC,On Hold,PROD-11550,2025-02-03,SecureLine Distributors,23,Normal
+INV-90163,StreamLine AP,332,88,Bangalore WH,Damaged,PROD-11846,2025-07-01,NetWorld Partners,39,Restricted
+INV-90164,Nova Firewall,21,60,Berlin DC,Reserved,PROD-11119,2025-01-11,CloudWave Ltd,16,Climate-Controlled
+INV-90165,CloudHub Gateway,396,99,New York DC,Reserved,PROD-11682,2025-04-18,TechSource Inc,23,Climate-Controlled
+INV-90166,Nova Firewall,244,5,Berlin DC,On Hold,PROD-11459,2025-03-10,CloudWave Ltd,39,Normal
+INV-90167,VisionX Switch,212,54,London Hub,Reserved,PROD-11075,2025-07-25,GlobalNet Supplies,50,Normal
+INV-90168,SmartEdge Router,60,27,London Hub,Reserved,PROD-11414,2025-06-22,GlobalNet Supplies,57,Climate-Controlled
+INV-90169,SmartEdge Router,44,10,Berlin DC,On Hold,PROD-11175,2025-05-08,TechSource Inc,31,Climate-Controlled
+INV-90170,SmartEdge Router,137,195,Berlin DC,Damaged,PROD-11774,2025-06-14,CloudWave Ltd,53,Normal
+INV-90171,SmartEdge Router,312,170,London Hub,In Transit,PROD-11293,2025-04-08,NetWorld Partners,18,Normal
+INV-90172,StreamLine AP,409,198,Berlin DC,On Hold,PROD-11930,2025-03-08,CloudWave Ltd,40,Climate-Controlled
+INV-90173,StreamLine AP,60,138,Singapore DC,In Transit,PROD-11207,2025-01-31,GlobalNet Supplies,14,Climate-Controlled
+INV-90174,StreamLine AP,290,74,Berlin DC,Reserved,PROD-11288,2025-04-09,NetWorld Partners,37,Restricted
+INV-90175,StreamLine AP,475,134,Berlin DC,Damaged,PROD-11109,2025-05-01,CloudWave Ltd,22,Climate-Controlled
+INV-90176,SmartEdge Router,82,184,New York DC,Damaged,PROD-11838,2025-01-14,SecureLine Distributors,50,Climate-Controlled
+INV-90177,CloudHub Gateway,330,108,London Hub,In Transit,PROD-11815,2025-03-22,GlobalNet Supplies,59,Climate-Controlled
+INV-90178,SmartEdge Router,256,194,London Hub,In Transit,PROD-11185,2025-01-11,SecureLine Distributors,50,Restricted
+INV-90179,VisionX Switch,206,153,Singapore DC,Damaged,PROD-11318,2025-07-19,SecureLine Distributors,38,Climate-Controlled
+INV-90180,Nova Firewall,408,173,New York DC,Available,PROD-11957,2025-03-21,CloudWave Ltd,29,Normal
+INV-90181,StreamLine AP,45,21,Singapore DC,On Hold,PROD-11697,2025-02-19,CloudWave Ltd,47,Climate-Controlled
+INV-90182,Nova Firewall,185,170,Berlin DC,In Transit,PROD-11970,2025-06-21,CloudWave Ltd,12,Normal
+INV-90183,StreamLine AP,249,143,Bangalore WH,Available,PROD-11633,2025-06-15,SecureLine Distributors,47,Normal
+INV-90184,CloudHub Gateway,495,125,Bangalore WH,Available,PROD-11895,2025-07-23,CloudWave Ltd,48,Normal
+INV-90185,CloudHub Gateway,443,128,New York DC,Available,PROD-11913,2025-03-18,GlobalNet Supplies,25,Restricted
+INV-90186,VisionX Switch,85,53,New York DC,In Transit,PROD-11183,2025-02-28,CloudWave Ltd,35,Restricted
+INV-90187,SmartEdge Router,397,62,Berlin DC,Available,PROD-11748,2025-02-01,GlobalNet Supplies,53,Climate-Controlled
+INV-90188,CloudHub Gateway,113,70,Singapore DC,Available,PROD-11559,2025-05-03,NetWorld Partners,27,Restricted
+INV-90189,SmartEdge Router,495,5,Berlin DC,Reserved,PROD-11072,2025-04-16,GlobalNet Supplies,33,Climate-Controlled
+INV-90190,CloudHub Gateway,421,142,Berlin DC,Available,PROD-11121,2025-01-18,CloudWave Ltd,42,Normal
+INV-90191,CloudHub Gateway,401,140,Berlin DC,Available,PROD-11797,2025-05-08,GlobalNet Supplies,53,Restricted
+INV-90192,CloudHub Gateway,415,50,New York DC,Damaged,PROD-11706,2025-01-05,TechSource Inc,31,Restricted
+INV-90193,SmartEdge Router,103,80,London Hub,Available,PROD-11711,2025-06-11,TechSource Inc,45,Climate-Controlled
+INV-90194,CloudHub Gateway,18,136,New York DC,In Transit,PROD-11752,2025-05-28,CloudWave Ltd,35,Restricted
+INV-90195,CloudHub Gateway,481,178,Singapore DC,Damaged,PROD-11063,2025-01-14,NetWorld Partners,17,Climate-Controlled
+INV-90196,StreamLine AP,343,102,Singapore DC,On Hold,PROD-11817,2025-01-17,NetWorld Partners,56,Normal
+INV-90197,StreamLine AP,352,124,Singapore DC,Reserved,PROD-11782,2025-03-27,SecureLine Distributors,24,Normal
+INV-90198,SmartEdge Router,48,177,Singapore DC,Reserved,PROD-11997,2025-01-01,NetWorld Partners,19,Climate-Controlled
+INV-90199,CloudHub Gateway,130,76,London Hub,On Hold,PROD-11587,2025-02-04,NetWorld Partners,54,Restricted
+INV-90200,VisionX Switch,316,26,Berlin DC,In Transit,PROD-11590,2025-07-23,SecureLine Distributors,19,Normal
+INV-90201,StreamLine AP,390,3,Singapore DC,Reserved,PROD-11747,2025-03-27,GlobalNet Supplies,55,Normal
+INV-90202,SmartEdge Router,371,133,New York DC,Reserved,PROD-11035,2025-07-20,NetWorld Partners,13,Normal
+INV-90203,Nova Firewall,248,65,New York DC,Reserved,PROD-11272,2025-06-09,SecureLine Distributors,48,Climate-Controlled
+INV-90204,CloudHub Gateway,478,14,London Hub,Damaged,PROD-11292,2025-04-05,SecureLine Distributors,18,Restricted
+INV-90205,CloudHub Gateway,208,164,Berlin DC,Reserved,PROD-11106,2025-05-13,TechSource Inc,25,Normal
+INV-90206,CloudHub Gateway,172,97,Bangalore WH,Reserved,PROD-11515,2025-07-12,TechSource Inc,27,Climate-Controlled
+INV-90207,StreamLine AP,118,41,London Hub,Available,PROD-11419,2025-06-01,GlobalNet Supplies,50,Normal
+INV-90208,StreamLine AP,422,73,Bangalore WH,In Transit,PROD-11831,2025-05-02,TechSource Inc,26,Climate-Controlled
+INV-90209,SmartEdge Router,468,71,New York DC,On Hold,PROD-11693,2025-05-20,CloudWave Ltd,12,Normal
+INV-90210,StreamLine AP,47,151,London Hub,On Hold,PROD-11828,2025-07-02,GlobalNet Supplies,12,Climate-Controlled
+INV-90211,StreamLine AP,86,97,Berlin DC,Available,PROD-11213,2025-05-05,CloudWave Ltd,52,Restricted
+INV-90212,CloudHub Gateway,88,133,Berlin DC,Available,PROD-11813,2025-05-16,GlobalNet Supplies,38,Normal
+INV-90213,Nova Firewall,93,161,New York DC,Reserved,PROD-11600,2025-03-30,SecureLine Distributors,34,Normal
+INV-90214,Nova Firewall,238,68,Bangalore WH,Damaged,PROD-11787,2025-06-26,GlobalNet Supplies,42,Normal
+INV-90215,SmartEdge Router,345,194,New York DC,On Hold,PROD-11183,2025-02-13,GlobalNet Supplies,28,Normal
+INV-90216,VisionX Switch,442,44,Singapore DC,Reserved,PROD-11055,2025-02-18,SecureLine Distributors,24,Climate-Controlled
+INV-90217,VisionX Switch,188,140,London Hub,Available,PROD-11410,2025-04-15,SecureLine Distributors,20,Climate-Controlled
+INV-90218,VisionX Switch,172,51,Berlin DC,Available,PROD-11081,2025-08-21,NetWorld Partners,32,Restricted
+INV-90219,SmartEdge Router,22,159,Singapore DC,In Transit,PROD-11362,2025-07-16,CloudWave Ltd,34,Climate-Controlled
+INV-90220,Nova Firewall,153,110,Berlin DC,In Transit,PROD-11571,2025-08-11,CloudWave Ltd,11,Restricted
+INV-90221,StreamLine AP,443,195,Bangalore WH,Available,PROD-11668,2025-01-25,NetWorld Partners,23,Restricted
+INV-90222,StreamLine AP,365,115,London Hub,Reserved,PROD-11480,2025-08-20,TechSource Inc,43,Climate-Controlled
+INV-90223,SmartEdge Router,69,189,Singapore DC,Damaged,PROD-11116,2025-03-10,GlobalNet Supplies,28,Climate-Controlled
+INV-90224,Nova Firewall,180,94,Singapore DC,On Hold,PROD-11051,2025-04-25,CloudWave Ltd,52,Climate-Controlled
+INV-90225,CloudHub Gateway,275,117,Bangalore WH,On Hold,PROD-11878,2025-07-23,GlobalNet Supplies,40,Restricted
+INV-90226,SmartEdge Router,413,128,Singapore DC,Reserved,PROD-11416,2025-03-09,TechSource Inc,57,Climate-Controlled
+INV-90227,VisionX Switch,72,33,Berlin DC,Reserved,PROD-11118,2025-05-06,CloudWave Ltd,54,Restricted
+INV-90228,VisionX Switch,272,52,Berlin DC,Reserved,PROD-11299,2025-01-14,GlobalNet Supplies,30,Climate-Controlled
+INV-90229,SmartEdge Router,333,197,Bangalore WH,Reserved,PROD-11918,2025-08-03,NetWorld Partners,10,Normal
+INV-90230,CloudHub Gateway,254,6,New York DC,Reserved,PROD-11997,2025-05-01,NetWorld Partners,36,Restricted
+INV-90231,VisionX Switch,299,124,New York DC,On Hold,PROD-11716,2025-03-05,CloudWave Ltd,24,Climate-Controlled
+INV-90232,Nova Firewall,346,21,New York DC,In Transit,PROD-11207,2025-04-10,TechSource Inc,60,Restricted
+INV-90233,VisionX Switch,125,61,Berlin DC,On Hold,PROD-11527,2025-04-17,TechSource Inc,47,Normal
+INV-90234,VisionX Switch,487,110,New York DC,In Transit,PROD-11418,2025-05-30,GlobalNet Supplies,22,Normal
+INV-90235,SmartEdge Router,209,200,Bangalore WH,Available,PROD-11015,2025-03-02,SecureLine Distributors,52,Normal
+INV-90236,SmartEdge Router,101,93,New York DC,Reserved,PROD-11152,2025-03-19,TechSource Inc,50,Restricted
+INV-90237,Nova Firewall,366,142,Berlin DC,In Transit,PROD-11284,2025-06-14,TechSource Inc,30,Normal
+INV-90238,StreamLine AP,459,151,London Hub,Available,PROD-11227,2025-06-08,NetWorld Partners,47,Restricted
+INV-90239,CloudHub Gateway,203,155,Bangalore WH,Damaged,PROD-11177,2025-06-22,SecureLine Distributors,33,Normal
+INV-90240,StreamLine AP,453,48,Berlin DC,Reserved,PROD-11617,2025-05-22,TechSource Inc,54,Restricted
+INV-90241,CloudHub Gateway,301,3,Bangalore WH,Available,PROD-11827,2025-08-30,CloudWave Ltd,13,Normal
+INV-90242,SmartEdge Router,331,156,Singapore DC,Damaged,PROD-11095,2025-02-20,NetWorld Partners,21,Normal
+INV-90243,VisionX Switch,233,125,Bangalore WH,In Transit,PROD-11713,2025-03-15,TechSource Inc,53,Restricted
+INV-90244,SmartEdge Router,296,141,New York DC,On Hold,PROD-11780,2025-03-02,NetWorld Partners,51,Normal
+INV-90245,Nova Firewall,409,18,New York DC,In Transit,PROD-11321,2025-05-02,CloudWave Ltd,42,Normal
+INV-90246,Nova Firewall,374,121,London Hub,In Transit,PROD-11131,2025-07-03,SecureLine Distributors,42,Climate-Controlled
+INV-90247,Nova Firewall,263,94,Berlin DC,Reserved,PROD-11557,2025-03-10,NetWorld Partners,10,Climate-Controlled
+INV-90248,Nova Firewall,319,66,New York DC,Reserved,PROD-11634,2025-07-07,CloudWave Ltd,19,Normal
+INV-90249,VisionX Switch,96,122,New York DC,Reserved,PROD-11235,2025-02-17,SecureLine Distributors,30,Normal
+INV-90250,VisionX Switch,382,9,Berlin DC,Reserved,PROD-11539,2025-08-24,GlobalNet Supplies,14,Climate-Controlled
+INV-90251,StreamLine AP,210,120,Berlin DC,Available,PROD-11568,2025-05-12,SecureLine Distributors,58,Climate-Controlled
+INV-90252,VisionX Switch,472,39,Berlin DC,Available,PROD-11360,2025-05-21,TechSource Inc,30,Restricted
+INV-90253,CloudHub Gateway,90,146,Berlin DC,In Transit,PROD-11276,2025-06-13,GlobalNet Supplies,59,Climate-Controlled
+INV-90254,CloudHub Gateway,89,45,Singapore DC,Damaged,PROD-11763,2025-03-25,SecureLine Distributors,32,Normal
+INV-90255,StreamLine AP,352,173,Singapore DC,Reserved,PROD-11796,2025-07-12,TechSource Inc,28,Restricted
+INV-90256,StreamLine AP,400,173,New York DC,In Transit,PROD-11467,2025-04-20,TechSource Inc,42,Climate-Controlled
+INV-90257,VisionX Switch,392,127,New York DC,Damaged,PROD-11783,2025-03-08,TechSource Inc,19,Restricted
+INV-90258,VisionX Switch,430,146,New York DC,In Transit,PROD-11888,2025-07-02,CloudWave Ltd,27,Climate-Controlled
+INV-90259,VisionX Switch,211,198,New York DC,In Transit,PROD-11912,2025-06-07,NetWorld Partners,36,Climate-Controlled
+INV-90260,Nova Firewall,253,83,London Hub,Reserved,PROD-11662,2025-06-10,TechSource Inc,40,Restricted
+INV-90261,SmartEdge Router,163,167,Bangalore WH,On Hold,PROD-11545,2025-07-10,SecureLine Distributors,37,Restricted
+INV-90262,Nova Firewall,46,180,Berlin DC,Reserved,PROD-11751,2025-06-19,CloudWave Ltd,54,Climate-Controlled
+INV-90263,CloudHub Gateway,56,183,Singapore DC,Reserved,PROD-11354,2025-06-15,NetWorld Partners,13,Normal
+INV-90264,VisionX Switch,389,105,Berlin DC,In Transit,PROD-11456,2025-07-25,TechSource Inc,47,Normal
+INV-90265,SmartEdge Router,355,152,Bangalore WH,Reserved,PROD-11907,2025-01-29,CloudWave Ltd,41,Normal
+INV-90266,VisionX Switch,51,95,New York DC,On Hold,PROD-11317,2025-06-18,TechSource Inc,18,Climate-Controlled
+INV-90267,StreamLine AP,474,54,Singapore DC,In Transit,PROD-11011,2025-02-24,GlobalNet Supplies,10,Climate-Controlled
+INV-90268,SmartEdge Router,99,194,Berlin DC,Damaged,PROD-11440,2025-03-23,TechSource Inc,51,Climate-Controlled
+INV-90269,StreamLine AP,64,160,Singapore DC,On Hold,PROD-11012,2025-04-16,SecureLine Distributors,20,Normal
+INV-90270,StreamLine AP,178,199,London Hub,Damaged,PROD-11110,2025-05-21,NetWorld Partners,49,Normal
+INV-90271,StreamLine AP,334,20,Singapore DC,Damaged,PROD-11876,2025-08-08,SecureLine Distributors,37,Climate-Controlled
+INV-90272,VisionX Switch,421,49,Berlin DC,In Transit,PROD-11143,2025-01-31,SecureLine Distributors,56,Climate-Controlled
+INV-90273,StreamLine AP,15,17,London Hub,In Transit,PROD-11970,2025-05-01,GlobalNet Supplies,43,Normal
+INV-90274,CloudHub Gateway,20,194,London Hub,Damaged,PROD-11467,2025-03-09,CloudWave Ltd,40,Climate-Controlled
+INV-90275,CloudHub Gateway,485,173,New York DC,In Transit,PROD-11473,2025-05-16,CloudWave Ltd,29,Normal
+INV-90276,Nova Firewall,20,73,Singapore DC,On Hold,PROD-11020,2025-02-04,GlobalNet Supplies,36,Restricted
+INV-90277,CloudHub Gateway,185,154,London Hub,On Hold,PROD-11097,2025-05-28,CloudWave Ltd,28,Normal
+INV-90278,CloudHub Gateway,89,172,New York DC,In Transit,PROD-11980,2025-01-30,TechSource Inc,40,Normal
+INV-90279,CloudHub Gateway,54,33,Bangalore WH,On Hold,PROD-11820,2025-04-03,TechSource Inc,35,Normal
+INV-90280,VisionX Switch,141,173,Berlin DC,On Hold,PROD-11791,2025-06-05,SecureLine Distributors,58,Normal
+INV-90281,CloudHub Gateway,128,77,Bangalore WH,Reserved,PROD-11135,2025-05-04,SecureLine Distributors,32,Normal
+INV-90282,StreamLine AP,285,163,Berlin DC,Reserved,PROD-11071,2025-07-11,NetWorld Partners,17,Normal
+INV-90283,StreamLine AP,342,28,New York DC,Reserved,PROD-11310,2025-07-29,NetWorld Partners,30,Climate-Controlled
+INV-90284,StreamLine AP,222,111,Bangalore WH,In Transit,PROD-11903,2025-05-10,SecureLine Distributors,26,Restricted
+INV-90285,SmartEdge Router,92,54,Singapore DC,In Transit,PROD-11785,2025-06-21,CloudWave Ltd,35,Normal
+INV-90286,Nova Firewall,233,86,Singapore DC,In Transit,PROD-11473,2025-03-26,CloudWave Ltd,58,Climate-Controlled
+INV-90287,Nova Firewall,475,186,Singapore DC,Damaged,PROD-11685,2025-04-17,GlobalNet Supplies,41,Climate-Controlled
+INV-90288,Nova Firewall,178,57,New York DC,In Transit,PROD-11555,2025-04-22,SecureLine Distributors,43,Restricted
+INV-90289,Nova Firewall,262,34,New York DC,Available,PROD-11414,2025-05-13,NetWorld Partners,53,Climate-Controlled
+INV-90290,VisionX Switch,201,25,Berlin DC,In Transit,PROD-11666,2025-02-11,NetWorld Partners,24,Restricted
+INV-90291,StreamLine AP,437,69,New York DC,Reserved,PROD-11074,2025-08-26,TechSource Inc,38,Restricted
+INV-90292,Nova Firewall,133,128,Berlin DC,In Transit,PROD-11662,2025-08-08,GlobalNet Supplies,17,Climate-Controlled
+INV-90293,SmartEdge Router,134,165,New York DC,On Hold,PROD-11034,2025-06-06,TechSource Inc,34,Normal
+INV-90294,CloudHub Gateway,321,100,London Hub,Reserved,PROD-11254,2025-07-22,NetWorld Partners,39,Climate-Controlled
+INV-90295,SmartEdge Router,466,35,Berlin DC,Reserved,PROD-11774,2025-01-31,NetWorld Partners,21,Restricted
+INV-90296,CloudHub Gateway,164,82,Berlin DC,Reserved,PROD-11968,2025-04-08,NetWorld Partners,52,Climate-Controlled
+INV-90297,CloudHub Gateway,313,15,London Hub,Available,PROD-11956,2025-07-21,GlobalNet Supplies,23,Restricted
+INV-90298,Nova Firewall,192,46,Singapore DC,In Transit,PROD-11613,2025-04-26,TechSource Inc,30,Normal
+INV-90299,StreamLine AP,240,77,Berlin DC,In Transit,PROD-11162,2025-05-11,NetWorld Partners,60,Normal
+INV-90300,SmartEdge Router,452,71,Singapore DC,Reserved,PROD-11168,2025-06-19,SecureLine Distributors,59,Restricted
+INV-90301,VisionX Switch,230,11,London Hub,Damaged,PROD-11529,2025-06-12,SecureLine Distributors,52,Restricted
+INV-90302,CloudHub Gateway,488,38,London Hub,Reserved,PROD-11292,2025-03-20,NetWorld Partners,56,Climate-Controlled
+INV-90303,SmartEdge Router,431,93,Singapore DC,In Transit,PROD-11451,2025-06-10,TechSource Inc,53,Restricted
+INV-90304,SmartEdge Router,415,51,Singapore DC,In Transit,PROD-11318,2025-07-19,NetWorld Partners,26,Restricted
+INV-90305,SmartEdge Router,132,102,New York DC,On Hold,PROD-11199,2025-07-02,SecureLine Distributors,32,Climate-Controlled
+INV-90306,SmartEdge Router,34,175,Berlin DC,On Hold,PROD-11820,2025-03-12,GlobalNet Supplies,56,Climate-Controlled
+INV-90307,Nova Firewall,386,186,Singapore DC,Reserved,PROD-11134,2025-08-22,SecureLine Distributors,45,Climate-Controlled
+INV-90308,VisionX Switch,410,40,Berlin DC,On Hold,PROD-11970,2025-07-27,SecureLine Distributors,20,Restricted
+INV-90309,StreamLine AP,43,164,Bangalore WH,On Hold,PROD-11585,2025-08-14,GlobalNet Supplies,10,Restricted
+INV-90310,Nova Firewall,69,88,London Hub,In Transit,PROD-11011,2025-03-25,SecureLine Distributors,46,Normal
+INV-90311,SmartEdge Router,374,20,Singapore DC,Reserved,PROD-11592,2025-02-16,NetWorld Partners,44,Normal
+INV-90312,VisionX Switch,147,189,London Hub,On Hold,PROD-11716,2025-08-12,CloudWave Ltd,14,Restricted
+INV-90313,Nova Firewall,240,196,New York DC,Damaged,PROD-11963,2025-05-15,GlobalNet Supplies,36,Climate-Controlled
+INV-90314,VisionX Switch,431,104,Singapore DC,In Transit,PROD-11275,2025-07-30,CloudWave Ltd,25,Restricted
+INV-90315,CloudHub Gateway,27,168,New York DC,Reserved,PROD-11882,2025-01-13,SecureLine Distributors,50,Normal
+INV-90316,VisionX Switch,385,90,Berlin DC,On Hold,PROD-11422,2025-07-20,CloudWave Ltd,31,Restricted
+INV-90317,StreamLine AP,381,92,Berlin DC,In Transit,PROD-11855,2025-04-14,GlobalNet Supplies,27,Climate-Controlled
+INV-90318,StreamLine AP,31,77,Singapore DC,In Transit,PROD-11304,2025-02-15,TechSource Inc,25,Normal
+INV-90319,Nova Firewall,400,95,Bangalore WH,Damaged,PROD-11592,2025-05-02,GlobalNet Supplies,55,Restricted
+INV-90320,SmartEdge Router,361,163,Singapore DC,Available,PROD-11231,2025-04-18,TechSource Inc,39,Climate-Controlled
+INV-90321,VisionX Switch,393,193,Berlin DC,In Transit,PROD-11048,2025-03-04,CloudWave Ltd,30,Normal
+INV-90322,Nova Firewall,340,56,Singapore DC,In Transit,PROD-11375,2025-06-10,TechSource Inc,52,Restricted
+INV-90323,CloudHub Gateway,340,0,London Hub,In Transit,PROD-11225,2025-03-16,SecureLine Distributors,48,Restricted
+INV-90324,SmartEdge Router,180,43,London Hub,Damaged,PROD-11725,2025-01-31,TechSource Inc,13,Climate-Controlled
+INV-90325,Nova Firewall,231,34,Berlin DC,Damaged,PROD-11420,2025-01-18,NetWorld Partners,55,Climate-Controlled
+INV-90326,VisionX Switch,446,58,Singapore DC,On Hold,PROD-11686,2025-07-16,TechSource Inc,40,Normal
+INV-90327,Nova Firewall,230,47,London Hub,In Transit,PROD-11661,2025-02-16,CloudWave Ltd,32,Climate-Controlled
+INV-90328,SmartEdge Router,86,127,Berlin DC,Damaged,PROD-11136,2025-07-21,NetWorld Partners,23,Restricted
+INV-90329,CloudHub Gateway,218,23,London Hub,In Transit,PROD-11813,2025-04-17,NetWorld Partners,20,Restricted
+INV-90330,CloudHub Gateway,286,113,New York DC,In Transit,PROD-11018,2025-07-03,GlobalNet Supplies,18,Restricted
+INV-90331,CloudHub Gateway,399,156,New York DC,Available,PROD-11694,2025-01-06,NetWorld Partners,57,Normal
+INV-90332,VisionX Switch,226,130,London Hub,Damaged,PROD-11087,2025-03-01,NetWorld Partners,16,Restricted
+INV-90333,SmartEdge Router,24,180,London Hub,On Hold,PROD-11460,2025-03-10,TechSource Inc,42,Normal
+INV-90334,SmartEdge Router,48,169,New York DC,Available,PROD-11150,2025-08-20,NetWorld Partners,18,Climate-Controlled
+INV-90335,VisionX Switch,222,161,Berlin DC,Reserved,PROD-11420,2025-08-29,SecureLine Distributors,11,Restricted
+INV-90336,StreamLine AP,169,196,London Hub,On Hold,PROD-11394,2025-03-17,GlobalNet Supplies,35,Climate-Controlled
+INV-90337,SmartEdge Router,78,49,Berlin DC,Reserved,PROD-11031,2025-03-14,CloudWave Ltd,28,Restricted
+INV-90338,StreamLine AP,215,179,New York DC,Damaged,PROD-11236,2025-05-29,CloudWave Ltd,53,Climate-Controlled
+INV-90339,SmartEdge Router,382,107,New York DC,Available,PROD-11896,2025-01-16,SecureLine Distributors,52,Normal
+INV-90340,StreamLine AP,165,95,Singapore DC,On Hold,PROD-11474,2025-03-10,SecureLine Distributors,57,Restricted
+INV-90341,SmartEdge Router,471,119,London Hub,Reserved,PROD-11431,2025-08-27,CloudWave Ltd,60,Climate-Controlled
+INV-90342,Nova Firewall,169,180,Singapore DC,Reserved,PROD-11905,2025-04-20,NetWorld Partners,19,Climate-Controlled
+INV-90343,SmartEdge Router,165,200,New York DC,Damaged,PROD-11242,2025-07-21,GlobalNet Supplies,14,Restricted
+INV-90344,VisionX Switch,196,42,New York DC,Available,PROD-11045,2025-03-11,GlobalNet Supplies,53,Climate-Controlled
+INV-90345,StreamLine AP,301,57,Bangalore WH,On Hold,PROD-11456,2025-04-15,CloudWave Ltd,24,Restricted
+INV-90346,Nova Firewall,294,42,Berlin DC,Available,PROD-11636,2025-06-08,NetWorld Partners,40,Climate-Controlled
+INV-90347,VisionX Switch,46,136,Berlin DC,On Hold,PROD-11402,2025-02-14,NetWorld Partners,31,Climate-Controlled
+INV-90348,SmartEdge Router,292,90,Bangalore WH,Available,PROD-11133,2025-03-19,CloudWave Ltd,59,Normal
+INV-90349,VisionX Switch,34,65,Berlin DC,On Hold,PROD-11785,2025-01-30,TechSource Inc,56,Normal
+INV-90350,StreamLine AP,38,84,Bangalore WH,On Hold,PROD-11445,2025-06-14,SecureLine Distributors,13,Normal
+INV-90351,SmartEdge Router,457,140,Singapore DC,Available,PROD-11786,2025-02-15,NetWorld Partners,40,Normal
+INV-90352,VisionX Switch,332,102,Berlin DC,In Transit,PROD-11412,2025-08-26,NetWorld Partners,10,Normal
+INV-90353,StreamLine AP,120,113,London Hub,Available,PROD-11882,2025-04-22,SecureLine Distributors,16,Climate-Controlled
+INV-90354,Nova Firewall,431,178,Bangalore WH,In Transit,PROD-11246,2025-08-29,GlobalNet Supplies,46,Restricted
+INV-90355,SmartEdge Router,237,62,Berlin DC,In Transit,PROD-11585,2025-06-27,GlobalNet Supplies,60,Climate-Controlled
+INV-90356,SmartEdge Router,61,58,Bangalore WH,In Transit,PROD-11799,2025-01-23,CloudWave Ltd,44,Climate-Controlled
+INV-90357,VisionX Switch,125,90,New York DC,In Transit,PROD-11023,2025-08-23,GlobalNet Supplies,43,Normal
+INV-90358,CloudHub Gateway,364,84,Singapore DC,Damaged,PROD-11555,2025-06-19,NetWorld Partners,27,Climate-Controlled
+INV-90359,SmartEdge Router,34,26,New York DC,Reserved,PROD-11986,2025-01-27,SecureLine Distributors,33,Normal
+INV-90360,Nova Firewall,15,121,Bangalore WH,On Hold,PROD-11201,2025-04-18,CloudWave Ltd,57,Normal
+INV-90361,VisionX Switch,273,109,London Hub,In Transit,PROD-11351,2025-06-23,TechSource Inc,17,Restricted
+INV-90362,SmartEdge Router,175,48,London Hub,Damaged,PROD-11313,2025-04-27,SecureLine Distributors,37,Restricted
+INV-90363,VisionX Switch,422,24,Singapore DC,Damaged,PROD-11707,2025-04-13,CloudWave Ltd,54,Restricted
+INV-90364,Nova Firewall,345,103,Berlin DC,On Hold,PROD-11310,2025-02-04,TechSource Inc,27,Restricted
+INV-90365,SmartEdge Router,197,60,New York DC,On Hold,PROD-11288,2025-08-17,TechSource Inc,40,Normal
+INV-90366,Nova Firewall,387,104,New York DC,On Hold,PROD-11700,2025-02-15,NetWorld Partners,11,Restricted
+INV-90367,CloudHub Gateway,341,40,New York DC,Available,PROD-11423,2025-08-31,TechSource Inc,16,Normal
+INV-90368,Nova Firewall,74,5,Berlin DC,Reserved,PROD-11214,2025-04-23,GlobalNet Supplies,52,Normal
+INV-90369,SmartEdge Router,312,173,London Hub,Damaged,PROD-11452,2025-01-01,SecureLine Distributors,46,Restricted
+INV-90370,Nova Firewall,30,69,New York DC,Available,PROD-11266,2025-05-06,GlobalNet Supplies,19,Climate-Controlled
+INV-90371,CloudHub Gateway,302,25,Bangalore WH,Reserved,PROD-11143,2025-08-12,NetWorld Partners,59,Restricted
+INV-90372,Nova Firewall,294,92,New York DC,Reserved,PROD-11036,2025-07-11,SecureLine Distributors,16,Climate-Controlled
+INV-90373,SmartEdge Router,365,116,Singapore DC,Available,PROD-11784,2025-08-08,NetWorld Partners,36,Restricted
+INV-90374,Nova Firewall,432,75,New York DC,Damaged,PROD-11911,2025-07-25,TechSource Inc,37,Normal
+INV-90375,SmartEdge Router,402,100,Singapore DC,On Hold,PROD-11992,2025-08-19,CloudWave Ltd,17,Restricted
+INV-90376,Nova Firewall,65,171,Singapore DC,Damaged,PROD-11234,2025-05-04,TechSource Inc,28,Restricted
+INV-90377,StreamLine AP,50,170,Berlin DC,In Transit,PROD-12000,2025-03-21,NetWorld Partners,55,Climate-Controlled
+INV-90378,CloudHub Gateway,92,192,Berlin DC,On Hold,PROD-11123,2025-06-28,NetWorld Partners,26,Restricted
+INV-90379,SmartEdge Router,47,93,Singapore DC,Available,PROD-11244,2025-07-27,SecureLine Distributors,52,Normal
+INV-90380,Nova Firewall,417,156,Berlin DC,Available,PROD-11437,2025-02-16,NetWorld Partners,16,Restricted
+INV-90381,SmartEdge Router,369,9,London Hub,On Hold,PROD-11098,2025-08-15,GlobalNet Supplies,59,Restricted
+INV-90382,StreamLine AP,73,109,Singapore DC,Reserved,PROD-11378,2025-02-14,NetWorld Partners,21,Normal
+INV-90383,SmartEdge Router,494,147,London Hub,On Hold,PROD-11099,2025-08-27,GlobalNet Supplies,22,Normal
+INV-90384,Nova Firewall,397,199,London Hub,Damaged,PROD-11705,2025-08-10,CloudWave Ltd,58,Climate-Controlled
+INV-90385,CloudHub Gateway,448,164,London Hub,On Hold,PROD-11091,2025-04-30,NetWorld Partners,14,Climate-Controlled
+INV-90386,SmartEdge Router,448,40,Berlin DC,Available,PROD-11007,2025-06-25,CloudWave Ltd,52,Normal
+INV-90387,Nova Firewall,385,17,New York DC,Reserved,PROD-11380,2025-05-16,TechSource Inc,21,Restricted
+INV-90388,VisionX Switch,205,56,New York DC,On Hold,PROD-11598,2025-08-08,TechSource Inc,25,Climate-Controlled
+INV-90389,SmartEdge Router,337,148,Singapore DC,Available,PROD-11297,2025-03-11,GlobalNet Supplies,34,Normal
+INV-90390,CloudHub Gateway,200,135,New York DC,In Transit,PROD-11802,2025-07-07,NetWorld Partners,12,Climate-Controlled
+INV-90391,StreamLine AP,54,154,Bangalore WH,Reserved,PROD-11357,2025-04-05,TechSource Inc,19,Climate-Controlled
+INV-90392,VisionX Switch,87,99,Bangalore WH,Reserved,PROD-11881,2025-06-08,NetWorld Partners,39,Normal
+INV-90393,CloudHub Gateway,308,168,London Hub,Reserved,PROD-11221,2025-06-16,GlobalNet Supplies,15,Normal
+INV-90394,StreamLine AP,85,196,London Hub,Damaged,PROD-11368,2025-03-18,GlobalNet Supplies,37,Restricted
+INV-90395,CloudHub Gateway,228,125,New York DC,Available,PROD-11685,2025-05-14,SecureLine Distributors,41,Restricted
+INV-90396,CloudHub Gateway,207,167,New York DC,In Transit,PROD-11685,2025-01-30,SecureLine Distributors,14,Restricted
+INV-90397,VisionX Switch,73,134,New York DC,Reserved,PROD-11040,2025-05-19,CloudWave Ltd,52,Restricted
+INV-90398,VisionX Switch,224,183,New York DC,Damaged,PROD-11154,2025-03-21,GlobalNet Supplies,35,Climate-Controlled
+INV-90399,StreamLine AP,481,156,New York DC,In Transit,PROD-11956,2025-02-24,GlobalNet Supplies,50,Restricted
+INV-90400,Nova Firewall,82,105,New York DC,Available,PROD-11306,2025-07-15,GlobalNet Supplies,11,Restricted
+INV-90401,Nova Firewall,331,84,Berlin DC,On Hold,PROD-11731,2025-07-03,SecureLine Distributors,25,Restricted
+INV-90402,CloudHub Gateway,236,160,Bangalore WH,On Hold,PROD-11602,2025-06-01,GlobalNet Supplies,59,Restricted
+INV-90403,StreamLine AP,348,60,Bangalore WH,Damaged,PROD-11566,2025-04-15,NetWorld Partners,37,Climate-Controlled
+INV-90404,Nova Firewall,227,30,Bangalore WH,Reserved,PROD-11873,2025-05-05,CloudWave Ltd,58,Climate-Controlled
+INV-90405,Nova Firewall,439,183,New York DC,Damaged,PROD-11069,2025-02-05,TechSource Inc,15,Climate-Controlled
+INV-90406,VisionX Switch,459,40,Berlin DC,Damaged,PROD-11705,2025-03-14,NetWorld Partners,21,Restricted
+INV-90407,StreamLine AP,295,107,New York DC,Reserved,PROD-11914,2025-02-01,CloudWave Ltd,23,Climate-Controlled
+INV-90408,StreamLine AP,295,29,Berlin DC,Available,PROD-11686,2025-06-26,NetWorld Partners,33,Climate-Controlled
+INV-90409,Nova Firewall,389,148,London Hub,In Transit,PROD-11506,2025-07-13,CloudWave Ltd,43,Normal
+INV-90410,Nova Firewall,366,72,New York DC,In Transit,PROD-11263,2025-06-02,SecureLine Distributors,56,Normal
+INV-90411,StreamLine AP,217,142,Bangalore WH,Available,PROD-11866,2025-07-10,CloudWave Ltd,10,Climate-Controlled
+INV-90412,StreamLine AP,287,147,Berlin DC,Reserved,PROD-11841,2025-02-12,NetWorld Partners,22,Normal
+INV-90413,Nova Firewall,274,61,Bangalore WH,Available,PROD-11596,2025-05-11,CloudWave Ltd,23,Climate-Controlled
+INV-90414,SmartEdge Router,351,142,Berlin DC,Reserved,PROD-11428,2025-08-25,NetWorld Partners,38,Normal
+INV-90415,Nova Firewall,300,115,London Hub,On Hold,PROD-11137,2025-02-13,GlobalNet Supplies,17,Normal
+INV-90416,SmartEdge Router,228,140,Singapore DC,On Hold,PROD-11948,2025-01-14,GlobalNet Supplies,34,Climate-Controlled
+INV-90417,StreamLine AP,257,185,Bangalore WH,Damaged,PROD-11976,2025-01-14,SecureLine Distributors,32,Restricted
+INV-90418,StreamLine AP,245,135,London Hub,Damaged,PROD-11966,2025-04-09,NetWorld Partners,47,Normal
+INV-90419,StreamLine AP,347,81,New York DC,On Hold,PROD-11535,2025-06-06,SecureLine Distributors,52,Normal
+INV-90420,CloudHub Gateway,190,80,Bangalore WH,Available,PROD-11127,2025-02-17,NetWorld Partners,22,Restricted
+INV-90421,VisionX Switch,113,14,New York DC,On Hold,PROD-11455,2025-01-01,GlobalNet Supplies,51,Climate-Controlled
+INV-90422,VisionX Switch,237,113,Berlin DC,On Hold,PROD-11748,2025-06-08,TechSource Inc,42,Climate-Controlled
+INV-90423,CloudHub Gateway,247,167,Bangalore WH,Damaged,PROD-11061,2025-04-17,GlobalNet Supplies,60,Normal
+INV-90424,CloudHub Gateway,181,146,Bangalore WH,On Hold,PROD-11719,2025-07-15,GlobalNet Supplies,27,Restricted
+INV-90425,CloudHub Gateway,312,61,New York DC,Reserved,PROD-11224,2025-05-17,SecureLine Distributors,38,Restricted
+INV-90426,StreamLine AP,326,120,London Hub,In Transit,PROD-11741,2025-02-28,TechSource Inc,34,Climate-Controlled
+INV-90427,Nova Firewall,129,78,Singapore DC,Available,PROD-11546,2025-04-05,GlobalNet Supplies,57,Restricted
+INV-90428,Nova Firewall,492,192,Singapore DC,Damaged,PROD-11634,2025-06-26,SecureLine Distributors,47,Climate-Controlled
+INV-90429,CloudHub Gateway,46,110,Berlin DC,In Transit,PROD-11919,2025-03-27,GlobalNet Supplies,58,Restricted
+INV-90430,VisionX Switch,202,54,Bangalore WH,On Hold,PROD-11538,2025-04-20,CloudWave Ltd,21,Normal
+INV-90431,VisionX Switch,247,139,London Hub,Damaged,PROD-11377,2025-03-21,CloudWave Ltd,23,Restricted
+INV-90432,StreamLine AP,117,157,London Hub,In Transit,PROD-11119,2025-04-18,NetWorld Partners,46,Climate-Controlled
+INV-90433,SmartEdge Router,84,57,Berlin DC,Reserved,PROD-11220,2025-02-03,SecureLine Distributors,26,Climate-Controlled
+INV-90434,StreamLine AP,232,39,Berlin DC,Damaged,PROD-11256,2025-02-04,TechSource Inc,15,Normal
+INV-90435,StreamLine AP,197,162,New York DC,Damaged,PROD-11628,2025-08-02,TechSource Inc,13,Restricted
+INV-90436,VisionX Switch,438,136,Bangalore WH,Available,PROD-11480,2025-01-09,SecureLine Distributors,23,Restricted
+INV-90437,VisionX Switch,73,49,Bangalore WH,Available,PROD-11979,2025-08-07,GlobalNet Supplies,31,Climate-Controlled
+INV-90438,StreamLine AP,443,111,Singapore DC,In Transit,PROD-11772,2025-08-20,NetWorld Partners,31,Restricted
+INV-90439,StreamLine AP,143,73,New York DC,Reserved,PROD-11876,2025-01-29,CloudWave Ltd,30,Normal
+INV-90440,Nova Firewall,155,199,New York DC,Reserved,PROD-11105,2025-05-01,GlobalNet Supplies,31,Restricted
+INV-90441,Nova Firewall,214,108,London Hub,Damaged,PROD-11532,2025-07-12,NetWorld Partners,32,Climate-Controlled
+INV-90442,CloudHub Gateway,455,80,London Hub,In Transit,PROD-11870,2025-05-17,TechSource Inc,60,Climate-Controlled
+INV-90443,VisionX Switch,332,131,Bangalore WH,On Hold,PROD-11795,2025-06-16,CloudWave Ltd,14,Restricted
+INV-90444,SmartEdge Router,299,92,New York DC,In Transit,PROD-11359,2025-02-25,TechSource Inc,48,Restricted
+INV-90445,CloudHub Gateway,429,133,Berlin DC,On Hold,PROD-11546,2025-02-19,NetWorld Partners,27,Climate-Controlled
+INV-90446,VisionX Switch,119,61,Singapore DC,On Hold,PROD-11727,2025-04-27,TechSource Inc,39,Restricted
+INV-90447,CloudHub Gateway,336,57,Berlin DC,On Hold,PROD-11249,2025-04-04,CloudWave Ltd,51,Restricted
+INV-90448,VisionX Switch,98,27,New York DC,Damaged,PROD-11998,2025-07-22,NetWorld Partners,11,Climate-Controlled
+INV-90449,Nova Firewall,343,23,Singapore DC,Damaged,PROD-11976,2025-07-18,SecureLine Distributors,20,Normal
+INV-90450,SmartEdge Router,429,14,Bangalore WH,In Transit,PROD-11959,2025-07-14,NetWorld Partners,17,Restricted
+INV-90451,StreamLine AP,133,130,London Hub,On Hold,PROD-11199,2025-08-12,CloudWave Ltd,16,Normal
+INV-90452,VisionX Switch,332,132,New York DC,Damaged,PROD-11110,2025-01-07,NetWorld Partners,18,Normal
+INV-90453,CloudHub Gateway,251,23,Berlin DC,Available,PROD-11345,2025-02-12,CloudWave Ltd,43,Restricted
+INV-90454,StreamLine AP,457,119,Bangalore WH,In Transit,PROD-11185,2025-05-31,SecureLine Distributors,22,Normal
+INV-90455,CloudHub Gateway,393,48,New York DC,Damaged,PROD-11785,2025-05-17,NetWorld Partners,10,Normal
+INV-90456,StreamLine AP,134,193,Berlin DC,On Hold,PROD-11183,2025-03-22,CloudWave Ltd,40,Restricted
+INV-90457,VisionX Switch,26,193,New York DC,In Transit,PROD-11216,2025-06-12,CloudWave Ltd,22,Restricted
+INV-90458,CloudHub Gateway,406,154,Berlin DC,Available,PROD-11038,2025-07-07,GlobalNet Supplies,57,Restricted
+INV-90459,StreamLine AP,126,132,Singapore DC,Reserved,PROD-11963,2025-01-19,GlobalNet Supplies,23,Normal
+INV-90460,StreamLine AP,452,20,Bangalore WH,Damaged,PROD-11218,2025-05-15,GlobalNet Supplies,17,Normal
+INV-90461,VisionX Switch,479,1,Bangalore WH,Damaged,PROD-11694,2025-02-24,TechSource Inc,40,Restricted
+INV-90462,CloudHub Gateway,276,50,London Hub,Damaged,PROD-11325,2025-07-09,NetWorld Partners,52,Normal
+INV-90463,Nova Firewall,256,90,Singapore DC,In Transit,PROD-11290,2025-08-13,SecureLine Distributors,52,Normal
+INV-90464,VisionX Switch,482,83,Berlin DC,Available,PROD-11618,2025-05-05,NetWorld Partners,50,Restricted
+INV-90465,Nova Firewall,36,139,Singapore DC,On Hold,PROD-11473,2025-05-18,TechSource Inc,36,Climate-Controlled
+INV-90466,SmartEdge Router,473,49,New York DC,In Transit,PROD-11430,2025-08-31,SecureLine Distributors,17,Restricted
+INV-90467,Nova Firewall,54,122,Berlin DC,Reserved,PROD-11749,2025-02-27,SecureLine Distributors,45,Restricted
+INV-90468,VisionX Switch,352,147,Singapore DC,On Hold,PROD-11107,2025-07-15,GlobalNet Supplies,54,Normal
+INV-90469,StreamLine AP,484,129,Berlin DC,On Hold,PROD-11333,2025-06-10,TechSource Inc,58,Normal
+INV-90470,Nova Firewall,70,192,Bangalore WH,Reserved,PROD-11230,2025-04-07,TechSource Inc,37,Climate-Controlled
+INV-90471,VisionX Switch,391,93,New York DC,Damaged,PROD-11071,2025-06-26,CloudWave Ltd,12,Climate-Controlled
+INV-90472,VisionX Switch,317,158,New York DC,Available,PROD-11711,2025-05-13,GlobalNet Supplies,19,Climate-Controlled
+INV-90473,SmartEdge Router,297,54,London Hub,In Transit,PROD-11378,2025-08-05,SecureLine Distributors,43,Restricted
+INV-90474,Nova Firewall,359,40,Bangalore WH,In Transit,PROD-11890,2025-03-19,CloudWave Ltd,34,Normal
+INV-90475,StreamLine AP,202,5,London Hub,On Hold,PROD-11494,2025-05-15,CloudWave Ltd,41,Normal
+INV-90476,StreamLine AP,40,63,Bangalore WH,Available,PROD-11199,2025-08-28,SecureLine Distributors,45,Climate-Controlled
+INV-90477,StreamLine AP,427,41,London Hub,In Transit,PROD-11255,2025-01-14,TechSource Inc,21,Normal
+INV-90478,SmartEdge Router,126,123,Berlin DC,Damaged,PROD-11338,2025-04-02,NetWorld Partners,51,Normal
+INV-90479,VisionX Switch,122,12,Berlin DC,Damaged,PROD-11174,2025-05-22,TechSource Inc,54,Normal
+INV-90480,StreamLine AP,182,128,Singapore DC,In Transit,PROD-11459,2025-06-09,TechSource Inc,17,Climate-Controlled
+INV-90481,Nova Firewall,473,104,London Hub,Available,PROD-11824,2025-03-18,GlobalNet Supplies,24,Normal
+INV-90482,VisionX Switch,150,24,New York DC,Available,PROD-11570,2025-08-10,SecureLine Distributors,52,Restricted
+INV-90483,VisionX Switch,113,89,Bangalore WH,Damaged,PROD-11824,2025-06-28,CloudWave Ltd,58,Restricted
+INV-90484,CloudHub Gateway,70,96,Singapore DC,Available,PROD-11109,2025-07-24,TechSource Inc,56,Normal
+INV-90485,VisionX Switch,439,131,London Hub,Available,PROD-11805,2025-04-29,NetWorld Partners,19,Normal
+INV-90486,Nova Firewall,107,139,Singapore DC,Reserved,PROD-11050,2025-07-24,TechSource Inc,49,Restricted
+INV-90487,Nova Firewall,198,63,London Hub,In Transit,PROD-11352,2025-07-27,GlobalNet Supplies,53,Climate-Controlled
+INV-90488,Nova Firewall,434,180,Singapore DC,On Hold,PROD-11930,2025-02-04,NetWorld Partners,30,Climate-Controlled
+INV-90489,Nova Firewall,325,121,Bangalore WH,In Transit,PROD-11548,2025-02-24,GlobalNet Supplies,15,Restricted
+INV-90490,StreamLine AP,139,33,Berlin DC,Available,PROD-11918,2025-05-08,NetWorld Partners,10,Climate-Controlled
+INV-90491,VisionX Switch,465,104,Berlin DC,In Transit,PROD-11808,2025-03-25,SecureLine Distributors,41,Climate-Controlled
+INV-90492,VisionX Switch,262,49,London Hub,Reserved,PROD-11081,2025-02-05,GlobalNet Supplies,54,Normal
+INV-90493,CloudHub Gateway,218,171,New York DC,In Transit,PROD-11455,2025-05-27,CloudWave Ltd,13,Climate-Controlled
+INV-90494,Nova Firewall,25,198,New York DC,Available,PROD-11223,2025-03-25,CloudWave Ltd,32,Restricted
+INV-90495,SmartEdge Router,456,166,Berlin DC,Damaged,PROD-11336,2025-03-04,GlobalNet Supplies,29,Normal
+INV-90496,Nova Firewall,63,155,Singapore DC,In Transit,PROD-11127,2025-07-11,GlobalNet Supplies,32,Normal
+INV-90497,CloudHub Gateway,129,35,London Hub,In Transit,PROD-11482,2025-07-24,GlobalNet Supplies,48,Restricted
+INV-90498,CloudHub Gateway,57,136,London Hub,In Transit,PROD-11589,2025-01-12,NetWorld Partners,21,Climate-Controlled
+INV-90499,VisionX Switch,90,64,Singapore DC,On Hold,PROD-11708,2025-07-31,NetWorld Partners,14,Normal
+INV-90500,CloudHub Gateway,399,142,New York DC,Available,PROD-11876,2025-01-23,GlobalNet Supplies,31,Restricted
+INV-90501,Nova Firewall,49,149,Singapore DC,On Hold,PROD-11099,2025-04-25,NetWorld Partners,47,Normal
+INV-90502,StreamLine AP,406,191,New York DC,Available,PROD-11925,2025-03-18,CloudWave Ltd,52,Climate-Controlled
+INV-90503,VisionX Switch,480,138,Singapore DC,Available,PROD-11643,2025-03-16,CloudWave Ltd,22,Climate-Controlled
+INV-90504,StreamLine AP,293,169,New York DC,In Transit,PROD-11401,2025-03-19,CloudWave Ltd,38,Restricted
+INV-90505,VisionX Switch,439,116,New York DC,Damaged,PROD-11130,2025-08-16,NetWorld Partners,22,Climate-Controlled
+INV-90506,StreamLine AP,171,72,Bangalore WH,On Hold,PROD-11864,2025-02-03,NetWorld Partners,52,Climate-Controlled
+INV-90507,CloudHub Gateway,309,145,Berlin DC,On Hold,PROD-11395,2025-04-21,GlobalNet Supplies,23,Normal
+INV-90508,VisionX Switch,331,28,Berlin DC,Available,PROD-11821,2025-02-21,GlobalNet Supplies,27,Normal
+INV-90509,VisionX Switch,68,39,Bangalore WH,Damaged,PROD-11885,2025-07-12,CloudWave Ltd,23,Restricted
+INV-90510,VisionX Switch,114,100,New York DC,Available,PROD-11737,2025-03-15,NetWorld Partners,48,Normal
+INV-90511,CloudHub Gateway,182,155,Berlin DC,Reserved,PROD-11900,2025-02-09,NetWorld Partners,34,Climate-Controlled
+INV-90512,Nova Firewall,337,183,London Hub,In Transit,PROD-11212,2025-02-15,TechSource Inc,58,Climate-Controlled
+INV-90513,SmartEdge Router,370,158,New York DC,On Hold,PROD-11014,2025-05-17,TechSource Inc,30,Restricted
+INV-90514,CloudHub Gateway,196,135,London Hub,On Hold,PROD-11131,2025-07-25,NetWorld Partners,15,Restricted
+INV-90515,Nova Firewall,28,34,Bangalore WH,On Hold,PROD-11684,2025-08-01,CloudWave Ltd,10,Climate-Controlled
+INV-90516,VisionX Switch,123,141,Bangalore WH,Reserved,PROD-11173,2025-07-01,TechSource Inc,21,Normal
+INV-90517,StreamLine AP,274,180,London Hub,Damaged,PROD-11073,2025-01-17,GlobalNet Supplies,30,Restricted
+INV-90518,VisionX Switch,157,192,New York DC,Available,PROD-11152,2025-06-29,GlobalNet Supplies,44,Restricted
+INV-90519,SmartEdge Router,220,105,Bangalore WH,On Hold,PROD-11717,2025-03-24,GlobalNet Supplies,35,Normal
+INV-90520,StreamLine AP,146,125,New York DC,Damaged,PROD-11676,2025-03-23,CloudWave Ltd,20,Restricted
+INV-90521,SmartEdge Router,330,1,New York DC,In Transit,PROD-11074,2025-02-27,TechSource Inc,56,Climate-Controlled
+INV-90522,SmartEdge Router,117,81,Singapore DC,Damaged,PROD-11956,2025-08-09,GlobalNet Supplies,15,Restricted
+INV-90523,StreamLine AP,277,171,Bangalore WH,Damaged,PROD-11188,2025-03-17,SecureLine Distributors,33,Normal
+INV-90524,VisionX Switch,411,124,Singapore DC,Available,PROD-11303,2025-03-03,NetWorld Partners,50,Normal
+INV-90525,CloudHub Gateway,412,54,Singapore DC,In Transit,PROD-11425,2025-07-02,CloudWave Ltd,26,Climate-Controlled
+INV-90526,Nova Firewall,17,21,Bangalore WH,Damaged,PROD-11477,2025-07-14,SecureLine Distributors,41,Restricted
+INV-90527,VisionX Switch,302,99,Berlin DC,Reserved,PROD-11402,2025-01-15,CloudWave Ltd,23,Normal
+INV-90528,Nova Firewall,62,109,Bangalore WH,Damaged,PROD-11096,2025-04-23,TechSource Inc,39,Normal
+INV-90529,CloudHub Gateway,400,103,Berlin DC,On Hold,PROD-11963,2025-04-01,CloudWave Ltd,18,Restricted
+INV-90530,CloudHub Gateway,455,129,London Hub,Available,PROD-11024,2025-06-05,GlobalNet Supplies,48,Restricted
+INV-90531,VisionX Switch,190,179,Bangalore WH,In Transit,PROD-11865,2025-07-12,GlobalNet Supplies,43,Restricted
+INV-90532,Nova Firewall,268,53,London Hub,Damaged,PROD-11121,2025-03-08,CloudWave Ltd,23,Restricted
+INV-90533,CloudHub Gateway,292,181,New York DC,In Transit,PROD-11012,2025-06-24,GlobalNet Supplies,20,Climate-Controlled
+INV-90534,Nova Firewall,415,157,Berlin DC,In Transit,PROD-11777,2025-02-26,GlobalNet Supplies,46,Normal
+INV-90535,CloudHub Gateway,113,128,Singapore DC,Available,PROD-11774,2025-05-01,SecureLine Distributors,27,Normal
+INV-90536,CloudHub Gateway,184,164,Bangalore WH,In Transit,PROD-11222,2025-08-18,GlobalNet Supplies,15,Restricted
+INV-90537,Nova Firewall,120,124,Bangalore WH,Damaged,PROD-11614,2025-05-17,NetWorld Partners,23,Normal
+INV-90538,Nova Firewall,190,70,Bangalore WH,In Transit,PROD-11118,2025-02-11,GlobalNet Supplies,20,Normal
+INV-90539,VisionX Switch,65,112,New York DC,Available,PROD-11829,2025-06-15,SecureLine Distributors,49,Climate-Controlled
+INV-90540,SmartEdge Router,216,109,Bangalore WH,Available,PROD-11275,2025-07-24,GlobalNet Supplies,47,Restricted
+INV-90541,SmartEdge Router,223,23,Berlin DC,On Hold,PROD-11883,2025-02-10,GlobalNet Supplies,11,Restricted
+INV-90542,Nova Firewall,403,105,London Hub,Reserved,PROD-11948,2025-05-03,NetWorld Partners,38,Climate-Controlled
+INV-90543,VisionX Switch,446,48,Bangalore WH,Available,PROD-11354,2025-04-21,CloudWave Ltd,38,Climate-Controlled
+INV-90544,VisionX Switch,140,178,Berlin DC,Damaged,PROD-11169,2025-04-20,GlobalNet Supplies,10,Climate-Controlled
+INV-90545,CloudHub Gateway,111,36,New York DC,Available,PROD-11626,2025-04-09,GlobalNet Supplies,49,Restricted
+INV-90546,VisionX Switch,219,128,Berlin DC,Reserved,PROD-11534,2025-06-11,GlobalNet Supplies,52,Climate-Controlled
+INV-90547,SmartEdge Router,275,16,Berlin DC,Reserved,PROD-11661,2025-06-17,NetWorld Partners,16,Climate-Controlled
+INV-90548,Nova Firewall,189,45,Berlin DC,On Hold,PROD-11477,2025-01-21,GlobalNet Supplies,46,Normal
+INV-90549,CloudHub Gateway,334,120,London Hub,In Transit,PROD-11223,2025-06-23,GlobalNet Supplies,26,Climate-Controlled
+INV-90550,SmartEdge Router,309,163,New York DC,Damaged,PROD-11988,2025-07-29,CloudWave Ltd,30,Climate-Controlled
+INV-90551,VisionX Switch,217,42,Berlin DC,Available,PROD-11994,2025-03-07,SecureLine Distributors,53,Restricted
+INV-90552,CloudHub Gateway,355,39,Singapore DC,On Hold,PROD-11470,2025-07-13,NetWorld Partners,22,Restricted
+INV-90553,SmartEdge Router,413,73,New York DC,In Transit,PROD-11659,2025-01-22,CloudWave Ltd,20,Restricted
+INV-90554,SmartEdge Router,334,48,Singapore DC,On Hold,PROD-11473,2025-04-30,SecureLine Distributors,59,Climate-Controlled
+INV-90555,StreamLine AP,274,26,Singapore DC,Available,PROD-11154,2025-07-28,TechSource Inc,19,Normal
+INV-90556,StreamLine AP,238,16,Bangalore WH,Reserved,PROD-11749,2025-07-25,TechSource Inc,58,Restricted
+INV-90557,SmartEdge Router,324,24,London Hub,Available,PROD-11473,2025-04-05,NetWorld Partners,47,Normal
+INV-90558,SmartEdge Router,224,25,London Hub,Available,PROD-11348,2025-01-20,SecureLine Distributors,58,Normal
+INV-90559,Nova Firewall,205,40,London Hub,On Hold,PROD-11409,2025-06-22,NetWorld Partners,11,Normal
+INV-90560,CloudHub Gateway,201,28,Singapore DC,Available,PROD-11964,2025-03-18,TechSource Inc,56,Climate-Controlled
+INV-90561,Nova Firewall,121,75,London Hub,On Hold,PROD-11244,2025-03-10,TechSource Inc,10,Normal
+INV-90562,CloudHub Gateway,134,15,Berlin DC,On Hold,PROD-11166,2025-05-09,NetWorld Partners,37,Restricted
+INV-90563,SmartEdge Router,336,48,New York DC,Damaged,PROD-11534,2025-02-03,NetWorld Partners,35,Climate-Controlled
+INV-90564,StreamLine AP,382,194,New York DC,Damaged,PROD-11994,2025-04-21,CloudWave Ltd,32,Climate-Controlled
+INV-90565,SmartEdge Router,439,11,Berlin DC,Reserved,PROD-11908,2025-02-12,GlobalNet Supplies,45,Normal
+INV-90566,SmartEdge Router,431,159,London Hub,Available,PROD-11392,2025-07-13,NetWorld Partners,32,Climate-Controlled
+INV-90567,CloudHub Gateway,355,94,Singapore DC,Reserved,PROD-11331,2025-08-28,GlobalNet Supplies,14,Normal
+INV-90568,VisionX Switch,314,138,Berlin DC,Reserved,PROD-11761,2025-06-19,GlobalNet Supplies,17,Restricted
+INV-90569,VisionX Switch,281,100,New York DC,In Transit,PROD-11859,2025-07-28,TechSource Inc,22,Restricted
+INV-90570,Nova Firewall,340,144,Singapore DC,Available,PROD-11965,2025-07-08,SecureLine Distributors,33,Normal
+INV-90571,SmartEdge Router,483,47,New York DC,Available,PROD-11146,2025-01-10,GlobalNet Supplies,29,Restricted
+INV-90572,VisionX Switch,340,88,Berlin DC,On Hold,PROD-11704,2025-07-31,SecureLine Distributors,49,Normal
+INV-90573,CloudHub Gateway,318,118,Bangalore WH,On Hold,PROD-11476,2025-02-07,NetWorld Partners,43,Normal
+INV-90574,StreamLine AP,49,63,New York DC,In Transit,PROD-11892,2025-07-09,CloudWave Ltd,10,Restricted
+INV-90575,Nova Firewall,324,158,Berlin DC,On Hold,PROD-11530,2025-08-18,NetWorld Partners,55,Climate-Controlled
+INV-90576,SmartEdge Router,337,98,New York DC,Reserved,PROD-11889,2025-03-27,CloudWave Ltd,21,Normal
+INV-90577,CloudHub Gateway,422,179,New York DC,Damaged,PROD-11018,2025-06-24,TechSource Inc,56,Restricted
+INV-90578,StreamLine AP,235,79,Singapore DC,Reserved,PROD-11206,2025-01-11,CloudWave Ltd,46,Climate-Controlled
+INV-90579,CloudHub Gateway,385,76,Singapore DC,In Transit,PROD-11593,2025-08-06,SecureLine Distributors,41,Climate-Controlled
+INV-90580,Nova Firewall,299,84,Bangalore WH,Damaged,PROD-11223,2025-01-22,NetWorld Partners,45,Normal
+INV-90581,CloudHub Gateway,434,133,New York DC,Available,PROD-11050,2025-01-30,CloudWave Ltd,20,Normal
+INV-90582,Nova Firewall,147,96,Singapore DC,In Transit,PROD-11237,2025-01-16,SecureLine Distributors,20,Normal
+INV-90583,CloudHub Gateway,303,148,London Hub,In Transit,PROD-11758,2025-01-21,GlobalNet Supplies,19,Normal
+INV-90584,StreamLine AP,500,66,Singapore DC,Damaged,PROD-11025,2025-04-12,TechSource Inc,52,Normal
+INV-90585,VisionX Switch,168,150,New York DC,In Transit,PROD-11828,2025-02-07,SecureLine Distributors,57,Normal
+INV-90586,StreamLine AP,415,59,Bangalore WH,Reserved,PROD-11449,2025-06-29,GlobalNet Supplies,55,Restricted
+INV-90587,Nova Firewall,267,137,Singapore DC,In Transit,PROD-11687,2025-01-26,CloudWave Ltd,12,Restricted
+INV-90588,SmartEdge Router,35,106,New York DC,Damaged,PROD-11800,2025-08-30,TechSource Inc,43,Climate-Controlled
+INV-90589,Nova Firewall,327,59,London Hub,In Transit,PROD-11777,2025-03-22,NetWorld Partners,10,Restricted
+INV-90590,SmartEdge Router,446,17,New York DC,Damaged,PROD-11244,2025-03-04,CloudWave Ltd,26,Climate-Controlled
+INV-90591,StreamLine AP,478,156,Singapore DC,Damaged,PROD-11124,2025-04-01,TechSource Inc,29,Restricted
+INV-90592,SmartEdge Router,203,105,London Hub,On Hold,PROD-11046,2025-07-22,GlobalNet Supplies,60,Climate-Controlled
+INV-90593,CloudHub Gateway,54,15,Singapore DC,In Transit,PROD-11116,2025-07-13,GlobalNet Supplies,11,Climate-Controlled
+INV-90594,Nova Firewall,262,196,London Hub,In Transit,PROD-11395,2025-07-17,CloudWave Ltd,33,Climate-Controlled
+INV-90595,Nova Firewall,498,50,Bangalore WH,Reserved,PROD-11195,2025-05-24,NetWorld Partners,19,Restricted
+INV-90596,StreamLine AP,421,23,Bangalore WH,On Hold,PROD-11980,2025-05-01,CloudWave Ltd,26,Normal
+INV-90597,VisionX Switch,401,198,Bangalore WH,Damaged,PROD-11039,2025-03-19,TechSource Inc,51,Normal
+INV-90598,Nova Firewall,252,118,New York DC,In Transit,PROD-11592,2025-07-18,GlobalNet Supplies,16,Climate-Controlled
+INV-90599,Nova Firewall,86,191,Singapore DC,On Hold,PROD-11653,2025-07-13,NetWorld Partners,38,Normal
+INV-90600,Nova Firewall,411,123,Berlin DC,Reserved,PROD-11409,2025-03-18,CloudWave Ltd,32,Climate-Controlled
+INV-90601,SmartEdge Router,170,24,Singapore DC,Reserved,PROD-11594,2025-04-10,SecureLine Distributors,12,Restricted
+INV-90602,StreamLine AP,319,25,Berlin DC,On Hold,PROD-11432,2025-06-01,NetWorld Partners,28,Restricted
+INV-90603,Nova Firewall,239,114,Berlin DC,Reserved,PROD-11900,2025-08-16,NetWorld Partners,46,Normal
+INV-90604,Nova Firewall,292,40,Bangalore WH,In Transit,PROD-11983,2025-04-05,TechSource Inc,14,Climate-Controlled
+INV-90605,Nova Firewall,154,17,London Hub,Available,PROD-11152,2025-03-30,SecureLine Distributors,23,Climate-Controlled
+INV-90606,VisionX Switch,231,65,New York DC,Reserved,PROD-11521,2025-07-04,GlobalNet Supplies,56,Normal
+INV-90607,VisionX Switch,199,149,Singapore DC,Available,PROD-11884,2025-04-09,TechSource Inc,47,Climate-Controlled
+INV-90608,VisionX Switch,89,68,London Hub,Damaged,PROD-11677,2025-07-05,CloudWave Ltd,29,Restricted
+INV-90609,SmartEdge Router,240,44,Bangalore WH,Available,PROD-11383,2025-03-13,GlobalNet Supplies,50,Restricted
+INV-90610,Nova Firewall,286,5,Berlin DC,Available,PROD-11937,2025-03-11,CloudWave Ltd,16,Climate-Controlled
+INV-90611,SmartEdge Router,137,117,Singapore DC,Available,PROD-11208,2025-01-28,CloudWave Ltd,28,Restricted
+INV-90612,CloudHub Gateway,286,82,Berlin DC,In Transit,PROD-11711,2025-05-02,GlobalNet Supplies,23,Normal
+INV-90613,StreamLine AP,452,194,Berlin DC,Available,PROD-11539,2025-06-08,SecureLine Distributors,13,Restricted
+INV-90614,CloudHub Gateway,120,90,Berlin DC,Damaged,PROD-11494,2025-06-06,NetWorld Partners,38,Climate-Controlled
+INV-90615,Nova Firewall,36,152,Bangalore WH,Reserved,PROD-11197,2025-01-10,GlobalNet Supplies,24,Climate-Controlled
+INV-90616,StreamLine AP,124,123,London Hub,Available,PROD-11116,2025-02-06,TechSource Inc,27,Normal
+INV-90617,StreamLine AP,460,1,Berlin DC,In Transit,PROD-11302,2025-02-05,CloudWave Ltd,25,Normal
+INV-90618,StreamLine AP,84,106,London Hub,Available,PROD-11733,2025-07-12,SecureLine Distributors,34,Climate-Controlled
+INV-90619,Nova Firewall,174,63,Singapore DC,Damaged,PROD-11744,2025-05-08,TechSource Inc,28,Climate-Controlled
+INV-90620,CloudHub Gateway,107,177,Berlin DC,In Transit,PROD-11239,2025-03-23,TechSource Inc,34,Restricted
+INV-90621,VisionX Switch,171,48,Singapore DC,Damaged,PROD-11152,2025-02-26,GlobalNet Supplies,48,Normal
+INV-90622,Nova Firewall,77,140,New York DC,Reserved,PROD-11412,2025-05-26,CloudWave Ltd,33,Normal
+INV-90623,VisionX Switch,347,54,New York DC,Reserved,PROD-11769,2025-02-22,SecureLine Distributors,27,Normal
+INV-90624,StreamLine AP,48,131,Bangalore WH,Damaged,PROD-11179,2025-07-02,SecureLine Distributors,52,Normal
+INV-90625,Nova Firewall,280,140,Singapore DC,Available,PROD-11220,2025-06-14,GlobalNet Supplies,18,Climate-Controlled
+INV-90626,Nova Firewall,309,2,New York DC,Damaged,PROD-11286,2025-03-18,NetWorld Partners,60,Restricted
+INV-90627,StreamLine AP,443,140,Singapore DC,Reserved,PROD-11984,2025-03-17,CloudWave Ltd,26,Climate-Controlled
+INV-90628,Nova Firewall,341,64,Singapore DC,Damaged,PROD-11397,2025-01-13,GlobalNet Supplies,29,Normal
+INV-90629,CloudHub Gateway,68,135,Berlin DC,Available,PROD-11647,2025-07-14,NetWorld Partners,17,Normal
+INV-90630,SmartEdge Router,327,157,London Hub,Reserved,PROD-11872,2025-04-09,TechSource Inc,33,Climate-Controlled
+INV-90631,VisionX Switch,355,162,New York DC,Damaged,PROD-11646,2025-07-02,GlobalNet Supplies,32,Restricted
+INV-90632,SmartEdge Router,197,22,Berlin DC,On Hold,PROD-11422,2025-05-14,NetWorld Partners,16,Restricted
+INV-90633,StreamLine AP,150,132,Berlin DC,In Transit,PROD-11511,2025-04-18,CloudWave Ltd,46,Climate-Controlled
+INV-90634,SmartEdge Router,184,61,Berlin DC,Reserved,PROD-11113,2025-06-13,CloudWave Ltd,56,Normal
+INV-90635,CloudHub Gateway,266,69,New York DC,On Hold,PROD-11035,2025-07-22,TechSource Inc,15,Restricted
+INV-90636,VisionX Switch,385,120,Berlin DC,On Hold,PROD-11067,2025-03-03,TechSource Inc,34,Restricted
+INV-90637,StreamLine AP,425,105,New York DC,On Hold,PROD-11560,2025-02-23,CloudWave Ltd,12,Normal
+INV-90638,SmartEdge Router,77,88,New York DC,Available,PROD-11107,2025-06-21,TechSource Inc,43,Normal
+INV-90639,SmartEdge Router,416,144,Singapore DC,Damaged,PROD-11624,2025-06-10,GlobalNet Supplies,12,Climate-Controlled
+INV-90640,SmartEdge Router,74,76,Singapore DC,Damaged,PROD-11398,2025-07-14,CloudWave Ltd,30,Restricted
+INV-90641,CloudHub Gateway,235,89,London Hub,In Transit,PROD-11396,2025-08-08,TechSource Inc,17,Normal
+INV-90642,StreamLine AP,276,108,New York DC,On Hold,PROD-11572,2025-02-12,CloudWave Ltd,16,Normal
+INV-90643,SmartEdge Router,90,74,New York DC,Available,PROD-11102,2025-07-03,SecureLine Distributors,13,Climate-Controlled
+INV-90644,Nova Firewall,85,93,Berlin DC,On Hold,PROD-11323,2025-02-13,GlobalNet Supplies,36,Climate-Controlled
+INV-90645,VisionX Switch,381,40,New York DC,In Transit,PROD-11424,2025-08-07,SecureLine Distributors,31,Climate-Controlled
+INV-90646,SmartEdge Router,385,133,Berlin DC,Available,PROD-11233,2025-05-10,NetWorld Partners,48,Normal
+INV-90647,CloudHub Gateway,464,158,New York DC,In Transit,PROD-11779,2025-02-09,NetWorld Partners,30,Restricted
+INV-90648,SmartEdge Router,209,169,New York DC,Available,PROD-11635,2025-03-14,CloudWave Ltd,48,Climate-Controlled
+INV-90649,SmartEdge Router,173,104,Berlin DC,On Hold,PROD-11933,2025-01-07,GlobalNet Supplies,39,Normal
+INV-90650,Nova Firewall,13,68,Berlin DC,Damaged,PROD-11790,2025-07-31,NetWorld Partners,28,Climate-Controlled
+INV-90651,SmartEdge Router,470,23,Singapore DC,Damaged,PROD-11656,2025-04-04,TechSource Inc,34,Normal
+INV-90652,SmartEdge Router,156,22,London Hub,Reserved,PROD-11601,2025-06-06,TechSource Inc,19,Restricted
+INV-90653,VisionX Switch,167,105,London Hub,Damaged,PROD-11426,2025-01-04,CloudWave Ltd,44,Climate-Controlled
+INV-90654,Nova Firewall,96,77,New York DC,Available,PROD-11876,2025-02-10,SecureLine Distributors,13,Restricted
+INV-90655,Nova Firewall,66,27,Bangalore WH,Reserved,PROD-11481,2025-06-16,TechSource Inc,54,Restricted
+INV-90656,VisionX Switch,154,171,Bangalore WH,Damaged,PROD-11932,2025-05-19,GlobalNet Supplies,56,Climate-Controlled
+INV-90657,SmartEdge Router,283,33,Bangalore WH,On Hold,PROD-11215,2025-04-02,NetWorld Partners,51,Climate-Controlled
+INV-90658,SmartEdge Router,32,200,New York DC,Reserved,PROD-11471,2025-04-26,NetWorld Partners,51,Restricted
+INV-90659,Nova Firewall,329,21,London Hub,Reserved,PROD-11021,2025-01-10,SecureLine Distributors,17,Restricted
+INV-90660,SmartEdge Router,302,161,New York DC,Damaged,PROD-11331,2025-01-03,TechSource Inc,48,Restricted
+INV-90661,Nova Firewall,313,68,New York DC,Available,PROD-11959,2025-02-27,CloudWave Ltd,52,Restricted
+INV-90662,VisionX Switch,333,20,Singapore DC,Available,PROD-11419,2025-07-13,TechSource Inc,57,Climate-Controlled
+INV-90663,SmartEdge Router,478,186,London Hub,Available,PROD-11533,2025-06-06,SecureLine Distributors,11,Restricted
+INV-90664,VisionX Switch,226,137,Bangalore WH,Available,PROD-11888,2025-08-13,NetWorld Partners,55,Climate-Controlled
+INV-90665,CloudHub Gateway,83,11,Bangalore WH,Reserved,PROD-11944,2025-08-08,SecureLine Distributors,45,Climate-Controlled
+INV-90666,VisionX Switch,307,42,New York DC,In Transit,PROD-11488,2025-04-27,TechSource Inc,32,Climate-Controlled
+INV-90667,CloudHub Gateway,108,119,Berlin DC,In Transit,PROD-11717,2025-02-28,CloudWave Ltd,56,Normal
+INV-90668,Nova Firewall,178,188,Berlin DC,In Transit,PROD-11338,2025-01-05,CloudWave Ltd,27,Restricted
+INV-90669,Nova Firewall,322,138,Berlin DC,Damaged,PROD-11805,2025-04-19,NetWorld Partners,23,Restricted
+INV-90670,CloudHub Gateway,448,192,Singapore DC,On Hold,PROD-11829,2025-02-10,GlobalNet Supplies,49,Normal
+INV-90671,Nova Firewall,338,76,Berlin DC,Available,PROD-11693,2025-08-05,NetWorld Partners,29,Climate-Controlled
+INV-90672,SmartEdge Router,434,0,Bangalore WH,Damaged,PROD-11940,2025-01-22,CloudWave Ltd,37,Restricted
+INV-90673,SmartEdge Router,381,57,Singapore DC,On Hold,PROD-11860,2025-07-21,TechSource Inc,49,Restricted
+INV-90674,StreamLine AP,225,93,London Hub,Damaged,PROD-11715,2025-03-09,CloudWave Ltd,21,Normal
+INV-90675,CloudHub Gateway,39,145,London Hub,Damaged,PROD-11820,2025-02-02,CloudWave Ltd,21,Restricted
+INV-90676,Nova Firewall,409,84,Singapore DC,On Hold,PROD-11575,2025-01-07,NetWorld Partners,26,Climate-Controlled
+INV-90677,VisionX Switch,108,173,London Hub,In Transit,PROD-11349,2025-01-11,GlobalNet Supplies,55,Climate-Controlled
+INV-90678,VisionX Switch,147,128,Bangalore WH,On Hold,PROD-11979,2025-05-14,CloudWave Ltd,24,Restricted
+INV-90679,StreamLine AP,99,174,Singapore DC,Available,PROD-11577,2025-07-25,GlobalNet Supplies,48,Normal
+INV-90680,StreamLine AP,171,2,Singapore DC,In Transit,PROD-11975,2025-03-26,NetWorld Partners,18,Climate-Controlled
+INV-90681,SmartEdge Router,43,21,London Hub,On Hold,PROD-11024,2025-05-25,SecureLine Distributors,20,Climate-Controlled
+INV-90682,VisionX Switch,454,56,Bangalore WH,In Transit,PROD-11801,2025-08-23,GlobalNet Supplies,34,Normal
+INV-90683,VisionX Switch,444,88,Berlin DC,On Hold,PROD-11733,2025-08-22,SecureLine Distributors,54,Climate-Controlled
+INV-90684,CloudHub Gateway,485,159,Singapore DC,Damaged,PROD-11248,2025-07-29,TechSource Inc,35,Normal
+INV-90685,CloudHub Gateway,292,138,New York DC,In Transit,PROD-11010,2025-08-01,NetWorld Partners,23,Restricted
+INV-90686,CloudHub Gateway,138,193,New York DC,Damaged,PROD-11050,2025-07-04,CloudWave Ltd,41,Climate-Controlled
+INV-90687,CloudHub Gateway,21,192,London Hub,Damaged,PROD-11248,2025-05-19,TechSource Inc,49,Restricted
+INV-90688,Nova Firewall,327,70,New York DC,Reserved,PROD-11024,2025-02-27,CloudWave Ltd,15,Restricted
+INV-90689,Nova Firewall,397,30,Singapore DC,Reserved,PROD-11072,2025-05-19,GlobalNet Supplies,49,Climate-Controlled
+INV-90690,SmartEdge Router,295,12,Berlin DC,In Transit,PROD-11300,2025-01-18,GlobalNet Supplies,10,Restricted
+INV-90691,CloudHub Gateway,317,94,Singapore DC,In Transit,PROD-11973,2025-08-08,CloudWave Ltd,40,Normal
+INV-90692,SmartEdge Router,49,106,Bangalore WH,Damaged,PROD-11311,2025-03-12,CloudWave Ltd,46,Restricted
+INV-90693,VisionX Switch,149,16,New York DC,On Hold,PROD-11356,2025-08-04,TechSource Inc,48,Climate-Controlled
+INV-90694,Nova Firewall,182,62,Berlin DC,Damaged,PROD-11703,2025-04-21,NetWorld Partners,50,Normal
+INV-90695,StreamLine AP,496,173,Berlin DC,In Transit,PROD-11773,2025-07-18,CloudWave Ltd,56,Normal
+INV-90696,VisionX Switch,358,113,New York DC,On Hold,PROD-11795,2025-06-11,GlobalNet Supplies,38,Normal
+INV-90697,SmartEdge Router,377,122,Bangalore WH,Available,PROD-11101,2025-05-19,SecureLine Distributors,45,Restricted
+INV-90698,VisionX Switch,166,0,Singapore DC,Damaged,PROD-11322,2025-07-10,NetWorld Partners,29,Climate-Controlled
+INV-90699,SmartEdge Router,227,113,Berlin DC,Reserved,PROD-11214,2025-04-08,GlobalNet Supplies,40,Normal
+INV-90700,CloudHub Gateway,48,23,New York DC,In Transit,PROD-11718,2025-06-29,SecureLine Distributors,33,Restricted
+INV-90701,Nova Firewall,329,68,Singapore DC,Damaged,PROD-11570,2025-03-07,GlobalNet Supplies,50,Normal
+INV-90702,Nova Firewall,422,20,Singapore DC,Reserved,PROD-11056,2025-02-14,NetWorld Partners,48,Normal
+INV-90703,SmartEdge Router,110,143,Singapore DC,Available,PROD-11906,2025-08-27,NetWorld Partners,27,Normal
+INV-90704,SmartEdge Router,474,42,New York DC,Reserved,PROD-11707,2025-01-24,TechSource Inc,44,Climate-Controlled
+INV-90705,VisionX Switch,167,181,Bangalore WH,Damaged,PROD-11118,2025-01-06,CloudWave Ltd,28,Restricted
+INV-90706,Nova Firewall,116,165,New York DC,Available,PROD-11319,2025-03-04,GlobalNet Supplies,13,Climate-Controlled
+INV-90707,Nova Firewall,227,24,Singapore DC,Reserved,PROD-11635,2025-08-29,TechSource Inc,45,Restricted
+INV-90708,VisionX Switch,474,191,Bangalore WH,Reserved,PROD-11653,2025-08-23,GlobalNet Supplies,18,Climate-Controlled
+INV-90709,Nova Firewall,152,93,London Hub,Damaged,PROD-11574,2025-07-01,GlobalNet Supplies,15,Restricted
+INV-90710,StreamLine AP,102,20,London Hub,In Transit,PROD-11120,2025-02-06,TechSource Inc,52,Climate-Controlled
+INV-90711,VisionX Switch,21,5,New York DC,Reserved,PROD-11388,2025-01-27,TechSource Inc,29,Climate-Controlled
+INV-90712,Nova Firewall,250,54,New York DC,In Transit,PROD-11830,2025-06-15,TechSource Inc,12,Normal
+INV-90713,CloudHub Gateway,449,101,New York DC,On Hold,PROD-11828,2025-05-27,GlobalNet Supplies,50,Restricted
+INV-90714,StreamLine AP,127,91,Singapore DC,In Transit,PROD-11742,2025-04-19,CloudWave Ltd,55,Climate-Controlled
+INV-90715,CloudHub Gateway,418,158,London Hub,Reserved,PROD-11553,2025-02-20,SecureLine Distributors,28,Climate-Controlled
+INV-90716,VisionX Switch,177,122,Singapore DC,Available,PROD-11935,2025-01-22,GlobalNet Supplies,23,Restricted
+INV-90717,StreamLine AP,360,132,Bangalore WH,Damaged,PROD-11302,2025-06-05,SecureLine Distributors,12,Climate-Controlled
+INV-90718,CloudHub Gateway,75,121,Berlin DC,In Transit,PROD-11990,2025-06-11,SecureLine Distributors,30,Normal
+INV-90719,SmartEdge Router,276,112,Bangalore WH,Reserved,PROD-11237,2025-03-17,SecureLine Distributors,59,Climate-Controlled
+INV-90720,StreamLine AP,457,104,Berlin DC,Damaged,PROD-11647,2025-03-30,NetWorld Partners,19,Restricted
+INV-90721,VisionX Switch,396,28,Bangalore WH,On Hold,PROD-11285,2025-01-08,NetWorld Partners,32,Restricted
+INV-90722,SmartEdge Router,238,180,Bangalore WH,In Transit,PROD-11904,2025-06-05,SecureLine Distributors,54,Climate-Controlled
+INV-90723,VisionX Switch,468,173,Singapore DC,Damaged,PROD-11793,2025-06-23,SecureLine Distributors,33,Normal
+INV-90724,VisionX Switch,218,129,Singapore DC,On Hold,PROD-11351,2025-01-01,CloudWave Ltd,11,Normal
+INV-90725,VisionX Switch,313,10,Berlin DC,Damaged,PROD-11031,2025-03-14,TechSource Inc,46,Climate-Controlled
+INV-90726,CloudHub Gateway,325,129,Singapore DC,Available,PROD-11120,2025-02-11,NetWorld Partners,20,Climate-Controlled
+INV-90727,StreamLine AP,43,51,Bangalore WH,Damaged,PROD-11559,2025-04-30,GlobalNet Supplies,18,Restricted
+INV-90728,CloudHub Gateway,321,44,New York DC,Available,PROD-11762,2025-04-02,GlobalNet Supplies,36,Climate-Controlled
+INV-90729,CloudHub Gateway,176,160,New York DC,On Hold,PROD-11571,2025-06-06,GlobalNet Supplies,25,Restricted
+INV-90730,VisionX Switch,368,147,Berlin DC,Reserved,PROD-11499,2025-04-15,GlobalNet Supplies,32,Climate-Controlled
+INV-90731,SmartEdge Router,77,119,Berlin DC,On Hold,PROD-11233,2025-05-13,TechSource Inc,26,Climate-Controlled
+INV-90732,Nova Firewall,318,43,New York DC,In Transit,PROD-11372,2025-06-11,SecureLine Distributors,27,Climate-Controlled
+INV-90733,VisionX Switch,231,124,Bangalore WH,In Transit,PROD-11708,2025-07-23,CloudWave Ltd,44,Climate-Controlled
+INV-90734,VisionX Switch,251,101,Berlin DC,Available,PROD-11925,2025-08-08,SecureLine Distributors,12,Climate-Controlled
+INV-90735,VisionX Switch,51,107,Berlin DC,In Transit,PROD-11609,2025-07-21,TechSource Inc,49,Normal
+INV-90736,SmartEdge Router,336,39,Bangalore WH,Reserved,PROD-11994,2025-03-14,TechSource Inc,22,Climate-Controlled
+INV-90737,VisionX Switch,219,23,Singapore DC,Damaged,PROD-11595,2025-07-20,GlobalNet Supplies,60,Climate-Controlled
+INV-90738,VisionX Switch,261,157,Berlin DC,Reserved,PROD-11565,2025-02-15,NetWorld Partners,48,Climate-Controlled
+INV-90739,SmartEdge Router,417,116,New York DC,Available,PROD-11479,2025-07-25,NetWorld Partners,38,Restricted
+INV-90740,VisionX Switch,398,69,Singapore DC,Available,PROD-11706,2025-04-12,TechSource Inc,56,Climate-Controlled
+INV-90741,VisionX Switch,88,85,Singapore DC,On Hold,PROD-11064,2025-08-27,CloudWave Ltd,54,Normal
+INV-90742,Nova Firewall,413,73,Berlin DC,On Hold,PROD-11957,2025-02-16,TechSource Inc,36,Restricted
+INV-90743,CloudHub Gateway,410,166,Berlin DC,Available,PROD-11038,2025-07-01,SecureLine Distributors,26,Climate-Controlled
+INV-90744,StreamLine AP,228,130,London Hub,Damaged,PROD-11789,2025-01-01,NetWorld Partners,55,Normal
+INV-90745,VisionX Switch,333,172,Bangalore WH,Damaged,PROD-11530,2025-06-23,TechSource Inc,47,Restricted
+INV-90746,Nova Firewall,277,35,Singapore DC,Available,PROD-11955,2025-01-18,SecureLine Distributors,26,Climate-Controlled
+INV-90747,SmartEdge Router,194,47,Singapore DC,On Hold,PROD-11697,2025-08-03,GlobalNet Supplies,20,Restricted
+INV-90748,Nova Firewall,126,169,Berlin DC,Reserved,PROD-11989,2025-03-02,SecureLine Distributors,18,Restricted
+INV-90749,Nova Firewall,223,103,Berlin DC,In Transit,PROD-11907,2025-07-18,TechSource Inc,22,Climate-Controlled
+INV-90750,Nova Firewall,106,164,London Hub,Available,PROD-11497,2025-08-27,GlobalNet Supplies,22,Climate-Controlled
+INV-90751,CloudHub Gateway,198,34,Singapore DC,In Transit,PROD-11804,2025-01-26,NetWorld Partners,49,Normal
+INV-90752,VisionX Switch,168,168,Bangalore WH,Reserved,PROD-11475,2025-04-30,NetWorld Partners,37,Climate-Controlled
+INV-90753,Nova Firewall,185,175,Berlin DC,Damaged,PROD-11140,2025-07-26,SecureLine Distributors,40,Climate-Controlled
+INV-90754,SmartEdge Router,115,121,London Hub,In Transit,PROD-11078,2025-08-19,CloudWave Ltd,25,Restricted
+INV-90755,StreamLine AP,285,184,Berlin DC,Available,PROD-11220,2025-05-07,TechSource Inc,23,Normal
+INV-90756,CloudHub Gateway,87,164,New York DC,Available,PROD-11193,2025-07-08,SecureLine Distributors,31,Normal
+INV-90757,Nova Firewall,441,56,London Hub,Reserved,PROD-11312,2025-01-09,TechSource Inc,26,Climate-Controlled
+INV-90758,SmartEdge Router,113,97,Berlin DC,On Hold,PROD-11143,2025-05-18,GlobalNet Supplies,18,Climate-Controlled
+INV-90759,VisionX Switch,337,146,Berlin DC,Available,PROD-11416,2025-06-17,SecureLine Distributors,18,Restricted
+INV-90760,Nova Firewall,450,21,Berlin DC,Reserved,PROD-11677,2025-05-12,NetWorld Partners,12,Normal
+INV-90761,CloudHub Gateway,213,64,Berlin DC,Reserved,PROD-11459,2025-02-01,SecureLine Distributors,33,Normal
+INV-90762,CloudHub Gateway,402,33,Bangalore WH,Damaged,PROD-11234,2025-01-12,GlobalNet Supplies,17,Normal
+INV-90763,VisionX Switch,198,14,London Hub,On Hold,PROD-11410,2025-02-26,GlobalNet Supplies,23,Normal
+INV-90764,VisionX Switch,201,31,Berlin DC,In Transit,PROD-11078,2025-04-03,CloudWave Ltd,44,Restricted
+INV-90765,SmartEdge Router,340,115,Bangalore WH,On Hold,PROD-11298,2025-03-08,SecureLine Distributors,41,Normal
+INV-90766,VisionX Switch,45,137,Bangalore WH,Damaged,PROD-11768,2025-04-05,GlobalNet Supplies,57,Normal
+INV-90767,VisionX Switch,484,108,Berlin DC,In Transit,PROD-11748,2025-07-13,CloudWave Ltd,28,Restricted
+INV-90768,SmartEdge Router,350,26,Singapore DC,Damaged,PROD-11480,2025-04-22,NetWorld Partners,48,Climate-Controlled
+INV-90769,Nova Firewall,321,158,Bangalore WH,Reserved,PROD-11204,2025-08-27,NetWorld Partners,57,Restricted
+INV-90770,VisionX Switch,42,16,New York DC,Damaged,PROD-11474,2025-08-14,GlobalNet Supplies,18,Climate-Controlled
+INV-90771,Nova Firewall,418,141,Singapore DC,Available,PROD-11854,2025-08-10,CloudWave Ltd,32,Normal
+INV-90772,VisionX Switch,351,31,London Hub,Damaged,PROD-11971,2025-02-10,GlobalNet Supplies,14,Climate-Controlled
+INV-90773,Nova Firewall,224,168,London Hub,Available,PROD-11613,2025-07-31,CloudWave Ltd,22,Restricted
+INV-90774,StreamLine AP,395,74,Berlin DC,On Hold,PROD-11227,2025-02-17,TechSource Inc,30,Normal
+INV-90775,Nova Firewall,160,199,New York DC,Reserved,PROD-11880,2025-08-09,CloudWave Ltd,42,Normal
+INV-90776,VisionX Switch,195,182,Bangalore WH,Damaged,PROD-11840,2025-08-17,NetWorld Partners,33,Restricted
+INV-90777,CloudHub Gateway,337,150,Singapore DC,On Hold,PROD-11839,2025-06-21,TechSource Inc,47,Restricted
+INV-90778,Nova Firewall,21,92,Bangalore WH,Damaged,PROD-11787,2025-04-15,SecureLine Distributors,20,Normal
+INV-90779,CloudHub Gateway,324,49,Berlin DC,In Transit,PROD-11557,2025-05-14,TechSource Inc,36,Normal
+INV-90780,SmartEdge Router,352,34,London Hub,Available,PROD-11178,2025-03-15,NetWorld Partners,32,Restricted
+INV-90781,SmartEdge Router,267,184,Singapore DC,In Transit,PROD-11987,2025-02-21,NetWorld Partners,10,Climate-Controlled
+INV-90782,StreamLine AP,104,16,Berlin DC,In Transit,PROD-11382,2025-06-09,NetWorld Partners,52,Restricted
+INV-90783,CloudHub Gateway,73,78,London Hub,Reserved,PROD-11618,2025-06-19,TechSource Inc,58,Normal
+INV-90784,StreamLine AP,483,192,Singapore DC,Reserved,PROD-11462,2025-03-07,TechSource Inc,53,Restricted
+INV-90785,VisionX Switch,450,171,London Hub,Available,PROD-11133,2025-04-10,SecureLine Distributors,49,Climate-Controlled
+INV-90786,VisionX Switch,217,32,New York DC,Damaged,PROD-11650,2025-04-13,CloudWave Ltd,38,Restricted
+INV-90787,SmartEdge Router,198,135,Singapore DC,Reserved,PROD-11196,2025-06-27,TechSource Inc,58,Climate-Controlled
+INV-90788,Nova Firewall,288,123,Berlin DC,Available,PROD-11225,2025-04-23,CloudWave Ltd,14,Climate-Controlled
+INV-90789,CloudHub Gateway,71,111,Bangalore WH,Reserved,PROD-11054,2025-01-17,GlobalNet Supplies,47,Climate-Controlled
+INV-90790,StreamLine AP,478,172,London Hub,Damaged,PROD-11835,2025-07-22,TechSource Inc,10,Restricted
+INV-90791,VisionX Switch,491,14,New York DC,In Transit,PROD-11950,2025-06-15,CloudWave Ltd,41,Restricted
+INV-90792,SmartEdge Router,282,168,Bangalore WH,Damaged,PROD-11243,2025-08-19,SecureLine Distributors,51,Restricted
+INV-90793,VisionX Switch,58,35,Berlin DC,Reserved,PROD-11402,2025-05-15,NetWorld Partners,31,Normal
+INV-90794,VisionX Switch,17,28,New York DC,Reserved,PROD-11702,2025-02-23,CloudWave Ltd,17,Restricted
+INV-90795,Nova Firewall,74,94,New York DC,Available,PROD-11952,2025-02-08,GlobalNet Supplies,33,Climate-Controlled
+INV-90796,SmartEdge Router,424,5,Berlin DC,Reserved,PROD-11582,2025-02-18,NetWorld Partners,43,Climate-Controlled
+INV-90797,SmartEdge Router,445,182,Bangalore WH,On Hold,PROD-11942,2025-05-11,CloudWave Ltd,29,Restricted
+INV-90798,StreamLine AP,393,59,Singapore DC,Damaged,PROD-11567,2025-07-25,SecureLine Distributors,34,Climate-Controlled
+INV-90799,SmartEdge Router,72,34,Berlin DC,In Transit,PROD-11849,2025-04-30,GlobalNet Supplies,41,Restricted
+INV-90800,StreamLine AP,473,61,London Hub,Reserved,PROD-11314,2025-08-28,GlobalNet Supplies,44,Climate-Controlled
+INV-90801,SmartEdge Router,29,195,London Hub,Reserved,PROD-11318,2025-04-05,TechSource Inc,20,Restricted
+INV-90802,StreamLine AP,194,107,Berlin DC,Available,PROD-11286,2025-03-11,TechSource Inc,22,Restricted
+INV-90803,SmartEdge Router,301,106,Bangalore WH,In Transit,PROD-11562,2025-07-07,NetWorld Partners,26,Restricted
+INV-90804,SmartEdge Router,303,135,Berlin DC,In Transit,PROD-11369,2025-08-05,SecureLine Distributors,39,Climate-Controlled
+INV-90805,Nova Firewall,169,113,Singapore DC,In Transit,PROD-11551,2025-06-12,TechSource Inc,38,Restricted
+INV-90806,Nova Firewall,457,52,Bangalore WH,On Hold,PROD-11222,2025-04-25,TechSource Inc,18,Normal
+INV-90807,SmartEdge Router,180,144,Singapore DC,Available,PROD-11459,2025-04-01,SecureLine Distributors,47,Normal
+INV-90808,Nova Firewall,112,84,Berlin DC,In Transit,PROD-11629,2025-06-08,SecureLine Distributors,26,Climate-Controlled
+INV-90809,StreamLine AP,258,96,London Hub,Reserved,PROD-11102,2025-03-26,CloudWave Ltd,49,Restricted
+INV-90810,SmartEdge Router,296,85,Singapore DC,Damaged,PROD-11099,2025-06-20,GlobalNet Supplies,20,Climate-Controlled
+INV-90811,Nova Firewall,488,42,Berlin DC,Reserved,PROD-11680,2025-05-19,NetWorld Partners,38,Restricted
+INV-90812,SmartEdge Router,425,89,Berlin DC,Damaged,PROD-11340,2025-04-09,GlobalNet Supplies,33,Normal
+INV-90813,SmartEdge Router,370,156,London Hub,Damaged,PROD-11895,2025-07-04,CloudWave Ltd,12,Restricted
+INV-90814,Nova Firewall,380,91,Bangalore WH,Reserved,PROD-11501,2025-01-17,SecureLine Distributors,50,Climate-Controlled
+INV-90815,StreamLine AP,57,87,London Hub,Available,PROD-11514,2025-02-11,GlobalNet Supplies,44,Normal
+INV-90816,Nova Firewall,409,89,Singapore DC,On Hold,PROD-11476,2025-06-12,SecureLine Distributors,14,Restricted
+INV-90817,VisionX Switch,328,63,Singapore DC,Damaged,PROD-11541,2025-03-17,SecureLine Distributors,16,Normal
+INV-90818,StreamLine AP,106,85,New York DC,Reserved,PROD-11651,2025-06-14,GlobalNet Supplies,10,Restricted
+INV-90819,StreamLine AP,210,154,New York DC,Damaged,PROD-11027,2025-06-16,NetWorld Partners,55,Restricted
+INV-90820,VisionX Switch,121,119,London Hub,Available,PROD-11476,2025-07-18,CloudWave Ltd,52,Climate-Controlled
+INV-90821,VisionX Switch,230,110,London Hub,Available,PROD-11371,2025-05-31,SecureLine Distributors,43,Normal
+INV-90822,SmartEdge Router,311,132,New York DC,On Hold,PROD-11117,2025-04-02,CloudWave Ltd,48,Restricted
+INV-90823,SmartEdge Router,240,143,London Hub,Available,PROD-11664,2025-01-28,GlobalNet Supplies,19,Climate-Controlled
+INV-90824,CloudHub Gateway,201,152,London Hub,In Transit,PROD-11858,2025-05-25,NetWorld Partners,39,Climate-Controlled
+INV-90825,VisionX Switch,456,165,London Hub,On Hold,PROD-11819,2025-03-25,TechSource Inc,42,Normal
+INV-90826,CloudHub Gateway,256,1,New York DC,Available,PROD-11703,2025-06-25,NetWorld Partners,23,Restricted
+INV-90827,CloudHub Gateway,147,15,London Hub,On Hold,PROD-11925,2025-08-30,CloudWave Ltd,39,Climate-Controlled
+INV-90828,StreamLine AP,341,51,Singapore DC,On Hold,PROD-11766,2025-04-05,TechSource Inc,55,Climate-Controlled
+INV-90829,StreamLine AP,301,93,Berlin DC,In Transit,PROD-11183,2025-01-13,TechSource Inc,11,Climate-Controlled
+INV-90830,SmartEdge Router,78,181,New York DC,Reserved,PROD-11683,2025-05-14,SecureLine Distributors,39,Restricted
+INV-90831,Nova Firewall,470,93,Singapore DC,Available,PROD-11437,2025-01-07,GlobalNet Supplies,23,Climate-Controlled
+INV-90832,Nova Firewall,357,151,London Hub,On Hold,PROD-11022,2025-07-10,GlobalNet Supplies,13,Climate-Controlled
+INV-90833,SmartEdge Router,136,165,Singapore DC,In Transit,PROD-11865,2025-03-06,NetWorld Partners,35,Climate-Controlled
+INV-90834,VisionX Switch,160,74,Berlin DC,On Hold,PROD-11846,2025-01-05,NetWorld Partners,49,Climate-Controlled
+INV-90835,VisionX Switch,371,102,Bangalore WH,On Hold,PROD-11890,2025-05-18,TechSource Inc,50,Normal
+INV-90836,SmartEdge Router,368,131,New York DC,In Transit,PROD-11824,2025-03-22,NetWorld Partners,12,Restricted
+INV-90837,CloudHub Gateway,484,178,Bangalore WH,In Transit,PROD-11946,2025-02-26,TechSource Inc,52,Restricted
+INV-90838,SmartEdge Router,245,114,Singapore DC,On Hold,PROD-11846,2025-06-14,GlobalNet Supplies,46,Climate-Controlled
+INV-90839,CloudHub Gateway,469,145,Berlin DC,Damaged,PROD-11486,2025-03-08,NetWorld Partners,22,Climate-Controlled
+INV-90840,VisionX Switch,272,142,New York DC,Damaged,PROD-11526,2025-08-27,GlobalNet Supplies,26,Restricted
+INV-90841,VisionX Switch,277,195,Singapore DC,Reserved,PROD-11825,2025-03-05,TechSource Inc,27,Normal
+INV-90842,StreamLine AP,328,164,Singapore DC,Reserved,PROD-11275,2025-01-08,GlobalNet Supplies,59,Restricted
+INV-90843,Nova Firewall,417,187,Singapore DC,Damaged,PROD-11880,2025-08-14,SecureLine Distributors,13,Climate-Controlled
+INV-90844,StreamLine AP,473,15,London Hub,In Transit,PROD-11829,2025-03-19,GlobalNet Supplies,49,Normal
+INV-90845,Nova Firewall,293,147,Singapore DC,On Hold,PROD-11557,2025-06-06,SecureLine Distributors,36,Climate-Controlled
+INV-90846,SmartEdge Router,366,25,New York DC,Available,PROD-11668,2025-04-03,CloudWave Ltd,40,Restricted
+INV-90847,SmartEdge Router,315,99,London Hub,Available,PROD-11116,2025-04-01,SecureLine Distributors,57,Climate-Controlled
+INV-90848,StreamLine AP,454,142,New York DC,Available,PROD-11819,2025-01-06,SecureLine Distributors,34,Restricted
+INV-90849,CloudHub Gateway,386,33,Berlin DC,Damaged,PROD-11072,2025-03-05,SecureLine Distributors,10,Climate-Controlled
+INV-90850,CloudHub Gateway,323,131,New York DC,Damaged,PROD-11941,2025-07-11,SecureLine Distributors,20,Climate-Controlled
+INV-90851,Nova Firewall,331,150,New York DC,Damaged,PROD-11255,2025-07-20,NetWorld Partners,40,Normal
+INV-90852,Nova Firewall,229,148,New York DC,Reserved,PROD-11613,2025-02-03,GlobalNet Supplies,30,Normal
+INV-90853,StreamLine AP,366,113,Singapore DC,Reserved,PROD-11446,2025-06-14,CloudWave Ltd,32,Normal
+INV-90854,Nova Firewall,86,180,London Hub,Available,PROD-11059,2025-07-18,NetWorld Partners,31,Normal
+INV-90855,CloudHub Gateway,482,100,New York DC,In Transit,PROD-11638,2025-03-03,CloudWave Ltd,31,Restricted
+INV-90856,StreamLine AP,405,4,Singapore DC,Available,PROD-11246,2025-04-01,GlobalNet Supplies,45,Normal
+INV-90857,Nova Firewall,23,185,New York DC,In Transit,PROD-11132,2025-03-02,NetWorld Partners,15,Restricted
+INV-90858,VisionX Switch,26,80,New York DC,In Transit,PROD-11607,2025-04-29,TechSource Inc,19,Restricted
+INV-90859,CloudHub Gateway,140,92,London Hub,Reserved,PROD-11581,2025-05-21,SecureLine Distributors,50,Climate-Controlled
+INV-90860,Nova Firewall,323,153,New York DC,On Hold,PROD-11501,2025-08-27,SecureLine Distributors,22,Climate-Controlled
+INV-90861,SmartEdge Router,480,82,New York DC,On Hold,PROD-11880,2025-02-26,GlobalNet Supplies,20,Normal
+INV-90862,Nova Firewall,247,48,Singapore DC,On Hold,PROD-11710,2025-02-16,GlobalNet Supplies,53,Restricted
+INV-90863,Nova Firewall,20,191,Berlin DC,Available,PROD-11997,2025-08-25,CloudWave Ltd,29,Normal
+INV-90864,VisionX Switch,26,107,Singapore DC,On Hold,PROD-11179,2025-06-05,CloudWave Ltd,28,Restricted
+INV-90865,StreamLine AP,349,116,Bangalore WH,In Transit,PROD-11984,2025-07-03,GlobalNet Supplies,12,Normal
+INV-90866,StreamLine AP,365,180,Singapore DC,Damaged,PROD-11031,2025-04-11,TechSource Inc,33,Restricted
+INV-90867,SmartEdge Router,481,147,London Hub,Damaged,PROD-11653,2025-06-13,TechSource Inc,29,Restricted
+INV-90868,StreamLine AP,377,193,Bangalore WH,On Hold,PROD-11338,2025-06-07,GlobalNet Supplies,56,Climate-Controlled
+INV-90869,StreamLine AP,396,130,New York DC,In Transit,PROD-11242,2025-07-15,TechSource Inc,53,Normal
+INV-90870,StreamLine AP,40,46,New York DC,Damaged,PROD-11635,2025-03-01,TechSource Inc,39,Normal
+INV-90871,CloudHub Gateway,330,36,New York DC,In Transit,PROD-11568,2025-05-11,GlobalNet Supplies,53,Climate-Controlled
+INV-90872,Nova Firewall,287,84,New York DC,On Hold,PROD-11599,2025-01-16,GlobalNet Supplies,42,Restricted
+INV-90873,SmartEdge Router,341,146,Bangalore WH,Damaged,PROD-11506,2025-07-02,GlobalNet Supplies,30,Normal
+INV-90874,StreamLine AP,488,86,Berlin DC,Damaged,PROD-11935,2025-02-14,NetWorld Partners,24,Restricted
+INV-90875,StreamLine AP,402,161,Bangalore WH,Available,PROD-11012,2025-04-04,CloudWave Ltd,51,Climate-Controlled
+INV-90876,Nova Firewall,356,25,Berlin DC,In Transit,PROD-11967,2025-01-01,GlobalNet Supplies,49,Restricted
+INV-90877,CloudHub Gateway,386,158,Singapore DC,On Hold,PROD-11103,2025-04-19,SecureLine Distributors,52,Climate-Controlled
+INV-90878,Nova Firewall,320,63,London Hub,On Hold,PROD-11225,2025-07-02,CloudWave Ltd,57,Climate-Controlled
+INV-90879,CloudHub Gateway,108,36,Berlin DC,Damaged,PROD-11248,2025-03-25,GlobalNet Supplies,55,Normal
+INV-90880,CloudHub Gateway,111,63,New York DC,In Transit,PROD-11097,2025-06-23,NetWorld Partners,36,Climate-Controlled
+INV-90881,SmartEdge Router,360,144,London Hub,In Transit,PROD-11959,2025-07-07,SecureLine Distributors,17,Climate-Controlled
+INV-90882,SmartEdge Router,477,100,New York DC,Damaged,PROD-11871,2025-02-22,SecureLine Distributors,35,Restricted
+INV-90883,VisionX Switch,231,127,Bangalore WH,In Transit,PROD-11522,2025-06-01,GlobalNet Supplies,53,Climate-Controlled
+INV-90884,VisionX Switch,12,94,Berlin DC,Available,PROD-11044,2025-02-25,SecureLine Distributors,57,Normal
+INV-90885,VisionX Switch,278,16,Singapore DC,On Hold,PROD-11920,2025-03-17,CloudWave Ltd,60,Normal
+INV-90886,SmartEdge Router,423,126,New York DC,Reserved,PROD-11620,2025-01-01,TechSource Inc,33,Restricted
+INV-90887,SmartEdge Router,313,194,Berlin DC,In Transit,PROD-11081,2025-08-11,NetWorld Partners,23,Climate-Controlled
+INV-90888,CloudHub Gateway,469,186,Singapore DC,Damaged,PROD-11743,2025-08-03,TechSource Inc,45,Normal
+INV-90889,StreamLine AP,481,190,London Hub,On Hold,PROD-11527,2025-02-14,GlobalNet Supplies,55,Restricted
+INV-90890,SmartEdge Router,102,109,Berlin DC,Reserved,PROD-11807,2025-01-06,CloudWave Ltd,30,Normal
+INV-90891,CloudHub Gateway,50,120,Singapore DC,On Hold,PROD-11175,2025-03-08,GlobalNet Supplies,54,Restricted
+INV-90892,VisionX Switch,117,48,Berlin DC,On Hold,PROD-11687,2025-04-20,CloudWave Ltd,47,Normal
+INV-90893,Nova Firewall,330,121,Berlin DC,Available,PROD-11284,2025-08-02,TechSource Inc,52,Climate-Controlled
+INV-90894,VisionX Switch,209,111,London Hub,In Transit,PROD-11951,2025-08-27,SecureLine Distributors,44,Restricted
+INV-90895,StreamLine AP,380,167,Bangalore WH,In Transit,PROD-11663,2025-03-26,SecureLine Distributors,54,Climate-Controlled
+INV-90896,VisionX Switch,80,167,London Hub,On Hold,PROD-11059,2025-04-15,SecureLine Distributors,22,Normal
+INV-90897,Nova Firewall,240,9,Berlin DC,Damaged,PROD-11469,2025-08-04,CloudWave Ltd,18,Climate-Controlled
+INV-90898,CloudHub Gateway,400,60,Bangalore WH,Damaged,PROD-11502,2025-03-01,TechSource Inc,27,Climate-Controlled
+INV-90899,SmartEdge Router,68,154,Singapore DC,Available,PROD-11172,2025-07-15,TechSource Inc,13,Restricted
+INV-90900,StreamLine AP,333,61,Berlin DC,In Transit,PROD-11109,2025-03-17,CloudWave Ltd,37,Climate-Controlled
+INV-90901,StreamLine AP,487,85,London Hub,On Hold,PROD-11215,2025-02-17,GlobalNet Supplies,57,Normal
+INV-90902,Nova Firewall,81,80,Berlin DC,In Transit,PROD-11997,2025-06-12,NetWorld Partners,35,Normal
+INV-90903,Nova Firewall,270,195,Berlin DC,On Hold,PROD-11509,2025-05-17,NetWorld Partners,54,Climate-Controlled
+INV-90904,Nova Firewall,308,69,London Hub,Reserved,PROD-11823,2025-06-14,NetWorld Partners,42,Normal
+INV-90905,SmartEdge Router,103,67,New York DC,On Hold,PROD-11297,2025-05-31,TechSource Inc,57,Normal
+INV-90906,VisionX Switch,133,116,Bangalore WH,Reserved,PROD-11917,2025-05-26,GlobalNet Supplies,35,Normal
+INV-90907,CloudHub Gateway,334,79,Singapore DC,On Hold,PROD-11432,2025-07-03,GlobalNet Supplies,44,Normal
+INV-90908,StreamLine AP,92,64,Singapore DC,In Transit,PROD-11168,2025-03-14,TechSource Inc,13,Restricted
+INV-90909,VisionX Switch,39,92,London Hub,On Hold,PROD-11922,2025-06-18,NetWorld Partners,52,Normal
+INV-90910,CloudHub Gateway,147,190,New York DC,On Hold,PROD-11569,2025-02-16,GlobalNet Supplies,15,Climate-Controlled
+INV-90911,CloudHub Gateway,47,16,Singapore DC,Damaged,PROD-11745,2025-06-05,CloudWave Ltd,50,Climate-Controlled
+INV-90912,VisionX Switch,333,145,Bangalore WH,Available,PROD-11351,2025-06-23,SecureLine Distributors,20,Restricted
+INV-90913,StreamLine AP,95,24,London Hub,Reserved,PROD-11021,2025-01-12,NetWorld Partners,46,Climate-Controlled
+INV-90914,StreamLine AP,338,161,New York DC,In Transit,PROD-11766,2025-01-27,NetWorld Partners,47,Normal
+INV-90915,SmartEdge Router,35,3,London Hub,On Hold,PROD-11898,2025-08-10,NetWorld Partners,56,Normal
+INV-90916,StreamLine AP,336,109,Berlin DC,Reserved,PROD-11205,2025-03-02,SecureLine Distributors,32,Restricted
+INV-90917,SmartEdge Router,281,87,Bangalore WH,In Transit,PROD-11660,2025-04-08,NetWorld Partners,19,Normal
+INV-90918,Nova Firewall,248,197,Bangalore WH,In Transit,PROD-11697,2025-06-24,TechSource Inc,38,Restricted
+INV-90919,SmartEdge Router,419,122,New York DC,Available,PROD-11747,2025-06-09,NetWorld Partners,49,Normal
+INV-90920,Nova Firewall,494,91,Berlin DC,Reserved,PROD-11756,2025-07-01,SecureLine Distributors,27,Restricted
+INV-90921,StreamLine AP,481,56,Berlin DC,Damaged,PROD-11482,2025-07-29,NetWorld Partners,32,Restricted
+INV-90922,Nova Firewall,362,143,New York DC,Available,PROD-11490,2025-03-16,SecureLine Distributors,15,Climate-Controlled
+INV-90923,StreamLine AP,70,150,New York DC,Available,PROD-11867,2025-02-22,CloudWave Ltd,57,Restricted
+INV-90924,StreamLine AP,347,112,Singapore DC,In Transit,PROD-11670,2025-03-16,CloudWave Ltd,31,Climate-Controlled
+INV-90925,SmartEdge Router,72,41,New York DC,Damaged,PROD-11889,2025-08-27,NetWorld Partners,48,Normal
+INV-90926,SmartEdge Router,159,52,Bangalore WH,On Hold,PROD-11810,2025-05-17,TechSource Inc,51,Restricted
+INV-90927,CloudHub Gateway,425,70,Bangalore WH,Damaged,PROD-11601,2025-07-13,TechSource Inc,37,Restricted
+INV-90928,Nova Firewall,218,156,Bangalore WH,Damaged,PROD-11236,2025-07-02,GlobalNet Supplies,24,Normal
+INV-90929,VisionX Switch,267,52,London Hub,In Transit,PROD-11311,2025-03-26,NetWorld Partners,45,Restricted
+INV-90930,Nova Firewall,266,200,Bangalore WH,On Hold,PROD-11585,2025-08-18,GlobalNet Supplies,25,Restricted
+INV-90931,Nova Firewall,372,136,Singapore DC,Reserved,PROD-11643,2025-05-18,TechSource Inc,57,Restricted
+INV-90932,Nova Firewall,496,159,Berlin DC,On Hold,PROD-11022,2025-05-10,GlobalNet Supplies,35,Restricted
+INV-90933,VisionX Switch,409,67,London Hub,On Hold,PROD-11030,2025-03-31,GlobalNet Supplies,12,Normal
+INV-90934,CloudHub Gateway,500,178,Berlin DC,Reserved,PROD-11672,2025-06-05,NetWorld Partners,11,Restricted
+INV-90935,VisionX Switch,75,39,Bangalore WH,In Transit,PROD-11924,2025-06-22,GlobalNet Supplies,25,Climate-Controlled
+INV-90936,VisionX Switch,470,24,Singapore DC,In Transit,PROD-11956,2025-06-18,SecureLine Distributors,50,Restricted
+INV-90937,StreamLine AP,62,106,Berlin DC,On Hold,PROD-11865,2025-05-15,CloudWave Ltd,43,Restricted
+INV-90938,StreamLine AP,455,167,Berlin DC,On Hold,PROD-11023,2025-03-31,CloudWave Ltd,10,Restricted
+INV-90939,StreamLine AP,121,105,Bangalore WH,Available,PROD-11137,2025-08-15,NetWorld Partners,47,Normal
+INV-90940,Nova Firewall,333,108,New York DC,In Transit,PROD-11790,2025-07-04,GlobalNet Supplies,27,Climate-Controlled
+INV-90941,CloudHub Gateway,410,146,Bangalore WH,In Transit,PROD-11118,2025-04-12,NetWorld Partners,20,Normal
+INV-90942,SmartEdge Router,465,159,New York DC,Reserved,PROD-11096,2025-07-08,CloudWave Ltd,45,Climate-Controlled
+INV-90943,VisionX Switch,235,128,Singapore DC,Damaged,PROD-11974,2025-08-11,TechSource Inc,30,Normal
+INV-90944,SmartEdge Router,384,173,New York DC,Damaged,PROD-11113,2025-01-13,GlobalNet Supplies,50,Restricted
+INV-90945,StreamLine AP,372,45,Bangalore WH,Reserved,PROD-11707,2025-05-22,GlobalNet Supplies,33,Climate-Controlled
+INV-90946,Nova Firewall,360,78,Berlin DC,Damaged,PROD-11713,2025-07-26,CloudWave Ltd,44,Climate-Controlled
+INV-90947,StreamLine AP,250,172,London Hub,Available,PROD-11884,2025-07-11,CloudWave Ltd,31,Restricted
+INV-90948,StreamLine AP,468,146,Berlin DC,Reserved,PROD-11182,2025-03-26,CloudWave Ltd,18,Climate-Controlled
+INV-90949,Nova Firewall,386,197,London Hub,Damaged,PROD-11182,2025-03-02,CloudWave Ltd,39,Climate-Controlled
+INV-90950,VisionX Switch,83,111,London Hub,In Transit,PROD-11496,2025-03-08,GlobalNet Supplies,13,Climate-Controlled
+INV-90951,CloudHub Gateway,281,24,Singapore DC,Available,PROD-11236,2025-04-21,CloudWave Ltd,44,Climate-Controlled
+INV-90952,Nova Firewall,186,30,Berlin DC,Reserved,PROD-11452,2025-05-02,GlobalNet Supplies,15,Normal
+INV-90953,Nova Firewall,114,54,Singapore DC,Damaged,PROD-11004,2025-03-04,GlobalNet Supplies,51,Restricted
+INV-90954,CloudHub Gateway,161,72,Bangalore WH,Available,PROD-11391,2025-04-25,NetWorld Partners,30,Normal
+INV-90955,SmartEdge Router,12,26,Bangalore WH,On Hold,PROD-11068,2025-07-28,SecureLine Distributors,15,Climate-Controlled
+INV-90956,StreamLine AP,351,157,Berlin DC,Reserved,PROD-11908,2025-04-05,TechSource Inc,40,Restricted
+INV-90957,StreamLine AP,24,122,Berlin DC,Reserved,PROD-11138,2025-01-26,GlobalNet Supplies,25,Normal
+INV-90958,SmartEdge Router,252,163,Berlin DC,On Hold,PROD-11853,2025-08-03,SecureLine Distributors,58,Climate-Controlled
+INV-90959,VisionX Switch,274,103,New York DC,Damaged,PROD-11368,2025-01-07,NetWorld Partners,42,Normal
+INV-90960,VisionX Switch,169,178,Singapore DC,In Transit,PROD-11924,2025-07-22,SecureLine Distributors,26,Climate-Controlled
+INV-90961,SmartEdge Router,237,185,London Hub,Damaged,PROD-11857,2025-06-11,CloudWave Ltd,25,Restricted
+INV-90962,CloudHub Gateway,20,199,Berlin DC,Available,PROD-11650,2025-04-04,CloudWave Ltd,55,Normal
+INV-90963,SmartEdge Router,315,96,Bangalore WH,In Transit,PROD-11494,2025-05-29,CloudWave Ltd,23,Normal
+INV-90964,VisionX Switch,344,128,Berlin DC,In Transit,PROD-11560,2025-04-26,NetWorld Partners,18,Climate-Controlled
+INV-90965,CloudHub Gateway,137,53,London Hub,On Hold,PROD-11401,2025-03-03,CloudWave Ltd,18,Climate-Controlled
+INV-90966,VisionX Switch,105,129,London Hub,On Hold,PROD-11123,2025-02-09,NetWorld Partners,46,Normal
+INV-90967,CloudHub Gateway,94,182,Singapore DC,On Hold,PROD-11871,2025-05-18,CloudWave Ltd,28,Climate-Controlled
+INV-90968,VisionX Switch,395,92,Bangalore WH,In Transit,PROD-11351,2025-05-04,NetWorld Partners,15,Normal
+INV-90969,StreamLine AP,456,66,New York DC,On Hold,PROD-11255,2025-07-22,NetWorld Partners,10,Climate-Controlled
+INV-90970,CloudHub Gateway,244,2,Bangalore WH,In Transit,PROD-11731,2025-03-09,NetWorld Partners,29,Climate-Controlled
+INV-90971,SmartEdge Router,125,185,London Hub,In Transit,PROD-11372,2025-04-17,TechSource Inc,47,Climate-Controlled
+INV-90972,VisionX Switch,55,87,Berlin DC,Damaged,PROD-11511,2025-02-08,NetWorld Partners,48,Normal
+INV-90973,VisionX Switch,15,30,New York DC,In Transit,PROD-11575,2025-07-30,NetWorld Partners,14,Normal
+INV-90974,VisionX Switch,402,151,New York DC,On Hold,PROD-11143,2025-02-28,SecureLine Distributors,57,Restricted
+INV-90975,StreamLine AP,304,98,Singapore DC,Reserved,PROD-11153,2025-08-08,GlobalNet Supplies,37,Normal
+INV-90976,Nova Firewall,72,40,Bangalore WH,Damaged,PROD-11480,2025-07-02,NetWorld Partners,10,Climate-Controlled
+INV-90977,SmartEdge Router,236,183,London Hub,Reserved,PROD-11187,2025-02-14,SecureLine Distributors,47,Restricted
+INV-90978,CloudHub Gateway,163,100,Berlin DC,On Hold,PROD-11443,2025-07-15,TechSource Inc,42,Normal
+INV-90979,Nova Firewall,311,159,London Hub,Available,PROD-11556,2025-04-16,SecureLine Distributors,53,Climate-Controlled
+INV-90980,CloudHub Gateway,410,70,Bangalore WH,Reserved,PROD-11025,2025-08-13,SecureLine Distributors,21,Restricted
+INV-90981,StreamLine AP,423,68,Berlin DC,On Hold,PROD-11214,2025-02-26,CloudWave Ltd,32,Normal
+INV-90982,StreamLine AP,299,29,Singapore DC,In Transit,PROD-11570,2025-03-18,GlobalNet Supplies,43,Climate-Controlled
+INV-90983,SmartEdge Router,80,185,Singapore DC,Available,PROD-11784,2025-04-24,NetWorld Partners,45,Climate-Controlled
+INV-90984,SmartEdge Router,217,140,Bangalore WH,Available,PROD-11322,2025-01-04,TechSource Inc,11,Normal
+INV-90985,StreamLine AP,37,70,Berlin DC,In Transit,PROD-11224,2025-03-02,NetWorld Partners,44,Restricted
+INV-90986,SmartEdge Router,377,186,Singapore DC,In Transit,PROD-11244,2025-04-06,NetWorld Partners,42,Climate-Controlled
+INV-90987,SmartEdge Router,322,185,Berlin DC,On Hold,PROD-11261,2025-06-08,GlobalNet Supplies,48,Restricted
+INV-90988,Nova Firewall,183,117,Bangalore WH,Available,PROD-11060,2025-07-14,NetWorld Partners,35,Normal
+INV-90989,Nova Firewall,178,182,New York DC,Reserved,PROD-11893,2025-07-20,NetWorld Partners,32,Restricted
+INV-90990,CloudHub Gateway,260,182,Bangalore WH,In Transit,PROD-11113,2025-05-10,TechSource Inc,29,Climate-Controlled
+INV-90991,Nova Firewall,499,119,London Hub,Reserved,PROD-11912,2025-08-14,SecureLine Distributors,46,Climate-Controlled
+INV-90992,SmartEdge Router,433,58,London Hub,Available,PROD-11520,2025-04-25,CloudWave Ltd,59,Climate-Controlled
+INV-90993,SmartEdge Router,181,188,London Hub,Reserved,PROD-11924,2025-07-14,NetWorld Partners,43,Normal
+INV-90994,CloudHub Gateway,435,198,London Hub,Reserved,PROD-11110,2025-02-02,NetWorld Partners,24,Restricted
+INV-90995,SmartEdge Router,152,134,Singapore DC,Damaged,PROD-11793,2025-06-11,GlobalNet Supplies,24,Climate-Controlled
+INV-90996,Nova Firewall,279,24,London Hub,Reserved,PROD-11354,2025-07-15,TechSource Inc,31,Normal
+INV-90997,Nova Firewall,393,15,Berlin DC,In Transit,PROD-11125,2025-06-26,TechSource Inc,34,Climate-Controlled
+INV-90998,CloudHub Gateway,245,119,New York DC,Reserved,PROD-11478,2025-06-12,SecureLine Distributors,39,Normal
+INV-90999,Nova Firewall,357,160,New York DC,In Transit,PROD-11730,2025-04-12,GlobalNet Supplies,20,Restricted
+INV-91000,CloudHub Gateway,156,22,Bangalore WH,Reserved,PROD-11032,2025-08-09,SecureLine Distributors,11,Climate-Controlled
