@@ -10,28 +10,23 @@
 [![Open Issues](https://img.shields.io/github/issues-raw/Intugle/data-tools)](https://github.com/Intugle/data-tools/issues)
 [![GitHub star chart](https://img.shields.io/github/stars/Intugle/data-tools?style=social)](https://github.com/Intugle/data-tools/stargazers)
 
-*Automated Data Profiling, Link Prediction, and Semantic Layer Generation*
+*Transform Fragmented Data into Connected Semantic Layer*
 
 ## Overview
 
-Intugle provides a set of GenAI-powered Python tools to simplify and accelerate the journey from raw data to insights. This library empowers data and business teams to build an intelligent semantic layer over their data, enabling self-serve analytics and natural language queries. By automating data profiling, link prediction, and SQL generation, Intugle helps you build data products faster and more efficiently than traditional methods.
+Intugle’s GenAI-powered open-source Python library builds an intelligent semantic layer over your existing data systems. At its core, it discovers meaningful links and relationships across data assets — enriching them with profiles, classifications, and business glossaries. With this connected knowledge layer, you can enable semantic search and auto-generate queries to create unified data products, making data integration and exploration faster, more accurate, and far less manual.
 
 ## Who is this for?
 
-This tool is designed for both **data teams** and **business teams**.
-
-*   **Data teams** can use it to automate data profiling, schema discovery, and documentation, significantly accelerating their workflow.
-*   **Business teams** can use it to gain a better understanding of their data and to perform self-service analytics without needing to write complex SQL queries.
+*   **Data Engineers & Architects** often spend weeks manually profiling, classifying, and stitching together fragmented data assets. With Intugle, they can automate this process end-to-end, uncovering meaningful links and relationships to instantly generate a connected semantic layer.
+*   **Data Analysts & Scientists** spend endless hours on data readiness and preparation before they can even start the real analysis. Intugle accelerates this by providing contextual intelligence, automatically generating SQL and reusable data products enriched with relationships and business meaning.
+*   **Business Analysts & Decision Makers** are slowed down by constant dependence on technical teams for answers. Intugle removes this bottleneck by enabling natural language queries and semantic search, giving them trusted insights on demand.
 
 ## Features
 
-*   **Automated Data Profiling:** Generate detailed statistics for each column in your dataset, including distinct count, uniqueness, completeness, and more.
-*   **Datatype Identification:** Automatically identify the data type of each column (e.g., integer, string, datetime).
-*   **Key Identification:** Identify potential primary keys in your tables.
-*   **LLM-Powered Link Prediction:** Use GenAI to automatically discover relationships (foreign keys) between tables.
-*   **Business Glossary Generation:** Generate a business glossary for each column, with support for industry-specific domains.
-*   **Semantic Layer Generation:** Create YAML files that defines your semantic layer, including models (tables) and their relationships.
-*   **Data Product Creation:** Generate data products from the semantic layer, allowing you to query your data using business-friendly terms.
+*   **Semantic Intelligence:** Transform raw, fragmented datasets into an intelligent semantic graph that captures entities, relationships, and context — the foundation for connected intelligence.
+*   **Business Glossary & Semantic Search:** Auto-generate a business glossary and enable search that understands meaning, not just keywords — making data more accessible across technical and business users.
+*   **Smart SQL & Data Products:** Instantly generate SQL and reusable data products enriched with context, eliminating manual pipelines and accelerating data-to-insight.
 
 ## Getting Started
 
