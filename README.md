@@ -32,6 +32,8 @@ Intugle’s GenAI-powered open-source Python library builds an intelligent seman
 
 ### Installation
 
+For Windows and Linux, you can follow these steps. For macOS, please see the additional steps in the macOS section below.
+
 Before installing, it is recommended to create a virtual environment:
 
 ```bash
@@ -96,6 +98,7 @@ from intugle import KnowledgeBuilder, DataProductBuilder
 datasets = {
     "allergies": {"path": "path/to/allergies.csv", "type": "csv"},
     "patients": {"path": "path/to/patients.csv", "type": "csv"},
+    "claims": {"path": "path/to/claims.csv", "type": "csv"},
     # ... add other datasets
 }
 
@@ -108,12 +111,33 @@ dp_builder = DataProductBuilder()
 
 # Define an ETL model
 etl = {
-    "name": "patient_allergies",
-    "fields": [
-        {"id": "patients.first", "name": "first_name"},
-        {"id": "patients.last", "name": "last_name"},
-        {"id": "allergies.description", "name": "allergy"},
+  "name": "top_patients_by_claim_count",
+  "fields": [
+    {
+      "id": "patients.first",
+      "name": "first_name",
+    },
+    {
+      "id": "patients.last",
+      "name": "last_name",
+    },
+    {
+      "id": "claims.id",
+      "name": "number_of_claims",
+      "category": "measure",
+      "measure_func": "count"
+    }
+  ],
+  "filter": {
+    "sort_by": [
+      {
+        "id": "claims.id",
+        "alias": "number_of_claims",
+        "direction": "desc"
+      }
     ],
+    "limit": 10
+  }
 }
 
 # Generate the data product
