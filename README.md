@@ -147,7 +147,15 @@ data_product = dp_builder.build(etl)
 print(data_product.to_df())
 ```
 
-For detailed code examples and a complete walkthrough, please refer to the [`quickstart.ipynb`](quickstart.ipynb) notebook.
+For detailed code examples and a complete walkthrough, please refer to our quickstart notebooks.
+
+## Community
+
+Join our community to ask questions, share your projects, and connect with other users.
+
+*   [Join our Slack](https://join.slack.com/share/enQtOTQ4NDc1MzYzOTg2MC02OTc2MTU1Njg3NDEyZjQwN2IzMzEwMjc5NmU4MjhiZmJlMDdiMzMzYjI5YWJiNDhkYWM4ODU0MGY4NTUyNjhi)
+*   [Join our Discord](https://discord.gg/4PNPsQVA)
+
 
 ## Contributing
 
