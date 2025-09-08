@@ -1,9 +1,9 @@
 import logging
 import os
-import pickle
 
 from datetime import datetime
 
+import joblib
 import numpy as np
 import pandas as pd
 
@@ -84,11 +84,11 @@ class L1Model:
         model_path = os.path.join(self.model_objects_directory, 'di_l1_classifier_xgb_' + model_version + '.pkl')
         encoder_path = os.path.join(self.model_objects_directory, 'di_l1_classifier_encoder_' + model_version + '.pkl')
         with open(model_path, 'rb') as f:
-            clf_model = pickle.load(f) 
+            clf_model = joblib.load(f) 
         log.info("[*] Loaded L1 classifier model")
         # Loading the encoder objects for model prediction
         with open(encoder_path, 'rb') as f:
-            encoder = pickle.load(f)
+            encoder = joblib.load(f)
         log.info("[*] Loaded L1 Encoder")
         
         # Model prediction on the test dataset and inverse transform to get the labels for the encoder

@@ -50,13 +50,13 @@ async def get_schema(table_names: list[str]) -> dict[str, str]:
     return schemas
 
 
-@semantic_layer_mcp.prompt(name="explore_data", title="Executor Agent Prompt")
-async def prompt() -> str:
-    print("Using prompt from semantic layer")
-    return Prompts.raw_executor_prompt(settings.SQL_DIALECT, settings.DOMAIN, settings.UNIVERSAL_INSTRUCTIONS)
+# @semantic_layer_mcp.prompt(name="explore_data", title="Executor Agent Prompt")
+# async def prompt() -> str:
+#     print("Using prompt from semantic layer")
+#     return Prompts.raw_executor_prompt(settings.SQL_DIALECT, settings.DOMAIN, settings.UNIVERSAL_INSTRUCTIONS)
 
 
-# @semantic_layer_mcp.tool(name="execute_query", description="Return the result of a query execution")
-# async def execute_query(sql_query: str) -> list[dict]: 
-#     data = await adapter_service.execute_query(sql_query)
-#     return data
+@semantic_layer_mcp.tool(name="execute_query", description="Return the result of a query execution")
+async def execute_query(sql_query: str) -> list[dict]: 
+    data = await adapter_service.execute_query(sql_query)
+    return data

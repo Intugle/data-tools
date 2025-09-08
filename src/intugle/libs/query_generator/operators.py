@@ -5,11 +5,11 @@ from .utils import get_formatted_dataset_field
 class Operators:
     @classmethod
     def _in(cls, field, value, **_):
-        return "{} IN {}".format(field, value)
+        return "{} IN {}".format(field, tuple(value))
 
     @classmethod
     def _not_in(cls, field, value, **_):
-        return "{} NOT IN {}".format(field, value)
+        return "{} NOT IN {}".format(field, tuple(value))
 
     @classmethod
     def _like(cls, field, value, **_):

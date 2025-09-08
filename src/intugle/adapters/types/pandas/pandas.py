@@ -12,13 +12,12 @@ from intugle.adapters.models import (
     ColumnProfile,
     ProfilingOutput,
 )
+from intugle.adapters.utils import convert_to_native
 from intugle.core.utilities.processing import string_standardization
-
-from .utils import convert_to_native
 
 
 class PandasAdapter(Adapter):
-    def profile(self, data: pd.DataFrame) -> ProfilingOutput:
+    def profile(self, data: pd.DataFrame, _: str) -> ProfilingOutput:
         """
         Generates a profile of a pandas DataFrame.
 
@@ -148,11 +147,15 @@ class PandasAdapter(Adapter):
             ts=time.time() - start_ts,
         )
     
-    def load():
+    def load(self, data: pd.DataFrame, table_name: str):
         ...
+        # duckdb.sql(f"CREATE TABLE {table_name} AS SELECT * FROM data")
     
     def execute():
         ...
+    
+    def to_df(self, data):
+        return data
 
 
 def can_handle_pandas(data: Any) -> bool:

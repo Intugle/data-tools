@@ -12,6 +12,7 @@ from intugle.adapters.models import (
     BusinessGlossaryOutput,
     ColumnGlossary,
     ColumnProfile,
+    DataSetData,
     DataTypeIdentificationL1Output,
     DataTypeIdentificationL2Input,
     DataTypeIdentificationL2Output,
@@ -26,9 +27,6 @@ from intugle.core.pipeline.datatype_identification.pipeline import DataTypeIdent
 from intugle.core.pipeline.key_identification.ki import KeyIdentificationLLM
 from intugle.models.resources.model import Column, ColumnProfilingMetrics
 from intugle.models.resources.source import Source, SourceTables
-
-# FIXME add type
-DataSetData = pd.DataFrame
 
 
 class DataSet:
@@ -49,11 +47,27 @@ class DataSet:
         # A dictionary to store the results of each analysis step
         self.results: Dict[str, Any] = {}
 
+        self.load()
+
+    @property
+    def sql_query(self):
+        if 'type' in self.data and self.data['type'] == 'query':
+            return self.data['path']
+        return None
+    
+    def load(self):
+        try:
+            self.adapter.load(self.data, self.name)
+            print(f"{self.name} loaded")
+        except Exception as e:
+            print("eee", e)
+            ...
+
     def profile_table(self) -> Self:
         """
         Profiles the table and stores the result in the 'results' dictionary.
         """
-        self.results["table_profile"] = self.adapter.profile(self.data)
+        self.results["table_profile"] = self.adapter.profile(self.data, self.name)
         return self
 
     def profile_columns(self) -> Self:
@@ -138,6 +152,8 @@ class DataSet:
 
         if key is not None:
             self.results["key"] = key
+        else:
+            self.results['key'] = None
         return self
 
     def profile(self) -> Self:
@@ -145,8 +161,6 @@ class DataSet:
         Profiles the dataset including table and columns and stores the result in the 'results' dictionary.
         This is a convenience method to run profiling on the raw dataframe.
         """
-        if self.data.empty:
-            raise ValueError("The raw dataframe is empty. Cannot perform profiling.")
         self.profile_table().profile_columns()
         return self
 
@@ -155,8 +169,6 @@ class DataSet:
         Identifies the data types for the dataset and stores the result in the 'results' dictionary.
         This is a convenience method to run data type identification on the raw dataframe.
         """
-        if self.data.empty:
-            raise ValueError("The raw dataframe is empty. Cannot perform data type identification.")
         self.identify_datatypes_l1().identify_datatypes_l2()
         return self
 
@@ -194,15 +206,11 @@ class DataSet:
         self.results["table_glossary"] = glossary_output.table_glossary
         return self
 
-
     def run(self, domain: str, save: bool = True) -> Self:
-        """Run all stages """
+        """Run all stages"""
 
-        self.profile()\
-            .identify_datatypes()\
-            .identify_keys()\
-            .generate_glossary(domain=domain)
-        
+        self.profile().identify_datatypes().identify_keys().generate_glossary(domain=domain)
+
         if save:
             self.save_yaml()
 
@@ -244,7 +252,9 @@ class DataSet:
             )
             columns.append(column)
 
-        table = SourceTables(name=self.name, description=table_description, columns=columns)
+        details = self.adapter.get_details(self.data)
+
+        table = SourceTables(name=self.name, description=table_description, columns=columns, details=details)
 
         source = Source(name="healthcare", description=table_description, schema="public", database="", table=table)
 
@@ -253,8 +263,12 @@ class DataSet:
         # Save the YAML representation of the sources
         with open(file_path, "w") as file:
             yaml.dump(sources, file, sort_keys=False, default_flow_style=False)
+    
+    def to_df(self):
+        return self.adapter.to_df(self.data, self.name)
 
-    def result_to_pandas(self):
+    @property
+    def profiling_df(self):
         column_profiles = self.results.get("column_profiles")
         if column_profiles is None:
             return "<p>No column profiles available.</p>"
@@ -262,5 +276,5 @@ class DataSet:
         return df
 
     def _repr_html_(self):
-        df = self.result_to_pandas().head()
+        df = self.profiling_df.head()
         return df._repr_html_()

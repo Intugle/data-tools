@@ -5,7 +5,6 @@ from typing import Any, Optional
 import duckdb
 import numpy as np
 import pandas as pd
-import pandas.api.types as ptypes
 
 from intugle.adapters.adapter import Adapter
 from intugle.adapters.factory import AdapterFactory
@@ -14,13 +13,26 @@ from intugle.adapters.models import (
     ProfilingOutput,
 )
 from intugle.adapters.types.duckdb.models import DuckdbConfig
-from intugle.adapters.types.pandas.utils import convert_to_native
+from intugle.adapters.utils import convert_to_native
 from intugle.common.exception import errors
 from intugle.core.utilities.processing import string_standardization
 
 
 class DuckdbAdapter(Adapter):
-    def profile(self, data: DuckdbConfig) -> ProfilingOutput:
+
+    def __init__(self):
+        duckdb.install_extension('httpfs')
+        duckdb.load_extension('httpfs')        
+
+    @staticmethod
+    def check_data(data: Any) -> DuckdbConfig:
+        try:
+            data = DuckdbConfig.model_validate(data)
+        except Exception:
+            raise TypeError("Input must be a duckdb config.")
+        return data
+
+    def profile(self, data: DuckdbConfig, table_name: str) -> ProfilingOutput:
         """
         Generates a profile of a file.
 
@@ -33,8 +45,7 @@ class DuckdbAdapter(Adapter):
             - "columns": List of column names.
             - "dtypes": A dictionary mapping column names to generalized data types.
         """
-        if not isinstance(data, DuckdbConfig):
-            raise TypeError("Input must be a duckdb config.")
+        data = self.check_data(data)
 
         def __format_dtype__(dtype: Any) -> str:
             """Maps dtype to a generalized type string."""
@@ -47,7 +58,6 @@ class DuckdbAdapter(Adapter):
             }
             return type_map.get(dtype, "string")
 
-        table_name = "__profile_table__"
         self.load(data, table_name)
 
         # Fetching total count of table
@@ -101,9 +111,8 @@ class DuckdbAdapter(Adapter):
             A dictionary containing the profile for the column, or None if the
             column does not exist.
         """
-        if not isinstance(data, DuckdbConfig):
-            raise TypeError("Input must be a duckdb config.")
-        
+        data = self.check_data(data)
+
         self.load(data, table_name)
 
         start_ts = time.time()
@@ -111,10 +120,10 @@ class DuckdbAdapter(Adapter):
         # --- Calculations --- #
         query = f"""
         SELECT 
-            COUNT(DISTINCT {column_name}) AS distinct_count,
-            SUM(CASE WHEN {column_name} IS NULL THEN 1 ELSE 0 END) AS null_count
+            COUNT(DISTINCT "{column_name}") AS distinct_count,
+            SUM(CASE WHEN "{column_name}" IS NULL THEN 1 ELSE 0 END) AS null_count
         FROM  
-            {table_name}
+            "{table_name}"
         """
         distinct_null_data = duckdb.execute(query).fetchall()
 
@@ -125,11 +134,11 @@ class DuckdbAdapter(Adapter):
         # 1. Get a sample of distinct values.
         sample_query = f"""
         SELECT 
-            DISTINCT CAST( {column_name} AS VARCHAR) AS sample_values 
+            DISTINCT CAST( "{column_name}" AS VARCHAR) AS sample_values 
         FROM 
-            {table_name} 
+            "{table_name}"
         WHERE 
-            {column_name} IS NOT NULL LIMIT {dtype_sample_limit}
+            "{column_name}" IS NOT NULL LIMIT {dtype_sample_limit}
         """
         data = duckdb.execute(sample_query).fetchall()
         distinct_values = [d[0] for d in data]
@@ -193,18 +202,54 @@ class DuckdbAdapter(Adapter):
 
         return f"{ld_func}('{data.path}')"
 
-    def load(self, data: DuckdbConfig, table_name: str):
-        ld_func = self._get_load_func(data)
+    def load_view(self, data: DuckdbConfig, table_name: str):
+        query = f"""CREATE OR REPLACE VIEW {table_name} AS {data.path}"""
+        duckdb.execute(query)
 
+    def load_file(self, data: DuckdbConfig, table_name: str):
+        ld_func = self._get_load_func(data)
         query = f"""CREATE TABLE IF NOT EXISTS {table_name} AS SELECT * FROM {ld_func};"""
 
         duckdb.execute(query)
 
-    def execute(): ...
+    def load(self, data: DuckdbConfig, table_name: str):
+        data = self.check_data(data)
+        if data.type == "query":
+            self.load_view(data, table_name)
+            return
+        self.load_file(data, table_name)
+    
+    def execute_df(self, query):
+        df = duckdb.sql(query).to_df()
+        return df
+
+    def to_df(self, _: DuckdbConfig, table_name: str):
+        query = f"SELECT * from {table_name}"
+        df = self.execute_df(query)
+        return df
+
+    def execute(self, query):
+        df = self.execute_df(query)
+        data = df.to_dict(orient="records")
+        return data
+
+    async def aexecute(self, query):
+        result = duckdb.sql(query).fetchnumpy()
+        df = pd.DataFrame(result)
+        data = df.to_dict(orient="records")
+        return data
+
+    def get_details(self, data: DuckdbConfig):
+        data = self.check_data(data)
+        return data.model_dump()
 
 
 def can_handle_pandas(df: Any) -> bool:
-    return isinstance(df, DuckdbConfig)
+    try:
+        df = DuckdbAdapter.check_data(df)
+    except Exception:
+        return False
+    return True
 
 
 def register(factory: AdapterFactory):

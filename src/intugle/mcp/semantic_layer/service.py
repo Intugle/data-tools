@@ -1,15 +1,15 @@
 from intugle.common.exception import errors
+from intugle.mcp.manifest import manifest_loader
 
-# from intugle.mcp.manifest import manifest_loader
-from intugle.core import settings
-from intugle.parser.manifest import ManifestLoader
+# from intugle.core import settings
+# from intugle.parser.manifest import ManifestLoader
 from intugle.parser.table_schema import TableSchema
 
 
 class SemanticLayerService:
     def __init__(self):
-        manifest_loader = ManifestLoader(settings.PROJECT_BASE)
-        manifest_loader.load()
+        # manifest_loader = ManifestLoader(settings.PROJECT_BASE)
+        # manifest_loader.load()
         self.manifest = manifest_loader.manifest
 
         self.table_schema = TableSchema(self.manifest)

@@ -30,7 +30,7 @@ app = Starlette(
     routes=[
         # Using settings-based configuration
         Mount("/semantic_layer", app=semantic_layer_mcp.streamable_http_app()),
-        # Mount("/adapter", app=adapter_mcp.streamable_http_app()),
+        Mount("/adapter", app=adapter_mcp.streamable_http_app()),
     ],
     lifespan=lifespan
 )

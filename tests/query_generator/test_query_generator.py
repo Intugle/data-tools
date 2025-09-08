@@ -8,9 +8,7 @@ from intugle.libs.smart_query_generator.models.models import (
     SelectionModel,
     SortByModel,
 )
-from intugle.sql_generator import SqlGenerator
-
-# PROJECT_BASE = "/home/juhel-phanju/Documents/backup/MIGRATION/codes/poc/dbt/ecom/ecom/models"
+from intugle.dp_builder import DataProductBuilder
 
 
 def get_test_data():
@@ -52,7 +50,7 @@ def get_test_data():
     get_test_data(),
 )
 def test_query_generator(etl, query):
-    sql_generator = SqlGenerator(project_base=settings.PROJECT_BASE)
+    sql_generator = DataProductBuilder(project_base=settings.PROJECT_BASE)
 
     out_query = sql_generator.generate_query(etl)
     print(out_query)
