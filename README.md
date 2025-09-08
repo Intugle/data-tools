@@ -121,18 +121,6 @@ print(data_product.to_df())
 
 For detailed code examples and a complete walkthrough, please refer to the [`quickstart.ipynb`](quickstart.ipynb) notebook.
 
-### MCP Server
-
-This tool also includes an MCP server that exposes your semantic layer as a set of tools that can be used by an LLM client. This enables you to interact with your semantic layer using natural language to generate SQL queries, discover data, and more.
-
-To start the MCP server, run the following command:
-
-```bash
-intugle-mcp
-```
-
-You can then connect to the server from any MCP client, such as Claude Desktop or Gemini CLI, at `http://localhost:8000/semantic_layer/mcp`.
-
 ## Contributing
 
 Contributions are welcome! Please see the [`CONTRIBUTING.md`](CONTRIBUTING.md) file for guidelines.

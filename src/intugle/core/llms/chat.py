@@ -3,7 +3,11 @@ import logging
 from typing import TYPE_CHECKING
 
 from langchain.chat_models import init_chat_model
-from langchain.output_parsers import ResponseSchema, StructuredOutputParser
+from langchain.output_parsers import (
+    ResponseSchema,
+    RetryWithErrorOutputParser,
+    StructuredOutputParser,
+)
 from langchain.prompts import BaseChatPromptTemplate, ChatPromptTemplate
 from langchain_core.rate_limiters import InMemoryRateLimiter
 
@@ -44,7 +48,9 @@ class ChatModelLLM:
         self.prompt_template: BaseChatPromptTemplate = prompt_template  # prompt template
 
         self.output_parser = (
-            self.__output_parser_builder__(response_schemas=response_schemas) if response_schemas is not None else None
+            self.__output_parser_builder__(response_schemas=response_schemas)
+            if response_schemas is not None
+            else None
         )  # the built output parser
 
         self.format_instructions = (
@@ -62,8 +68,11 @@ class ChatModelLLM:
         """
         for building the corresponding output paraser from the given ResponseSchema
         """
-        output_parser = self.parser.from_response_schemas(response_schemas=response_schemas)
-        return output_parser
+        parser = self.parser.from_response_schemas(response_schemas=response_schemas)
+        retry_parser = RetryWithErrorOutputParser.from_llm(
+            parser=parser, llm=self.model, max_retries=self.MAX_RETRIES
+        )
+        return retry_parser
 
     @classmethod
     def _get_rate_limiter(cls):
@@ -85,7 +94,10 @@ class ChatModelLLM:
 
         sucessfull_parsing = False
 
-        messages = self.llm_prompt.format(format_instructions=self.format_instructions, **kwargs)
+        prompt_value = self.llm_prompt.format_prompt(
+            format_instructions=self.format_instructions, **kwargs
+        )
+        messages = prompt_value.to_messages()
         _message = messages
         response = ""
 
@@ -112,7 +124,7 @@ class ChatModelLLM:
             if self.output_parser is not None:
                 # try to parse the content as dict
                 raw_response = response
-                response = self.output_parser.parse(response)
+                response = self.output_parser.parse_with_prompt(response, prompt_value)
                 sucessfull_parsing = True
                 return response, sucessfull_parsing, raw_response
         except Exception as ex:

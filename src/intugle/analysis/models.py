@@ -152,6 +152,8 @@ class DataSet:
 
         if key is not None:
             self.results["key"] = key
+        else:
+            self.results['key'] = None
         return self
 
     def profile(self) -> Self:

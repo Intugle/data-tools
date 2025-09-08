@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "intugle"
-version = "0.1.2dev2"
+version = "0.1.2dev3"
 authors = [
     { name="Intugle", email="hello@intugle.ai" },
 ]
