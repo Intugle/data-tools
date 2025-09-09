@@ -11,6 +11,7 @@ from qdrant_client import models
 
 from intugle.core.llms.embeddings import Embeddings, EmbeddingsType
 from intugle.core.semantic_search.utils import batched
+from intugle.core.settings import settings
 from intugle.core.utilities.processing import string_standardization
 from intugle.core.vector_store import VectorStoreService
 from intugle.core.vector_store.qdrant import QdrantVectorConfiguration
@@ -26,7 +27,12 @@ class SemanticSearchCRUD:
 
     @property
     def vector_store(self):
-        return VectorStoreService(collection_name=self.collection_name, collection_configurations=self.configuration)
+        client_config = {"url": settings.QDRANT_URL, "api_key": settings.QDRANT_API_KEY}
+        return VectorStoreService(
+            collection_name=self.collection_name,
+            collection_configurations=self.configuration,
+            client_config=client_config,
+        )
 
     @property
     def configuration(self):
@@ -193,13 +199,14 @@ class SemanticSearchCRUD:
             )
         return points
 
-    async def initialize(self, column_details: list[dict]):
+    async def clean_collection(self):
         async with self.vector_store as vdb:
-            all_points = await vdb.get(includes=["metadata"])
+            await vdb.delete_collection()
+            await vdb.create_collection()
 
-            if all_points and len(all_points) > 0:
-                column_ids = tuple(set([point.payload.get("column_id")] for point in all_points))
-
+    async def initialize(self, column_details: list[dict]):
+        await self.clean_collection()
+        async with self.vector_store as vdb:
             column_details = pd.DataFrame(column_details)
 
             for batch in batched(column_details, self.batch_size):

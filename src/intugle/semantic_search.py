@@ -1,3 +1,5 @@
+import pandas as pd
+
 from intugle.core import settings
 from intugle.core.llms.embeddings import Embeddings
 from intugle.core.semantic_search.crud import SemanticSearchCRUD
@@ -29,6 +31,10 @@ class SemanticSearch:
                     "column_name": column.name,
                     "column_glossary": column.description,
                     "column_tags": column.tags,
+                    "profiling_metrics": column.profiling_metrics.model_dump(),
+                    "category": column.category,
+                    "table_name": table.name,
+                    "table_glossary": table.description,
                 }
                 column_details.append(column_detail)
 
@@ -39,20 +45,36 @@ class SemanticSearch:
                     "column_name": column.name,
                     "column_glossary": column.description,
                     "column_tags": column.tags,
+                    "profiling_metrics": column.profiling_metrics.model_dump(),
+                    "category": column.category,
+                    "table_name": table.name,
+                    "table_glossary": table.description,
                 }
                 column_details.append(column_detail)
 
         return column_details
 
-    async def initiaize(self):
-        embeddings = Embeddings("azure_openai:ada")
+    async def initialize(self):
+        embeddings = Embeddings(settings.EMBEDDING_MODEL_NAME, settings.TOKENIZER_MODEL_NAME)
         semantic_search_crud = SemanticSearchCRUD(self.collection_name, [embeddings])
         column_details = self.get_column_details()
+        column_details = pd.DataFrame.from_records(column_details)
         await semantic_search_crud.initialize(column_details)
 
-    async def search(self, query):
-        embeddings = Embeddings("azure_openai:ada")
+    async def _search(self, query):
+        embeddings = Embeddings(settings.EMBEDDING_MODEL_NAME, settings.TOKENIZER_MODEL_NAME)
         semantic_search = HybridDenseLateSearch(self.collection_name, embeddings)
 
         data = await semantic_search.search(query)
         return data
+
+    async def search(self, query):
+        search_results = await self._search(query)
+        if search_results.shape[0] == 0:
+            return search_results
+        column_details = self.get_column_details()
+        column_details = pd.DataFrame.from_records(column_details)
+        merged_df = pd.merge(
+            search_results, column_details, left_on="column_id", right_on="id", how="left"
+        ).drop(columns=["id"])
+        return merged_df

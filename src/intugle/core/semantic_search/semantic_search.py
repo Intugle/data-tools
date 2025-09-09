@@ -12,6 +12,7 @@ from qdrant_client import models
 from intugle.core.llms.embeddings import Embeddings, EmbeddingsType
 from intugle.core.semantic_search.models import RelevancyCategory
 from intugle.core.semantic_search.utils import relevancy_adder
+from intugle.core.settings import settings
 from intugle.core.vector_store import VectorStoreService
 from intugle.core.vector_store.qdrant import VectorSearchKwargs
 
@@ -47,7 +48,10 @@ class HybridDenseLateSearch:
 
     @property
     def vector_store(self):
-        return VectorStoreService(collection_name=self.collection_name, collection_configurations=None)
+        client_config = {"url": settings.QDRANT_URL, "api_key": settings.QDRANT_API_KEY}
+        return VectorStoreService(
+            collection_name=self.collection_name, collection_configurations=None, client_config=client_config
+        )
 
     async def __vector_search__(
         self,

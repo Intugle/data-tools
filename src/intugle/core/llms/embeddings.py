@@ -23,10 +23,10 @@ class Embeddings:
     def __init__(
         self,
         model_name: str,
+        tokenizer_model: str,
         config: dict = {},
         executor: Optional[ThreadPoolExecutor] = None,
         max_workers: int = 30,
-        tokenizer_model: str = "cl100k_base",
         embeddings_size: Optional[int] = None,
     ):
         self.model_name = model_name
@@ -140,27 +140,3 @@ class Embeddings:
             print("Error: ", e)
             import traceback
             print(traceback.format_exc())
-
-    @classmethod
-    def build(
-        cls,
-        model_name: str,
-        config: dict = {},
-        *args,
-        **kwargs,
-    ):
-        """
-        Args:
-            model_name: type of model either azure, openai
-            config: configuration of embeddings
-
-        Returns:
-            ChatModelLLM (obj): instance of builded ChatModelLLM
-        """
-
-        return cls(
-            model_name=model_name,
-            config={**config},
-            *args,
-            **kwargs,
-        )
