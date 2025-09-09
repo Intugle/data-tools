@@ -34,7 +34,7 @@ Intugle’s GenAI-powered open-source Python library builds an intelligent seman
 
 For Windows and Linux, you can follow these steps. For macOS, please see the additional steps in the macOS section below.
 
-Before installing, it is recommended to create a virtual environment:
+Before installing, it is recommended to create a virtual environment: 
 
 ```bash
 python -m venv .venv
