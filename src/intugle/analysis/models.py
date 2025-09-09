@@ -226,6 +226,7 @@ class DataSet:
         file_path = os.path.join(settings.PROJECT_BASE, file_path)
 
         column_profiles = self.results.get("column_profiles")
+        key = self.results.get("key")
 
         table_description = self.results.get("table_glossary")
         table_tags = self.results.get("business_glossary_and_tags")
@@ -256,7 +257,7 @@ class DataSet:
 
         details = self.adapter.get_details(self.data)
 
-        table = SourceTables(name=self.name, description=table_description, columns=columns, details=details)
+        table = SourceTables(name=self.name, description=table_description, columns=columns, details=details, key=key)
 
         source = Source(name="healthcare", description=table_description, schema="public", database="", table=table)
 
@@ -314,8 +315,7 @@ class DataSet:
             ],
         )
 
-        # Key identification is not stored in the YAML, so it will be None
-        self.results["key"] = None
+        self.results["key"] = table.get('key')
     
     def to_df(self):
         return self.adapter.to_df(self.data, self.name)
