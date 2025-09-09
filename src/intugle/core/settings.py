@@ -101,6 +101,9 @@ class Settings(BaseSettings):
     POSTGRES_PORT: int = 5432
     POSTGRES_SCHEMA: Optional[str] = "public"
 
+    # Vector
+    VECTOR_COLLECTION_NAME: str = os.getcwd().split('/')[-1]
+
 
 @lru_cache
 def get_settings() -> Settings:

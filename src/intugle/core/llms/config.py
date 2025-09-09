@@ -1,5 +1,4 @@
 def get_llm_config(config: dict, type: str = "azure"):
-
     if type.__eq__("azure"):
         deployment = {
             # "model":config["API_INFO"]["DEPLOYMENT_NAME"],
@@ -17,5 +16,3 @@ def get_llm_config(config: dict, type: str = "azure"):
     else:
         raise ValueError("[!] Invalid model type")
     return deployment
-
-        
