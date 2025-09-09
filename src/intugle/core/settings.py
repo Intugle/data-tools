@@ -57,7 +57,7 @@ class Settings(BaseSettings):
     L2_SAMPLE_LIMIT: int = 10
 
     # LLM CONFIGS
-    LLM_PROVIDER: str
+    LLM_PROVIDER: Optional[str] = None
     LLM_SAMPLE_LIMIT: int = 15
     STRATA_SAMPLE_LIMIT: int = 4
     MAX_RETRIES: int = 5
