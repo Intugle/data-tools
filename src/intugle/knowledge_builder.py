@@ -1,3 +1,5 @@
+import logging
+
 from typing import TYPE_CHECKING, Any, Dict, List
 
 from intugle.analysis.models import DataSet
@@ -5,6 +7,8 @@ from intugle.link_predictor.predictor import LinkPredictor
 
 if TYPE_CHECKING:
     from intugle.link_predictor.models import PredictedLink
+
+log = logging.getLogger(__name__)
 
 
 class KnowledgeBuilder:
@@ -35,10 +39,18 @@ class KnowledgeBuilder:
                 raise ValueError("DataSet objects provided in a list must have a 'name' attribute.")
             self.datasets[dataset.name] = dataset
 
-    def build(self):
+    def build(self, force_recreate: bool = False):
+        import os
+
+        from intugle.core import settings
 
         # run analysis on all datasets
         for dataset in self.datasets.values():
+            file_path = os.path.join(settings.PROJECT_BASE, f"{dataset.name}.yml")
+            if os.path.exists(file_path) and not force_recreate:
+                log.info(f"Dataset {dataset.name} already processed. Loading from file.")
+                dataset.load_from_yaml(file_path)
+                continue
             dataset.run(domain=self.domain, save=True)
 
         # Initialize the predictor
