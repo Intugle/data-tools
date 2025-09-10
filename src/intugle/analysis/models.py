@@ -266,6 +266,9 @@ class DataSet:
         # Save the YAML representation of the sources
         with open(file_path, "w") as file:
             yaml.dump(sources, file, sort_keys=False, default_flow_style=False)
+    
+    def to_df(self):
+        return self.adapter.to_df(self.data, self.name)
 
     def load_from_yaml(self, file_path: str) -> None:
         with open(file_path, "r") as file:

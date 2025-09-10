@@ -1,23 +1,61 @@
 import logging
 
-from typing import TYPE_CHECKING, Any, Dict, List
+from intugle.analysis.models import DataSet
+from intugle.link_predictor.predictor import LinkPredictor
+import asyncio
+import threading
+
+from typing import TYPE_CHECKING, Any, Awaitable, Dict, List, TypeVar
 
 from intugle.analysis.models import DataSet
 from intugle.link_predictor.predictor import LinkPredictor
+from intugle.semantic_search import SemanticSearch
 
 if TYPE_CHECKING:
     from intugle.link_predictor.models import PredictedLink
 
 log = logging.getLogger(__name__)
 
+T = TypeVar("T")
+
+
+def _run_async_in_sync(coro: Awaitable[T]) -> T:
+    """
+    Runs an async coroutine in a sync context, handling cases where an event loop is already running.
+    """
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        return asyncio.run(coro)
+
+    if loop.is_running():
+        result = None
+        exc = None
+
+        def thread_target():
+            nonlocal result, exc
+            try:
+                result = asyncio.run(coro)
+            except Exception as e:
+                exc = e
+
+        thread = threading.Thread(target=thread_target)
+        thread.start()
+        thread.join()
+
+        if exc:
+            raise exc
+        return result
+    else:
+        return loop.run_until_complete(coro)
+
 
 class KnowledgeBuilder:
-
     def __init__(self, data_input: Dict[str, Any] | List[DataSet], domain: str = ""):
-
         self.datasets: Dict[str, DataSet] = {}
         self.links: list[PredictedLink] = []
         self.domain = domain
+        self._semantic_search_initialized = False
 
         if isinstance(data_input, dict):
             self._initialize_from_dict(data_input)
@@ -59,8 +97,39 @@ class KnowledgeBuilder:
         # Run the prediction
         self.link_predictor.predict(save=True)
         self.links: list[PredictedLink] = self.link_predictor.links
+
+        # Initialize semantic search
+        try:
+            self.initialize_semantic_search()
+        except Exception as e:
+            log.warning(f"Semantic search initialization failed during build: {e}")
+
         return self
-    
+
+    def initialize_semantic_search(self):
+        """Initialize the semantic search engine."""
+        try:
+            log.info("Initializing semantic search...")
+            search_client = SemanticSearch()
+            _run_async_in_sync(search_client.initialize())
+            self._semantic_search_initialized = True
+            log.info("Semantic search initialized.")
+        except Exception as e:
+            log.warning(f"Could not initialize semantic search: {e}")
+            raise e
+
     def visualize(self):
         return self.link_predictor.show_graph()
+
+    def search(self, query: str):
+        """Perform a semantic search on the knowledge base."""
+        if not self._semantic_search_initialized:
+            self.initialize_semantic_search()
+
+        try:
+            search_client = SemanticSearch()
+            return _run_async_in_sync(search_client.search(query))
+        except Exception as e:
+            log.error(f"Could not perform semantic search: {e}")
+            raise e
         
