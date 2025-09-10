@@ -79,7 +79,12 @@ export OPENAI_API_KEY="your-openai-api-key"
 
 ## Quickstart
 
-For a detailed, hands-on introduction to the project, please see the [`quickstart.ipynb`](quickstart.ipynb) notebook. It will walk you through the entire process of building a semantic layer, including:
+For a detailed, hands-on introduction to the project, please see our quickstart notebooks:
+
+*   [`quickstart_healthcare.ipynb`](notebooks/quickstart_healthcare.ipynb): This notebook will walk you through the entire process of building a semantic layer using a healthcare dataset.
+*   [`quickstart_tech_company.ipynb`](notebooks/quickstart_tech_company.ipynb): This notebook demonstrates how to use the library with a technology manufacturing company dataset
+
+These datasets will take you through the following steps:
 
 *   **Building a Knowledge Base:** Use the `KnowledgeBuilder` to automatically profile your data, generate a business glossary, and predict links between tables.
 *   **Accessing Enriched Metadata:** Learn how to access the profiling results and business glossary for each dataset.
@@ -147,7 +152,7 @@ data_product = dp_builder.build(etl)
 print(data_product.to_df())
 ```
 
-For detailed code examples and a complete walkthrough, please see the [`quickstart.ipynb`](quickstart.ipynb) notebook.
+For detailed code examples and a complete walkthrough, please see the quickstart notebooks under the notebooks directory.
 
 ### Semantic Search
 
@@ -207,12 +212,12 @@ datasets = {
 kb = KnowledgeBuilder(datasets, domain="Healthcare")
 kb.build()
 # Perform a semantic search
-search_results = kb.search("patient allergies")
+search_results = kb.search("reason for hospital visit")
 
 # View the search results
 print(search_results)
 ```
-For detailed code examples and a complete walkthrough, please see the [`quickstart.ipynb`](quickstart.ipynb) notebook.
+For detailed code examples and a complete walkthrough, please see the quickstart notebooks under the notebooks directory.
 
 ## Community
 

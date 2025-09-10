@@ -4,6 +4,7 @@ from intugle.core import settings
 from intugle.core.llms.embeddings import Embeddings
 from intugle.core.semantic_search.crud import SemanticSearchCRUD
 from intugle.core.semantic_search.semantic_search import HybridDenseLateSearch
+from intugle.core.utilities.processing import string_standardization
 from intugle.parser.manifest import ManifestLoader
 
 
@@ -85,7 +86,7 @@ class SemanticSearch:
         embeddings = Embeddings(settings.EMBEDDING_MODEL_NAME, settings.TOKENIZER_MODEL_NAME)
         semantic_search = HybridDenseLateSearch(self.collection_name, embeddings)
 
-        data = await semantic_search.search(query)
+        data = await semantic_search.search(string_standardization(query))
         return data
 
     async def search(self, query):
