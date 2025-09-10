@@ -38,16 +38,19 @@ def test_semantic_search_search():
         "column_name",
         "column_glossary",
         "column_tags",
-        "profiling_metrics",
         "category",
         "table_name",
         "table_glossary",
+        "uniqueness",
+        "completeness",
+        "count",
+        "null_count",
+        "distinct_count"
     ]
     assert all(col in data.columns for col in expected_columns)
 
     # Assert that the scores are sorted in descending order
     data.sort_values(by="score", ascending=False, inplace=True)
-    breakpoint()
     assert data["score"].is_monotonic_decreasing
     # Assert that the top result is the expected one
     assert data.iloc[0]["column_id"] == "allergies.reaction2"

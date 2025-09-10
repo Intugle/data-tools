@@ -26,29 +26,49 @@ class SemanticSearch:
         for source in sources.values():
             table = source.table
             for column in table.columns:
+                metrics = column.profiling_metrics.model_dump()
+                count = metrics.get("count", 0)
+                distinct_count = metrics.get("distinct_count", 0)
+                null_count = metrics.get("null_count", 0)
+
+                uniqueness = distinct_count / count if count > 0 else 0
+                completeness = (count - null_count) / count if count > 0 else 0
+
                 column_detail = {
                     "id": f"{table.name}.{column.name}",
                     "column_name": column.name,
                     "column_glossary": column.description,
                     "column_tags": column.tags,
-                    "profiling_metrics": column.profiling_metrics.model_dump(),
                     "category": column.category,
                     "table_name": table.name,
                     "table_glossary": table.description,
+                    "uniqueness": uniqueness,
+                    "completeness": completeness,
+                    **metrics,
                 }
                 column_details.append(column_detail)
 
         for model in models.values():
             for column in model.columns:
+                metrics = column.profiling_metrics.model_dump()
+                count = metrics.get("count", 0)
+                distinct_count = metrics.get("distinct_count", 0)
+                null_count = metrics.get("null_count", 0)
+
+                uniqueness = distinct_count / count if count > 0 else 0
+                completeness = (count - null_count) / count if count > 0 else 0
+
                 column_detail = {
                     "id": f"{table.name}.{column.name}",
                     "column_name": column.name,
                     "column_glossary": column.description,
                     "column_tags": column.tags,
-                    "profiling_metrics": column.profiling_metrics.model_dump(),
                     "category": column.category,
                     "table_name": table.name,
                     "table_glossary": table.description,
+                    "uniqueness": uniqueness,
+                    "completeness": completeness,
+                    **metrics,
                 }
                 column_details.append(column_detail)
 
@@ -72,9 +92,11 @@ class SemanticSearch:
         search_results = await self._search(query)
         if search_results.shape[0] == 0:
             return search_results
+        search_results.sort_values(by="score", ascending=False, inplace=True)
+
         column_details = self.get_column_details()
-        column_details = pd.DataFrame.from_records(column_details)
+        column_details_df = pd.DataFrame.from_records(column_details)
         merged_df = pd.merge(
-            search_results, column_details, left_on="column_id", right_on="id", how="left"
+            search_results, column_details_df, left_on="column_id", right_on="id", how="left"
         ).drop(columns=["id"])
         return merged_df
