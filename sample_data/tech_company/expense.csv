@@ -1,0 +1,1001 @@
+Expense ID,Expense Type,Expense Date,Cost / Expense ($),Contact ID,Contact Name,Customer Name,Department,Payment Method,Invoice Number,Approval Status
+EXP-50001,Office Supplies,2025-08-31,19265,CUST-10263,Tiffany Stone,Lopez-Duran,Operations,PayPal,INV-90001,Rejected
+EXP-50002,Software Subscription,2025-05-10,19650,CUST-10429,Joseph Wilson,"Howe, Drake and Robinson",Sales,PayPal,INV-90002,Rejected
+EXP-50003,Software Subscription,2025-03-06,11600,CUST-10545,John Anderson,Rodriguez-Stewart,Finance,Credit Card,INV-90003,Approved
+EXP-50004,Event Sponsorship,2025-04-18,13485,CUST-10918,Lori Johnson,Miller Inc,Operations,PayPal,INV-90004,Approved
+EXP-50005,Event Sponsorship,2025-08-23,6678,CUST-10176,Amber Winters,Lee PLC,Marketing,Cheque,INV-90005,Approved
+EXP-50006,Event Sponsorship,2025-07-08,5725,CUST-10923,Phillip Mitchell,"Jackson, Johns and Duarte",Finance,Bank Transfer,INV-90006,Approved
+EXP-50007,Software Subscription,2025-04-20,15921,CUST-10560,Christina Harper,Dorsey-Edwards,Operations,Bank Transfer,INV-90007,Pending
+EXP-50008,Event Sponsorship,2025-08-17,1743,CUST-10029,Jill Phillips,"Lynch, Lynch and Mitchell",IT,Direct Debit,INV-90008,Pending
+EXP-50009,Software Subscription,2025-04-05,1410,CUST-10805,Charles Robinson,Vaughan PLC,Operations,PayPal,INV-90009,Approved
+EXP-50010,Office Supplies,2025-01-11,8168,CUST-10494,Cole Roberts,Stanley Inc,Operations,Bank Transfer,INV-90010,Approved
+EXP-50011,Marketing,2025-06-19,5515,CUST-10636,Ashley Bennett,"Holmes, Haley and Calhoun",IT,PayPal,INV-90011,Approved
+EXP-50012,Event Sponsorship,2025-05-21,9719,CUST-10901,Eric Sanders,Castro LLC,Sales,Bank Transfer,INV-90012,Approved
+EXP-50013,Office Supplies,2025-06-03,3827,CUST-10857,Casey Morris,Singleton-Joseph,Finance,PayPal,INV-90013,Pending
+EXP-50014,Software Subscription,2025-03-12,4833,CUST-10756,Carla Thomas,Ibarra Ltd,IT,Cheque,INV-90014,Approved
+EXP-50015,Software Subscription,2025-02-24,5565,CUST-10360,Ethan Nelson,"Reid, Hamilton and Evans",Marketing,Direct Debit,INV-90015,Approved
+EXP-50016,Event Sponsorship,2025-03-25,2109,CUST-10031,John Parker,Mitchell-Parker,Marketing,Credit Card,INV-90016,Pending
+EXP-50017,Marketing,2025-03-10,13600,CUST-10950,Ryan Ward,Salas-Wilkins,Sales,Credit Card,INV-90017,Approved
+EXP-50018,Travel,2025-04-07,11007,CUST-10373,Roger Marshall,Reynolds-Woods,Marketing,PayPal,INV-90018,Approved
+EXP-50019,Travel,2025-05-27,11168,CUST-10215,Taylor Clark,"Fox, Johns and Deleon",Finance,PayPal,INV-90019,Rejected
+EXP-50020,Event Sponsorship,2025-06-20,8610,CUST-10728,Courtney Castillo,Booker-Herrera,Operations,PayPal,INV-90020,Pending
+EXP-50021,Travel,2025-06-12,6203,CUST-10470,Philip Walker,"Baxter, Thomas and Cordova",IT,PayPal,INV-90021,Rejected
+EXP-50022,Office Supplies,2025-01-15,12766,CUST-10324,Jose Leon,Tate-Lindsey,Operations,Cheque,INV-90022,Approved
+EXP-50023,Travel,2025-03-12,4851,CUST-10097,Kristina Carter,"Pruitt, Johnson and Hoffman",Sales,Cheque,INV-90023,Approved
+EXP-50024,Office Supplies,2025-04-17,6152,CUST-10305,Diane Baxter DDS,Adkins-Frazier,Sales,Direct Debit,INV-90024,Approved
+EXP-50025,Software Subscription,2025-06-14,13909,CUST-10040,Robert Taylor,Davis-Lopez,Marketing,PayPal,INV-90025,Rejected
+EXP-50026,Event Sponsorship,2025-07-16,13515,CUST-10533,Mia Lopez,Houston-Barnes,Operations,Direct Debit,INV-90026,Pending
+EXP-50027,Office Supplies,2025-03-14,12336,CUST-10954,Roberto Marshall,Patton and Sons,Operations,Credit Card,INV-90027,Pending
+EXP-50028,Travel,2025-04-06,1382,CUST-10962,Victoria Hall,Hernandez-Tucker,Marketing,Bank Transfer,INV-90028,Approved
+EXP-50029,Event Sponsorship,2025-07-11,11399,CUST-10415,Robert Little,Aguilar-Crawford,Sales,Direct Debit,INV-90029,Rejected
+EXP-50030,Event Sponsorship,2025-07-31,16229,CUST-10963,Stephen Turner,Moore-Evans,Marketing,Direct Debit,INV-90030,Approved
+EXP-50031,Marketing,2025-03-22,19285,CUST-10278,Mrs. Lisa Kelly,Browning-Brooks,Marketing,Credit Card,INV-90031,Approved
+EXP-50032,Office Supplies,2025-08-12,18505,CUST-10813,Tracy Cox,"Lewis, Johnson and Gilmore",Marketing,Cheque,INV-90032,Approved
+EXP-50033,Office Supplies,2025-03-31,15909,CUST-10206,Kim Davis,Moore Group,Marketing,Direct Debit,INV-90033,Approved
+EXP-50034,Software Subscription,2025-07-09,8620,CUST-10268,Christopher Marshall,"Mueller, Swanson and Rogers",Operations,Direct Debit,INV-90034,Approved
+EXP-50035,Travel,2025-01-21,7748,CUST-10128,Julia Brown,Matthews-Harris,IT,Cheque,INV-90035,Rejected
+EXP-50036,Software Subscription,2025-01-03,6847,CUST-10789,Frank Alexander,Wilson-Long,Finance,PayPal,INV-90036,Rejected
+EXP-50037,Event Sponsorship,2025-06-10,3504,CUST-10534,Drew Schultz,Taylor Inc,IT,Credit Card,INV-90037,Pending
+EXP-50038,Marketing,2025-08-02,13623,CUST-10633,Jessica Garcia,Hale LLC,Operations,Cheque,INV-90038,Pending
+EXP-50039,Event Sponsorship,2025-07-24,15096,CUST-10820,Margaret Hardy,"Cohen, Williams and Mullins",Sales,Cheque,INV-90039,Rejected
+EXP-50040,Travel,2025-07-26,19935,CUST-10460,Curtis Stuart,Trujillo-Walker,Marketing,Direct Debit,INV-90040,Approved
+EXP-50041,Office Supplies,2025-06-23,3247,CUST-10946,Brian Burch,Ibarra Ltd,Finance,PayPal,INV-90041,Approved
+EXP-50042,Travel,2025-07-17,18238,CUST-10817,Faith Harris,Cox LLC,Finance,Cheque,INV-90042,Approved
+EXP-50043,Marketing,2025-08-12,8237,CUST-10771,Ashley Thompson,"Bowman, Davis and Cox",Operations,Bank Transfer,INV-90043,Pending
+EXP-50044,Marketing,2025-03-21,392,CUST-10975,Melissa Williams,"Valdez, Pittman and Gordon",IT,Bank Transfer,INV-90044,Approved
+EXP-50045,Event Sponsorship,2025-02-05,579,CUST-10304,Megan Bush,Fleming-Lee,Operations,Cheque,INV-90045,Pending
+EXP-50046,Travel,2025-02-14,16768,CUST-10047,Melissa Kline,"Parks, Clark and Schultz",Operations,Cheque,INV-90046,Pending
+EXP-50047,Office Supplies,2025-06-24,8506,CUST-10801,Jason Carlson,Miller PLC,Operations,PayPal,INV-90047,Approved
+EXP-50048,Marketing,2025-04-05,12855,CUST-10230,Jared Strickland,Roberts-Chase,Sales,Direct Debit,INV-90048,Approved
+EXP-50049,Office Supplies,2025-04-15,4701,CUST-10528,James Delacruz,Johnson and Sons,IT,Cheque,INV-90049,Approved
+EXP-50050,Marketing,2025-04-05,17322,CUST-10739,Joseph Dickerson,Flores-Townsend,Marketing,Direct Debit,INV-90050,Approved
+EXP-50051,Office Supplies,2025-07-17,563,CUST-10908,Michael Johnson,Welch LLC,Marketing,Direct Debit,INV-90051,Pending
+EXP-50052,Software Subscription,2025-08-08,9194,CUST-10431,Taylor Holmes,Carr-Alvarado,Marketing,Credit Card,INV-90052,Approved
+EXP-50053,Travel,2025-04-11,8570,CUST-10725,Victor Eaton,Hale LLC,Operations,Cheque,INV-90053,Pending
+EXP-50054,Event Sponsorship,2025-01-12,14063,CUST-10736,April Torres,Odonnell-Hill,Marketing,Cheque,INV-90054,Rejected
+EXP-50055,Software Subscription,2025-01-14,12849,CUST-10628,James Williams,"Shepherd, Martinez and Hernandez",Sales,Direct Debit,INV-90055,Rejected
+EXP-50056,Office Supplies,2025-08-03,13123,CUST-10247,Sheri Hicks,Taylor Group,Finance,Credit Card,INV-90056,Pending
+EXP-50057,Marketing,2025-04-12,2644,CUST-10936,Christina Adams,Ware-Walker,Marketing,Credit Card,INV-90057,Pending
+EXP-50058,Event Sponsorship,2025-06-30,12941,CUST-10560,Sarah Owens,"Johnson, Holt and Williamson",Marketing,Bank Transfer,INV-90058,Approved
+EXP-50059,Travel,2025-07-12,15728,CUST-10897,Darlene Singleton,Hicks-Owen,Finance,Credit Card,INV-90059,Approved
+EXP-50060,Software Subscription,2025-06-20,5233,CUST-10272,Charles Baker,Wu-Nguyen,Marketing,PayPal,INV-90060,Rejected
+EXP-50061,Office Supplies,2025-07-21,14749,CUST-10457,Robert Vaughn,Garrett-Harrell,Marketing,Credit Card,INV-90061,Approved
+EXP-50062,Office Supplies,2025-03-18,12806,CUST-10048,Alexandra Garcia,"Medina, Lucas and Johnson",Finance,Cheque,INV-90062,Approved
+EXP-50063,Office Supplies,2025-03-06,8641,CUST-10535,Charles Patel,Perez PLC,IT,Bank Transfer,INV-90063,Pending
+EXP-50064,Software Subscription,2025-06-30,19945,CUST-10431,Sara Zamora,Pierce Inc,Sales,Cheque,INV-90064,Approved
+EXP-50065,Software Subscription,2025-06-05,16360,CUST-10564,Manuel Reese,"Turner, Butler and Morgan",Marketing,PayPal,INV-90065,Pending
+EXP-50066,Event Sponsorship,2025-04-28,11531,CUST-10602,Chad Hernandez,"Gonzalez, Matthews and Hunter",Finance,Credit Card,INV-90066,Approved
+EXP-50067,Software Subscription,2025-01-03,14738,CUST-10958,Brittany Sharp,"Ramirez, Lee and Rodriguez",Operations,PayPal,INV-90067,Rejected
+EXP-50068,Software Subscription,2025-02-11,7848,CUST-10089,Kathy Shepherd,Buchanan and Sons,Marketing,Cheque,INV-90068,Approved
+EXP-50069,Marketing,2025-07-03,18933,CUST-10527,Cassandra James,"Baldwin, Smith and Miller",IT,Cheque,INV-90069,Rejected
+EXP-50070,Marketing,2025-07-04,148,CUST-10745,William Johnson,Dixon-Lewis,Operations,Cheque,INV-90070,Rejected
+EXP-50071,Event Sponsorship,2025-08-18,15067,CUST-10339,Gabriel Thomas,Trujillo-Daniel,Sales,Credit Card,INV-90071,Rejected
+EXP-50072,Event Sponsorship,2025-01-26,12548,CUST-10112,Sarah Barker,"Lopez, Campbell and Smith",Sales,Cheque,INV-90072,Rejected
+EXP-50073,Software Subscription,2025-03-07,237,CUST-10104,Mia Garcia,Osborn Inc,Finance,PayPal,INV-90073,Rejected
+EXP-50074,Travel,2025-01-25,11206,CUST-10179,Mary Mckay,Jacobson PLC,Marketing,Cheque,INV-90074,Rejected
+EXP-50075,Marketing,2025-02-28,16549,CUST-10053,Kaitlyn Carpenter,Morris-Mcclain,IT,PayPal,INV-90075,Approved
+EXP-50076,Travel,2025-08-30,10836,CUST-10440,Ashley Gutierrez,"Valdez, Pittman and Gordon",IT,Bank Transfer,INV-90076,Pending
+EXP-50077,Travel,2025-03-08,4848,CUST-10188,Megan White,Riley-Berry,Operations,PayPal,INV-90077,Approved
+EXP-50078,Travel,2025-08-30,2873,CUST-10304,Sabrina Oconnell,Barker-Fuentes,Sales,PayPal,INV-90078,Rejected
+EXP-50079,Marketing,2025-02-07,727,CUST-10106,Derek Padilla,Reed-James,Finance,Credit Card,INV-90079,Rejected
+EXP-50080,Software Subscription,2025-03-01,2404,CUST-10224,Charles Williamson,House-Ramirez,Sales,Credit Card,INV-90080,Rejected
+EXP-50081,Office Supplies,2025-07-03,13881,CUST-10907,Teresa Meyer,Taylor-White,Marketing,Bank Transfer,INV-90081,Approved
+EXP-50082,Event Sponsorship,2025-05-05,10727,CUST-10421,Kayla Roberts,Porter-Johnson,Operations,PayPal,INV-90082,Pending
+EXP-50083,Travel,2025-05-22,316,CUST-10193,Elizabeth Stanley,Hamilton LLC,Sales,Credit Card,INV-90083,Pending
+EXP-50084,Software Subscription,2025-03-11,4163,CUST-10057,Angela Cross,Bryant Group,Finance,Credit Card,INV-90084,Rejected
+EXP-50085,Software Subscription,2025-02-06,18034,CUST-10985,Amanda Gray,"Campbell, Brown and Odonnell",IT,Bank Transfer,INV-90085,Approved
+EXP-50086,Software Subscription,2025-02-25,14410,CUST-10933,Todd Lopez,Harvey PLC,IT,Bank Transfer,INV-90086,Approved
+EXP-50087,Travel,2025-07-01,5077,CUST-10505,Bethany Murphy,"Goodwin, Williams and Kerr",Sales,Credit Card,INV-90087,Rejected
+EXP-50088,Software Subscription,2025-05-09,2755,CUST-10738,Melissa Phillips,Rodgers LLC,Marketing,Cheque,INV-90088,Approved
+EXP-50089,Event Sponsorship,2025-04-07,4809,CUST-10413,Karen Conrad,"Taylor, Hickman and Gomez",Marketing,Bank Transfer,INV-90089,Approved
+EXP-50090,Travel,2025-01-17,1941,CUST-10626,Jesse Rangel,Brown LLC,Finance,Bank Transfer,INV-90090,Approved
+EXP-50091,Software Subscription,2025-05-25,18083,CUST-10767,Vincent Townsend,"Douglas, Hill and Hancock",Finance,PayPal,INV-90091,Pending
+EXP-50092,Marketing,2025-03-10,8851,CUST-10515,Adrian Perez,"Rosario, Reeves and Velez",Marketing,Cheque,INV-90092,Pending
+EXP-50093,Office Supplies,2025-07-27,9842,CUST-10749,Heather Beck,"Reeves, Harris and White",IT,Direct Debit,INV-90093,Rejected
+EXP-50094,Travel,2025-02-20,19696,CUST-10898,Keith Gill,Wolf Group,Operations,Credit Card,INV-90094,Approved
+EXP-50095,Marketing,2025-05-13,9269,CUST-10382,Charles Garcia,Christensen-Fisher,IT,Direct Debit,INV-90095,Pending
+EXP-50096,Office Supplies,2025-05-12,8821,CUST-10028,Chelsea Reyes,Monroe Ltd,IT,Bank Transfer,INV-90096,Rejected
+EXP-50097,Software Subscription,2025-02-24,14358,CUST-10399,Kim Long,"Kelley, Snow and Elliott",IT,Credit Card,INV-90097,Pending
+EXP-50098,Software Subscription,2025-04-12,4622,CUST-10151,Linda Vaughn,Anderson-Moss,Operations,PayPal,INV-90098,Rejected
+EXP-50099,Office Supplies,2025-08-26,6869,CUST-10618,Jesus Haynes,"Baker, Ross and Singh",IT,Direct Debit,INV-90099,Pending
+EXP-50100,Travel,2025-04-21,13037,CUST-10945,Jordan Murray,Bennett-Costa,Sales,Credit Card,INV-90100,Rejected
+EXP-50101,Travel,2025-03-22,15715,CUST-10093,Todd Dawson,Browning-Brooks,Marketing,Cheque,INV-90101,Approved
+EXP-50102,Travel,2025-06-12,14567,CUST-10347,Tiffany Clark,"Wilkinson, Lane and Fields",Operations,PayPal,INV-90102,Approved
+EXP-50103,Marketing,2025-05-27,18266,CUST-10337,Brandon Conner,Ellison-Coleman,Marketing,Cheque,INV-90103,Rejected
+EXP-50104,Travel,2025-05-18,10225,CUST-10018,Scott Colon,Bennett-Flores,IT,Bank Transfer,INV-90104,Pending
+EXP-50105,Event Sponsorship,2025-02-28,2986,CUST-10649,Tammy Novak,Underwood Group,Operations,Credit Card,INV-90105,Rejected
+EXP-50106,Office Supplies,2025-04-19,9184,CUST-10424,Christopher Gonzalez,"Perez, Mccoy and Ramirez",Finance,Direct Debit,INV-90106,Approved
+EXP-50107,Event Sponsorship,2025-02-20,18305,CUST-10634,Hailey Clark,Tanner-Brown,Finance,Credit Card,INV-90107,Rejected
+EXP-50108,Office Supplies,2025-01-25,11873,CUST-10329,Billy Simmons,Hernandez Ltd,Operations,Bank Transfer,INV-90108,Rejected
+EXP-50109,Travel,2025-04-13,9356,CUST-10195,Jane Mueller,"Hardy, Sanchez and Manning",Marketing,PayPal,INV-90109,Pending
+EXP-50110,Office Supplies,2025-07-17,14513,CUST-10073,Laurie Greer,Burke Group,Sales,Bank Transfer,INV-90110,Approved
+EXP-50111,Office Supplies,2025-02-25,15952,CUST-10166,Dawn Ramsey,Ellison-Coleman,Operations,Direct Debit,INV-90111,Rejected
+EXP-50112,Office Supplies,2025-05-03,426,CUST-10621,Nathan Burke,"Leonard, Smith and Davis",IT,PayPal,INV-90112,Pending
+EXP-50113,Software Subscription,2025-06-21,8318,CUST-10777,John Robertson,Douglas PLC,Finance,Bank Transfer,INV-90113,Approved
+EXP-50114,Software Subscription,2025-03-17,17049,CUST-10106,Daniel Clark Jr.,Green LLC,Sales,PayPal,INV-90114,Rejected
+EXP-50115,Software Subscription,2025-05-19,13812,CUST-10025,Paula Kennedy,Suarez LLC,IT,Bank Transfer,INV-90115,Approved
+EXP-50116,Travel,2025-07-13,4138,CUST-10009,Angela Tran,Brennan-Brown,Sales,Cheque,INV-90116,Pending
+EXP-50117,Software Subscription,2025-06-05,8026,CUST-10906,Dr. Antonio Thompson,Heath-Hurst,IT,Credit Card,INV-90117,Pending
+EXP-50118,Office Supplies,2025-03-01,758,CUST-10364,Victor Taylor,Dorsey-Edwards,Marketing,Direct Debit,INV-90118,Approved
+EXP-50119,Travel,2025-03-15,11243,CUST-10614,Christopher Harris,Edwards-Day,Marketing,Bank Transfer,INV-90119,Approved
+EXP-50120,Travel,2025-07-04,14733,CUST-10768,Danny Armstrong,Cobb-Marsh,Sales,Direct Debit,INV-90120,Pending
+EXP-50121,Software Subscription,2025-07-31,6245,CUST-10857,David Jones,"Wilkins, Odom and Harvey",Finance,Bank Transfer,INV-90121,Rejected
+EXP-50122,Software Subscription,2025-04-17,4299,CUST-10108,Anna Sullivan,"Fox, Johns and Deleon",IT,Credit Card,INV-90122,Approved
+EXP-50123,Software Subscription,2025-02-02,7955,CUST-10478,Shannon Glenn,Benson Group,Operations,Credit Card,INV-90123,Pending
+EXP-50124,Office Supplies,2025-04-29,4153,CUST-10943,April Richardson,Gutierrez LLC,Marketing,Direct Debit,INV-90124,Approved
+EXP-50125,Software Subscription,2025-07-04,5899,CUST-10391,Raymond Tran,"Clay, Schroeder and Rojas",Operations,Cheque,INV-90125,Pending
+EXP-50126,Marketing,2025-07-26,2550,CUST-10859,Laura Maldonado,Clarke-Vaughan,Sales,Direct Debit,INV-90126,Pending
+EXP-50127,Software Subscription,2025-08-29,7240,CUST-10509,David Campbell,Sandoval Group,Finance,Bank Transfer,INV-90127,Rejected
+EXP-50128,Travel,2025-06-10,12335,CUST-10231,Jenny Gonzalez,Bryant Group,IT,Cheque,INV-90128,Rejected
+EXP-50129,Software Subscription,2025-05-19,139,CUST-10674,Jaime Williams,Kelly Group,Marketing,PayPal,INV-90129,Approved
+EXP-50130,Marketing,2025-08-31,6378,CUST-10215,Ryan Hill,"Andrews, Roberts and King",Operations,Bank Transfer,INV-90130,Pending
+EXP-50131,Travel,2025-06-14,18075,CUST-10814,Barbara Morrison,"Williams, White and Boyd",Sales,Bank Transfer,INV-90131,Rejected
+EXP-50132,Travel,2025-01-04,15010,CUST-10887,Laurie Martinez,Lee-Mueller,IT,Cheque,INV-90132,Pending
+EXP-50133,Marketing,2025-04-12,18080,CUST-10346,Dustin Gray,Ray Inc,Sales,Cheque,INV-90133,Pending
+EXP-50134,Event Sponsorship,2025-05-28,16911,CUST-10954,Barbara Reese,Hernandez Ltd,Operations,PayPal,INV-90134,Approved
+EXP-50135,Travel,2025-05-06,994,CUST-10610,Michael Tapia,Allen-Miller,Marketing,Cheque,INV-90135,Rejected
+EXP-50136,Event Sponsorship,2025-04-15,19887,CUST-10227,Austin Moss,Cantrell-Martinez,IT,PayPal,INV-90136,Rejected
+EXP-50137,Marketing,2025-01-09,3199,CUST-10119,Anna Todd,"Wiley, Perez and Ruiz",Sales,PayPal,INV-90137,Rejected
+EXP-50138,Travel,2025-01-29,15995,CUST-10451,Nicole Bell,"Wright, Obrien and Mcdowell",Finance,PayPal,INV-90138,Pending
+EXP-50139,Event Sponsorship,2025-04-25,18453,CUST-10299,Angela Ortega,Powell-Benitez,Sales,PayPal,INV-90139,Approved
+EXP-50140,Office Supplies,2025-05-31,9961,CUST-10026,Christian Baker,Rogers LLC,Operations,Cheque,INV-90140,Rejected
+EXP-50141,Office Supplies,2025-03-08,7302,CUST-10561,Deborah Riley,Townsend-Gould,Operations,Cheque,INV-90141,Pending
+EXP-50142,Travel,2025-03-21,7538,CUST-10921,James Vaughan,Davis Inc,Operations,Credit Card,INV-90142,Pending
+EXP-50143,Office Supplies,2025-03-27,996,CUST-10602,Crystal Castillo,House-Ramirez,IT,Cheque,INV-90143,Pending
+EXP-50144,Office Supplies,2025-08-08,2411,CUST-10656,Christopher Cook,Simmons Ltd,Sales,Bank Transfer,INV-90144,Pending
+EXP-50145,Event Sponsorship,2025-07-31,4566,CUST-10745,Jamie Holloway,"Morris, Cole and Flowers",Finance,Cheque,INV-90145,Pending
+EXP-50146,Travel,2025-06-09,10267,CUST-10250,Amy Anderson DDS,"Hughes, Mills and Sullivan",IT,Bank Transfer,INV-90146,Pending
+EXP-50147,Travel,2025-02-19,786,CUST-10974,Melinda Gilbert,Browning-Brooks,Marketing,Direct Debit,INV-90147,Pending
+EXP-50148,Travel,2025-03-26,6258,CUST-10733,Michael Ellis,Johnson-Nelson,Sales,PayPal,INV-90148,Pending
+EXP-50149,Event Sponsorship,2025-01-11,15532,CUST-10800,Michael Baldwin,Simpson-Peterson,Finance,Cheque,INV-90149,Rejected
+EXP-50150,Travel,2025-02-20,1107,CUST-10939,Glenn Hernandez,Alvarez Inc,Marketing,Bank Transfer,INV-90150,Pending
+EXP-50151,Software Subscription,2025-07-16,15856,CUST-10666,Matthew Hendricks,"Lewis, Morse and Nielsen",Sales,Bank Transfer,INV-90151,Pending
+EXP-50152,Marketing,2025-01-11,19693,CUST-10048,Kimberly Rodriguez,Watkins Ltd,Marketing,PayPal,INV-90152,Rejected
+EXP-50153,Software Subscription,2025-03-07,19760,CUST-10707,David Hawkins,Caldwell Ltd,Sales,Direct Debit,INV-90153,Rejected
+EXP-50154,Marketing,2025-01-28,577,CUST-10492,Cynthia Smith,"Brown, Anderson and Gonzales",Operations,Credit Card,INV-90154,Rejected
+EXP-50155,Software Subscription,2025-03-02,10936,CUST-10137,Lisa Hammond,Carter and Sons,Operations,Bank Transfer,INV-90155,Approved
+EXP-50156,Software Subscription,2025-01-07,11349,CUST-10512,Teresa Moore,"Anderson, Wilson and Fitzpatrick",Finance,PayPal,INV-90156,Approved
+EXP-50157,Event Sponsorship,2025-02-12,16596,CUST-10548,William Wright,"Crawford, Fernandez and Williams",Sales,PayPal,INV-90157,Pending
+EXP-50158,Event Sponsorship,2025-08-24,7596,CUST-10916,Ariel Gallagher,"Adams, Johnson and Davis",Sales,Direct Debit,INV-90158,Approved
+EXP-50159,Travel,2025-06-16,4889,CUST-10857,Diamond Wilkins,Monroe Ltd,Finance,PayPal,INV-90159,Pending
+EXP-50160,Travel,2025-08-04,119,CUST-10619,Christine Adams,"Martin, Stevenson and Meadows",Marketing,Bank Transfer,INV-90160,Pending
+EXP-50161,Travel,2025-01-30,9083,CUST-10094,Michael Davis,Flores-Townsend,Sales,Cheque,INV-90161,Pending
+EXP-50162,Event Sponsorship,2025-05-15,1215,CUST-10752,Anthony Crawford,"Hughes, Watts and Arnold",Marketing,Direct Debit,INV-90162,Rejected
+EXP-50163,Office Supplies,2025-03-20,3439,CUST-10552,Jeanne Carrillo,Dixon and Sons,Finance,Cheque,INV-90163,Rejected
+EXP-50164,Office Supplies,2025-05-03,11048,CUST-10636,William Whitaker,Haney Inc,Operations,Cheque,INV-90164,Pending
+EXP-50165,Marketing,2025-04-05,8790,CUST-10433,Christina Bridges,Simpson-Ray,Operations,Direct Debit,INV-90165,Approved
+EXP-50166,Travel,2025-01-20,4587,CUST-10975,Alexis Watson,Green Inc,Marketing,Cheque,INV-90166,Pending
+EXP-50167,Marketing,2025-07-23,14872,CUST-10850,Andre Lynch,Booth-Morris,Operations,PayPal,INV-90167,Pending
+EXP-50168,Travel,2025-07-04,6012,CUST-10841,Mario Gardner,Carr-Alvarado,Finance,Credit Card,INV-90168,Approved
+EXP-50169,Marketing,2025-05-01,10454,CUST-10205,Mason Boone,Martinez-Clark,IT,Credit Card,INV-90169,Pending
+EXP-50170,Marketing,2025-07-03,16000,CUST-10122,Jesse Whitaker,Berry-Bates,Finance,Credit Card,INV-90170,Approved
+EXP-50171,Event Sponsorship,2025-06-09,16372,CUST-10957,Michael Black,Carter Inc,Marketing,Direct Debit,INV-90171,Rejected
+EXP-50172,Marketing,2025-05-28,3689,CUST-10386,Rick Bailey,"Montoya, Wilson and Jones",IT,Credit Card,INV-90172,Rejected
+EXP-50173,Travel,2025-02-25,9795,CUST-10684,Jennifer Petersen,"Clay, Schroeder and Rojas",Finance,Bank Transfer,INV-90173,Rejected
+EXP-50174,Marketing,2025-01-07,1046,CUST-10328,James Tyler,Gilbert-Smith,Marketing,Bank Transfer,INV-90174,Rejected
+EXP-50175,Software Subscription,2025-05-10,14668,CUST-10166,Christopher Munoz,Carter Inc,IT,Bank Transfer,INV-90175,Pending
+EXP-50176,Marketing,2025-03-13,3500,CUST-10233,Mark Vaughan,Anderson Inc,Finance,Direct Debit,INV-90176,Approved
+EXP-50177,Travel,2025-02-21,5443,CUST-10527,Martha Coleman,"Lopez, Bowen and Brown",Marketing,Bank Transfer,INV-90177,Pending
+EXP-50178,Event Sponsorship,2025-05-21,10512,CUST-10492,Steven Hammond,Kirby-Ford,IT,PayPal,INV-90178,Pending
+EXP-50179,Marketing,2025-07-03,9357,CUST-10510,Emily Clark,"Campos, Soto and Williams",Finance,Bank Transfer,INV-90179,Pending
+EXP-50180,Marketing,2025-06-25,3312,CUST-10486,Robert Miller,"Clark, Lozano and Jimenez",Marketing,PayPal,INV-90180,Pending
+EXP-50181,Software Subscription,2025-04-21,19399,CUST-10594,Shawn King DVM,Soto LLC,Operations,Bank Transfer,INV-90181,Approved
+EXP-50182,Software Subscription,2025-05-10,8295,CUST-10777,Wendy Harris,"Bush, Carter and Ramsey",Operations,Credit Card,INV-90182,Pending
+EXP-50183,Marketing,2025-08-19,13921,CUST-10664,Darrell Owen,"Bowman, Davis and Cox",Sales,Bank Transfer,INV-90183,Pending
+EXP-50184,Marketing,2025-02-03,4275,CUST-10442,Charles Nelson,Jordan-Hamilton,Sales,Credit Card,INV-90184,Approved
+EXP-50185,Office Supplies,2025-05-11,2062,CUST-10469,Monica Morgan,Cox-Owen,Operations,Credit Card,INV-90185,Rejected
+EXP-50186,Travel,2025-07-25,8618,CUST-10109,Richard Ramsey,Morales Inc,Sales,Credit Card,INV-90186,Pending
+EXP-50187,Software Subscription,2025-01-17,2091,CUST-10453,Nichole Trujillo,Sampson Group,IT,Direct Debit,INV-90187,Approved
+EXP-50188,Software Subscription,2025-08-08,10133,CUST-10120,Joseph Villarreal,White-Palmer,Marketing,Cheque,INV-90188,Approved
+EXP-50189,Event Sponsorship,2025-07-01,17256,CUST-10081,Sharon Lindsey,Christensen-Fisher,IT,Bank Transfer,INV-90189,Approved
+EXP-50190,Software Subscription,2025-04-09,19953,CUST-10636,Stacey Santana,"Peterson, Wright and Hamilton",Operations,Cheque,INV-90190,Rejected
+EXP-50191,Event Sponsorship,2025-04-22,17051,CUST-10483,Victoria Vargas,"Richards, Ortega and David",Operations,PayPal,INV-90191,Pending
+EXP-50192,Office Supplies,2025-01-08,1381,CUST-10421,Valerie Brown,"Bush, Carter and Ramsey",Operations,PayPal,INV-90192,Rejected
+EXP-50193,Event Sponsorship,2025-02-16,11565,CUST-10847,Debbie Andrews,"Benson, Bright and Sandoval",Finance,Direct Debit,INV-90193,Pending
+EXP-50194,Software Subscription,2025-04-20,17363,CUST-10742,Benjamin York,"Waller, Stephens and Alvarez",Marketing,Credit Card,INV-90194,Rejected
+EXP-50195,Marketing,2025-06-06,14596,CUST-10444,Jane Henson,Fisher LLC,Marketing,Cheque,INV-90195,Rejected
+EXP-50196,Travel,2025-08-04,1078,CUST-10766,Jason Pratt,"Allen, Johnson and Bates",IT,Credit Card,INV-90196,Rejected
+EXP-50197,Event Sponsorship,2025-02-11,13036,CUST-10200,John Chang,Jordan-Hamilton,Finance,PayPal,INV-90197,Approved
+EXP-50198,Marketing,2025-08-07,6406,CUST-10559,Michelle Taylor,"Cox, Bradford and Trevino",Sales,PayPal,INV-90198,Approved
+EXP-50199,Office Supplies,2025-05-12,1118,CUST-10988,Joanna Wong,Garcia Group,Sales,Cheque,INV-90199,Approved
+EXP-50200,Event Sponsorship,2025-05-21,8073,CUST-10446,Jennifer Harris,Anderson Inc,IT,Direct Debit,INV-90200,Rejected
+EXP-50201,Office Supplies,2025-04-25,11751,CUST-10449,Jessica Sandoval,Fleming-Lee,Operations,Bank Transfer,INV-90201,Pending
+EXP-50202,Marketing,2025-07-06,18328,CUST-10616,Gary Gonzales,Reynolds-Woods,Marketing,Credit Card,INV-90202,Pending
+EXP-50203,Software Subscription,2025-03-05,17057,CUST-10578,Alexandra Anderson,"Scott, Perez and Cohen",Operations,Cheque,INV-90203,Pending
+EXP-50204,Office Supplies,2025-06-04,6934,CUST-10787,Alex Herrera,Williams and Sons,Finance,Cheque,INV-90204,Rejected
+EXP-50205,Travel,2025-03-21,12004,CUST-10564,Katie Berry,Lewis-Patel,Operations,Bank Transfer,INV-90205,Pending
+EXP-50206,Software Subscription,2025-08-15,17944,CUST-10933,Zachary Hood,Allen-Fuller,IT,PayPal,INV-90206,Rejected
+EXP-50207,Office Supplies,2025-03-17,14081,CUST-10652,Pamela Reyes,Mendoza-Singleton,IT,Cheque,INV-90207,Approved
+EXP-50208,Travel,2025-03-28,2099,CUST-10132,Rita Hopkins,"Scott, Perez and Cohen",Sales,Bank Transfer,INV-90208,Pending
+EXP-50209,Office Supplies,2025-01-26,16675,CUST-10191,Amy Hernandez,Hodges-Kirk,Marketing,Credit Card,INV-90209,Approved
+EXP-50210,Marketing,2025-06-24,2243,CUST-10568,Christopher Murphy,Freeman-Hunt,Sales,PayPal,INV-90210,Approved
+EXP-50211,Software Subscription,2025-02-05,5060,CUST-10665,Kelli Patel,Hernandez Ltd,Marketing,Cheque,INV-90211,Pending
+EXP-50212,Travel,2025-08-22,1470,CUST-10423,Patrick Nichols,"Rogers, Figueroa and Patton",Operations,Cheque,INV-90212,Pending
+EXP-50213,Marketing,2025-03-13,11331,CUST-10033,Adam Moore,"Ryan, Murphy and Williamson",Sales,Direct Debit,INV-90213,Approved
+EXP-50214,Software Subscription,2025-06-11,1964,CUST-10311,James Walter,Gutierrez LLC,Sales,Cheque,INV-90214,Pending
+EXP-50215,Travel,2025-07-03,15597,CUST-10373,Adam Stevens,Walton-Hoover,IT,Credit Card,INV-90215,Rejected
+EXP-50216,Marketing,2025-06-12,17826,CUST-10147,William Mack,Edwards-Day,Operations,Cheque,INV-90216,Approved
+EXP-50217,Marketing,2025-06-20,16196,CUST-10052,Jesse Kim,Buchanan and Sons,Marketing,Bank Transfer,INV-90217,Pending
+EXP-50218,Software Subscription,2025-03-10,10708,CUST-10698,Lawrence Goodman,Rodriguez Group,Operations,Direct Debit,INV-90218,Rejected
+EXP-50219,Marketing,2025-06-07,15724,CUST-10875,Jessica Ryan,Hinton-Dixon,Sales,Credit Card,INV-90219,Approved
+EXP-50220,Software Subscription,2025-03-21,6807,CUST-10352,Frank Armstrong,Tanner-Brown,Marketing,PayPal,INV-90220,Approved
+EXP-50221,Event Sponsorship,2025-01-23,17630,CUST-10291,Christopher Craig,"Moore, Lopez and Gomez",Sales,Cheque,INV-90221,Pending
+EXP-50222,Event Sponsorship,2025-08-28,10765,CUST-10668,Cindy Adams,"Kelly, Davis and Nolan",Operations,Credit Card,INV-90222,Rejected
+EXP-50223,Marketing,2025-03-26,11274,CUST-10083,Tiffany Lopez,Rogers LLC,IT,Credit Card,INV-90223,Approved
+EXP-50224,Event Sponsorship,2025-08-19,5766,CUST-10345,Stephen Oconnor,Hicks-Owen,Finance,Bank Transfer,INV-90224,Approved
+EXP-50225,Software Subscription,2025-08-15,1433,CUST-10827,Jason Frederick,Morris-Murphy,Sales,Bank Transfer,INV-90225,Approved
+EXP-50226,Event Sponsorship,2025-08-24,15860,CUST-10924,Dr. Scott Duncan,"Wiley, Perez and Ruiz",IT,Bank Transfer,INV-90226,Rejected
+EXP-50227,Marketing,2025-05-07,2249,CUST-10269,Karen Fowler,"Baxter, Thomas and Cordova",Finance,Credit Card,INV-90227,Rejected
+EXP-50228,Software Subscription,2025-01-30,8231,CUST-10099,Steven Carroll,"Evans, Williams and Simpson",IT,Credit Card,INV-90228,Rejected
+EXP-50229,Travel,2025-02-08,9180,CUST-10552,Christopher Copeland,Patton and Sons,Operations,Credit Card,INV-90229,Pending
+EXP-50230,Event Sponsorship,2025-05-06,838,CUST-10165,Jessica Moore,"Ross, Doyle and Burton",Finance,Bank Transfer,INV-90230,Pending
+EXP-50231,Marketing,2025-02-04,19080,CUST-10904,David Avery,"Ashley, Garrett and Morrison",Sales,Direct Debit,INV-90231,Approved
+EXP-50232,Software Subscription,2025-07-07,6447,CUST-10706,Christine Coleman,"Ramirez, Gates and Stephenson",Sales,PayPal,INV-90232,Approved
+EXP-50233,Travel,2025-02-24,10589,CUST-10301,Howard Harris,"Douglas, Hill and Hancock",Marketing,Direct Debit,INV-90233,Approved
+EXP-50234,Office Supplies,2025-03-16,1685,CUST-10193,Katherine Garza,"Munoz, Rogers and Nunez",Operations,Bank Transfer,INV-90234,Rejected
+EXP-50235,Software Subscription,2025-08-20,859,CUST-10245,Joseph Shaw,Suarez LLC,Operations,Direct Debit,INV-90235,Approved
+EXP-50236,Marketing,2025-03-19,1803,CUST-10135,Cheryl Mcclure,King-Buchanan,Operations,Cheque,INV-90236,Rejected
+EXP-50237,Office Supplies,2025-07-02,9310,CUST-10621,Lance Fuller,Price and Sons,Marketing,Bank Transfer,INV-90237,Pending
+EXP-50238,Event Sponsorship,2025-03-18,7076,CUST-10228,Lisa Mccoy,"Peterson, Wright and Hamilton",Operations,Bank Transfer,INV-90238,Approved
+EXP-50239,Event Sponsorship,2025-07-13,12268,CUST-10266,Christopher Fox,Fernandez LLC,IT,Bank Transfer,INV-90239,Rejected
+EXP-50240,Event Sponsorship,2025-07-05,12375,CUST-11000,Jessica Hays,"Klein, Rodriguez and Chapman",IT,Credit Card,INV-90240,Pending
+EXP-50241,Office Supplies,2025-02-12,315,CUST-10589,Heather Taylor,Bailey Group,Sales,Credit Card,INV-90241,Pending
+EXP-50242,Software Subscription,2025-08-09,18511,CUST-10264,Jacqueline Smith,Schultz-Vargas,Marketing,Cheque,INV-90242,Pending
+EXP-50243,Event Sponsorship,2025-04-05,8068,CUST-10063,Laura Miller,Singleton-Joseph,IT,Bank Transfer,INV-90243,Approved
+EXP-50244,Travel,2025-05-28,18896,CUST-10305,Juan Mullins,Johnston Inc,Sales,Bank Transfer,INV-90244,Pending
+EXP-50245,Event Sponsorship,2025-04-18,2421,CUST-10581,Phillip Fuller,Rodgers LLC,IT,Credit Card,INV-90245,Pending
+EXP-50246,Software Subscription,2025-06-12,10034,CUST-10065,Kari Moore,"Benson, Bright and Sandoval",Finance,Cheque,INV-90246,Pending
+EXP-50247,Travel,2025-05-15,2270,CUST-10955,Keith Mercer,"Hess, Moreno and Miller",Operations,PayPal,INV-90247,Rejected
+EXP-50248,Event Sponsorship,2025-05-15,8227,CUST-10304,James Perez MD,Steele Inc,Finance,PayPal,INV-90248,Pending
+EXP-50249,Office Supplies,2025-05-29,5333,CUST-10786,Teresa Morrow,"Santiago, Hall and Lara",Operations,Direct Debit,INV-90249,Pending
+EXP-50250,Software Subscription,2025-03-09,11534,CUST-10956,Jessica Villarreal,Powell-Benitez,Sales,Bank Transfer,INV-90250,Pending
+EXP-50251,Software Subscription,2025-03-07,3023,CUST-10270,Teresa Thomas,Chan Ltd,Finance,Bank Transfer,INV-90251,Pending
+EXP-50252,Software Subscription,2025-08-11,9561,CUST-10748,Brittney Gordon,"Parrish, Miller and Cooper",Finance,Direct Debit,INV-90252,Rejected
+EXP-50253,Event Sponsorship,2025-03-05,7743,CUST-10039,Christopher Jackson,"Sexton, Banks and Diaz",Finance,PayPal,INV-90253,Pending
+EXP-50254,Event Sponsorship,2025-05-11,10216,CUST-10132,Amy Soto,Griffith LLC,IT,Cheque,INV-90254,Rejected
+EXP-50255,Office Supplies,2025-08-06,5517,CUST-10514,Mitchell Barnes,Dunn-Anderson,Finance,Credit Card,INV-90255,Rejected
+EXP-50256,Event Sponsorship,2025-03-19,13096,CUST-10077,Amy Evans,Perez LLC,Finance,Credit Card,INV-90256,Rejected
+EXP-50257,Event Sponsorship,2025-01-29,5631,CUST-10154,Stephanie Salazar,"Erickson, Jones and Reyes",Sales,Bank Transfer,INV-90257,Pending
+EXP-50258,Event Sponsorship,2025-03-24,8698,CUST-10623,Sabrina Mcpherson,"Gardner, Romero and Kemp",Operations,Credit Card,INV-90258,Rejected
+EXP-50259,Event Sponsorship,2025-03-13,329,CUST-10572,Mr. Mark Dunn,Key-Anderson,Operations,PayPal,INV-90259,Approved
+EXP-50260,Office Supplies,2025-04-30,10377,CUST-10065,Scott Johnston,Hernandez PLC,Operations,Direct Debit,INV-90260,Approved
+EXP-50261,Software Subscription,2025-01-21,1185,CUST-10579,Anthony Montgomery,"Sexton, Banks and Diaz",Operations,PayPal,INV-90261,Approved
+EXP-50262,Marketing,2025-05-26,11623,CUST-10799,Jessica Powell,Aguilar-Crawford,Sales,Direct Debit,INV-90262,Approved
+EXP-50263,Event Sponsorship,2025-02-22,14017,CUST-10862,Noah Kent,Cline-Cook,Finance,PayPal,INV-90263,Approved
+EXP-50264,Marketing,2025-02-09,2013,CUST-10380,Katrina Foster,Hodges-Kirk,Sales,PayPal,INV-90264,Pending
+EXP-50265,Event Sponsorship,2025-03-07,19308,CUST-10448,Stephen Smith,James Group,Operations,Credit Card,INV-90265,Rejected
+EXP-50266,Office Supplies,2025-06-10,19664,CUST-10815,Mark Harvey,King-Buchanan,Operations,Cheque,INV-90266,Rejected
+EXP-50267,Software Subscription,2025-02-07,12137,CUST-10992,Jonathan Mcknight,Lindsey LLC,Finance,PayPal,INV-90267,Approved
+EXP-50268,Software Subscription,2025-01-25,19911,CUST-10596,Susan Gonzales,"Scott, Perez and Cohen",Operations,Cheque,INV-90268,Pending
+EXP-50269,Office Supplies,2025-05-17,19388,CUST-10652,Stephen Boyle,Howell-Lawson,Operations,Direct Debit,INV-90269,Pending
+EXP-50270,Software Subscription,2025-04-26,4414,CUST-10283,James Gonzales,Allen Ltd,Marketing,Direct Debit,INV-90270,Pending
+EXP-50271,Travel,2025-04-24,4384,CUST-10624,Erin Roberts,Dixon and Sons,Operations,Bank Transfer,INV-90271,Approved
+EXP-50272,Software Subscription,2025-08-30,10505,CUST-10729,Debra Williams,Caldwell Ltd,Operations,Credit Card,INV-90272,Approved
+EXP-50273,Marketing,2025-01-13,16473,CUST-10833,Audrey Smith,Reid-Bowman,Finance,Direct Debit,INV-90273,Pending
+EXP-50274,Event Sponsorship,2025-06-14,7789,CUST-10640,Alejandra Carlson,Harris-Brown,Operations,Cheque,INV-90274,Rejected
+EXP-50275,Event Sponsorship,2025-07-29,11635,CUST-10399,Dave Banks,"Lee, Taylor and Roman",Marketing,Bank Transfer,INV-90275,Rejected
+EXP-50276,Software Subscription,2025-06-18,9226,CUST-10960,Christopher Blackwell,Benson Ltd,Marketing,Cheque,INV-90276,Rejected
+EXP-50277,Office Supplies,2025-07-22,10889,CUST-10582,Elizabeth Figueroa,Snyder-Chang,Marketing,Bank Transfer,INV-90277,Pending
+EXP-50278,Office Supplies,2025-06-05,8442,CUST-10480,Derrick Bennett,"Reed, Soto and Cooper",Operations,Credit Card,INV-90278,Rejected
+EXP-50279,Marketing,2025-06-30,14696,CUST-10882,Rachel Robinson,Steele Inc,Operations,Direct Debit,INV-90279,Approved
+EXP-50280,Event Sponsorship,2025-05-24,16349,CUST-10280,James Oconnor,"Gardner, Ford and Wells",Sales,Direct Debit,INV-90280,Rejected
+EXP-50281,Event Sponsorship,2025-06-13,7339,CUST-10203,Selena Wilkerson,Allen-Fuller,Sales,Bank Transfer,INV-90281,Rejected
+EXP-50282,Event Sponsorship,2025-07-11,1270,CUST-10819,Aaron Tran,Reyes-Gordon,Finance,Credit Card,INV-90282,Rejected
+EXP-50283,Software Subscription,2025-06-25,5366,CUST-10599,James Gamble,Jackson-Vasquez,IT,Cheque,INV-90283,Pending
+EXP-50284,Travel,2025-05-29,1729,CUST-10760,Miranda Rocha,Landry and Sons,Operations,PayPal,INV-90284,Rejected
+EXP-50285,Marketing,2025-05-18,9464,CUST-10351,Cody Perkins,Hensley Ltd,Sales,Cheque,INV-90285,Rejected
+EXP-50286,Software Subscription,2025-03-13,12443,CUST-10284,Kenneth Daniels,Powell-English,Finance,Bank Transfer,INV-90286,Pending
+EXP-50287,Office Supplies,2025-02-22,7609,CUST-10316,Shelley Barnett,Dixon and Sons,Finance,Cheque,INV-90287,Approved
+EXP-50288,Marketing,2025-06-03,12575,CUST-10385,Thomas Roth,"Hess, Moreno and Miller",Finance,Cheque,INV-90288,Pending
+EXP-50289,Office Supplies,2025-06-23,13265,CUST-10613,Nathan Daugherty,Page-Warner,Finance,PayPal,INV-90289,Approved
+EXP-50290,Software Subscription,2025-07-04,14625,CUST-10980,Kevin Powers,Jordan-Lee,Sales,Bank Transfer,INV-90290,Pending
+EXP-50291,Travel,2025-06-01,998,CUST-10968,Tyler Jones,"Morris, Tate and Woods",IT,Cheque,INV-90291,Approved
+EXP-50292,Software Subscription,2025-07-07,10578,CUST-10216,John Lopez,Smith Group,Marketing,Credit Card,INV-90292,Approved
+EXP-50293,Event Sponsorship,2025-05-23,16204,CUST-10722,Kyle Carter,"Kelley, Martinez and Miranda",Finance,Cheque,INV-90293,Rejected
+EXP-50294,Marketing,2025-08-10,6535,CUST-10982,Kimberly Smith,"Duncan, Powers and Thompson",Marketing,Direct Debit,INV-90294,Rejected
+EXP-50295,Event Sponsorship,2025-02-12,8270,CUST-10475,Marilyn Choi,Strickland Ltd,Finance,Cheque,INV-90295,Rejected
+EXP-50296,Software Subscription,2025-01-21,7459,CUST-10139,Michelle Collins,"Ross, Doyle and Burton",Operations,Direct Debit,INV-90296,Rejected
+EXP-50297,Marketing,2025-05-13,13484,CUST-10915,Kevin Duran,Miller Ltd,Sales,PayPal,INV-90297,Approved
+EXP-50298,Office Supplies,2025-08-31,3534,CUST-10893,Shannon Moore,"Duncan, Powers and Thompson",Finance,Direct Debit,INV-90298,Rejected
+EXP-50299,Event Sponsorship,2025-06-27,11252,CUST-10085,James Duran,Steele Inc,Finance,PayPal,INV-90299,Rejected
+EXP-50300,Office Supplies,2025-01-03,3231,CUST-10790,Cheyenne Torres,Harris-Walsh,Operations,Cheque,INV-90300,Rejected
+EXP-50301,Event Sponsorship,2025-05-05,2286,CUST-10271,Joshua Farley,Jacobson PLC,Sales,Bank Transfer,INV-90301,Rejected
+EXP-50302,Travel,2025-05-02,10394,CUST-10482,Michelle Rosales,Jacobson PLC,Finance,Direct Debit,INV-90302,Approved
+EXP-50303,Software Subscription,2025-04-25,18826,CUST-10135,Eugene Middleton,"Baxter, Thomas and Cordova",Sales,Direct Debit,INV-90303,Rejected
+EXP-50304,Office Supplies,2025-03-16,15330,CUST-10903,Johnny Jackson,"Daniels, Hubbard and Sweeney",IT,Cheque,INV-90304,Pending
+EXP-50305,Marketing,2025-03-15,997,CUST-10076,Kelly Martinez,Gutierrez LLC,Operations,Credit Card,INV-90305,Approved
+EXP-50306,Software Subscription,2025-02-20,19455,CUST-10944,Sarah Scott,Chandler Group,Marketing,Credit Card,INV-90306,Pending
+EXP-50307,Marketing,2025-01-09,1231,CUST-10731,Frank Webster,Mitchell-Mendez,IT,PayPal,INV-90307,Approved
+EXP-50308,Office Supplies,2025-03-04,10743,CUST-10351,Stephanie Jennings,Young Ltd,IT,Bank Transfer,INV-90308,Rejected
+EXP-50309,Office Supplies,2025-08-06,3468,CUST-10435,Donald Sharp,Waters PLC,IT,Direct Debit,INV-90309,Pending
+EXP-50310,Travel,2025-01-24,3612,CUST-10807,Diane White,"Reynolds, Joyce and Mercer",Marketing,Credit Card,INV-90310,Pending
+EXP-50311,Travel,2025-05-06,12302,CUST-10593,Andrea Hernandez,"Herrera, Morton and Bell",Operations,PayPal,INV-90311,Pending
+EXP-50312,Marketing,2025-02-21,3648,CUST-10021,Carlos Jackson,"Franklin, Chung and Perez",Operations,Cheque,INV-90312,Pending
+EXP-50313,Software Subscription,2025-08-05,555,CUST-10099,Brian Hernandez,Green LLC,Sales,Direct Debit,INV-90313,Approved
+EXP-50314,Event Sponsorship,2025-07-08,4761,CUST-10988,Kevin Wilson,"Moore, Lopez and Gomez",IT,PayPal,INV-90314,Rejected
+EXP-50315,Event Sponsorship,2025-02-02,12326,CUST-10834,Wendy Mahoney,"Rhodes, Foster and Martinez",Marketing,Direct Debit,INV-90315,Rejected
+EXP-50316,Travel,2025-04-09,5117,CUST-10568,Matthew Padilla,Mcmahon-Smith,Finance,Cheque,INV-90316,Approved
+EXP-50317,Marketing,2025-05-11,4961,CUST-10407,Jessica Shaffer,Thomas PLC,Finance,Cheque,INV-90317,Approved
+EXP-50318,Marketing,2025-01-15,17558,CUST-10945,Mrs. Michelle Richardson,Brennan Group,Sales,PayPal,INV-90318,Pending
+EXP-50319,Software Subscription,2025-06-16,11281,CUST-10482,Angela Key,"Adams, Osborne and Hall",Finance,Direct Debit,INV-90319,Rejected
+EXP-50320,Travel,2025-05-04,15737,CUST-10815,Micheal Jacobs,Leon and Sons,Finance,Cheque,INV-90320,Rejected
+EXP-50321,Event Sponsorship,2025-03-20,18998,CUST-10447,Caitlin Fitzgerald,"Raymond, Lara and Daniel",Finance,Credit Card,INV-90321,Approved
+EXP-50322,Office Supplies,2025-08-09,11792,CUST-10082,Matthew Skinner,Thomas Ltd,IT,PayPal,INV-90322,Pending
+EXP-50323,Event Sponsorship,2025-05-07,7920,CUST-10265,Danielle Wilson,"Spears, Decker and Chavez",Operations,Direct Debit,INV-90323,Approved
+EXP-50324,Office Supplies,2025-05-28,13884,CUST-10604,Jason Hill,Smith PLC,Marketing,Bank Transfer,INV-90324,Pending
+EXP-50325,Travel,2025-07-04,11260,CUST-10668,Jeremy Wood,"Cruz, Sullivan and Howard",Finance,Direct Debit,INV-90325,Rejected
+EXP-50326,Office Supplies,2025-03-24,4444,CUST-10493,Marcus Smith,Reyes-Kim,Marketing,Direct Debit,INV-90326,Pending
+EXP-50327,Event Sponsorship,2025-02-02,11215,CUST-10233,Michael Byrd,"Wilkinson, Lane and Fields",Sales,PayPal,INV-90327,Pending
+EXP-50328,Event Sponsorship,2025-08-23,10306,CUST-10209,Jeffrey Mercado,Aguilar-Crawford,IT,Credit Card,INV-90328,Rejected
+EXP-50329,Marketing,2025-06-27,19412,CUST-10464,Jeffrey Smith,"Miranda, Martin and Erickson",Finance,Bank Transfer,INV-90329,Pending
+EXP-50330,Office Supplies,2025-07-09,16660,CUST-10920,Rebecca Smith,Jackson-Cooper,Operations,Cheque,INV-90330,Pending
+EXP-50331,Office Supplies,2025-05-05,8041,CUST-10712,David Daniels,"Jones, Hardy and Harris",IT,Bank Transfer,INV-90331,Approved
+EXP-50332,Software Subscription,2025-04-07,10017,CUST-10773,Michael Jones,"Johns, Moore and Williams",Finance,Cheque,INV-90332,Rejected
+EXP-50333,Event Sponsorship,2025-06-28,13154,CUST-10325,Samantha Hernandez,"Smith, Melendez and Huff",Sales,Bank Transfer,INV-90333,Approved
+EXP-50334,Travel,2025-02-15,1524,CUST-10462,Melissa Cooley,Suarez LLC,Operations,Bank Transfer,INV-90334,Pending
+EXP-50335,Marketing,2025-08-28,13795,CUST-10813,Elizabeth Nguyen,Serrano-Smith,IT,Credit Card,INV-90335,Rejected
+EXP-50336,Event Sponsorship,2025-04-14,5720,CUST-10050,Danielle Jones,Anderson-Lowe,IT,Cheque,INV-90336,Pending
+EXP-50337,Travel,2025-02-09,7162,CUST-10476,Brian Davis,"Jackson, Foster and Parker",IT,PayPal,INV-90337,Pending
+EXP-50338,Marketing,2025-02-22,10216,CUST-10837,Melissa Douglas,Odom Inc,Finance,Direct Debit,INV-90338,Approved
+EXP-50339,Office Supplies,2025-06-09,13611,CUST-10111,Kyle Smith,Taylor-White,Operations,PayPal,INV-90339,Pending
+EXP-50340,Travel,2025-04-05,13957,CUST-10785,Charles Edwards,Lewis-Patel,IT,Direct Debit,INV-90340,Approved
+EXP-50341,Event Sponsorship,2025-06-05,10479,CUST-10579,Thomas Ramirez,"Duarte, Reese and Gonzalez",Sales,Bank Transfer,INV-90341,Pending
+EXP-50342,Travel,2025-04-06,8837,CUST-10502,Dr. Steven Cisneros DVM,Hale PLC,Sales,Bank Transfer,INV-90342,Approved
+EXP-50343,Travel,2025-01-30,3905,CUST-10585,Rachel Kennedy,Taylor-Taylor,IT,PayPal,INV-90343,Approved
+EXP-50344,Event Sponsorship,2025-07-22,17510,CUST-10999,Sara Williams DDS,Gallegos-Kennedy,Finance,Cheque,INV-90344,Approved
+EXP-50345,Event Sponsorship,2025-02-05,7116,CUST-10320,Joshua Graham,Turner-Olson,Finance,Direct Debit,INV-90345,Approved
+EXP-50346,Event Sponsorship,2025-05-13,15604,CUST-10099,Melissa Fisher,Gonzalez-Collins,Sales,PayPal,INV-90346,Rejected
+EXP-50347,Software Subscription,2025-06-15,19899,CUST-10967,William Carrillo,"Clark, Ramirez and Chambers",Marketing,Cheque,INV-90347,Pending
+EXP-50348,Office Supplies,2025-01-25,16628,CUST-10797,Adam Wright,Santiago-Vasquez,Operations,Direct Debit,INV-90348,Pending
+EXP-50349,Office Supplies,2025-05-22,19645,CUST-10863,Ashley Adams,"Harrell, Conway and Tucker",Sales,Direct Debit,INV-90349,Rejected
+EXP-50350,Event Sponsorship,2025-08-14,18945,CUST-10779,Doris Smith,Murray-Johnson,IT,Cheque,INV-90350,Rejected
+EXP-50351,Event Sponsorship,2025-01-03,4522,CUST-10325,Matthew Richards,Ray and Sons,Marketing,Cheque,INV-90351,Rejected
+EXP-50352,Marketing,2025-01-07,2840,CUST-10955,William Banks,Mcintosh Inc,Finance,Credit Card,INV-90352,Approved
+EXP-50353,Office Supplies,2025-07-01,4484,CUST-10157,Heather Scott,Miller-York,Finance,PayPal,INV-90353,Approved
+EXP-50354,Event Sponsorship,2025-04-18,17496,CUST-10021,Matthew King,Anderson and Sons,Operations,Cheque,INV-90354,Pending
+EXP-50355,Travel,2025-06-29,7692,CUST-10821,Jessica Walker,Brennan Group,IT,PayPal,INV-90355,Rejected
+EXP-50356,Event Sponsorship,2025-07-25,1542,CUST-10757,Matthew Mullins,"Keith, Cisneros and Hendricks",Finance,Bank Transfer,INV-90356,Approved
+EXP-50357,Travel,2025-05-08,15106,CUST-10104,Leah Walker,Welch LLC,Finance,Credit Card,INV-90357,Rejected
+EXP-50358,Software Subscription,2025-02-12,17647,CUST-10528,Todd Caldwell,Hodge Ltd,Sales,Bank Transfer,INV-90358,Pending
+EXP-50359,Office Supplies,2025-07-31,5092,CUST-10404,Nicole Collins,Brown LLC,Finance,Direct Debit,INV-90359,Approved
+EXP-50360,Office Supplies,2025-06-26,5059,CUST-10620,Olivia Russell DDS,Osborn-Sharp,Finance,PayPal,INV-90360,Pending
+EXP-50361,Marketing,2025-02-07,2600,CUST-10950,Adam Palmer,"Beard, Cox and Nguyen",IT,Cheque,INV-90361,Rejected
+EXP-50362,Marketing,2025-04-16,19188,CUST-10958,Pamela Mckenzie,"Anderson, Wilson and Fitzpatrick",Marketing,Direct Debit,INV-90362,Approved
+EXP-50363,Event Sponsorship,2025-01-11,13099,CUST-10278,Jeremiah Orozco,Douglas PLC,Marketing,Direct Debit,INV-90363,Approved
+EXP-50364,Office Supplies,2025-04-29,15545,CUST-10101,Leslie West,Cannon-Calhoun,Marketing,PayPal,INV-90364,Approved
+EXP-50365,Event Sponsorship,2025-02-05,4269,CUST-10071,Lisa Abbott,Singh-Miller,IT,Cheque,INV-90365,Approved
+EXP-50366,Travel,2025-08-08,7599,CUST-10070,Melanie Johnson,Ibarra Ltd,Sales,Cheque,INV-90366,Approved
+EXP-50367,Office Supplies,2025-06-20,8454,CUST-10840,Carolyn Wilcox,Barker PLC,IT,Bank Transfer,INV-90367,Rejected
+EXP-50368,Software Subscription,2025-07-24,9418,CUST-10331,Trevor Rivera,Morgan-Navarro,Sales,Cheque,INV-90368,Pending
+EXP-50369,Office Supplies,2025-05-11,12385,CUST-10054,James Hernandez,Fisher LLC,Sales,PayPal,INV-90369,Pending
+EXP-50370,Event Sponsorship,2025-04-25,2724,CUST-10649,Lucas Valentine,"Owens, Morrison and Clark",Sales,PayPal,INV-90370,Approved
+EXP-50371,Event Sponsorship,2025-07-12,3368,CUST-10412,Brandy Collins,Salas-Wilkins,Operations,Bank Transfer,INV-90371,Pending
+EXP-50372,Event Sponsorship,2025-01-17,4646,CUST-10838,Crystal Edwards,Tyler-Brown,IT,PayPal,INV-90372,Pending
+EXP-50373,Software Subscription,2025-03-03,13757,CUST-10469,Allison Yates,"Meyers, King and Munoz",Operations,PayPal,INV-90373,Approved
+EXP-50374,Software Subscription,2025-01-21,4981,CUST-10399,Benjamin Landry,Walsh-Powell,Finance,Bank Transfer,INV-90374,Rejected
+EXP-50375,Travel,2025-02-01,17449,CUST-10001,Holly Shelton,Collins and Sons,Marketing,PayPal,INV-90375,Approved
+EXP-50376,Event Sponsorship,2025-08-21,220,CUST-10439,Rhonda Patel,Berry-Bates,Finance,Bank Transfer,INV-90376,Approved
+EXP-50377,Office Supplies,2025-05-03,7435,CUST-10975,Michelle Brooks,Mason-Curry,Marketing,Bank Transfer,INV-90377,Pending
+EXP-50378,Event Sponsorship,2025-01-28,6363,CUST-10257,Bobby Martinez,"Carter, Turner and Wright",Sales,Direct Debit,INV-90378,Rejected
+EXP-50379,Software Subscription,2025-07-26,17270,CUST-10395,Charles Le,Mendoza-Singleton,Finance,Bank Transfer,INV-90379,Rejected
+EXP-50380,Office Supplies,2025-02-01,14650,CUST-10865,Adam Vargas,Horn-Owen,Sales,Direct Debit,INV-90380,Approved
+EXP-50381,Marketing,2025-01-24,4999,CUST-10799,April Ramos,Burke Group,Sales,PayPal,INV-90381,Rejected
+EXP-50382,Office Supplies,2025-04-16,16866,CUST-10575,Charles Compton,Garcia-Anderson,IT,PayPal,INV-90382,Pending
+EXP-50383,Event Sponsorship,2025-05-05,18372,CUST-10276,James Madden,Brooks-Bolton,Sales,Cheque,INV-90383,Pending
+EXP-50384,Office Supplies,2025-02-03,12401,CUST-10034,Jesse Franco,"Baldwin, Smith and Miller",Marketing,PayPal,INV-90384,Rejected
+EXP-50385,Software Subscription,2025-08-30,9030,CUST-10633,Kelly Hartman,Carr-Alvarado,Operations,Credit Card,INV-90385,Pending
+EXP-50386,Travel,2025-05-22,10529,CUST-10662,Kristen Scott,"Hughes, Fitzgerald and Scott",Sales,Bank Transfer,INV-90386,Approved
+EXP-50387,Office Supplies,2025-05-26,15050,CUST-10496,Andrew Williams,Mcdonald-Fernandez,IT,Credit Card,INV-90387,Rejected
+EXP-50388,Office Supplies,2025-05-03,2905,CUST-10866,Kimberly Mason,"Herrera, Morton and Bell",Sales,Direct Debit,INV-90388,Pending
+EXP-50389,Software Subscription,2025-03-08,5931,CUST-10257,Emily Gill,"Keith, Cisneros and Hendricks",Sales,PayPal,INV-90389,Pending
+EXP-50390,Office Supplies,2025-03-02,4440,CUST-10275,Joy Ware,Kelly PLC,Operations,PayPal,INV-90390,Rejected
+EXP-50391,Software Subscription,2025-07-09,15889,CUST-10330,Paul Rivers,Hampton and Sons,IT,Credit Card,INV-90391,Approved
+EXP-50392,Event Sponsorship,2025-02-08,2209,CUST-10453,Teresa Rice,"Lopez, Snyder and Kaufman",Finance,PayPal,INV-90392,Approved
+EXP-50393,Office Supplies,2025-03-28,8811,CUST-10578,Laura Gonzales,"Montoya, Wilson and Jones",Marketing,PayPal,INV-90393,Rejected
+EXP-50394,Travel,2025-02-04,9795,CUST-10103,Natalie Hughes,"Manning, Booth and Roberts",IT,PayPal,INV-90394,Approved
+EXP-50395,Event Sponsorship,2025-03-03,1720,CUST-10212,Samantha Frank,Welch LLC,Operations,Credit Card,INV-90395,Rejected
+EXP-50396,Event Sponsorship,2025-08-25,6175,CUST-10430,Nicholas Rogers,"Williams, Pierce and Burke",Marketing,PayPal,INV-90396,Pending
+EXP-50397,Software Subscription,2025-07-07,11674,CUST-10459,Vincent Daniels,Kennedy-Campbell,Sales,PayPal,INV-90397,Pending
+EXP-50398,Office Supplies,2025-05-10,4921,CUST-10897,Tracy Harris,Landry and Sons,Operations,Credit Card,INV-90398,Pending
+EXP-50399,Event Sponsorship,2025-05-20,13184,CUST-10329,Kyle Dickerson,Brown-Carroll,Finance,Cheque,INV-90399,Approved
+EXP-50400,Office Supplies,2025-08-17,554,CUST-10663,Lindsey Wilson,Meyer-Frazier,Finance,Cheque,INV-90400,Rejected
+EXP-50401,Office Supplies,2025-06-12,11614,CUST-10276,Anthony Barrett,Mcguire and Sons,IT,Cheque,INV-90401,Approved
+EXP-50402,Software Subscription,2025-01-21,169,CUST-10995,Melissa Booker,"Franklin, Chung and Perez",Operations,Credit Card,INV-90402,Rejected
+EXP-50403,Travel,2025-02-03,7293,CUST-10241,Tina Cohen,Dunn-Anderson,Finance,Bank Transfer,INV-90403,Approved
+EXP-50404,Event Sponsorship,2025-07-19,11738,CUST-10274,Robin Graham,"Morris, Tate and Woods",IT,Direct Debit,INV-90404,Approved
+EXP-50405,Marketing,2025-06-17,2531,CUST-10997,Elizabeth Miller,Cantrell-Martinez,IT,Direct Debit,INV-90405,Approved
+EXP-50406,Office Supplies,2025-02-14,3069,CUST-10947,Rachel Fleming,Dennis-Duffy,Marketing,Bank Transfer,INV-90406,Approved
+EXP-50407,Travel,2025-07-12,9476,CUST-10685,Elizabeth Blankenship DVM,Fisher PLC,IT,Bank Transfer,INV-90407,Approved
+EXP-50408,Event Sponsorship,2025-01-16,9527,CUST-10499,Tina King,Lewis-Lopez,IT,Cheque,INV-90408,Approved
+EXP-50409,Marketing,2025-04-23,11170,CUST-10171,Frederick Clark,Hubbard Group,Marketing,Direct Debit,INV-90409,Rejected
+EXP-50410,Software Subscription,2025-02-01,15420,CUST-10433,Alexandra Doyle,Scott-Newman,Operations,Bank Transfer,INV-90410,Approved
+EXP-50411,Travel,2025-05-18,7426,CUST-10288,Alyssa Russell,Nunez and Sons,Sales,PayPal,INV-90411,Pending
+EXP-50412,Office Supplies,2025-08-06,1094,CUST-10346,Lisa Wong,Haney Inc,Sales,Direct Debit,INV-90412,Rejected
+EXP-50413,Software Subscription,2025-02-20,4761,CUST-10753,Tracy Robertson,"Santiago, Hall and Lara",Finance,Cheque,INV-90413,Pending
+EXP-50414,Marketing,2025-08-12,10201,CUST-10958,Mr. Mitchell Washington,Chavez-Hernandez,Finance,PayPal,INV-90414,Pending
+EXP-50415,Software Subscription,2025-03-07,5485,CUST-10973,Tommy Joseph,Cook PLC,Operations,Cheque,INV-90415,Approved
+EXP-50416,Software Subscription,2025-01-20,18962,CUST-10290,Lisa Harrington,"Aguilar, Love and Graham",IT,Credit Card,INV-90416,Rejected
+EXP-50417,Marketing,2025-05-14,12335,CUST-10482,Austin Smith,Haney Inc,Finance,Credit Card,INV-90417,Pending
+EXP-50418,Marketing,2025-08-08,16611,CUST-10042,Denise Long,"Carroll, Mendoza and Hoffman",Finance,PayPal,INV-90418,Approved
+EXP-50419,Event Sponsorship,2025-07-17,1060,CUST-10847,Kaylee Stevens,Giles-Gallagher,Operations,Bank Transfer,INV-90419,Rejected
+EXP-50420,Office Supplies,2025-04-25,5317,CUST-10447,Jason Bird,"Jones, Martinez and Evans",Sales,Bank Transfer,INV-90420,Rejected
+EXP-50421,Office Supplies,2025-05-30,7679,CUST-10061,Danielle Barker,Watson-Gardner,Finance,PayPal,INV-90421,Pending
+EXP-50422,Marketing,2025-08-12,11901,CUST-10623,Abigail Perry,Shaw-Perez,Marketing,Cheque,INV-90422,Pending
+EXP-50423,Event Sponsorship,2025-06-17,817,CUST-10407,Richard Torres,"Shannon, Collins and Sutton",Finance,Cheque,INV-90423,Rejected
+EXP-50424,Software Subscription,2025-05-29,15055,CUST-10802,Shane Lowery,Carter-Martin,Marketing,Direct Debit,INV-90424,Rejected
+EXP-50425,Event Sponsorship,2025-07-19,16290,CUST-10141,Ryan Carrillo,Daniel LLC,Marketing,Cheque,INV-90425,Rejected
+EXP-50426,Marketing,2025-07-17,10048,CUST-10260,Matthew Lee,Poole-Kelley,Marketing,Direct Debit,INV-90426,Rejected
+EXP-50427,Marketing,2025-03-09,12943,CUST-10604,Olivia Mcdonald,Welch LLC,Operations,Direct Debit,INV-90427,Approved
+EXP-50428,Travel,2025-04-27,15974,CUST-10442,Nicholas Gill,Torres Ltd,Operations,PayPal,INV-90428,Pending
+EXP-50429,Event Sponsorship,2025-06-15,18286,CUST-10458,Erik Hoffman,"Duarte, Reese and Gonzalez",Finance,Cheque,INV-90429,Rejected
+EXP-50430,Travel,2025-05-19,17556,CUST-10642,Jenny Smith,Schroeder Group,IT,PayPal,INV-90430,Pending
+EXP-50431,Marketing,2025-02-02,2614,CUST-10509,Vanessa Lewis,"Ramirez, Gates and Stephenson",IT,PayPal,INV-90431,Approved
+EXP-50432,Office Supplies,2025-06-09,18077,CUST-10229,Samantha Stewart,West-Day,Finance,Credit Card,INV-90432,Pending
+EXP-50433,Travel,2025-03-17,4081,CUST-10277,Heather Hale,Johnson-Young,Sales,Direct Debit,INV-90433,Approved
+EXP-50434,Software Subscription,2025-06-26,18676,CUST-10862,Ms. Jennifer Anderson,York-Ross,Sales,Credit Card,INV-90434,Rejected
+EXP-50435,Travel,2025-01-06,13833,CUST-10946,Cassandra Thompson,Bush Inc,Finance,Cheque,INV-90435,Approved
+EXP-50436,Event Sponsorship,2025-08-26,7698,CUST-10877,Jessica Mcmahon,"Clark, Ramirez and Chambers",Finance,Direct Debit,INV-90436,Rejected
+EXP-50437,Travel,2025-05-20,3572,CUST-10653,Kristen Carter,"Gonzalez, Matthews and Hunter",Operations,PayPal,INV-90437,Approved
+EXP-50438,Office Supplies,2025-03-06,4453,CUST-10193,Bryan Williams,Lewis-Anderson,IT,Credit Card,INV-90438,Pending
+EXP-50439,Event Sponsorship,2025-05-17,7834,CUST-10737,Cynthia Miller,"Kelly, Yu and Juarez",Sales,Credit Card,INV-90439,Pending
+EXP-50440,Marketing,2025-06-10,9750,CUST-10722,Carla Miles,Jones-Mays,IT,Credit Card,INV-90440,Rejected
+EXP-50441,Office Supplies,2025-01-28,2787,CUST-10502,Crystal Payne,"Anderson, Mcgee and Yang",Sales,Cheque,INV-90441,Approved
+EXP-50442,Office Supplies,2025-07-14,5931,CUST-10076,Brendan Andrade,Hart LLC,Finance,PayPal,INV-90442,Approved
+EXP-50443,Office Supplies,2025-02-12,2511,CUST-10682,Denise Potts,"Ramirez, Lee and Rodriguez",Marketing,Direct Debit,INV-90443,Rejected
+EXP-50444,Marketing,2025-03-06,4710,CUST-10632,Antonio Martinez,"Taylor, Thomas and Quinn",IT,PayPal,INV-90444,Pending
+EXP-50445,Event Sponsorship,2025-01-14,12448,CUST-10529,Samuel Hughes,Moore Group,IT,Cheque,INV-90445,Pending
+EXP-50446,Marketing,2025-01-09,5475,CUST-10605,Dylan Houston Jr.,Clark-Wall,Finance,Credit Card,INV-90446,Approved
+EXP-50447,Travel,2025-08-24,16801,CUST-10251,Jason Harris,Brooks-Bolton,Operations,Cheque,INV-90447,Rejected
+EXP-50448,Travel,2025-04-03,10698,CUST-10805,Crystal Taylor,"Evans, Olson and Allen",IT,PayPal,INV-90448,Approved
+EXP-50449,Software Subscription,2025-02-11,14012,CUST-10571,Melissa Taylor,"Daniels, Hubbard and Sweeney",Finance,PayPal,INV-90449,Rejected
+EXP-50450,Event Sponsorship,2025-04-25,17592,CUST-10759,Jonathan Manning,Harris-Brown,Sales,Credit Card,INV-90450,Approved
+EXP-50451,Software Subscription,2025-03-31,2595,CUST-10090,Jason Martinez,"Green, Hudson and Lara",Operations,Cheque,INV-90451,Approved
+EXP-50452,Marketing,2025-05-02,11774,CUST-10417,Gerald Gibson,Durham-Cantu,Operations,Bank Transfer,INV-90452,Rejected
+EXP-50453,Travel,2025-06-08,7197,CUST-10957,Ashley Romero,Patterson-Dennis,Marketing,Direct Debit,INV-90453,Pending
+EXP-50454,Office Supplies,2025-02-07,3420,CUST-10693,Tiffany Moreno,Baker Group,Sales,Direct Debit,INV-90454,Approved
+EXP-50455,Event Sponsorship,2025-05-17,13973,CUST-10453,Alexis Wood,"Moore, Lopez and Gomez",Sales,PayPal,INV-90455,Rejected
+EXP-50456,Event Sponsorship,2025-06-21,17426,CUST-10713,Joseph Santana,"Leonard, Smith and Davis",Finance,PayPal,INV-90456,Rejected
+EXP-50457,Software Subscription,2025-05-13,3923,CUST-10978,Alex Herring,Davis Inc,Finance,Direct Debit,INV-90457,Approved
+EXP-50458,Software Subscription,2025-08-10,7172,CUST-10642,Andrew Jones,"Gonzalez, Matthews and Hunter",Operations,Direct Debit,INV-90458,Approved
+EXP-50459,Travel,2025-07-06,9798,CUST-10298,Melissa Rogers,Rush LLC,Finance,Bank Transfer,INV-90459,Approved
+EXP-50460,Office Supplies,2025-08-21,6368,CUST-10036,Beverly Jones,"Crawford, Fernandez and Williams",Marketing,PayPal,INV-90460,Rejected
+EXP-50461,Office Supplies,2025-05-24,16196,CUST-10919,Jennifer Kirby,"Reid, Hamilton and Evans",IT,Direct Debit,INV-90461,Pending
+EXP-50462,Travel,2025-07-14,4911,CUST-10120,Brandon Hall,Hubbard Group,Finance,PayPal,INV-90462,Approved
+EXP-50463,Office Supplies,2025-03-08,11715,CUST-10766,Jake Adams,"Murphy, Thompson and Reese",Marketing,Credit Card,INV-90463,Approved
+EXP-50464,Office Supplies,2025-01-19,11323,CUST-10070,Loretta Murphy,Ellison-Coleman,Finance,Direct Debit,INV-90464,Rejected
+EXP-50465,Office Supplies,2025-08-01,3521,CUST-10143,Monique Esparza,Villegas LLC,Finance,PayPal,INV-90465,Approved
+EXP-50466,Office Supplies,2025-07-17,7290,CUST-10640,Jeffrey Hall,Walker and Sons,Operations,PayPal,INV-90466,Approved
+EXP-50467,Event Sponsorship,2025-06-29,248,CUST-10097,David Henry,"Taylor, Thomas and Quinn",Sales,Bank Transfer,INV-90467,Approved
+EXP-50468,Software Subscription,2025-08-27,14765,CUST-10084,Nancy Robinson,Woodward-Davis,Operations,Cheque,INV-90468,Pending
+EXP-50469,Event Sponsorship,2025-08-25,5277,CUST-10416,Melissa Juarez,"Crawford, Hayes and Tapia",Sales,Direct Debit,INV-90469,Approved
+EXP-50470,Office Supplies,2025-02-05,1898,CUST-10863,Kimberly Ponce,Rogers and Sons,IT,Cheque,INV-90470,Pending
+EXP-50471,Event Sponsorship,2025-01-21,16177,CUST-10895,Adam Brandt,"Clark, Ramirez and Chambers",Finance,Credit Card,INV-90471,Approved
+EXP-50472,Software Subscription,2025-05-16,13426,CUST-10458,Larry Boyle,Ramos Inc,Operations,Direct Debit,INV-90472,Approved
+EXP-50473,Software Subscription,2025-06-26,8354,CUST-10761,Brett Singh,Lozano-Smith,Operations,Credit Card,INV-90473,Rejected
+EXP-50474,Marketing,2025-08-15,7086,CUST-10850,Philip Leonard,Green-Hoffman,Operations,Credit Card,INV-90474,Pending
+EXP-50475,Office Supplies,2025-05-29,13582,CUST-10349,Michael Walker,Schultz-Vargas,IT,Direct Debit,INV-90475,Rejected
+EXP-50476,Software Subscription,2025-01-29,2430,CUST-10516,Cathy Johnson,Mcknight Group,Marketing,Credit Card,INV-90476,Rejected
+EXP-50477,Event Sponsorship,2025-05-14,13249,CUST-10774,Lisa Lloyd,Drake-Parker,IT,Cheque,INV-90477,Approved
+EXP-50478,Event Sponsorship,2025-06-02,11490,CUST-10145,Erin Jenkins,Faulkner-Frazier,Finance,PayPal,INV-90478,Rejected
+EXP-50479,Office Supplies,2025-01-04,14686,CUST-10924,Jake Brown,Phillips Group,IT,Credit Card,INV-90479,Rejected
+EXP-50480,Event Sponsorship,2025-08-11,3987,CUST-10780,Stephen Rodriguez,Moss LLC,Marketing,PayPal,INV-90480,Rejected
+EXP-50481,Software Subscription,2025-07-06,2805,CUST-10211,Michael Wilson,Miller Inc,IT,Credit Card,INV-90481,Approved
+EXP-50482,Marketing,2025-02-10,8350,CUST-10785,Michelle Love,White-Strong,Marketing,PayPal,INV-90482,Rejected
+EXP-50483,Office Supplies,2025-03-12,17238,CUST-10795,Kristen Flores,Hood Inc,Marketing,PayPal,INV-90483,Pending
+EXP-50484,Office Supplies,2025-06-30,11845,CUST-10380,Katie Daniel,"Nelson, Walker and Reyes",Operations,Cheque,INV-90484,Pending
+EXP-50485,Software Subscription,2025-05-06,13053,CUST-10354,Nicole Nichols,Hicks PLC,Finance,Direct Debit,INV-90485,Rejected
+EXP-50486,Marketing,2025-04-26,5973,CUST-10871,Nicholas Stone,Short Group,Operations,Credit Card,INV-90486,Rejected
+EXP-50487,Office Supplies,2025-04-25,2940,CUST-10612,Linda Hurley,Singh-Miller,Operations,PayPal,INV-90487,Rejected
+EXP-50488,Marketing,2025-01-20,12619,CUST-10793,Hector Schmitt,Burke Group,Operations,Cheque,INV-90488,Rejected
+EXP-50489,Marketing,2025-04-18,10505,CUST-10264,Pamela Sullivan,Turner Inc,Sales,Credit Card,INV-90489,Approved
+EXP-50490,Software Subscription,2025-06-16,12747,CUST-10654,Alexis Johnson,"Wilson, Ramirez and Lester",Operations,Credit Card,INV-90490,Pending
+EXP-50491,Travel,2025-07-31,6642,CUST-10342,Steven Kaufman,Christensen Ltd,Finance,Direct Debit,INV-90491,Rejected
+EXP-50492,Event Sponsorship,2025-08-25,2440,CUST-10779,Sierra Ross,"Cain, Davis and Pratt",Operations,PayPal,INV-90492,Pending
+EXP-50493,Office Supplies,2025-04-01,19709,CUST-10900,Kristina Fuller,Humphrey and Sons,Marketing,Bank Transfer,INV-90493,Rejected
+EXP-50494,Software Subscription,2025-03-25,14637,CUST-10916,Erika Wolf,Rush LLC,Operations,Cheque,INV-90494,Rejected
+EXP-50495,Marketing,2025-02-11,14896,CUST-10869,Jared Herman,Cruz-Glover,Operations,PayPal,INV-90495,Rejected
+EXP-50496,Travel,2025-01-24,15915,CUST-10611,Brandon Cochran,Leon and Sons,Operations,PayPal,INV-90496,Approved
+EXP-50497,Travel,2025-07-02,10377,CUST-10873,Matthew Smith,Brennan-Brown,Operations,Credit Card,INV-90497,Approved
+EXP-50498,Marketing,2025-02-16,16396,CUST-10851,Michael Ford,Garrett-Harrell,Operations,Direct Debit,INV-90498,Rejected
+EXP-50499,Event Sponsorship,2025-05-31,918,CUST-10105,Scott Copeland,Flores-Townsend,Sales,Direct Debit,INV-90499,Approved
+EXP-50500,Travel,2025-04-11,2313,CUST-10442,Travis Olson,Rose Inc,Sales,Direct Debit,INV-90500,Approved
+EXP-50501,Software Subscription,2025-07-18,4693,CUST-10537,Barbara Turner,Johnson and Sons,IT,PayPal,INV-90501,Approved
+EXP-50502,Software Subscription,2025-06-26,1501,CUST-10070,Samantha Douglas,Green-Erickson,Sales,Bank Transfer,INV-90502,Approved
+EXP-50503,Event Sponsorship,2025-01-22,9512,CUST-10946,Gail Wilson,Underwood Group,IT,Bank Transfer,INV-90503,Pending
+EXP-50504,Office Supplies,2025-04-09,5731,CUST-10118,Patricia Banks,Bennett-Costa,Sales,Cheque,INV-90504,Rejected
+EXP-50505,Event Sponsorship,2025-02-08,6056,CUST-10467,Derrick Thomas,"Duncan, Powers and Thompson",Finance,Credit Card,INV-90505,Approved
+EXP-50506,Software Subscription,2025-01-05,993,CUST-10986,Michael Novak,Myers Ltd,Sales,Bank Transfer,INV-90506,Approved
+EXP-50507,Software Subscription,2025-03-03,10626,CUST-10772,Veronica Marshall,Bauer Inc,IT,PayPal,INV-90507,Approved
+EXP-50508,Event Sponsorship,2025-05-27,5566,CUST-10182,Mary Guzman,"Thomas, Arnold and Morris",Operations,Bank Transfer,INV-90508,Pending
+EXP-50509,Event Sponsorship,2025-01-31,19033,CUST-10838,Jessica Bowman PhD,"Bowman, Martin and Atkins",Sales,Cheque,INV-90509,Rejected
+EXP-50510,Software Subscription,2025-06-10,2983,CUST-10496,Andrew Brown,Bowman-Sanders,Sales,Credit Card,INV-90510,Approved
+EXP-50511,Travel,2025-06-19,6304,CUST-10162,John Conrad,Greene Group,Sales,Credit Card,INV-90511,Pending
+EXP-50512,Marketing,2025-06-27,7685,CUST-10295,Michelle Ewing,"Berry, Howe and Rivera",Finance,Direct Debit,INV-90512,Pending
+EXP-50513,Marketing,2025-07-18,17593,CUST-10795,Ricardo Warner,"Payne, Holland and White",Marketing,Direct Debit,INV-90513,Approved
+EXP-50514,Software Subscription,2025-05-13,18653,CUST-10113,Melanie Payne,"Johnson, Harrison and Farrell",IT,Credit Card,INV-90514,Pending
+EXP-50515,Software Subscription,2025-07-13,3465,CUST-10452,Kathleen Brown,Hodges-Kirk,Sales,Bank Transfer,INV-90515,Approved
+EXP-50516,Office Supplies,2025-08-06,5161,CUST-10893,Nicholas Foster,Waters PLC,Marketing,PayPal,INV-90516,Rejected
+EXP-50517,Marketing,2025-02-02,11989,CUST-10454,Christine Evans,"Torres, Hutchinson and Bailey",Operations,Credit Card,INV-90517,Pending
+EXP-50518,Office Supplies,2025-05-01,16320,CUST-10982,Kristen Rogers,Santiago-Vasquez,IT,Cheque,INV-90518,Rejected
+EXP-50519,Travel,2025-08-19,11099,CUST-10793,Juan Day,Salas-Bennett,Operations,Bank Transfer,INV-90519,Approved
+EXP-50520,Event Sponsorship,2025-08-02,19531,CUST-10653,Nicholas Rivera,"Moore, Lopez and Gomez",Operations,Credit Card,INV-90520,Rejected
+EXP-50521,Travel,2025-02-04,16398,CUST-10119,Brandon Shields,Conner Inc,Marketing,Bank Transfer,INV-90521,Pending
+EXP-50522,Software Subscription,2025-02-08,9320,CUST-10250,Devin Phelps,Chandler Group,Sales,Direct Debit,INV-90522,Rejected
+EXP-50523,Travel,2025-03-25,815,CUST-10905,Katrina Martin,Hall and Sons,Marketing,Direct Debit,INV-90523,Rejected
+EXP-50524,Software Subscription,2025-06-28,7601,CUST-10863,Kristi Miller,"Benson, Bright and Sandoval",Sales,Credit Card,INV-90524,Approved
+EXP-50525,Marketing,2025-02-13,13354,CUST-10466,Michelle Riley,"Baxter, Thomas and Cordova",Operations,Direct Debit,INV-90525,Rejected
+EXP-50526,Event Sponsorship,2025-05-21,5177,CUST-10040,Richard Johnson,Morris-Mcclain,Finance,Cheque,INV-90526,Approved
+EXP-50527,Travel,2025-04-25,4275,CUST-10638,Mark Green,"Keller, Nielsen and Martin",IT,Direct Debit,INV-90527,Approved
+EXP-50528,Event Sponsorship,2025-08-01,3630,CUST-10644,Jay Acosta,Wolf Group,Operations,Credit Card,INV-90528,Approved
+EXP-50529,Software Subscription,2025-08-21,12992,CUST-10321,Ryan Shaw,"Owens, Morrison and Clark",Operations,Direct Debit,INV-90529,Pending
+EXP-50530,Marketing,2025-08-04,18174,CUST-10525,Erika Jordan,Jackson-Cooper,Marketing,Cheque,INV-90530,Pending
+EXP-50531,Software Subscription,2025-07-07,19685,CUST-10465,Rachel Lee,"Hughes, Mills and Sullivan",Finance,Bank Transfer,INV-90531,Approved
+EXP-50532,Software Subscription,2025-03-30,12411,CUST-10589,Casey Gentry,Mccoy Inc,Sales,Direct Debit,INV-90532,Approved
+EXP-50533,Event Sponsorship,2025-04-09,8903,CUST-10284,Joseph Arias,Thomas Ltd,Marketing,Credit Card,INV-90533,Approved
+EXP-50534,Event Sponsorship,2025-06-25,14242,CUST-10521,Veronica Torres,Brown-Lowe,Finance,Credit Card,INV-90534,Pending
+EXP-50535,Travel,2025-04-23,11932,CUST-10695,Daniel Scott,Evans LLC,Marketing,Direct Debit,INV-90535,Pending
+EXP-50536,Travel,2025-03-02,1530,CUST-10149,Richard Johnson MD,"Anderson, Mcgee and Yang",Finance,Bank Transfer,INV-90536,Pending
+EXP-50537,Event Sponsorship,2025-04-19,9776,CUST-10865,Charles Jones,Arroyo PLC,IT,Credit Card,INV-90537,Rejected
+EXP-50538,Marketing,2025-07-26,709,CUST-10748,Anthony Sims,Gross Ltd,Sales,Direct Debit,INV-90538,Pending
+EXP-50539,Travel,2025-01-06,16467,CUST-10097,Christopher Meza,Trujillo-Daniel,Sales,Bank Transfer,INV-90539,Pending
+EXP-50540,Travel,2025-04-12,9596,CUST-10321,Jessica Morton,Cooke-Mccarty,Operations,Bank Transfer,INV-90540,Pending
+EXP-50541,Travel,2025-03-21,17342,CUST-10402,Mary Berry,Johnson PLC,IT,Bank Transfer,INV-90541,Rejected
+EXP-50542,Travel,2025-01-01,14883,CUST-10126,Travis Adams,"Ward, Cruz and Ward",Finance,Bank Transfer,INV-90542,Approved
+EXP-50543,Marketing,2025-05-16,12349,CUST-10184,John Wallace,Green Inc,Sales,Direct Debit,INV-90543,Approved
+EXP-50544,Software Subscription,2025-05-04,678,CUST-10684,Christopher Beard,Cantrell-Martinez,Operations,Cheque,INV-90544,Rejected
+EXP-50545,Software Subscription,2025-04-24,15134,CUST-10946,Jeffrey Hoffman,Schultz-Reyes,Finance,Bank Transfer,INV-90545,Pending
+EXP-50546,Event Sponsorship,2025-04-04,12188,CUST-10291,Amy Smith,"Bartlett, Ross and Reynolds",Finance,Credit Card,INV-90546,Approved
+EXP-50547,Office Supplies,2025-05-19,11547,CUST-10029,Johnathan Williams,"Reynolds, Joyce and Mercer",IT,Credit Card,INV-90547,Rejected
+EXP-50548,Office Supplies,2025-08-26,4656,CUST-10536,April Adams,Weaver PLC,Operations,Bank Transfer,INV-90548,Rejected
+EXP-50549,Software Subscription,2025-07-20,4419,CUST-10051,Cameron Murphy,Davis Inc,IT,Cheque,INV-90549,Approved
+EXP-50550,Marketing,2025-01-09,8381,CUST-10860,Rebecca Walton,Shaw Inc,Sales,Cheque,INV-90550,Rejected
+EXP-50551,Marketing,2025-06-20,6085,CUST-10462,Brandon Watts,"Cabrera, Walker and Davenport",Finance,PayPal,INV-90551,Approved
+EXP-50552,Travel,2025-07-15,19775,CUST-10330,William Hendricks,"Martinez, Carpenter and Green",Marketing,Direct Debit,INV-90552,Approved
+EXP-50553,Marketing,2025-05-12,16243,CUST-10081,Russell Lewis,"Wilkins, Odom and Harvey",Finance,PayPal,INV-90553,Rejected
+EXP-50554,Marketing,2025-06-07,10370,CUST-10491,Mrs. Alyssa Webb,Powell-English,Sales,Credit Card,INV-90554,Pending
+EXP-50555,Software Subscription,2025-03-28,5547,CUST-10707,William Mccullough,Booth-Morris,Sales,PayPal,INV-90555,Rejected
+EXP-50556,Travel,2025-07-29,15669,CUST-10452,Joseph Cox,"Franklin, Rodriguez and Harris",Sales,Cheque,INV-90556,Approved
+EXP-50557,Travel,2025-04-27,18821,CUST-10805,Katherine Ryan,Pierce Inc,IT,Bank Transfer,INV-90557,Pending
+EXP-50558,Event Sponsorship,2025-02-20,18634,CUST-10503,Joshua Davies,"Carter, Turner and Wright",Operations,Cheque,INV-90558,Approved
+EXP-50559,Software Subscription,2025-01-08,2902,CUST-10132,Traci Martin,Anderson Ltd,Sales,Direct Debit,INV-90559,Approved
+EXP-50560,Event Sponsorship,2025-08-09,8558,CUST-10715,Connie Watkins,Miller PLC,Finance,Bank Transfer,INV-90560,Pending
+EXP-50561,Travel,2025-01-24,19999,CUST-10286,Dan Mejia,Jimenez-Gaines,Marketing,Credit Card,INV-90561,Pending
+EXP-50562,Software Subscription,2025-04-11,9124,CUST-10227,Paul Griffin,"Shannon, Collins and Sutton",Sales,Bank Transfer,INV-90562,Pending
+EXP-50563,Marketing,2025-03-22,16495,CUST-10771,Keith Anderson,Mitchell-Parker,Sales,Bank Transfer,INV-90563,Approved
+EXP-50564,Office Supplies,2025-07-13,19074,CUST-10735,John Vargas,Perkins-Powell,Sales,PayPal,INV-90564,Pending
+EXP-50565,Office Supplies,2025-03-24,6513,CUST-10391,Erik Li,Mitchell-Parker,Operations,Direct Debit,INV-90565,Rejected
+EXP-50566,Marketing,2025-06-13,5746,CUST-10723,Emily Ramirez,Grant-Lozano,Marketing,Credit Card,INV-90566,Approved
+EXP-50567,Office Supplies,2025-08-29,18389,CUST-10286,Juan Cortez,Hampton and Sons,IT,PayPal,INV-90567,Pending
+EXP-50568,Software Subscription,2025-07-08,4245,CUST-10778,Tara Rivera,Duncan Inc,IT,Bank Transfer,INV-90568,Pending
+EXP-50569,Software Subscription,2025-07-28,17400,CUST-10509,Jennifer Mullins,Murray LLC,IT,PayPal,INV-90569,Approved
+EXP-50570,Marketing,2025-06-24,4869,CUST-10670,Kimberly Bell,"Cortez, Kramer and Graham",Finance,Bank Transfer,INV-90570,Rejected
+EXP-50571,Software Subscription,2025-02-10,770,CUST-10058,Carolyn Doyle,"Hughes, Watts and Arnold",Operations,Direct Debit,INV-90571,Rejected
+EXP-50572,Event Sponsorship,2025-07-05,14930,CUST-10466,Sara Zimmerman,Cox-Owen,Sales,PayPal,INV-90572,Pending
+EXP-50573,Event Sponsorship,2025-01-09,16198,CUST-10314,Elizabeth Garza,"Keith, Burke and Rogers",IT,PayPal,INV-90573,Approved
+EXP-50574,Travel,2025-05-18,11944,CUST-10708,Connie Walker,"Carter, Turner and Wright",Marketing,Bank Transfer,INV-90574,Pending
+EXP-50575,Software Subscription,2025-07-21,7745,CUST-10983,Edward Wilkins,Evans-Mora,Operations,Credit Card,INV-90575,Pending
+EXP-50576,Office Supplies,2025-03-13,11832,CUST-10211,Matthew Perkins,Mason Ltd,Operations,Cheque,INV-90576,Rejected
+EXP-50577,Event Sponsorship,2025-02-21,9146,CUST-10690,Edward Cobb,Cline-Acevedo,IT,Credit Card,INV-90577,Pending
+EXP-50578,Event Sponsorship,2025-06-21,1519,CUST-10759,Robert Norris,"Rios, Vang and Martinez",Operations,Cheque,INV-90578,Approved
+EXP-50579,Software Subscription,2025-07-01,4933,CUST-10221,Emily Sanders,Hall and Sons,Finance,PayPal,INV-90579,Approved
+EXP-50580,Software Subscription,2025-05-21,16081,CUST-10441,Renee Barr,Webster Ltd,Sales,PayPal,INV-90580,Rejected
+EXP-50581,Office Supplies,2025-01-13,13699,CUST-10917,John Wagner,Schultz-Cole,Finance,Credit Card,INV-90581,Pending
+EXP-50582,Marketing,2025-03-24,3592,CUST-10427,Taylor Mendez,Crane-Cole,Marketing,PayPal,INV-90582,Pending
+EXP-50583,Travel,2025-06-01,9323,CUST-10522,Christy Butler,"Meyers, King and Munoz",Operations,Credit Card,INV-90583,Rejected
+EXP-50584,Marketing,2025-08-23,8996,CUST-10088,Beth Fry,Brennan Group,IT,Credit Card,INV-90584,Rejected
+EXP-50585,Software Subscription,2025-04-19,4860,CUST-10972,Karen Nelson,Moreno and Sons,Marketing,Cheque,INV-90585,Rejected
+EXP-50586,Software Subscription,2025-02-05,9511,CUST-10293,Michelle Gardner,Powell-Benitez,Marketing,Direct Debit,INV-90586,Approved
+EXP-50587,Travel,2025-07-17,9174,CUST-10549,Timothy Reid,Riggs-Hawkins,IT,Bank Transfer,INV-90587,Approved
+EXP-50588,Travel,2025-06-30,4024,CUST-10440,Tristan Massey,"Simpson, Elliott and Wolfe",Marketing,PayPal,INV-90588,Rejected
+EXP-50589,Office Supplies,2025-04-03,12284,CUST-10690,Allison Larsen,French Group,Sales,Cheque,INV-90589,Pending
+EXP-50590,Travel,2025-04-29,6251,CUST-10549,Lisa Sanchez,Reyes-Gordon,IT,Credit Card,INV-90590,Pending
+EXP-50591,Travel,2025-02-01,5936,CUST-10271,Shannon Young,"Murphy, Sanchez and Perez",Sales,Cheque,INV-90591,Pending
+EXP-50592,Marketing,2025-01-18,1276,CUST-10233,Michele Hunter,Powell-English,Marketing,Cheque,INV-90592,Approved
+EXP-50593,Office Supplies,2025-05-03,11190,CUST-10208,Andres Brewer,Silva PLC,Finance,Bank Transfer,INV-90593,Rejected
+EXP-50594,Software Subscription,2025-04-29,11288,CUST-10760,Jennifer Navarro,Cunningham PLC,IT,PayPal,INV-90594,Approved
+EXP-50595,Office Supplies,2025-02-22,12441,CUST-10505,Anthony Jimenez,James-Carter,Operations,Direct Debit,INV-90595,Rejected
+EXP-50596,Marketing,2025-03-15,4260,CUST-10765,Brandy Lopez,Johnson PLC,Sales,PayPal,INV-90596,Pending
+EXP-50597,Software Subscription,2025-04-16,10505,CUST-10902,Justin Tucker,Silva PLC,Sales,Bank Transfer,INV-90597,Pending
+EXP-50598,Travel,2025-08-29,19340,CUST-10971,Julie Ayala,"Morrison, Brown and Wilson",Marketing,PayPal,INV-90598,Rejected
+EXP-50599,Software Subscription,2025-05-20,15348,CUST-10176,Matthew Mitchell,Gibson Group,Operations,Cheque,INV-90599,Pending
+EXP-50600,Event Sponsorship,2025-07-09,18264,CUST-10834,Ann Jensen,"Hamilton, Wilson and Colon",Finance,Bank Transfer,INV-90600,Rejected
+EXP-50601,Software Subscription,2025-02-07,19360,CUST-10050,Leonard Fields,Mckenzie-Schroeder,Sales,Bank Transfer,INV-90601,Pending
+EXP-50602,Travel,2025-01-03,16169,CUST-10291,Stephanie Stuart,"Lopez, Snyder and Kaufman",Sales,Direct Debit,INV-90602,Rejected
+EXP-50603,Office Supplies,2025-02-06,17942,CUST-10598,Jessica Cruz,Buckley LLC,IT,Credit Card,INV-90603,Pending
+EXP-50604,Marketing,2025-06-11,16967,CUST-10179,Gregory Barrett,"Martinez, Carpenter and Green",IT,PayPal,INV-90604,Rejected
+EXP-50605,Software Subscription,2025-02-08,17607,CUST-10094,Michael Perez,"Flores, Wallace and Garza",Operations,Credit Card,INV-90605,Approved
+EXP-50606,Event Sponsorship,2025-05-21,14276,CUST-10784,Melissa Carter,"May, Molina and Ramirez",Sales,Bank Transfer,INV-90606,Approved
+EXP-50607,Event Sponsorship,2025-02-18,354,CUST-10541,Ernest Brooks,"Rivera, Mclaughlin and Wilson",Finance,PayPal,INV-90607,Approved
+EXP-50608,Software Subscription,2025-01-20,6653,CUST-10805,Amy Casey,Moore-Evans,IT,Credit Card,INV-90608,Approved
+EXP-50609,Software Subscription,2025-05-20,16203,CUST-10852,Matthew Marquez,Caldwell Ltd,Finance,Direct Debit,INV-90609,Approved
+EXP-50610,Office Supplies,2025-06-07,3338,CUST-10857,Rachael Frank,"Padilla, Spears and Baker",Sales,Cheque,INV-90610,Approved
+EXP-50611,Event Sponsorship,2025-08-16,5866,CUST-10004,John Fernandez,Freeman-Hunt,Finance,PayPal,INV-90611,Pending
+EXP-50612,Marketing,2025-01-30,19183,CUST-10627,Tyler Nichols,Moore-Evans,IT,Cheque,INV-90612,Rejected
+EXP-50613,Software Subscription,2025-03-10,10388,CUST-10072,Jessica Clark,Lane-Garner,Operations,Credit Card,INV-90613,Pending
+EXP-50614,Travel,2025-07-09,17312,CUST-10621,Anthony Long,"Hamilton, Wilson and Colon",IT,Direct Debit,INV-90614,Pending
+EXP-50615,Software Subscription,2025-03-03,16362,CUST-10956,Christopher Fuller,Rogers and Sons,Finance,Cheque,INV-90615,Pending
+EXP-50616,Marketing,2025-01-23,6545,CUST-10322,Timothy French,Bennett-Vasquez,Sales,Bank Transfer,INV-90616,Rejected
+EXP-50617,Marketing,2025-01-23,14611,CUST-10991,Richard Mitchell,"Reid, Hamilton and Evans",Marketing,Direct Debit,INV-90617,Rejected
+EXP-50618,Travel,2025-07-09,5185,CUST-10926,Rhonda Washington,Calderon-Bailey,Sales,Direct Debit,INV-90618,Rejected
+EXP-50619,Marketing,2025-04-07,8523,CUST-10801,Shawn Sims,Fox Group,Marketing,PayPal,INV-90619,Pending
+EXP-50620,Travel,2025-06-17,16428,CUST-10375,Gloria Wilson,Taylor and Sons,Marketing,Bank Transfer,INV-90620,Rejected
+EXP-50621,Travel,2025-07-19,7911,CUST-10397,Donald Hernandez,Taylor-Hamilton,IT,PayPal,INV-90621,Pending
+EXP-50622,Travel,2025-07-13,18480,CUST-10382,John Garza,Brennan-Hill,Marketing,PayPal,INV-90622,Approved
+EXP-50623,Travel,2025-07-26,17449,CUST-10112,Glenda Perez,Garcia-Anderson,IT,Cheque,INV-90623,Pending
+EXP-50624,Software Subscription,2025-02-05,3208,CUST-10815,Brian Jones,"Strickland, Johnson and Castillo",IT,Bank Transfer,INV-90624,Pending
+EXP-50625,Software Subscription,2025-05-24,10722,CUST-10867,Timothy Mcdonald,Bryant-Lawson,Sales,Cheque,INV-90625,Pending
+EXP-50626,Travel,2025-05-05,11067,CUST-10694,Laura Hurst,Warren and Sons,Marketing,Direct Debit,INV-90626,Pending
+EXP-50627,Travel,2025-07-25,7559,CUST-10212,Seth Little,"Gutierrez, Myers and Davis",Marketing,PayPal,INV-90627,Approved
+EXP-50628,Software Subscription,2025-06-04,18916,CUST-10395,Taylor Brown,Rose-Tran,IT,Bank Transfer,INV-90628,Rejected
+EXP-50629,Software Subscription,2025-07-15,19502,CUST-10488,Miss Mariah Stark DDS,Cunningham PLC,Finance,Cheque,INV-90629,Pending
+EXP-50630,Software Subscription,2025-04-06,19309,CUST-10973,Andrea Owens,Morris-Murphy,Sales,Direct Debit,INV-90630,Rejected
+EXP-50631,Office Supplies,2025-03-28,12886,CUST-10078,Janice Weaver,"Martinez, Carpenter and Green",Marketing,Cheque,INV-90631,Pending
+EXP-50632,Office Supplies,2025-08-08,2892,CUST-10722,Michael Bowman,Mcdaniel Inc,Operations,PayPal,INV-90632,Approved
+EXP-50633,Software Subscription,2025-02-28,14576,CUST-10385,Allison Collins,"Mcclain, Roberts and Wright",IT,PayPal,INV-90633,Rejected
+EXP-50634,Event Sponsorship,2025-01-24,19260,CUST-10149,Jennifer Schroeder,Cruz PLC,Sales,PayPal,INV-90634,Rejected
+EXP-50635,Marketing,2025-08-08,7004,CUST-10888,Heidi Campos,Harris-Brown,Marketing,PayPal,INV-90635,Approved
+EXP-50636,Software Subscription,2025-08-10,11331,CUST-10614,Jessica Hansen MD,Wilkins-Pham,Sales,PayPal,INV-90636,Approved
+EXP-50637,Event Sponsorship,2025-01-26,8952,CUST-10613,James Ruiz,"Ashley, Garrett and Morrison",Sales,Bank Transfer,INV-90637,Pending
+EXP-50638,Marketing,2025-04-21,13942,CUST-10706,Robin Ray,Clark Group,Finance,Credit Card,INV-90638,Approved
+EXP-50639,Marketing,2025-05-23,9220,CUST-10925,Tammy Pineda,Wilson PLC,Finance,Direct Debit,INV-90639,Approved
+EXP-50640,Office Supplies,2025-08-11,12859,CUST-10986,Mrs. Heather Fowler,"Chung, Velez and Hall",Sales,Bank Transfer,INV-90640,Pending
+EXP-50641,Marketing,2025-04-28,2542,CUST-10204,Cathy Hoover,Trujillo-Daniel,Operations,Cheque,INV-90641,Approved
+EXP-50642,Event Sponsorship,2025-07-08,19234,CUST-10810,Phillip Brown,Bautista Ltd,Finance,Bank Transfer,INV-90642,Pending
+EXP-50643,Travel,2025-04-04,18706,CUST-10672,Kelly Williams,Underwood Group,Marketing,Bank Transfer,INV-90643,Rejected
+EXP-50644,Marketing,2025-03-21,19442,CUST-10280,Sharon Clark,Cantrell-Martinez,Marketing,Cheque,INV-90644,Approved
+EXP-50645,Event Sponsorship,2025-05-22,2766,CUST-10309,Bonnie Harrison,"Glover, Jackson and Meyer",Operations,PayPal,INV-90645,Pending
+EXP-50646,Event Sponsorship,2025-06-12,18481,CUST-10245,Edward Phillips,"Matthews, Bradley and Brady",Finance,Bank Transfer,INV-90646,Pending
+EXP-50647,Travel,2025-07-12,14511,CUST-10052,Alyssa Howard,Lewis-Anderson,Sales,Direct Debit,INV-90647,Rejected
+EXP-50648,Event Sponsorship,2025-06-12,11056,CUST-10553,Chloe Larsen,Williams-Alexander,Sales,Direct Debit,INV-90648,Pending
+EXP-50649,Event Sponsorship,2025-05-07,10429,CUST-10937,Paul Nunez,"Pruitt, Johnson and Hoffman",Operations,Bank Transfer,INV-90649,Approved
+EXP-50650,Marketing,2025-05-07,548,CUST-10866,Tina Shelton,Christensen-Fisher,Operations,PayPal,INV-90650,Approved
+EXP-50651,Marketing,2025-01-11,1871,CUST-10477,Alexis Curry,Johnson and Sons,Operations,Bank Transfer,INV-90651,Rejected
+EXP-50652,Office Supplies,2025-07-23,9502,CUST-10660,April Hernandez,Morrison-Moore,Finance,Credit Card,INV-90652,Pending
+EXP-50653,Software Subscription,2025-03-22,281,CUST-10239,Clayton Carlson,Rivas-Perkins,Marketing,Bank Transfer,INV-90653,Pending
+EXP-50654,Software Subscription,2025-07-12,3956,CUST-10434,Tiffany Garcia,Logan-Smith,Sales,Credit Card,INV-90654,Rejected
+EXP-50655,Event Sponsorship,2025-04-30,12716,CUST-10477,Donald Martinez,Watkins-Freeman,Marketing,Credit Card,INV-90655,Approved
+EXP-50656,Software Subscription,2025-05-10,160,CUST-10603,Brian Cox,Simpson PLC,Marketing,PayPal,INV-90656,Pending
+EXP-50657,Office Supplies,2025-01-16,2203,CUST-10164,Leah Krause,Porter-Johnson,IT,Cheque,INV-90657,Rejected
+EXP-50658,Marketing,2025-03-02,11725,CUST-10797,Chelsea Kemp,Case and Sons,Finance,Credit Card,INV-90658,Approved
+EXP-50659,Marketing,2025-01-17,5341,CUST-10915,Cheryl Rodriguez,Gomez-Wallace,Marketing,Direct Debit,INV-90659,Approved
+EXP-50660,Event Sponsorship,2025-02-28,19808,CUST-10244,William Barber,Johns Group,Operations,PayPal,INV-90660,Pending
+EXP-50661,Software Subscription,2025-05-21,4162,CUST-10106,Pamela Smith,Brown-Lowe,Marketing,Direct Debit,INV-90661,Rejected
+EXP-50662,Office Supplies,2025-04-18,14431,CUST-10219,Daniel Phillips,"Benson, Bright and Sandoval",Finance,Credit Card,INV-90662,Rejected
+EXP-50663,Office Supplies,2025-04-16,2705,CUST-10912,Michael Frost,Black Ltd,Finance,Bank Transfer,INV-90663,Rejected
+EXP-50664,Software Subscription,2025-07-08,9341,CUST-10785,Michele Garcia,"Cox, Bradford and Trevino",Operations,Bank Transfer,INV-90664,Pending
+EXP-50665,Software Subscription,2025-06-14,17686,CUST-10742,Cheryl Hines,Goodwin-Fowler,Marketing,Credit Card,INV-90665,Rejected
+EXP-50666,Software Subscription,2025-02-11,10934,CUST-10392,Elizabeth Cardenas,Jackson Inc,IT,PayPal,INV-90666,Approved
+EXP-50667,Software Subscription,2025-03-20,6975,CUST-10646,James Irwin,Underwood Group,Finance,Cheque,INV-90667,Rejected
+EXP-50668,Travel,2025-04-12,13765,CUST-10815,Jennifer Hall,Taylor Group,Marketing,Cheque,INV-90668,Approved
+EXP-50669,Travel,2025-01-30,19621,CUST-10017,Katie Franklin,Logan-Smith,Operations,PayPal,INV-90669,Pending
+EXP-50670,Event Sponsorship,2025-07-09,8095,CUST-10256,Stephanie Petty,Santos Group,Finance,Direct Debit,INV-90670,Pending
+EXP-50671,Marketing,2025-03-20,19956,CUST-10261,James Harmon,Wells LLC,IT,Cheque,INV-90671,Rejected
+EXP-50672,Office Supplies,2025-04-18,2309,CUST-10244,Terry Diaz,Gibson Group,IT,Cheque,INV-90672,Approved
+EXP-50673,Event Sponsorship,2025-06-17,810,CUST-10756,Mary Parsons,"Keith, Cisneros and Hendricks",Marketing,Cheque,INV-90673,Pending
+EXP-50674,Software Subscription,2025-04-26,8374,CUST-10428,Wesley Owens,"Solis, Brown and Campbell",IT,Direct Debit,INV-90674,Approved
+EXP-50675,Marketing,2025-04-12,14941,CUST-10928,Jacob Smith,"Moore, Hansen and Lewis",Operations,Credit Card,INV-90675,Rejected
+EXP-50676,Marketing,2025-08-07,12433,CUST-10719,Molly Garcia,Edwards-Stanley,Operations,Direct Debit,INV-90676,Approved
+EXP-50677,Office Supplies,2025-04-13,4345,CUST-10414,Billy James,Sandoval Group,Operations,Direct Debit,INV-90677,Approved
+EXP-50678,Event Sponsorship,2025-04-06,3959,CUST-10056,Jennifer Hansen MD,Robinson PLC,IT,Cheque,INV-90678,Pending
+EXP-50679,Software Subscription,2025-05-22,10327,CUST-10433,Heidi Brooks,Robinson-Medina,IT,Bank Transfer,INV-90679,Approved
+EXP-50680,Software Subscription,2025-06-27,8006,CUST-10614,Nancy Dorsey,Edwards-Day,Operations,Direct Debit,INV-90680,Pending
+EXP-50681,Marketing,2025-03-27,9038,CUST-10001,Brandi Daniels,"Evans, Williams and Simpson",Operations,Credit Card,INV-90681,Pending
+EXP-50682,Office Supplies,2025-08-24,10980,CUST-10847,Jessica Ortiz,Villegas LLC,Operations,Bank Transfer,INV-90682,Rejected
+EXP-50683,Software Subscription,2025-06-03,5909,CUST-10330,Harold Carson,Kennedy-Campbell,IT,PayPal,INV-90683,Rejected
+EXP-50684,Software Subscription,2025-07-23,14759,CUST-10473,Jason Perez,"Weber, Lynch and Little",Operations,Direct Debit,INV-90684,Approved
+EXP-50685,Travel,2025-08-16,8778,CUST-10020,Shelley Wilson,Conner Inc,Finance,Bank Transfer,INV-90685,Rejected
+EXP-50686,Event Sponsorship,2025-03-15,8876,CUST-10505,Daniel Wright,"Blackwell, Odonnell and Mcdowell",Sales,Bank Transfer,INV-90686,Approved
+EXP-50687,Travel,2025-01-09,9113,CUST-10514,Lauren Petersen,"Anderson, Herrera and Welch",Marketing,PayPal,INV-90687,Approved
+EXP-50688,Marketing,2025-04-21,2386,CUST-10740,Jennifer Hall,Robinson-Warner,IT,Cheque,INV-90688,Rejected
+EXP-50689,Travel,2025-03-20,16805,CUST-10132,Kaylee Russell,Walker-Torres,Sales,PayPal,INV-90689,Pending
+EXP-50690,Travel,2025-08-12,17794,CUST-10510,Amanda Johnson,Taylor Ltd,Sales,Bank Transfer,INV-90690,Pending
+EXP-50691,Office Supplies,2025-08-17,16591,CUST-10122,Alan Thomas,Anderson-Lowe,Marketing,Direct Debit,INV-90691,Rejected
+EXP-50692,Event Sponsorship,2025-07-15,19355,CUST-10875,Michael Fuller,"Pierce, Avila and Waller",Finance,PayPal,INV-90692,Pending
+EXP-50693,Marketing,2025-08-04,2193,CUST-10304,Jim Anderson,Long-Johnson,IT,Cheque,INV-90693,Pending
+EXP-50694,Marketing,2025-01-07,19901,CUST-10105,Kelsey Martinez,Hood Inc,Finance,PayPal,INV-90694,Rejected
+EXP-50695,Event Sponsorship,2025-01-13,11267,CUST-10852,Kimberly Gonzalez,"Murphy, Thompson and Reese",Finance,Direct Debit,INV-90695,Approved
+EXP-50696,Marketing,2025-03-17,19198,CUST-10182,Roberto Erickson III,"Perez, Mccoy and Ramirez",Operations,Direct Debit,INV-90696,Approved
+EXP-50697,Marketing,2025-07-05,6296,CUST-10563,Ryan Macias,Walker-Gonzalez,IT,Bank Transfer,INV-90697,Approved
+EXP-50698,Marketing,2025-03-20,6692,CUST-10204,Danny Martin,Johnson Group,IT,Direct Debit,INV-90698,Approved
+EXP-50699,Event Sponsorship,2025-08-09,11384,CUST-10213,Renee Martin,Andrade-Moore,Operations,PayPal,INV-90699,Approved
+EXP-50700,Software Subscription,2025-07-06,16697,CUST-10544,John Spence,"Arellano, Lopez and Huerta",Operations,Bank Transfer,INV-90700,Rejected
+EXP-50701,Travel,2025-01-16,19107,CUST-10222,Ryan Price,Hernandez Ltd,Marketing,Cheque,INV-90701,Rejected
+EXP-50702,Office Supplies,2025-06-17,10029,CUST-10216,Christopher Contreras,"Crawford, Hayes and Tapia",Marketing,PayPal,INV-90702,Pending
+EXP-50703,Office Supplies,2025-02-26,397,CUST-10635,Teresa Jackson,"Medina, Lucas and Johnson",Sales,Credit Card,INV-90703,Pending
+EXP-50704,Office Supplies,2025-03-01,12094,CUST-10820,Alyssa Evans,West-Day,Operations,Credit Card,INV-90704,Approved
+EXP-50705,Travel,2025-02-01,4445,CUST-10149,Julie Fisher,Wilson Group,Finance,Bank Transfer,INV-90705,Rejected
+EXP-50706,Event Sponsorship,2025-06-18,7871,CUST-10819,Erin Ellison,Johnson and Sons,Sales,PayPal,INV-90706,Rejected
+EXP-50707,Travel,2025-02-23,3695,CUST-10085,Jeremy Pena,"Gonzales, Allen and Carpenter",Finance,Bank Transfer,INV-90707,Rejected
+EXP-50708,Event Sponsorship,2025-07-23,9714,CUST-10508,Luis Burns,Thompson and Sons,Operations,Cheque,INV-90708,Approved
+EXP-50709,Software Subscription,2025-02-25,11906,CUST-10276,Kathleen Thompson,Baker-Johnson,Sales,Bank Transfer,INV-90709,Pending
+EXP-50710,Software Subscription,2025-01-24,17171,CUST-10134,Anthony Hill,Mitchell-Mendez,IT,Cheque,INV-90710,Rejected
+EXP-50711,Travel,2025-03-16,17603,CUST-10703,Stephanie Sanchez,Johnson-Chang,Operations,Bank Transfer,INV-90711,Approved
+EXP-50712,Software Subscription,2025-02-12,13531,CUST-10795,Stephen Mora,Henderson PLC,IT,Direct Debit,INV-90712,Rejected
+EXP-50713,Marketing,2025-08-10,4041,CUST-10507,Donald Taylor,"Raymond, Lara and Daniel",Finance,PayPal,INV-90713,Rejected
+EXP-50714,Software Subscription,2025-01-07,6272,CUST-10377,Robin Williamson,Silva-Lee,IT,PayPal,INV-90714,Pending
+EXP-50715,Software Subscription,2025-08-07,17287,CUST-10631,Heather Preston,"Lewis, Cross and Huber",Marketing,Direct Debit,INV-90715,Approved
+EXP-50716,Event Sponsorship,2025-08-16,2532,CUST-10845,Holly Townsend,Henderson PLC,Operations,Direct Debit,INV-90716,Pending
+EXP-50717,Software Subscription,2025-06-10,6849,CUST-10023,Jason Gardner,"Duncan, Powers and Thompson",Operations,Credit Card,INV-90717,Approved
+EXP-50718,Office Supplies,2025-02-15,4293,CUST-10897,Julie Hawkins,Thompson and Sons,Finance,Bank Transfer,INV-90718,Approved
+EXP-50719,Event Sponsorship,2025-08-16,5255,CUST-10054,Donald Gonzalez,Moreno and Sons,Operations,Direct Debit,INV-90719,Rejected
+EXP-50720,Marketing,2025-01-06,7746,CUST-10751,James Ray,Lozano-Smith,IT,Cheque,INV-90720,Pending
+EXP-50721,Office Supplies,2025-01-17,3278,CUST-10297,Bobby Garcia,Williams LLC,Operations,PayPal,INV-90721,Pending
+EXP-50722,Office Supplies,2025-07-18,10844,CUST-10892,Jason Alvarez,Anderson Inc,Operations,PayPal,INV-90722,Approved
+EXP-50723,Travel,2025-04-05,19210,CUST-10595,Shannon Taylor,"Pruitt, Jones and Michael",Operations,Credit Card,INV-90723,Rejected
+EXP-50724,Software Subscription,2025-04-28,1971,CUST-10370,Alex Harmon,Johns Group,Finance,Direct Debit,INV-90724,Approved
+EXP-50725,Office Supplies,2025-02-11,4280,CUST-10680,Amanda Steele,Perkins-Turner,Operations,Credit Card,INV-90725,Approved
+EXP-50726,Office Supplies,2025-02-17,6748,CUST-10912,Kyle Green,Fritz Group,Sales,Credit Card,INV-90726,Pending
+EXP-50727,Office Supplies,2025-07-25,17714,CUST-10255,Autumn Vang,Morris-Hall,Finance,Credit Card,INV-90727,Approved
+EXP-50728,Event Sponsorship,2025-04-07,7794,CUST-10289,Deborah Henderson,Mills Ltd,Operations,Credit Card,INV-90728,Pending
+EXP-50729,Travel,2025-08-07,16031,CUST-10870,Jon Reyes,"Contreras, Williams and Valdez",IT,PayPal,INV-90729,Approved
+EXP-50730,Office Supplies,2025-05-01,3748,CUST-10131,Paul Garcia,"Wilson, Atkins and Reyes",Operations,PayPal,INV-90730,Approved
+EXP-50731,Event Sponsorship,2025-06-15,18290,CUST-10908,Ryan Ramirez,"Carroll, Mendoza and Hoffman",Sales,PayPal,INV-90731,Pending
+EXP-50732,Software Subscription,2025-07-02,1455,CUST-10766,Katherine Griffin,Douglas PLC,Marketing,PayPal,INV-90732,Pending
+EXP-50733,Marketing,2025-04-24,1875,CUST-10408,Bonnie White,Reynolds-Woods,Sales,PayPal,INV-90733,Rejected
+EXP-50734,Travel,2025-05-16,16901,CUST-10310,Matthew Norton,Santiago-Vasquez,Finance,Direct Debit,INV-90734,Approved
+EXP-50735,Marketing,2025-02-18,12308,CUST-10862,Michele Ballard,Lee-Ashley,Marketing,Bank Transfer,INV-90735,Approved
+EXP-50736,Marketing,2025-07-02,10120,CUST-10528,Amy Edwards,Frazier-Goodman,IT,Credit Card,INV-90736,Approved
+EXP-50737,Travel,2025-01-06,19045,CUST-10314,Michael Vargas,Chambers-Arnold,Marketing,Bank Transfer,INV-90737,Approved
+EXP-50738,Office Supplies,2025-03-01,17784,CUST-10614,Sean Carney,"Ramirez, Mitchell and Gray",Marketing,Bank Transfer,INV-90738,Rejected
+EXP-50739,Office Supplies,2025-04-23,13238,CUST-10184,Angela Thompson,"Aguirre, Schroeder and King",IT,Direct Debit,INV-90739,Rejected
+EXP-50740,Software Subscription,2025-08-01,12545,CUST-10683,Susan Richardson,Price and Sons,Operations,Credit Card,INV-90740,Pending
+EXP-50741,Software Subscription,2025-02-24,13466,CUST-10127,Jason Anderson,Hill-Brooks,Finance,PayPal,INV-90741,Approved
+EXP-50742,Event Sponsorship,2025-05-05,14689,CUST-10987,Chelsea Simon,"Waters, Dickson and Cox",Marketing,Credit Card,INV-90742,Rejected
+EXP-50743,Travel,2025-08-17,14434,CUST-10066,Andrea Duran,Perez LLC,Finance,Cheque,INV-90743,Rejected
+EXP-50744,Marketing,2025-01-04,17504,CUST-10407,Stacey Mercer,"Phillips, Lin and Ward",IT,Direct Debit,INV-90744,Approved
+EXP-50745,Office Supplies,2025-04-19,7592,CUST-10889,Phillip Richardson,Walker and Sons,Finance,Bank Transfer,INV-90745,Pending
+EXP-50746,Office Supplies,2025-04-02,1462,CUST-10086,Meghan Ford,Benitez and Sons,Operations,Bank Transfer,INV-90746,Pending
+EXP-50747,Event Sponsorship,2025-05-27,212,CUST-10462,Vanessa Black,"Rodriguez, Molina and Pena",IT,Cheque,INV-90747,Approved
+EXP-50748,Marketing,2025-08-17,2803,CUST-10693,Brian Glover,Miranda-Dennis,Marketing,Cheque,INV-90748,Approved
+EXP-50749,Software Subscription,2025-06-26,9958,CUST-10397,Joshua Hoover,"Evans, Olson and Allen",Operations,Cheque,INV-90749,Approved
+EXP-50750,Travel,2025-01-23,15053,CUST-10891,Jamie Moore,Chaney-Lozano,IT,Credit Card,INV-90750,Pending
+EXP-50751,Event Sponsorship,2025-07-11,11680,CUST-10021,Susan Pratt,"Williams, Anderson and Rosales",Sales,Cheque,INV-90751,Approved
+EXP-50752,Event Sponsorship,2025-03-29,8324,CUST-10056,John Davis,"Adams, Johnson and Davis",Marketing,Direct Debit,INV-90752,Rejected
+EXP-50753,Office Supplies,2025-03-19,18460,CUST-10952,Sherri Walsh,Henderson-Wright,Marketing,PayPal,INV-90753,Rejected
+EXP-50754,Office Supplies,2025-06-09,10288,CUST-10462,Robert Murray,Booth-Morris,Operations,PayPal,INV-90754,Approved
+EXP-50755,Event Sponsorship,2025-07-12,1647,CUST-10567,Christian Marquez,Ward-Riley,IT,Credit Card,INV-90755,Pending
+EXP-50756,Marketing,2025-04-29,2044,CUST-10545,Shannon Wolfe,Lambert Inc,Operations,Cheque,INV-90756,Rejected
+EXP-50757,Software Subscription,2025-03-24,2238,CUST-10442,Dr. Lydia Frazier,Allen-Fuller,IT,Bank Transfer,INV-90757,Pending
+EXP-50758,Software Subscription,2025-03-15,1952,CUST-10460,Madison Campbell,"Ingram, Bush and Adams",Marketing,Credit Card,INV-90758,Approved
+EXP-50759,Event Sponsorship,2025-03-07,3954,CUST-10611,Margaret Kent,Lewis-Anderson,Sales,PayPal,INV-90759,Rejected
+EXP-50760,Travel,2025-06-05,7728,CUST-10351,Karen Stevens,Grant-Lozano,Operations,Direct Debit,INV-90760,Approved
+EXP-50761,Event Sponsorship,2025-05-27,1704,CUST-10707,Cynthia Clark,Chandler Group,IT,Direct Debit,INV-90761,Rejected
+EXP-50762,Event Sponsorship,2025-07-18,15643,CUST-10805,Elizabeth Joyce,Mason Ltd,Marketing,PayPal,INV-90762,Rejected
+EXP-50763,Office Supplies,2025-08-20,16612,CUST-10658,Patrick Smith,Roman LLC,Finance,Credit Card,INV-90763,Pending
+EXP-50764,Travel,2025-03-03,3160,CUST-10107,Aaron James,"Aguirre, Schroeder and King",Marketing,Cheque,INV-90764,Approved
+EXP-50765,Travel,2025-04-04,8571,CUST-10099,Brenda Parker,"Pierce, Avila and Waller",Marketing,PayPal,INV-90765,Pending
+EXP-50766,Marketing,2025-07-14,3516,CUST-10808,Brian Smith,Taylor and Sons,Marketing,Direct Debit,INV-90766,Pending
+EXP-50767,Software Subscription,2025-01-24,19518,CUST-10602,Lauren Christensen,Fisher PLC,Sales,PayPal,INV-90767,Pending
+EXP-50768,Event Sponsorship,2025-02-15,4919,CUST-10595,Nathan Grant,Kemp Inc,Operations,Bank Transfer,INV-90768,Approved
+EXP-50769,Marketing,2025-08-28,17998,CUST-10940,Brandon Weiss,Odom Inc,Finance,PayPal,INV-90769,Pending
+EXP-50770,Software Subscription,2025-06-27,4977,CUST-10307,Charles Ray,Walker-Mcdonald,Finance,Credit Card,INV-90770,Approved
+EXP-50771,Event Sponsorship,2025-05-16,18852,CUST-10695,Linda Harris,Hernandez Ltd,Operations,Credit Card,INV-90771,Pending
+EXP-50772,Event Sponsorship,2025-05-14,14164,CUST-10883,Hector Brown,"Morgan, Brooks and Rogers",Finance,Cheque,INV-90772,Pending
+EXP-50773,Marketing,2025-04-18,7572,CUST-10569,Lisa Smith,Turner Inc,Finance,Cheque,INV-90773,Rejected
+EXP-50774,Office Supplies,2025-04-27,11151,CUST-10992,Angela Ruiz,Williams-Alexander,Sales,PayPal,INV-90774,Pending
+EXP-50775,Office Supplies,2025-03-19,14626,CUST-10145,Margaret Gardner,"Lopez, Cunningham and Wells",IT,Cheque,INV-90775,Rejected
+EXP-50776,Event Sponsorship,2025-05-30,12013,CUST-10839,Kyle Williams,"Yoder, Bowen and Thompson",Sales,PayPal,INV-90776,Pending
+EXP-50777,Travel,2025-01-27,5129,CUST-10978,Jennifer Solis,Simpson-Ray,Sales,Bank Transfer,INV-90777,Pending
+EXP-50778,Event Sponsorship,2025-05-28,4505,CUST-10267,Marissa Boone,Logan-Smith,Finance,Bank Transfer,INV-90778,Rejected
+EXP-50779,Marketing,2025-07-12,9492,CUST-10477,Danny Harrell,"Morgan, Brooks and Rogers",Marketing,Credit Card,INV-90779,Pending
+EXP-50780,Travel,2025-03-24,6821,CUST-10679,Kristen Woods,Daniel LLC,IT,PayPal,INV-90780,Approved
+EXP-50781,Software Subscription,2025-08-26,16735,CUST-10977,Cindy Carter,"Conner, Stone and Lynch",Finance,Bank Transfer,INV-90781,Rejected
+EXP-50782,Travel,2025-06-03,4074,CUST-10105,David Fuentes,West-Day,Finance,PayPal,INV-90782,Pending
+EXP-50783,Event Sponsorship,2025-01-23,10219,CUST-10445,Tammy Wilson,Osborn-Sharp,IT,Direct Debit,INV-90783,Rejected
+EXP-50784,Travel,2025-07-02,17966,CUST-10513,Renee Powers,"Gutierrez, Myers and Davis",IT,Cheque,INV-90784,Approved
+EXP-50785,Software Subscription,2025-06-10,18356,CUST-10091,Amber Rose,Brennan-Brown,Operations,Bank Transfer,INV-90785,Rejected
+EXP-50786,Office Supplies,2025-06-14,9158,CUST-10966,Lisa Olson,Coleman-Welch,Sales,Direct Debit,INV-90786,Rejected
+EXP-50787,Software Subscription,2025-06-04,9902,CUST-10233,John Brown,Benson Group,Finance,Cheque,INV-90787,Approved
+EXP-50788,Travel,2025-08-26,10911,CUST-10998,Sandra Williams,"Garcia, Bennett and Larson",Marketing,Cheque,INV-90788,Pending
+EXP-50789,Marketing,2025-01-07,14169,CUST-10797,Diane Owens,"Lopez, Bowen and Brown",Sales,Bank Transfer,INV-90789,Rejected
+EXP-50790,Marketing,2025-02-26,1508,CUST-10745,Julian Forbes,Ray and Sons,Operations,Direct Debit,INV-90790,Approved
+EXP-50791,Event Sponsorship,2025-08-31,16656,CUST-10791,Susan Diaz,Jackson-Cooper,Sales,PayPal,INV-90791,Pending
+EXP-50792,Office Supplies,2025-05-07,4634,CUST-10098,Patricia Hubbard,"Jones, Oconnor and Carr",Marketing,Credit Card,INV-90792,Rejected
+EXP-50793,Event Sponsorship,2025-02-19,12462,CUST-10462,Anne Clark,Fisher LLC,Operations,Direct Debit,INV-90793,Approved
+EXP-50794,Travel,2025-08-27,5666,CUST-10663,Victoria Meyer,Ellison-Coleman,Finance,PayPal,INV-90794,Pending
+EXP-50795,Software Subscription,2025-04-02,13246,CUST-10502,Christopher Peterson,"Kelly, Davis and Nolan",Operations,Cheque,INV-90795,Pending
+EXP-50796,Event Sponsorship,2025-03-15,14954,CUST-10809,Jason Potts,Mcdaniel Inc,Sales,Direct Debit,INV-90796,Pending
+EXP-50797,Office Supplies,2025-08-19,15514,CUST-10146,Diane Moody DDS,Cobb-Marsh,IT,Bank Transfer,INV-90797,Approved
+EXP-50798,Marketing,2025-02-03,18319,CUST-10727,Corey Harris,"Li, Davis and Thomas",IT,Cheque,INV-90798,Pending
+EXP-50799,Software Subscription,2025-08-31,1161,CUST-10251,Michael Bell,"Clark, Ramirez and Chambers",Marketing,Bank Transfer,INV-90799,Rejected
+EXP-50800,Event Sponsorship,2025-07-30,10294,CUST-10020,Catherine Blanchard,Miller Ltd,Sales,Credit Card,INV-90800,Pending
+EXP-50801,Office Supplies,2025-08-28,11700,CUST-10224,Joseph Martin,Jimenez-Gaines,Marketing,Credit Card,INV-90801,Rejected
+EXP-50802,Travel,2025-01-10,19572,CUST-10970,Laura Hayes,Singleton-Joseph,Sales,Credit Card,INV-90802,Rejected
+EXP-50803,Software Subscription,2025-02-09,450,CUST-10508,Sean Jones,Edwards-Dawson,Operations,Bank Transfer,INV-90803,Pending
+EXP-50804,Travel,2025-04-21,5954,CUST-10030,Patricia Smith,Jackson-Sherman,Finance,Bank Transfer,INV-90804,Rejected
+EXP-50805,Marketing,2025-05-08,6413,CUST-10068,Jacob Byrd,Walker-Torres,IT,Direct Debit,INV-90805,Approved
+EXP-50806,Office Supplies,2025-08-30,6915,CUST-10335,Jonathan Mitchell,Shaw-Perez,IT,Cheque,INV-90806,Rejected
+EXP-50807,Software Subscription,2025-06-11,11176,CUST-10260,Stephanie Dixon,English Group,Finance,Bank Transfer,INV-90807,Approved
+EXP-50808,Software Subscription,2025-02-12,10454,CUST-10572,Amy Sanford,West-Day,Finance,Cheque,INV-90808,Approved
+EXP-50809,Software Subscription,2025-07-11,8529,CUST-10720,Christopher Foster,Jimenez and Sons,Finance,Direct Debit,INV-90809,Approved
+EXP-50810,Event Sponsorship,2025-02-10,2384,CUST-10971,Zachary Miller,"Rice, Phillips and Smith",Sales,Credit Card,INV-90810,Approved
+EXP-50811,Travel,2025-06-17,12242,CUST-10803,Michael Pratt,Haas Ltd,IT,PayPal,INV-90811,Pending
+EXP-50812,Marketing,2025-05-06,9572,CUST-10512,Samuel Garcia,Miller Ltd,Sales,Credit Card,INV-90812,Approved
+EXP-50813,Marketing,2025-06-24,11903,CUST-10671,Karen Torres,"Clark, Ramirez and Chambers",Marketing,Credit Card,INV-90813,Rejected
+EXP-50814,Travel,2025-07-13,2137,CUST-10512,Tracy Lewis,"Ramirez, Gates and Stephenson",Operations,Cheque,INV-90814,Approved
+EXP-50815,Event Sponsorship,2025-04-26,5322,CUST-10849,Robin Burke,"Cruz, Sullivan and Howard",Sales,Bank Transfer,INV-90815,Approved
+EXP-50816,Marketing,2025-07-10,11636,CUST-10687,Gerald Dunn,Ellison-Coleman,IT,Cheque,INV-90816,Rejected
+EXP-50817,Marketing,2025-05-11,11020,CUST-10900,Adam Smith,Moreno and Sons,Sales,PayPal,INV-90817,Rejected
+EXP-50818,Software Subscription,2025-03-25,19963,CUST-10797,Gregory Hicks,"Wilson, Mcclure and Wright",Finance,Credit Card,INV-90818,Rejected
+EXP-50819,Event Sponsorship,2025-02-20,4143,CUST-10281,Charles Allen,"Richardson, Price and Lyons",Finance,PayPal,INV-90819,Pending
+EXP-50820,Software Subscription,2025-03-13,4891,CUST-10433,Emily Shaw,"Martinez, Carpenter and Green",Finance,Cheque,INV-90820,Approved
+EXP-50821,Event Sponsorship,2025-07-09,9868,CUST-10292,Jodi Bates,"Nichols, Chapman and Smith",Finance,Cheque,INV-90821,Rejected
+EXP-50822,Software Subscription,2025-04-20,11048,CUST-10586,Robert Carroll,Moore Group,Marketing,Direct Debit,INV-90822,Rejected
+EXP-50823,Software Subscription,2025-03-19,3732,CUST-10321,Christine Dixon,Cantrell-Martinez,IT,PayPal,INV-90823,Rejected
+EXP-50824,Marketing,2025-03-01,16653,CUST-10966,Cynthia Richmond,"Weber, Lynch and Little",Finance,Cheque,INV-90824,Approved
+EXP-50825,Marketing,2025-08-23,6023,CUST-10943,Jerome Duncan,"Crawford, Hayes and Tapia",Operations,Cheque,INV-90825,Rejected
+EXP-50826,Software Subscription,2025-08-03,14176,CUST-10846,John Williams,Lewis-Patel,Marketing,Bank Transfer,INV-90826,Rejected
+EXP-50827,Office Supplies,2025-01-25,19992,CUST-10606,Matthew Johnson,"Conner, Stone and Lynch",Operations,Credit Card,INV-90827,Rejected
+EXP-50828,Office Supplies,2025-06-04,15673,CUST-10271,Julia Martin,Singleton-Joseph,Sales,Bank Transfer,INV-90828,Approved
+EXP-50829,Software Subscription,2025-04-16,15190,CUST-10185,Donald Dyer,Carter-Martin,Marketing,Direct Debit,INV-90829,Pending
+EXP-50830,Event Sponsorship,2025-02-07,19976,CUST-10235,Randall Gross,Moore PLC,Finance,Direct Debit,INV-90830,Rejected
+EXP-50831,Marketing,2025-02-13,9970,CUST-10029,Angel Wiley,"Jenkins, Barrett and Klein",Operations,Direct Debit,INV-90831,Approved
+EXP-50832,Marketing,2025-01-24,2483,CUST-10995,Mark Huber,Foster-Blair,Operations,Cheque,INV-90832,Approved
+EXP-50833,Event Sponsorship,2025-01-14,8588,CUST-10544,Olivia Schultz,Snyder-Chang,Finance,Credit Card,INV-90833,Pending
+EXP-50834,Software Subscription,2025-04-06,18299,CUST-10199,Heather Valenzuela,Jackson-Vasquez,Finance,Credit Card,INV-90834,Rejected
+EXP-50835,Marketing,2025-08-18,9894,CUST-10696,Charles Glass,"Watson, Ford and Wagner",Finance,PayPal,INV-90835,Rejected
+EXP-50836,Marketing,2025-01-12,4315,CUST-10763,Danielle Keith,"Krueger, Johnson and Barnes",Operations,Direct Debit,INV-90836,Approved
+EXP-50837,Software Subscription,2025-07-30,12008,CUST-10481,Jessica Johnson,Taylor PLC,Finance,Direct Debit,INV-90837,Pending
+EXP-50838,Software Subscription,2025-08-22,19082,CUST-10133,Casey Howell,Benson-Phillips,Marketing,Bank Transfer,INV-90838,Pending
+EXP-50839,Event Sponsorship,2025-06-19,1512,CUST-10396,Cassidy Johnson,Walsh-Powell,Finance,Direct Debit,INV-90839,Approved
+EXP-50840,Marketing,2025-06-30,12483,CUST-10033,Pamela Long,"Nelson, Walker and Reyes",Operations,Bank Transfer,INV-90840,Pending
+EXP-50841,Travel,2025-03-13,6762,CUST-10875,Edward Ray,Benson-Phillips,IT,PayPal,INV-90841,Approved
+EXP-50842,Travel,2025-06-28,202,CUST-10654,Curtis Owens,Murray and Sons,IT,Credit Card,INV-90842,Pending
+EXP-50843,Marketing,2025-04-11,10300,CUST-10226,Miguel Fitzgerald,"Cortez, Kramer and Graham",Operations,Bank Transfer,INV-90843,Approved
+EXP-50844,Travel,2025-04-12,6551,CUST-10700,Tiffany Lawson,"Stephens, Smith and Ballard",Finance,Cheque,INV-90844,Pending
+EXP-50845,Office Supplies,2025-05-06,2668,CUST-10979,Rebecca Simmons,Hardy Group,Marketing,Cheque,INV-90845,Rejected
+EXP-50846,Travel,2025-06-28,19346,CUST-10368,Sarah Miller,"Perez, Mccoy and Ramirez",Operations,Cheque,INV-90846,Rejected
+EXP-50847,Office Supplies,2025-08-10,15249,CUST-10595,Daniel Jackson,Meyer-Frazier,Marketing,PayPal,INV-90847,Rejected
+EXP-50848,Software Subscription,2025-03-28,4216,CUST-10586,Gina Miller,Kennedy-Campbell,IT,PayPal,INV-90848,Approved
+EXP-50849,Marketing,2025-03-29,15999,CUST-10519,Joseph Brock,Bennett-Costa,Sales,Credit Card,INV-90849,Rejected
+EXP-50850,Office Supplies,2025-01-22,11249,CUST-10327,Jennifer Klein,Lewis-Patel,Operations,Direct Debit,INV-90850,Pending
+EXP-50851,Event Sponsorship,2025-08-02,7987,CUST-10911,Sherri Byrd MD,"Klein, Rodriguez and Chapman",Sales,Direct Debit,INV-90851,Rejected
+EXP-50852,Software Subscription,2025-08-06,11349,CUST-10406,Todd Hernandez,Green-Hoffman,Marketing,Cheque,INV-90852,Approved
+EXP-50853,Office Supplies,2025-05-01,1590,CUST-10344,Ashley Skinner,Andrade-Moore,IT,PayPal,INV-90853,Rejected
+EXP-50854,Travel,2025-05-04,12316,CUST-10059,Ellen Clark,Johnson PLC,Marketing,Direct Debit,INV-90854,Rejected
+EXP-50855,Event Sponsorship,2025-01-02,15848,CUST-10340,Emily Hill,Moore LLC,Sales,PayPal,INV-90855,Approved
+EXP-50856,Software Subscription,2025-01-13,6515,CUST-10242,Kevin Davis,"Pruitt, Jones and Michael",Marketing,Cheque,INV-90856,Approved
+EXP-50857,Travel,2025-08-23,15670,CUST-10201,Mr. Tyler Moore,Powell-Benitez,Operations,Direct Debit,INV-90857,Rejected
+EXP-50858,Event Sponsorship,2025-07-28,10916,CUST-10932,Gabriella Morris,"Carroll, Mendoza and Hoffman",Sales,Credit Card,INV-90858,Pending
+EXP-50859,Software Subscription,2025-02-27,12149,CUST-10053,Ricky Patel,Myers LLC,Finance,Direct Debit,INV-90859,Approved
+EXP-50860,Marketing,2025-08-05,2602,CUST-10439,Randy Singleton,Schultz-Vargas,IT,Credit Card,INV-90860,Pending
+EXP-50861,Software Subscription,2025-08-30,12148,CUST-10154,James Davis,Morrison-Moore,Marketing,Direct Debit,INV-90861,Rejected
+EXP-50862,Travel,2025-01-18,16047,CUST-10721,Regina Spence,"Poole, Sutton and King",IT,Direct Debit,INV-90862,Approved
+EXP-50863,Marketing,2025-02-16,17836,CUST-10879,Joseph Schroeder,Jackson-Vasquez,Sales,Bank Transfer,INV-90863,Pending
+EXP-50864,Office Supplies,2025-01-24,9095,CUST-10854,Alison Simpson,"Williams, Anderson and Rosales",Operations,Direct Debit,INV-90864,Approved
+EXP-50865,Travel,2025-01-13,18947,CUST-10902,Heather White,Griffith-Glass,Marketing,Cheque,INV-90865,Rejected
+EXP-50866,Marketing,2025-04-14,17449,CUST-10492,Sara Mitchell,"Le, Murray and Reid",Marketing,Bank Transfer,INV-90866,Rejected
+EXP-50867,Travel,2025-04-26,12476,CUST-10702,Elizabeth Trujillo,Rogers-Cervantes,Operations,Direct Debit,INV-90867,Approved
+EXP-50868,Software Subscription,2025-04-14,12669,CUST-10933,Debra Mcneil,Benson-Phillips,Operations,PayPal,INV-90868,Rejected
+EXP-50869,Marketing,2025-01-17,5010,CUST-10162,Christopher Miller,Rogers LLC,Marketing,Cheque,INV-90869,Approved
+EXP-50870,Marketing,2025-07-15,2757,CUST-10584,Jonathan Taylor,"Lopez, Snyder and Kaufman",Marketing,Bank Transfer,INV-90870,Pending
+EXP-50871,Marketing,2025-03-05,7707,CUST-10951,Dr. Amanda Hunter,Williams-Alexander,Sales,Cheque,INV-90871,Pending
+EXP-50872,Software Subscription,2025-02-25,12227,CUST-10710,Angela Kelley,Brooks-Bolton,IT,Cheque,INV-90872,Approved
+EXP-50873,Office Supplies,2025-04-10,16843,CUST-10451,Chelsey Duffy,Garcia-Anderson,Sales,PayPal,INV-90873,Rejected
+EXP-50874,Event Sponsorship,2025-07-11,7764,CUST-10256,Jeffrey Leonard,"Conner, Stone and Lynch",Marketing,Credit Card,INV-90874,Rejected
+EXP-50875,Marketing,2025-04-19,10042,CUST-10576,Ivan Yates,"Rosario, Reeves and Velez",Finance,Credit Card,INV-90875,Pending
+EXP-50876,Marketing,2025-05-16,11003,CUST-10353,Matthew Zamora,"Taylor, Thomas and Quinn",Marketing,PayPal,INV-90876,Pending
+EXP-50877,Office Supplies,2025-01-01,13207,CUST-10105,Christina Mills,Williams-Rose,Sales,PayPal,INV-90877,Rejected
+EXP-50878,Marketing,2025-05-05,7371,CUST-10306,Martha Alexander,"Campbell, Clark and Reese",Finance,Bank Transfer,INV-90878,Pending
+EXP-50879,Event Sponsorship,2025-01-14,14761,CUST-10491,Jeffery Adams,"Cohen, Williams and Mullins",Marketing,Bank Transfer,INV-90879,Approved
+EXP-50880,Software Subscription,2025-05-18,15028,CUST-10144,Jennifer Reed,Kirby-Ford,IT,Direct Debit,INV-90880,Approved
+EXP-50881,Event Sponsorship,2025-06-15,5103,CUST-10406,Jack Lawson,Perkins-Powell,Finance,PayPal,INV-90881,Rejected
+EXP-50882,Office Supplies,2025-02-04,16348,CUST-10213,Elizabeth Scott,"Thomas, Smith and Cook",Marketing,Credit Card,INV-90882,Pending
+EXP-50883,Office Supplies,2025-02-27,3948,CUST-10351,Steve Blake,"Turner, Butler and Morgan",IT,PayPal,INV-90883,Rejected
+EXP-50884,Office Supplies,2025-06-20,6216,CUST-10070,Thomas Haley,"Hicks, Pruitt and Cole",Finance,Direct Debit,INV-90884,Pending
+EXP-50885,Travel,2025-04-04,1831,CUST-10536,Scott Yoder,Myers Ltd,Operations,Direct Debit,INV-90885,Approved
+EXP-50886,Marketing,2025-02-23,18334,CUST-10287,Rebecca Rios,Coleman-Welch,Finance,Credit Card,INV-90886,Pending
+EXP-50887,Event Sponsorship,2025-08-31,3798,CUST-10652,Barbara Bell,"Clay, Schroeder and Rojas",Finance,Cheque,INV-90887,Pending
+EXP-50888,Event Sponsorship,2025-06-27,13897,CUST-10643,Chelsea Lawrence,Taylor LLC,Sales,Direct Debit,INV-90888,Approved
+EXP-50889,Travel,2025-01-13,8233,CUST-10227,Brian Martin,"Massey, Wells and Herrera",IT,Credit Card,INV-90889,Approved
+EXP-50890,Marketing,2025-02-16,16707,CUST-10264,Sharon Campbell,"Wiley, Perez and Ruiz",Operations,Cheque,INV-90890,Rejected
+EXP-50891,Marketing,2025-03-15,11823,CUST-10271,Mr. Christopher Butler,"Johns, Moore and Williams",Sales,Direct Debit,INV-90891,Rejected
+EXP-50892,Marketing,2025-02-28,10613,CUST-10630,James Valencia,Powell-English,Operations,Direct Debit,INV-90892,Pending
+EXP-50893,Software Subscription,2025-07-19,9865,CUST-10222,Shelby Clark,"Schneider, Brown and Ellison",Sales,Bank Transfer,INV-90893,Approved
+EXP-50894,Travel,2025-03-30,8484,CUST-10466,Destiny Cisneros,"Burke, Ward and Gibson",IT,Credit Card,INV-90894,Rejected
+EXP-50895,Software Subscription,2025-02-02,12699,CUST-10300,Bryan Flynn,Kemp Inc,Finance,Credit Card,INV-90895,Approved
+EXP-50896,Marketing,2025-05-08,18611,CUST-10447,Vincent Brandt,"Murphy, Thompson and Reese",Sales,Direct Debit,INV-90896,Pending
+EXP-50897,Travel,2025-03-20,13419,CUST-10803,Allen Green,Carter Inc,Marketing,Cheque,INV-90897,Rejected
+EXP-50898,Office Supplies,2025-04-22,5999,CUST-10534,Nicole Shepherd,"Jackson, Foster and Parker",Marketing,PayPal,INV-90898,Pending
+EXP-50899,Travel,2025-01-20,9242,CUST-10719,Michael Mann,"Nelson, Young and Dyer",Finance,Direct Debit,INV-90899,Rejected
+EXP-50900,Travel,2025-07-23,8067,CUST-10895,Joshua Day,Wells LLC,Finance,Credit Card,INV-90900,Rejected
+EXP-50901,Marketing,2025-03-25,19642,CUST-10402,William Mason,Williams and Sons,Sales,PayPal,INV-90901,Approved
+EXP-50902,Travel,2025-03-26,12161,CUST-10193,Angela Cook,"Miller, Whitaker and Joseph",Finance,PayPal,INV-90902,Pending
+EXP-50903,Marketing,2025-02-12,12484,CUST-10580,Beverly Ortiz,Brennan-Brown,Marketing,Direct Debit,INV-90903,Pending
+EXP-50904,Travel,2025-08-31,6158,CUST-10425,Sara Savage,"Lowe, Rosario and Garcia",Marketing,Direct Debit,INV-90904,Approved
+EXP-50905,Software Subscription,2025-01-12,8167,CUST-10390,Andrew Durham,Christensen-Fisher,Finance,Direct Debit,INV-90905,Pending
+EXP-50906,Software Subscription,2025-04-10,4702,CUST-10095,Johnny Davis,"Yang, Robinson and Ward",Sales,Credit Card,INV-90906,Pending
+EXP-50907,Event Sponsorship,2025-02-11,15083,CUST-10899,Jessica Moore,Trujillo-Daniel,Sales,Bank Transfer,INV-90907,Pending
+EXP-50908,Travel,2025-06-22,14549,CUST-10020,Thomas Chavez,Moore Group,Marketing,Cheque,INV-90908,Pending
+EXP-50909,Marketing,2025-08-28,2135,CUST-10855,Tracey Sullivan,Martinez Ltd,Finance,Bank Transfer,INV-90909,Approved
+EXP-50910,Office Supplies,2025-04-04,4137,CUST-10327,Blake Small,Shaw-Perez,Sales,PayPal,INV-90910,Rejected
+EXP-50911,Event Sponsorship,2025-03-19,11284,CUST-10724,Lawrence Torres,Ortiz Ltd,IT,Cheque,INV-90911,Approved
+EXP-50912,Event Sponsorship,2025-02-28,1484,CUST-10650,Timothy Rich,Gonzalez-Collins,Finance,Direct Debit,INV-90912,Rejected
+EXP-50913,Office Supplies,2025-07-25,15717,CUST-10469,Regina Willis,Boyle-Mack,IT,Direct Debit,INV-90913,Pending
+EXP-50914,Marketing,2025-07-23,294,CUST-10872,Emily Coleman,"Cohen, Williams and Mullins",Marketing,Bank Transfer,INV-90914,Approved
+EXP-50915,Software Subscription,2025-04-11,18691,CUST-10617,Stephen Logan,Page-Watkins,Marketing,Cheque,INV-90915,Rejected
+EXP-50916,Software Subscription,2025-02-09,17371,CUST-10893,Jessica Allen,Smith and Sons,Operations,Cheque,INV-90916,Rejected
+EXP-50917,Event Sponsorship,2025-07-14,4499,CUST-10936,Alvin Gill,Blake and Sons,IT,Cheque,INV-90917,Approved
+EXP-50918,Office Supplies,2025-04-11,11689,CUST-10762,Jessica Ibarra,Taylor and Sons,Operations,PayPal,INV-90918,Approved
+EXP-50919,Event Sponsorship,2025-06-01,18625,CUST-10984,Kelly Ramirez,Anderson Ltd,Marketing,Credit Card,INV-90919,Approved
+EXP-50920,Travel,2025-06-09,5192,CUST-10402,Julian Anderson,Myers Group,IT,Credit Card,INV-90920,Rejected
+EXP-50921,Software Subscription,2025-06-14,5785,CUST-10097,George Romero,Jackson-Sherman,Finance,PayPal,INV-90921,Rejected
+EXP-50922,Event Sponsorship,2025-03-01,4855,CUST-10387,Michaela Ford,Chaney-Lozano,Finance,PayPal,INV-90922,Rejected
+EXP-50923,Event Sponsorship,2025-05-12,19277,CUST-10106,Chelsea Garcia,"Weber, Lynch and Little",Marketing,Direct Debit,INV-90923,Pending
+EXP-50924,Travel,2025-02-06,7329,CUST-10329,Jaclyn Maddox,"Miller, Hardy and Watkins",Finance,Credit Card,INV-90924,Rejected
+EXP-50925,Marketing,2025-03-27,14469,CUST-10742,Emily Torres,Green LLC,IT,Direct Debit,INV-90925,Pending
+EXP-50926,Office Supplies,2025-03-11,16473,CUST-10435,Hayley Weaver,Roberts PLC,Finance,Cheque,INV-90926,Rejected
+EXP-50927,Software Subscription,2025-01-25,8097,CUST-10241,Brian Clark,Porter-Martin,Sales,PayPal,INV-90927,Rejected
+EXP-50928,Software Subscription,2025-04-20,18074,CUST-10405,Todd Holloway,"Keith, Burke and Rogers",Sales,Direct Debit,INV-90928,Rejected
+EXP-50929,Event Sponsorship,2025-05-12,16477,CUST-10296,Cheryl Medina,Clements-Maynard,Sales,Direct Debit,INV-90929,Pending
+EXP-50930,Travel,2025-07-04,13937,CUST-10569,Melissa Anderson,"White, Horton and Bender",IT,Credit Card,INV-90930,Approved
+EXP-50931,Travel,2025-03-12,13050,CUST-10788,Mitchell Cole,Choi Ltd,IT,Cheque,INV-90931,Rejected
+EXP-50932,Travel,2025-03-22,14315,CUST-10111,Donald Jensen,"Blair, Carey and Henderson",Finance,Direct Debit,INV-90932,Pending
+EXP-50933,Office Supplies,2025-05-27,14716,CUST-10474,Jennifer Gonzalez,"Clark, Smith and Anderson",Marketing,Cheque,INV-90933,Pending
+EXP-50934,Travel,2025-02-05,12067,CUST-10944,Scott Dillon,"Mcclain, Roberts and Wright",Marketing,Cheque,INV-90934,Rejected
+EXP-50935,Software Subscription,2025-01-31,9367,CUST-10289,Daniel Chandler,Daniel LLC,Sales,Cheque,INV-90935,Approved
+EXP-50936,Software Subscription,2025-07-01,5879,CUST-10160,Tanner Richardson,Taylor LLC,Finance,PayPal,INV-90936,Approved
+EXP-50937,Event Sponsorship,2025-02-14,12455,CUST-10315,Brandi Adams,Moreno Inc,Operations,Direct Debit,INV-90937,Approved
+EXP-50938,Marketing,2025-05-23,6728,CUST-10731,Sarah Chapman,Gross Inc,Marketing,Credit Card,INV-90938,Pending
+EXP-50939,Office Supplies,2025-03-14,14769,CUST-10470,Erin Gallegos MD,"Wiley, Perez and Ruiz",Sales,Cheque,INV-90939,Rejected
+EXP-50940,Marketing,2025-01-16,12141,CUST-10868,Daniel Pope,Dennis-Duffy,Finance,Bank Transfer,INV-90940,Pending
+EXP-50941,Software Subscription,2025-02-25,11501,CUST-10430,Mark Travis,Gray-Davis,Operations,Direct Debit,INV-90941,Pending
+EXP-50942,Event Sponsorship,2025-02-03,15290,CUST-10166,Traci Lynn,"Anderson, Mcgee and Yang",Sales,Cheque,INV-90942,Pending
+EXP-50943,Marketing,2025-03-02,11308,CUST-10461,Alicia Booth,Moreno and Sons,Finance,Direct Debit,INV-90943,Approved
+EXP-50944,Marketing,2025-08-14,17697,CUST-10898,Margaret Bartlett,Walker-Mcdonald,Sales,Direct Debit,INV-90944,Pending
+EXP-50945,Marketing,2025-05-04,11331,CUST-10921,Deborah Smith,"Wilson, Mcclure and Wright",Finance,PayPal,INV-90945,Pending
+EXP-50946,Software Subscription,2025-03-30,9960,CUST-10803,Eric Daniels,Gonzalez-Collins,Operations,Cheque,INV-90946,Approved
+EXP-50947,Travel,2025-05-14,19009,CUST-10562,Lauren Lucas,Scott-Newman,Operations,PayPal,INV-90947,Rejected
+EXP-50948,Event Sponsorship,2025-04-23,15939,CUST-10653,Bryce Wheeler,"Morrison, Brown and Wilson",Sales,Direct Debit,INV-90948,Rejected
+EXP-50949,Marketing,2025-03-09,14698,CUST-10925,Aimee Evans,Lewis-Anderson,IT,Direct Debit,INV-90949,Rejected
+EXP-50950,Marketing,2025-06-06,9009,CUST-10320,Zachary Wu,Cline-Cook,Finance,PayPal,INV-90950,Rejected
+EXP-50951,Travel,2025-01-27,5566,CUST-10873,Roberto Hooper,"Gardner, Ford and Wells",Marketing,Bank Transfer,INV-90951,Rejected
+EXP-50952,Software Subscription,2025-07-27,7602,CUST-10508,Tiffany White,Reyes-Kim,Operations,Cheque,INV-90952,Approved
+EXP-50953,Office Supplies,2025-08-15,2518,CUST-10912,James Harmon,Hood Inc,Sales,Credit Card,INV-90953,Approved
+EXP-50954,Software Subscription,2025-05-01,2986,CUST-10634,Heidi Robinson,"Reynolds, Joyce and Mercer",Finance,Credit Card,INV-90954,Pending
+EXP-50955,Marketing,2025-03-13,728,CUST-10026,Dean Wheeler,"Moreno, Johnson and Espinoza",Marketing,PayPal,INV-90955,Rejected
+EXP-50956,Event Sponsorship,2025-07-15,17020,CUST-10784,David Wilson,Schroeder Group,Marketing,Bank Transfer,INV-90956,Rejected
+EXP-50957,Event Sponsorship,2025-08-14,868,CUST-10872,Patrick Stewart III,Green Inc,IT,Cheque,INV-90957,Approved
+EXP-50958,Travel,2025-02-22,19820,CUST-10860,Craig Colon,"Lopez, Snyder and Kaufman",Sales,PayPal,INV-90958,Rejected
+EXP-50959,Software Subscription,2025-07-06,15461,CUST-10373,Sarah Mills,Johnson and Sons,Operations,Bank Transfer,INV-90959,Pending
+EXP-50960,Event Sponsorship,2025-01-04,7274,CUST-10559,John Chavez,Key-Anderson,Marketing,PayPal,INV-90960,Pending
+EXP-50961,Office Supplies,2025-04-01,8129,CUST-10022,Daniel Aguilar,Butler-Stewart,Operations,Cheque,INV-90961,Pending
+EXP-50962,Marketing,2025-04-23,9968,CUST-10725,Dakota Martin,Castro LLC,Operations,Credit Card,INV-90962,Pending
+EXP-50963,Travel,2025-05-29,718,CUST-10848,Krista Thomas,Weaver PLC,Finance,PayPal,INV-90963,Rejected
+EXP-50964,Office Supplies,2025-08-11,14036,CUST-10943,Sierra Fisher,Gibson Group,Operations,Bank Transfer,INV-90964,Rejected
+EXP-50965,Office Supplies,2025-08-25,6923,CUST-10802,Carlos Jacobson,Morgan-Navarro,Operations,Credit Card,INV-90965,Pending
+EXP-50966,Marketing,2025-06-08,2626,CUST-10854,Jeanette Torres,Johnson-Young,Marketing,Cheque,INV-90966,Approved
+EXP-50967,Software Subscription,2025-05-16,11161,CUST-10186,Michael Cooper,Page-Warner,Operations,Bank Transfer,INV-90967,Pending
+EXP-50968,Event Sponsorship,2025-03-09,15729,CUST-10895,Lisa Martin PhD,Moyer-Moyer,Marketing,PayPal,INV-90968,Pending
+EXP-50969,Event Sponsorship,2025-05-28,867,CUST-10432,Lisa Kelly,Taylor-White,Sales,Direct Debit,INV-90969,Pending
+EXP-50970,Software Subscription,2025-08-29,4427,CUST-10886,Douglas Tucker,"Hamilton, Wilson and Colon",IT,Cheque,INV-90970,Rejected
+EXP-50971,Marketing,2025-03-17,3366,CUST-10633,Briana Mccoy,James Group,IT,Bank Transfer,INV-90971,Approved
+EXP-50972,Event Sponsorship,2025-07-22,9490,CUST-10625,Mike Richardson,Douglas Ltd,Marketing,Direct Debit,INV-90972,Rejected
+EXP-50973,Office Supplies,2025-03-05,970,CUST-10720,Blake Wallace,"Mora, York and Johnson",IT,Cheque,INV-90973,Rejected
+EXP-50974,Marketing,2025-01-12,4316,CUST-10613,Ana Young,"Harrell, Conway and Tucker",Sales,Credit Card,INV-90974,Rejected
+EXP-50975,Travel,2025-02-27,19881,CUST-10143,Bryan Robbins,"Medina, Lucas and Johnson",Marketing,Bank Transfer,INV-90975,Approved
+EXP-50976,Event Sponsorship,2025-03-27,2972,CUST-10036,Mark Richards,Wilson-Long,Finance,Bank Transfer,INV-90976,Approved
+EXP-50977,Marketing,2025-07-21,9991,CUST-10880,Denise Woodard,"Lopez, Bowen and Brown",Marketing,Cheque,INV-90977,Approved
+EXP-50978,Travel,2025-04-13,12101,CUST-10190,Justin Howard,Perez PLC,Finance,PayPal,INV-90978,Approved
+EXP-50979,Event Sponsorship,2025-07-09,9412,CUST-10240,Shelby Jones,Diaz-Atkinson,Marketing,Bank Transfer,INV-90979,Approved
+EXP-50980,Office Supplies,2025-01-28,2760,CUST-10730,Kelly Wyatt,"Simpson, Elliott and Wolfe",IT,Direct Debit,INV-90980,Rejected
+EXP-50981,Marketing,2025-06-06,17508,CUST-10042,Keith Wright,Hale PLC,Finance,Cheque,INV-90981,Rejected
+EXP-50982,Software Subscription,2025-03-06,11964,CUST-10037,Andrew Jones,Singh-Miller,Operations,PayPal,INV-90982,Rejected
+EXP-50983,Software Subscription,2025-04-19,9686,CUST-10427,Jennifer Smith,Perkins-Powell,Finance,Bank Transfer,INV-90983,Pending
+EXP-50984,Software Subscription,2025-04-18,16811,CUST-10982,Shawn Berry,Underwood Group,Operations,PayPal,INV-90984,Approved
+EXP-50985,Event Sponsorship,2025-02-17,7957,CUST-10743,Jason Vazquez,"Keith, Cisneros and Hendricks",Marketing,Cheque,INV-90985,Pending
+EXP-50986,Marketing,2025-01-24,15985,CUST-10388,Robin Munoz,Osborne-Clements,Operations,Cheque,INV-90986,Rejected
+EXP-50987,Marketing,2025-05-25,19301,CUST-10578,Heather Carter DDS,Castro LLC,Operations,Direct Debit,INV-90987,Rejected
+EXP-50988,Software Subscription,2025-03-01,14601,CUST-10818,Christopher Moore,Hall and Sons,IT,Cheque,INV-90988,Pending
+EXP-50989,Software Subscription,2025-06-25,18639,CUST-10986,Charles Burch,"Wright, Obrien and Mcdowell",Finance,Credit Card,INV-90989,Approved
+EXP-50990,Marketing,2025-08-16,11399,CUST-10789,Joshua Torres,Walton-Hoover,Sales,Bank Transfer,INV-90990,Approved
+EXP-50991,Office Supplies,2025-01-19,17857,CUST-10039,Brian Ryan,Dunn-Anderson,Operations,Bank Transfer,INV-90991,Approved
+EXP-50992,Software Subscription,2025-02-25,10518,CUST-10549,Theresa Duran,Taylor Group,Sales,Bank Transfer,INV-90992,Rejected
+EXP-50993,Event Sponsorship,2025-08-09,5278,CUST-10856,Wendy Hammond,Harris Group,Marketing,Direct Debit,INV-90993,Rejected
+EXP-50994,Marketing,2025-03-21,12111,CUST-10733,Karen Brown,Chan Ltd,Marketing,Direct Debit,INV-90994,Rejected
+EXP-50995,Software Subscription,2025-06-15,4476,CUST-10199,Linda Sanders,Moore PLC,Sales,Bank Transfer,INV-90995,Approved
+EXP-50996,Marketing,2025-05-21,6894,CUST-10230,Mr. Ryan Daniels,"Spencer, Wiley and Martin",IT,Credit Card,INV-90996,Rejected
+EXP-50997,Office Supplies,2025-07-08,3017,CUST-10645,Michelle Nelson,"Chung, Velez and Hall",Finance,Direct Debit,INV-90997,Pending
+EXP-50998,Marketing,2025-03-28,19381,CUST-10935,Diane Carlson,"Everett, Ortiz and Smith",Marketing,Cheque,INV-90998,Pending
+EXP-50999,Event Sponsorship,2025-06-06,14699,CUST-10019,Mark Roberts,Wood LLC,Marketing,Credit Card,INV-90999,Approved
+EXP-51000,Travel,2025-06-13,3501,CUST-10938,Ashley Martinez,Singh-Miller,Finance,Cheque,INV-91000,Pending

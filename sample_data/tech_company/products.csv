@@ -1,0 +1,1001 @@
+Product ID,Product Name,Product Category,Product Status,R&D Initiation Date,R&D Stage,Launch Status,Launch Date,PM Name,Product Cost ($)
+PROD-11001,NetConnect,Analytics,GA (General Availability),2020-11-18,Pre-Launch,Not Launched,2024-09-21,Matthew Monroe,159843
+PROD-11002,NetConnect,Analytics,Pilot,2025-07-28,Pre-Launch,Planned,2024-02-18,Justin Garcia,317333
+PROD-11003,CloudEdge,Analytics,GA (General Availability),2022-05-04,Pre-Launch,Launched,2022-11-30,Andrew Barton,352489
+PROD-11004,Insight360,IoT,Retired,2025-08-16,Concept,Not Launched,2023-06-27,Terry Robbins,463044
+PROD-11005,CoreAnalytics,IoT,Retired,2023-04-06,Pre-Launch,Launched,2024-10-30,Matthew Gamble,187324
+PROD-11006,CloudEdge,Networking,GA (General Availability),2024-04-08,Testing,In Pipeline,2024-07-13,Mercedes Bradford,323758
+PROD-11007,CoreAnalytics,Networking,Retired,2024-08-22,Prototype,Cancelled,2023-05-03,William Rodgers,240783
+PROD-11008,DataSphere,Analytics,In Development,2024-11-13,Enhancement,Planned,2024-09-09,Colton Schultz,529433
+PROD-11009,CloudEdge,IoT,Pilot,2024-05-17,Enhancement,Planned,2023-08-26,Alexander Lucas,364904
+PROD-11010,DataSphere,Analytics,In Development,2022-10-21,Enhancement,Not Launched,2023-08-04,Mrs. Lynn Bender,533060
+PROD-11011,Insight360,Cloud Platform,GA (General Availability),2023-05-06,Prototype,In Pipeline,2024-03-24,Deborah Olson,408541
+PROD-11012,CloudEdge,Analytics,GA (General Availability),2021-11-14,Concept,Cancelled,2025-01-27,Karen Castillo,357732
+PROD-11013,CoreAnalytics,Networking,Retired,2021-11-01,Pre-Launch,Not Launched,2025-01-26,Joshua Davidson,467820
+PROD-11014,DataSphere,Networking,Active,2022-02-08,Prototype,Planned,2023-05-23,Mr. Christopher Smith DDS,222364
+PROD-11015,DataSphere,IoT,GA (General Availability),2022-07-12,Pre-Launch,Cancelled,2025-05-15,Ryan Flores,575055
+PROD-11016,CloudEdge,Networking,Retired,2023-03-07,Testing,Not Launched,2024-09-02,Ashley Vargas,171896
+PROD-11017,DataSphere,Security,Pilot,2025-04-30,Testing,Cancelled,2024-05-11,Rebecca Graham,597190
+PROD-11018,Insight360,Networking,In Development,2022-09-01,Testing,Launched,2024-05-25,Shawn Kelley,386012
+PROD-11019,CoreAnalytics,Networking,GA (General Availability),2025-05-19,Testing,Cancelled,2024-04-25,Drew Ortiz,314390
+PROD-11020,DataSphere,Security,Retired,2024-08-28,Enhancement,Launched,2023-12-28,Karen Duarte,280537
+PROD-11021,NetConnect,Security,In Development,2023-10-19,Pre-Launch,Planned,2023-09-12,Holly Terry,363770
+PROD-11022,CloudEdge,Security,Pilot,2023-09-24,Concept,Not Launched,2023-07-31,Frank Roth,381290
+PROD-11023,Insight360,Networking,Retired,2020-11-29,Enhancement,Cancelled,2023-12-14,Derek Adams,244939
+PROD-11024,CoreAnalytics,Networking,Retired,2023-07-09,Enhancement,Cancelled,2025-08-18,Elizabeth Carey,571000
+PROD-11025,Insight360,Analytics,Retired,2022-08-04,Testing,Not Launched,2023-07-15,Dawn Harris MD,595673
+PROD-11026,NetConnect,Networking,Retired,2022-03-20,Concept,Planned,2024-02-26,Tristan Peters,580176
+PROD-11027,DataSphere,IoT,Active,2022-02-06,Prototype,In Pipeline,2024-04-16,Michael Moore,258741
+PROD-11028,CloudEdge,Analytics,In Development,2023-07-04,Pre-Launch,Cancelled,2024-05-19,Veronica Howard,504206
+PROD-11029,CloudEdge,Analytics,Pilot,2024-12-30,Prototype,Planned,2025-08-10,Christian Francis,438370
+PROD-11030,Insight360,Analytics,GA (General Availability),2023-03-25,Testing,In Pipeline,2023-04-15,Jacqueline Ramsey,335185
+PROD-11031,CloudEdge,Analytics,In Development,2021-07-21,Pre-Launch,Not Launched,2024-06-19,Robert Simmons,329139
+PROD-11032,NetConnect,Analytics,Pilot,2023-09-11,Pre-Launch,In Pipeline,2024-12-08,Dwayne Perez,429048
+PROD-11033,NetConnect,Analytics,Active,2022-09-02,Concept,Cancelled,2024-03-12,Jennifer Page,171032
+PROD-11034,DataSphere,Cloud Platform,Active,2023-08-09,Prototype,In Pipeline,2024-04-07,Deborah Guzman,407657
+PROD-11035,DataSphere,Cloud Platform,In Development,2022-05-28,Testing,Not Launched,2025-03-19,Shannon Osborne,292125
+PROD-11036,DataSphere,Security,Retired,2025-01-08,Pre-Launch,Not Launched,2023-02-23,Matthew Johnson,216971
+PROD-11037,Insight360,Analytics,GA (General Availability),2021-08-11,Concept,Cancelled,2024-03-31,Tina Andrews DVM,422027
+PROD-11038,CloudEdge,Security,Active,2021-07-07,Pre-Launch,Planned,2025-02-27,Jake Williams,462427
+PROD-11039,CoreAnalytics,Networking,Pilot,2025-04-21,Enhancement,Cancelled,2025-04-18,Mr. Logan Nelson,503917
+PROD-11040,CoreAnalytics,Networking,Pilot,2025-02-08,Prototype,Cancelled,2025-07-22,Christopher Jones,392159
+PROD-11041,CoreAnalytics,IoT,Active,2023-10-16,Testing,Planned,2023-04-05,Robert Tate,490395
+PROD-11042,CloudEdge,Security,GA (General Availability),2022-06-04,Concept,Launched,2024-10-17,Amy Malone,155767
+PROD-11043,NetConnect,Analytics,Retired,2022-05-31,Prototype,In Pipeline,2025-05-24,Dawn Thompson,241423
+PROD-11044,DataSphere,IoT,GA (General Availability),2025-08-05,Prototype,In Pipeline,2025-06-08,Zachary Valdez,565001
+PROD-11045,NetConnect,Cloud Platform,Pilot,2023-03-04,Concept,Launched,2023-10-31,Cindy Le,301404
+PROD-11046,CoreAnalytics,Networking,Active,2023-07-25,Prototype,Cancelled,2024-10-03,Crystal Frey,280478
+PROD-11047,Insight360,Cloud Platform,Retired,2024-04-14,Concept,Planned,2024-05-02,Melissa Burke,165280
+PROD-11048,CoreAnalytics,Networking,Active,2021-12-22,Prototype,Cancelled,2025-05-14,Melissa Fowler,245678
+PROD-11049,DataSphere,Security,In Development,2024-02-21,Concept,In Pipeline,2024-09-06,Jacob Cross,443350
+PROD-11050,CoreAnalytics,IoT,Pilot,2024-06-21,Testing,In Pipeline,2024-01-07,Michael Reed,332230
+PROD-11051,CloudEdge,Networking,Pilot,2022-12-05,Testing,Not Launched,2024-11-06,Steven Rogers,245911
+PROD-11052,NetConnect,Networking,Retired,2022-05-21,Concept,Not Launched,2025-01-28,David Brady,363480
+PROD-11053,CoreAnalytics,Security,GA (General Availability),2024-11-18,Pre-Launch,Not Launched,2024-10-07,Thomas Thomas,398114
+PROD-11054,CoreAnalytics,Cloud Platform,Retired,2022-07-04,Prototype,Not Launched,2025-06-10,Elizabeth Steele,256112
+PROD-11055,DataSphere,Networking,Retired,2025-08-25,Prototype,In Pipeline,2024-12-04,David Mejia,558107
+PROD-11056,Insight360,Security,In Development,2024-04-05,Pre-Launch,Not Launched,2025-03-07,Ms. Sarah Wiggins,318791
+PROD-11057,Insight360,Analytics,GA (General Availability),2022-04-29,Enhancement,Planned,2024-10-04,Michael Henson,322868
+PROD-11058,CoreAnalytics,Analytics,Retired,2022-03-27,Concept,Planned,2025-06-14,Colin Oconnor PhD,355873
+PROD-11059,CloudEdge,IoT,Pilot,2022-10-01,Testing,Launched,2025-03-16,Christopher Smith,459671
+PROD-11060,DataSphere,IoT,GA (General Availability),2022-03-27,Concept,Launched,2023-04-29,Rebecca Dixon,383335
+PROD-11061,NetConnect,Networking,GA (General Availability),2025-05-29,Concept,In Pipeline,2023-10-07,Pamela Bruce,404186
+PROD-11062,Insight360,IoT,In Development,2023-09-21,Enhancement,Cancelled,2024-01-27,Douglas Luna,276567
+PROD-11063,CloudEdge,IoT,GA (General Availability),2023-01-09,Enhancement,Launched,2025-01-20,Melissa Johnston,568711
+PROD-11064,CoreAnalytics,Networking,Pilot,2021-09-03,Testing,In Pipeline,2025-04-10,Erica Hines,176900
+PROD-11065,DataSphere,Networking,Pilot,2020-09-29,Pre-Launch,Planned,2024-02-21,Brenda Austin,457112
+PROD-11066,DataSphere,Security,Pilot,2024-10-13,Enhancement,Cancelled,2023-10-07,Stephen Velasquez,480112
+PROD-11067,Insight360,Analytics,Retired,2022-06-27,Pre-Launch,In Pipeline,2023-09-23,Marcia Hickman,486420
+PROD-11068,Insight360,Analytics,Active,2025-03-27,Enhancement,In Pipeline,2025-07-28,Jasmin Cooke,599159
+PROD-11069,DataSphere,IoT,Pilot,2022-02-03,Enhancement,Planned,2023-01-06,William Johnson,413830
+PROD-11070,CloudEdge,Analytics,GA (General Availability),2025-06-30,Testing,Not Launched,2025-07-01,Henry Hernandez,304166
+PROD-11071,NetConnect,Networking,GA (General Availability),2023-12-22,Testing,Launched,2025-05-23,Kristin Munoz,230477
+PROD-11072,Insight360,Security,Active,2022-07-11,Prototype,Not Launched,2023-08-27,Linda Smith,442201
+PROD-11073,Insight360,IoT,GA (General Availability),2023-07-25,Concept,In Pipeline,2023-08-26,Troy Mcfarland,497140
+PROD-11074,Insight360,Security,Pilot,2021-05-09,Prototype,Not Launched,2023-07-01,Jimmy Frank,216297
+PROD-11075,CoreAnalytics,Cloud Platform,Active,2024-03-03,Concept,Launched,2022-12-26,Dennis Wood,176104
+PROD-11076,CloudEdge,Cloud Platform,Pilot,2024-07-20,Pre-Launch,Planned,2023-09-06,James Cruz,596484
+PROD-11077,CloudEdge,Analytics,Retired,2024-12-23,Prototype,Planned,2022-12-31,Tina Wright,349802
+PROD-11078,NetConnect,IoT,Active,2024-06-09,Testing,In Pipeline,2025-06-21,Timothy Rodriguez,260829
+PROD-11079,NetConnect,Cloud Platform,In Development,2024-11-23,Testing,Not Launched,2025-06-19,Lee Dixon,502005
+PROD-11080,Insight360,Networking,Retired,2023-10-17,Pre-Launch,In Pipeline,2023-03-18,David Banks,237657
+PROD-11081,CloudEdge,IoT,In Development,2021-11-08,Prototype,Launched,2025-08-20,Christopher Curry,598668
+PROD-11082,NetConnect,Cloud Platform,GA (General Availability),2025-03-22,Prototype,Planned,2023-06-04,Natalie Holmes,424551
+PROD-11083,CloudEdge,Networking,GA (General Availability),2025-05-06,Enhancement,Launched,2024-04-16,Brittney Sparks,553352
+PROD-11084,CloudEdge,Analytics,GA (General Availability),2023-11-10,Testing,Not Launched,2023-08-12,Jose Kelly,176995
+PROD-11085,CoreAnalytics,Analytics,GA (General Availability),2020-10-19,Pre-Launch,Launched,2024-08-25,Julie Madden,160830
+PROD-11086,DataSphere,Analytics,In Development,2021-06-12,Enhancement,Not Launched,2023-12-07,Joyce Rodriguez,367720
+PROD-11087,CoreAnalytics,Cloud Platform,Pilot,2024-09-12,Prototype,Not Launched,2024-09-22,John Obrien,414545
+PROD-11088,CoreAnalytics,Networking,In Development,2024-03-31,Enhancement,In Pipeline,2024-11-22,Kevin Walker PhD,195237
+PROD-11089,DataSphere,Security,Retired,2021-08-22,Enhancement,Not Launched,2024-06-19,Jacqueline Clarke,269739
+PROD-11090,CoreAnalytics,Cloud Platform,In Development,2025-01-16,Pre-Launch,Planned,2024-02-04,Vicki Benitez,264262
+PROD-11091,DataSphere,Cloud Platform,Active,2023-08-04,Concept,In Pipeline,2024-06-18,Kayla Burch,172295
+PROD-11092,NetConnect,Cloud Platform,Retired,2023-02-01,Testing,Cancelled,2025-02-08,Joseph Garcia,250060
+PROD-11093,DataSphere,Networking,In Development,2020-09-03,Prototype,Cancelled,2022-09-28,Christopher Willis,388212
+PROD-11094,CloudEdge,Analytics,In Development,2020-12-03,Enhancement,Cancelled,2025-05-26,Andrew Stewart,241462
+PROD-11095,CloudEdge,Cloud Platform,In Development,2025-08-21,Prototype,Cancelled,2025-02-27,Mary Dennis,519376
+PROD-11096,DataSphere,Cloud Platform,In Development,2021-11-30,Enhancement,Cancelled,2023-09-28,Justin Payne,178266
+PROD-11097,DataSphere,Analytics,Active,2023-11-14,Prototype,Planned,2022-10-31,Melanie Lester,261344
+PROD-11098,CloudEdge,Security,Pilot,2023-12-29,Enhancement,Not Launched,2024-04-02,Heather Levy,176645
+PROD-11099,DataSphere,Cloud Platform,Active,2022-08-25,Pre-Launch,Launched,2025-06-05,Marcus Parker,431183
+PROD-11100,CloudEdge,Analytics,In Development,2021-08-29,Concept,Launched,2023-11-26,Cody Robinson,487228
+PROD-11101,DataSphere,IoT,In Development,2021-01-23,Pre-Launch,Cancelled,2024-05-31,Antonio James,178465
+PROD-11102,NetConnect,Analytics,Active,2022-04-13,Prototype,Cancelled,2023-10-30,Anna Booker,167370
+PROD-11103,NetConnect,Networking,In Development,2023-03-20,Testing,Cancelled,2023-10-24,George English,502937
+PROD-11104,DataSphere,Networking,Pilot,2024-05-20,Testing,Planned,2023-11-03,Joshua Howard,328856
+PROD-11105,CloudEdge,IoT,In Development,2020-10-27,Concept,Planned,2025-06-29,Kelly Parker,383384
+PROD-11106,CoreAnalytics,Analytics,Retired,2023-01-16,Prototype,Cancelled,2022-11-08,Jason Allen,564514
+PROD-11107,CoreAnalytics,Security,Pilot,2025-08-11,Prototype,Launched,2024-05-31,Samuel Waters,486813
+PROD-11108,Insight360,Security,Active,2022-04-27,Prototype,Cancelled,2024-07-02,Maria Morgan,365859
+PROD-11109,CoreAnalytics,Security,GA (General Availability),2023-03-30,Testing,Launched,2023-04-01,Darrell Kennedy,438764
+PROD-11110,DataSphere,IoT,In Development,2021-01-08,Prototype,Planned,2023-05-22,Kenneth Lyons,204819
+PROD-11111,Insight360,Analytics,GA (General Availability),2023-02-15,Prototype,Launched,2024-11-30,Renee Joseph,446492
+PROD-11112,NetConnect,Security,Pilot,2022-11-18,Prototype,Planned,2023-01-14,Nathaniel Donovan,211994
+PROD-11113,CoreAnalytics,IoT,In Development,2024-05-03,Enhancement,Not Launched,2023-11-27,Matthew Johnson,231426
+PROD-11114,NetConnect,Security,GA (General Availability),2022-04-01,Enhancement,Planned,2023-06-19,Darin Grimes,489536
+PROD-11115,CoreAnalytics,Analytics,Active,2025-03-31,Enhancement,In Pipeline,2025-05-05,Angela Robinson,170935
+PROD-11116,CoreAnalytics,IoT,GA (General Availability),2024-10-16,Prototype,In Pipeline,2024-02-12,Brittany Jordan,172236
+PROD-11117,DataSphere,IoT,Pilot,2024-07-01,Enhancement,Planned,2023-09-29,Joshua Bray,362857
+PROD-11118,CloudEdge,Networking,Active,2023-07-10,Concept,Launched,2024-04-27,Shelley Mcdonald,501750
+PROD-11119,DataSphere,Security,Active,2021-09-04,Testing,Not Launched,2024-05-27,Henry Nguyen,401746
+PROD-11120,Insight360,Cloud Platform,Active,2023-01-07,Enhancement,Cancelled,2022-10-29,Eric Walters,545628
+PROD-11121,Insight360,IoT,GA (General Availability),2023-03-26,Pre-Launch,Not Launched,2025-01-12,Patricia Clark,395114
+PROD-11122,CoreAnalytics,Networking,Pilot,2020-12-07,Prototype,Cancelled,2024-09-20,Doris Long,345156
+PROD-11123,CoreAnalytics,Security,Retired,2023-02-24,Enhancement,Launched,2023-04-01,Felicia Wolfe,334830
+PROD-11124,DataSphere,Analytics,Active,2021-11-13,Prototype,Planned,2025-01-05,Terry Cannon,508738
+PROD-11125,CloudEdge,Analytics,Pilot,2024-03-31,Pre-Launch,In Pipeline,2024-05-27,Brittany Wagner,411740
+PROD-11126,NetConnect,Security,In Development,2024-04-16,Prototype,Not Launched,2023-01-18,Madison Davies DVM,249628
+PROD-11127,NetConnect,Networking,Retired,2023-05-15,Testing,Launched,2023-04-17,Tara Anderson,545259
+PROD-11128,DataSphere,Analytics,GA (General Availability),2024-12-21,Concept,In Pipeline,2025-05-18,Rebecca Chang,457897
+PROD-11129,DataSphere,Analytics,Retired,2025-06-17,Prototype,In Pipeline,2025-02-24,Jennifer Williams,264692
+PROD-11130,DataSphere,IoT,Retired,2021-03-25,Prototype,Launched,2024-06-26,Dr. Corey Brewer,470869
+PROD-11131,CloudEdge,Cloud Platform,GA (General Availability),2024-12-13,Enhancement,Cancelled,2024-10-18,Heather Mullins,382721
+PROD-11132,NetConnect,Networking,Retired,2021-07-24,Concept,In Pipeline,2024-09-07,Laura Bennett,571118
+PROD-11133,CloudEdge,Security,Active,2021-04-08,Enhancement,Not Launched,2024-08-18,Tabitha Johnson DDS,556739
+PROD-11134,CoreAnalytics,Analytics,Retired,2024-08-11,Pre-Launch,Cancelled,2024-04-16,Daniel Cox,427173
+PROD-11135,DataSphere,IoT,Retired,2022-01-24,Enhancement,Launched,2025-03-29,David Gonzalez,548556
+PROD-11136,CloudEdge,Cloud Platform,Retired,2024-09-05,Prototype,In Pipeline,2024-03-30,Wayne Sullivan,410633
+PROD-11137,CoreAnalytics,Security,Pilot,2021-07-26,Testing,Cancelled,2023-11-04,Marc Rodriguez,569882
+PROD-11138,NetConnect,Security,In Development,2022-08-16,Prototype,Launched,2023-10-17,Christopher Rivera,580267
+PROD-11139,NetConnect,IoT,Pilot,2023-01-19,Prototype,Launched,2024-08-23,Lisa Thomas,576280
+PROD-11140,CoreAnalytics,Networking,Retired,2022-09-28,Prototype,In Pipeline,2023-11-10,Robert Wood,197638
+PROD-11141,Insight360,Analytics,GA (General Availability),2023-02-25,Enhancement,Planned,2024-03-22,Bernard Farmer,289163
+PROD-11142,NetConnect,IoT,GA (General Availability),2023-06-19,Enhancement,In Pipeline,2023-11-01,Kirk Wright,264292
+PROD-11143,DataSphere,Analytics,GA (General Availability),2022-06-18,Testing,Cancelled,2025-03-15,Gerald Gay,217180
+PROD-11144,CloudEdge,Security,GA (General Availability),2023-02-25,Testing,Planned,2024-10-08,Kimberly Dickson,387774
+PROD-11145,NetConnect,IoT,GA (General Availability),2024-12-18,Concept,In Pipeline,2025-06-20,Ann Green,162830
+PROD-11146,DataSphere,Security,In Development,2024-04-07,Pre-Launch,Not Launched,2023-09-16,Jonathan Brooks,306431
+PROD-11147,Insight360,Cloud Platform,Active,2025-02-07,Testing,Not Launched,2025-03-17,Peter Holland,235191
+PROD-11148,NetConnect,Networking,Active,2025-07-11,Prototype,Planned,2023-06-08,Lisa Huerta,448686
+PROD-11149,CloudEdge,Networking,Active,2021-05-31,Pre-Launch,In Pipeline,2025-06-18,Karen Hanson,248571
+PROD-11150,DataSphere,IoT,Active,2025-07-19,Pre-Launch,Not Launched,2025-07-02,Daniel White,363699
+PROD-11151,CloudEdge,Analytics,Active,2023-06-12,Enhancement,Cancelled,2024-04-20,Sandra Anderson,249720
+PROD-11152,Insight360,IoT,Active,2023-11-06,Pre-Launch,In Pipeline,2024-02-18,Francisco Johnson,409950
+PROD-11153,Insight360,IoT,Pilot,2023-10-01,Testing,Planned,2025-04-11,Michael Thomas,379324
+PROD-11154,CoreAnalytics,Analytics,In Development,2022-10-11,Prototype,Planned,2024-07-13,Jessica Walker,211113
+PROD-11155,CloudEdge,Analytics,Retired,2024-10-07,Prototype,Planned,2024-11-14,Shirley Gray,536166
+PROD-11156,Insight360,Analytics,In Development,2021-02-26,Pre-Launch,Launched,2024-05-31,Lisa Gibbs,235552
+PROD-11157,CoreAnalytics,IoT,Retired,2023-07-26,Concept,In Pipeline,2023-04-02,David Johnston,163102
+PROD-11158,NetConnect,Security,Retired,2024-05-30,Enhancement,Cancelled,2023-12-06,James Vaughn,336194
+PROD-11159,CoreAnalytics,Security,Retired,2024-06-11,Pre-Launch,In Pipeline,2025-03-30,Edgar Evans,314887
+PROD-11160,CoreAnalytics,IoT,Retired,2024-08-27,Concept,Not Launched,2024-09-29,Nicole Le,204116
+PROD-11161,Insight360,Security,In Development,2023-11-05,Testing,Cancelled,2025-06-30,Stephanie Myers,374628
+PROD-11162,NetConnect,Cloud Platform,Pilot,2024-10-16,Prototype,Launched,2023-09-04,Katie Gaines,307909
+PROD-11163,CloudEdge,Analytics,Active,2024-11-06,Pre-Launch,Not Launched,2023-12-16,Frederick Gomez,543839
+PROD-11164,NetConnect,Networking,In Development,2020-12-24,Testing,Cancelled,2023-02-28,Katherine Payne,503968
+PROD-11165,NetConnect,Security,Retired,2024-02-05,Enhancement,Launched,2024-05-05,Jay Bradford,442665
+PROD-11166,NetConnect,Networking,Active,2022-04-05,Prototype,In Pipeline,2024-12-04,Brian Cochran,469001
+PROD-11167,CoreAnalytics,Cloud Platform,Pilot,2021-07-10,Concept,Cancelled,2024-04-19,Michael Phelps,567560
+PROD-11168,CloudEdge,Networking,Retired,2021-09-12,Enhancement,Planned,2023-11-19,Linda Thomas,157177
+PROD-11169,CloudEdge,Cloud Platform,GA (General Availability),2023-11-12,Pre-Launch,Planned,2025-05-12,Bethany Woodward,524904
+PROD-11170,DataSphere,Analytics,Pilot,2025-08-29,Prototype,In Pipeline,2025-08-15,Benjamin Garcia,495753
+PROD-11171,CloudEdge,Networking,In Development,2020-09-10,Testing,Launched,2025-01-26,Kimberly Moore,197985
+PROD-11172,DataSphere,Cloud Platform,In Development,2020-09-10,Prototype,Not Launched,2024-02-08,Katie Keller,463783
+PROD-11173,NetConnect,Networking,In Development,2024-05-08,Testing,Not Launched,2023-01-23,April Mitchell,435918
+PROD-11174,NetConnect,IoT,Active,2025-07-25,Testing,Launched,2025-07-23,Christopher Harrison,597599
+PROD-11175,CloudEdge,Networking,Active,2024-07-19,Prototype,Not Launched,2025-04-06,Maria Rowe,158404
+PROD-11176,Insight360,IoT,Active,2021-06-28,Testing,In Pipeline,2023-01-06,Jocelyn Hill,224379
+PROD-11177,Insight360,Networking,Active,2025-01-23,Enhancement,Planned,2025-05-03,Glenn Allen,298792
+PROD-11178,DataSphere,Analytics,Active,2024-10-11,Prototype,Cancelled,2023-09-25,Mitchell Fernandez,470741
+PROD-11179,NetConnect,IoT,GA (General Availability),2024-11-27,Testing,Launched,2023-07-13,Kevin Taylor,274139
+PROD-11180,DataSphere,IoT,Active,2023-01-08,Testing,Launched,2024-10-19,Katie Sanchez,278976
+PROD-11181,Insight360,IoT,Pilot,2022-04-08,Testing,Planned,2022-09-05,Lucas Marsh,379743
+PROD-11182,DataSphere,Cloud Platform,Active,2025-08-07,Prototype,Planned,2025-08-28,Christina Nolan,391987
+PROD-11183,CloudEdge,Analytics,Pilot,2022-07-17,Concept,Planned,2023-09-09,Amanda Simon,442279
+PROD-11184,CloudEdge,IoT,GA (General Availability),2024-11-26,Pre-Launch,In Pipeline,2024-04-01,Angela Young,444765
+PROD-11185,Insight360,IoT,Pilot,2020-09-15,Testing,Planned,2023-03-25,Kimberly Gallagher,371864
+PROD-11186,DataSphere,Cloud Platform,Pilot,2025-06-04,Pre-Launch,Cancelled,2023-09-15,Jennifer Lee,491291
+PROD-11187,Insight360,Security,In Development,2024-02-29,Pre-Launch,Not Launched,2023-02-12,Nancy Macdonald,266524
+PROD-11188,NetConnect,Networking,Active,2021-10-26,Testing,Not Launched,2022-11-27,Amy Savage,352089
+PROD-11189,NetConnect,IoT,Pilot,2025-03-18,Concept,Launched,2024-07-25,Kristin Carroll,427691
+PROD-11190,NetConnect,IoT,In Development,2023-01-06,Enhancement,Cancelled,2024-12-15,Melissa Larson,458478
+PROD-11191,NetConnect,Cloud Platform,In Development,2024-12-16,Concept,Launched,2023-10-07,Jeremiah Adams,387299
+PROD-11192,CoreAnalytics,IoT,In Development,2024-04-24,Pre-Launch,Not Launched,2023-06-04,Samuel Hall,262990
+PROD-11193,CoreAnalytics,Cloud Platform,Pilot,2024-11-06,Testing,Cancelled,2022-09-06,Brian Harper,565103
+PROD-11194,CloudEdge,IoT,Retired,2020-09-16,Concept,Cancelled,2025-07-02,Katherine Harrison,186492
+PROD-11195,NetConnect,Cloud Platform,Pilot,2020-12-27,Prototype,Launched,2024-05-04,Justin White,252600
+PROD-11196,Insight360,Analytics,Pilot,2022-02-05,Prototype,Launched,2023-03-11,Kristen Wyatt,593231
+PROD-11197,Insight360,Cloud Platform,Pilot,2021-01-30,Pre-Launch,Not Launched,2023-09-08,Andrea Jordan MD,541779
+PROD-11198,Insight360,Security,Active,2022-07-16,Concept,Launched,2023-10-02,Monica Conley,432915
+PROD-11199,CoreAnalytics,IoT,Active,2023-04-10,Enhancement,Not Launched,2023-09-18,Donald Davis,319157
+PROD-11200,Insight360,Cloud Platform,Retired,2024-02-10,Enhancement,Launched,2024-05-30,Kevin Montgomery,444615
+PROD-11201,CloudEdge,Analytics,Active,2024-12-26,Concept,Not Launched,2022-10-04,Michelle Cox,484425
+PROD-11202,CloudEdge,IoT,Pilot,2025-01-01,Testing,Launched,2022-12-24,Ronnie Rogers,461786
+PROD-11203,CloudEdge,Security,Active,2023-01-06,Pre-Launch,In Pipeline,2025-07-02,Micheal Moses,319301
+PROD-11204,CoreAnalytics,Networking,Active,2025-06-03,Concept,In Pipeline,2024-04-03,Maurice Kramer,328900
+PROD-11205,NetConnect,Networking,Pilot,2021-04-01,Enhancement,In Pipeline,2025-01-14,Vanessa Santos,204802
+PROD-11206,Insight360,Analytics,Active,2022-07-12,Prototype,Launched,2023-10-27,Paul Stephens,446159
+PROD-11207,NetConnect,Analytics,GA (General Availability),2024-01-07,Testing,Planned,2024-03-10,Emily Meyer,491769
+PROD-11208,Insight360,Analytics,Retired,2024-06-27,Concept,Not Launched,2023-06-28,Douglas Phillips,467496
+PROD-11209,CloudEdge,IoT,GA (General Availability),2022-12-01,Enhancement,Cancelled,2023-08-02,Carla Wyatt,459686
+PROD-11210,CloudEdge,Cloud Platform,Retired,2021-04-08,Concept,Launched,2022-12-18,Krystal Taylor,309498
+PROD-11211,CloudEdge,Security,Active,2022-05-12,Prototype,In Pipeline,2023-10-28,Christian Smith,504601
+PROD-11212,CoreAnalytics,IoT,Pilot,2025-08-07,Testing,Not Launched,2023-05-01,Christopher Mays,383107
+PROD-11213,CoreAnalytics,Security,Pilot,2025-03-28,Testing,Launched,2025-06-17,Wesley Williams,182648
+PROD-11214,NetConnect,Networking,Pilot,2025-07-04,Testing,Launched,2025-01-07,Russell Myers,386357
+PROD-11215,CloudEdge,Networking,Pilot,2022-04-23,Concept,Cancelled,2024-04-18,Tonya Ramos,312215
+PROD-11216,Insight360,Security,Pilot,2024-05-20,Concept,Planned,2024-12-14,Jessica Reed,549767
+PROD-11217,DataSphere,Networking,Pilot,2022-10-11,Testing,Not Launched,2023-05-30,Candace Blackwell,288655
+PROD-11218,DataSphere,Networking,Active,2024-08-30,Prototype,Not Launched,2023-04-08,Maria Martinez,295541
+PROD-11219,Insight360,Security,GA (General Availability),2022-09-25,Testing,Cancelled,2023-01-16,Michael Wagner,401140
+PROD-11220,Insight360,Cloud Platform,Pilot,2024-08-13,Pre-Launch,In Pipeline,2022-10-03,Stacey Rodriguez,491673
+PROD-11221,Insight360,Cloud Platform,Pilot,2023-07-27,Pre-Launch,Cancelled,2025-01-07,Maria Rodriguez,340550
+PROD-11222,CoreAnalytics,Cloud Platform,In Development,2025-06-25,Enhancement,In Pipeline,2023-09-21,Julie Sanders,403798
+PROD-11223,CloudEdge,Analytics,Pilot,2021-11-05,Concept,Launched,2023-07-15,Kenneth Nelson,364894
+PROD-11224,Insight360,Networking,GA (General Availability),2024-09-26,Pre-Launch,Launched,2022-12-25,Victor Chung,451807
+PROD-11225,NetConnect,Cloud Platform,In Development,2025-07-13,Prototype,Cancelled,2024-02-19,Jacob Baird,265037
+PROD-11226,CoreAnalytics,Security,Retired,2021-11-10,Prototype,Launched,2023-08-06,Linda Schmidt,365705
+PROD-11227,Insight360,Security,Pilot,2021-07-14,Pre-Launch,Cancelled,2025-05-13,Susan Phillips,376850
+PROD-11228,CloudEdge,Security,GA (General Availability),2024-04-19,Prototype,Not Launched,2025-05-06,Nancy Grant,409929
+PROD-11229,NetConnect,Analytics,In Development,2021-11-23,Pre-Launch,In Pipeline,2022-10-24,Nancy Cross,466879
+PROD-11230,Insight360,Analytics,Pilot,2022-06-18,Prototype,Planned,2025-05-25,Jessica Prince,325051
+PROD-11231,Insight360,Networking,GA (General Availability),2021-02-08,Pre-Launch,Launched,2025-03-04,Gary Kemp,543233
+PROD-11232,CoreAnalytics,Analytics,Active,2024-07-12,Prototype,Cancelled,2024-05-16,Krista Griffin,299725
+PROD-11233,CloudEdge,Cloud Platform,Active,2022-06-11,Enhancement,Planned,2023-10-12,Phillip Velez,349848
+PROD-11234,Insight360,Networking,Retired,2025-01-06,Pre-Launch,Cancelled,2025-07-05,Jennifer Gomez,583491
+PROD-11235,NetConnect,Cloud Platform,Active,2022-06-07,Pre-Launch,Not Launched,2024-02-08,Thomas Castro,221181
+PROD-11236,NetConnect,Security,Pilot,2025-03-20,Pre-Launch,In Pipeline,2022-09-24,Todd Brown,185797
+PROD-11237,CoreAnalytics,Analytics,Retired,2024-05-02,Enhancement,Not Launched,2024-10-25,Leah Gonzales,503066
+PROD-11238,CloudEdge,Security,Retired,2022-05-06,Enhancement,Cancelled,2023-09-27,Tara Brown,546109
+PROD-11239,DataSphere,Networking,In Development,2022-04-06,Concept,Not Launched,2022-11-16,Maria Miller,577528
+PROD-11240,DataSphere,Cloud Platform,Active,2021-06-23,Pre-Launch,Cancelled,2022-09-15,Mary Case,448699
+PROD-11241,Insight360,IoT,Active,2025-07-14,Testing,Cancelled,2025-04-12,Kaylee Holland,303443
+PROD-11242,DataSphere,Security,In Development,2025-07-03,Prototype,Not Launched,2024-01-06,Robert Russell,231392
+PROD-11243,Insight360,Security,Pilot,2024-05-01,Prototype,Not Launched,2023-02-28,Crystal Bradley,354064
+PROD-11244,DataSphere,Analytics,Active,2023-12-03,Prototype,Planned,2024-03-22,Ryan Miller,267011
+PROD-11245,CoreAnalytics,IoT,Active,2023-04-01,Pre-Launch,In Pipeline,2024-07-30,John Burgess,212380
+PROD-11246,DataSphere,Networking,GA (General Availability),2025-01-02,Pre-Launch,Planned,2023-08-24,Denise Anderson,552521
+PROD-11247,CoreAnalytics,Networking,GA (General Availability),2025-07-19,Pre-Launch,Not Launched,2023-10-16,Michelle Spears,476446
+PROD-11248,CoreAnalytics,Cloud Platform,Pilot,2024-06-16,Pre-Launch,In Pipeline,2022-10-25,Jaime Gonzalez,355242
+PROD-11249,DataSphere,Analytics,In Development,2024-06-03,Testing,Not Launched,2024-06-02,Sean Brooks,569132
+PROD-11250,NetConnect,Networking,Active,2021-05-15,Enhancement,Cancelled,2024-03-16,Chad Randolph,270196
+PROD-11251,DataSphere,Networking,Pilot,2021-11-08,Prototype,Launched,2024-07-28,Christine Douglas,341896
+PROD-11252,CloudEdge,Networking,Pilot,2024-10-14,Pre-Launch,Launched,2023-03-29,Edward Ward,276597
+PROD-11253,DataSphere,Security,GA (General Availability),2025-04-17,Concept,In Pipeline,2023-10-17,Tanner Ward,239595
+PROD-11254,CloudEdge,Analytics,In Development,2024-01-17,Testing,Cancelled,2025-08-16,David Vazquez,485055
+PROD-11255,Insight360,Cloud Platform,Pilot,2025-02-23,Testing,Not Launched,2025-07-02,Sarah Henderson,197842
+PROD-11256,Insight360,Cloud Platform,GA (General Availability),2023-01-17,Testing,Planned,2024-12-19,Eric Parker,590462
+PROD-11257,CoreAnalytics,Networking,GA (General Availability),2024-12-08,Enhancement,Cancelled,2024-05-22,Gina Nguyen,591243
+PROD-11258,Insight360,Analytics,GA (General Availability),2023-10-23,Pre-Launch,In Pipeline,2022-11-27,Caleb Wright,318342
+PROD-11259,CloudEdge,Networking,GA (General Availability),2023-11-23,Prototype,Planned,2023-10-15,Cindy Smith,400055
+PROD-11260,CloudEdge,Analytics,In Development,2021-06-12,Prototype,Not Launched,2024-12-23,Miguel Mathis,563844
+PROD-11261,CloudEdge,Analytics,In Development,2024-09-18,Prototype,Planned,2022-12-07,Erin Smith,341462
+PROD-11262,CloudEdge,Cloud Platform,Retired,2021-03-27,Testing,Cancelled,2025-02-22,Bobby Smith Jr.,479001
+PROD-11263,CloudEdge,Cloud Platform,Pilot,2021-07-17,Pre-Launch,Cancelled,2025-03-28,Patrick Hernandez,173919
+PROD-11264,Insight360,IoT,GA (General Availability),2023-05-31,Concept,Cancelled,2023-06-07,Phillip Pierce,226611
+PROD-11265,NetConnect,Security,Retired,2023-05-23,Prototype,In Pipeline,2023-10-29,Brandon Kirk,467275
+PROD-11266,DataSphere,Networking,Pilot,2020-09-04,Enhancement,Launched,2025-02-19,Mrs. Allison Hicks,364837
+PROD-11267,CoreAnalytics,IoT,GA (General Availability),2024-11-16,Concept,Cancelled,2025-02-23,Elizabeth Wang,393851
+PROD-11268,DataSphere,Analytics,Retired,2020-11-29,Enhancement,Cancelled,2024-12-22,Julie Cunningham,301725
+PROD-11269,Insight360,Analytics,Pilot,2021-06-21,Enhancement,In Pipeline,2024-09-01,Nathan Howell,436585
+PROD-11270,NetConnect,Networking,In Development,2024-01-07,Pre-Launch,Cancelled,2023-10-14,Deborah Benson,245231
+PROD-11271,Insight360,Security,Pilot,2022-07-15,Testing,In Pipeline,2024-10-06,Keith Smith,586879
+PROD-11272,CoreAnalytics,Security,In Development,2024-01-24,Enhancement,Not Launched,2022-12-27,Keith Harvey,577576
+PROD-11273,DataSphere,Networking,Active,2021-10-10,Enhancement,Launched,2022-10-15,Jill Bird,266857
+PROD-11274,Insight360,IoT,Active,2021-05-06,Concept,Launched,2024-07-29,Pam Jacobs,167170
+PROD-11275,DataSphere,Cloud Platform,Active,2021-03-07,Pre-Launch,In Pipeline,2025-05-31,Ashley Buckley,293720
+PROD-11276,DataSphere,Networking,Active,2022-05-27,Prototype,Planned,2025-07-30,Rick Walker,517567
+PROD-11277,CoreAnalytics,Cloud Platform,Active,2021-05-21,Testing,In Pipeline,2024-03-09,Andrea Palmer,159113
+PROD-11278,CloudEdge,Security,Retired,2023-12-23,Testing,In Pipeline,2022-10-15,Cameron Tran,178077
+PROD-11279,CoreAnalytics,Security,Active,2025-02-22,Testing,Launched,2025-06-14,Justin Burke,379101
+PROD-11280,Insight360,Security,GA (General Availability),2022-01-14,Enhancement,Cancelled,2022-09-17,Jorge Lindsey,164082
+PROD-11281,CloudEdge,IoT,Active,2024-12-12,Concept,In Pipeline,2024-07-05,Heather Huynh,361071
+PROD-11282,DataSphere,Analytics,In Development,2023-05-02,Pre-Launch,Not Launched,2023-08-20,Sandra Coffey,363490
+PROD-11283,Insight360,Cloud Platform,Active,2024-09-09,Testing,Planned,2024-01-29,Mark Hernandez,276358
+PROD-11284,CloudEdge,IoT,In Development,2023-01-08,Concept,Launched,2025-07-01,Todd Wright,592440
+PROD-11285,Insight360,Security,Retired,2023-05-28,Testing,Launched,2023-05-17,Ryan Trujillo,474277
+PROD-11286,CoreAnalytics,Security,GA (General Availability),2025-04-29,Prototype,Planned,2023-04-25,Judith Sharp,197452
+PROD-11287,DataSphere,IoT,Pilot,2020-09-14,Prototype,Not Launched,2023-03-24,Mark Thomas,178829
+PROD-11288,CoreAnalytics,Security,In Development,2022-06-03,Testing,Not Launched,2024-05-14,Lori Shaw,371721
+PROD-11289,Insight360,Analytics,Retired,2024-06-26,Enhancement,Not Launched,2025-03-16,Angela Smith,357444
+PROD-11290,CoreAnalytics,Security,Active,2021-10-01,Enhancement,Launched,2024-08-22,Nathan Mckenzie,535229
+PROD-11291,NetConnect,Security,Pilot,2020-12-12,Testing,Not Launched,2022-09-30,Michele Melendez,156657
+PROD-11292,CloudEdge,Analytics,Active,2021-10-23,Pre-Launch,Launched,2024-10-04,Anthony Hall,550589
+PROD-11293,DataSphere,Networking,In Development,2022-12-15,Concept,Planned,2022-10-12,Brianna Clayton,537466
+PROD-11294,CoreAnalytics,Networking,In Development,2024-03-18,Pre-Launch,In Pipeline,2023-09-13,Hannah Hart,552779
+PROD-11295,NetConnect,Networking,GA (General Availability),2020-10-30,Enhancement,Launched,2023-08-01,Timothy Fisher,373089
+PROD-11296,NetConnect,Security,Active,2025-01-28,Prototype,Launched,2023-10-06,Megan Saunders,327351
+PROD-11297,NetConnect,IoT,Retired,2024-11-17,Concept,Launched,2023-04-23,Angela Meadows,405812
+PROD-11298,CoreAnalytics,Security,Pilot,2024-01-29,Testing,Planned,2024-01-01,Stephen Kemp,561500
+PROD-11299,DataSphere,Cloud Platform,Retired,2023-03-20,Pre-Launch,Cancelled,2023-12-25,David Mendoza,598365
+PROD-11300,CoreAnalytics,Security,GA (General Availability),2023-07-30,Prototype,In Pipeline,2022-10-11,Becky Michael,214706
+PROD-11301,CloudEdge,Cloud Platform,In Development,2024-01-04,Enhancement,In Pipeline,2025-06-17,William Bennett,392749
+PROD-11302,NetConnect,Analytics,Retired,2025-02-03,Pre-Launch,Not Launched,2025-02-26,Carol Richardson,491544
+PROD-11303,CloudEdge,Cloud Platform,Active,2024-11-04,Concept,Launched,2024-11-22,Abigail Rodriguez,273515
+PROD-11304,Insight360,Cloud Platform,Active,2023-09-28,Concept,Cancelled,2024-09-05,James Doyle,155909
+PROD-11305,DataSphere,Analytics,Pilot,2021-04-04,Testing,Launched,2025-05-25,William Valdez,251656
+PROD-11306,CloudEdge,Analytics,Retired,2023-03-04,Enhancement,Cancelled,2022-12-10,Lisa Bishop,508446
+PROD-11307,Insight360,Networking,GA (General Availability),2023-08-09,Pre-Launch,Not Launched,2023-05-07,Courtney Walker,343888
+PROD-11308,NetConnect,Analytics,GA (General Availability),2024-01-12,Concept,Not Launched,2023-08-10,John Torres,207291
+PROD-11309,DataSphere,Security,GA (General Availability),2023-02-09,Prototype,Launched,2022-09-14,Bryan Dennis,193197
+PROD-11310,CoreAnalytics,Cloud Platform,GA (General Availability),2020-10-11,Concept,Launched,2025-05-07,Kathryn Davis,180169
+PROD-11311,DataSphere,Cloud Platform,GA (General Availability),2021-04-05,Testing,Not Launched,2024-07-28,Caitlyn Hall,420994
+PROD-11312,CloudEdge,Security,Active,2024-06-03,Enhancement,Planned,2023-12-22,Claudia Fitzpatrick,339925
+PROD-11313,DataSphere,Cloud Platform,Pilot,2021-05-13,Concept,Planned,2024-02-05,Karen Sanchez,328024
+PROD-11314,CloudEdge,Cloud Platform,Active,2023-02-22,Enhancement,Planned,2024-04-07,Hunter Lopez,265076
+PROD-11315,NetConnect,Cloud Platform,Pilot,2020-12-26,Pre-Launch,Cancelled,2024-10-03,Tracy Johnson,592727
+PROD-11316,Insight360,Analytics,Retired,2021-12-21,Testing,Launched,2023-04-27,David Walker,575269
+PROD-11317,NetConnect,IoT,GA (General Availability),2021-04-07,Testing,Cancelled,2022-11-04,Mr. Joseph Hawkins,447488
+PROD-11318,CoreAnalytics,Networking,Retired,2023-06-30,Pre-Launch,Not Launched,2023-11-15,Deborah Frederick,504663
+PROD-11319,CloudEdge,Analytics,Active,2024-10-05,Testing,Launched,2023-07-18,Don Thomas,271573
+PROD-11320,CoreAnalytics,Security,Retired,2023-04-14,Pre-Launch,Cancelled,2024-05-08,Maria Boyer,296978
+PROD-11321,CoreAnalytics,IoT,Pilot,2021-02-11,Pre-Launch,In Pipeline,2022-12-15,Mark Lee,156745
+PROD-11322,Insight360,Cloud Platform,Retired,2024-12-17,Prototype,Planned,2022-12-04,Annette Reyes,401370
+PROD-11323,CloudEdge,Security,Active,2025-03-21,Enhancement,Cancelled,2023-05-10,Jacob Morales,353402
+PROD-11324,Insight360,Security,Pilot,2021-08-01,Prototype,In Pipeline,2023-08-08,Emily Raymond,327127
+PROD-11325,CloudEdge,Cloud Platform,GA (General Availability),2022-09-29,Concept,Cancelled,2025-08-01,Mary Durham,399902
+PROD-11326,CoreAnalytics,Analytics,Pilot,2022-03-08,Enhancement,Planned,2024-11-23,Lori Weaver,245436
+PROD-11327,CloudEdge,Cloud Platform,Pilot,2025-03-25,Testing,Planned,2022-09-14,Kenneth Miller,472217
+PROD-11328,CoreAnalytics,Analytics,Active,2021-03-29,Enhancement,Not Launched,2023-04-14,Andrew Hayes,171599
+PROD-11329,DataSphere,Cloud Platform,GA (General Availability),2024-04-17,Testing,Cancelled,2023-11-11,Jeremy Thomas,174321
+PROD-11330,NetConnect,IoT,GA (General Availability),2024-02-18,Prototype,Planned,2024-11-06,Peter Chan,260862
+PROD-11331,CoreAnalytics,IoT,Active,2023-07-23,Enhancement,Planned,2024-06-21,James Fox,538896
+PROD-11332,NetConnect,IoT,Retired,2023-10-29,Prototype,Launched,2023-02-01,John Fields,396009
+PROD-11333,CloudEdge,IoT,Pilot,2022-02-14,Enhancement,Cancelled,2023-04-05,Kelly Patel,379039
+PROD-11334,DataSphere,Networking,Active,2024-09-24,Concept,Not Launched,2023-05-27,Kathryn Perry,186478
+PROD-11335,NetConnect,IoT,Retired,2025-04-19,Concept,Planned,2023-03-28,Robert Smith,334917
+PROD-11336,DataSphere,Cloud Platform,Retired,2022-05-18,Prototype,Cancelled,2025-04-07,Aaron Martin,545537
+PROD-11337,CloudEdge,IoT,In Development,2022-05-25,Enhancement,Not Launched,2022-12-15,Derek Jimenez,561440
+PROD-11338,DataSphere,Analytics,In Development,2025-01-26,Prototype,Launched,2024-06-28,Kristina Hanson,207696
+PROD-11339,DataSphere,Networking,Pilot,2022-08-16,Concept,In Pipeline,2024-03-24,Deborah Moore,528371
+PROD-11340,DataSphere,Networking,Active,2021-06-20,Pre-Launch,Launched,2024-09-14,Connor Mcmillan,291667
+PROD-11341,Insight360,Cloud Platform,Retired,2023-04-08,Prototype,Launched,2025-05-21,Melvin Santiago,472069
+PROD-11342,Insight360,Networking,In Development,2025-01-24,Testing,In Pipeline,2023-07-06,Nicholas Riley,221374
+PROD-11343,DataSphere,Analytics,In Development,2021-04-03,Concept,Launched,2023-12-02,Joseph Bradley,334685
+PROD-11344,Insight360,Cloud Platform,Pilot,2024-05-20,Testing,Launched,2024-03-14,Michelle Frazier,424731
+PROD-11345,CloudEdge,Networking,GA (General Availability),2021-12-13,Pre-Launch,Planned,2023-06-17,Daniel Lester,424863
+PROD-11346,Insight360,IoT,Retired,2023-10-16,Pre-Launch,Not Launched,2023-06-20,Joseph Trevino,595235
+PROD-11347,Insight360,Networking,Pilot,2024-06-04,Concept,Launched,2024-08-02,Heather Wheeler,513939
+PROD-11348,CloudEdge,IoT,Pilot,2022-05-10,Testing,Planned,2023-07-03,Christopher Lee,267584
+PROD-11349,DataSphere,IoT,Pilot,2022-05-03,Prototype,In Pipeline,2023-10-12,Kristin Kirk,242862
+PROD-11350,CoreAnalytics,Analytics,In Development,2022-12-22,Testing,Not Launched,2025-02-06,James Brown,474555
+PROD-11351,CoreAnalytics,Analytics,In Development,2021-02-25,Testing,In Pipeline,2022-12-22,Carol Moreno,353984
+PROD-11352,CloudEdge,Cloud Platform,Retired,2023-08-04,Prototype,Launched,2023-08-24,Ricardo Smith,206266
+PROD-11353,CloudEdge,Security,In Development,2021-06-21,Pre-Launch,Launched,2023-02-07,Selena Anderson,247221
+PROD-11354,Insight360,Cloud Platform,Active,2025-04-10,Concept,Not Launched,2023-07-27,Taylor Henson,214213
+PROD-11355,NetConnect,Networking,Active,2023-05-30,Concept,In Pipeline,2023-10-28,Donna Gutierrez,501481
+PROD-11356,CoreAnalytics,IoT,Retired,2022-02-17,Prototype,Planned,2024-07-24,Christopher Robinson,505962
+PROD-11357,CloudEdge,Analytics,In Development,2024-01-29,Concept,Launched,2022-10-20,Devin Bradshaw,170973
+PROD-11358,CoreAnalytics,Security,In Development,2021-11-05,Enhancement,Launched,2024-08-22,Emma Lopez,515556
+PROD-11359,Insight360,Networking,GA (General Availability),2025-07-23,Concept,Planned,2022-12-15,Gary James,282359
+PROD-11360,NetConnect,Analytics,In Development,2024-10-30,Prototype,In Pipeline,2023-03-29,Carl Carter,520110
+PROD-11361,Insight360,Security,Retired,2023-07-18,Prototype,Cancelled,2024-09-04,Zachary Hoover,279268
+PROD-11362,Insight360,Cloud Platform,Retired,2024-09-18,Testing,Planned,2025-06-28,Cassandra Ramirez DDS,436026
+PROD-11363,Insight360,IoT,GA (General Availability),2022-10-10,Concept,Cancelled,2024-05-18,Wendy Butler,571737
+PROD-11364,CoreAnalytics,Networking,Pilot,2021-02-22,Prototype,Cancelled,2025-05-15,John Khan,352576
+PROD-11365,CloudEdge,Security,Active,2024-12-08,Enhancement,Cancelled,2023-05-28,Henry Vasquez,285955
+PROD-11366,Insight360,Analytics,Active,2023-05-01,Prototype,Cancelled,2022-12-12,Debbie Velez,564279
+PROD-11367,CloudEdge,Security,Pilot,2025-07-09,Pre-Launch,Cancelled,2024-04-26,Andrew Walker,578464
+PROD-11368,CoreAnalytics,IoT,GA (General Availability),2022-02-26,Concept,Not Launched,2022-10-06,Laura Webb,403650
+PROD-11369,CloudEdge,Cloud Platform,Retired,2023-07-22,Pre-Launch,Launched,2022-12-09,Danielle James,425461
+PROD-11370,DataSphere,IoT,Active,2022-01-31,Testing,Launched,2024-04-28,Karen Mcdonald,176489
+PROD-11371,Insight360,Cloud Platform,Active,2021-05-07,Concept,Launched,2023-12-16,Jonathan Martinez,523974
+PROD-11372,CoreAnalytics,IoT,Pilot,2021-08-07,Pre-Launch,Launched,2022-12-09,Joshua Quinn,262698
+PROD-11373,DataSphere,Cloud Platform,Pilot,2025-04-12,Concept,Launched,2023-09-17,Rebecca Lopez,395472
+PROD-11374,CloudEdge,Cloud Platform,Pilot,2021-09-13,Pre-Launch,In Pipeline,2022-09-19,Daniel Cameron,253411
+PROD-11375,Insight360,Networking,Pilot,2021-05-23,Testing,In Pipeline,2022-10-08,Sheila Robles,346929
+PROD-11376,CloudEdge,IoT,GA (General Availability),2025-04-23,Enhancement,Launched,2025-07-03,Jeremiah Meyer,461177
+PROD-11377,CloudEdge,Analytics,Active,2021-01-23,Testing,Not Launched,2025-06-22,Tiffany Jones,246226
+PROD-11378,CoreAnalytics,Networking,Active,2023-11-27,Pre-Launch,In Pipeline,2024-11-28,Andrew Stevens,417476
+PROD-11379,CloudEdge,Analytics,In Development,2020-12-12,Enhancement,In Pipeline,2023-06-06,Michael Davis,256039
+PROD-11380,DataSphere,Security,GA (General Availability),2025-07-05,Enhancement,Planned,2025-06-30,Jeffrey Lee,400169
+PROD-11381,CoreAnalytics,Networking,Pilot,2025-01-27,Prototype,Cancelled,2023-05-27,William Macdonald,542095
+PROD-11382,DataSphere,Networking,Active,2024-04-29,Enhancement,In Pipeline,2022-09-16,Daniel Shannon,498320
+PROD-11383,NetConnect,Cloud Platform,GA (General Availability),2025-02-01,Pre-Launch,Cancelled,2024-06-08,James James,157196
+PROD-11384,DataSphere,Security,Active,2024-03-30,Prototype,Not Launched,2024-06-02,Anthony Mack,255557
+PROD-11385,CloudEdge,Security,Pilot,2024-09-20,Prototype,Cancelled,2024-11-16,Olivia Davis,374600
+PROD-11386,Insight360,Analytics,In Development,2024-12-20,Prototype,Not Launched,2023-01-08,Sue Bates,282338
+PROD-11387,CloudEdge,IoT,Pilot,2021-07-16,Enhancement,In Pipeline,2025-08-11,Andrea Dennis,392412
+PROD-11388,DataSphere,IoT,GA (General Availability),2023-01-03,Enhancement,Cancelled,2022-12-28,Michael Rodriguez,209233
+PROD-11389,CoreAnalytics,Security,Retired,2023-06-11,Testing,Cancelled,2024-07-20,Meghan Nguyen,337911
+PROD-11390,DataSphere,Analytics,In Development,2022-11-19,Pre-Launch,Not Launched,2024-10-09,John Wright,154764
+PROD-11391,CloudEdge,Cloud Platform,Active,2021-01-18,Enhancement,Not Launched,2023-06-17,Melissa Humphrey,390737
+PROD-11392,DataSphere,Analytics,Active,2025-05-29,Testing,Launched,2025-04-28,Mary Carter,591185
+PROD-11393,CoreAnalytics,Security,Active,2022-06-11,Testing,Cancelled,2025-07-29,Amy Miller,248314
+PROD-11394,CloudEdge,Networking,Pilot,2023-04-03,Testing,Cancelled,2025-01-27,James Williams,570715
+PROD-11395,CoreAnalytics,IoT,GA (General Availability),2020-12-21,Enhancement,Launched,2023-10-30,Bobby Scott,593760
+PROD-11396,CloudEdge,Cloud Platform,GA (General Availability),2020-11-28,Testing,Launched,2024-08-05,Philip Morrison,250997
+PROD-11397,Insight360,Security,Pilot,2021-10-22,Concept,Launched,2023-09-08,Joshua Joyce,367270
+PROD-11398,NetConnect,Analytics,Active,2023-06-26,Prototype,Not Launched,2025-05-22,Mr. Jesus Bartlett,157465
+PROD-11399,DataSphere,Security,In Development,2021-06-15,Enhancement,Cancelled,2023-08-14,Corey Wise,175970
+PROD-11400,DataSphere,Cloud Platform,Pilot,2024-07-26,Enhancement,Not Launched,2025-03-09,Eileen Burns,529382
+PROD-11401,NetConnect,Analytics,In Development,2021-03-05,Testing,Cancelled,2025-06-11,Rebecca Holland,481834
+PROD-11402,CoreAnalytics,Cloud Platform,Retired,2023-11-09,Pre-Launch,Launched,2025-08-12,Frank Evans,203957
+PROD-11403,Insight360,Cloud Platform,Retired,2025-02-25,Enhancement,Not Launched,2023-07-06,Brian Ortega,331598
+PROD-11404,CloudEdge,Networking,Active,2022-06-05,Testing,Launched,2025-08-17,Sandra Vazquez,189597
+PROD-11405,CoreAnalytics,Networking,Pilot,2021-06-28,Concept,Not Launched,2025-08-17,Andrew Arnold,297160
+PROD-11406,NetConnect,IoT,Pilot,2025-04-15,Enhancement,Cancelled,2025-08-29,Brandi Johnston,510287
+PROD-11407,Insight360,Analytics,GA (General Availability),2022-09-10,Prototype,Launched,2023-11-18,Matthew Davis,181095
+PROD-11408,DataSphere,Cloud Platform,Pilot,2025-04-23,Pre-Launch,In Pipeline,2023-11-20,Lindsay Smith,165151
+PROD-11409,CloudEdge,Cloud Platform,Pilot,2021-08-08,Pre-Launch,Cancelled,2024-08-20,Bradley Cervantes,353089
+PROD-11410,CloudEdge,Security,Active,2020-10-17,Pre-Launch,Planned,2025-01-23,Mr. Eric Moss,431444
+PROD-11411,CoreAnalytics,Analytics,Pilot,2024-10-22,Pre-Launch,Not Launched,2025-08-08,Deanna Vazquez,277504
+PROD-11412,NetConnect,Analytics,Active,2022-03-27,Testing,Cancelled,2022-09-15,Molly Garrison,348287
+PROD-11413,CloudEdge,Networking,Retired,2024-10-27,Pre-Launch,Not Launched,2023-11-06,Debbie Anderson,350676
+PROD-11414,DataSphere,Cloud Platform,GA (General Availability),2020-11-12,Enhancement,In Pipeline,2025-02-25,Julie Sherman,563975
+PROD-11415,NetConnect,IoT,Active,2022-07-08,Enhancement,Planned,2024-05-02,Anthony Morris,569558
+PROD-11416,CoreAnalytics,IoT,Active,2022-10-24,Enhancement,In Pipeline,2024-11-29,Xavier Silva,596580
+PROD-11417,Insight360,IoT,GA (General Availability),2023-09-11,Pre-Launch,In Pipeline,2024-03-12,Stacey Wilson,363037
+PROD-11418,DataSphere,IoT,Active,2022-11-11,Prototype,In Pipeline,2024-10-19,Isabella Wright,510543
+PROD-11419,DataSphere,Networking,Active,2024-12-17,Enhancement,Cancelled,2025-03-29,Nicholas Austin,451446
+PROD-11420,NetConnect,Analytics,Pilot,2020-09-15,Pre-Launch,Cancelled,2023-07-27,Kristy Costa,564261
+PROD-11421,CloudEdge,Analytics,Active,2022-08-30,Concept,Launched,2025-01-31,Lance Gray,511137
+PROD-11422,CloudEdge,Cloud Platform,In Development,2021-05-17,Pre-Launch,Launched,2023-06-26,Gavin Murray,416919
+PROD-11423,CloudEdge,Analytics,GA (General Availability),2023-12-17,Testing,In Pipeline,2025-03-02,Tina Martinez,316159
+PROD-11424,CloudEdge,Networking,Pilot,2021-02-16,Enhancement,In Pipeline,2025-03-11,Michelle Curry,429280
+PROD-11425,CoreAnalytics,Networking,Active,2023-06-21,Concept,Cancelled,2023-03-13,Raymond Robinson,225712
+PROD-11426,NetConnect,Cloud Platform,Retired,2024-11-14,Testing,Planned,2023-02-14,Heather Brennan,314558
+PROD-11427,CoreAnalytics,Cloud Platform,Retired,2025-08-17,Enhancement,Not Launched,2023-09-26,Patricia Gibson,450224
+PROD-11428,CoreAnalytics,IoT,Pilot,2023-04-08,Concept,Launched,2024-07-31,Evan Holt,468871
+PROD-11429,CloudEdge,Cloud Platform,Retired,2024-01-09,Testing,Launched,2024-11-20,Dr. Gabrielle Walker,468791
+PROD-11430,Insight360,Security,In Development,2024-06-19,Enhancement,Launched,2024-07-14,Lee Murphy,275499
+PROD-11431,CloudEdge,IoT,GA (General Availability),2023-12-26,Concept,Cancelled,2024-01-24,Helen Gonzalez,373222
+PROD-11432,CloudEdge,IoT,GA (General Availability),2022-04-02,Pre-Launch,Cancelled,2023-12-27,Darin Jackson,185270
+PROD-11433,NetConnect,Cloud Platform,Retired,2021-09-25,Testing,Not Launched,2025-08-29,Jessica Henry,189894
+PROD-11434,CloudEdge,IoT,Active,2023-07-10,Pre-Launch,In Pipeline,2025-08-13,Jessica Shelton,332603
+PROD-11435,CloudEdge,Analytics,In Development,2022-10-16,Concept,In Pipeline,2025-03-21,Robert Robinson,354778
+PROD-11436,DataSphere,Analytics,In Development,2025-04-10,Pre-Launch,In Pipeline,2025-08-07,Melanie Martin,194561
+PROD-11437,Insight360,Cloud Platform,In Development,2021-06-30,Prototype,Planned,2024-02-10,David Atkinson,277472
+PROD-11438,CoreAnalytics,IoT,Retired,2024-01-23,Pre-Launch,Not Launched,2024-08-20,Jennifer Roberts,351027
+PROD-11439,CloudEdge,Security,Active,2022-02-05,Pre-Launch,Planned,2025-06-19,Nicholas Smith,196071
+PROD-11440,NetConnect,Analytics,Active,2024-11-23,Enhancement,In Pipeline,2022-10-25,Kellie Stewart,494066
+PROD-11441,Insight360,IoT,Active,2025-07-12,Testing,Planned,2023-09-20,Timothy Olsen,176006
+PROD-11442,NetConnect,Cloud Platform,Retired,2021-11-13,Enhancement,Launched,2023-06-05,Heather Hess,520681
+PROD-11443,CloudEdge,Cloud Platform,Active,2022-11-17,Concept,Launched,2024-01-16,Alyssa Nichols,550367
+PROD-11444,NetConnect,IoT,GA (General Availability),2025-08-04,Testing,Launched,2024-10-18,Emily Thomas,161945
+PROD-11445,CloudEdge,Analytics,In Development,2025-07-14,Concept,Not Launched,2023-07-02,Sandra Payne,573946
+PROD-11446,DataSphere,IoT,Retired,2022-06-25,Testing,In Pipeline,2025-03-07,Kimberly Guerrero,259410
+PROD-11447,CoreAnalytics,Cloud Platform,GA (General Availability),2024-02-28,Testing,Planned,2023-06-03,Mary Yang,598404
+PROD-11448,DataSphere,Cloud Platform,Pilot,2021-07-05,Enhancement,Not Launched,2023-12-03,Brent Martinez,435217
+PROD-11449,CoreAnalytics,Security,In Development,2024-05-29,Concept,Cancelled,2025-01-12,Mrs. Angelica Woods DDS,316981
+PROD-11450,Insight360,Security,Retired,2021-08-25,Prototype,Not Launched,2024-02-29,Eric Hayes,252470
+PROD-11451,DataSphere,Networking,In Development,2023-10-31,Enhancement,Planned,2024-07-05,Paige West,227823
+PROD-11452,CloudEdge,Cloud Platform,GA (General Availability),2023-05-04,Prototype,Cancelled,2025-08-03,Derek Hunter,228706
+PROD-11453,Insight360,Cloud Platform,Retired,2024-11-29,Prototype,Cancelled,2022-11-07,David Perry,204771
+PROD-11454,NetConnect,Security,In Development,2022-12-25,Prototype,Planned,2023-04-28,Jennifer Moore,536406
+PROD-11455,NetConnect,Security,In Development,2023-06-17,Pre-Launch,Cancelled,2025-05-29,Richard Kelley,551421
+PROD-11456,DataSphere,Cloud Platform,Active,2023-09-29,Testing,Planned,2023-10-19,Jessica Davila,233736
+PROD-11457,NetConnect,IoT,Active,2020-11-25,Prototype,Launched,2024-06-18,John Rivera,356637
+PROD-11458,NetConnect,Analytics,Pilot,2024-05-15,Concept,Cancelled,2024-06-21,Jacob Morris,392916
+PROD-11459,DataSphere,Security,Pilot,2020-12-28,Concept,In Pipeline,2024-07-04,Ronald Williams,336652
+PROD-11460,Insight360,Cloud Platform,Retired,2021-12-06,Testing,Not Launched,2023-01-03,Julie Berry,342637
+PROD-11461,NetConnect,Security,Retired,2021-06-22,Pre-Launch,In Pipeline,2024-11-16,Sherry Ramirez,556185
+PROD-11462,CloudEdge,Analytics,Active,2023-09-26,Concept,Planned,2024-03-30,James Perry,280669
+PROD-11463,NetConnect,Analytics,In Development,2023-04-29,Testing,In Pipeline,2023-05-12,Amanda Owen,196649
+PROD-11464,CoreAnalytics,IoT,Retired,2020-09-15,Concept,Not Launched,2025-01-10,Teresa Gordon,284918
+PROD-11465,CoreAnalytics,Cloud Platform,Active,2025-03-28,Concept,Launched,2025-03-25,Joshua Castro,536053
+PROD-11466,DataSphere,IoT,Retired,2023-03-11,Enhancement,Launched,2024-11-23,Joseph Howell,384680
+PROD-11467,CloudEdge,Security,In Development,2023-03-09,Pre-Launch,Planned,2023-09-16,Daniel Hudson,485636
+PROD-11468,CloudEdge,IoT,In Development,2024-04-29,Concept,In Pipeline,2025-05-02,Michael Maxwell,580489
+PROD-11469,CoreAnalytics,Security,Active,2022-10-17,Pre-Launch,Planned,2024-03-16,James Lopez,210428
+PROD-11470,DataSphere,Analytics,In Development,2023-02-16,Prototype,Not Launched,2024-01-08,Robin Barber,229836
+PROD-11471,DataSphere,Security,Retired,2022-04-01,Enhancement,Planned,2024-02-12,Elizabeth Gibson,176940
+PROD-11472,NetConnect,Analytics,Active,2021-02-21,Concept,Not Launched,2023-12-22,Adam Wong,560813
+PROD-11473,Insight360,IoT,Retired,2024-07-31,Pre-Launch,In Pipeline,2022-09-07,Kristi Woods,269483
+PROD-11474,CoreAnalytics,Cloud Platform,In Development,2024-11-02,Pre-Launch,Launched,2022-12-30,Brian Donaldson,398963
+PROD-11475,NetConnect,IoT,Pilot,2022-03-05,Testing,Planned,2025-01-23,Kimberly Sanchez,389964
+PROD-11476,DataSphere,Cloud Platform,Pilot,2025-08-26,Pre-Launch,Cancelled,2025-04-14,William Hernandez,189456
+PROD-11477,NetConnect,Networking,In Development,2022-12-16,Concept,In Pipeline,2025-07-22,Arthur Lee,238428
+PROD-11478,Insight360,Security,Pilot,2024-06-19,Prototype,Planned,2024-09-15,Andrea Duffy,181574
+PROD-11479,Insight360,Cloud Platform,Retired,2024-06-16,Testing,Launched,2024-09-02,Charlene Roberts,500472
+PROD-11480,NetConnect,Cloud Platform,In Development,2023-04-19,Enhancement,Launched,2025-05-11,Tracy Rodriguez,506120
+PROD-11481,NetConnect,Networking,Pilot,2022-08-26,Enhancement,Cancelled,2024-10-18,William Jackson,301681
+PROD-11482,CoreAnalytics,IoT,Active,2023-01-09,Prototype,Planned,2025-04-24,Kelly Baker,543557
+PROD-11483,Insight360,Analytics,GA (General Availability),2022-09-02,Testing,Planned,2023-05-28,Casey Green,335577
+PROD-11484,DataSphere,Cloud Platform,Pilot,2025-08-24,Prototype,Not Launched,2022-10-08,Keith Mccarthy,160921
+PROD-11485,Insight360,Cloud Platform,GA (General Availability),2023-07-06,Prototype,Planned,2024-11-14,Kevin Austin,347911
+PROD-11486,DataSphere,Security,Pilot,2025-02-05,Testing,Not Launched,2025-02-23,Rebecca Schneider,413142
+PROD-11487,Insight360,Analytics,Retired,2024-04-26,Pre-Launch,Cancelled,2023-10-19,Mark Ashley,346536
+PROD-11488,CloudEdge,Analytics,Active,2020-12-09,Concept,Launched,2024-02-22,Megan Hoffman,466553
+PROD-11489,DataSphere,IoT,In Development,2023-08-09,Pre-Launch,Not Launched,2023-01-16,Jordan Thomas,381559
+PROD-11490,CoreAnalytics,Networking,Retired,2024-04-04,Testing,Planned,2023-07-12,Barbara Hall,376525
+PROD-11491,NetConnect,Security,GA (General Availability),2024-08-17,Prototype,In Pipeline,2024-01-10,Andrea Pace,436338
+PROD-11492,DataSphere,Networking,In Development,2023-09-17,Pre-Launch,Not Launched,2022-11-03,David Thomas,157457
+PROD-11493,DataSphere,Networking,Pilot,2024-02-03,Prototype,Launched,2025-07-12,Mark Velasquez,447166
+PROD-11494,CloudEdge,Security,GA (General Availability),2020-11-19,Testing,Cancelled,2023-08-22,Susan Frank,586403
+PROD-11495,Insight360,Security,Active,2025-03-30,Enhancement,In Pipeline,2023-05-02,Allison Cervantes,531889
+PROD-11496,CoreAnalytics,Networking,Active,2024-08-12,Enhancement,In Pipeline,2024-08-31,Jacob Ortiz,586118
+PROD-11497,CloudEdge,Networking,In Development,2021-09-26,Prototype,Not Launched,2024-06-09,Christine Burns,333942
+PROD-11498,Insight360,Security,GA (General Availability),2022-03-30,Testing,Launched,2022-09-13,Carla Ellis,513880
+PROD-11499,DataSphere,IoT,In Development,2022-10-08,Testing,Planned,2023-03-25,Alex Reed,558650
+PROD-11500,Insight360,Networking,GA (General Availability),2023-02-14,Concept,In Pipeline,2024-10-30,Becky Cardenas,210557
+PROD-11501,CloudEdge,IoT,Active,2023-10-02,Pre-Launch,Not Launched,2025-05-08,Ashley Miles,462403
+PROD-11502,CloudEdge,Networking,Pilot,2020-09-08,Prototype,In Pipeline,2025-01-22,Hector Elliott,447841
+PROD-11503,CoreAnalytics,IoT,GA (General Availability),2020-10-29,Enhancement,Not Launched,2023-08-28,Cindy Shelton,360598
+PROD-11504,CloudEdge,Security,GA (General Availability),2023-11-14,Testing,Cancelled,2025-03-10,Patricia Hall,389343
+PROD-11505,CloudEdge,Analytics,In Development,2021-03-26,Testing,In Pipeline,2022-10-25,Cindy Hart,327897
+PROD-11506,Insight360,Security,GA (General Availability),2023-12-10,Concept,In Pipeline,2024-11-22,Sarah Lopez,299947
+PROD-11507,CoreAnalytics,Cloud Platform,In Development,2021-01-16,Testing,Planned,2023-02-14,Benjamin Ellis,271571
+PROD-11508,NetConnect,Analytics,GA (General Availability),2025-03-16,Prototype,In Pipeline,2024-04-02,Tiffany Burns,560271
+PROD-11509,CloudEdge,Security,Active,2022-11-08,Prototype,In Pipeline,2023-08-10,William Archer,491514
+PROD-11510,CoreAnalytics,Security,Active,2022-02-18,Pre-Launch,Cancelled,2024-03-13,Jason Jones,290600
+PROD-11511,Insight360,IoT,Pilot,2025-08-19,Prototype,Not Launched,2024-11-01,Valerie Oconnor,514190
+PROD-11512,DataSphere,Networking,Retired,2022-08-01,Pre-Launch,Not Launched,2024-10-18,Renee Wright,397684
+PROD-11513,CloudEdge,Networking,Active,2020-11-27,Prototype,Planned,2025-03-28,Louis Ferrell,589086
+PROD-11514,CloudEdge,Security,In Development,2021-05-22,Enhancement,Planned,2024-12-08,Bonnie Williams,410967
+PROD-11515,CloudEdge,IoT,Pilot,2022-05-21,Testing,Cancelled,2023-09-06,Alexis Thornton,550996
+PROD-11516,CoreAnalytics,Analytics,Retired,2024-06-10,Prototype,Not Launched,2024-05-14,James Burns,487092
+PROD-11517,Insight360,IoT,In Development,2025-04-04,Prototype,Planned,2025-06-07,Tammy Lee,487090
+PROD-11518,NetConnect,Cloud Platform,Retired,2025-02-22,Pre-Launch,Launched,2024-04-17,Kimberly Skinner,515900
+PROD-11519,Insight360,Analytics,Pilot,2021-12-29,Pre-Launch,Not Launched,2023-11-26,Michael Carroll,424557
+PROD-11520,CoreAnalytics,Analytics,In Development,2024-02-01,Enhancement,Planned,2022-12-29,Melissa Bentley,363574
+PROD-11521,CoreAnalytics,Analytics,Pilot,2023-11-08,Enhancement,Cancelled,2023-12-09,Kimberly Mitchell,481809
+PROD-11522,CoreAnalytics,Cloud Platform,Active,2021-09-23,Prototype,In Pipeline,2025-02-27,Anna Miller,595161
+PROD-11523,CoreAnalytics,Networking,Active,2022-02-10,Enhancement,Planned,2024-12-04,Michael Wade,319156
+PROD-11524,DataSphere,Analytics,GA (General Availability),2024-12-27,Enhancement,Planned,2023-06-03,Richard Anderson,218798
+PROD-11525,CloudEdge,Networking,Pilot,2021-03-22,Pre-Launch,Launched,2025-01-15,Danielle Sheppard,218380
+PROD-11526,Insight360,Analytics,Active,2025-08-08,Testing,In Pipeline,2025-01-25,Elizabeth Hansen,326682
+PROD-11527,Insight360,IoT,In Development,2023-12-15,Enhancement,Not Launched,2024-03-27,William Shepard,406419
+PROD-11528,NetConnect,Cloud Platform,Pilot,2024-05-11,Concept,Not Launched,2025-01-25,Daniel Mosley,181988
+PROD-11529,CloudEdge,Cloud Platform,In Development,2024-10-14,Prototype,Planned,2024-11-08,Christina Johnston,520023
+PROD-11530,CoreAnalytics,Networking,Active,2022-05-24,Concept,Cancelled,2024-12-18,Michael White,562313
+PROD-11531,DataSphere,IoT,Retired,2024-11-21,Concept,Planned,2023-08-18,Andrea Anderson,332252
+PROD-11532,DataSphere,Networking,Active,2022-05-11,Concept,In Pipeline,2022-09-02,Tyler West,576010
+PROD-11533,CloudEdge,Analytics,In Development,2021-08-28,Pre-Launch,Cancelled,2024-07-27,Dr. Christopher Griffin,365168
+PROD-11534,CloudEdge,Cloud Platform,Active,2022-04-03,Enhancement,In Pipeline,2023-05-26,Kenneth Lester,535788
+PROD-11535,DataSphere,Security,In Development,2021-11-18,Concept,Planned,2024-02-08,Vincent Hill DVM,577656
+PROD-11536,CoreAnalytics,Networking,Pilot,2024-06-18,Prototype,Launched,2024-03-02,Crystal Barnes,227787
+PROD-11537,CoreAnalytics,IoT,Retired,2022-12-18,Prototype,In Pipeline,2024-07-27,Nicole Lane,289286
+PROD-11538,DataSphere,Networking,Pilot,2021-01-15,Prototype,Planned,2024-10-21,Mark Miller,155416
+PROD-11539,NetConnect,Networking,GA (General Availability),2021-04-26,Pre-Launch,Not Launched,2025-01-11,Christopher Rogers,238186
+PROD-11540,CoreAnalytics,Cloud Platform,In Development,2020-12-31,Testing,In Pipeline,2025-08-25,Michael Erickson,295994
+PROD-11541,CoreAnalytics,IoT,In Development,2025-01-29,Prototype,Launched,2023-05-26,Megan Cowan,597760
+PROD-11542,CloudEdge,Security,Pilot,2023-04-04,Enhancement,In Pipeline,2023-02-12,Matthew Foster,314663
+PROD-11543,CoreAnalytics,IoT,GA (General Availability),2022-07-31,Enhancement,Launched,2025-05-16,Stephanie Miller,255109
+PROD-11544,Insight360,Cloud Platform,Retired,2021-03-18,Prototype,Launched,2025-01-05,Michael Kim,435851
+PROD-11545,CloudEdge,Cloud Platform,Active,2024-08-02,Enhancement,Planned,2024-10-07,Bernard Peters,259288
+PROD-11546,CoreAnalytics,Networking,In Development,2023-09-23,Prototype,Planned,2022-10-08,Travis Day,468539
+PROD-11547,NetConnect,Analytics,Active,2024-07-09,Prototype,Planned,2022-10-23,William Harvey,167477
+PROD-11548,DataSphere,Cloud Platform,GA (General Availability),2023-04-30,Prototype,Launched,2023-07-13,Oscar Chambers,582717
+PROD-11549,DataSphere,Security,Pilot,2025-05-28,Prototype,Cancelled,2023-03-18,Taylor Jenkins,270277
+PROD-11550,DataSphere,IoT,GA (General Availability),2023-09-22,Prototype,Cancelled,2023-06-18,Katie Taylor,282801
+PROD-11551,CoreAnalytics,Security,GA (General Availability),2025-08-01,Enhancement,Not Launched,2022-09-24,Julie Mack,298520
+PROD-11552,DataSphere,Security,Retired,2023-10-17,Prototype,In Pipeline,2025-07-20,Terri Bennett,299057
+PROD-11553,Insight360,Cloud Platform,In Development,2021-04-21,Enhancement,Not Launched,2023-11-16,Brandon Gilbert,463566
+PROD-11554,DataSphere,IoT,Active,2025-05-09,Pre-Launch,In Pipeline,2023-10-12,Michele Davidson,215348
+PROD-11555,NetConnect,Security,Retired,2021-09-20,Prototype,In Pipeline,2023-10-23,Amy Glass,390889
+PROD-11556,DataSphere,Security,Retired,2024-06-12,Prototype,Not Launched,2024-01-30,Kyle Warren,219041
+PROD-11557,Insight360,Networking,Active,2021-03-25,Enhancement,Cancelled,2025-01-22,Suzanne Stuart,507068
+PROD-11558,DataSphere,Analytics,Pilot,2024-06-23,Prototype,Not Launched,2025-01-25,Michael Christian,529735
+PROD-11559,NetConnect,Cloud Platform,GA (General Availability),2023-11-16,Enhancement,Planned,2024-08-01,Brandon Aguirre,345571
+PROD-11560,DataSphere,Cloud Platform,In Development,2025-08-14,Enhancement,Launched,2022-10-31,Nancy Curry,421064
+PROD-11561,DataSphere,IoT,Active,2024-06-11,Prototype,In Pipeline,2022-11-27,Gary Taylor,393913
+PROD-11562,CoreAnalytics,IoT,In Development,2023-01-02,Pre-Launch,In Pipeline,2024-10-19,Emily Kirk,355464
+PROD-11563,Insight360,IoT,Pilot,2023-10-09,Concept,In Pipeline,2024-02-12,Jon Peters,352569
+PROD-11564,Insight360,Security,GA (General Availability),2021-06-17,Concept,In Pipeline,2025-01-12,Roger Phillips,540122
+PROD-11565,DataSphere,Networking,In Development,2021-03-29,Pre-Launch,Cancelled,2022-10-13,Zachary Grimes,358929
+PROD-11566,DataSphere,Analytics,In Development,2024-11-04,Prototype,In Pipeline,2025-08-17,Kimberly Bennett,343135
+PROD-11567,CloudEdge,IoT,Pilot,2024-10-10,Enhancement,Not Launched,2023-10-21,Maurice Russell,501112
+PROD-11568,DataSphere,Networking,Active,2025-04-24,Prototype,In Pipeline,2023-08-06,Robert Kelley,438431
+PROD-11569,CloudEdge,Cloud Platform,Retired,2021-08-14,Testing,In Pipeline,2023-06-12,Laura Bennett,430252
+PROD-11570,CloudEdge,Cloud Platform,In Development,2021-07-24,Pre-Launch,Cancelled,2025-07-12,Christopher Golden,293970
+PROD-11571,DataSphere,IoT,GA (General Availability),2023-12-10,Prototype,In Pipeline,2023-11-09,Wendy Salinas,357236
+PROD-11572,DataSphere,Analytics,Pilot,2022-01-10,Testing,In Pipeline,2025-03-29,Linda Bailey,406352
+PROD-11573,DataSphere,Cloud Platform,In Development,2022-03-08,Concept,In Pipeline,2025-04-30,Roger Yang,528818
+PROD-11574,CloudEdge,IoT,Retired,2023-04-26,Pre-Launch,Cancelled,2022-12-21,Christopher Dennis,416932
+PROD-11575,DataSphere,Analytics,In Development,2024-03-01,Concept,Not Launched,2024-01-10,Sara Peterson,296585
+PROD-11576,NetConnect,Cloud Platform,GA (General Availability),2024-04-17,Testing,Launched,2023-05-16,Mr. Taylor Allen,391991
+PROD-11577,CoreAnalytics,Cloud Platform,In Development,2023-02-23,Pre-Launch,In Pipeline,2024-08-14,Michelle Hernandez,392371
+PROD-11578,NetConnect,Networking,In Development,2020-11-10,Pre-Launch,Planned,2024-08-05,John Kelley,370296
+PROD-11579,NetConnect,Cloud Platform,Pilot,2025-07-19,Concept,Launched,2024-10-25,Yvonne Yang,596700
+PROD-11580,DataSphere,Analytics,In Development,2024-08-30,Testing,Launched,2024-10-07,Alexandra Thomas,305191
+PROD-11581,NetConnect,Analytics,Retired,2021-12-30,Pre-Launch,In Pipeline,2024-07-19,Elizabeth Sanchez,381468
+PROD-11582,DataSphere,Security,Pilot,2021-04-28,Concept,Launched,2023-11-22,Kelly Young,505266
+PROD-11583,Insight360,Cloud Platform,In Development,2025-03-22,Enhancement,Planned,2023-09-08,Teresa Watkins MD,396838
+PROD-11584,CoreAnalytics,IoT,Retired,2022-10-09,Enhancement,Planned,2024-02-26,Robert Lee,151375
+PROD-11585,CloudEdge,Cloud Platform,GA (General Availability),2023-08-07,Testing,Planned,2022-09-29,Tammy Martinez,335514
+PROD-11586,CoreAnalytics,Networking,Retired,2024-09-06,Prototype,Launched,2024-07-22,Jacqueline Santana,239975
+PROD-11587,NetConnect,Security,Retired,2022-06-20,Enhancement,In Pipeline,2024-01-10,Ellen Matthews,379702
+PROD-11588,Insight360,Cloud Platform,Pilot,2023-02-27,Testing,Launched,2023-12-10,Michael Barnett,508872
+PROD-11589,DataSphere,IoT,Active,2021-07-24,Concept,Cancelled,2023-10-30,Thomas Eaton,289478
+PROD-11590,CoreAnalytics,Cloud Platform,Pilot,2024-06-04,Concept,Planned,2023-03-31,Courtney Johnson,452715
+PROD-11591,CloudEdge,Networking,Pilot,2025-01-28,Testing,Planned,2024-12-09,Christian Gonzales,442807
+PROD-11592,CloudEdge,IoT,Active,2022-03-21,Enhancement,Launched,2023-11-17,David Hendrix,527277
+PROD-11593,CoreAnalytics,Analytics,Active,2021-08-04,Testing,Planned,2022-09-13,John Burns,597896
+PROD-11594,Insight360,Cloud Platform,Pilot,2024-02-28,Testing,Not Launched,2024-07-11,James Park,150629
+PROD-11595,Insight360,Cloud Platform,In Development,2023-07-25,Testing,In Pipeline,2025-07-22,Shelley Ford,528817
+PROD-11596,CoreAnalytics,IoT,Active,2021-07-04,Pre-Launch,Cancelled,2022-09-10,Jennifer Simmons,573726
+PROD-11597,NetConnect,Security,Active,2023-10-20,Pre-Launch,Not Launched,2024-05-20,Mr. Justin Baker PhD,368655
+PROD-11598,CloudEdge,Networking,GA (General Availability),2024-11-18,Pre-Launch,Launched,2023-04-18,Benjamin Jones,551116
+PROD-11599,CloudEdge,Networking,Pilot,2022-07-09,Testing,Not Launched,2025-08-25,Jessica Bush,371546
+PROD-11600,CloudEdge,Analytics,GA (General Availability),2021-11-30,Enhancement,Not Launched,2025-07-25,Geoffrey Villegas,176196
+PROD-11601,Insight360,Analytics,Pilot,2023-02-28,Testing,Launched,2023-04-09,Stacy Smith,254093
+PROD-11602,Insight360,IoT,Active,2025-02-18,Prototype,Launched,2023-02-17,Wanda Walker,325111
+PROD-11603,CoreAnalytics,IoT,Pilot,2022-01-04,Prototype,In Pipeline,2024-11-08,Juan Coleman,488721
+PROD-11604,CoreAnalytics,IoT,GA (General Availability),2025-07-17,Enhancement,Planned,2025-06-30,Casey Montgomery,577302
+PROD-11605,NetConnect,Security,Retired,2025-06-20,Pre-Launch,Planned,2023-10-04,Sean Lynn,336499
+PROD-11606,DataSphere,Analytics,Retired,2023-08-22,Concept,In Pipeline,2023-08-01,Mrs. Brenda Schmidt,497159
+PROD-11607,Insight360,Networking,In Development,2025-02-01,Prototype,Not Launched,2025-06-16,Sarah Chavez,217526
+PROD-11608,NetConnect,Cloud Platform,Active,2022-07-19,Testing,Planned,2022-11-15,David Carter,546325
+PROD-11609,CoreAnalytics,IoT,GA (General Availability),2025-08-18,Enhancement,Planned,2023-02-19,Richard Duncan,341243
+PROD-11610,NetConnect,Networking,Active,2022-05-02,Concept,Not Launched,2023-08-22,Natasha Gonzalez,440251
+PROD-11611,DataSphere,Networking,Active,2021-12-17,Prototype,Launched,2023-12-26,Matthew Lewis,329878
+PROD-11612,NetConnect,Networking,In Development,2022-04-04,Enhancement,Launched,2025-03-24,Patrick Gilbert,530982
+PROD-11613,CoreAnalytics,Security,In Development,2025-02-21,Concept,Planned,2024-09-28,Lisa Thomas,183261
+PROD-11614,NetConnect,Analytics,Pilot,2022-02-05,Pre-Launch,Launched,2024-05-12,Casey Williams,371373
+PROD-11615,NetConnect,Analytics,In Development,2021-07-24,Prototype,Launched,2025-01-21,Linda Carter,154558
+PROD-11616,CoreAnalytics,Analytics,GA (General Availability),2022-05-30,Prototype,Launched,2025-04-10,Brandi Kelly,248694
+PROD-11617,Insight360,Networking,Retired,2022-08-06,Testing,Not Launched,2024-07-17,Kara Turner,485239
+PROD-11618,CloudEdge,IoT,GA (General Availability),2023-10-21,Enhancement,In Pipeline,2023-10-24,Holly Craig,457961
+PROD-11619,Insight360,Security,Retired,2024-12-30,Prototype,In Pipeline,2024-01-08,Luis Nguyen,150129
+PROD-11620,CoreAnalytics,Cloud Platform,Retired,2022-11-10,Enhancement,Planned,2023-02-28,John White,232518
+PROD-11621,NetConnect,Security,In Development,2022-03-31,Enhancement,Cancelled,2024-09-26,Meagan Grant,393258
+PROD-11622,DataSphere,IoT,Active,2025-03-27,Testing,Launched,2023-09-01,Matthew Collier,555392
+PROD-11623,CoreAnalytics,Cloud Platform,GA (General Availability),2023-02-03,Enhancement,Launched,2024-09-23,Anthony Davis,562477
+PROD-11624,Insight360,Security,Active,2023-10-31,Enhancement,Launched,2023-03-13,Zachary Morris,360519
+PROD-11625,DataSphere,Security,In Development,2023-05-15,Testing,Not Launched,2024-10-01,Jasmine Deleon,312732
+PROD-11626,Insight360,Security,GA (General Availability),2021-02-05,Enhancement,In Pipeline,2024-09-13,Rhonda Patel,419975
+PROD-11627,CoreAnalytics,Analytics,Retired,2021-05-14,Prototype,Not Launched,2024-05-19,Steven Sullivan,412454
+PROD-11628,Insight360,Security,In Development,2024-09-20,Pre-Launch,Planned,2025-01-14,Justin Neal,252258
+PROD-11629,DataSphere,Networking,GA (General Availability),2022-01-10,Enhancement,Launched,2024-11-15,Andre Elliott,187820
+PROD-11630,DataSphere,Cloud Platform,Active,2025-03-11,Prototype,Cancelled,2024-10-28,Michele Nunez,334655
+PROD-11631,DataSphere,Analytics,GA (General Availability),2023-11-28,Testing,Cancelled,2024-05-09,Corey Kelly,359090
+PROD-11632,CloudEdge,Cloud Platform,Pilot,2025-02-18,Concept,In Pipeline,2023-05-23,Wendy Landry,203981
+PROD-11633,CoreAnalytics,Cloud Platform,In Development,2025-03-02,Prototype,Not Launched,2022-12-31,Regina Castro,188301
+PROD-11634,DataSphere,Analytics,GA (General Availability),2023-02-18,Pre-Launch,Cancelled,2024-11-08,John Baker MD,559291
+PROD-11635,DataSphere,Networking,GA (General Availability),2024-12-16,Concept,In Pipeline,2024-12-16,Erica Johnson,262163
+PROD-11636,DataSphere,Analytics,Active,2023-09-01,Pre-Launch,Cancelled,2024-08-29,Kyle Mcmillan,188559
+PROD-11637,CoreAnalytics,Networking,GA (General Availability),2025-03-12,Pre-Launch,Planned,2023-07-10,Brandon Richmond,512937
+PROD-11638,CoreAnalytics,Networking,In Development,2024-05-11,Enhancement,Planned,2022-10-26,Dr. Claudia Meyer,547263
+PROD-11639,DataSphere,IoT,GA (General Availability),2023-08-01,Prototype,Cancelled,2025-05-17,Claudia Luna,186095
+PROD-11640,NetConnect,IoT,Active,2025-03-13,Pre-Launch,Planned,2024-12-22,Brian Henry,386862
+PROD-11641,DataSphere,IoT,Active,2025-06-04,Prototype,Planned,2024-12-27,David Stark,299459
+PROD-11642,Insight360,Analytics,GA (General Availability),2024-05-03,Enhancement,Not Launched,2024-04-26,Lisa Coleman,209235
+PROD-11643,CloudEdge,Networking,Pilot,2023-11-11,Testing,Planned,2025-04-06,Amanda King,594729
+PROD-11644,CoreAnalytics,IoT,In Development,2022-11-20,Prototype,Launched,2023-02-03,Donna Robinson,430720
+PROD-11645,CoreAnalytics,Cloud Platform,Pilot,2022-08-03,Testing,Planned,2025-07-24,Steven Watkins,239041
+PROD-11646,Insight360,Cloud Platform,GA (General Availability),2024-07-18,Pre-Launch,Cancelled,2023-08-04,Joyce Washington,364021
+PROD-11647,DataSphere,Analytics,Retired,2020-12-20,Prototype,Planned,2023-09-29,Jerry Solomon,426614
+PROD-11648,CloudEdge,IoT,Pilot,2024-11-20,Concept,Planned,2022-11-28,Kenneth Cunningham,381542
+PROD-11649,NetConnect,IoT,In Development,2021-09-28,Prototype,Cancelled,2025-05-02,Maurice Moran,535224
+PROD-11650,CloudEdge,Analytics,Active,2025-01-14,Concept,Not Launched,2024-08-21,Stephen Logan,166192
+PROD-11651,CloudEdge,Cloud Platform,Pilot,2025-06-10,Concept,Cancelled,2023-11-19,Luis Mcgee,555932
+PROD-11652,DataSphere,Analytics,Pilot,2022-05-16,Prototype,Cancelled,2023-11-07,Jessica Mitchell,481462
+PROD-11653,DataSphere,IoT,Active,2023-02-21,Testing,In Pipeline,2024-12-21,William Tucker,449579
+PROD-11654,Insight360,Security,GA (General Availability),2023-09-11,Prototype,In Pipeline,2023-12-07,Jeffrey Graham,487456
+PROD-11655,CoreAnalytics,Networking,In Development,2025-05-29,Testing,Planned,2022-11-26,Lindsay Walker,344762
+PROD-11656,CloudEdge,Security,Retired,2025-03-17,Concept,In Pipeline,2023-07-29,Erika Nichols,349024
+PROD-11657,CloudEdge,Security,GA (General Availability),2021-01-20,Prototype,Not Launched,2022-10-02,Andrea Pierce,474850
+PROD-11658,NetConnect,Networking,Active,2022-08-16,Testing,Not Launched,2023-12-06,Samantha Weiss,497076
+PROD-11659,CloudEdge,Security,GA (General Availability),2022-08-03,Enhancement,Not Launched,2022-11-28,Jeffrey Walker,306834
+PROD-11660,DataSphere,Networking,In Development,2024-06-04,Testing,In Pipeline,2024-07-28,Matthew Hicks,502138
+PROD-11661,CoreAnalytics,Networking,GA (General Availability),2024-10-29,Prototype,Not Launched,2024-08-19,Ray Proctor,411289
+PROD-11662,NetConnect,Networking,Active,2022-04-05,Enhancement,Cancelled,2023-04-26,Mr. Allen Mcdonald,233373
+PROD-11663,DataSphere,Networking,Active,2021-09-29,Enhancement,Cancelled,2023-04-05,Frederick Lambert,525047
+PROD-11664,Insight360,Networking,Active,2022-01-05,Prototype,Cancelled,2024-12-06,Daniel Phillips,218988
+PROD-11665,Insight360,IoT,GA (General Availability),2024-07-12,Pre-Launch,Planned,2025-04-19,Christina Brown,461355
+PROD-11666,NetConnect,IoT,GA (General Availability),2020-11-02,Prototype,Launched,2024-02-27,Shelley Thompson,182140
+PROD-11667,NetConnect,Analytics,Active,2021-10-10,Concept,In Pipeline,2024-06-05,Rachel Cain,271083
+PROD-11668,Insight360,Networking,GA (General Availability),2025-02-28,Enhancement,In Pipeline,2022-12-23,Martha Le,348498
+PROD-11669,CoreAnalytics,Networking,Pilot,2021-12-25,Prototype,Cancelled,2025-07-06,Jonathan Everett,390287
+PROD-11670,Insight360,Networking,Retired,2025-05-23,Testing,In Pipeline,2024-06-01,Mitchell Mcmahon,439686
+PROD-11671,DataSphere,Cloud Platform,In Development,2024-07-14,Enhancement,Cancelled,2024-09-04,Jaime Nguyen,190028
+PROD-11672,CoreAnalytics,IoT,GA (General Availability),2023-04-07,Pre-Launch,Not Launched,2024-06-24,Austin Diaz,300346
+PROD-11673,DataSphere,Networking,Retired,2023-07-06,Prototype,Launched,2023-05-24,Edward Anderson,368098
+PROD-11674,CoreAnalytics,IoT,In Development,2021-03-18,Concept,Not Launched,2023-12-17,Micheal Franklin,226469
+PROD-11675,Insight360,Cloud Platform,GA (General Availability),2024-03-17,Enhancement,Launched,2023-12-24,Courtney Richardson,510744
+PROD-11676,DataSphere,Cloud Platform,Pilot,2025-01-22,Enhancement,Cancelled,2023-06-19,Brianna Burns,297911
+PROD-11677,CloudEdge,Networking,Retired,2022-07-07,Prototype,Planned,2024-10-27,Amanda Freeman,498951
+PROD-11678,DataSphere,Networking,Pilot,2023-07-11,Testing,Launched,2025-04-13,John Payne,550029
+PROD-11679,CloudEdge,IoT,Pilot,2022-06-16,Testing,Cancelled,2023-05-01,Mrs. Krista Jones,275029
+PROD-11680,CoreAnalytics,IoT,Retired,2024-07-29,Enhancement,Not Launched,2023-08-20,Andrew Smith,352046
+PROD-11681,Insight360,Security,Active,2024-12-18,Enhancement,Not Launched,2023-09-06,Phillip Franklin,361981
+PROD-11682,Insight360,Networking,Retired,2023-05-11,Enhancement,Planned,2024-03-27,Erika Garcia,546277
+PROD-11683,DataSphere,IoT,In Development,2025-01-03,Prototype,Cancelled,2023-04-22,Damon Anderson,560531
+PROD-11684,CloudEdge,Security,In Development,2024-12-24,Prototype,Launched,2023-04-26,Katherine Hall,539330
+PROD-11685,CoreAnalytics,Analytics,GA (General Availability),2022-04-17,Prototype,Not Launched,2025-01-05,Gregory Gamble,591299
+PROD-11686,DataSphere,IoT,In Development,2022-02-24,Pre-Launch,Planned,2025-05-30,Angela Sanders,553315
+PROD-11687,NetConnect,Security,Active,2024-10-15,Concept,Launched,2022-10-06,Sharon Schneider,545150
+PROD-11688,NetConnect,Security,GA (General Availability),2024-07-02,Prototype,Planned,2023-08-19,Alex Abbott,430798
+PROD-11689,DataSphere,Security,In Development,2025-08-28,Pre-Launch,Launched,2023-03-02,Travis Martinez,220416
+PROD-11690,NetConnect,Cloud Platform,Retired,2023-11-12,Pre-Launch,Planned,2023-05-04,Zachary Price,594750
+PROD-11691,DataSphere,Cloud Platform,Retired,2021-08-17,Testing,Not Launched,2024-05-13,Clarence Ortiz,176644
+PROD-11692,NetConnect,IoT,In Development,2021-04-14,Testing,Launched,2023-09-05,Justin Jimenez,289166
+PROD-11693,NetConnect,IoT,GA (General Availability),2021-11-22,Concept,Cancelled,2024-09-17,Alicia Orr,380257
+PROD-11694,CloudEdge,Security,Retired,2020-10-25,Pre-Launch,In Pipeline,2023-07-25,Michael Koch,189148
+PROD-11695,CoreAnalytics,Networking,In Development,2025-01-08,Concept,Planned,2024-02-27,Claudia Burns,344059
+PROD-11696,DataSphere,Cloud Platform,Pilot,2022-06-06,Pre-Launch,In Pipeline,2024-07-27,Mark Wu,379578
+PROD-11697,NetConnect,Networking,GA (General Availability),2023-05-19,Concept,In Pipeline,2023-10-12,Taylor Robinson,282567
+PROD-11698,NetConnect,Analytics,Active,2022-09-17,Testing,Cancelled,2024-03-24,Stephen Mcbride,396873
+PROD-11699,CoreAnalytics,Networking,Retired,2024-11-03,Testing,Planned,2024-05-03,Anthony Davis,289508
+PROD-11700,CoreAnalytics,IoT,Pilot,2021-07-30,Prototype,Not Launched,2023-08-23,Misty Tran,288716
+PROD-11701,CloudEdge,IoT,Active,2024-03-04,Pre-Launch,Planned,2025-03-04,Jesus White,484325
+PROD-11702,CloudEdge,IoT,GA (General Availability),2022-12-31,Concept,Launched,2024-04-12,Kelli Rojas,228511
+PROD-11703,CloudEdge,Security,Pilot,2020-11-02,Pre-Launch,Not Launched,2025-02-25,Laurie Carroll,245352
+PROD-11704,CloudEdge,Cloud Platform,GA (General Availability),2021-08-10,Prototype,In Pipeline,2023-06-19,Stephanie Petersen,493102
+PROD-11705,DataSphere,Analytics,Pilot,2024-06-12,Concept,Not Launched,2023-12-15,Kevin Pineda,402187
+PROD-11706,DataSphere,Cloud Platform,Active,2023-09-19,Prototype,Cancelled,2024-04-11,Mrs. Kimberly Hudson,473613
+PROD-11707,Insight360,IoT,GA (General Availability),2024-11-01,Concept,Not Launched,2024-11-14,Terry Schroeder,526031
+PROD-11708,CoreAnalytics,Analytics,Active,2022-11-16,Testing,Planned,2023-09-22,John Duran,586953
+PROD-11709,CoreAnalytics,Security,In Development,2024-10-22,Testing,In Pipeline,2023-10-04,Cynthia Smith,361387
+PROD-11710,Insight360,Security,Pilot,2023-06-24,Enhancement,In Pipeline,2025-02-28,Jason Knox,557645
+PROD-11711,NetConnect,IoT,GA (General Availability),2025-06-20,Concept,Cancelled,2023-03-08,Mark Williamson,395445
+PROD-11712,DataSphere,Networking,In Development,2024-10-09,Pre-Launch,Not Launched,2022-09-23,Matthew Ross,550295
+PROD-11713,Insight360,IoT,Retired,2021-01-14,Testing,Launched,2023-06-09,Erin Hughes,367713
+PROD-11714,CoreAnalytics,IoT,Retired,2022-03-09,Testing,Cancelled,2025-08-29,Kristen Russell,183122
+PROD-11715,CloudEdge,IoT,Retired,2022-11-16,Concept,Not Launched,2024-07-22,Joshua Pacheco,459255
+PROD-11716,NetConnect,IoT,Pilot,2025-08-30,Prototype,Cancelled,2023-08-23,Kathryn Mendez,479559
+PROD-11717,NetConnect,Networking,Retired,2022-01-26,Enhancement,Launched,2025-06-30,Tiffany Griffin,375169
+PROD-11718,CloudEdge,Security,Pilot,2022-04-09,Prototype,Launched,2023-08-08,Ashley Lawrence,520627
+PROD-11719,DataSphere,Networking,Active,2021-07-10,Pre-Launch,Launched,2024-02-17,Michele Ramos,195778
+PROD-11720,Insight360,Cloud Platform,GA (General Availability),2023-06-11,Concept,Launched,2023-04-11,Gary Lambert,255396
+PROD-11721,DataSphere,IoT,In Development,2020-12-21,Enhancement,Launched,2024-10-06,Dylan Butler,230504
+PROD-11722,CloudEdge,IoT,GA (General Availability),2022-06-30,Enhancement,Planned,2023-07-25,Michael Fields,452755
+PROD-11723,CoreAnalytics,Analytics,Active,2021-10-13,Enhancement,Planned,2025-08-31,Shane Pollard,447908
+PROD-11724,NetConnect,Networking,GA (General Availability),2024-12-18,Pre-Launch,In Pipeline,2023-06-13,Brian Martin,337234
+PROD-11725,Insight360,Security,Active,2024-03-06,Testing,Cancelled,2022-11-13,Rebekah Chambers,597452
+PROD-11726,Insight360,Security,Active,2024-01-10,Concept,Planned,2025-03-13,Matthew Underwood,361381
+PROD-11727,CloudEdge,Analytics,Active,2024-03-01,Testing,Launched,2024-10-11,Aaron White,481026
+PROD-11728,DataSphere,Cloud Platform,Active,2021-08-23,Pre-Launch,Planned,2025-05-09,Michael Pennington,436796
+PROD-11729,NetConnect,Cloud Platform,Retired,2023-04-10,Testing,Not Launched,2023-08-19,Kenneth Atkins,344558
+PROD-11730,Insight360,IoT,Retired,2025-01-12,Testing,Cancelled,2025-07-01,Matthew Cruz,161195
+PROD-11731,NetConnect,Networking,Active,2025-05-09,Enhancement,Launched,2025-06-18,Joel Arellano,314661
+PROD-11732,CloudEdge,Networking,Pilot,2025-02-23,Concept,In Pipeline,2024-12-26,Theresa Franco,375160
+PROD-11733,DataSphere,Security,Pilot,2022-07-05,Concept,Planned,2024-11-27,Lauren Bennett,166125
+PROD-11734,Insight360,Analytics,GA (General Availability),2023-10-24,Prototype,In Pipeline,2024-10-28,Ariel Lara,339060
+PROD-11735,CoreAnalytics,Cloud Platform,In Development,2025-04-19,Prototype,Planned,2024-09-15,Mrs. Lauren Deleon,573116
+PROD-11736,Insight360,IoT,Pilot,2022-03-10,Pre-Launch,Launched,2023-06-26,Susan Summers,591658
+PROD-11737,CoreAnalytics,Cloud Platform,Active,2023-08-26,Prototype,Launched,2024-12-06,Hector Smith,522274
+PROD-11738,DataSphere,IoT,Retired,2022-07-08,Testing,Planned,2023-05-04,Adam Brown,469929
+PROD-11739,CloudEdge,Analytics,Retired,2020-10-03,Enhancement,Not Launched,2024-12-30,Michele Jackson,332235
+PROD-11740,CloudEdge,Cloud Platform,Active,2020-09-25,Prototype,In Pipeline,2024-04-24,Kelly Krause,515161
+PROD-11741,DataSphere,Analytics,Pilot,2024-05-17,Concept,Planned,2023-09-06,Julie Evans,403965
+PROD-11742,CloudEdge,IoT,In Development,2025-02-04,Concept,Cancelled,2023-02-28,Joseph Case,217849
+PROD-11743,Insight360,Cloud Platform,Active,2025-07-03,Pre-Launch,In Pipeline,2023-12-15,John Chavez,303070
+PROD-11744,DataSphere,Networking,Pilot,2024-04-11,Prototype,Cancelled,2024-08-11,Justin Anderson,426226
+PROD-11745,DataSphere,Analytics,Active,2022-08-10,Concept,Cancelled,2023-07-15,Mrs. Rachel Davidson,345963
+PROD-11746,Insight360,Cloud Platform,Retired,2022-03-15,Enhancement,Planned,2023-07-10,Miss Gina Nichols,297269
+PROD-11747,Insight360,Analytics,Pilot,2022-01-31,Prototype,Launched,2022-10-01,Jillian Brady,528461
+PROD-11748,Insight360,Networking,In Development,2024-09-29,Prototype,In Pipeline,2023-02-03,Patrick Martinez,520813
+PROD-11749,CloudEdge,Analytics,Active,2023-09-15,Pre-Launch,Planned,2024-01-18,Monica Cline,483822
+PROD-11750,CloudEdge,Security,Active,2025-03-10,Pre-Launch,Not Launched,2023-01-26,Brooke Brown,162223
+PROD-11751,DataSphere,Networking,In Development,2020-11-17,Testing,Not Launched,2024-07-17,Laura Barnes,429927
+PROD-11752,NetConnect,Security,Active,2024-10-22,Prototype,Planned,2024-07-14,Karen Fowler,189000
+PROD-11753,DataSphere,Cloud Platform,GA (General Availability),2020-09-26,Enhancement,Cancelled,2025-08-29,Robert Armstrong,278728
+PROD-11754,CloudEdge,Analytics,In Development,2022-08-13,Concept,Planned,2025-05-24,Micheal Fields,451010
+PROD-11755,DataSphere,Networking,Active,2025-04-28,Testing,Cancelled,2025-04-24,Cheryl Smith,492592
+PROD-11756,DataSphere,Analytics,In Development,2024-04-03,Concept,Not Launched,2024-07-01,Joshua Murray,395767
+PROD-11757,DataSphere,Security,Retired,2024-04-23,Prototype,In Pipeline,2024-12-18,Michael Anthony,504179
+PROD-11758,Insight360,Networking,GA (General Availability),2020-12-21,Testing,Cancelled,2022-12-18,David Valdez,281780
+PROD-11759,CoreAnalytics,Networking,GA (General Availability),2023-10-30,Testing,Launched,2023-01-22,Angel Haynes,178042
+PROD-11760,CloudEdge,Networking,Active,2024-03-09,Testing,Planned,2025-01-13,Christina Tucker,521116
+PROD-11761,CloudEdge,Security,Active,2024-12-04,Testing,Planned,2025-03-07,Bradley Malone,344462
+PROD-11762,Insight360,Cloud Platform,Active,2021-05-30,Concept,Planned,2023-07-16,Gregory Murray,366464
+PROD-11763,CoreAnalytics,Analytics,Retired,2024-06-23,Testing,Cancelled,2023-06-10,Mr. Justin Hahn,372604
+PROD-11764,CoreAnalytics,IoT,In Development,2023-01-02,Concept,Launched,2025-04-20,Henry Rivera,420326
+PROD-11765,NetConnect,Security,GA (General Availability),2022-05-12,Enhancement,Cancelled,2024-10-10,Diane Wilson,173896
+PROD-11766,NetConnect,Analytics,In Development,2024-12-07,Pre-Launch,In Pipeline,2023-08-13,Dustin Mclaughlin,387961
+PROD-11767,DataSphere,Cloud Platform,In Development,2023-01-03,Testing,In Pipeline,2023-03-16,Gregory Schneider,469251
+PROD-11768,CoreAnalytics,Security,GA (General Availability),2021-10-31,Enhancement,Cancelled,2023-10-28,Gary Booth,462994
+PROD-11769,DataSphere,Analytics,Pilot,2024-07-04,Concept,Planned,2024-09-28,Doris Richardson,189494
+PROD-11770,CoreAnalytics,Security,In Development,2021-09-01,Pre-Launch,Not Launched,2024-01-14,Mrs. Jocelyn Simmons,230092
+PROD-11771,CoreAnalytics,IoT,Retired,2024-05-25,Enhancement,Not Launched,2024-12-23,Lisa Perez,373132
+PROD-11772,NetConnect,Cloud Platform,In Development,2023-02-26,Testing,Cancelled,2024-11-24,Rachel Hansen,441892
+PROD-11773,NetConnect,Analytics,GA (General Availability),2022-05-09,Testing,Planned,2023-08-06,Sabrina Lee,319029
+PROD-11774,NetConnect,IoT,In Development,2021-01-20,Pre-Launch,Launched,2024-02-24,Brian Grant,542610
+PROD-11775,CloudEdge,Security,GA (General Availability),2024-05-14,Enhancement,Planned,2024-10-24,Vincent Gibson,520431
+PROD-11776,NetConnect,Analytics,In Development,2022-04-02,Pre-Launch,Not Launched,2023-10-13,Lauren Wilson,426143
+PROD-11777,CloudEdge,Networking,Active,2024-01-27,Concept,In Pipeline,2023-07-05,Diamond Guerra,540857
+PROD-11778,Insight360,Cloud Platform,Retired,2023-06-28,Concept,Cancelled,2023-07-02,Amy Hubbard DDS,330691
+PROD-11779,CloudEdge,Analytics,Active,2021-02-12,Enhancement,Launched,2022-12-27,Dustin Allen,564169
+PROD-11780,NetConnect,Analytics,GA (General Availability),2022-08-14,Enhancement,Launched,2024-04-17,Jamie James,455648
+PROD-11781,Insight360,Analytics,GA (General Availability),2023-11-04,Enhancement,Not Launched,2024-11-08,Nathaniel Adams,495395
+PROD-11782,NetConnect,Analytics,In Development,2024-01-14,Testing,Not Launched,2025-01-24,Kevin Garcia,501917
+PROD-11783,CoreAnalytics,Security,Pilot,2024-04-11,Prototype,Launched,2022-09-30,Anne Bernard,413989
+PROD-11784,NetConnect,Security,Pilot,2022-08-10,Enhancement,In Pipeline,2025-01-05,Gail Hill,585449
+PROD-11785,CloudEdge,IoT,Retired,2021-11-23,Pre-Launch,In Pipeline,2023-08-17,Luke Barr,243729
+PROD-11786,CloudEdge,IoT,Retired,2025-07-05,Testing,Cancelled,2025-07-04,Melanie Dunn,304446
+PROD-11787,CloudEdge,Security,Active,2024-03-23,Prototype,Not Launched,2023-08-12,Mr. Keith Singh,467813
+PROD-11788,CoreAnalytics,Cloud Platform,Active,2021-03-14,Concept,Not Launched,2023-01-19,Peter Williams,248816
+PROD-11789,CloudEdge,Analytics,Active,2021-01-25,Prototype,Cancelled,2025-02-14,Michelle Knox,443679
+PROD-11790,Insight360,Networking,GA (General Availability),2022-10-13,Prototype,Cancelled,2025-05-17,Michael Stewart,408955
+PROD-11791,CloudEdge,Analytics,In Development,2024-11-03,Prototype,Cancelled,2024-04-02,Troy Vincent,209115
+PROD-11792,Insight360,Cloud Platform,In Development,2024-05-06,Prototype,Launched,2022-10-07,Richard Hughes,355832
+PROD-11793,CoreAnalytics,IoT,GA (General Availability),2025-08-13,Concept,Not Launched,2024-02-02,Samantha Graves,520017
+PROD-11794,CloudEdge,Analytics,Retired,2022-12-08,Testing,Launched,2023-03-14,Michelle Bishop,396966
+PROD-11795,DataSphere,Cloud Platform,Active,2022-05-21,Pre-Launch,Planned,2025-08-18,Chase Boyle,449390
+PROD-11796,CoreAnalytics,Networking,GA (General Availability),2025-03-12,Concept,Not Launched,2022-11-23,Seth Miller,283312
+PROD-11797,Insight360,Networking,Active,2023-03-14,Prototype,Cancelled,2025-07-15,Laura Rojas,346340
+PROD-11798,Insight360,Analytics,Retired,2021-07-22,Pre-Launch,In Pipeline,2024-06-17,Debra Knapp,168635
+PROD-11799,DataSphere,Cloud Platform,Retired,2024-08-26,Prototype,Launched,2025-01-23,Joshua Cross,260207
+PROD-11800,CloudEdge,Networking,Pilot,2025-03-27,Pre-Launch,In Pipeline,2024-05-03,Anna King,316102
+PROD-11801,CoreAnalytics,Cloud Platform,GA (General Availability),2022-09-11,Prototype,In Pipeline,2025-08-12,Anthony Bird,483516
+PROD-11802,NetConnect,Networking,Retired,2024-07-07,Testing,Cancelled,2025-01-22,Mark Turner,170763
+PROD-11803,NetConnect,Cloud Platform,In Development,2022-05-24,Prototype,Not Launched,2024-11-25,Deborah Bradshaw,391484
+PROD-11804,CoreAnalytics,Networking,Active,2024-02-22,Enhancement,Not Launched,2024-04-16,Laura Edwards,503560
+PROD-11805,Insight360,Cloud Platform,Retired,2021-02-27,Concept,Launched,2024-11-27,Holly Schneider,264008
+PROD-11806,CoreAnalytics,IoT,Active,2023-05-08,Concept,In Pipeline,2022-12-05,Mandy Robinson,197757
+PROD-11807,CloudEdge,Networking,Active,2020-12-04,Concept,Planned,2025-06-04,Andrew Berry,594396
+PROD-11808,CoreAnalytics,IoT,Active,2021-07-12,Concept,Not Launched,2025-08-27,Susan Crawford,562574
+PROD-11809,Insight360,Networking,Pilot,2022-03-12,Testing,In Pipeline,2024-12-13,Andrew Lopez,218276
+PROD-11810,CoreAnalytics,Security,Active,2023-03-06,Enhancement,In Pipeline,2022-11-03,Matthew Walker,430501
+PROD-11811,Insight360,Networking,Pilot,2022-02-24,Concept,Cancelled,2025-03-14,Adam Newman,508598
+PROD-11812,CoreAnalytics,Cloud Platform,GA (General Availability),2022-03-07,Concept,Cancelled,2022-10-21,Shannon Hamilton,427157
+PROD-11813,DataSphere,Analytics,Active,2022-04-08,Prototype,Launched,2024-02-05,April Hatfield,574856
+PROD-11814,NetConnect,Analytics,Active,2024-05-20,Testing,Planned,2023-02-02,Amanda Oliver,188377
+PROD-11815,NetConnect,Analytics,Retired,2023-10-11,Prototype,Planned,2025-01-11,Derek Saunders,317998
+PROD-11816,Insight360,Analytics,Retired,2022-11-01,Testing,In Pipeline,2022-09-08,Charles Cochran,421565
+PROD-11817,DataSphere,Analytics,Active,2022-07-28,Pre-Launch,In Pipeline,2022-12-15,Melanie Hahn,249897
+PROD-11818,Insight360,IoT,Retired,2022-07-05,Enhancement,In Pipeline,2023-12-24,Brittney Patterson,599285
+PROD-11819,DataSphere,Analytics,Active,2022-10-12,Concept,Launched,2025-05-30,Mark Henderson,363364
+PROD-11820,Insight360,Security,GA (General Availability),2025-03-13,Concept,Planned,2023-11-17,Jessica Gregory,324725
+PROD-11821,CoreAnalytics,Analytics,Pilot,2025-06-10,Concept,Not Launched,2023-07-22,Carl Hamilton,312292
+PROD-11822,NetConnect,Networking,Retired,2021-11-01,Pre-Launch,Planned,2024-09-15,Dr. Steven Barrett,227576
+PROD-11823,DataSphere,IoT,Retired,2023-11-17,Testing,In Pipeline,2024-11-18,Jessica Hamilton,172646
+PROD-11824,NetConnect,Networking,Retired,2024-09-02,Prototype,Planned,2024-08-06,John Villanueva,558436
+PROD-11825,Insight360,Networking,Active,2024-06-15,Prototype,In Pipeline,2024-04-18,David Bailey,359065
+PROD-11826,CoreAnalytics,Security,Pilot,2025-03-06,Testing,Cancelled,2024-12-12,Alexandria Smith,334535
+PROD-11827,NetConnect,IoT,Retired,2023-06-11,Enhancement,In Pipeline,2023-08-16,David Diaz MD,561849
+PROD-11828,CloudEdge,IoT,Retired,2022-03-20,Prototype,Cancelled,2022-09-11,Tiffany Moore,539622
+PROD-11829,Insight360,Security,In Development,2021-07-10,Prototype,In Pipeline,2023-08-11,Victor Edwards,486076
+PROD-11830,NetConnect,Cloud Platform,Active,2023-11-27,Testing,In Pipeline,2022-11-04,Marisa Brown,468644
+PROD-11831,NetConnect,IoT,In Development,2021-02-06,Prototype,Launched,2024-04-09,Rebecca Lee,296567
+PROD-11832,DataSphere,Analytics,Retired,2022-03-06,Prototype,Cancelled,2023-03-16,Amy Stafford,477853
+PROD-11833,CloudEdge,IoT,Active,2024-04-28,Pre-Launch,Planned,2024-09-24,John Reynolds,408813
+PROD-11834,CoreAnalytics,Cloud Platform,Active,2025-05-02,Testing,Launched,2025-05-26,Christine Benson,264351
+PROD-11835,CoreAnalytics,Cloud Platform,GA (General Availability),2021-12-01,Testing,Planned,2024-09-14,Noah Crawford,581030
+PROD-11836,Insight360,Analytics,Retired,2022-10-02,Prototype,Planned,2023-12-23,Kevin Reese,263536
+PROD-11837,CloudEdge,Security,Active,2025-02-03,Pre-Launch,Planned,2024-02-02,Jordan Martinez,513850
+PROD-11838,Insight360,Cloud Platform,Active,2022-07-09,Enhancement,Launched,2023-07-27,Michelle Simon,480142
+PROD-11839,CloudEdge,Security,In Development,2023-03-06,Enhancement,Launched,2025-07-09,Richard Wilson,383487
+PROD-11840,CloudEdge,Cloud Platform,Pilot,2024-09-15,Pre-Launch,Launched,2022-11-30,Suzanne Rivera,563552
+PROD-11841,CoreAnalytics,Analytics,Pilot,2025-06-06,Prototype,Planned,2025-06-02,Haley Henderson,383131
+PROD-11842,CloudEdge,IoT,Retired,2024-02-02,Enhancement,Launched,2024-09-09,Dr. David Armstrong,310039
+PROD-11843,CloudEdge,Security,Active,2024-06-01,Prototype,Planned,2023-04-04,Briana Brewer,578006
+PROD-11844,Insight360,Cloud Platform,Retired,2024-01-24,Testing,Not Launched,2023-07-27,Natalie Williams,575908
+PROD-11845,CloudEdge,Networking,Active,2023-09-02,Testing,Planned,2024-07-06,Joseph Chambers,259309
+PROD-11846,NetConnect,Analytics,Retired,2023-11-06,Prototype,Planned,2023-06-13,Lori Lambert,561397
+PROD-11847,NetConnect,IoT,Pilot,2021-03-03,Pre-Launch,Cancelled,2023-05-18,Jeffery Hall,425284
+PROD-11848,Insight360,IoT,Retired,2020-12-07,Pre-Launch,In Pipeline,2023-07-13,Kaitlin Woods,211838
+PROD-11849,DataSphere,Cloud Platform,GA (General Availability),2025-07-20,Pre-Launch,Not Launched,2023-10-08,Kelsey Bartlett,224440
+PROD-11850,CloudEdge,Analytics,In Development,2024-10-24,Prototype,In Pipeline,2024-07-07,Kimberly Daniel,556505
+PROD-11851,DataSphere,IoT,Pilot,2024-07-02,Prototype,Launched,2023-06-27,Kathy Medina,514464
+PROD-11852,CloudEdge,Analytics,GA (General Availability),2021-07-25,Pre-Launch,Cancelled,2024-01-29,Joseph Scott,383498
+PROD-11853,CloudEdge,Analytics,Retired,2020-10-15,Enhancement,Planned,2025-04-27,Jennifer Smith,595537
+PROD-11854,NetConnect,Networking,Pilot,2023-07-13,Enhancement,Cancelled,2023-12-21,Christina Goodman,503394
+PROD-11855,CloudEdge,Security,In Development,2021-09-14,Testing,Planned,2024-04-14,Cindy Lucas,505902
+PROD-11856,Insight360,Security,Active,2025-01-26,Enhancement,Not Launched,2023-05-25,Martha Craig,568638
+PROD-11857,CoreAnalytics,IoT,In Development,2022-11-07,Concept,Planned,2024-01-07,Stacey Huff,390313
+PROD-11858,NetConnect,Networking,GA (General Availability),2022-04-27,Testing,Cancelled,2023-01-16,Monique Wood,245309
+PROD-11859,NetConnect,Cloud Platform,Pilot,2024-05-23,Concept,In Pipeline,2023-10-31,Jesus Gill,504939
+PROD-11860,CloudEdge,Security,GA (General Availability),2021-09-26,Testing,Cancelled,2024-05-30,Regina Morrison,219176
+PROD-11861,CoreAnalytics,Analytics,Active,2023-09-19,Concept,Launched,2024-09-21,Joshua Nielsen,411369
+PROD-11862,CloudEdge,IoT,Pilot,2021-03-11,Enhancement,In Pipeline,2022-11-07,Kelly Acosta,260900
+PROD-11863,NetConnect,Security,In Development,2024-04-01,Testing,Not Launched,2023-12-30,Rebecca Taylor,550504
+PROD-11864,NetConnect,Security,Retired,2021-07-13,Concept,In Pipeline,2023-05-07,Crystal Phillips,580677
+PROD-11865,CoreAnalytics,Cloud Platform,In Development,2025-08-25,Testing,In Pipeline,2023-04-28,Mrs. Danielle Ortiz MD,261259
+PROD-11866,CloudEdge,Security,Retired,2021-08-29,Prototype,Not Launched,2023-12-16,Cathy Wagner,465031
+PROD-11867,CloudEdge,Cloud Platform,Pilot,2023-03-15,Enhancement,In Pipeline,2025-07-17,Mr. Anthony Shepherd,550751
+PROD-11868,Insight360,Cloud Platform,Retired,2020-11-24,Pre-Launch,Cancelled,2025-08-19,Mark Arnold,467743
+PROD-11869,CloudEdge,Security,GA (General Availability),2021-09-06,Testing,In Pipeline,2024-08-15,Crystal Hansen,227608
+PROD-11870,NetConnect,IoT,Pilot,2022-05-22,Testing,Cancelled,2024-09-08,Darrell Palmer,516929
+PROD-11871,CloudEdge,Analytics,Pilot,2022-11-25,Concept,Launched,2024-03-06,Crystal Orozco DDS,330362
+PROD-11872,NetConnect,Analytics,GA (General Availability),2021-07-13,Testing,Cancelled,2024-12-28,Benjamin Reese,246065
+PROD-11873,CoreAnalytics,Cloud Platform,In Development,2023-01-26,Testing,Launched,2023-11-22,Tracy Mosley,400651
+PROD-11874,CloudEdge,Cloud Platform,Pilot,2021-01-21,Prototype,In Pipeline,2025-08-15,Jenny Miller,469324
+PROD-11875,CloudEdge,Security,Active,2022-05-17,Concept,Launched,2024-05-23,Joseph Allen,595074
+PROD-11876,DataSphere,IoT,Pilot,2021-07-05,Testing,In Pipeline,2024-02-21,Andrew Young,218954
+PROD-11877,Insight360,Analytics,Retired,2024-05-25,Enhancement,Not Launched,2024-09-21,Lindsey Bush,312558
+PROD-11878,DataSphere,IoT,Retired,2024-12-07,Prototype,In Pipeline,2023-05-15,Rebecca Cunningham,267977
+PROD-11879,DataSphere,IoT,Active,2025-01-27,Concept,Not Launched,2024-03-25,Thomas Oneill,471389
+PROD-11880,CloudEdge,Analytics,Active,2024-09-02,Pre-Launch,Launched,2025-08-14,Kendra Brown,425160
+PROD-11881,CoreAnalytics,Analytics,Active,2021-08-17,Concept,Launched,2024-01-04,Megan Jackson,498198
+PROD-11882,DataSphere,Cloud Platform,Active,2025-09-01,Pre-Launch,Launched,2023-11-08,John Nguyen,401214
+PROD-11883,DataSphere,Cloud Platform,In Development,2023-05-23,Pre-Launch,Cancelled,2022-12-23,Shelley Parker,271358
+PROD-11884,DataSphere,Networking,In Development,2024-07-10,Enhancement,Cancelled,2022-10-20,Justin Garcia,449052
+PROD-11885,NetConnect,Cloud Platform,Active,2023-12-01,Enhancement,Cancelled,2023-03-31,Nicholas Mays,592525
+PROD-11886,DataSphere,Networking,Retired,2023-06-18,Enhancement,Cancelled,2023-06-22,Ann Garcia,551433
+PROD-11887,CloudEdge,Security,In Development,2023-04-27,Enhancement,Launched,2023-06-18,Nicole Andrews,319413
+PROD-11888,CloudEdge,Analytics,Pilot,2022-05-25,Concept,Not Launched,2025-08-27,Sharon Mcdonald,552349
+PROD-11889,CoreAnalytics,Security,Active,2021-12-21,Prototype,Cancelled,2023-12-20,Keith Bates,562194
+PROD-11890,CoreAnalytics,Analytics,Retired,2021-12-16,Testing,Cancelled,2022-12-16,Taylor Watson,298876
+PROD-11891,CoreAnalytics,Security,GA (General Availability),2021-09-04,Concept,Planned,2023-01-15,Rebecca Chen,196165
+PROD-11892,CloudEdge,Security,GA (General Availability),2024-08-24,Enhancement,Planned,2024-11-11,Steve Hanna,242554
+PROD-11893,DataSphere,Analytics,Retired,2021-04-09,Prototype,Not Launched,2023-09-23,Joanna Rodriguez,357860
+PROD-11894,CloudEdge,IoT,Retired,2023-03-19,Concept,Planned,2022-09-14,Craig Landry,309848
+PROD-11895,CoreAnalytics,Security,Active,2024-12-13,Concept,Launched,2025-07-24,Thomas Sharp,227489
+PROD-11896,CoreAnalytics,Networking,Retired,2022-10-07,Prototype,Cancelled,2022-09-03,William Warner,278193
+PROD-11897,CloudEdge,Networking,In Development,2022-11-24,Enhancement,Cancelled,2024-01-10,Tammy Hoffman,196075
+PROD-11898,CoreAnalytics,Networking,Pilot,2023-02-17,Testing,Planned,2023-02-23,David Haas,326241
+PROD-11899,NetConnect,Analytics,Retired,2025-01-15,Pre-Launch,Cancelled,2025-02-12,Amy Kramer,451534
+PROD-11900,CoreAnalytics,Security,Active,2024-06-11,Pre-Launch,Planned,2023-07-29,Mr. James Kennedy DDS,278332
+PROD-11901,DataSphere,IoT,Retired,2025-01-16,Prototype,Launched,2024-11-09,John Stone,245317
+PROD-11902,Insight360,Analytics,In Development,2024-01-30,Pre-Launch,Launched,2024-05-17,Shawn Brown,487319
+PROD-11903,DataSphere,Analytics,Pilot,2020-12-16,Testing,Not Launched,2024-12-09,Michelle Jenkins,186668
+PROD-11904,Insight360,Security,GA (General Availability),2021-08-28,Concept,Planned,2023-07-28,Johnathan Hughes,457069
+PROD-11905,CloudEdge,Networking,Active,2022-09-21,Pre-Launch,In Pipeline,2022-10-21,John Crawford,404952
+PROD-11906,Insight360,Analytics,GA (General Availability),2020-12-11,Concept,Planned,2024-07-26,Zachary Pugh,364359
+PROD-11907,CloudEdge,Analytics,In Development,2022-08-26,Testing,In Pipeline,2024-12-28,Jessica Smith,592943
+PROD-11908,CoreAnalytics,Analytics,GA (General Availability),2021-12-25,Concept,Cancelled,2023-11-20,Natalie Hernandez,189346
+PROD-11909,CloudEdge,IoT,Retired,2021-07-21,Concept,Launched,2023-07-01,Kaitlyn Ford,378538
+PROD-11910,CoreAnalytics,Analytics,Retired,2024-01-27,Concept,Planned,2024-11-12,Hailey Hall MD,591059
+PROD-11911,NetConnect,Analytics,GA (General Availability),2022-08-23,Testing,Cancelled,2022-12-27,Cody Bennett,463432
+PROD-11912,CoreAnalytics,Security,Retired,2021-10-15,Concept,Cancelled,2023-10-19,Carol Murphy,501260
+PROD-11913,Insight360,Networking,Retired,2023-09-23,Concept,Not Launched,2023-12-23,Bridget Fisher,286839
+PROD-11914,DataSphere,Security,GA (General Availability),2024-05-30,Prototype,Cancelled,2022-09-11,Andrew Williams,571927
+PROD-11915,Insight360,Analytics,Retired,2024-09-30,Pre-Launch,Not Launched,2023-08-24,Julian Hill,408329
+PROD-11916,Insight360,Networking,Pilot,2023-01-04,Testing,In Pipeline,2025-06-02,Matthew Stout,413034
+PROD-11917,DataSphere,Cloud Platform,Active,2021-05-20,Testing,Cancelled,2022-12-07,Edward Gonzalez,185814
+PROD-11918,CloudEdge,Networking,Retired,2021-01-08,Prototype,In Pipeline,2023-12-30,Dr. Diana Garza MD,391686
+PROD-11919,DataSphere,Analytics,GA (General Availability),2023-06-28,Pre-Launch,Cancelled,2023-04-22,Crystal Hill,341886
+PROD-11920,CloudEdge,IoT,Retired,2025-03-20,Concept,Cancelled,2024-03-31,Justin Hensley,346677
+PROD-11921,Insight360,Analytics,Active,2020-11-16,Testing,In Pipeline,2023-07-23,Travis Little,540582
+PROD-11922,Insight360,Cloud Platform,Pilot,2022-02-25,Pre-Launch,Planned,2023-12-02,Michele Cline,320735
+PROD-11923,DataSphere,Networking,Pilot,2020-10-23,Enhancement,In Pipeline,2025-01-27,Theresa Hall,430697
+PROD-11924,DataSphere,Security,Active,2022-05-21,Prototype,In Pipeline,2022-12-30,Sarah Taylor,240568
+PROD-11925,CloudEdge,Security,GA (General Availability),2020-11-28,Enhancement,Cancelled,2025-05-23,Jordan Morrison,319507
+PROD-11926,NetConnect,Cloud Platform,Pilot,2022-06-27,Prototype,In Pipeline,2022-12-24,Joseph Perry,348976
+PROD-11927,CoreAnalytics,IoT,GA (General Availability),2021-07-01,Concept,In Pipeline,2024-02-11,Michelle Flores,189902
+PROD-11928,CoreAnalytics,Cloud Platform,GA (General Availability),2020-12-14,Pre-Launch,In Pipeline,2024-10-13,Frank Casey,344241
+PROD-11929,NetConnect,Networking,Active,2025-02-02,Testing,Not Launched,2024-06-27,Elizabeth Evans,360471
+PROD-11930,CloudEdge,Security,Pilot,2021-06-13,Pre-Launch,Planned,2025-07-14,Stanley Castro,428934
+PROD-11931,CloudEdge,Cloud Platform,GA (General Availability),2022-11-26,Concept,Launched,2024-07-29,Hailey Santana,225283
+PROD-11932,NetConnect,Analytics,Retired,2025-05-18,Enhancement,Not Launched,2023-11-25,Kelly Hall,402960
+PROD-11933,DataSphere,Cloud Platform,Retired,2025-02-13,Pre-Launch,Not Launched,2024-05-16,David Rodgers,489834
+PROD-11934,Insight360,Cloud Platform,GA (General Availability),2023-07-05,Testing,In Pipeline,2022-11-19,Gregory Klein,372149
+PROD-11935,Insight360,IoT,Active,2022-01-24,Prototype,Launched,2024-08-22,Jennifer Rocha,348247
+PROD-11936,NetConnect,IoT,GA (General Availability),2021-10-14,Prototype,In Pipeline,2024-01-05,Elizabeth Davila,241791
+PROD-11937,NetConnect,Cloud Platform,Retired,2025-03-25,Prototype,Launched,2022-11-22,Darlene Fritz,440447
+PROD-11938,DataSphere,IoT,Retired,2021-03-28,Testing,Planned,2023-09-19,Michael Marquez,511302
+PROD-11939,DataSphere,Networking,Pilot,2024-03-23,Concept,In Pipeline,2023-10-18,Victor Chang,228294
+PROD-11940,Insight360,Security,In Development,2021-12-27,Enhancement,Cancelled,2023-07-22,Gregory Lang,295541
+PROD-11941,CoreAnalytics,Cloud Platform,Pilot,2024-08-29,Concept,Launched,2025-04-22,Bridget Fields,401630
+PROD-11942,DataSphere,Cloud Platform,Active,2023-01-14,Concept,In Pipeline,2024-04-13,Jordan Brown,505300
+PROD-11943,CloudEdge,Security,In Development,2020-11-08,Prototype,In Pipeline,2023-06-22,Mr. Joseph Baker,588499
+PROD-11944,NetConnect,Analytics,GA (General Availability),2021-12-03,Prototype,Planned,2022-11-29,Daniel Park,275109
+PROD-11945,CloudEdge,Networking,Active,2024-07-30,Concept,Not Launched,2022-09-13,Janice Boyd,190185
+PROD-11946,NetConnect,Security,GA (General Availability),2021-05-19,Prototype,Not Launched,2024-04-25,Ashley Booth,316465
+PROD-11947,CloudEdge,Networking,Pilot,2021-10-14,Prototype,In Pipeline,2023-08-08,Jacob Mccall,431637
+PROD-11948,CoreAnalytics,Cloud Platform,In Development,2024-08-31,Testing,Planned,2025-03-18,Travis Rice,314134
+PROD-11949,CloudEdge,IoT,Active,2023-05-31,Pre-Launch,Launched,2024-02-10,Kimberly Castillo,325099
+PROD-11950,Insight360,Security,In Development,2022-07-13,Enhancement,In Pipeline,2023-11-01,Stephanie Norman,158717
+PROD-11951,DataSphere,Analytics,Retired,2021-07-05,Pre-Launch,Planned,2023-02-21,Paul Turner,469255
+PROD-11952,DataSphere,Security,GA (General Availability),2024-11-21,Prototype,Planned,2023-04-28,Jennifer Reese,423396
+PROD-11953,Insight360,Networking,Retired,2024-10-20,Testing,In Pipeline,2024-07-05,Lauren Weeks,467153
+PROD-11954,Insight360,Security,GA (General Availability),2023-10-10,Concept,Launched,2025-01-10,Ruben Jackson,424500
+PROD-11955,Insight360,Cloud Platform,In Development,2023-05-12,Enhancement,Not Launched,2025-01-29,Curtis Smith,385462
+PROD-11956,NetConnect,Analytics,GA (General Availability),2023-12-03,Testing,Launched,2023-11-18,Patricia Vasquez,410202
+PROD-11957,CloudEdge,IoT,Pilot,2024-02-26,Pre-Launch,Not Launched,2025-06-20,Christine Williams,535251
+PROD-11958,CloudEdge,Networking,GA (General Availability),2025-01-07,Enhancement,Planned,2024-12-03,Nicholas Bridges,548977
+PROD-11959,Insight360,Cloud Platform,GA (General Availability),2025-04-19,Concept,Launched,2025-03-05,Brian Roy,509653
+PROD-11960,CloudEdge,Security,Pilot,2022-05-28,Pre-Launch,Cancelled,2024-11-23,Dana Medina,369633
+PROD-11961,Insight360,Security,In Development,2024-06-24,Enhancement,Planned,2025-06-23,Daniel Crawford,332912
+PROD-11962,NetConnect,Cloud Platform,In Development,2024-01-03,Concept,Planned,2024-09-11,Yolanda Thompson,422222
+PROD-11963,NetConnect,IoT,GA (General Availability),2020-11-04,Prototype,Planned,2024-03-23,Michelle Davis,292473
+PROD-11964,CoreAnalytics,Networking,Pilot,2023-09-21,Prototype,Planned,2023-07-16,Mary Miller,596888
+PROD-11965,NetConnect,Networking,Active,2024-06-02,Prototype,Not Launched,2023-12-20,Alan Olsen,281162
+PROD-11966,DataSphere,Security,Pilot,2025-08-31,Prototype,Cancelled,2024-11-09,Holly Chung,575631
+PROD-11967,NetConnect,Analytics,In Development,2025-07-27,Testing,In Pipeline,2025-03-29,Michelle Flynn,189566
+PROD-11968,CoreAnalytics,Cloud Platform,Retired,2024-10-20,Enhancement,Not Launched,2023-03-09,Mary Wallace,267388
+PROD-11969,CloudEdge,Security,GA (General Availability),2022-06-18,Prototype,Cancelled,2025-06-07,Ryan Estrada,324474
+PROD-11970,Insight360,IoT,Active,2021-09-05,Prototype,Cancelled,2025-04-17,David Miller,526688
+PROD-11971,CoreAnalytics,Security,GA (General Availability),2020-11-17,Testing,Not Launched,2024-07-25,Gina Hines,469042
+PROD-11972,CloudEdge,Analytics,Active,2022-03-19,Pre-Launch,In Pipeline,2023-02-20,Scott Guerrero,341153
+PROD-11973,CoreAnalytics,IoT,In Development,2022-04-19,Concept,In Pipeline,2024-05-16,Joshua Garner,508928
+PROD-11974,CoreAnalytics,Cloud Platform,Pilot,2025-02-05,Testing,Launched,2023-05-02,Laura Green,287151
+PROD-11975,NetConnect,IoT,GA (General Availability),2022-04-21,Prototype,Planned,2023-07-15,Jessica Wright,185829
+PROD-11976,DataSphere,Cloud Platform,In Development,2023-07-06,Enhancement,Not Launched,2022-10-17,Luis Powell,419137
+PROD-11977,CloudEdge,Analytics,Pilot,2021-03-11,Testing,Not Launched,2025-04-03,James Park,303501
+PROD-11978,Insight360,Networking,Pilot,2021-03-07,Concept,Not Launched,2024-11-23,Robert Barton,463995
+PROD-11979,CloudEdge,Analytics,Pilot,2023-06-11,Enhancement,In Pipeline,2024-04-02,Jimmy Warren,423486
+PROD-11980,DataSphere,Cloud Platform,Pilot,2024-07-19,Pre-Launch,Launched,2023-05-11,Megan Stephenson,378380
+PROD-11981,NetConnect,Security,Active,2025-08-04,Prototype,Cancelled,2023-09-16,William Rodriguez,273309
+PROD-11982,CloudEdge,IoT,Pilot,2021-01-01,Pre-Launch,Not Launched,2023-09-12,Cynthia Thomas,598873
+PROD-11983,CoreAnalytics,Security,Active,2021-12-21,Enhancement,Launched,2023-04-30,James Hodge,376087
+PROD-11984,NetConnect,IoT,GA (General Availability),2023-03-30,Enhancement,Launched,2024-12-08,Shelley Mason,225776
+PROD-11985,Insight360,Security,Active,2025-02-24,Concept,Not Launched,2024-10-20,Autumn Taylor,196903
+PROD-11986,DataSphere,Cloud Platform,Pilot,2023-05-26,Prototype,In Pipeline,2023-08-07,Lindsay Keller,575131
+PROD-11987,NetConnect,Networking,In Development,2021-10-27,Concept,Launched,2024-01-12,Carmen White,297309
+PROD-11988,CoreAnalytics,Analytics,Retired,2024-09-25,Prototype,In Pipeline,2025-02-10,Ryan Griffin,435378
+PROD-11989,CloudEdge,Cloud Platform,In Development,2021-01-10,Prototype,Launched,2025-05-16,Jordan Williams,455615
+PROD-11990,NetConnect,Cloud Platform,In Development,2025-02-13,Enhancement,Not Launched,2024-10-14,Anthony White,577690
+PROD-11991,CoreAnalytics,IoT,Retired,2024-02-10,Testing,Launched,2023-12-17,Breanna Nelson,350597
+PROD-11992,CoreAnalytics,Analytics,Retired,2020-09-20,Enhancement,In Pipeline,2023-11-22,David Welch,348333
+PROD-11993,CloudEdge,Cloud Platform,Retired,2021-10-06,Pre-Launch,Cancelled,2025-07-26,Jennifer Rodriguez,205152
+PROD-11994,Insight360,Cloud Platform,Retired,2023-06-28,Enhancement,Not Launched,2024-03-09,Brian Golden,425326
+PROD-11995,NetConnect,IoT,In Development,2025-07-01,Testing,Not Launched,2024-05-14,Shirley Murphy,354772
+PROD-11996,CoreAnalytics,Security,In Development,2024-04-19,Enhancement,Cancelled,2022-11-02,Duane Dunn,580811
+PROD-11997,NetConnect,Security,Active,2025-03-23,Prototype,In Pipeline,2023-05-26,Shawn Estes,204771
+PROD-11998,Insight360,Analytics,In Development,2025-05-10,Testing,Not Launched,2024-02-27,Terry Ruiz,237744
+PROD-11999,CoreAnalytics,Networking,In Development,2024-02-10,Enhancement,Not Launched,2022-09-22,Lori Roach,196074
+PROD-12000,Insight360,Analytics,Active,2020-12-02,Testing,Planned,2025-02-06,James Gonzalez,490734

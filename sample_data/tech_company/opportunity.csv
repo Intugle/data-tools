@@ -1,0 +1,1001 @@
+Opportunity ID,Sales Rep ID,Sales Rep Name,Region,Country,Contact Name,Customer Name,Cust ID,Opp Initiation Date,Opp Close Date,Opportunity Status,Opportunity Stage
+OPP-60001,SR-2046,Wendy Campbell,Middle East,Brazil,Jimmy Maldonado,"Gutierrez, Myers and Davis",CUST-10335,2025-04-13,2025-08-16,Negotiation,Closed Won
+OPP-60002,SR-2078,Michael Phillips,Latin America,UK,Mr. Michael Foster DDS,"Brooks, Ho and Carr",CUST-10648,2025-04-01,2025-01-16,Lost,Proposal
+OPP-60003,SR-2069,James Castillo,Middle East,Brazil,Marilyn Peterson,Jackson-Sherman,CUST-10637,2025-07-23,2025-05-18,Won,Negotiation
+OPP-60004,SR-2071,Jack Rios,Asia-Pacific,Brazil,Debra Sanders,"Wright, Russell and Miller",CUST-10672,2025-02-09,2025-03-01,Won,Closed Won
+OPP-60005,SR-2043,Roy Jones,Europe,Brazil,Adam Mendoza,Bryant-Wang,CUST-10919,2025-01-20,2025-04-16,Open,Closed Won
+OPP-60006,SR-2041,David Schaefer,Europe,UAE,Kristi Ramirez,Anderson-Gonzales,CUST-10081,2025-04-17,2025-02-03,Open,Qualification
+OPP-60007,SR-2033,David Garcia,Middle East,UK,Christine Morgan,Page-Warner,CUST-10351,2025-06-22,2025-04-25,Negotiation,Closed Won
+OPP-60008,SR-2009,Dean Nelson,North America,Brazil,Rachel Stanton,Hayes LLC,CUST-10250,2025-03-29,2025-07-09,Won,Proposal
+OPP-60009,SR-2061,James Lopez,North America,Australia,Susan Horne,Lane-Garner,CUST-10223,2025-06-06,2025-08-30,Open,Negotiation
+OPP-60010,SR-2051,Nathaniel Rodgers,Europe,UK,Debbie Brady,Thompson and Sons,CUST-10259,2025-04-29,2025-04-06,On Hold,Qualification
+OPP-60011,SR-2019,Maria White,North America,Brazil,Ricardo Anderson,Hicks PLC,CUST-10711,2025-05-27,2025-01-28,Negotiation,Prospecting
+OPP-60012,SR-2085,Kara Rios,Asia-Pacific,India,Richard Mcdaniel,Scott LLC,CUST-10803,2025-03-08,2025-06-19,Lost,Prospecting
+OPP-60013,SR-2030,Mark Mcbride,Middle East,India,Katelyn Farrell,"Thomas, Mcdonald and Miller",CUST-10347,2025-04-10,2025-01-14,Open,Negotiation
+OPP-60014,SR-2013,Joseph Gomez,Europe,Germany,Rhonda Smith,Griffin-Neal,CUST-10267,2025-08-05,2025-04-22,On Hold,Closed Won
+OPP-60015,SR-2060,Kiara Brown,Europe,USA,Summer Calhoun,Smith-Grant,CUST-10147,2025-02-03,2025-01-18,Negotiation,Prospecting
+OPP-60016,SR-2011,Mary Mason,North America,Brazil,Christopher Davis,"Garcia, Mcmillan and Chaney",CUST-10952,2025-02-19,2025-06-25,Won,Prospecting
+OPP-60017,SR-2071,Joseph Duffy,Middle East,UAE,Brittany Crawford,Ward-Riley,CUST-10567,2025-02-11,2025-01-28,On Hold,Prospecting
+OPP-60018,SR-2014,Bradley Adams,North America,Brazil,Sara Scott,Welch LLC,CUST-10661,2025-06-06,2025-06-21,Open,Closed Won
+OPP-60019,SR-2098,Mariah Hernandez,Asia-Pacific,Germany,Monica Martinez,"Rivera, Mclaughlin and Wilson",CUST-10903,2025-03-15,2025-06-02,Won,Proposal
+OPP-60020,SR-2076,Jennifer Roberts,Middle East,USA,Antonio Rice,"Scott, Perez and Cohen",CUST-10174,2025-08-14,2025-05-09,On Hold,Negotiation
+OPP-60021,SR-2011,Carlos Williams,Asia-Pacific,Australia,Edwin Blackwell,Bryant Inc,CUST-10285,2025-01-01,2025-07-03,Lost,Prospecting
+OPP-60022,SR-2003,Christine Gay,Latin America,Brazil,Melissa Malone,James Group,CUST-10893,2025-05-01,2025-05-28,Won,Negotiation
+OPP-60023,SR-2040,Daniel Murphy,Asia-Pacific,Germany,Matthew Jackson,Salas-Bennett,CUST-10955,2025-07-08,2025-06-12,Lost,Negotiation
+OPP-60024,SR-2056,Tabitha Garcia,North America,UAE,Karen Wilcox,Benson Ltd,CUST-10761,2025-08-21,2025-07-26,Open,Qualification
+OPP-60025,SR-2077,Felicia Tate,Asia-Pacific,Germany,Erin Sherman,"Bowman, Davis and Cox",CUST-10818,2025-05-04,2025-05-01,Won,Qualification
+OPP-60026,SR-2092,Richard Guzman,Europe,Germany,Nicolas Ortiz,Weaver PLC,CUST-10572,2025-02-16,2025-03-27,On Hold,Prospecting
+OPP-60027,SR-2042,John Carter,Middle East,Brazil,Parker Tucker,"Duarte, Reese and Gonzalez",CUST-10611,2025-08-09,2025-06-11,Won,Proposal
+OPP-60028,SR-2067,Sarah Smith,North America,Brazil,Nicole Torres,Stokes-Roberts,CUST-10955,2025-03-31,2025-08-02,On Hold,Closed Won
+OPP-60029,SR-2053,Matthew Robinson,Asia-Pacific,Australia,Tammy Lewis,Davis-Doyle,CUST-10837,2025-07-29,2025-06-11,On Hold,Qualification
+OPP-60030,SR-2098,Rachel Escobar,Latin America,UK,Toni Bradley,Garrett-Harrell,CUST-10802,2025-02-07,2025-05-08,Negotiation,Prospecting
+OPP-60031,SR-2088,Rebecca Taylor,Latin America,UK,Angela Newman,Anderson Inc,CUST-10313,2025-02-15,2025-05-04,Won,Closed Won
+OPP-60032,SR-2099,Amber Bass,Europe,UAE,Danny Torres,Williams-Wolf,CUST-10085,2025-06-23,2025-02-03,Lost,Prospecting
+OPP-60033,SR-2043,Donna Nelson,Asia-Pacific,UAE,Kathryn Johnson,"Hill, Brown and Jackson",CUST-10252,2025-06-14,2025-02-25,Won,Negotiation
+OPP-60034,SR-2033,Anthony Brooks,Asia-Pacific,USA,David Lee,Walker-Shea,CUST-10107,2025-02-08,2025-04-13,Won,Qualification
+OPP-60035,SR-2074,David Patterson,Europe,UAE,Melanie Dennis,Heath-Hurst,CUST-10288,2025-02-14,2025-04-15,Lost,Closed Won
+OPP-60036,SR-2073,Angela Reid,Asia-Pacific,UAE,John Singleton,"Nelson, Young and Dyer",CUST-10602,2025-04-10,2025-03-10,Open,Negotiation
+OPP-60037,SR-2032,Jason Fleming,Middle East,UK,Kelsey Mendez,"Moore, Lopez and Gomez",CUST-10889,2025-06-11,2025-01-04,Negotiation,Negotiation
+OPP-60038,SR-2002,Sherry Kent,Latin America,Germany,Linda Thomas,Mccoy Inc,CUST-10882,2025-03-21,2025-05-21,On Hold,Prospecting
+OPP-60039,SR-2024,Chelsea Harper,North America,Brazil,Donna Marquez,Roberts PLC,CUST-10152,2025-01-30,2025-07-29,On Hold,Negotiation
+OPP-60040,SR-2096,Leroy Alexander,Europe,UK,Dr. Philip Crawford,Moreno and Sons,CUST-10391,2025-06-22,2025-03-08,Lost,Closed Won
+OPP-60041,SR-2009,Kristine Huang,North America,UK,Michelle White,Simpson Group,CUST-10237,2025-02-17,2025-08-28,Negotiation,Prospecting
+OPP-60042,SR-2046,Eric Jones,Europe,India,Christopher Lamb,"Ramos, Young and Olson",CUST-10310,2025-01-15,2025-06-13,On Hold,Closed Won
+OPP-60043,SR-2082,Joshua Mason,North America,UAE,Jessica Little,Anderson-Gonzales,CUST-10727,2025-05-28,2025-07-17,On Hold,Closed Won
+OPP-60044,SR-2086,Blake Wheeler,Europe,Brazil,Omar Bryant,Solis Inc,CUST-10039,2025-05-26,2025-08-23,Won,Prospecting
+OPP-60045,SR-2046,Lance Koch,Middle East,USA,Mary Santos,Perez LLC,CUST-10864,2025-02-10,2025-07-05,Won,Qualification
+OPP-60046,SR-2086,Joshua Daniels,Asia-Pacific,UAE,Paul Gibson,Chen-Stanton,CUST-10204,2025-03-04,2025-03-15,Lost,Qualification
+OPP-60047,SR-2041,Jennifer Smith,North America,Germany,John Faulkner,Odonnell-Hill,CUST-10768,2025-06-12,2025-08-24,Lost,Closed Won
+OPP-60048,SR-2087,Katie Brown,Asia-Pacific,Germany,Jackson Boyd,Allen-Miller,CUST-10192,2025-04-05,2025-02-05,Lost,Qualification
+OPP-60049,SR-2063,Christine Hernandez,Europe,UK,Melissa Olson,Booker-Herrera,CUST-10277,2025-08-01,2025-01-07,On Hold,Qualification
+OPP-60050,SR-2042,Kenneth Grimes,North America,Australia,John Martin,Brown-Lowe,CUST-10695,2025-02-23,2025-05-05,Negotiation,Prospecting
+OPP-60051,SR-2056,Michael Woods,Latin America,India,Patrick Walker,Cantrell-Martinez,CUST-10056,2025-04-23,2025-05-29,On Hold,Qualification
+OPP-60052,SR-2091,Mark Caldwell,Europe,UK,Alexandra Watson,"Hill, Beck and Garcia",CUST-10209,2025-08-23,2025-06-15,Lost,Qualification
+OPP-60053,SR-2040,Lisa Patel,Latin America,Australia,Susan Moore,"Gilmore, Johnson and Walker",CUST-10004,2025-07-24,2025-02-08,On Hold,Prospecting
+OPP-60054,SR-2008,Kari Mcclure,Europe,Germany,Diane Le,Mcdaniel Inc,CUST-10885,2025-01-11,2025-05-08,Open,Closed Won
+OPP-60055,SR-2009,David Case,North America,UK,Laura Gomez,Simpson-Ray,CUST-10461,2025-01-24,2025-04-22,Won,Closed Won
+OPP-60056,SR-2049,Lauren Baird,Europe,India,Samantha Gill,Smith Group,CUST-10436,2025-04-21,2025-05-30,Won,Prospecting
+OPP-60057,SR-2046,Isabella Brown,Middle East,USA,Debra Hartman,Reid-Bowman,CUST-10852,2025-06-17,2025-08-10,Lost,Closed Won
+OPP-60058,SR-2016,Chad Christian,Europe,Germany,Tina Brock,"Nichols, Chapman and Smith",CUST-10303,2025-01-26,2025-06-12,Won,Prospecting
+OPP-60059,SR-2005,Matthew Burns,Latin America,UK,Christopher Zimmerman,Moore PLC,CUST-10240,2025-08-10,2025-06-03,Lost,Qualification
+OPP-60060,SR-2010,Timothy Young,Europe,Australia,Jill Murphy,Santiago-Vasquez,CUST-10522,2025-08-18,2025-06-30,Lost,Qualification
+OPP-60061,SR-2007,Tyler Donaldson,Latin America,Australia,Kimberly Leblanc,Mccoy Inc,CUST-10170,2025-08-26,2025-06-17,Open,Proposal
+OPP-60062,SR-2032,Beth Chapman,North America,UAE,Julia Sanchez,Lambert Inc,CUST-10915,2025-02-03,2025-02-08,Won,Proposal
+OPP-60063,SR-2031,Tammy Briggs,North America,Germany,Barbara Palmer,King-Buchanan,CUST-10448,2025-08-08,2025-05-14,Open,Proposal
+OPP-60064,SR-2059,Michael Robinson,Middle East,Brazil,Patrick Walker,Martinez-Hart,CUST-10549,2025-07-17,2025-04-10,Open,Prospecting
+OPP-60065,SR-2001,Larry Gill,North America,USA,Ronald Chavez,Henderson PLC,CUST-10232,2025-08-27,2025-06-27,Won,Proposal
+OPP-60066,SR-2082,Carolyn Davis,Latin America,Australia,Mandy Ayala,Cooper Group,CUST-10120,2025-06-20,2025-06-04,On Hold,Proposal
+OPP-60067,SR-2080,Crystal Ortiz,Latin America,UAE,Sarah Cook,Taylor Group,CUST-10624,2025-04-12,2025-08-10,On Hold,Prospecting
+OPP-60068,SR-2053,Sydney Johnson,Middle East,Australia,Tracie Garcia,"Morris, Curtis and Turner",CUST-10989,2025-06-04,2025-02-06,Open,Qualification
+OPP-60069,SR-2077,David Davis,Middle East,Brazil,Michael Davis,Mcguire and Sons,CUST-10214,2025-08-15,2025-07-18,On Hold,Proposal
+OPP-60070,SR-2054,Ashley Shepherd,Europe,Germany,Mark Hall,Butler-Stewart,CUST-10223,2025-03-08,2025-01-25,Won,Closed Won
+OPP-60071,SR-2092,Jeremy May,Asia-Pacific,UAE,Vickie Smith,Dorsey-Edwards,CUST-10094,2025-05-21,2025-03-24,Open,Prospecting
+OPP-60072,SR-2071,Sarah Huffman,Latin America,UAE,George Evans,Smith and Sons,CUST-10175,2025-05-28,2025-05-16,Open,Negotiation
+OPP-60073,SR-2079,Amy Hughes,North America,USA,Christine Wilkins,Mccoy Inc,CUST-10403,2025-01-30,2025-01-01,Open,Negotiation
+OPP-60074,SR-2095,Megan Bradley,Latin America,India,Judith Curry,Torres Inc,CUST-10902,2025-01-14,2025-02-14,Open,Prospecting
+OPP-60075,SR-2025,Maureen Coleman,Asia-Pacific,UK,Sarah Decker,Brennan-Brown,CUST-10180,2025-07-15,2025-08-19,Lost,Qualification
+OPP-60076,SR-2060,Walter Hays,Europe,Australia,John Esparza,Roman LLC,CUST-10909,2025-05-25,2025-03-22,Negotiation,Qualification
+OPP-60077,SR-2049,Brandon White,Latin America,UK,Allison Young,"Green, Hudson and Lara",CUST-10060,2025-04-01,2025-08-09,On Hold,Qualification
+OPP-60078,SR-2024,Timothy Holmes,Latin America,India,Jaime Rangel,Blake and Sons,CUST-10538,2025-08-11,2025-04-26,On Hold,Prospecting
+OPP-60079,SR-2040,Kenneth Walter,Middle East,UAE,Samantha Johnson,Rogers-Cervantes,CUST-10770,2025-04-27,2025-03-04,Lost,Qualification
+OPP-60080,SR-2006,Derrick Maynard,Middle East,UAE,David Sexton,"Leblanc, Thompson and Sullivan",CUST-10343,2025-02-20,2025-07-24,On Hold,Prospecting
+OPP-60081,SR-2064,Joseph Bryan,North America,UK,Amy Wilson,Bryant-Lawson,CUST-10966,2025-04-13,2025-07-08,Open,Prospecting
+OPP-60082,SR-2088,Nicole Hammond,Europe,USA,Amber Miller,Owens-Hunt,CUST-10931,2025-01-17,2025-06-29,Lost,Proposal
+OPP-60083,SR-2064,Charles Oneill,Middle East,USA,Charles Blackburn,Cannon-Calhoun,CUST-10138,2025-05-07,2025-04-19,Won,Negotiation
+OPP-60084,SR-2002,Alan Adams,North America,USA,Daniel Jordan,Adkins-Frazier,CUST-10103,2025-03-16,2025-05-30,Open,Qualification
+OPP-60085,SR-2050,Joshua Pope,Middle East,Brazil,Jamie Wilson,Morales Ltd,CUST-10488,2025-04-09,2025-05-17,Lost,Prospecting
+OPP-60086,SR-2025,Courtney Robinson,Asia-Pacific,USA,Rachel Bryant,Taylor LLC,CUST-10600,2025-07-30,2025-04-14,Open,Prospecting
+OPP-60087,SR-2095,Austin Evans,North America,Australia,Kayla Miller,Reyes-Gordon,CUST-10698,2025-05-04,2025-05-12,On Hold,Proposal
+OPP-60088,SR-2013,James Smith,Asia-Pacific,Australia,Tracie Atkins,Chambers-Arnold,CUST-10868,2025-05-23,2025-08-02,Negotiation,Proposal
+OPP-60089,SR-2071,Mary Peterson,North America,USA,Bernard Vega,"Rodriguez, Hill and Hopkins",CUST-10210,2025-02-21,2025-07-07,Open,Proposal
+OPP-60090,SR-2040,Dustin Hendrix,Latin America,USA,Joshua Berry,"Fisher, Rose and Pineda",CUST-10474,2025-04-14,2025-01-06,On Hold,Closed Won
+OPP-60091,SR-2006,Karen Moreno,Middle East,Australia,Michael Cole,Lewis-Patel,CUST-10883,2025-02-07,2025-08-20,Negotiation,Closed Won
+OPP-60092,SR-2034,Luke Garrett,Latin America,Brazil,Danielle Moran,Davis Group,CUST-10907,2025-04-14,2025-05-01,Lost,Negotiation
+OPP-60093,SR-2074,Charles Johnson,North America,India,Brooke Harvey,Thomas Ltd,CUST-10540,2025-06-20,2025-02-01,Lost,Closed Won
+OPP-60094,SR-2044,Michael Price,Asia-Pacific,Australia,Ricardo Velez,"Singh, Porter and Moore",CUST-10008,2025-01-16,2025-03-08,Open,Qualification
+OPP-60095,SR-2025,Brett Taylor,Middle East,Brazil,Joseph White,James Group,CUST-10309,2025-02-26,2025-02-04,Negotiation,Proposal
+OPP-60096,SR-2070,Christina Meza,Middle East,Germany,Joshua Flores,"Harrell, Conway and Tucker",CUST-10796,2025-04-30,2025-05-12,Lost,Closed Won
+OPP-60097,SR-2014,Dominic Torres,Latin America,India,Carl Berry,Anderson Ltd,CUST-10431,2025-07-31,2025-01-16,Negotiation,Proposal
+OPP-60098,SR-2070,David Jones,North America,USA,Robert Beard,"Shepherd, Martinez and Hernandez",CUST-10603,2025-03-10,2025-08-28,Won,Prospecting
+OPP-60099,SR-2034,Joseph Dalton,North America,Germany,Daniel Walker,"Rodriguez, Molina and Pena",CUST-10413,2025-05-14,2025-01-12,On Hold,Prospecting
+OPP-60100,SR-2091,William Tate II,Europe,Brazil,Erica Rodriguez,Davis Ltd,CUST-10495,2025-05-14,2025-08-16,Won,Closed Won
+OPP-60101,SR-2085,Frank Woodard,Middle East,USA,Tricia Tate,Meyer-Frazier,CUST-10938,2025-07-20,2025-05-17,Won,Closed Won
+OPP-60102,SR-2078,Jason Brown,Middle East,Brazil,Douglas Grant,"Cox, Bradford and Trevino",CUST-10472,2025-02-23,2025-02-05,Lost,Prospecting
+OPP-60103,SR-2041,Deborah Watson,Middle East,India,Joseph Melton,"Brown, Lynch and Ritter",CUST-10178,2025-02-01,2025-08-13,Lost,Prospecting
+OPP-60104,SR-2030,Danielle Mcguire,North America,USA,Daniel Jordan,Davis Group,CUST-10187,2025-06-12,2025-08-27,On Hold,Negotiation
+OPP-60105,SR-2045,Andrew Jones,Asia-Pacific,UAE,Ronald Alexander,Lee PLC,CUST-10117,2025-07-30,2025-03-26,On Hold,Qualification
+OPP-60106,SR-2060,Rebecca Kim,Asia-Pacific,UAE,Dorothy Pitts,Whitney-Hernandez,CUST-10067,2025-07-31,2025-04-10,Lost,Closed Won
+OPP-60107,SR-2015,Sydney Wilson,North America,India,Laura Ross,Brown-Mora,CUST-10451,2025-04-23,2025-01-25,Lost,Prospecting
+OPP-60108,SR-2005,Philip Sanchez,Europe,India,Christopher Torres,Thomas Group,CUST-10909,2025-01-19,2025-01-21,Lost,Prospecting
+OPP-60109,SR-2018,Timothy Miles,North America,UAE,Samuel Martin,"Waters, Dickson and Cox",CUST-10947,2025-04-24,2025-07-21,Won,Closed Won
+OPP-60110,SR-2062,Natasha Butler,Latin America,UK,Mrs. Sarah West,Blake and Sons,CUST-10022,2025-06-24,2025-02-23,Lost,Closed Won
+OPP-60111,SR-2027,Robert Edwards,North America,UAE,Kimberly Thompson,Rodriguez Group,CUST-10443,2025-06-04,2025-05-04,Lost,Prospecting
+OPP-60112,SR-2036,Timothy Wyatt,North America,UK,Rachel Peterson,Carter Inc,CUST-10674,2025-05-08,2025-01-23,Negotiation,Proposal
+OPP-60113,SR-2097,Dennis Clark,Asia-Pacific,India,Steven Johnston,Reid-Bowman,CUST-10821,2025-04-10,2025-02-06,Open,Prospecting
+OPP-60114,SR-2098,Michael Jones,Middle East,India,Amber Brown,"Mills, Dawson and Conway",CUST-10185,2025-04-07,2025-05-14,Open,Prospecting
+OPP-60115,SR-2040,Bruce Mitchell,Middle East,Australia,Larry Shannon,"Jones, Martinez and Evans",CUST-10315,2025-03-27,2025-06-11,On Hold,Proposal
+OPP-60116,SR-2092,Zachary Rose,Europe,UAE,Linda Clark,"Brown, Lynch and Ritter",CUST-10139,2025-06-06,2025-06-10,Negotiation,Prospecting
+OPP-60117,SR-2039,Evan Nichols,North America,USA,Robert Graham,Kemp Inc,CUST-10342,2025-02-07,2025-01-07,Open,Closed Won
+OPP-60118,SR-2091,Robert Davis,North America,Australia,Matthew Carr,Mccoy Inc,CUST-10349,2025-06-15,2025-02-13,Open,Negotiation
+OPP-60119,SR-2051,Ruben Perkins,Asia-Pacific,Germany,Christine Ashley,Case and Sons,CUST-10864,2025-03-21,2025-03-12,On Hold,Proposal
+OPP-60120,SR-2080,Nicholas Adams,North America,India,Christine Miller,Harris-Walsh,CUST-10899,2025-04-20,2025-01-19,Negotiation,Negotiation
+OPP-60121,SR-2027,David Chen,Middle East,Brazil,Ralph Thornton,"Hall, Davis and Butler",CUST-10202,2025-06-04,2025-01-28,Won,Prospecting
+OPP-60122,SR-2049,Brenda Gonzalez,Asia-Pacific,India,Leah Weber,"Castro, Evans and Anderson",CUST-10597,2025-07-05,2025-04-09,Won,Prospecting
+OPP-60123,SR-2045,Jenny Buck,Europe,India,Michael Williams,Johnson-Fitzgerald,CUST-10882,2025-02-09,2025-07-10,Negotiation,Negotiation
+OPP-60124,SR-2047,Felicia Brady,North America,Australia,Pamela Watson,Stout PLC,CUST-10384,2025-05-14,2025-01-13,Lost,Qualification
+OPP-60125,SR-2009,Daniel Ruiz,Middle East,India,Casey Rivera,"Aguirre, Jackson and Graves",CUST-10884,2025-07-26,2025-06-17,Won,Proposal
+OPP-60126,SR-2077,Sarah Lindsey,Middle East,Brazil,Lynn Dodson,Evans LLC,CUST-10409,2025-08-11,2025-07-06,Lost,Closed Won
+OPP-60127,SR-2041,James Beltran,Latin America,Australia,Michael Vance,"Moran, Smith and Martinez",CUST-10521,2025-03-16,2025-05-13,Won,Negotiation
+OPP-60128,SR-2095,Kevin Petersen,Latin America,UAE,Angela Watson,"Morrison, Brown and Wilson",CUST-10776,2025-01-03,2025-02-02,Negotiation,Qualification
+OPP-60129,SR-2057,Sheila Smith,North America,USA,Melanie Riddle,Steele Inc,CUST-10531,2025-03-10,2025-05-17,Lost,Prospecting
+OPP-60130,SR-2019,Michael Cooley MD,North America,India,Alexandria Thompson,Mcguire and Sons,CUST-10533,2025-07-22,2025-06-16,Negotiation,Prospecting
+OPP-60131,SR-2032,Michael Adams,Latin America,Australia,Brittany Miller,Moreno Group,CUST-10972,2025-03-29,2025-03-04,Open,Closed Won
+OPP-60132,SR-2094,Jim Arnold,Europe,UAE,Jessica Rivera,Reynolds-Woods,CUST-10992,2025-02-14,2025-02-06,On Hold,Qualification
+OPP-60133,SR-2029,Aaron Myers,Asia-Pacific,Australia,Leonard Jones,Christensen Ltd,CUST-10601,2025-06-23,2025-04-07,Negotiation,Qualification
+OPP-60134,SR-2058,Joshua Holmes,Asia-Pacific,UK,Michelle Hoover,Wilkins-Moore,CUST-10173,2025-07-28,2025-01-04,Lost,Negotiation
+OPP-60135,SR-2066,Trevor Collins,Asia-Pacific,Australia,Hannah Tucker,Mcintosh Inc,CUST-10124,2025-07-14,2025-04-03,Negotiation,Qualification
+OPP-60136,SR-2036,Nicholas Davis,North America,Germany,Carol Adams,Dunn-Anderson,CUST-10014,2025-05-22,2025-06-30,On Hold,Prospecting
+OPP-60137,SR-2057,Stephen Gonzales,Europe,India,Amy Oneal MD,Barker PLC,CUST-10334,2025-05-05,2025-02-12,Won,Negotiation
+OPP-60138,SR-2074,Sarah Stephens,Middle East,Brazil,Luis Mathews,"Haynes, Evans and Hardin",CUST-10538,2025-06-11,2025-05-09,Won,Qualification
+OPP-60139,SR-2067,Mary Hamilton,Latin America,USA,Joseph Fitzgerald,James Group,CUST-10267,2025-02-22,2025-02-04,On Hold,Negotiation
+OPP-60140,SR-2029,Lisa Graham,Middle East,Australia,Rachel Hunter,Castillo and Sons,CUST-10732,2025-01-15,2025-02-06,On Hold,Negotiation
+OPP-60141,SR-2023,Toni Lee,Latin America,USA,Katherine Rios MD,"Thomas, Mcdonald and Miller",CUST-10069,2025-01-20,2025-05-15,Negotiation,Closed Won
+OPP-60142,SR-2068,Shannon Ross,Europe,UK,Lindsey Downs,"Cohen, Williams and Mullins",CUST-10878,2025-06-25,2025-02-22,Open,Closed Won
+OPP-60143,SR-2053,Melissa Roman,North America,Germany,Brian Cruz,Bennett-Vasquez,CUST-10918,2025-06-27,2025-02-05,Won,Qualification
+OPP-60144,SR-2054,Misty Patton,Asia-Pacific,UK,Heather Howell,"Beard, Cox and Nguyen",CUST-10638,2025-06-10,2025-05-13,Negotiation,Proposal
+OPP-60145,SR-2093,Howard Johnson,Middle East,Germany,Veronica Morris,Morris-Murphy,CUST-10890,2025-04-24,2025-06-02,Won,Proposal
+OPP-60146,SR-2041,Randall Griffin,Asia-Pacific,Germany,Brittany Bradshaw,Poole-Kelley,CUST-10069,2025-08-24,2025-03-07,Negotiation,Negotiation
+OPP-60147,SR-2090,Sharon Davenport,Middle East,UAE,Carla Newman,"Weber, Lynch and Little",CUST-10241,2025-02-20,2025-08-11,On Hold,Qualification
+OPP-60148,SR-2074,Abigail Jones,Europe,UK,Margaret Stafford,Austin-Davies,CUST-10269,2025-01-04,2025-02-28,On Hold,Prospecting
+OPP-60149,SR-2022,Penny Williams,Europe,Germany,Anthony Hunt,Lindsey LLC,CUST-10632,2025-01-04,2025-05-01,Open,Negotiation
+OPP-60150,SR-2059,Curtis Mcdonald,Latin America,India,Jody Walton,"Jones, Martinez and Evans",CUST-10190,2025-02-03,2025-01-22,Won,Qualification
+OPP-60151,SR-2028,Maria Nelson,Latin America,Brazil,John Fitzpatrick,Wright-Shaw,CUST-10646,2025-08-12,2025-03-02,Lost,Negotiation
+OPP-60152,SR-2017,Kristen Miller,Asia-Pacific,UAE,Kevin Chen,Brown LLC,CUST-10489,2025-05-09,2025-06-10,Open,Closed Won
+OPP-60153,SR-2071,Danielle Gonzalez,Latin America,Australia,Holly Murray,Barnes PLC,CUST-10953,2025-03-04,2025-03-03,On Hold,Negotiation
+OPP-60154,SR-2024,Paul Mcgee,Middle East,Australia,Erik Shaw,"Stevens, Rodriguez and Long",CUST-10032,2025-07-05,2025-04-03,Won,Proposal
+OPP-60155,SR-2043,Susan Collins,North America,Australia,Victor Ryan,Welch LLC,CUST-10098,2025-07-27,2025-05-25,Lost,Negotiation
+OPP-60156,SR-2034,Kylie Rogers,Latin America,USA,Kyle Robinson,Owens Group,CUST-10906,2025-08-04,2025-07-23,Open,Negotiation
+OPP-60157,SR-2064,Marie Curtis,North America,India,David Taylor,"Martin, Stevenson and Meadows",CUST-10729,2025-07-21,2025-03-07,Won,Closed Won
+OPP-60158,SR-2066,Bailey Robinson,Europe,USA,Ryan Jimenez,Martinez-Clark,CUST-10345,2025-07-02,2025-02-18,Negotiation,Negotiation
+OPP-60159,SR-2020,Arthur Williams,Europe,UAE,Marc Sellers,Ibarra Ltd,CUST-10140,2025-06-18,2025-04-17,Won,Closed Won
+OPP-60160,SR-2003,Regina Scott MD,Europe,UAE,Christine Alexander,"Gonzalez, Davis and Bonilla",CUST-10656,2025-03-07,2025-02-10,Won,Closed Won
+OPP-60161,SR-2097,Kimberly Brown,Latin America,India,Sydney Black,Torres Ltd,CUST-10826,2025-03-03,2025-04-17,Won,Negotiation
+OPP-60162,SR-2092,Christine Collins,Europe,UK,Mark Hunt,Harris-Harris,CUST-10983,2025-02-04,2025-03-31,Lost,Proposal
+OPP-60163,SR-2097,Sarah Mcneil,North America,USA,Kathy Richmond,"Hughes, Watts and Arnold",CUST-10565,2025-02-12,2025-03-22,On Hold,Negotiation
+OPP-60164,SR-2086,Chloe Thompson,North America,Brazil,Taylor Harris,Morris-Mcclain,CUST-10787,2025-08-04,2025-04-22,On Hold,Qualification
+OPP-60165,SR-2018,Donald Callahan,Asia-Pacific,UAE,Jamie Gordon,York-Ross,CUST-10857,2025-08-16,2025-07-01,Lost,Closed Won
+OPP-60166,SR-2089,Laurie Wall,Europe,India,Daniel Gordon,Gomez-Wallace,CUST-10734,2025-03-23,2025-08-19,Lost,Qualification
+OPP-60167,SR-2092,Karen Flores,North America,Brazil,Vickie Taylor,"Medina, Lucas and Johnson",CUST-10835,2025-03-12,2025-01-19,Negotiation,Qualification
+OPP-60168,SR-2079,Drew Hunter,Middle East,USA,Erica Dorsey,"Thomas, Smith and Cook",CUST-10958,2025-04-06,2025-04-19,Open,Proposal
+OPP-60169,SR-2021,Tiffany Baker,Middle East,UK,Allison Higgins,Hodge Ltd,CUST-10124,2025-07-10,2025-02-18,Lost,Proposal
+OPP-60170,SR-2032,Joseph Mullins,Asia-Pacific,USA,David Carter,Miller-Perez,CUST-10451,2025-03-28,2025-06-27,Lost,Qualification
+OPP-60171,SR-2018,Curtis Brooks,Middle East,Australia,Kyle Rose,Simpson PLC,CUST-10323,2025-06-01,2025-02-09,Lost,Qualification
+OPP-60172,SR-2054,Anthony Aguirre,North America,India,Charles Griffith,Fernandez PLC,CUST-10130,2025-07-24,2025-03-15,Open,Negotiation
+OPP-60173,SR-2052,James Ayala,Asia-Pacific,Brazil,James Simmons,Chung-Harrington,CUST-10160,2025-06-10,2025-03-20,Lost,Negotiation
+OPP-60174,SR-2097,Kelli Campbell,North America,India,Samantha Logan,Roberts-Chase,CUST-10409,2025-03-07,2025-02-19,Open,Qualification
+OPP-60175,SR-2021,Colleen Norris,Middle East,Brazil,Cheryl Baker,Sanders-Howard,CUST-10301,2025-04-04,2025-04-14,Won,Qualification
+OPP-60176,SR-2063,Rebecca Moon,Middle East,Brazil,Eric Perez,"Wilson, Ramirez and Lester",CUST-10779,2025-05-18,2025-03-28,Won,Qualification
+OPP-60177,SR-2036,Christopher Brooks,Latin America,Australia,Jasmine Tanner,"Franklin, Rodriguez and Harris",CUST-10055,2025-08-14,2025-08-12,Won,Negotiation
+OPP-60178,SR-2053,Heather Robinson,Latin America,Australia,Austin Snyder,Chung-Harrington,CUST-10205,2025-02-23,2025-03-21,Open,Negotiation
+OPP-60179,SR-2081,Jeremy Campbell,Middle East,Brazil,Sharon Cantu,Baker LLC,CUST-10604,2025-03-07,2025-03-04,On Hold,Closed Won
+OPP-60180,SR-2025,Cheryl Jones,Europe,UAE,Roy Williams,Morris-Hall,CUST-10316,2025-03-07,2025-02-11,On Hold,Qualification
+OPP-60181,SR-2014,Michael Simon,Europe,India,Samantha Sparks,"Ramirez, Lee and Rodriguez",CUST-10399,2025-01-16,2025-05-22,Won,Closed Won
+OPP-60182,SR-2056,Christopher Roberts,Latin America,Germany,Michelle Pena,"Montoya, Wilson and Jones",CUST-10654,2025-08-17,2025-05-16,On Hold,Prospecting
+OPP-60183,SR-2024,Randy Fields,Latin America,UK,Sandra Mcdonald,Gutierrez LLC,CUST-10864,2025-06-07,2025-01-26,Won,Qualification
+OPP-60184,SR-2090,Debbie Gardner,Middle East,UK,Sandy Jackson,Bryant Group,CUST-10723,2025-06-13,2025-07-10,Won,Negotiation
+OPP-60185,SR-2034,Mary Kim,Middle East,UAE,Cynthia Allen,"Ryan, Murphy and Williamson",CUST-10254,2025-08-31,2025-06-29,Open,Qualification
+OPP-60186,SR-2038,John Mcbride,Europe,UK,Lauren Murphy,Patton and Sons,CUST-10296,2025-01-30,2025-02-07,On Hold,Prospecting
+OPP-60187,SR-2019,Shane Rush,Latin America,Germany,Patrick Hunter PhD,"Santiago, Hall and Lara",CUST-10871,2025-05-03,2025-01-26,Won,Proposal
+OPP-60188,SR-2097,Jessica Thompson,Europe,UK,Jason Jensen,"Johnson, Harrison and Farrell",CUST-10989,2025-07-11,2025-05-21,On Hold,Prospecting
+OPP-60189,SR-2027,Louis Barnes,Latin America,Germany,Carla Li,Bryant Inc,CUST-10217,2025-04-07,2025-06-13,On Hold,Prospecting
+OPP-60190,SR-2014,Casey Moore,Asia-Pacific,Brazil,Kyle Davis,"Ramos, Young and Olson",CUST-10324,2025-03-24,2025-07-03,Won,Proposal
+OPP-60191,SR-2090,Melanie Simpson,Asia-Pacific,Germany,Tonya Holt,Morgan-Navarro,CUST-10881,2025-06-05,2025-07-15,On Hold,Prospecting
+OPP-60192,SR-2075,Kayla Hall,North America,UK,Matthew Frazier,Serrano-Smith,CUST-10886,2025-06-03,2025-02-20,Negotiation,Qualification
+OPP-60193,SR-2001,David Padilla,Asia-Pacific,Australia,Pamela Ortiz,Watkins-Freeman,CUST-10450,2025-05-08,2025-03-23,Won,Qualification
+OPP-60194,SR-2088,Jenna Peck,Latin America,UAE,Brooke Fernandez,Wells LLC,CUST-10757,2025-08-14,2025-05-14,Open,Proposal
+OPP-60195,SR-2063,Wendy Cannon,Europe,UK,Sarah Adams,Baker Inc,CUST-10700,2025-08-30,2025-08-03,Negotiation,Prospecting
+OPP-60196,SR-2058,Melinda Leonard,Asia-Pacific,Australia,Kelly Huffman,Acosta-Matthews,CUST-10862,2025-02-23,2025-05-13,On Hold,Prospecting
+OPP-60197,SR-2020,Gabrielle Campbell DDS,Middle East,UK,Kara Ayala,Taylor and Sons,CUST-10308,2025-03-29,2025-05-03,Won,Proposal
+OPP-60198,SR-2033,John Jenkins,North America,Brazil,Frank Durham,Mitchell-Mendez,CUST-10763,2025-04-25,2025-03-15,Won,Prospecting
+OPP-60199,SR-2098,Sarah Ramirez,Europe,Australia,Kathleen Gates,"Kelly, Davis and Nolan",CUST-10959,2025-03-28,2025-05-10,On Hold,Negotiation
+OPP-60200,SR-2076,Vincent Clark,Asia-Pacific,Brazil,Denise Espinoza,Delacruz and Sons,CUST-10315,2025-07-07,2025-05-31,Negotiation,Qualification
+OPP-60201,SR-2095,Michelle Harris,Middle East,India,Jordan Shepherd,Allen-Miller,CUST-10700,2025-06-23,2025-01-05,Open,Proposal
+OPP-60202,SR-2075,Robert White,Asia-Pacific,Australia,John Dunn,Morrison-Moore,CUST-10579,2025-02-10,2025-06-25,Open,Closed Won
+OPP-60203,SR-2042,Jennifer Mckinney,Latin America,India,Larry Bowen,"Jackson, Rosales and Hernandez",CUST-10172,2025-04-07,2025-04-12,On Hold,Proposal
+OPP-60204,SR-2009,Candace Mcintyre,Latin America,UK,Adam Padilla,"Jennings, Lester and Brooks",CUST-10535,2025-08-11,2025-05-06,Negotiation,Qualification
+OPP-60205,SR-2037,Susan House,Latin America,UK,Jim House,Pope-Hopkins,CUST-10520,2025-08-12,2025-03-27,Negotiation,Negotiation
+OPP-60206,SR-2010,Amanda Miller,Europe,UK,Shelby Hawkins,Green LLC,CUST-10752,2025-07-03,2025-08-04,Won,Prospecting
+OPP-60207,SR-2044,Marissa Scott,North America,UAE,Brian Gilbert,Johnson-Chang,CUST-10209,2025-01-04,2025-07-02,Negotiation,Proposal
+OPP-60208,SR-2067,Cynthia Perry,Middle East,USA,Christopher Wilson,Norman Inc,CUST-10550,2025-01-29,2025-03-16,On Hold,Proposal
+OPP-60209,SR-2003,Richard Arias,Asia-Pacific,UAE,Chelsea Brown,Williams-Johnson,CUST-10057,2025-04-04,2025-06-30,Won,Proposal
+OPP-60210,SR-2060,Eric Brown,Europe,Germany,Casey Adams,"Morris, Cole and Flowers",CUST-10397,2025-03-19,2025-02-13,Won,Qualification
+OPP-60211,SR-2085,Holly Winters,Latin America,UAE,Amy Blevins,Bush Inc,CUST-10983,2025-04-24,2025-04-01,Open,Proposal
+OPP-60212,SR-2043,Roger Smith,Middle East,Australia,Jennifer Mckay,"Esparza, Peterson and Campbell",CUST-10458,2025-07-15,2025-08-28,Lost,Prospecting
+OPP-60213,SR-2089,Cynthia Hodge,Latin America,India,Nathan Brady,Wu-Nguyen,CUST-10278,2025-06-19,2025-06-14,Negotiation,Negotiation
+OPP-60214,SR-2075,Olivia Wilkerson,Asia-Pacific,Brazil,William Delacruz,Chavez-Hernandez,CUST-10224,2025-05-14,2025-03-13,Lost,Qualification
+OPP-60215,SR-2025,Cindy Donaldson,Asia-Pacific,UK,John Nelson,"Campbell, Clark and Reese",CUST-10189,2025-06-27,2025-04-18,Lost,Prospecting
+OPP-60216,SR-2041,Gerald Bell,Europe,India,John Knight,Frank-Hodge,CUST-10102,2025-02-28,2025-06-12,Lost,Closed Won
+OPP-60217,SR-2062,Emily Johnson,Asia-Pacific,India,Mrs. Victoria Morton DVM,Moore-Evans,CUST-10060,2025-04-14,2025-04-26,On Hold,Prospecting
+OPP-60218,SR-2055,Sara Murillo,North America,UK,Jasmine Duffy,Mcdaniel Inc,CUST-10851,2025-07-20,2025-05-21,Lost,Qualification
+OPP-60219,SR-2060,Courtney Cunningham,Europe,UK,Kelli Wiggins,Johnson-Chang,CUST-10720,2025-06-04,2025-01-05,Won,Proposal
+OPP-60220,SR-2027,Charles Williams,Asia-Pacific,Germany,Kyle Perez,"Conner, Stone and Lynch",CUST-10402,2025-06-04,2025-05-01,Won,Prospecting
+OPP-60221,SR-2093,Mr. Tony Fernandez,North America,UAE,Sharon Barker,"Lewis, Morse and Nielsen",CUST-10523,2025-05-14,2025-08-09,Negotiation,Closed Won
+OPP-60222,SR-2077,Lori Choi,Europe,India,Olivia Johnson,Taylor Group,CUST-10519,2025-04-07,2025-08-28,Lost,Closed Won
+OPP-60223,SR-2049,Todd Valdez,Latin America,UAE,Stacey Hutchinson,"Harris, Lewis and Chavez",CUST-10082,2025-03-27,2025-01-28,Won,Qualification
+OPP-60224,SR-2065,Todd Hall,Europe,Australia,Tyler Nicholson,Boone-Salinas,CUST-10330,2025-01-02,2025-03-06,Open,Qualification
+OPP-60225,SR-2070,Deanna Leonard,Latin America,Brazil,Melissa Webster,Tanner-Brown,CUST-10574,2025-05-07,2025-07-01,Negotiation,Negotiation
+OPP-60226,SR-2028,Lisa Hale,North America,Australia,Douglas Dodson,Dunn-Anderson,CUST-10800,2025-01-31,2025-05-13,Open,Proposal
+OPP-60227,SR-2023,Justin Sanders,Europe,UK,Jason Horn,"Everett, Ortiz and Smith",CUST-10253,2025-05-25,2025-07-07,Open,Negotiation
+OPP-60228,SR-2007,Joseph Fisher,North America,USA,Zachary Franklin,"Colon, Moore and Lindsey",CUST-10337,2025-03-13,2025-03-11,On Hold,Qualification
+OPP-60229,SR-2056,Thomas Cooper,North America,Germany,Joshua Garcia,Myers Ltd,CUST-10992,2025-01-15,2025-05-16,Negotiation,Closed Won
+OPP-60230,SR-2032,Krystal Estrada,Asia-Pacific,UAE,Michelle Austin,"Taylor, Hickman and Gomez",CUST-10052,2025-04-26,2025-06-04,Won,Prospecting
+OPP-60231,SR-2009,Joseph Allen,Middle East,USA,David Berry,Odonnell-Hill,CUST-10119,2025-04-21,2025-08-11,Open,Negotiation
+OPP-60232,SR-2086,Edward Armstrong,Asia-Pacific,Australia,Mariah Jennings,"Payne, Holland and White",CUST-10232,2025-01-21,2025-02-10,Open,Proposal
+OPP-60233,SR-2086,Pamela Ward,Europe,UAE,Dr. Christopher Bell,"Gardner, Romero and Kemp",CUST-10233,2025-04-07,2025-06-10,Won,Negotiation
+OPP-60234,SR-2073,Rebecca Hickman,North America,UAE,Katherine Reed,"Brooks, Ho and Carr",CUST-10156,2025-04-20,2025-08-20,Lost,Prospecting
+OPP-60235,SR-2073,Amy Smith,Asia-Pacific,USA,Jay Morrison,"James, Macias and Schneider",CUST-10382,2025-02-05,2025-01-31,Lost,Prospecting
+OPP-60236,SR-2062,Chris Atkins,Europe,Australia,Carlos Hall,Turner and Sons,CUST-10619,2025-03-31,2025-08-23,Open,Negotiation
+OPP-60237,SR-2046,Andrea Benton,North America,Germany,Jacob Fernandez,"Martinez, Carpenter and Green",CUST-10123,2025-02-04,2025-07-27,Lost,Prospecting
+OPP-60238,SR-2072,Melissa Abbott,North America,Australia,William Stewart,Rogers and Sons,CUST-10704,2025-01-27,2025-06-03,Open,Prospecting
+OPP-60239,SR-2041,Christopher Hall,Middle East,UAE,Jeff Smith,Weaver PLC,CUST-10862,2025-02-14,2025-03-21,Lost,Negotiation
+OPP-60240,SR-2088,Sonya Jones,North America,Germany,Megan Mcpherson,"Hughes, Fitzgerald and Scott",CUST-10094,2025-03-02,2025-06-09,On Hold,Qualification
+OPP-60241,SR-2084,Brian Bolton,Asia-Pacific,USA,Caleb Mckinney,Nelson LLC,CUST-10453,2025-02-21,2025-04-15,Open,Prospecting
+OPP-60242,SR-2086,James Clark,North America,USA,Alexander Patel,Ramos Inc,CUST-10044,2025-06-29,2025-08-21,On Hold,Negotiation
+OPP-60243,SR-2008,Michael Shelton,Asia-Pacific,USA,Sean Guerrero,Barrera-Moody,CUST-10021,2025-06-11,2025-05-31,On Hold,Prospecting
+OPP-60244,SR-2056,Matthew Bowen,Europe,USA,Ricky Boyd,"Fox, Johns and Deleon",CUST-10974,2025-07-08,2025-04-01,On Hold,Closed Won
+OPP-60245,SR-2065,Aaron Todd,Latin America,UAE,David Lynn,Stanley Inc,CUST-10226,2025-02-07,2025-02-04,Open,Closed Won
+OPP-60246,SR-2008,Jill Davis,Latin America,UK,Amy Park,"Reed, Soto and Cooper",CUST-10083,2025-05-24,2025-05-03,Negotiation,Closed Won
+OPP-60247,SR-2071,Tracy Brown,Latin America,Brazil,Matthew Lewis,Camacho Inc,CUST-10630,2025-08-26,2025-05-07,On Hold,Qualification
+OPP-60248,SR-2018,Sharon Payne,Europe,USA,Jose Fleming,"Baldwin, Brown and Walters",CUST-10429,2025-05-25,2025-05-21,Won,Proposal
+OPP-60249,SR-2026,Samantha Gray,Europe,Brazil,Joshua Obrien,"Reid, Hamilton and Evans",CUST-10546,2025-05-12,2025-03-06,Lost,Negotiation
+OPP-60250,SR-2048,Rebecca Williams,Latin America,UAE,Michelle Lewis,Brooks LLC,CUST-10024,2025-08-16,2025-05-31,Won,Negotiation
+OPP-60251,SR-2093,Ronald Clark,Latin America,UAE,April Young,Monroe Ltd,CUST-10318,2025-03-15,2025-01-02,Open,Proposal
+OPP-60252,SR-2020,Angela Thompson,North America,Brazil,Heather Mitchell,Rush LLC,CUST-10247,2025-06-25,2025-07-11,Won,Qualification
+OPP-60253,SR-2091,Anthony Jordan,Asia-Pacific,USA,Kelly Pierce,"Ward, Woods and Rasmussen",CUST-10497,2025-02-02,2025-02-08,Won,Prospecting
+OPP-60254,SR-2048,Jennifer Li,Middle East,India,Sarah Harper,Jimenez-Gaines,CUST-10509,2025-07-03,2025-05-26,Lost,Qualification
+OPP-60255,SR-2050,Courtney Williams,Latin America,UK,Barbara Peterson,Anderson and Sons,CUST-10006,2025-05-05,2025-04-01,Open,Closed Won
+OPP-60256,SR-2096,Cynthia Waters,Latin America,Australia,Roberta Yang,Lewis-Lopez,CUST-10565,2025-05-21,2025-03-03,Open,Proposal
+OPP-60257,SR-2079,Mr. Patrick Hall DDS,Latin America,Australia,Joseph Carter,"Lewis, Jones and Bailey",CUST-10311,2025-04-18,2025-03-01,Lost,Prospecting
+OPP-60258,SR-2057,Matthew Aguirre,Europe,USA,Amy Hanna,"Raymond, Lara and Daniel",CUST-10633,2025-02-20,2025-02-03,Negotiation,Proposal
+OPP-60259,SR-2054,Frank Glover,Middle East,Germany,Christian Dean Jr.,Hodges-Kirk,CUST-10770,2025-08-10,2025-07-30,Won,Proposal
+OPP-60260,SR-2077,Jennifer Riley,North America,India,Marisa Shelton,Davis-Doyle,CUST-10382,2025-03-16,2025-06-12,Open,Closed Won
+OPP-60261,SR-2073,Crystal Hughes,Latin America,Australia,Michaela Charles DDS,Williams-Alexander,CUST-10010,2025-06-21,2025-06-19,Lost,Negotiation
+OPP-60262,SR-2019,Bailey Jensen,Middle East,USA,Patrick Lawrence,Carter Inc,CUST-10356,2025-01-02,2025-05-17,Negotiation,Qualification
+OPP-60263,SR-2007,Joseph Gordon,Middle East,Germany,Lawrence Moore,Ortiz Ltd,CUST-10092,2025-06-03,2025-04-30,On Hold,Proposal
+OPP-60264,SR-2086,Jacqueline Davila,Middle East,USA,Edward Hodge,"Andrews, Roberts and King",CUST-10804,2025-08-06,2025-06-06,Negotiation,Proposal
+OPP-60265,SR-2036,Patricia Cooper,Asia-Pacific,UK,Danielle Warren,"Johnson, Holt and Williamson",CUST-10365,2025-01-09,2025-06-19,On Hold,Qualification
+OPP-60266,SR-2009,Kristen Elliott,Middle East,Brazil,Adam Smith,Baker Group,CUST-10240,2025-03-01,2025-04-05,On Hold,Proposal
+OPP-60267,SR-2092,Morgan Ayala,North America,India,Stephen Fox,"Mccann, Becker and Franklin",CUST-10660,2025-08-25,2025-06-08,Lost,Negotiation
+OPP-60268,SR-2027,Megan Martinez,Europe,India,Jessica Jones,"Murphy, Sanchez and Perez",CUST-10427,2025-08-14,2025-03-01,Open,Negotiation
+OPP-60269,SR-2066,Christopher Williamson,Middle East,India,Eileen Figueroa,Anderson and Sons,CUST-10213,2025-08-22,2025-07-29,On Hold,Qualification
+OPP-60270,SR-2020,Joseph Jackson,North America,India,Nicholas Archer,West-Day,CUST-10099,2025-05-17,2025-01-28,Negotiation,Prospecting
+OPP-60271,SR-2063,Jerry Anderson,Europe,Brazil,Monique Patton,Key-Anderson,CUST-10259,2025-03-09,2025-06-12,On Hold,Proposal
+OPP-60272,SR-2097,Krista Green,Middle East,Brazil,Jordan Davis,"Wright, Obrien and Mcdowell",CUST-10658,2025-08-08,2025-06-24,Negotiation,Prospecting
+OPP-60273,SR-2064,Rhonda Miller,Middle East,UAE,Allison Freeman,Mcdonald-Fernandez,CUST-10820,2025-02-19,2025-03-27,Negotiation,Closed Won
+OPP-60274,SR-2093,Seth Perez,Asia-Pacific,UK,Eric Mullins,"Esparza, Peterson and Campbell",CUST-10795,2025-02-22,2025-03-16,Lost,Proposal
+OPP-60275,SR-2083,Cynthia Lewis,Asia-Pacific,Germany,Michael Powell,"Bonilla, Mullins and Lewis",CUST-10060,2025-02-06,2025-07-05,Open,Negotiation
+OPP-60276,SR-2089,Mikayla Mack DDS,Asia-Pacific,Germany,David Brown,Robbins-Cole,CUST-10364,2025-08-03,2025-05-14,Open,Closed Won
+OPP-60277,SR-2085,Lori Bennett,Latin America,UK,Ronald Clark,Dixon and Sons,CUST-10884,2025-05-07,2025-03-06,Open,Closed Won
+OPP-60278,SR-2008,Brenda Pena,Asia-Pacific,Brazil,John Ortega,Mason-Curry,CUST-10159,2025-06-30,2025-06-15,Open,Negotiation
+OPP-60279,SR-2057,Larry Nelson,Asia-Pacific,India,Robert Hernandez,Harris-Harris,CUST-10077,2025-06-03,2025-07-11,Negotiation,Qualification
+OPP-60280,SR-2068,Douglas Hernandez,Latin America,Australia,Donald Ramirez,White-Strong,CUST-10622,2025-02-19,2025-05-12,Negotiation,Proposal
+OPP-60281,SR-2054,Nathan Ross,Europe,India,Cameron Beltran,Smith-Woods,CUST-10279,2025-06-07,2025-03-25,Open,Qualification
+OPP-60282,SR-2061,Michael Dean,Asia-Pacific,UK,Billy Orr,Dennis-Duffy,CUST-10269,2025-07-01,2025-07-27,Lost,Qualification
+OPP-60283,SR-2035,Brandy Hudson,Latin America,USA,Eric James,"Jefferson, Riggs and Morrow",CUST-10662,2025-05-30,2025-06-15,Won,Prospecting
+OPP-60284,SR-2084,Michael Carter,Asia-Pacific,UK,Robin Morgan,Chang-Chen,CUST-10231,2025-04-24,2025-08-05,On Hold,Prospecting
+OPP-60285,SR-2098,Anthony Lowery,Asia-Pacific,Brazil,Samantha Maxwell,Chaney-Lozano,CUST-10949,2025-04-22,2025-02-12,Won,Proposal
+OPP-60286,SR-2065,Ryan Lawrence,North America,UK,Michael Lee,Sanchez-Graham,CUST-10697,2025-01-19,2025-08-06,Won,Prospecting
+OPP-60287,SR-2030,Chase Kelley,Europe,UAE,Zachary Mccarty,Moss LLC,CUST-10599,2025-01-23,2025-02-20,Negotiation,Negotiation
+OPP-60288,SR-2044,Elizabeth Ellis,Latin America,UAE,Jade Herman,Porter-Johnson,CUST-10128,2025-02-16,2025-02-12,On Hold,Qualification
+OPP-60289,SR-2050,Jordan Navarro,Latin America,UK,Pamela Hudson,Johnson-Bradshaw,CUST-10157,2025-08-07,2025-06-11,Won,Proposal
+OPP-60290,SR-2071,Colton Phillips,Asia-Pacific,Germany,Matthew Murphy,"Thomas, Smith and Cook",CUST-10776,2025-02-24,2025-08-02,Open,Closed Won
+OPP-60291,SR-2052,Erika Stark,Middle East,Australia,Randall George,"Jefferson, Riggs and Morrow",CUST-10595,2025-08-22,2025-05-18,Lost,Closed Won
+OPP-60292,SR-2052,Charles Gardner,Latin America,India,Amy Powers,Shaw-Perez,CUST-10435,2025-07-30,2025-05-02,On Hold,Proposal
+OPP-60293,SR-2066,Timothy Hayes,Latin America,Australia,Henry Pena,Ibarra-Adams,CUST-10570,2025-06-06,2025-04-26,Lost,Proposal
+OPP-60294,SR-2020,Johnny Armstrong,Latin America,Australia,David Barber,Johnson PLC,CUST-10256,2025-08-03,2025-06-20,On Hold,Qualification
+OPP-60295,SR-2090,Sandra Owen,North America,UAE,Amanda Moses,Williams Ltd,CUST-10065,2025-07-30,2025-08-05,Open,Negotiation
+OPP-60296,SR-2059,Jeffrey Vaughn,North America,USA,Amanda Perez,Brennan-Hill,CUST-10534,2025-01-19,2025-07-28,On Hold,Negotiation
+OPP-60297,SR-2059,James Lang,Middle East,UK,Monica Foster,"Richardson, Price and Lyons",CUST-10434,2025-01-12,2025-03-20,Lost,Negotiation
+OPP-60298,SR-2071,Rose Harris,Asia-Pacific,Germany,George Fowler,Miller Inc,CUST-10995,2025-05-17,2025-02-01,Lost,Closed Won
+OPP-60299,SR-2043,Lori Moreno,Europe,UAE,Rhonda Moreno,Norman Inc,CUST-10185,2025-08-23,2025-07-23,Lost,Proposal
+OPP-60300,SR-2072,Lisa Bates,Middle East,Germany,Erica Graham,Bartlett PLC,CUST-10467,2025-07-16,2025-08-20,Won,Prospecting
+OPP-60301,SR-2059,Jessica Sullivan,Middle East,UAE,Sandra Huber,Matthews-Harris,CUST-10844,2025-05-02,2025-06-19,Negotiation,Closed Won
+OPP-60302,SR-2008,Frederick Shaffer,Europe,USA,Dorothy Vasquez,Walker and Sons,CUST-10287,2025-08-08,2025-03-02,Won,Negotiation
+OPP-60303,SR-2096,Brandon King,Latin America,USA,Monica Marks,Maynard-Johnson,CUST-10505,2025-08-07,2025-02-10,Negotiation,Qualification
+OPP-60304,SR-2012,William Hubbard,Latin America,Australia,Evelyn Jackson,Ryan Ltd,CUST-10738,2025-01-02,2025-01-06,Negotiation,Prospecting
+OPP-60305,SR-2093,Joshua Solis,Asia-Pacific,Germany,James Thompson,Anderson and Sons,CUST-10196,2025-03-25,2025-03-02,Lost,Proposal
+OPP-60306,SR-2099,Bradley Weeks,Europe,Brazil,Daniel Bruce DVM,"Gutierrez, Myers and Davis",CUST-10304,2025-06-05,2025-01-12,On Hold,Qualification
+OPP-60307,SR-2012,Jennifer Perkins,Europe,USA,Claire Alexander,"Keith, Burke and Rogers",CUST-10474,2025-01-31,2025-07-11,Lost,Closed Won
+OPP-60308,SR-2013,Elizabeth Murphy,Middle East,UAE,Devin Silva,Watkins LLC,CUST-10410,2025-08-26,2025-03-17,Negotiation,Closed Won
+OPP-60309,SR-2034,Jamie Alvarez,Asia-Pacific,Brazil,James Johnson,Cruz-Glover,CUST-10495,2025-08-18,2025-02-13,Won,Prospecting
+OPP-60310,SR-2055,Isaiah Cooley,Latin America,UK,Miranda Burke,Molina Ltd,CUST-10618,2025-02-22,2025-04-22,Won,Closed Won
+OPP-60311,SR-2036,Brandi Morales,Middle East,UK,Russell Wilson,Lawson-Holt,CUST-10081,2025-06-29,2025-08-04,On Hold,Proposal
+OPP-60312,SR-2008,Debra Torres,Europe,Brazil,Stephanie Wheeler,Santos Group,CUST-10176,2025-01-03,2025-02-07,On Hold,Prospecting
+OPP-60313,SR-2087,Jerry Huber,Middle East,USA,Margaret Rojas,James Group,CUST-10266,2025-05-28,2025-04-09,Negotiation,Qualification
+OPP-60314,SR-2030,Angela Garcia,Middle East,UK,Adam Mcdonald,House-Ramirez,CUST-10698,2025-03-13,2025-03-17,Negotiation,Qualification
+OPP-60315,SR-2024,Melissa Jones,Europe,Brazil,Marvin Martinez,Chandler Group,CUST-10453,2025-07-23,2025-07-04,Open,Proposal
+OPP-60316,SR-2005,Jacob Watkins,Asia-Pacific,Germany,Natalie Boone,Weaver PLC,CUST-10936,2025-08-31,2025-06-24,Negotiation,Closed Won
+OPP-60317,SR-2044,Zachary Martin,Latin America,UAE,Kevin Bryant,"Gordon, Dyer and Tran",CUST-10210,2025-06-01,2025-08-07,Open,Proposal
+OPP-60318,SR-2011,Mary Erickson,Europe,Germany,Joshua Ross,"Smith, Smith and Stein",CUST-10773,2025-08-14,2025-08-12,Open,Closed Won
+OPP-60319,SR-2008,James Decker,Europe,India,David Massey,Smith Group,CUST-10180,2025-05-01,2025-01-01,Negotiation,Closed Won
+OPP-60320,SR-2087,Scott Thomas,Latin America,Brazil,Sonya Martin,"Moore, Hansen and Lewis",CUST-10108,2025-08-26,2025-08-31,Won,Prospecting
+OPP-60321,SR-2046,Gina Miller,Asia-Pacific,India,Thomas Miller,Daniel LLC,CUST-10597,2025-02-10,2025-06-09,Negotiation,Closed Won
+OPP-60322,SR-2085,Tammy Rodriguez,Middle East,Germany,Erin Smith,Fernandez LLC,CUST-10120,2025-03-07,2025-01-12,On Hold,Proposal
+OPP-60323,SR-2045,Michael Smith,Middle East,Brazil,Christopher Ryan,Green Inc,CUST-10866,2025-06-05,2025-02-03,Open,Prospecting
+OPP-60324,SR-2093,Theresa Fox,Middle East,Australia,James Rogers,"Hughes, Mills and Sullivan",CUST-10109,2025-03-11,2025-04-26,Negotiation,Closed Won
+OPP-60325,SR-2088,Benjamin Salinas,Middle East,Germany,Anthony Massey,Mitchell-Mendez,CUST-10611,2025-02-06,2025-07-12,Lost,Closed Won
+OPP-60326,SR-2068,Julie Padilla,Latin America,Germany,Nicole Miller,Benitez and Sons,CUST-10305,2025-02-08,2025-08-08,Won,Negotiation
+OPP-60327,SR-2082,Daniel Holder,Europe,UK,Hailey Patrick,"Hughes, Watts and Arnold",CUST-10713,2025-06-05,2025-05-03,Open,Negotiation
+OPP-60328,SR-2097,Ronald Arroyo,Asia-Pacific,Australia,Troy Hernandez,Stanley Inc,CUST-10815,2025-01-25,2025-01-20,Lost,Closed Won
+OPP-60329,SR-2020,David Olsen,Europe,Germany,Jennifer Hayes,Watson-Gardner,CUST-10831,2025-03-06,2025-03-30,Lost,Prospecting
+OPP-60330,SR-2073,David Holland,Asia-Pacific,UAE,Paige Bauer,Deleon Group,CUST-10246,2025-04-05,2025-03-28,Open,Prospecting
+OPP-60331,SR-2091,Elizabeth Schroeder,Latin America,Australia,Amber Anderson,Williamson Group,CUST-10708,2025-01-24,2025-04-10,On Hold,Closed Won
+OPP-60332,SR-2086,Ruth Meza,Asia-Pacific,USA,Jon Garza,Hicks-Owen,CUST-10344,2025-05-09,2025-03-27,Lost,Prospecting
+OPP-60333,SR-2034,Rebecca Stevens,Asia-Pacific,UAE,Tara Bailey,Morales Inc,CUST-10484,2025-01-18,2025-02-05,Lost,Negotiation
+OPP-60334,SR-2087,Heather Sanders,Middle East,UK,Denise Brown,"Medina, Lucas and Johnson",CUST-10153,2025-08-13,2025-06-27,On Hold,Prospecting
+OPP-60335,SR-2068,Timothy Glenn,Asia-Pacific,Brazil,Wayne Briggs,Baker Inc,CUST-10386,2025-07-07,2025-07-17,Lost,Closed Won
+OPP-60336,SR-2052,Karen Christian,Middle East,Brazil,Heather Tucker,"Beard, Cox and Nguyen",CUST-10085,2025-04-24,2025-05-06,Won,Proposal
+OPP-60337,SR-2039,Darrell Jacobs,North America,India,Gordon Travis,Brown-Carroll,CUST-10306,2025-02-14,2025-05-06,On Hold,Qualification
+OPP-60338,SR-2010,Carrie Jacobs,Asia-Pacific,Germany,Lauren Brown,Miller PLC,CUST-10881,2025-07-03,2025-01-04,Lost,Prospecting
+OPP-60339,SR-2005,Mr. Michael Mccoy MD,North America,Brazil,Melissa Ross,"Roberts, Thompson and Brown",CUST-10250,2025-07-13,2025-01-21,Negotiation,Proposal
+OPP-60340,SR-2075,Ms. Theresa Davenport DVM,Latin America,Brazil,Gloria Miller,Williams-Rose,CUST-10804,2025-05-29,2025-03-25,Open,Closed Won
+OPP-60341,SR-2004,Howard Williams,Europe,UK,Tracy Parker,"Vaughan, Erickson and Navarro",CUST-10331,2025-02-12,2025-05-08,Negotiation,Qualification
+OPP-60342,SR-2006,Sharon Bradford,Middle East,India,Joseph Gonzalez,Wright-Shaw,CUST-10833,2025-08-28,2025-02-20,On Hold,Negotiation
+OPP-60343,SR-2017,Michael Gonzalez,North America,USA,Grant Wheeler,Baker-Johnson,CUST-10318,2025-07-23,2025-03-20,On Hold,Proposal
+OPP-60344,SR-2069,Tanner Chavez,Asia-Pacific,Australia,Melissa Aguirre,Hernandez-Tucker,CUST-10973,2025-01-19,2025-08-21,Negotiation,Negotiation
+OPP-60345,SR-2073,Kelly Olson,North America,UK,Jermaine Brewer,Nguyen PLC,CUST-10255,2025-07-25,2025-06-07,Won,Closed Won
+OPP-60346,SR-2092,Melanie Estrada,North America,Brazil,Tony Gonzalez,Whitney-Hernandez,CUST-10374,2025-06-18,2025-03-27,Open,Negotiation
+OPP-60347,SR-2013,Daniel Huynh,North America,Australia,Taylor Ortiz,Howell-Lawson,CUST-10160,2025-01-29,2025-01-24,Open,Negotiation
+OPP-60348,SR-2058,Jacob Garcia,Asia-Pacific,Brazil,Ruben Frye,"Blair, Carey and Henderson",CUST-10322,2025-06-13,2025-08-25,Won,Closed Won
+OPP-60349,SR-2004,Molly Irwin,Middle East,UK,Tiffany Sandoval,Allen-Miller,CUST-10486,2025-01-02,2025-03-25,On Hold,Negotiation
+OPP-60350,SR-2094,Laurie Campbell,Asia-Pacific,Brazil,Amy Peters,Ross LLC,CUST-10935,2025-04-23,2025-02-18,Open,Proposal
+OPP-60351,SR-2088,Joshua Woods,Latin America,UK,Mary Nunez,Thomas Group,CUST-10278,2025-06-18,2025-08-27,Won,Qualification
+OPP-60352,SR-2064,Ralph Todd,Europe,Germany,Richard Medina,Rush LLC,CUST-10237,2025-05-08,2025-04-23,Open,Qualification
+OPP-60353,SR-2057,Roy Scott,Middle East,Germany,Mark Stewart,Hernandez PLC,CUST-10451,2025-08-24,2025-07-28,Lost,Negotiation
+OPP-60354,SR-2066,Ashley Hernandez,Asia-Pacific,India,Charles King,Wolf Group,CUST-10737,2025-02-26,2025-02-20,Open,Qualification
+OPP-60355,SR-2016,Sara Johnson,North America,Germany,Jennifer Greene,Edwards-Stanley,CUST-10141,2025-05-05,2025-01-21,Won,Closed Won
+OPP-60356,SR-2001,Brian Garcia,Europe,USA,Brandon Sutton,Bryant Group,CUST-10691,2025-04-30,2025-07-05,Negotiation,Closed Won
+OPP-60357,SR-2084,Mary Brown,Middle East,Germany,Christopher Harris,Martinez LLC,CUST-10478,2025-06-16,2025-03-29,On Hold,Prospecting
+OPP-60358,SR-2080,Michelle Orr,Middle East,Brazil,Julia Taylor,Allen Ltd,CUST-10946,2025-04-02,2025-07-20,Open,Proposal
+OPP-60359,SR-2068,Brian Wyatt,Latin America,Germany,Julie Bowman,Barrera-Moody,CUST-10190,2025-07-01,2025-07-04,Won,Qualification
+OPP-60360,SR-2098,Samuel Sanchez,Middle East,Australia,Teresa Sanchez,"Ryan, Murphy and Williamson",CUST-10613,2025-06-14,2025-06-11,Won,Closed Won
+OPP-60361,SR-2069,Latasha Rivers,Asia-Pacific,UAE,John Rojas,Henderson-Wright,CUST-10753,2025-04-30,2025-06-24,On Hold,Negotiation
+OPP-60362,SR-2099,Amanda Myers,Asia-Pacific,Australia,Eric Vasquez,Evans-Mora,CUST-10084,2025-08-30,2025-01-11,Lost,Prospecting
+OPP-60363,SR-2075,Isaac Cooke,Middle East,UAE,Brett Brooks,Stout PLC,CUST-10079,2025-08-27,2025-07-11,Open,Negotiation
+OPP-60364,SR-2040,Kimberly Gallagher,Asia-Pacific,Brazil,Zachary Spears,Bryant Group,CUST-10198,2025-02-19,2025-01-12,Negotiation,Closed Won
+OPP-60365,SR-2028,Sandra Jenkins,North America,Australia,Frank Long,Anderson Ltd,CUST-10098,2025-05-30,2025-08-10,Open,Negotiation
+OPP-60366,SR-2063,Erica Young,Latin America,UAE,Sharon Cooper,"Anderson, Mcgee and Yang",CUST-10445,2025-07-10,2025-03-22,Open,Prospecting
+OPP-60367,SR-2035,Angela Alvarez,Europe,UK,Connor Adams,Schultz-Vargas,CUST-10583,2025-05-06,2025-04-27,Lost,Prospecting
+OPP-60368,SR-2088,Jason Chen,Latin America,Germany,Natalie Reynolds,Jacobson PLC,CUST-10922,2025-03-24,2025-06-16,Negotiation,Proposal
+OPP-60369,SR-2043,Corey Smith,Europe,UK,Nicole Conrad,Miller-Perez,CUST-10814,2025-06-02,2025-02-26,On Hold,Negotiation
+OPP-60370,SR-2085,Jennifer Wolfe,Middle East,USA,Gregory Alexander,"Green, Hudson and Lara",CUST-10213,2025-04-24,2025-05-10,Won,Negotiation
+OPP-60371,SR-2099,Larry Simpson,Europe,UK,Brittany Benitez,Deleon Group,CUST-10137,2025-02-19,2025-03-20,Open,Closed Won
+OPP-60372,SR-2082,Heather Walker,North America,UK,Rodney Robinson,Gonzalez-Collins,CUST-10099,2025-03-04,2025-01-09,On Hold,Qualification
+OPP-60373,SR-2012,Jacob Jones,Middle East,Australia,Holly Palmer,Edwards-Day,CUST-10368,2025-05-14,2025-03-23,Open,Prospecting
+OPP-60374,SR-2047,Kim Scott,Europe,Australia,Aaron Jones,Silva and Sons,CUST-10487,2025-04-18,2025-07-09,Negotiation,Proposal
+OPP-60375,SR-2086,Carlos Velasquez,Latin America,Brazil,Anna Richard,"Lopez, Cunningham and Wells",CUST-10766,2025-03-17,2025-04-24,Lost,Proposal
+OPP-60376,SR-2010,Claudia Lawrence,Asia-Pacific,UAE,Ashley Rodriguez,Phillips Group,CUST-10019,2025-01-18,2025-03-06,Negotiation,Prospecting
+OPP-60377,SR-2040,Kristen Hall,Asia-Pacific,UAE,John Roberts,Hernandez PLC,CUST-10186,2025-05-22,2025-07-16,Lost,Negotiation
+OPP-60378,SR-2089,Laura Estes,North America,Germany,Sandra Juarez,"Franklin, Rodriguez and Harris",CUST-10575,2025-02-28,2025-07-08,On Hold,Prospecting
+OPP-60379,SR-2047,Mark Hughes,Latin America,USA,Eric Sheppard,Walker-Shea,CUST-10749,2025-01-13,2025-01-19,Negotiation,Negotiation
+OPP-60380,SR-2014,Frank Miller,Europe,Brazil,Anna Peterson,"Bonilla, Mullins and Lewis",CUST-10831,2025-03-05,2025-03-23,Negotiation,Proposal
+OPP-60381,SR-2033,Timothy Lopez,Asia-Pacific,UK,Jonathan Hunter,Price and Sons,CUST-10445,2025-06-18,2025-04-28,Won,Closed Won
+OPP-60382,SR-2004,Darryl Jensen,Asia-Pacific,UAE,April Bell,Henderson PLC,CUST-10339,2025-03-07,2025-01-18,On Hold,Prospecting
+OPP-60383,SR-2021,Brittney Oliver,Europe,Germany,Deborah Vasquez,"Beasley, Mills and Vazquez",CUST-10803,2025-02-14,2025-01-28,Lost,Qualification
+OPP-60384,SR-2058,Melinda Smith,Europe,Germany,Darryl Johnson,Carroll Inc,CUST-10178,2025-04-05,2025-01-30,Won,Proposal
+OPP-60385,SR-2049,Kristen Taylor,Latin America,Brazil,Desiree Stewart,Brown-Carroll,CUST-10423,2025-04-14,2025-08-12,On Hold,Negotiation
+OPP-60386,SR-2024,Brandi Flores,Asia-Pacific,USA,Jennifer Adams,"Harris, Lewis and Chavez",CUST-10051,2025-01-30,2025-02-14,On Hold,Prospecting
+OPP-60387,SR-2031,Tim Johnson,Middle East,Australia,Katherine Sanchez,Bailey Group,CUST-10253,2025-01-21,2025-08-05,On Hold,Proposal
+OPP-60388,SR-2009,Sarah Turner,Middle East,India,Robert Horton,"Jones, Martinez and Evans",CUST-10270,2025-05-29,2025-05-16,Lost,Negotiation
+OPP-60389,SR-2037,David Jones,Middle East,USA,Mercedes Schultz,"Garcia, Marshall and Gibson",CUST-10736,2025-01-16,2025-08-18,Lost,Qualification
+OPP-60390,SR-2053,Lisa Ward,Middle East,Brazil,Sara Reid,"Johns, Moore and Williams",CUST-10711,2025-03-05,2025-05-05,Lost,Negotiation
+OPP-60391,SR-2080,Benjamin Merritt,North America,USA,Scott Thomas,Torres Inc,CUST-10934,2025-01-19,2025-04-16,Won,Negotiation
+OPP-60392,SR-2080,Sarah Mendez,Middle East,Brazil,Matthew Summers,"Parks, Clark and Schultz",CUST-10302,2025-04-15,2025-03-08,Lost,Qualification
+OPP-60393,SR-2076,Joseph Grant MD,Middle East,UAE,Anna Odonnell,Scott-Newman,CUST-10286,2025-04-24,2025-04-09,Open,Proposal
+OPP-60394,SR-2066,Nathaniel Tucker,Middle East,UK,Savannah Santiago,Morrison-Miller,CUST-10731,2025-02-08,2025-02-18,Open,Prospecting
+OPP-60395,SR-2094,Donna Gardner,North America,Brazil,Abigail Curtis,Simmons Ltd,CUST-10753,2025-07-21,2025-04-03,Lost,Proposal
+OPP-60396,SR-2051,Vincent Valentine,Middle East,Australia,Frank Juarez,Douglas Ltd,CUST-10405,2025-04-22,2025-08-18,Lost,Negotiation
+OPP-60397,SR-2044,Penny Price,North America,Germany,Melissa Nichols,Myers-Smith,CUST-10936,2025-08-27,2025-06-08,Open,Prospecting
+OPP-60398,SR-2046,Ariana Rhodes,Europe,Australia,Tammy Pierce,"Brown, Holmes and Farrell",CUST-10064,2025-02-07,2025-05-17,Negotiation,Qualification
+OPP-60399,SR-2098,John Wells,Europe,UK,Judy Hayes,Conner Inc,CUST-10929,2025-02-28,2025-03-26,Won,Negotiation
+OPP-60400,SR-2044,Crystal Miller,Europe,Brazil,Mrs. Christine Reeves,Mcdonald-Fernandez,CUST-10399,2025-02-05,2025-06-01,Negotiation,Negotiation
+OPP-60401,SR-2036,Erica Bailey,North America,Brazil,Christopher Mcmahon,"Perez, Mccoy and Ramirez",CUST-10600,2025-05-09,2025-06-17,Open,Proposal
+OPP-60402,SR-2054,Jacob Mitchell,Middle East,UAE,Richard Ray,"Hernandez, White and Burgess",CUST-10872,2025-06-10,2025-03-20,Negotiation,Qualification
+OPP-60403,SR-2001,Marco Murray,Asia-Pacific,Germany,Colin Campos,Chan Ltd,CUST-10866,2025-05-18,2025-03-21,Negotiation,Negotiation
+OPP-60404,SR-2072,Barbara Pineda,Middle East,USA,Marcus Berg,Benson Ltd,CUST-10661,2025-08-07,2025-05-27,Lost,Proposal
+OPP-60405,SR-2091,Tara Patterson,Europe,UAE,Robert Johnson,Jackson-Sherman,CUST-10988,2025-06-28,2025-07-04,Open,Prospecting
+OPP-60406,SR-2066,Shannon Hunt,Middle East,USA,Richard Gonzalez,Duncan Inc,CUST-10214,2025-06-30,2025-07-11,Negotiation,Proposal
+OPP-60407,SR-2033,Kayla Allen,Middle East,Germany,Matthew Williams,"Spears, Decker and Chavez",CUST-10425,2025-07-26,2025-06-15,On Hold,Negotiation
+OPP-60408,SR-2076,Kelly Knox,Middle East,Brazil,Steven Mendez,Hendrix Ltd,CUST-10248,2025-01-09,2025-07-31,Lost,Proposal
+OPP-60409,SR-2003,Cassandra Warner,Europe,USA,Laura Banks,"Cortez, Kramer and Graham",CUST-10804,2025-05-06,2025-08-17,Won,Negotiation
+OPP-60410,SR-2013,Patricia Jimenez,Middle East,India,Anthony Liu,"Watkins, Ray and Myers",CUST-10306,2025-05-24,2025-06-17,Won,Proposal
+OPP-60411,SR-2038,James Kelley,Middle East,UK,Lisa Reed DDS,"Campbell, Clark and Reese",CUST-10681,2025-02-13,2025-06-10,Won,Proposal
+OPP-60412,SR-2056,Charles Campbell,Latin America,Australia,Randall Stewart,Schultz-Vargas,CUST-10743,2025-05-15,2025-01-06,On Hold,Closed Won
+OPP-60413,SR-2059,Rebecca Bishop,Latin America,UK,Dr. Amanda Fritz,Adkins PLC,CUST-10156,2025-01-14,2025-03-11,Won,Negotiation
+OPP-60414,SR-2036,Robert Smith,Middle East,India,Sarah Anderson,Durham-Cantu,CUST-10378,2025-03-30,2025-01-16,Negotiation,Negotiation
+OPP-60415,SR-2069,Michael Douglas,Middle East,Germany,Allen Vega,"Mccann, Becker and Franklin",CUST-10479,2025-03-10,2025-02-22,Negotiation,Prospecting
+OPP-60416,SR-2009,Dawn Walker,Latin America,USA,Thomas Fuller,Thompson-Johnson,CUST-10036,2025-06-10,2025-02-14,Lost,Qualification
+OPP-60417,SR-2065,Christopher Grant,Latin America,UK,Heather Thomas,Osborn Inc,CUST-10819,2025-06-24,2025-05-04,Open,Proposal
+OPP-60418,SR-2054,Alexander Reyes,Middle East,India,Cynthia Jackson,Haney Inc,CUST-10370,2025-02-04,2025-03-30,On Hold,Prospecting
+OPP-60419,SR-2039,Larry Martin,Middle East,USA,Renee Moody,"Jimenez, Rubio and Jimenez",CUST-10244,2025-03-05,2025-06-29,Negotiation,Qualification
+OPP-60420,SR-2051,William Lowery,North America,Australia,Samuel Ball,Mcdaniel-Moore,CUST-10547,2025-07-15,2025-03-29,Lost,Prospecting
+OPP-60421,SR-2009,Kayla Warren,North America,Brazil,Janice Brewer,Williamson and Sons,CUST-10461,2025-01-08,2025-01-05,Lost,Negotiation
+OPP-60422,SR-2027,Mark Simpson,Latin America,UK,Stephanie Nguyen,Romero Ltd,CUST-10145,2025-08-16,2025-04-01,Lost,Proposal
+OPP-60423,SR-2042,Mallory Harmon,North America,Australia,Thomas Garcia,"Conner, Stone and Lynch",CUST-10743,2025-03-26,2025-06-14,Open,Proposal
+OPP-60424,SR-2025,Ashley Johnson,Europe,India,Michael Bowman Jr.,Chung-Harrington,CUST-10505,2025-04-15,2025-06-28,Won,Closed Won
+OPP-60425,SR-2079,Mrs. Crystal Stanley,Middle East,India,Holly Anderson,Haney Inc,CUST-10577,2025-07-30,2025-06-01,Open,Proposal
+OPP-60426,SR-2052,Beth Mueller,Latin America,Germany,Clinton Wilson,Rogers and Sons,CUST-10017,2025-08-07,2025-08-04,Negotiation,Closed Won
+OPP-60427,SR-2065,Brooke Scott,Asia-Pacific,Brazil,Kayla Rhodes,Wright-Randolph,CUST-10654,2025-05-25,2025-02-03,On Hold,Negotiation
+OPP-60428,SR-2049,Samantha Willis,Europe,Germany,Nicole Martin,Watkins LLC,CUST-10113,2025-05-22,2025-04-06,Open,Prospecting
+OPP-60429,SR-2096,Anita Colon,North America,USA,Hailey Foster,Williams and Sons,CUST-10679,2025-04-18,2025-01-19,Negotiation,Proposal
+OPP-60430,SR-2024,Diana Ryan,North America,Australia,Elijah Roth,Page-Warner,CUST-10257,2025-03-08,2025-03-24,Won,Proposal
+OPP-60431,SR-2097,Michael Hunt,North America,Australia,Michael Castillo,Whitney-Hernandez,CUST-10798,2025-04-01,2025-03-21,Won,Negotiation
+OPP-60432,SR-2009,Laurie Wilson,Asia-Pacific,Germany,Andrea Kirk,Murray LLC,CUST-10553,2025-06-22,2025-04-10,Won,Negotiation
+OPP-60433,SR-2054,Kristine Perkins,Asia-Pacific,India,Rita Flores,Walker and Sons,CUST-10787,2025-07-31,2025-01-19,Negotiation,Qualification
+OPP-60434,SR-2050,Dylan Leach,Middle East,Brazil,Cody Ray,West-Day,CUST-10242,2025-08-26,2025-08-15,Won,Closed Won
+OPP-60435,SR-2034,Debbie Lawson,Middle East,Germany,Kim Harrison,"Baker, Ross and Singh",CUST-10110,2025-08-29,2025-03-12,Negotiation,Proposal
+OPP-60436,SR-2012,Emily Blackburn,Latin America,Australia,Katelyn Gutierrez,Dixon and Sons,CUST-10232,2025-08-15,2025-02-12,Open,Proposal
+OPP-60437,SR-2041,Lisa Fuller,Middle East,USA,Kelsey Hardy,Ross LLC,CUST-10212,2025-05-28,2025-08-31,Negotiation,Prospecting
+OPP-60438,SR-2089,Thomas Simmons,Middle East,UK,Sean Cortez,"Kelly, Davis and Nolan",CUST-10402,2025-07-16,2025-03-15,Negotiation,Qualification
+OPP-60439,SR-2091,Kathy Nichols,North America,India,Rachel Patel,Moreno Inc,CUST-10203,2025-08-06,2025-07-19,Won,Prospecting
+OPP-60440,SR-2004,Michelle Lee,Europe,UAE,Eric Flores,Benitez and Sons,CUST-10975,2025-02-26,2025-01-23,Won,Proposal
+OPP-60441,SR-2068,Tracy Rodriguez,Latin America,Brazil,Martha Gutierrez,Morales Inc,CUST-10113,2025-02-22,2025-01-26,On Hold,Closed Won
+OPP-60442,SR-2011,Robert Thomas,Latin America,Germany,Mrs. Yvonne Larson DDS,Watson PLC,CUST-10866,2025-08-08,2025-06-29,Lost,Proposal
+OPP-60443,SR-2007,Dennis Santana Jr.,Europe,Brazil,Steven Gutierrez,"Jennings, Lester and Brooks",CUST-10316,2025-01-19,2025-06-13,Open,Proposal
+OPP-60444,SR-2093,Paula Flores,Europe,Brazil,Lisa Myers,Schroeder Group,CUST-10897,2025-07-06,2025-05-20,Won,Prospecting
+OPP-60445,SR-2037,Gerald Turner,Latin America,UK,Nichole Bullock,Harrington Ltd,CUST-10856,2025-04-24,2025-06-02,Open,Qualification
+OPP-60446,SR-2079,Michelle Woods,Middle East,USA,Rachel Delgado,Johnson PLC,CUST-10818,2025-06-09,2025-05-07,On Hold,Qualification
+OPP-60447,SR-2044,Melissa Johnson,North America,UAE,Danny Stein,"Stephens, Smith and Ballard",CUST-10378,2025-04-15,2025-02-17,Open,Closed Won
+OPP-60448,SR-2003,Michael Morales,Latin America,Australia,Amy Hamilton,"Brown, Lynch and Ritter",CUST-10125,2025-02-04,2025-02-13,Open,Closed Won
+OPP-60449,SR-2046,Robert Johnson,Europe,UAE,Timothy Harrison,Martinez Ltd,CUST-10580,2025-05-23,2025-01-27,Won,Qualification
+OPP-60450,SR-2071,Andrew Patterson,Europe,India,Timothy Obrien,King-Buchanan,CUST-10435,2025-07-01,2025-04-02,On Hold,Closed Won
+OPP-60451,SR-2080,Catherine Hernandez,North America,UK,Regina Powers MD,"Velasquez, Willis and Parker",CUST-10634,2025-04-25,2025-03-04,On Hold,Proposal
+OPP-60452,SR-2047,Roger Herman,Europe,USA,David Chen,Carter-Martin,CUST-10680,2025-02-14,2025-05-13,Won,Negotiation
+OPP-60453,SR-2055,Jordan Gallagher,North America,Brazil,Karen Galloway,Lambert Inc,CUST-10043,2025-04-18,2025-06-25,Lost,Qualification
+OPP-60454,SR-2003,Timothy Dougherty,Asia-Pacific,Brazil,Anthony Webb,Simpson-Peterson,CUST-10704,2025-05-29,2025-04-22,Won,Negotiation
+OPP-60455,SR-2083,Joshua Lucas,Asia-Pacific,USA,Kathryn Downs,"Turner, Butler and Morgan",CUST-10389,2025-06-03,2025-05-04,Won,Negotiation
+OPP-60456,SR-2064,Laurie Hill,Latin America,UAE,Isabel Anderson DVM,Davis Ltd,CUST-10505,2025-05-12,2025-08-12,On Hold,Closed Won
+OPP-60457,SR-2035,Daniel Goodwin,Asia-Pacific,USA,Rachel Miles,"Fox, Johns and Deleon",CUST-10678,2025-03-02,2025-03-25,Won,Qualification
+OPP-60458,SR-2065,Amy Johnson,Latin America,Brazil,Anna King,"Matthews, Bradley and Brady",CUST-10224,2025-07-23,2025-06-25,On Hold,Prospecting
+OPP-60459,SR-2098,Shane Mitchell,Latin America,USA,Robert Mitchell,"Daniels, Hubbard and Sweeney",CUST-10539,2025-08-10,2025-08-08,Negotiation,Negotiation
+OPP-60460,SR-2045,Kelly Patel,Europe,UK,Kenneth Patel,Tyler-Brown,CUST-10476,2025-04-23,2025-05-13,Lost,Qualification
+OPP-60461,SR-2087,Robert Key,Latin America,Australia,Leslie Moore,"Mora, York and Johnson",CUST-10491,2025-03-16,2025-02-25,Negotiation,Qualification
+OPP-60462,SR-2011,Juan Wright,Asia-Pacific,Germany,James Evans,"Kline, Kaiser and Garrett",CUST-10203,2025-03-16,2025-04-04,Negotiation,Proposal
+OPP-60463,SR-2072,Robin Atkinson,Europe,Australia,Darrell Guzman,Fernandez LLC,CUST-10631,2025-03-20,2025-08-24,Won,Negotiation
+OPP-60464,SR-2045,Melissa Ruiz,Asia-Pacific,UK,David Smith,Hernandez-Tucker,CUST-10558,2025-06-19,2025-06-12,Negotiation,Proposal
+OPP-60465,SR-2078,Trevor Leon,North America,Germany,Nathan Medina,"Bonilla, Mullins and Lewis",CUST-10938,2025-01-22,2025-06-23,Open,Qualification
+OPP-60466,SR-2020,Patricia White,Europe,UK,Brent Harper,Rodriguez Group,CUST-10911,2025-01-29,2025-06-10,Open,Proposal
+OPP-60467,SR-2090,Leslie Davis,Europe,Australia,James Allen,"Valdez, Pittman and Gordon",CUST-10115,2025-02-27,2025-03-27,On Hold,Proposal
+OPP-60468,SR-2088,Joanna Martin,Latin America,Australia,Rita Williams,"Robinson, Gamble and Palmer",CUST-10101,2025-02-07,2025-03-14,Lost,Prospecting
+OPP-60469,SR-2058,Jessica Sanders,Europe,USA,Melissa Bennett,Perez LLC,CUST-10498,2025-05-02,2025-07-15,Open,Proposal
+OPP-60470,SR-2077,Christopher Malone,Latin America,USA,Andrea Mills,Johnson Group,CUST-10990,2025-05-18,2025-02-21,Negotiation,Negotiation
+OPP-60471,SR-2064,Lindsay Morrow,Latin America,UK,Steven Mcguire,Thomas Group,CUST-10318,2025-01-17,2025-04-01,On Hold,Proposal
+OPP-60472,SR-2007,Alexander Nguyen,Asia-Pacific,USA,Kaitlyn Armstrong,Martin Inc,CUST-10194,2025-07-05,2025-07-16,On Hold,Closed Won
+OPP-60473,SR-2006,Melissa Frazier,Latin America,Australia,Melissa Perez,Fisher LLC,CUST-10551,2025-04-09,2025-06-03,Negotiation,Prospecting
+OPP-60474,SR-2032,Paul Meyer,North America,India,Patricia Medina,"Poole, Sutton and King",CUST-10666,2025-07-17,2025-05-04,Won,Qualification
+OPP-60475,SR-2080,Donald Norris,North America,Germany,Anthony Rogers,Perez PLC,CUST-10026,2025-05-26,2025-08-01,Open,Negotiation
+OPP-60476,SR-2022,Kelly Hays,Middle East,USA,Cassandra Reeves,Lee-Ashley,CUST-10074,2025-06-07,2025-01-08,Open,Prospecting
+OPP-60477,SR-2055,Daniel Myers,Latin America,Germany,Anthony Dawson,"Esparza, Peterson and Campbell",CUST-10808,2025-05-18,2025-07-07,On Hold,Prospecting
+OPP-60478,SR-2062,Travis Martin,Asia-Pacific,India,Jeremy Lloyd,Benson-Phillips,CUST-10848,2025-04-08,2025-04-12,Negotiation,Proposal
+OPP-60479,SR-2019,Daniel Montgomery,Middle East,Germany,Keith Kelly,"Cain, Davis and Pratt",CUST-10909,2025-03-02,2025-03-17,Lost,Prospecting
+OPP-60480,SR-2082,Leah Russell,North America,Brazil,Daniel Raymond,Bradley-Merritt,CUST-10280,2025-07-23,2025-07-06,Negotiation,Negotiation
+OPP-60481,SR-2065,Tanya Gardner,Middle East,UAE,Paul Brown,Robbins-Cole,CUST-10872,2025-05-16,2025-01-10,Open,Qualification
+OPP-60482,SR-2054,Jennifer Andrews,Latin America,Brazil,Karen Brown,Frank-Hodge,CUST-10383,2025-04-20,2025-02-05,Open,Prospecting
+OPP-60483,SR-2087,Erica Lin,Asia-Pacific,USA,Laura Frost,Cortez-Moore,CUST-10957,2025-02-24,2025-07-20,Open,Prospecting
+OPP-60484,SR-2093,Jenny Gillespie,Latin America,Australia,Lisa Ochoa,"Jones, Hardy and Harris",CUST-10850,2025-06-02,2025-08-25,Lost,Proposal
+OPP-60485,SR-2001,Rodney Richardson,Asia-Pacific,USA,Debra Chavez,Webster Ltd,CUST-10774,2025-06-07,2025-08-22,Open,Closed Won
+OPP-60486,SR-2030,Sara Green,Latin America,UK,Daniel Grimes,Dixon-Lewis,CUST-10083,2025-07-15,2025-03-30,Open,Qualification
+OPP-60487,SR-2061,Brandi Boyer,Latin America,Germany,Erin Burch,Cooper Group,CUST-10825,2025-03-01,2025-04-01,Won,Proposal
+OPP-60488,SR-2009,Matthew Yates,Latin America,India,Paula Suarez,Myers-Smith,CUST-10250,2025-07-08,2025-03-21,Open,Negotiation
+OPP-60489,SR-2069,Mrs. Denise Arroyo,Middle East,USA,Timothy Allen,Lopez-Duran,CUST-10782,2025-01-13,2025-01-20,Lost,Closed Won
+OPP-60490,SR-2057,Tamara Trujillo,Europe,UK,Veronica Mercado,Park PLC,CUST-10887,2025-08-28,2025-07-03,Negotiation,Negotiation
+OPP-60491,SR-2083,Derek Garcia,Asia-Pacific,UAE,Brian Pugh,"Robinson, Gamble and Palmer",CUST-10175,2025-07-21,2025-04-12,Won,Qualification
+OPP-60492,SR-2039,Debbie Johnson,Middle East,Germany,Amy Cox,Garcia Group,CUST-10623,2025-03-12,2025-06-11,Open,Prospecting
+OPP-60493,SR-2076,Sergio Smith,Asia-Pacific,Australia,Donna Leonard,Williams PLC,CUST-10494,2025-03-04,2025-02-26,Won,Closed Won
+OPP-60494,SR-2096,Michael Fitzgerald,Europe,Australia,Diamond Lee,Chan Ltd,CUST-10284,2025-06-24,2025-04-02,Open,Negotiation
+OPP-60495,SR-2092,Lorraine Kelly,Latin America,UAE,Michael Wilson,Wilkins-Moore,CUST-10514,2025-07-07,2025-08-31,Lost,Qualification
+OPP-60496,SR-2024,Nancy Lowe,North America,UAE,Jeffrey Jenkins,"Lopez, Bates and Phillips",CUST-10243,2025-03-11,2025-04-06,Won,Proposal
+OPP-60497,SR-2058,Taylor Gamble,Europe,USA,Jodi Jacobs,"Anderson, Herrera and Welch",CUST-10972,2025-06-22,2025-02-28,Lost,Negotiation
+OPP-60498,SR-2086,Emily Wood,Europe,Australia,Terry Rogers,Williamson Group,CUST-10014,2025-04-17,2025-07-25,Negotiation,Qualification
+OPP-60499,SR-2092,Kimberly Stewart,Latin America,Brazil,Joseph Rodriguez,"James, Macias and Schneider",CUST-10022,2025-05-24,2025-03-12,On Hold,Proposal
+OPP-60500,SR-2023,Beth Fox,Europe,UAE,Justin Acevedo,Dunn-Anderson,CUST-10087,2025-03-25,2025-05-26,On Hold,Closed Won
+OPP-60501,SR-2091,Pamela Peterson,Latin America,UAE,Kara Pope,Morales Ltd,CUST-10268,2025-01-01,2025-07-09,Lost,Prospecting
+OPP-60502,SR-2010,Walter Schmidt,Asia-Pacific,Brazil,Andrew Vega,"Morris, Tate and Woods",CUST-10405,2025-01-02,2025-02-21,Open,Negotiation
+OPP-60503,SR-2052,Karla Sherman,Latin America,UK,Andrew Riley,Miller-Perez,CUST-10586,2025-05-04,2025-03-03,Lost,Negotiation
+OPP-60504,SR-2008,Dr. Steven Blake,Europe,UAE,Frank Esparza,Anderson and Sons,CUST-10345,2025-01-23,2025-06-17,Negotiation,Qualification
+OPP-60505,SR-2021,Nicholas Lucas,North America,Brazil,Daniel Thomas,Harris-Reed,CUST-10103,2025-02-28,2025-05-29,On Hold,Prospecting
+OPP-60506,SR-2021,Destiny Morris,Europe,USA,Kyle Thomas,Barker-Fuentes,CUST-10303,2025-03-18,2025-08-15,Won,Proposal
+OPP-60507,SR-2066,Miranda Johnson,Middle East,India,Daniel Medina,Jackson-Harmon,CUST-10150,2025-05-13,2025-05-12,Negotiation,Qualification
+OPP-60508,SR-2060,Jeffrey Flores,Asia-Pacific,Brazil,Sarah Johnson,"Morris, Curtis and Turner",CUST-10395,2025-08-25,2025-01-02,Negotiation,Qualification
+OPP-60509,SR-2083,Kathleen Bailey,Asia-Pacific,UK,Timothy Dudley,Douglas Ltd,CUST-10359,2025-06-20,2025-02-28,Negotiation,Closed Won
+OPP-60510,SR-2074,Travis Lee,North America,Germany,Preston Esparza,"Aguirre, Schroeder and King",CUST-10183,2025-04-29,2025-06-30,On Hold,Proposal
+OPP-60511,SR-2001,Adrienne Wilson,North America,USA,Angela Fields,"Mccann, Becker and Franklin",CUST-10959,2025-02-08,2025-08-05,On Hold,Closed Won
+OPP-60512,SR-2031,Nicolas Lucas,Latin America,UAE,Heather Morrison,Case and Sons,CUST-10315,2025-06-07,2025-03-04,On Hold,Qualification
+OPP-60513,SR-2005,Jonathan Spencer,Asia-Pacific,Australia,Sara Wood,Wilson-Long,CUST-10358,2025-08-29,2025-06-11,Won,Qualification
+OPP-60514,SR-2001,Donna Anderson,Europe,UK,Ryan Krause,"Riley, Pena and Wells",CUST-10371,2025-02-23,2025-02-06,Negotiation,Closed Won
+OPP-60515,SR-2049,Haley Thompson,Latin America,USA,Richard Washington,"Campbell, Brown and Odonnell",CUST-10397,2025-01-23,2025-07-02,Negotiation,Proposal
+OPP-60516,SR-2039,Allen Martin,Asia-Pacific,Australia,John Henderson,Parker PLC,CUST-10447,2025-03-12,2025-06-29,Open,Negotiation
+OPP-60517,SR-2065,Veronica Rodriguez,Middle East,UK,Joseph Bowman,Cole PLC,CUST-10452,2025-06-30,2025-01-21,Won,Closed Won
+OPP-60518,SR-2018,Lauren Maldonado,Europe,Brazil,Kyle Johnson,"Spencer, Wiley and Martin",CUST-10294,2025-03-11,2025-07-08,Negotiation,Proposal
+OPP-60519,SR-2011,Noah Cobb,Middle East,Australia,Michael Bailey,"Patel, Roberts and Hall",CUST-10181,2025-02-22,2025-07-13,Lost,Proposal
+OPP-60520,SR-2019,Karen Cook,Europe,UK,Kathryn Cruz,Baird-Krause,CUST-10309,2025-03-05,2025-02-04,On Hold,Closed Won
+OPP-60521,SR-2070,Amber Henry,North America,Germany,Mr. James Pace,"Blair, Carey and Henderson",CUST-10609,2025-05-30,2025-05-18,Open,Qualification
+OPP-60522,SR-2053,Carlos Kim,Asia-Pacific,Germany,Pamela Butler,"Waters, Dickson and Cox",CUST-10471,2025-01-16,2025-06-12,Open,Prospecting
+OPP-60523,SR-2045,Brenda Cunningham,Latin America,USA,Shane Holloway,Rodriguez-Mcdonald,CUST-10742,2025-02-04,2025-07-19,Negotiation,Qualification
+OPP-60524,SR-2090,Matthew Rowland,Europe,Brazil,Carol Whitehead,Coffey Group,CUST-10964,2025-04-15,2025-07-24,Open,Qualification
+OPP-60525,SR-2059,Tamara Morse,Asia-Pacific,Germany,Shannon Reed,Hinton-Dixon,CUST-10203,2025-02-23,2025-07-26,Negotiation,Proposal
+OPP-60526,SR-2021,Cheryl Hudson,Middle East,India,Robin Walker,Camacho Inc,CUST-10024,2025-06-30,2025-07-06,Won,Prospecting
+OPP-60527,SR-2047,Julie Peterson,Middle East,Australia,Jamie Price,Brooks PLC,CUST-10681,2025-05-23,2025-03-27,Open,Prospecting
+OPP-60528,SR-2092,Matthew Anderson,Europe,Australia,Michael Freeman,"Parks, Clark and Schultz",CUST-10468,2025-05-07,2025-06-29,On Hold,Qualification
+OPP-60529,SR-2048,Amanda Johnson,Middle East,India,Sharon Howard,Evans Ltd,CUST-10701,2025-05-14,2025-07-03,Open,Qualification
+OPP-60530,SR-2046,Crystal Wilson,North America,Australia,Jessica Nash,Snyder Ltd,CUST-10269,2025-03-17,2025-08-20,Lost,Proposal
+OPP-60531,SR-2068,Patrick Campbell,Asia-Pacific,Australia,Bonnie Cohen,Galloway-Crawford,CUST-10824,2025-04-02,2025-06-02,Open,Qualification
+OPP-60532,SR-2044,Tina Evans,Middle East,Brazil,Jennifer Smith,Heath-Hurst,CUST-10380,2025-04-01,2025-05-23,Negotiation,Negotiation
+OPP-60533,SR-2053,Victoria King,North America,Brazil,William Peck,Bartlett PLC,CUST-10885,2025-02-08,2025-08-31,Won,Proposal
+OPP-60534,SR-2092,Eric Young,Latin America,USA,Mr. Michael Ramsey MD,"Colon, Moore and Lindsey",CUST-10608,2025-07-13,2025-02-13,Won,Qualification
+OPP-60535,SR-2098,Robert Hodges,North America,India,Christopher Walker,Anderson-Lowe,CUST-10961,2025-04-11,2025-01-29,Negotiation,Prospecting
+OPP-60536,SR-2050,Brent Flores,Middle East,USA,Daniel Mueller,"Miller, Chapman and Dickerson",CUST-10494,2025-05-13,2025-04-27,Lost,Proposal
+OPP-60537,SR-2037,Brandon Bowman,Asia-Pacific,UK,Steven Castillo,Smith and Sons,CUST-10544,2025-08-31,2025-06-11,Negotiation,Proposal
+OPP-60538,SR-2048,William Schmitt,Middle East,Germany,Keith Lawrence,Griffith LLC,CUST-10619,2025-04-28,2025-05-17,Lost,Qualification
+OPP-60539,SR-2045,Scott Dawson,Latin America,India,Valerie Santiago,"Gonzalez, Matthews and Hunter",CUST-10609,2025-03-10,2025-04-16,Lost,Qualification
+OPP-60540,SR-2061,Janet Wilson,Asia-Pacific,Germany,Steven Mason,Alvarez Inc,CUST-10554,2025-06-28,2025-04-12,Negotiation,Qualification
+OPP-60541,SR-2040,Diana Higgins,Middle East,USA,Danielle Meyer MD,Harris-Harris,CUST-10652,2025-02-21,2025-06-03,Lost,Negotiation
+OPP-60542,SR-2038,Cody Watkins,Middle East,UAE,Jordan Newman,Rivera-Barnes,CUST-10334,2025-07-26,2025-04-12,On Hold,Negotiation
+OPP-60543,SR-2007,Ronnie Walker,Asia-Pacific,Brazil,Kaylee Owens,Case and Sons,CUST-10259,2025-07-11,2025-02-20,On Hold,Negotiation
+OPP-60544,SR-2079,Daisy Hayes,Latin America,Australia,Kimberly Merritt,"Hardy, Sanchez and Manning",CUST-10366,2025-02-28,2025-01-03,Lost,Prospecting
+OPP-60545,SR-2053,Ashley Vance,Asia-Pacific,USA,Larry Holt,Riley-Berry,CUST-10308,2025-05-05,2025-03-13,Won,Negotiation
+OPP-60546,SR-2049,Robert Ward,North America,Germany,Timothy Patel,Pennington Inc,CUST-10260,2025-07-24,2025-03-09,Won,Proposal
+OPP-60547,SR-2070,Destiny Travis,Asia-Pacific,India,Richard Watson,"Bartlett, Ross and Reynolds",CUST-10304,2025-01-23,2025-01-22,Lost,Qualification
+OPP-60548,SR-2092,Patricia Rich,Middle East,USA,Robert Bush,Huff-Smith,CUST-10673,2025-05-11,2025-04-12,Open,Proposal
+OPP-60549,SR-2089,Calvin Waters,Middle East,USA,Mallory Macdonald,Morgan-Navarro,CUST-10646,2025-02-09,2025-03-12,Won,Qualification
+OPP-60550,SR-2039,Hunter Gilbert,Middle East,India,Jonathan Martin,"Robinson, Gamble and Palmer",CUST-10504,2025-04-03,2025-07-07,Open,Prospecting
+OPP-60551,SR-2093,Jordan Young,Middle East,India,Jonathan Spencer,Baker LLC,CUST-10342,2025-04-11,2025-04-01,Lost,Proposal
+OPP-60552,SR-2099,Steven Terry,North America,Germany,Russell Roman,Chambers-Arnold,CUST-10451,2025-01-24,2025-02-23,Won,Prospecting
+OPP-60553,SR-2023,Shane Hoffman,Middle East,USA,Abigail Brown,"Ross, Doyle and Burton",CUST-10659,2025-08-26,2025-08-27,Won,Negotiation
+OPP-60554,SR-2008,Shannon Phillips,Latin America,India,Brittany Bird,Anderson-Gonzales,CUST-10520,2025-07-01,2025-06-04,Won,Prospecting
+OPP-60555,SR-2053,Ryan Morgan,North America,Brazil,Aaron Wood,Smith-Morton,CUST-10323,2025-07-13,2025-05-10,Negotiation,Negotiation
+OPP-60556,SR-2035,Amanda Smith,Asia-Pacific,UAE,John Bean,Cole PLC,CUST-10878,2025-07-07,2025-02-08,On Hold,Negotiation
+OPP-60557,SR-2078,Aaron Hill,North America,UAE,Kristen Henderson,Williams-Cisneros,CUST-10279,2025-06-18,2025-05-03,On Hold,Qualification
+OPP-60558,SR-2073,Cindy Mora,Middle East,UAE,Kimberly Boone,Walker and Sons,CUST-10471,2025-01-26,2025-07-19,On Hold,Qualification
+OPP-60559,SR-2048,Jason Stephens,Asia-Pacific,India,Sharon Wilson,Dixon-Lewis,CUST-10419,2025-07-26,2025-01-13,Open,Qualification
+OPP-60560,SR-2088,Mrs. Jamie Perez DVM,Middle East,Brazil,Caitlin Harrington,Carr-Alvarado,CUST-10810,2025-07-29,2025-02-15,Open,Qualification
+OPP-60561,SR-2030,Anna Jones,Latin America,Germany,Whitney Lopez,Johnson-Fitzgerald,CUST-10228,2025-08-19,2025-05-07,Negotiation,Negotiation
+OPP-60562,SR-2006,Julie Perry,North America,India,Cassandra Crane,"Shepherd, Martinez and Hernandez",CUST-10181,2025-01-11,2025-02-08,Open,Qualification
+OPP-60563,SR-2081,Sean Ramos,North America,UK,Dr. Joshua Hunt,Reynolds-Woods,CUST-10141,2025-08-20,2025-05-26,Negotiation,Qualification
+OPP-60564,SR-2032,Monica Reyes,Europe,UAE,Daniel Sherman,Nguyen PLC,CUST-10408,2025-01-16,2025-05-19,Lost,Closed Won
+OPP-60565,SR-2075,Jamie Mcguire,North America,India,Melissa Small,Monroe Ltd,CUST-10809,2025-01-07,2025-08-26,Negotiation,Negotiation
+OPP-60566,SR-2015,Christina Cook,Asia-Pacific,Australia,Brenda Bruce,Johnson and Sons,CUST-10038,2025-05-19,2025-05-18,Negotiation,Qualification
+OPP-60567,SR-2046,Erin Patterson,Latin America,UAE,Laura Merritt,Moore Group,CUST-10731,2025-08-21,2025-07-13,Negotiation,Proposal
+OPP-60568,SR-2008,Michele Rose,North America,Brazil,Connie Gonzalez,"Conner, Stone and Lynch",CUST-10992,2025-07-24,2025-06-08,Negotiation,Prospecting
+OPP-60569,SR-2043,Kathleen Vasquez,Latin America,UK,Joseph Freeman,Andrade-Moore,CUST-10321,2025-04-10,2025-04-19,Negotiation,Qualification
+OPP-60570,SR-2004,Kristen Adams,Latin America,Australia,Thomas Williams,Murray and Sons,CUST-10456,2025-05-20,2025-05-19,Lost,Qualification
+OPP-60571,SR-2096,Kimberly Soto,Europe,Brazil,Michael Ford,Adkins PLC,CUST-10376,2025-06-16,2025-07-29,Lost,Negotiation
+OPP-60572,SR-2084,Mark Lopez,Latin America,Australia,Kelsey Newton,Clements-Maynard,CUST-10645,2025-02-11,2025-03-22,Negotiation,Closed Won
+OPP-60573,SR-2004,Jean Griffin,North America,Germany,Jennifer Thompson,"Gonzales, Allen and Carpenter",CUST-10777,2025-08-08,2025-03-25,Won,Negotiation
+OPP-60574,SR-2042,Jeremy Lee,Latin America,Germany,Christopher Michael,French Group,CUST-10946,2025-04-21,2025-04-22,Negotiation,Qualification
+OPP-60575,SR-2057,Mary Black,North America,USA,Nicole Valentine,Smith-Morton,CUST-10622,2025-08-21,2025-05-11,On Hold,Prospecting
+OPP-60576,SR-2003,Bryan Mcintosh,Middle East,UK,Elizabeth Knight,"Reid, Hamilton and Evans",CUST-10346,2025-08-26,2025-07-24,On Hold,Negotiation
+OPP-60577,SR-2094,Jose Walls,North America,UAE,Alison Berry,Gomez-Wallace,CUST-10116,2025-03-16,2025-06-28,Open,Qualification
+OPP-60578,SR-2087,Zachary Castillo,Europe,UAE,Tristan Evans,"Gallagher, Daniel and Valenzuela",CUST-10328,2025-01-04,2025-02-07,On Hold,Qualification
+OPP-60579,SR-2018,Robert Mata,Europe,Australia,Matthew Solis,Lozano-Smith,CUST-10395,2025-02-08,2025-05-06,On Hold,Prospecting
+OPP-60580,SR-2051,Deborah Rogers,Latin America,India,Brian Thompson,Fernandez LLC,CUST-10085,2025-02-27,2025-06-30,Lost,Closed Won
+OPP-60581,SR-2012,Brian Gonzales,Middle East,USA,Matthew Black,"Herrera, Morton and Bell",CUST-10665,2025-05-31,2025-01-02,Lost,Closed Won
+OPP-60582,SR-2058,Matthew Mills,North America,USA,Andrea Kelly,Hernandez-Tucker,CUST-10539,2025-07-07,2025-01-30,Won,Qualification
+OPP-60583,SR-2085,Wendy Burnett,Asia-Pacific,UK,Debra Hayes,"Baker, Ross and Singh",CUST-10838,2025-01-03,2025-04-01,Lost,Closed Won
+OPP-60584,SR-2005,Angelica Gallegos,Middle East,UK,Suzanne Davis,Anderson and Sons,CUST-10712,2025-05-05,2025-06-30,On Hold,Negotiation
+OPP-60585,SR-2034,Alan Hunt,North America,USA,Morgan Ramirez,Green LLC,CUST-10016,2025-05-02,2025-02-07,Negotiation,Closed Won
+OPP-60586,SR-2073,Pamela Smith,Asia-Pacific,Germany,Cory Eaton,"Hess, Moreno and Miller",CUST-10445,2025-01-23,2025-01-10,Negotiation,Prospecting
+OPP-60587,SR-2083,Katherine Garcia,North America,Australia,Emma Andrade,Gonzalez Group,CUST-10036,2025-03-18,2025-06-28,Lost,Closed Won
+OPP-60588,SR-2049,Ian Franco,Middle East,UAE,Kaitlyn Price,"Campbell, Clark and Reese",CUST-10080,2025-05-26,2025-04-04,Negotiation,Proposal
+OPP-60589,SR-2056,Christopher Mason,Asia-Pacific,Germany,Daniel Eaton MD,Weaver PLC,CUST-10820,2025-08-28,2025-06-24,Won,Prospecting
+OPP-60590,SR-2065,Jordan Bush,Europe,UK,Terri Carpenter,Chaney-Lozano,CUST-10401,2025-02-08,2025-08-05,Lost,Prospecting
+OPP-60591,SR-2058,Christopher Massey,Asia-Pacific,UK,Samantha Cole,"Hampton, Mcclain and Arroyo",CUST-10485,2025-05-22,2025-02-02,On Hold,Proposal
+OPP-60592,SR-2008,Marie Reynolds,Middle East,UAE,Lauren Gonzalez,Harris-Walsh,CUST-10376,2025-06-26,2025-01-19,Lost,Closed Won
+OPP-60593,SR-2049,Tyler Garcia,Middle East,USA,Jill Allen,Garrett-Harrell,CUST-10952,2025-04-06,2025-05-15,Won,Proposal
+OPP-60594,SR-2006,Kristy Gonzalez,Europe,Australia,Edward Diaz,"Anderson, Herrera and Welch",CUST-10009,2025-04-26,2025-03-11,Lost,Prospecting
+OPP-60595,SR-2054,Frank Clayton,Latin America,Australia,Lori Perez,Watkins-Freeman,CUST-10988,2025-02-02,2025-01-12,On Hold,Negotiation
+OPP-60596,SR-2042,Allison Lowery,North America,Brazil,Melissa Hill,Johnson PLC,CUST-10324,2025-07-31,2025-07-02,On Hold,Qualification
+OPP-60597,SR-2099,Robin Collins,Middle East,Brazil,Jay Jacobs,Rodriguez Group,CUST-10572,2025-07-26,2025-08-31,On Hold,Prospecting
+OPP-60598,SR-2003,Catherine Alexander,Middle East,Germany,Sarah Berger,Foster-Blair,CUST-10994,2025-04-08,2025-05-16,On Hold,Prospecting
+OPP-60599,SR-2057,Caleb Cooper,Europe,Brazil,Jeffery Hardin,Kennedy-Campbell,CUST-10438,2025-07-15,2025-08-25,Lost,Qualification
+OPP-60600,SR-2007,Rebecca Brown,Europe,USA,Amanda Davis,Jones-Rios,CUST-10027,2025-03-18,2025-02-23,Won,Negotiation
+OPP-60601,SR-2071,Andrea Lang,Asia-Pacific,India,Nathaniel Johnson,"Lopez, Snyder and Kaufman",CUST-10478,2025-03-22,2025-06-01,Negotiation,Proposal
+OPP-60602,SR-2016,Taylor Barrett,Latin America,Australia,Sara Coleman,Diaz-Atkinson,CUST-10276,2025-04-21,2025-03-02,Negotiation,Proposal
+OPP-60603,SR-2007,Katie Kirk,Latin America,UK,Bradley Kelley,Hinton-Dixon,CUST-10660,2025-08-27,2025-06-01,Open,Negotiation
+OPP-60604,SR-2023,Sarah Parsons,Asia-Pacific,Germany,Kimberly Cox,Smith and Sons,CUST-10323,2025-05-04,2025-03-03,Lost,Prospecting
+OPP-60605,SR-2097,Matthew Walker,Latin America,Brazil,Christine Gomez,"Evans, Williams and Simpson",CUST-10407,2025-06-12,2025-02-21,Open,Proposal
+OPP-60606,SR-2057,Heather Thornton,Middle East,USA,Jacob Ortiz,"Thomas, Smith and Cook",CUST-10636,2025-02-21,2025-08-02,Open,Qualification
+OPP-60607,SR-2050,Shannon Brown,Asia-Pacific,USA,Anthony Peters,"Meyers, King and Munoz",CUST-10604,2025-03-15,2025-07-12,Lost,Closed Won
+OPP-60608,SR-2058,Julie Frazier,Europe,Brazil,Larry Larsen,Bryant-Wang,CUST-10235,2025-02-17,2025-01-06,Lost,Closed Won
+OPP-60609,SR-2026,Jose Bush,Asia-Pacific,Brazil,Michael Brown,"Hess, Moreno and Miller",CUST-10452,2025-05-13,2025-04-18,On Hold,Prospecting
+OPP-60610,SR-2073,Ian Heath,North America,India,Rachel Jones MD,Carter and Sons,CUST-10268,2025-06-18,2025-03-15,On Hold,Prospecting
+OPP-60611,SR-2079,Christopher James,North America,UK,Stephen Miller,Taylor-White,CUST-10107,2025-07-31,2025-07-24,Negotiation,Negotiation
+OPP-60612,SR-2020,Zachary Thompson,Latin America,USA,Rebecca Chavez,Houston-Barnes,CUST-10823,2025-05-23,2025-04-15,Open,Negotiation
+OPP-60613,SR-2092,Trevor Jones,Latin America,UK,Travis Morgan,Deleon Group,CUST-10679,2025-05-13,2025-04-12,Negotiation,Prospecting
+OPP-60614,SR-2012,Sylvia Norman,Asia-Pacific,India,Vanessa Reyes MD,Smith-Morton,CUST-10915,2025-06-02,2025-01-24,Won,Proposal
+OPP-60615,SR-2054,Christy Payne,Latin America,UAE,Ashley George,"Simpson, Elliott and Wolfe",CUST-10471,2025-01-20,2025-06-11,Negotiation,Prospecting
+OPP-60616,SR-2083,Emma Harris,Asia-Pacific,UK,Mark Moss,"Mcclain, Roberts and Wright",CUST-10162,2025-06-01,2025-02-15,Won,Negotiation
+OPP-60617,SR-2018,Casey Cervantes,Asia-Pacific,UK,Suzanne Johnson,Chang-Chen,CUST-10820,2025-07-31,2025-06-29,Lost,Negotiation
+OPP-60618,SR-2078,Thomas Ramirez,Middle East,Brazil,James Potts,Morris PLC,CUST-10511,2025-01-30,2025-02-06,Open,Proposal
+OPP-60619,SR-2031,Brandon Pitts,Europe,Australia,Jonathan White,"Pruitt, Jones and Michael",CUST-10574,2025-03-08,2025-01-21,Open,Negotiation
+OPP-60620,SR-2054,John Lewis,Middle East,UK,Carlos Ruiz,"Moore, Hansen and Lewis",CUST-10432,2025-05-25,2025-05-06,On Hold,Closed Won
+OPP-60621,SR-2023,Lori Evans,North America,Australia,Hannah Aguilar,"Miranda, Martin and Erickson",CUST-10240,2025-06-03,2025-04-19,Lost,Closed Won
+OPP-60622,SR-2053,Joyce Rodriguez,Latin America,UK,Jeffrey Brown,"Jones, Holloway and Chan",CUST-10768,2025-03-20,2025-02-23,Won,Proposal
+OPP-60623,SR-2095,Nicole Watts,Asia-Pacific,UK,Pamela Galvan,"Hughes, Fitzgerald and Scott",CUST-10244,2025-08-13,2025-03-03,Negotiation,Proposal
+OPP-60624,SR-2023,Brittany Ramsey,Europe,Australia,Matthew Jackson,Long-Johnson,CUST-10048,2025-03-06,2025-05-28,Lost,Proposal
+OPP-60625,SR-2071,Zachary Martinez,Middle East,UK,Erin Davis,Arroyo PLC,CUST-10702,2025-06-20,2025-07-27,Open,Prospecting
+OPP-60626,SR-2091,Linda Chung,Europe,Brazil,Thomas Yang,Edwards-Jordan,CUST-10356,2025-08-29,2025-04-28,Lost,Negotiation
+OPP-60627,SR-2025,Richard Collier,Europe,USA,Joe Foster,Mason-Curry,CUST-10070,2025-01-04,2025-04-05,Open,Proposal
+OPP-60628,SR-2033,Krista Guerra,Latin America,India,Ronald Reed,Gutierrez LLC,CUST-10573,2025-05-30,2025-02-21,Won,Prospecting
+OPP-60629,SR-2099,Jeremy Osborne,North America,India,Brian Fox,Peters-Garrett,CUST-10693,2025-06-08,2025-08-24,On Hold,Prospecting
+OPP-60630,SR-2012,Laura Brown,Latin America,UK,Jessica Castillo,"Cooper, Swanson and Pierce",CUST-10553,2025-05-22,2025-02-08,Negotiation,Closed Won
+OPP-60631,SR-2083,Robert Cooley,Asia-Pacific,UAE,Ryan Larsen,"Sanchez, Price and Johnston",CUST-10836,2025-08-30,2025-01-30,Lost,Prospecting
+OPP-60632,SR-2003,Mariah Morales,North America,Brazil,Jon Crane,Clark Group,CUST-10900,2025-02-01,2025-01-03,Negotiation,Prospecting
+OPP-60633,SR-2039,Lori Alexander,Europe,India,Joshua Moore,"Baldwin, Smith and Miller",CUST-10642,2025-04-28,2025-02-26,Open,Negotiation
+OPP-60634,SR-2060,Cassandra Gibson,Latin America,Germany,Jordan Cruz,Greene Group,CUST-10527,2025-02-27,2025-04-06,Won,Prospecting
+OPP-60635,SR-2032,Michelle York,Latin America,UK,Robert Abbott,"Gardner, Romero and Kemp",CUST-10008,2025-02-10,2025-04-13,Negotiation,Proposal
+OPP-60636,SR-2006,James Ali,North America,Australia,James Smith,"Richardson, Smith and Rodriguez",CUST-10865,2025-01-19,2025-06-01,Negotiation,Prospecting
+OPP-60637,SR-2096,Glenda Cervantes,Middle East,UAE,Joel Green,"Leblanc, Thompson and Sullivan",CUST-10648,2025-06-16,2025-04-01,Lost,Proposal
+OPP-60638,SR-2077,Laurie Patton,Middle East,Australia,Jordan Summers,Cline-Cook,CUST-10135,2025-06-07,2025-02-25,On Hold,Qualification
+OPP-60639,SR-2001,Stephen Wells,Middle East,UK,Chris Mason,Bowman-Sanders,CUST-10523,2025-04-26,2025-03-13,Open,Closed Won
+OPP-60640,SR-2036,Douglas Flores,Middle East,Australia,Brent Davis,Anderson-Moss,CUST-10367,2025-03-10,2025-08-23,Lost,Negotiation
+OPP-60641,SR-2069,Manuel Griffith,Europe,India,Eric Rivera,Kelly PLC,CUST-10265,2025-02-24,2025-04-11,On Hold,Prospecting
+OPP-60642,SR-2047,Melanie Richard,Latin America,USA,Julia Yang,"Clark, Lozano and Jimenez",CUST-10145,2025-02-28,2025-01-29,On Hold,Proposal
+OPP-60643,SR-2008,Joseph Edwards,Latin America,Germany,Karen Day,Griffith LLC,CUST-10268,2025-07-10,2025-01-26,On Hold,Qualification
+OPP-60644,SR-2011,David Harvey,North America,India,Robin Phelps,Ibarra-Adams,CUST-10754,2025-06-05,2025-03-20,Negotiation,Prospecting
+OPP-60645,SR-2051,James Thompson,Latin America,USA,Dennis Hobbs,Mcmahon-Smith,CUST-10682,2025-04-08,2025-04-26,On Hold,Closed Won
+OPP-60646,SR-2019,Michael Alvarez,Latin America,Australia,Katherine Ford,Johnson PLC,CUST-10853,2025-06-09,2025-04-18,Negotiation,Prospecting
+OPP-60647,SR-2089,James Watson,Asia-Pacific,Brazil,Regina George,"Kelly, Yu and Juarez",CUST-10515,2025-06-16,2025-02-25,Open,Qualification
+OPP-60648,SR-2062,Rachel Williams,Asia-Pacific,UAE,Wayne Marsh,Choi Ltd,CUST-10136,2025-02-21,2025-06-22,Negotiation,Prospecting
+OPP-60649,SR-2041,Casey Wells,Asia-Pacific,Germany,Matthew Burton,Waters Group,CUST-10793,2025-08-22,2025-07-25,Won,Qualification
+OPP-60650,SR-2052,Miss Carol Harrison,Middle East,USA,Robert Kirk,Haas-Morgan,CUST-10418,2025-06-15,2025-01-21,Won,Prospecting
+OPP-60651,SR-2065,Alison Jones,Latin America,Germany,Kristen Martin,Haas-Morgan,CUST-10067,2025-05-03,2025-07-25,Lost,Proposal
+OPP-60652,SR-2005,Randy Curry,Latin America,India,Courtney Rivera,"Nichols, Chapman and Smith",CUST-10978,2025-05-18,2025-05-11,Won,Closed Won
+OPP-60653,SR-2022,Katrina Craig,Latin America,UAE,Shelly Allen,Suarez LLC,CUST-10772,2025-06-15,2025-08-22,On Hold,Closed Won
+OPP-60654,SR-2084,Richard Charles,Latin America,India,Dr. Melissa Fritz MD,Flowers-Vasquez,CUST-10983,2025-05-07,2025-03-07,On Hold,Qualification
+OPP-60655,SR-2085,Leah Smith,Asia-Pacific,Brazil,Nicholas Carr,Pierce Inc,CUST-10189,2025-05-23,2025-08-14,On Hold,Qualification
+OPP-60656,SR-2036,David Simmons,Latin America,India,Michele Grimes,Reid-Bowman,CUST-10666,2025-07-31,2025-04-15,Negotiation,Negotiation
+OPP-60657,SR-2050,Veronica Willis,Europe,Brazil,Patrick Gould,Martin Inc,CUST-10875,2025-02-27,2025-03-22,On Hold,Closed Won
+OPP-60658,SR-2007,Phillip Davis,North America,UAE,Jose Branch,Lee-Ashley,CUST-10193,2025-04-07,2025-07-03,Lost,Qualification
+OPP-60659,SR-2060,Jerry Petty,Europe,Germany,Mr. Brandon Adams DDS,Cooke-Mccarty,CUST-10959,2025-02-17,2025-07-25,Won,Qualification
+OPP-60660,SR-2074,Deborah Hill,North America,UAE,Larry Washington,Phillips Group,CUST-10678,2025-08-09,2025-06-25,Negotiation,Negotiation
+OPP-60661,SR-2028,Thomas Owens,Europe,USA,Christopher Ortiz,"Esparza, Peterson and Campbell",CUST-10386,2025-05-26,2025-01-05,Won,Prospecting
+OPP-60662,SR-2018,Jonathan Harrison,North America,USA,Annette Tucker,Chung-Harrington,CUST-10613,2025-06-08,2025-01-02,Won,Proposal
+OPP-60663,SR-2059,Caitlin Roberts,Europe,Brazil,David Walker,Dominguez-Farrell,CUST-10456,2025-08-01,2025-08-05,Won,Negotiation
+OPP-60664,SR-2028,Mr. Philip Lewis,North America,Australia,Doris Miller,Williams-Cisneros,CUST-10103,2025-05-02,2025-04-11,Lost,Closed Won
+OPP-60665,SR-2002,Zachary Arnold,North America,UK,Laurie Guzman,Norman Inc,CUST-10137,2025-07-22,2025-07-07,Negotiation,Proposal
+OPP-60666,SR-2005,Juan Wyatt,North America,Brazil,Ashley Taylor,"Carter, Hughes and Brooks",CUST-10359,2025-02-25,2025-01-19,Negotiation,Proposal
+OPP-60667,SR-2088,Evelyn Taylor,Europe,Germany,Pamela Morgan,Taylor Inc,CUST-10881,2025-03-03,2025-02-12,Won,Negotiation
+OPP-60668,SR-2062,George Hutchinson,North America,Germany,Randy Day,Johnson and Sons,CUST-10552,2025-01-04,2025-02-23,Open,Closed Won
+OPP-60669,SR-2007,Heather Evans,Middle East,Germany,Jennifer Lee,"Kim, Buckley and Espinoza",CUST-10452,2025-04-28,2025-04-16,Open,Qualification
+OPP-60670,SR-2064,Katie Garcia,Europe,Brazil,Jenny Norris,"Hobbs, Carlson and Hughes",CUST-10918,2025-01-28,2025-01-05,Won,Qualification
+OPP-60671,SR-2007,Cameron Thomas,Asia-Pacific,Brazil,Sarah Miller,Smith Inc,CUST-10256,2025-01-25,2025-02-27,Lost,Prospecting
+OPP-60672,SR-2008,Jennifer Page,Europe,Australia,William Keith,Molina Ltd,CUST-10421,2025-04-23,2025-02-26,Open,Prospecting
+OPP-60673,SR-2083,Sean Hayes,Latin America,USA,Melissa Davidson,Myers-Smith,CUST-10340,2025-08-29,2025-05-05,On Hold,Proposal
+OPP-60674,SR-2027,Brian Gonzalez,North America,Brazil,Debra Bush,Price and Sons,CUST-10199,2025-06-27,2025-06-09,On Hold,Negotiation
+OPP-60675,SR-2023,Cynthia Foley,Middle East,UK,Rebecca Reed,Reynolds-Woods,CUST-10600,2025-03-11,2025-05-20,Open,Prospecting
+OPP-60676,SR-2060,Michael Powell,North America,Brazil,Russell Martinez,Watkins LLC,CUST-10576,2025-08-07,2025-05-25,Open,Qualification
+OPP-60677,SR-2006,Amy Brown,North America,UAE,Nathan Fowler,"Jackson, Krueger and Lee",CUST-10431,2025-06-04,2025-05-09,On Hold,Negotiation
+OPP-60678,SR-2004,David Ramirez,Latin America,Germany,Cynthia Wheeler,Arroyo PLC,CUST-10587,2025-03-20,2025-05-22,Open,Prospecting
+OPP-60679,SR-2094,Christopher Vega,North America,Brazil,Tyler Hansen,Cunningham PLC,CUST-10191,2025-02-07,2025-07-07,Lost,Qualification
+OPP-60680,SR-2093,Sara Parker,Asia-Pacific,UK,Cynthia Jackson,Dorsey-Edwards,CUST-10442,2025-07-28,2025-08-29,Negotiation,Prospecting
+OPP-60681,SR-2064,Jacob Robinson,Asia-Pacific,Germany,Robert Burnett,Williams-Wolf,CUST-10560,2025-08-02,2025-01-08,Negotiation,Prospecting
+OPP-60682,SR-2077,Harold Lam,North America,India,Caleb Kaiser,Douglas PLC,CUST-10641,2025-08-26,2025-01-08,Open,Qualification
+OPP-60683,SR-2008,Carol Bowen,North America,UAE,Jessica Garcia,"Erickson, Jones and Reyes",CUST-10168,2025-01-02,2025-06-18,On Hold,Prospecting
+OPP-60684,SR-2045,April Garrett,Latin America,India,Mrs. Brittany Cowan,Scott LLC,CUST-10238,2025-08-19,2025-03-21,Won,Proposal
+OPP-60685,SR-2051,Anita Davis,Middle East,Germany,Dr. Lori Moore MD,Anderson Ltd,CUST-10828,2025-05-20,2025-08-22,Won,Proposal
+OPP-60686,SR-2057,Jonathan Carr,Europe,Australia,Richard Carroll,Hamilton LLC,CUST-10955,2025-01-06,2025-01-30,Negotiation,Negotiation
+OPP-60687,SR-2036,Craig Young,North America,Brazil,Laura Aguirre,"James, Macias and Schneider",CUST-10374,2025-05-20,2025-08-07,Open,Qualification
+OPP-60688,SR-2065,Tamara Cruz,Latin America,India,Susan Collier,"Howard, Morris and Patterson",CUST-10758,2025-08-12,2025-05-31,Negotiation,Closed Won
+OPP-60689,SR-2069,Lisa Love,Middle East,Brazil,Connor Kim,Solis Inc,CUST-10113,2025-07-08,2025-02-24,Negotiation,Qualification
+OPP-60690,SR-2050,Jason Gardner,North America,Australia,Brenda Quinn,Myers LLC,CUST-10901,2025-04-22,2025-02-06,Negotiation,Qualification
+OPP-60691,SR-2067,Richard Potter,Asia-Pacific,Brazil,David Ponce,James Group,CUST-10897,2025-01-13,2025-04-21,Lost,Proposal
+OPP-60692,SR-2058,Brent Hunter,Europe,USA,Vicki Hughes,"Duncan, Powers and Thompson",CUST-10543,2025-05-27,2025-07-05,Won,Proposal
+OPP-60693,SR-2049,Derek Hahn,North America,UAE,Kenneth Hood,Castro LLC,CUST-10380,2025-02-01,2025-02-21,Negotiation,Qualification
+OPP-60694,SR-2083,Marissa Garza,Latin America,Brazil,Spencer Potter,"Erickson, Jones and Reyes",CUST-10014,2025-04-23,2025-01-15,Lost,Proposal
+OPP-60695,SR-2095,Billy Webb,Middle East,UK,Tiffany Ferguson PhD,Poole-Kelley,CUST-10007,2025-06-06,2025-01-29,Open,Negotiation
+OPP-60696,SR-2098,Paul Brown,Europe,Germany,George Donovan,Bryant Inc,CUST-10449,2025-06-19,2025-07-31,Lost,Closed Won
+OPP-60697,SR-2090,Christopher Johnson,Europe,USA,Amber Jones,Daugherty-Pruitt,CUST-10108,2025-03-14,2025-05-18,Lost,Qualification
+OPP-60698,SR-2052,Frank Anderson,Middle East,India,Jennifer Johnson,Jones-Rios,CUST-10980,2025-02-24,2025-07-16,Negotiation,Proposal
+OPP-60699,SR-2036,Stephanie Smith,Latin America,UK,David Howard,Hernandez Ltd,CUST-10881,2025-04-18,2025-04-10,Won,Closed Won
+OPP-60700,SR-2065,Reginald Jenkins,Middle East,UK,Brian Jones,Edwards-Stanley,CUST-10961,2025-05-01,2025-04-27,Lost,Negotiation
+OPP-60701,SR-2033,Tiffany Taylor,Latin America,UAE,Paula Reyes,Carter and Sons,CUST-10680,2025-08-14,2025-08-25,Lost,Closed Won
+OPP-60702,SR-2073,Tracy Davis,Asia-Pacific,Germany,Ricardo Pitts,Mcguire and Sons,CUST-10380,2025-06-12,2025-03-26,Negotiation,Prospecting
+OPP-60703,SR-2097,Derrick Fuentes,Asia-Pacific,USA,Adam Shepherd,Wilkins-Moore,CUST-10594,2025-05-02,2025-06-22,On Hold,Proposal
+OPP-60704,SR-2024,Diane Richardson,Middle East,Germany,Donna Parker,Dorsey-Edwards,CUST-10607,2025-04-20,2025-02-12,Open,Qualification
+OPP-60705,SR-2066,Laura Duncan,Latin America,USA,Jill Lynch,"Miranda, Martin and Erickson",CUST-10200,2025-03-25,2025-06-25,Won,Closed Won
+OPP-60706,SR-2061,Margaret Martinez,Asia-Pacific,India,Jeremy Deleon,Kelly Group,CUST-10475,2025-04-23,2025-04-10,On Hold,Prospecting
+OPP-60707,SR-2031,Kevin Kim,North America,Brazil,Karen Zimmerman,"Lopez, Bates and Phillips",CUST-10615,2025-06-12,2025-07-06,Won,Proposal
+OPP-60708,SR-2037,James Martin,Asia-Pacific,UK,Mary Allen,Bradley-Merritt,CUST-10666,2025-02-12,2025-04-29,Won,Closed Won
+OPP-60709,SR-2046,Randall Lara,North America,USA,George Adkins,Daniel LLC,CUST-10148,2025-01-04,2025-05-02,On Hold,Proposal
+OPP-60710,SR-2006,Jesse Cummings,Latin America,USA,Dustin King,"Rodriguez, Hill and Hopkins",CUST-10628,2025-03-30,2025-06-15,Won,Closed Won
+OPP-60711,SR-2030,John Hamilton,Europe,UK,Mary Phillips MD,Carter Inc,CUST-10864,2025-02-28,2025-02-21,On Hold,Proposal
+OPP-60712,SR-2077,Denise Brewer,Middle East,Australia,Matthew Carroll,Lewis-Lopez,CUST-10638,2025-01-14,2025-01-15,Lost,Proposal
+OPP-60713,SR-2093,Brooke Allen,Middle East,Australia,John Wright,"Roberson, Lewis and Mills",CUST-10378,2025-03-01,2025-02-04,Lost,Qualification
+OPP-60714,SR-2022,Ethan Smith,Middle East,Germany,Shelley Huber,Patton and Sons,CUST-10373,2025-07-08,2025-02-18,Open,Closed Won
+OPP-60715,SR-2057,Richard Fox,Asia-Pacific,UAE,Hailey Cook,Tanner-Brown,CUST-10379,2025-07-06,2025-03-11,Won,Negotiation
+OPP-60716,SR-2019,Teresa Williams,Asia-Pacific,Germany,Kaylee Ashley,Walker-Shea,CUST-10222,2025-07-15,2025-06-04,On Hold,Qualification
+OPP-60717,SR-2061,Andrew Gordon,Europe,USA,Amy White,"Crawford, Hayes and Tapia",CUST-10230,2025-05-21,2025-07-18,On Hold,Negotiation
+OPP-60718,SR-2072,Robin Barrera,Middle East,Germany,Dwayne Richards,"Miranda, Martin and Erickson",CUST-10074,2025-01-18,2025-07-05,Lost,Closed Won
+OPP-60719,SR-2014,Ryan Clark,Asia-Pacific,Germany,Jenna Stevenson,Harrington Ltd,CUST-10125,2025-01-07,2025-03-04,Negotiation,Proposal
+OPP-60720,SR-2039,Joseph Sullivan,North America,Brazil,Angela Ramos,Cox-Taylor,CUST-10746,2025-06-19,2025-03-30,Open,Qualification
+OPP-60721,SR-2059,John Cox,North America,USA,Maureen Wood,"Campbell, Bennett and Carrillo",CUST-10177,2025-03-03,2025-07-03,Negotiation,Closed Won
+OPP-60722,SR-2099,Ms. Jennifer Wiggins,Europe,Germany,Amy Fowler,Simmons Ltd,CUST-10365,2025-05-06,2025-04-30,Open,Closed Won
+OPP-60723,SR-2096,Maurice Robinson,North America,Australia,Jenny Fleming,Morris-Hall,CUST-10914,2025-01-25,2025-02-06,Lost,Prospecting
+OPP-60724,SR-2005,Jacqueline Lewis,Middle East,India,David Taylor,Deleon Group,CUST-10850,2025-01-02,2025-07-06,Open,Prospecting
+OPP-60725,SR-2021,Mark Dougherty,North America,UK,Jessica Garcia,"Hill, Beck and Garcia",CUST-10022,2025-08-13,2025-08-14,Won,Proposal
+OPP-60726,SR-2065,Susan Hensley,North America,UAE,Mark Herrera,Cobb-Marsh,CUST-10305,2025-02-19,2025-07-13,Lost,Proposal
+OPP-60727,SR-2083,Tammy Miller,Latin America,Brazil,Mr. Gregory Martinez,"Leonard, Smith and Davis",CUST-10591,2025-03-26,2025-08-07,Open,Negotiation
+OPP-60728,SR-2038,Sandra Estrada,Latin America,India,Andrea Hoffman,"Contreras, Williams and Valdez",CUST-10295,2025-06-23,2025-01-26,On Hold,Prospecting
+OPP-60729,SR-2057,George Erickson,Latin America,USA,Julie Figueroa,Hardin Inc,CUST-10604,2025-08-30,2025-02-03,On Hold,Negotiation
+OPP-60730,SR-2093,Kimberly Johnson,Europe,India,Aaron Howard,Mcguire Group,CUST-10807,2025-08-24,2025-07-20,On Hold,Closed Won
+OPP-60731,SR-2061,Matthew Shaw,Asia-Pacific,USA,Sean Knight,"Kline, Kaiser and Garrett",CUST-10862,2025-08-06,2025-01-24,Lost,Qualification
+OPP-60732,SR-2092,Christopher Simpson,Asia-Pacific,UAE,Ann Young,"Williams, White and Boyd",CUST-10571,2025-02-18,2025-01-27,Lost,Closed Won
+OPP-60733,SR-2018,Cody Blankenship,Middle East,USA,Gabriel Nguyen,Maynard-Johnson,CUST-10274,2025-03-29,2025-02-16,Negotiation,Proposal
+OPP-60734,SR-2069,Calvin Austin,Europe,UAE,Michael Jones,Castro-Williams,CUST-10543,2025-02-23,2025-05-27,Open,Negotiation
+OPP-60735,SR-2091,Jason Clay,Asia-Pacific,USA,Jack Stone,"Howard, Morris and Patterson",CUST-10788,2025-06-08,2025-04-30,Won,Closed Won
+OPP-60736,SR-2056,Lindsey Escobar MD,Middle East,India,James Harrington,Hale LLC,CUST-10747,2025-01-01,2025-03-13,Open,Proposal
+OPP-60737,SR-2062,Chad Brooks,Europe,Germany,James Gaines,"Castro, Evans and Anderson",CUST-10388,2025-06-24,2025-02-26,On Hold,Closed Won
+OPP-60738,SR-2032,Daniel Thomas,Asia-Pacific,UAE,Todd Harris,Gutierrez LLC,CUST-10851,2025-06-10,2025-03-29,Negotiation,Proposal
+OPP-60739,SR-2084,Fernando Mendoza,Latin America,Germany,Dustin Estrada,Clark-Hurst,CUST-10644,2025-07-04,2025-03-20,Open,Prospecting
+OPP-60740,SR-2008,Anthony Davis,Asia-Pacific,UK,Allison Williams,"Miller, Whitaker and Joseph",CUST-10537,2025-06-02,2025-03-07,Lost,Closed Won
+OPP-60741,SR-2046,Austin Smith,North America,Germany,Tim Phillips,Green-Erickson,CUST-10468,2025-02-06,2025-04-10,On Hold,Prospecting
+OPP-60742,SR-2088,Nicholas Ayala,Middle East,Brazil,Kristie Shelton,"Phillips, Lin and Ward",CUST-10860,2025-06-10,2025-08-22,Negotiation,Prospecting
+OPP-60743,SR-2095,John Jennings,Europe,UK,Robert Perez,Beasley-Collins,CUST-10736,2025-07-23,2025-01-05,Open,Prospecting
+OPP-60744,SR-2047,Christopher Underwood,Latin America,UAE,Edward Morgan,Mckenzie-Schroeder,CUST-10465,2025-07-20,2025-03-12,Lost,Closed Won
+OPP-60745,SR-2057,Michael Ferrell,North America,USA,James Blair,Jacobson PLC,CUST-10544,2025-08-19,2025-03-14,Won,Qualification
+OPP-60746,SR-2077,Joshua Carlson,Latin America,UK,Kenneth White,"Phillips, Lin and Ward",CUST-10564,2025-06-07,2025-06-27,Negotiation,Proposal
+OPP-60747,SR-2045,Kim Gutierrez,Europe,USA,Martha Morse,Griffith Ltd,CUST-10082,2025-01-12,2025-07-26,Negotiation,Closed Won
+OPP-60748,SR-2063,Rachel Richardson,Latin America,India,Scott Thompson,Williams-Cisneros,CUST-10705,2025-05-14,2025-01-04,On Hold,Closed Won
+OPP-60749,SR-2018,Tiffany Ellis,Middle East,Brazil,Shelby Kirby,"Kelley, Martinez and Miranda",CUST-10149,2025-07-17,2025-07-04,Negotiation,Prospecting
+OPP-60750,SR-2026,Johnny Juarez,Europe,UAE,Matthew Richardson,Sampson Group,CUST-10825,2025-07-01,2025-08-17,Lost,Prospecting
+OPP-60751,SR-2044,Hector Knight,Middle East,India,Anthony Huffman,Mcdaniel Inc,CUST-10480,2025-06-17,2025-07-15,On Hold,Closed Won
+OPP-60752,SR-2011,Jeff Moore,Latin America,USA,Sean Ward,Freeman-Hunt,CUST-10835,2025-08-22,2025-02-11,Open,Prospecting
+OPP-60753,SR-2063,Stephanie Hale,Europe,USA,Jonathan Vazquez,Guzman Group,CUST-10214,2025-03-04,2025-04-16,Won,Prospecting
+OPP-60754,SR-2067,Lauren Lee,Asia-Pacific,UK,Laura Patterson,"Cohen, Williams and Mullins",CUST-10411,2025-02-27,2025-08-10,Lost,Qualification
+OPP-60755,SR-2073,Jillian Long,North America,USA,Jaclyn Taylor,Foster-Kim,CUST-10145,2025-05-05,2025-03-06,Open,Negotiation
+OPP-60756,SR-2056,Kyle Haynes,Latin America,Brazil,Taylor James,"Campbell, Bennett and Carrillo",CUST-10396,2025-03-22,2025-03-14,Lost,Negotiation
+OPP-60757,SR-2007,Christian Richards,North America,Brazil,Robert Preston,Douglas Ltd,CUST-10567,2025-02-14,2025-01-02,Lost,Closed Won
+OPP-60758,SR-2031,Dr. Emily Bray,North America,Australia,Joe Nichols,Clark-Wall,CUST-10309,2025-04-10,2025-06-12,Negotiation,Negotiation
+OPP-60759,SR-2079,Danielle Lopez,Asia-Pacific,Australia,Joseph Dawson,Haas Ltd,CUST-10384,2025-02-15,2025-08-27,Open,Proposal
+OPP-60760,SR-2003,Jacqueline Baxter,Asia-Pacific,Brazil,Tony Campbell,Gomez-Wallace,CUST-10400,2025-03-17,2025-01-01,Won,Negotiation
+OPP-60761,SR-2028,Jason Martin,Europe,Brazil,James Palmer,"Medina, Lucas and Johnson",CUST-10141,2025-08-16,2025-05-26,Won,Proposal
+OPP-60762,SR-2030,Sarah Olson,Europe,USA,Erica Torres,"Chaney, Arellano and Miller",CUST-10253,2025-06-23,2025-05-09,Open,Negotiation
+OPP-60763,SR-2026,Nancy Gray,North America,UK,Dawn Huffman,Roberts-Chase,CUST-10239,2025-03-09,2025-05-21,Open,Proposal
+OPP-60764,SR-2065,Jordan Novak,Latin America,India,Randall Morgan,Greene Group,CUST-10259,2025-04-17,2025-07-01,Negotiation,Prospecting
+OPP-60765,SR-2081,Steven Chapman,Middle East,Brazil,Erika Huynh,Cunningham PLC,CUST-10749,2025-07-17,2025-04-02,Won,Closed Won
+OPP-60766,SR-2053,Shari Moreno,Europe,USA,Casey Williams,Serrano-Smith,CUST-10312,2025-08-02,2025-06-11,On Hold,Closed Won
+OPP-60767,SR-2095,Cindy Mills,Europe,USA,Amanda Rodriguez,Jackson-Vasquez,CUST-10403,2025-05-11,2025-05-30,Won,Closed Won
+OPP-60768,SR-2075,Ashley Pope,Latin America,Germany,Leslie Rollins,Poole-Kelley,CUST-10686,2025-01-11,2025-01-25,Won,Qualification
+OPP-60769,SR-2029,Curtis Cook,Middle East,Australia,Kaitlyn Allen,Smith-Grant,CUST-10794,2025-06-21,2025-08-28,Negotiation,Negotiation
+OPP-60770,SR-2097,Joe Barnes,Europe,India,Mitchell Boyd,Jacobson PLC,CUST-10913,2025-03-11,2025-04-07,Open,Negotiation
+OPP-60771,SR-2041,Rebecca Wells,North America,Australia,Daniel White,Black Ltd,CUST-10338,2025-08-06,2025-03-10,Won,Proposal
+OPP-60772,SR-2063,Kevin Williams,North America,UK,Miss Kimberly Jennings DVM,Horn-Owen,CUST-10993,2025-03-13,2025-05-27,Lost,Qualification
+OPP-60773,SR-2093,Michael Wright,Latin America,UAE,Tiffany Wilson,Dunn-Anderson,CUST-10935,2025-05-14,2025-03-09,Lost,Proposal
+OPP-60774,SR-2045,Nathan Leon,Asia-Pacific,USA,Matthew Allen,"Cox, Bradford and Trevino",CUST-10449,2025-04-28,2025-07-20,Negotiation,Prospecting
+OPP-60775,SR-2053,Henry Johnson,Asia-Pacific,Germany,Allison Boone,"Stevens, Rodriguez and Long",CUST-10223,2025-08-28,2025-03-19,Open,Qualification
+OPP-60776,SR-2059,Kimberly Krause,Middle East,UK,Michael Russell,Wells LLC,CUST-10295,2025-04-10,2025-05-26,Open,Negotiation
+OPP-60777,SR-2005,Jacob Oliver,North America,Australia,Michelle Hernandez,Rogers and Sons,CUST-10854,2025-03-18,2025-01-21,Negotiation,Proposal
+OPP-60778,SR-2073,Janice Hayes,Middle East,India,Lisa Bolton,Davis PLC,CUST-10727,2025-04-06,2025-06-13,Negotiation,Proposal
+OPP-60779,SR-2078,Carol Ellis,Asia-Pacific,UK,Nicholas Allen,Johnson Group,CUST-10083,2025-06-09,2025-07-24,On Hold,Negotiation
+OPP-60780,SR-2042,Laura Braun,Middle East,Brazil,Kelly Brown,"Bowman, Davis and Cox",CUST-10125,2025-08-24,2025-08-21,On Hold,Negotiation
+OPP-60781,SR-2038,Melissa Sweeney,Europe,UK,John Morgan,Whitney-Hernandez,CUST-10423,2025-08-12,2025-08-28,On Hold,Proposal
+OPP-60782,SR-2090,Melanie May,North America,UAE,Tyler Kramer,"Clark, Lozano and Jimenez",CUST-10203,2025-08-24,2025-02-15,Won,Proposal
+OPP-60783,SR-2070,Karen Gordon,Europe,India,Matthew Perez,"Gonzalez, Reed and Miller",CUST-10535,2025-06-30,2025-05-30,Won,Proposal
+OPP-60784,SR-2043,Caroline Stephens,North America,UAE,Stephanie Gonzales,Gallegos-Kennedy,CUST-10612,2025-06-12,2025-08-27,On Hold,Proposal
+OPP-60785,SR-2072,Courtney Fowler,Asia-Pacific,USA,Mr. Jesus Phillips V,Chaney-Lozano,CUST-10493,2025-07-29,2025-07-08,Lost,Negotiation
+OPP-60786,SR-2044,Amanda Clark,Asia-Pacific,Brazil,Cynthia Morris,Owens-Hunt,CUST-10300,2025-05-03,2025-02-23,Open,Prospecting
+OPP-60787,SR-2040,Matthew Williams,Latin America,USA,Jason Hunt,Walton-Hoover,CUST-10242,2025-06-10,2025-01-17,On Hold,Closed Won
+OPP-60788,SR-2053,Mr. James Johnson,Middle East,UAE,Regina Elliott,"Williams, White and Boyd",CUST-10209,2025-05-13,2025-03-07,Won,Qualification
+OPP-60789,SR-2092,Karen Brown,North America,USA,Brandon Jones,"Jenkins, Barrett and Klein",CUST-10493,2025-04-02,2025-06-10,Lost,Qualification
+OPP-60790,SR-2035,Kelly Robinson,Europe,Australia,Ryan Lee,Moore and Sons,CUST-10706,2025-02-10,2025-08-22,Open,Qualification
+OPP-60791,SR-2043,Erin Hernandez,Latin America,Australia,Kevin Chambers,Barrera-Moody,CUST-10704,2025-03-07,2025-01-24,Won,Qualification
+OPP-60792,SR-2082,Samuel Bond,Middle East,Australia,John Mitchell,Hensley Ltd,CUST-10924,2025-07-20,2025-06-07,Won,Closed Won
+OPP-60793,SR-2011,Andrew Medina,Latin America,Germany,Jacob Mccall,Henderson-Wright,CUST-10427,2025-01-31,2025-02-27,Won,Proposal
+OPP-60794,SR-2050,Christopher Pierce,Latin America,Australia,Gina Dunn,Wilson-Maxwell,CUST-10431,2025-06-05,2025-01-17,Won,Qualification
+OPP-60795,SR-2019,Bryce Miller,Middle East,Australia,Joshua Brown,Ellison-Coleman,CUST-10773,2025-05-04,2025-08-16,Lost,Proposal
+OPP-60796,SR-2094,Jeremy Williams,Latin America,India,Holly Nguyen,Murphy LLC,CUST-10550,2025-08-04,2025-08-06,Won,Qualification
+OPP-60797,SR-2005,Benjamin Byrd,Latin America,USA,Emily Oliver,"Brooks, Ho and Carr",CUST-10905,2025-01-09,2025-08-19,On Hold,Qualification
+OPP-60798,SR-2022,Mario Owens,Europe,Australia,Timothy Larson,"Rios, Vang and Martinez",CUST-10299,2025-07-25,2025-07-11,Lost,Proposal
+OPP-60799,SR-2079,Albert Park,Europe,UK,Richard Welch,Miller-Perez,CUST-10287,2025-08-12,2025-08-06,On Hold,Qualification
+OPP-60800,SR-2041,Roger Floyd,Latin America,UAE,Jared Andrews,"Wright, Obrien and Mcdowell",CUST-10902,2025-07-03,2025-08-21,Open,Proposal
+OPP-60801,SR-2064,Brandon Vang,Latin America,India,Donald Keith,Perez PLC,CUST-10071,2025-06-11,2025-07-19,On Hold,Closed Won
+OPP-60802,SR-2067,Patrick Young,Asia-Pacific,UAE,Dawn Taylor,Williams-Alexander,CUST-10319,2025-08-13,2025-04-04,Lost,Proposal
+OPP-60803,SR-2074,Kayla Miles,North America,India,Alexandria Watson,"Jones, Martinez and Evans",CUST-10094,2025-03-13,2025-07-09,Negotiation,Negotiation
+OPP-60804,SR-2026,David Ramos,Europe,USA,Linda Taylor,Rodriguez Group,CUST-10889,2025-05-04,2025-03-15,On Hold,Closed Won
+OPP-60805,SR-2007,Sarah Moore,Latin America,Germany,Matthew Morales,Murray and Sons,CUST-10570,2025-04-17,2025-07-13,On Hold,Closed Won
+OPP-60806,SR-2020,Ronald Nguyen,Europe,USA,Cynthia Parks,Martin Inc,CUST-10338,2025-08-18,2025-03-20,Won,Proposal
+OPP-60807,SR-2002,Phillip Trevino,Middle East,Brazil,Alexander Jones,"Wilson, Atkins and Reyes",CUST-10309,2025-01-01,2025-02-07,On Hold,Prospecting
+OPP-60808,SR-2068,Christopher Alexander,Latin America,Germany,Justin Harris,"Lowe, Rosario and Garcia",CUST-10027,2025-01-10,2025-04-02,On Hold,Prospecting
+OPP-60809,SR-2056,Jennifer Alexander,North America,Australia,Michael Blake,Coleman-Welch,CUST-10147,2025-08-14,2025-07-31,On Hold,Qualification
+OPP-60810,SR-2055,Brooke Miller,North America,India,Diana Cross,"Ramirez, Lee and Rodriguez",CUST-10435,2025-05-27,2025-08-28,Lost,Negotiation
+OPP-60811,SR-2078,Alex Singh,North America,USA,Donna Wise,"Fisher, Rose and Pineda",CUST-10770,2025-05-01,2025-01-01,Negotiation,Qualification
+OPP-60812,SR-2082,Tracy Thomas,North America,India,Sheila Flores,Page-Warner,CUST-10821,2025-01-31,2025-05-08,Negotiation,Qualification
+OPP-60813,SR-2054,Joshua Goodman,Middle East,Brazil,Matthew Pitts,"Anderson, Mcgee and Yang",CUST-10470,2025-07-21,2025-07-28,Lost,Negotiation
+OPP-60814,SR-2098,William Morris,North America,Australia,Darius Flores,Wright-Randolph,CUST-10643,2025-07-09,2025-08-02,On Hold,Prospecting
+OPP-60815,SR-2010,Ryan Benson,Asia-Pacific,India,Kathy Estrada,"Richardson, Price and Lyons",CUST-10619,2025-07-21,2025-02-18,Open,Qualification
+OPP-60816,SR-2077,Benjamin Olson,Europe,UAE,Robin Phillips,Henderson-Wright,CUST-10801,2025-04-10,2025-05-10,Won,Qualification
+OPP-60817,SR-2044,Michael White,Middle East,India,Joshua Fisher,Phillips Group,CUST-10568,2025-03-12,2025-03-10,On Hold,Negotiation
+OPP-60818,SR-2090,Alexandra Ray,Asia-Pacific,Australia,Valerie Jenkins,Douglas PLC,CUST-10721,2025-04-29,2025-07-07,Open,Closed Won
+OPP-60819,SR-2057,Jessica Duran,Latin America,UK,Michael Jacobs,Brooks-Bolton,CUST-10948,2025-06-08,2025-02-28,On Hold,Qualification
+OPP-60820,SR-2069,Tammy Bryan,Asia-Pacific,Australia,Benjamin Callahan,Smith PLC,CUST-10599,2025-04-26,2025-07-24,Negotiation,Negotiation
+OPP-60821,SR-2054,Kara Hurley,Asia-Pacific,Brazil,Rachel Neal,Williams Ltd,CUST-10083,2025-07-25,2025-05-30,Lost,Closed Won
+OPP-60822,SR-2015,Molly Knapp,Asia-Pacific,Germany,Sara Hill,Moore Group,CUST-10412,2025-02-18,2025-07-25,Won,Proposal
+OPP-60823,SR-2027,Richard Diaz,North America,UK,Pamela Elliott,Powell-Long,CUST-10742,2025-02-21,2025-04-03,Open,Negotiation
+OPP-60824,SR-2017,Michael Smith,North America,USA,Donna Hall,"Zimmerman, Smith and Orr",CUST-10311,2025-06-22,2025-03-18,Lost,Prospecting
+OPP-60825,SR-2056,Kathleen Park,Europe,UK,Dr. Kimberly Meyer,Taylor and Sons,CUST-10023,2025-05-30,2025-03-18,Negotiation,Negotiation
+OPP-60826,SR-2038,George Williams,North America,UAE,Gregory Burton,Santiago-Dominguez,CUST-10281,2025-07-29,2025-02-23,Won,Negotiation
+OPP-60827,SR-2036,Holly Boyer,Latin America,UK,Michael White,Haas-Morgan,CUST-10500,2025-06-17,2025-08-11,On Hold,Prospecting
+OPP-60828,SR-2062,Melissa Miller,Asia-Pacific,UK,Lisa Lee,"Lewis, Johnson and Gilmore",CUST-10952,2025-04-01,2025-06-03,On Hold,Closed Won
+OPP-60829,SR-2055,Jasmine Mills,Europe,India,Mr. Scott Martinez,"Wilson, Atkins and Reyes",CUST-10126,2025-04-09,2025-06-19,On Hold,Proposal
+OPP-60830,SR-2004,Timothy Le,Europe,UK,Cindy Mosley,Martin Inc,CUST-10306,2025-03-30,2025-03-19,Open,Closed Won
+OPP-60831,SR-2001,Michaela Kim,Asia-Pacific,Brazil,Jerome Jones,Castillo and Sons,CUST-10845,2025-01-13,2025-05-02,Negotiation,Closed Won
+OPP-60832,SR-2052,Michael Wallace,Asia-Pacific,UAE,Jill Hart,"Bailey, Charles and Diaz",CUST-10688,2025-02-28,2025-01-21,On Hold,Negotiation
+OPP-60833,SR-2098,David Wright,Latin America,UK,Matthew White,Ray Inc,CUST-10645,2025-06-14,2025-05-10,Won,Closed Won
+OPP-60834,SR-2050,Amy Silva,North America,UK,Gina Whitney,"Daniels, Hubbard and Sweeney",CUST-10270,2025-04-12,2025-03-27,On Hold,Negotiation
+OPP-60835,SR-2035,Jennifer Ramos,North America,Brazil,Bernard Dennis,Morgan-Navarro,CUST-10985,2025-03-09,2025-02-13,Open,Proposal
+OPP-60836,SR-2054,Lisa Harris,Asia-Pacific,India,Harold Long,"Hamilton, Wilson and Colon",CUST-10148,2025-01-12,2025-03-01,Negotiation,Prospecting
+OPP-60837,SR-2008,Richard Cameron,Europe,Brazil,Alex Barber,"Clark, Lozano and Jimenez",CUST-10604,2025-01-03,2025-08-25,Negotiation,Negotiation
+OPP-60838,SR-2032,Carolyn Medina,Latin America,USA,Jeanette Butler,"Leonard, Smith and Davis",CUST-10982,2025-05-18,2025-04-03,Open,Qualification
+OPP-60839,SR-2041,Taylor Gonzalez,Asia-Pacific,USA,Jessica Brown,Henderson-Wright,CUST-10576,2025-07-22,2025-04-30,Lost,Negotiation
+OPP-60840,SR-2022,Kimberly Hudson,Asia-Pacific,UAE,Mr. Jason Smith DDS,Reyes-Kim,CUST-10703,2025-01-26,2025-02-28,On Hold,Negotiation
+OPP-60841,SR-2023,Grace George,Asia-Pacific,Germany,Christine Tran,"Green, Hudson and Lara",CUST-10428,2025-03-28,2025-04-23,Won,Proposal
+OPP-60842,SR-2088,Stephen Bell DDS,Middle East,Germany,Sean Gonzalez,Jordan-Lee,CUST-10824,2025-07-30,2025-01-05,Open,Qualification
+OPP-60843,SR-2056,Brian Jennings,Asia-Pacific,Australia,Ian Stewart,Harris-Harris,CUST-10703,2025-01-31,2025-05-21,Lost,Prospecting
+OPP-60844,SR-2058,David Sullivan,Europe,Australia,Samantha Gray,"Evans, Williams and Simpson",CUST-10493,2025-08-22,2025-05-21,Lost,Negotiation
+OPP-60845,SR-2012,John Park,Europe,Australia,Antonio Vance,Chan Ltd,CUST-10258,2025-03-08,2025-06-09,Won,Qualification
+OPP-60846,SR-2018,Stanley Adams,Asia-Pacific,India,Wesley Harrison,Anderson-Moss,CUST-10583,2025-02-22,2025-04-14,On Hold,Prospecting
+OPP-60847,SR-2026,Maxwell Smith,Middle East,Brazil,Gary Ferguson,Davis Inc,CUST-10104,2025-04-21,2025-05-06,Lost,Qualification
+OPP-60848,SR-2017,Candice Hughes,Middle East,UK,Laura Sanchez,Moore and Sons,CUST-10323,2025-05-05,2025-06-10,On Hold,Qualification
+OPP-60849,SR-2097,Alfred Martin,Asia-Pacific,UAE,Scott Bryant,"Garcia, Mcmillan and Chaney",CUST-10710,2025-03-31,2025-04-19,Lost,Proposal
+OPP-60850,SR-2083,David Williams,Asia-Pacific,India,Derek Huffman,Booth-Morris,CUST-10384,2025-02-21,2025-07-31,Won,Prospecting
+OPP-60851,SR-2046,Brian Bean,Middle East,Australia,Dr. Andrea Ramirez,"Rivera, Mclaughlin and Wilson",CUST-10245,2025-07-26,2025-05-21,Won,Closed Won
+OPP-60852,SR-2022,Thomas Adams,Europe,Germany,Alexander Morales,"Thomas, Arnold and Morris",CUST-10003,2025-06-13,2025-02-17,On Hold,Prospecting
+OPP-60853,SR-2049,Kaitlyn Walsh,Europe,India,Christopher Strickland,"Ryan, Murphy and Williamson",CUST-10244,2025-04-04,2025-02-25,On Hold,Prospecting
+OPP-60854,SR-2065,Alice Taylor,Europe,UK,Benjamin Jackson,"Williams, Peterson and Green",CUST-10092,2025-06-20,2025-06-24,Open,Proposal
+OPP-60855,SR-2001,Jason Sandoval,Asia-Pacific,India,Cindy Cole,"Everett, Ortiz and Smith",CUST-10687,2025-08-26,2025-06-14,Won,Negotiation
+OPP-60856,SR-2097,Alyssa Charles,Asia-Pacific,UAE,Willie Ayers,"Sanford, Williams and Hunt",CUST-10002,2025-05-31,2025-08-27,Open,Closed Won
+OPP-60857,SR-2077,David Thompson,North America,Australia,Jason Marquez,Brennan-Brown,CUST-10921,2025-06-19,2025-06-23,Won,Closed Won
+OPP-60858,SR-2077,Angela Collins,North America,Australia,Cory Chandler,Jackson-Cooper,CUST-10238,2025-03-17,2025-04-10,On Hold,Proposal
+OPP-60859,SR-2090,Melissa Rosario,Middle East,UK,Karen Sellers,Dorsey-Edwards,CUST-10633,2025-06-25,2025-05-20,Open,Prospecting
+OPP-60860,SR-2097,Tammie Roberts,Europe,UK,Mark Daugherty,Elliott Ltd,CUST-10777,2025-02-13,2025-07-28,Open,Qualification
+OPP-60861,SR-2036,Curtis Summers,Latin America,Australia,Beverly Wyatt,"Henderson, Johnson and Johnson",CUST-10110,2025-08-12,2025-07-25,Won,Proposal
+OPP-60862,SR-2074,Joseph Miller,North America,Germany,Stephanie Franklin,Brooks LLC,CUST-10330,2025-02-24,2025-05-12,Open,Negotiation
+OPP-60863,SR-2041,Rhonda Phillips,North America,UAE,Lauren Miller,Whitney-Hernandez,CUST-10153,2025-04-03,2025-02-19,Open,Closed Won
+OPP-60864,SR-2090,Brandon Pruitt,Asia-Pacific,Brazil,Mr. Christopher Vaughan,"Leonard, Smith and Davis",CUST-10434,2025-08-30,2025-01-05,Won,Qualification
+OPP-60865,SR-2092,Troy Simmons,Asia-Pacific,Germany,Emma Bowman,Thompson-Atkinson,CUST-10836,2025-01-23,2025-06-24,Won,Closed Won
+OPP-60866,SR-2040,Carol Smith,North America,USA,Javier Martinez,"Munoz, Rogers and Nunez",CUST-10207,2025-03-01,2025-03-26,Won,Proposal
+OPP-60867,SR-2043,Amanda Gonzalez,Middle East,USA,Joyce Perez,"Williams, White and Boyd",CUST-10455,2025-05-07,2025-06-20,Negotiation,Closed Won
+OPP-60868,SR-2098,Michael Williamson,Latin America,Germany,Jessica Williamson,Cannon-Calhoun,CUST-10443,2025-05-22,2025-08-16,Negotiation,Qualification
+OPP-60869,SR-2004,Daniel Allen,Middle East,Germany,Mary Braun,Williams-Johnson,CUST-10251,2025-05-30,2025-06-04,Open,Qualification
+OPP-60870,SR-2066,Joseph Stanley,Asia-Pacific,USA,Natasha Lucero,Roberts-Chase,CUST-10910,2025-07-10,2025-04-08,Won,Qualification
+OPP-60871,SR-2023,Mackenzie Mcmillan,Latin America,Australia,Michael Carter,Tanner-Brown,CUST-10733,2025-08-07,2025-03-18,Lost,Qualification
+OPP-60872,SR-2040,Megan Thompson MD,Asia-Pacific,USA,Kevin Barrett Jr.,Fisher LLC,CUST-10469,2025-07-12,2025-06-29,Won,Prospecting
+OPP-60873,SR-2071,Mrs. Alicia Riggs,Latin America,India,Becky Tran,Johnston Inc,CUST-10891,2025-05-07,2025-01-08,Open,Qualification
+OPP-60874,SR-2031,Brandy Martinez,Latin America,Germany,April Poole,"Graham, Patterson and Simmons",CUST-10349,2025-03-19,2025-04-26,Won,Negotiation
+OPP-60875,SR-2089,Christine Reyes,Asia-Pacific,Brazil,Juan Smith,Johnson-Chang,CUST-10536,2025-08-10,2025-08-14,Negotiation,Negotiation
+OPP-60876,SR-2034,Summer Vazquez,Middle East,Australia,Heather Hancock,Owens-Hunt,CUST-10869,2025-03-30,2025-06-12,Won,Proposal
+OPP-60877,SR-2028,Joel Thompson,Latin America,Germany,David Evans,"Hall, Davis and Butler",CUST-10397,2025-06-10,2025-02-14,Won,Closed Won
+OPP-60878,SR-2065,Lisa Pierce,Europe,Australia,Jonathan Phillips,"Morris, Curtis and Turner",CUST-10995,2025-07-21,2025-03-27,Negotiation,Closed Won
+OPP-60879,SR-2009,Nicholas Garcia,Europe,UAE,Kelli Dean,Townsend-Gould,CUST-10955,2025-07-27,2025-02-14,Negotiation,Negotiation
+OPP-60880,SR-2033,Douglas Diaz,Middle East,Germany,Jodi Robinson,"Chaney, Arellano and Miller",CUST-10939,2025-04-15,2025-02-05,On Hold,Qualification
+OPP-60881,SR-2083,Shane Khan,North America,Brazil,April Smith,"Bowman, Davis and Cox",CUST-10002,2025-01-24,2025-08-25,Negotiation,Negotiation
+OPP-60882,SR-2081,Martha Ryan,Latin America,Australia,Javier Spencer,Green Inc,CUST-10858,2025-08-05,2025-02-06,Won,Proposal
+OPP-60883,SR-2027,Janet Wheeler,Latin America,Germany,William Jackson,"Li, Davis and Thomas",CUST-10378,2025-03-10,2025-05-01,Negotiation,Negotiation
+OPP-60884,SR-2044,Donna Brooks,Europe,UAE,Jeanette Hill,"Glover, Jackson and Meyer",CUST-10664,2025-01-31,2025-01-15,Negotiation,Proposal
+OPP-60885,SR-2058,Robert Goodman,North America,Germany,Caleb Morales,Rivera-Barnes,CUST-10021,2025-01-03,2025-01-17,On Hold,Prospecting
+OPP-60886,SR-2051,Richard Cunningham,Latin America,UK,Kristina Mendoza,Myers-Smith,CUST-10236,2025-01-26,2025-07-21,On Hold,Closed Won
+OPP-60887,SR-2076,Douglas Black,Europe,UK,Maria George,"Hughes, Watts and Arnold",CUST-10454,2025-02-18,2025-03-10,Won,Prospecting
+OPP-60888,SR-2032,Vernon Thomas,North America,Brazil,David Anderson,"Bonilla, Mullins and Lewis",CUST-10527,2025-05-02,2025-01-06,Lost,Closed Won
+OPP-60889,SR-2033,Ricky Coleman,Middle East,Brazil,Benjamin Dean,Baker LLC,CUST-10803,2025-02-17,2025-01-17,Negotiation,Closed Won
+OPP-60890,SR-2077,Michael Watson,North America,India,John Bowman,"Lynch, Lynch and Mitchell",CUST-10414,2025-06-27,2025-08-04,Lost,Qualification
+OPP-60891,SR-2050,Karen Garza,North America,Brazil,Amy Compton,"Adams, Osborne and Hall",CUST-10295,2025-08-24,2025-02-27,Lost,Qualification
+OPP-60892,SR-2036,Thomas Collins,Middle East,UK,Benjamin Hartman,"Williams, Anderson and Rosales",CUST-10216,2025-01-28,2025-01-12,Lost,Closed Won
+OPP-60893,SR-2007,Kaitlin Ayers,North America,India,David Scott,Suarez LLC,CUST-10208,2025-04-02,2025-01-12,Won,Prospecting
+OPP-60894,SR-2047,Peter Mcguire,Europe,India,Aaron Bradshaw,"Baxter, Thomas and Cordova",CUST-10094,2025-04-28,2025-08-19,Lost,Prospecting
+OPP-60895,SR-2091,Lori Turner,North America,Germany,Janice Craig,Wood LLC,CUST-10395,2025-02-09,2025-06-25,Won,Qualification
+OPP-60896,SR-2018,Troy Ali,Middle East,Germany,Nicole Kelly,Hicks-Owen,CUST-10939,2025-06-20,2025-05-10,On Hold,Qualification
+OPP-60897,SR-2055,Shelley Ortiz,Asia-Pacific,UK,Kellie Cortez,Serrano-Smith,CUST-10760,2025-01-12,2025-07-29,Open,Proposal
+OPP-60898,SR-2008,Nicole Jones,Middle East,Australia,Joel Brown,"Meyers, King and Munoz",CUST-10754,2025-07-12,2025-04-06,Lost,Negotiation
+OPP-60899,SR-2018,Barbara Cruz,Middle East,UAE,Lisa Diaz,Randall Inc,CUST-10700,2025-03-03,2025-02-14,Won,Qualification
+OPP-60900,SR-2065,George Young,Latin America,UAE,Zachary Brown,"Kelly, Davis and Nolan",CUST-10632,2025-08-23,2025-02-08,Open,Prospecting
+OPP-60901,SR-2042,Harry Soto,Asia-Pacific,Germany,Paula Beltran,Tran PLC,CUST-10862,2025-06-26,2025-05-02,Won,Proposal
+OPP-60902,SR-2038,Jennifer Johnson,North America,UK,James Shepard,Arroyo PLC,CUST-10737,2025-02-10,2025-07-06,Won,Negotiation
+OPP-60903,SR-2032,Alexandra Robinson,North America,Germany,Kevin Robbins,"Lopez, Bates and Phillips",CUST-10484,2025-07-05,2025-08-06,On Hold,Prospecting
+OPP-60904,SR-2093,Jon Howard,Asia-Pacific,India,James Flores,Clarke-Vaughan,CUST-10512,2025-01-08,2025-05-17,Lost,Prospecting
+OPP-60905,SR-2067,Leah Johnson,Latin America,UK,Chad Odonnell,"Diaz, Lindsey and Adams",CUST-10602,2025-04-29,2025-02-27,Negotiation,Prospecting
+OPP-60906,SR-2084,Ashley Martinez,Middle East,UAE,Christine Baxter,"Jenkins, Barrett and Klein",CUST-10913,2025-02-10,2025-08-02,Won,Prospecting
+OPP-60907,SR-2010,Robert Lee,Europe,Germany,James Rodriguez,Griffith LLC,CUST-10381,2025-05-09,2025-06-28,Open,Negotiation
+OPP-60908,SR-2046,Alex Long,Asia-Pacific,UK,Philip Wu,Deleon Group,CUST-10135,2025-07-19,2025-07-15,Open,Qualification
+OPP-60909,SR-2017,Joshua Banks,Europe,Germany,Sarah Vasquez,Lee-Ashley,CUST-10652,2025-06-03,2025-06-19,Negotiation,Negotiation
+OPP-60910,SR-2070,Ivan Kim,Latin America,Germany,Kent Williams,Santana Group,CUST-10387,2025-03-05,2025-05-07,Won,Prospecting
+OPP-60911,SR-2004,Vincent King,North America,Brazil,Jacob Saunders,Reid-Bowman,CUST-10439,2025-08-12,2025-06-02,Lost,Negotiation
+OPP-60912,SR-2053,Jill Smith,Asia-Pacific,India,Jennifer Ford,"Gilmore, Johnson and Walker",CUST-10117,2025-06-03,2025-06-28,On Hold,Negotiation
+OPP-60913,SR-2058,Teresa Hill,Europe,UAE,Kenneth Howard,"Richards, Ortega and David",CUST-10857,2025-05-27,2025-02-23,Won,Prospecting
+OPP-60914,SR-2068,Danny Peterson,Middle East,Brazil,Lisa Morse,King-Buchanan,CUST-10042,2025-08-19,2025-05-03,On Hold,Negotiation
+OPP-60915,SR-2066,Michael Hernandez,North America,USA,Molly Farley,Johnson-Nelson,CUST-10225,2025-07-31,2025-06-26,Negotiation,Qualification
+OPP-60916,SR-2042,Rachel Soto,Europe,Germany,Brandy Solomon,Taylor LLC,CUST-10260,2025-04-28,2025-03-13,On Hold,Negotiation
+OPP-60917,SR-2049,Jack Burke,Europe,Germany,Jasmine Nash,"Mcguire, Hines and Johnson",CUST-10913,2025-03-23,2025-04-02,Won,Proposal
+OPP-60918,SR-2085,Phillip Lloyd,Europe,USA,Stephen Graves,Riggs-Hawkins,CUST-10269,2025-03-14,2025-04-11,Lost,Qualification
+OPP-60919,SR-2006,Amy Kelly,Europe,Brazil,Brian Beard,Black Ltd,CUST-10482,2025-08-16,2025-04-25,Lost,Prospecting
+OPP-60920,SR-2030,Jesse Ellison,Middle East,Australia,Michael Clark,"Beasley, Mills and Vazquez",CUST-10490,2025-02-26,2025-07-28,Negotiation,Negotiation
+OPP-60921,SR-2059,Benjamin Valentine,Middle East,India,Todd Yoder,Doyle and Sons,CUST-10348,2025-01-14,2025-06-04,Lost,Closed Won
+OPP-60922,SR-2099,Jocelyn Johns,Asia-Pacific,India,Mark Bender,Sanders-Howard,CUST-10334,2025-08-31,2025-03-11,Open,Negotiation
+OPP-60923,SR-2098,Rhonda Sanchez,Asia-Pacific,UK,Ronald Hess,"Cooper, Swanson and Pierce",CUST-10823,2025-03-03,2025-06-03,Lost,Proposal
+OPP-60924,SR-2043,Miranda Mccarthy,Middle East,UAE,Christina Reed,"Moran, Smith and Martinez",CUST-10615,2025-06-15,2025-01-22,Won,Qualification
+OPP-60925,SR-2051,Robert Johnson,North America,Germany,Brittany Perez,Baker-Johnson,CUST-10888,2025-07-29,2025-03-30,On Hold,Prospecting
+OPP-60926,SR-2062,Alexandria Diaz,North America,Germany,Samuel Wilson,"Jenkins, Barrett and Klein",CUST-10536,2025-03-18,2025-02-18,Open,Closed Won
+OPP-60927,SR-2014,Tyler Tyler,North America,UK,Jennifer Hodge,Brown-Mora,CUST-10810,2025-08-19,2025-01-22,Lost,Closed Won
+OPP-60928,SR-2098,Samuel Patel,Europe,USA,Samantha Andrews,Dixon-Lewis,CUST-10934,2025-04-22,2025-02-18,Negotiation,Qualification
+OPP-60929,SR-2017,Juan Dickson,Middle East,UK,Carla Anderson,Mcdaniel-Moore,CUST-10309,2025-02-19,2025-05-09,On Hold,Negotiation
+OPP-60930,SR-2005,Adam Robertson,North America,USA,John Massey,"Mccann, Dawson and Macias",CUST-10954,2025-07-08,2025-02-16,Won,Closed Won
+OPP-60931,SR-2002,Edward Lee,Latin America,India,Tracy Snyder,Taylor Inc,CUST-10285,2025-06-27,2025-03-07,Open,Negotiation
+OPP-60932,SR-2087,Vanessa Brooks,Europe,Brazil,Stacey Solomon,Johnson-Bradshaw,CUST-10790,2025-06-27,2025-03-14,Open,Closed Won
+OPP-60933,SR-2007,Elizabeth Duncan,Middle East,UAE,Mark Campbell,Johnson and Sons,CUST-10902,2025-04-24,2025-02-08,Won,Closed Won
+OPP-60934,SR-2008,James Harris,Europe,Brazil,Andrew Thompson,"Murphy, Molina and Wells",CUST-10660,2025-07-26,2025-08-06,Open,Proposal
+OPP-60935,SR-2025,Nicole Miller,North America,Australia,Bonnie Rogers,Carter and Sons,CUST-10350,2025-05-22,2025-06-27,Open,Prospecting
+OPP-60936,SR-2032,Michael Lara,Asia-Pacific,Brazil,Veronica Hanson,Solis Inc,CUST-10113,2025-02-16,2025-04-24,Open,Negotiation
+OPP-60937,SR-2079,Robert Walker,Europe,Germany,Micheal Rodriguez,"Moore, Lopez and Gomez",CUST-10581,2025-06-07,2025-06-05,On Hold,Qualification
+OPP-60938,SR-2052,David Clark,Asia-Pacific,Australia,Robert George,Brown LLC,CUST-10310,2025-05-18,2025-07-26,On Hold,Qualification
+OPP-60939,SR-2061,Willie Wright,Europe,Australia,Arthur Porter DDS,Hensley Ltd,CUST-10077,2025-01-16,2025-04-29,Negotiation,Negotiation
+OPP-60940,SR-2034,Theresa Lopez,Latin America,USA,Christopher Graham,Silva and Sons,CUST-10621,2025-08-05,2025-04-23,Won,Proposal
+OPP-60941,SR-2060,Laura Roberts,Latin America,Brazil,Kimberly Snyder,Hardin Inc,CUST-10350,2025-07-19,2025-05-24,Won,Qualification
+OPP-60942,SR-2088,Michael Petty,Asia-Pacific,UK,Sharon Lopez,Moreno Inc,CUST-10285,2025-04-28,2025-02-23,Open,Qualification
+OPP-60943,SR-2094,Jeffery Harris,Asia-Pacific,Brazil,Mr. Benjamin Ramirez,Hill-Brooks,CUST-10767,2025-06-09,2025-02-06,On Hold,Proposal
+OPP-60944,SR-2096,Tyler Roberts,Asia-Pacific,Brazil,Frederick Holland,Wells LLC,CUST-10540,2025-03-20,2025-01-06,Won,Qualification
+OPP-60945,SR-2097,Margaret Solomon,North America,USA,Theresa Deleon,"Baxter, Thomas and Cordova",CUST-10186,2025-05-24,2025-06-10,Won,Proposal
+OPP-60946,SR-2060,Teresa Lyons,Asia-Pacific,Brazil,Jennifer Mckee,"Williams, Peterson and Green",CUST-10111,2025-02-11,2025-06-04,On Hold,Negotiation
+OPP-60947,SR-2002,Anna Hernandez,Asia-Pacific,USA,Dawn Miles,"Cruz, Sullivan and Howard",CUST-10419,2025-06-16,2025-07-30,Lost,Closed Won
+OPP-60948,SR-2023,Donald Wells,Asia-Pacific,UAE,Steven Mcgee,Keller-Burns,CUST-10044,2025-06-24,2025-08-09,Negotiation,Proposal
+OPP-60949,SR-2034,Michael Phillips,Latin America,Germany,Anthony Ellis,"Brown, Anderson and Gonzales",CUST-10731,2025-08-04,2025-06-08,Won,Qualification
+OPP-60950,SR-2012,Amy Johnson,North America,Brazil,James Chavez Jr.,Johnson and Sons,CUST-10872,2025-06-15,2025-05-02,Open,Qualification
+OPP-60951,SR-2083,Mark Smith,Europe,Germany,Ashley West,"Hill, Brown and Jackson",CUST-10765,2025-04-07,2025-08-28,On Hold,Negotiation
+OPP-60952,SR-2002,Tyler Cooper,Asia-Pacific,Germany,Dr. Megan Sullivan,Mitchell-Parker,CUST-10375,2025-07-12,2025-02-17,Negotiation,Prospecting
+OPP-60953,SR-2030,David Hall,Latin America,Germany,Jocelyn Johnson,Brown-Carroll,CUST-10316,2025-01-14,2025-03-25,Lost,Negotiation
+OPP-60954,SR-2069,Stephanie Moody,Europe,Germany,Stephen Ward,Roman LLC,CUST-10210,2025-07-13,2025-05-24,Won,Closed Won
+OPP-60955,SR-2067,Scott Beasley,Europe,UK,Sean Bishop,Williams-Alexander,CUST-10459,2025-01-09,2025-07-13,On Hold,Negotiation
+OPP-60956,SR-2063,Stephanie Rich,North America,UK,Ashley Hernandez,Myers LLC,CUST-10983,2025-03-26,2025-07-05,On Hold,Proposal
+OPP-60957,SR-2013,Hannah Rasmussen,Middle East,USA,Hailey Pineda,Baker LLC,CUST-10953,2025-03-15,2025-08-11,On Hold,Negotiation
+OPP-60958,SR-2028,Christopher Keith,Asia-Pacific,USA,Darius Hughes,Larsen and Sons,CUST-10137,2025-06-20,2025-03-12,Open,Negotiation
+OPP-60959,SR-2064,Katherine Combs,Middle East,Brazil,Lisa Mccoy,Johnson and Sons,CUST-10561,2025-06-01,2025-06-01,Negotiation,Prospecting
+OPP-60960,SR-2029,Jennifer Aguirre,Latin America,UK,Nicole Delacruz,Wilson Group,CUST-10632,2025-06-12,2025-06-19,Open,Prospecting
+OPP-60961,SR-2047,Jennifer Newton,Middle East,India,Sara Wilson,Wilcox LLC,CUST-10125,2025-05-20,2025-04-08,Lost,Prospecting
+OPP-60962,SR-2025,Yvette Miller,Middle East,USA,Joshua Price,Kelly-Lynch,CUST-10549,2025-04-23,2025-06-09,Lost,Proposal
+OPP-60963,SR-2033,Robert Castro,Europe,UAE,Robin Oconnor,"Rodriguez, Molina and Pena",CUST-10223,2025-03-16,2025-03-14,Won,Qualification
+OPP-60964,SR-2056,Dennis Rivera,North America,India,Nancy Johnson,"Campbell, Brown and Odonnell",CUST-10445,2025-07-22,2025-06-21,On Hold,Closed Won
+OPP-60965,SR-2058,Bryan Bennett,Asia-Pacific,UAE,Wesley Wang,"Miranda, Lee and Orozco",CUST-10015,2025-02-12,2025-04-29,Negotiation,Negotiation
+OPP-60966,SR-2099,Sylvia Marshall,Latin America,Germany,Heather Turner,Mills Ltd,CUST-10477,2025-05-14,2025-08-17,On Hold,Qualification
+OPP-60967,SR-2029,Luke Wagner,North America,India,Katrina Johnson,"Rios, Vang and Martinez",CUST-10459,2025-07-17,2025-01-05,Won,Closed Won
+OPP-60968,SR-2094,Wanda Russell,Asia-Pacific,UK,Jessica Ramos,"Gardner, Romero and Kemp",CUST-10015,2025-08-28,2025-01-23,Won,Qualification
+OPP-60969,SR-2036,Laura Baker,Latin America,Brazil,Mario Tate,Chung-Harrington,CUST-10576,2025-03-28,2025-02-21,Lost,Negotiation
+OPP-60970,SR-2023,Kevin Cherry,Europe,Brazil,Angela Dixon,"Nelson, Walker and Reyes",CUST-10540,2025-03-28,2025-08-30,Won,Closed Won
+OPP-60971,SR-2080,Scott Austin,Europe,Brazil,Katrina Patel,Baird-Krause,CUST-10341,2025-05-01,2025-05-02,Negotiation,Closed Won
+OPP-60972,SR-2031,Don Daniel,Europe,Australia,Kathleen Hancock,Suarez LLC,CUST-10986,2025-03-07,2025-07-12,Lost,Proposal
+OPP-60973,SR-2091,Amber Brown,Latin America,UK,Kathy Johnson,"Evans, Williams and Simpson",CUST-10118,2025-06-08,2025-07-21,Open,Proposal
+OPP-60974,SR-2096,Roy Spencer,Middle East,USA,Courtney Mcdonald,Reyes-Gordon,CUST-10746,2025-08-13,2025-04-15,Lost,Prospecting
+OPP-60975,SR-2002,Samantha Joyce,Middle East,Germany,Kayla Stewart,Williams-Rose,CUST-10523,2025-07-03,2025-04-28,On Hold,Qualification
+OPP-60976,SR-2022,Connor Smith,Europe,UK,Elizabeth Mcpherson,Williams PLC,CUST-10967,2025-04-08,2025-06-14,Open,Negotiation
+OPP-60977,SR-2026,Megan Vaughan,North America,USA,Anna Harvey,"Erickson, Jones and Reyes",CUST-10807,2025-06-25,2025-03-10,Won,Prospecting
+OPP-60978,SR-2007,Danielle Durham,Asia-Pacific,UK,Michelle Williams,Mitchell-Parker,CUST-10650,2025-07-03,2025-08-25,Negotiation,Negotiation
+OPP-60979,SR-2022,Carrie Gonzales,North America,India,William Robinson,Garcia-Anderson,CUST-10879,2025-08-09,2025-03-30,On Hold,Closed Won
+OPP-60980,SR-2022,James Hicks Jr.,Asia-Pacific,UAE,Stephanie Edwards,Clark-Hurst,CUST-10405,2025-04-21,2025-08-17,Lost,Prospecting
+OPP-60981,SR-2070,Julie Allen,Asia-Pacific,Australia,Miranda Johnson,Sampson Group,CUST-10543,2025-06-28,2025-01-19,Won,Prospecting
+OPP-60982,SR-2021,Thomas Barron,Middle East,USA,Marvin Ross,Carter-Mcintyre,CUST-10016,2025-08-07,2025-07-05,Open,Negotiation
+OPP-60983,SR-2025,Todd Watson,Europe,Germany,Ashley Farley,Ellison-Coleman,CUST-10410,2025-02-12,2025-07-04,On Hold,Prospecting
+OPP-60984,SR-2002,Edgar Perez,North America,Brazil,Brittany Knapp,Roman LLC,CUST-10164,2025-01-26,2025-02-01,Won,Qualification
+OPP-60985,SR-2061,James Harrison,Asia-Pacific,USA,Jennifer Ware,Richardson Group,CUST-10333,2025-05-01,2025-05-04,Lost,Qualification
+OPP-60986,SR-2084,Christopher Gonzalez,Europe,India,Lori Mason,Taylor-Taylor,CUST-10486,2025-08-24,2025-07-02,On Hold,Negotiation
+OPP-60987,SR-2018,Dennis Barker,Europe,UAE,Charles Woodward,Hayes LLC,CUST-10350,2025-03-22,2025-07-20,On Hold,Proposal
+OPP-60988,SR-2015,Shane Giles,Europe,UK,Colleen Gomez,Castillo and Sons,CUST-10907,2025-01-31,2025-02-02,Open,Proposal
+OPP-60989,SR-2061,Alyssa Clements,Latin America,Australia,Jonathan Cruz,Guzman Group,CUST-10366,2025-01-15,2025-01-28,Lost,Prospecting
+OPP-60990,SR-2033,John Anderson,Latin America,India,Melissa Wilson,"Smith, Melendez and Huff",CUST-10304,2025-01-17,2025-03-27,Won,Qualification
+OPP-60991,SR-2052,Kelly Williams,Middle East,India,Bobby Waller,West-Day,CUST-10001,2025-05-24,2025-04-02,On Hold,Qualification
+OPP-60992,SR-2036,Andrew Powell,Latin America,Brazil,Jonathan Wagner,"Jones, Oconnor and Carr",CUST-10268,2025-04-17,2025-04-11,Lost,Prospecting
+OPP-60993,SR-2099,Derek Love,North America,Brazil,Jeffrey Wallace,"Boyd, Woodward and Hicks",CUST-10190,2025-03-03,2025-04-20,On Hold,Prospecting
+OPP-60994,SR-2004,Nathan Sims,Latin America,UK,Destiny Hart,Taylor-Taylor,CUST-10416,2025-06-25,2025-02-23,On Hold,Qualification
+OPP-60995,SR-2079,Holly Wong,Middle East,UAE,Michael Valenzuela,Booth-Morris,CUST-10154,2025-06-27,2025-05-12,Lost,Closed Won
+OPP-60996,SR-2004,Mary Miller,North America,USA,Kevin Charles,Jordan-Hamilton,CUST-10255,2025-05-24,2025-04-10,On Hold,Proposal
+OPP-60997,SR-2094,Juan Wood,Latin America,USA,Maria Parker,Coffey Group,CUST-10901,2025-02-22,2025-08-01,Won,Proposal
+OPP-60998,SR-2016,Karen Warren,Asia-Pacific,Australia,William Moreno,Thompson-Atkinson,CUST-10634,2025-03-02,2025-02-23,Negotiation,Qualification
+OPP-60999,SR-2006,Stephanie Smith,Middle East,UAE,Eduardo Powell,Myers Ltd,CUST-10232,2025-04-07,2025-01-29,On Hold,Closed Won
+OPP-61000,SR-2055,Brittany Bailey,Asia-Pacific,Brazil,Adam Gibson,Miller Ltd,CUST-10951,2025-03-08,2025-05-13,Won,Closed Won
