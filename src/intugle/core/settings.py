@@ -57,7 +57,7 @@ class Settings(BaseSettings):
     L2_SAMPLE_LIMIT: int = 10
 
     # LLM CONFIGS
-    LLM_PROVIDER: str
+    LLM_PROVIDER: Optional[str] = None
     LLM_SAMPLE_LIMIT: int = 15
     STRATA_SAMPLE_LIMIT: int = 4
     MAX_RETRIES: int = 5
@@ -100,6 +100,13 @@ class Settings(BaseSettings):
     POSTGRES_DB: Optional[str] = None
     POSTGRES_PORT: int = 5432
     POSTGRES_SCHEMA: Optional[str] = "public"
+
+    # Vector
+    VECTOR_COLLECTION_NAME: str = os.getcwd().split('/')[-1]
+    QDRANT_URL: str = "http://localhost:6333"
+    QDRANT_API_KEY: Optional[str] = None
+    EMBEDDING_MODEL_NAME: str = "openai:ada"
+    TOKENIZER_MODEL_NAME: str = "cl100k_base"
 
 
 @lru_cache

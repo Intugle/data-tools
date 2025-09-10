@@ -9,6 +9,7 @@ import pandas as pd
 from langchain_core.messages import HumanMessage
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
+from langgraph.errors import GraphRecursionError
 from tqdm import tqdm
 
 from intugle.analysis.models import DataSet
@@ -108,9 +109,7 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
         self.prompt_link = PromptTemplate(
             template=self.PROMPT_TEMPLATE,
             input_variables=["current_attempt", "previous_attempts", "table_info"],
-            partial_variables={
-                "format_instructions": self.parser_linkages.get_format_instructions()
-            },
+            partial_variables={"format_instructions": self.parser_linkages.get_format_instructions()},
         )
 
         self.link_identifier_llm = self.prompt_link | self.llm | self.parser_linkages
@@ -132,9 +131,7 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
                 columns_required=self.PROFILING_COLUMNS_REQUIRED,
                 mapping_dtypes_to_sql=True,
             )
-            for (table_name,), gbydata in self.profiling_data.groupby(
-                ["table_name"]
-            )
+            for (table_name,), gbydata in self.profiling_data.groupby(["table_name"])
         }
 
         self.graph = self.__workflow_builder__()
@@ -174,9 +171,7 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
             error_msg = state["error_msg"]
 
         tab1, tab2 = input_text.split(" & ")
-        table_details = (
-            self.table_ddl_statements[tab1] + "\n\n" + self.table_ddl_statements[tab2]
-        )
+        table_details = self.table_ddl_statements[tab1] + "\n\n" + self.table_ddl_statements[tab2]
 
         if iteration == 0:
             current_attempt = 1
@@ -191,13 +186,11 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
         log.info(log_msg)
 
         try:
-            potential_link = self.link_identifier_llm.invoke(
-                {
-                    "current_attempt": "Attempt " + str(current_attempt),
-                    "table_info": table_details,
-                    "previous_attempts": previous_attempt_details,
-                }
-            )
+            potential_link = self.link_identifier_llm.invoke({
+                "current_attempt": "Attempt " + str(current_attempt),
+                "table_info": table_details,
+                "previous_attempts": previous_attempt_details,
+            })
         except Exception:
             log_msg = "[!] Killing LLM run due to halucinations in output"
             self.logs.append(log_msg)
@@ -260,9 +253,7 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
         final_error_msg_list = state["error_msg"]
         log.info("chk1")
         # check if table names present
-        stat_foreign_key = self.profiling_data.loc[
-            self.profiling_data["table_name"] == potential_link["table1"]
-        ]
+        stat_foreign_key = self.profiling_data.loc[self.profiling_data["table_name"] == potential_link["table1"]]
 
         if stat_foreign_key.shape[0] == 0:
             log.info("chk2")
@@ -282,15 +273,15 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
 
         log.info("chk3")
 
-        stat_foreign_key = stat_foreign_key.loc[
-            stat_foreign_key["column_name"] == potential_link["column1"],
-        ]
+        stat_foreign_key = stat_foreign_key.loc[stat_foreign_key["column_name"] == potential_link["column1"],]
 
         if stat_foreign_key.shape[0] == 0:
             log.info("chk4")
             table_name = potential_link["table1"]
             missing_column = potential_link["column1"]
-            error_msg = f"{missing_column} is not present in {table_name}. Check for any spelling errors in the column name."
+            error_msg = (
+                f"{missing_column} is not present in {table_name}. Check for any spelling errors in the column name."
+            )
             try:
                 final_error_msg_list.append(error_msg)
             except Exception:
@@ -306,9 +297,7 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
         # Referrenced table #########################3
         log.info("chk5")
         # check if table names present
-        stat_referrence_key = self.profiling_data.loc[
-            self.profiling_data["table_name"] == potential_link["table2"]
-        ]
+        stat_referrence_key = self.profiling_data.loc[self.profiling_data["table_name"] == potential_link["table2"]]
 
         if stat_referrence_key.shape[0] == 0:
             log.info("chk6")
@@ -327,14 +316,14 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
             return {"error_msg": final_error_msg_list, "if_error": True}
         log.info("chk7")
         # check if column names present
-        stat_referrence_key = stat_referrence_key.loc[
-            stat_referrence_key["column_name"] == potential_link["column2"]
-        ]
+        stat_referrence_key = stat_referrence_key.loc[stat_referrence_key["column_name"] == potential_link["column2"]]
         if stat_referrence_key.shape[0] == 0:
             log.info("chk8")
             table_name = potential_link["table2"]
             missing_column = potential_link["column2"]
-            error_msg = f"{missing_column} is not present in {table_name}. Check for any spelling errors in the column name."
+            error_msg = (
+                f"{missing_column} is not present in {table_name}. Check for any spelling errors in the column name."
+            )
             try:
                 final_error_msg_list.append(error_msg)
             except Exception:
@@ -460,9 +449,7 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
 
         # Calculate the max uniqueness for the referenced key table
 
-        referrenced_key_datatype = stat_referrence_key["datatype_l1"].values[
-            0
-        ]
+        referrenced_key_datatype = stat_referrence_key["datatype_l1"].values[0]
 
         if dtype_check(dtype1=foreign_key_datatype, dtype2=referrenced_key_datatype):
             # log.info('All Good No error found')
@@ -560,12 +547,8 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
             "single_link_table_column_name_checker",
             self.single_link_table_column_name_checker,
         )  # table column name checker
-        workflow.add_node(
-            "single_link_uniqueness_checker", self.single_link_uniqueness_checker
-        )  # uniqueness
-        workflow.add_node(
-            "single_link_datatype_checker", self.single_link_datatype_checker
-        )  # datatype
+        workflow.add_node("single_link_uniqueness_checker", self.single_link_uniqueness_checker)  # uniqueness
+        workflow.add_node("single_link_datatype_checker", self.single_link_datatype_checker)  # datatype
 
         # Adding edges
         workflow.add_edge(START, "link_identifier")
@@ -643,9 +626,7 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
         final_output["table2"] = table2.name
 
         start_time = time.time()
-        input_message = HumanMessage(
-            content=f"{table1.name} & {table2.name}"
-        )
+        input_message = HumanMessage(content=f"{table1.name} & {table2.name}")
         init_data = {
             "input_text": input_message.content,
             "iteration": None,
@@ -659,22 +640,21 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
                 stream_mode="values",
                 config={
                     "recursion_limit": 20,
-                    "metadata": {
-                        "table_combo": tuple(
-                            sorted([table1.name, table2.name])
-                        )
-                    },
+                    "metadata": {"table_combo": tuple(sorted([table1.name, table2.name]))},
                 },
             ):
                 for key in [list(event.keys())[-1]]:
                     log.info(f"Finished running: {key}:")
 
+        except GraphRecursionError as ex:
+            log.warning(f"[!] Graph went into recursion loop when running for {table1.name} <=> {table2.name}")
+            event["status"] = Status.HALLUCINATED_RECURSION
+            event["potential_link"] = "NA"
+            event["error_msg"] = ex
+
         except Exception as ex:
             import traceback
-
-            log.error(
-                f"[!] Error while running for {table1.name} <=> {table2.name}: Reason {traceback.format_exc()}"
-            )
+            log.error(f"[!] Error while running for {table1.name} <=> {table2.name}: Reason {traceback.format_exc()}")
             event["status"] = Status.HALLUCINATED_RECURSION
             event["potential_link"] = "NA"
             event["error_msg"] = ex
@@ -701,22 +681,17 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
         pb = tqdm(assets)
         for _, (table1, table2) in enumerate(pb):
             runs = 1
-            pb.set_description(
-                desc=f"[*] {table1.name} <==> {table2.name} Runs:{runs}"
-            )
+            pb.set_description(desc=f"[*] {table1.name} <==> {table2.name} Runs:{runs}")
 
             final_output = self.__graph_invoke__(table1, table2)
 
             # If status came out as Hallucinated retry one more time
             while (
-                final_output["status"]
-                in (Status.HALLUCINATED_INVOKE, Status.HALLUCINATED_RECURSION)
+                final_output["status"] in (Status.HALLUCINATED_INVOKE, Status.HALLUCINATED_RECURSION)
                 and runs < self.HALLUCINATIONS_MAX_RETRY
             ):
                 runs += 1
-                log.info(
-                    f"[*] Hallucinated for {table1.name} <==> {table2.name} ... Retry no {runs} "
-                )
+                log.info(f"[*] Hallucinated for {table1.name} <==> {table2.name} ... Retry no {runs} ")
                 final_output = self.__graph_invoke__(table1=table1, table2=table2)
 
             results.append(final_output)

@@ -1,5 +1,6 @@
 import json
 import os
+import time
 import uuid
 
 from typing import Any, Dict, Optional, Self
@@ -25,6 +26,7 @@ from intugle.core.pipeline.business_glossary.bg import BusinessGlossary
 from intugle.core.pipeline.datatype_identification.l2_model import L2Model
 from intugle.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
 from intugle.core.pipeline.key_identification.ki import KeyIdentificationLLM
+from intugle.core.utilities.processing import string_standardization
 from intugle.models.resources.model import Column, ColumnProfilingMetrics
 from intugle.models.resources.source import Source, SourceTables
 
@@ -224,6 +226,7 @@ class DataSet:
         file_path = os.path.join(settings.PROJECT_BASE, file_path)
 
         column_profiles = self.results.get("column_profiles")
+        key = self.results.get("key")
 
         table_description = self.results.get("table_glossary")
         table_tags = self.results.get("business_glossary_and_tags")
@@ -254,7 +257,7 @@ class DataSet:
 
         details = self.adapter.get_details(self.data)
 
-        table = SourceTables(name=self.name, description=table_description, columns=columns, details=details)
+        table = SourceTables(name=self.name, description=table_description, columns=columns, details=details, key=key)
 
         source = Source(name="healthcare", description=table_description, schema="public", database="", table=table)
 
@@ -263,6 +266,59 @@ class DataSet:
         # Save the YAML representation of the sources
         with open(file_path, "w") as file:
             yaml.dump(sources, file, sort_keys=False, default_flow_style=False)
+    
+    def to_df(self):
+        return self.adapter.to_df(self.data, self.name)
+
+    def load_from_yaml(self, file_path: str) -> None:
+        with open(file_path, "r") as file:
+            data = yaml.safe_load(file)
+
+        source = data.get("sources", [])[0]
+        table = source.get("table", {})
+
+        self.results["table_glossary"] = table.get("description")
+
+        columns = table.get("columns", [])
+        column_profiles = {}
+        for col in columns:
+            profiling_metrics = col.get("profiling_metrics", {})
+            count = profiling_metrics.get("count", 0)
+            null_count = profiling_metrics.get("null_count", 0)
+            distinct_count = profiling_metrics.get("distinct_count", 0)
+
+            column_profiles[col["name"]] = ColumnProfile(
+                column_name=col["name"],
+                business_name=string_standardization(col["name"]),
+                table_name=self.name,
+                business_glossary=col.get("description"),
+                datatype_l1=col.get("type"),
+                datatype_l2=col.get("category"),
+                business_tags=col.get("tags"),
+                count=count,
+                null_count=null_count,
+                distinct_count=distinct_count,
+                uniqueness=distinct_count / count if count > 0 else 0.0,
+                completeness=(count - null_count) / count if count > 0 else 0.0,
+                sample_data=profiling_metrics.get("sample_data"),
+                ts=time.time(),
+            )
+        self.results["column_profiles"] = column_profiles
+
+        self.results["business_glossary_and_tags"] = BusinessGlossaryOutput(
+            table_name=self.name,
+            table_glossary=self.results["table_glossary"],
+            columns=[
+                ColumnGlossary(
+                    column_name=col.column_name,
+                    business_glossary=col.business_glossary,
+                    business_tags=col.business_tags,
+                )
+                for col in column_profiles.values()
+            ],
+        )
+
+        self.results["key"] = table.get('key')
     
     def to_df(self):
         return self.adapter.to_df(self.data, self.name)

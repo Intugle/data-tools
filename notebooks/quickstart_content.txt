@@ -1,26 +1,27 @@
 ---
 type: markdown
 ---
-# Quickstart: Building a Semantic Layer with Intugle
+# Quickstart: Building a GenAI powered Semantic Intelligence with Intugle
 
-This notebook provides a quick introduction to this project. You'll learn how to use its key features to automatically build a semantic layer over your data.
+This quickstart shows you how to use Intugle’s open-source library to transform fragmented datasets into a connected semantic layer. The semantic layer captures profiling, relationships, and business meaning of your data — making it instantly usable for exploration, search, and data product creation.
 
-**What is a Semantic Layer?**
+**What is Semantic Intelligence?**
 
-A semantic layer is a business-friendly representation of your data. It hides the complexity of the underlying data sources and provides a unified view of your data using familiar business terms. This makes it easier for both business users and data teams to understand and query the data, accelerating data-driven insights.
+A semantic layer is an intelligent knowledge graph of your data. It connects tables, discovers relationships, and enriches them with business glossaries — so both data teams and business users can query with clarity, not complexity.
 
 **Who is this for?**
 
-This tool is designed for both **data teams** and **business teams**.
-
-*   **Data teams** can use it to automate data profiling, schema discovery, and documentation, significantly accelerating their workflow.
-*   **Business teams** can use it to gain a better understanding of their data and to perform self-service analytics without needing to write complex SQL queries.
+*   **Data Engineers & Architects** often spend weeks manually profiling, classifying, and stitching together fragmented data assets. With Intugle, they can automate this process end-to-end, uncovering meaningful links and relationships to instantly generate a connected semantic layer.
+*   **Data Analysts & Scientists** spend endless hours on data readiness and preparation before they can even start the real analysis. Intugle accelerates this by providing contextual intelligence, automatically generating SQL and reusable data products enriched with relationships and business meaning.
+*   **Business Analysts & Decision Makers** are slowed down by constant dependence on technical teams for answers. Intugle removes this bottleneck by enabling natural language queries and semantic search, giving them trusted insights on demand.
 
 **In this notebook, you will learn how to:**
 
-1.  **Build a Knowledge Base:** Use the `KnowledgeBuilder` to automatically profile your data, generate a business glossary, and predict links between tables.
-2.  **Generate Data Products:** Use the semantic layer to generate data products and retrieve data.
-3.  **Serve the Semantic Layer:** Learn how to start the MCP server to interact with your semantic layer using natural language.
+- **Profile and classify data** : Analyze your data sources to understand their structure, data types, and other characteristics.
+- **Discover links & relationships among data** : Reveal meaningful connections (PK & FK) across fragmented tables.
+- **Generate a business glossary & enable semantic search** : Create business-friendly terms and use them to query data with context.
+- **Create a semantic intelligence layer** : Build a unified model (YAML) of your data and relationships.
+- **Build unified data products** : Generate reusable SQL queries powered by the semantic layer.
 
 ---
 type: markdown
@@ -28,12 +29,17 @@ type: markdown
 
 ## 1. LLM Configuration
 
-Before running the project, you need to configure a Large Language Model (LLM). This is used for tasks like generating business glossaries and predicting links between tables.
+Before running the project, you need to configure a Large Language Model (LLM). This is used for tasks like generating business glossaries and predicting links between tables. For the semantic search feature, you will also need to set up Qdrant and provide an OpenAI API key. For detailed setup instructions, please refer to the [README.md](README.md) file.
 
-You can configure the LLM by setting the following environment variables:
+You can configure the necessary services by setting the following environment variables:
 
 *   `LLM_PROVIDER`: The LLM provider and model to use (e.g., `openai:gpt-3.5-turbo`). The format follows langchain's format for initializing chat models. Checkout how to specify your model [here](https://python.langchain.com/docs/integrations/chat/)
-*   `OPENAI_API_KEY`: Your API key for the LLM provider.
+*   `API_KEY`: Your API key for the LLM provider. The exact name of the variable may vary from provider to provider (e.g., `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`).
+*   `QDRANT_URL`: The URL of your Qdrant instance (e.g., `http://localhost:6333`).
+*   `QDRANT_API_KEY`: Your API key for the Qdrant instance, if authorization is enabled.
+*   `EMBEDDING_MODEL_NAME`: The embedding model to use. The format follows LangChain's conventions for initializing embedding models (e.g., `openai:ada`, `azure_openai:ada`).
+*   `OPENAI_API_KEY`: Your OpenAI API key, required if you are using an OpenAI embedding model.
+*   `AZURE_OPENAI_API_KEY`, `AZURE_OPENAI_ENDPOINT`, `OPENAI_API_VERSION`: Your Azure OpenAI credentials, required if you are using an Azure OpenAI embedding model.
 
 Here's an example of how to set these variables in your environment:
 
@@ -41,7 +47,6 @@ Here's an example of how to set these variables in your environment:
 export LLM_PROVIDER="openai:gpt-3.5-turbo"
 export OPENAI_API_KEY="your-openai-api-key"
 ```
-
 Alternatively, you can set them in the notebook like this:
 
 ---
@@ -53,16 +58,27 @@ import os
 os.environ["LLM_PROVIDER"] = "openai:gpt-3.5-turbo"
 os.environ["OPENAI_API_KEY"] = "your-openai-api-key"  # Replace with your actual key
 
+# Semantic Search Configuration (Optional)
+os.environ["QDRANT_URL"] = "http://localhost:6333"
+os.environ["QDRANT_API_KEY"] = "" # if authorization is used
+os.environ["EMBEDDING_MODEL_NAME"] = "openai:ada"
+os.environ["OPENAI_API_KEY"] = "your-openai-api-key"
+
+# For Azure OpenAI models
+os.environ["EMBEDDING_MODEL_NAME"] = "azure_openai:ada"
+os.environ["AZURE_OPENAI_API_KEY"] = "your-azure-openai-api-key"
+os.environ["AZURE_OPENAI_ENDPOINT"] = "your-azure-openai-endpoint"
+os.environ["OPENAI_API_VERSION"] = "your-openai-api-version"
+
+
+
 ---
 type: markdown
 ---
-
 > Currently the langchain packages for OpenAI, Anthropic and Gemini is installed by default. For additional models, make sure you have the integration packages installed. E.g. you should have langchain-deepseek installed to use a DeepSeek model. You can get these packages here: [LangChain Chat Models](https://python.langchain.com/docs/integrations/chat/)
-
 ---
 type: markdown
 ---
-
 ## 2. Building the Knowledge Base
 
 The `KnowledgeBuilder` is the entry point for building your semantic layer. It takes a dictionary of datasets as input and performs the following steps:
@@ -73,33 +89,49 @@ The `KnowledgeBuilder` is the entry point for building your semantic layer. It t
 4.  **Glossary Generation:** Generates a business glossary for each column using an LLM.
 5.  **Link Prediction:** Predicts the relationships (foreign keys) between tables.
 
-Let's start by defining the datasets we want to use:
-
+Let's start by defining the datasets we want to use. The path shown below can be a local file path or a remote URL.
 ---
 type: code
 ---
-
 def generate_config(table_name: str) -> str:
     """Append the base URL to the table name."""
     return {
         "path": f"https://raw.githubusercontent.com/Intugle/data-tools/refs/heads/main/sample_data/healthcare/{table_name}.csv",
-        "type": "csv"
+        "type": "csv",
     }
 
 
-table_names = ["allergies", "patients", "claims", "careplans"]
-datasets = {table: generate_config(table) for table in table_names}
+table_names = [
+    "allergies",
+    "careplans",
+    "claims",
+    "claims_transactions",
+    "conditions",
+    "devices",
+    "encounters",
+    "imaging_studies",
+    "immunizations",
+    "medications",
+    "observations",
+    "organizations",
+    "patients",
+    "payers",
+    "payer_transitions",
+    "procedures",
+    "providers",
+    "supplies",
+]
 
+datasets = {table: generate_config(table) for table in table_names}
 ---
 type: markdown
 ---
-
 Now, let's use the `KnowledgeBuilder` to build our semantic layer:
 
+> The `domain` parameter helps the LLM generate a more contextual business glossary. It specifies the industry domain that the dataset belongs to (e.g., "Healthcare", "Finance", "E-commerce").
 ---
 type: code
 ---
-
 from intugle import KnowledgeBuilder
 
 # Initialize the knowledge builder
@@ -107,11 +139,9 @@ kb = KnowledgeBuilder(datasets, domain="Healthcare")
 
 # Run the prediction
 kb.build()
-
 ---
 type: markdown
 ---
-
 ## 3. Accessing Enriched Metadata
 
 Now that the knowledge base is built, you can easily access the enriched metadata for each dataset.
@@ -119,27 +149,16 @@ Now that the knowledge base is built, you can easily access the enriched metadat
 ### Accessing a Dataset
 
 You can access a specific dataset by its name from the `kb.datasets` dictionary:
-
 ---
 type: code
 ---
-
-allergies_dataset = kb.datasets['allergies']
-
+allergies_dataset = kb.datasets['patients']
+allergies_dataset.profiling_df
 ---
 type: markdown
 ---
-
-### Viewing Profiling Results
-
-The profiling results can be accessed through the `profiling_df` property of the `DataSet` object. It's a pandas DataFrame that you can easily explore:
-> The business glossary is also available in the `profile_df`:
----
-type: code
----
-
-allergies_dataset.profiling_df
-
+The profiling results can be accessed through the `profiling_df` property of the `DataSet` object. It's a pandas DataFrame that you can easily explore. 
+> The business glossary is also available in the `profiling_df`:
 ---
 type: markdown
 ---
@@ -147,68 +166,93 @@ type: markdown
 ### Visualizing Relationships
 
 The `KnowledgeBuilder` automatically discovers the relationships between your tables. You can access the predicted links as a list of `PredictedLink` objects:
-
 ---
 type: code
 ---
-
 kb.links
-
 ---
 type: markdown
 ---
-
-You can visualize these relationships as a graph:
+You can also visualize these relationships as a graph:
 ---
 type: code
 ---
-
 kb.visualize()
-
 ---
 type: markdown
 ---
-
 ## 4. The Semantic Layer
 
 The KnowledgeBuilder results are used to generate YAML files which are saved automatically. These files defines the semantic layer, including the models (tables) and their relationships. 
 
 By default, these files are saved in the current working directory. You can configure this path by setting the `PROJECT_BASE` environment variable.
+---
+type: markdown
+---
+## 5. Semantic Search
 
-## 5. Data Product Creation
+The semantic search feature allows you to search for columns in your datasets using natural language. 
+
+> **Note:** To use this feature, you need to have a running Qdrant instance and an OpenAI API key. Please refer to the [README.md](README.md) for detailed setup instructions.
+
+Once you have built the knowledge base, you can use the `search` method to perform a semantic search. The search function returns a pandas DataFrame containing the search results, including the column's profiling metrics, category, table name, and table glossary.
+---
+type: code
+---
+# Perform a semantic search
+search_results = kb.search("patient allergies")
+
+# View the search results
+search_results
+---
+type: markdown
+---
+## 6. Data Product Creation
 
 The semantic layer serves as a foundation for the DataProductBuilder, which streamlines the creation of reusable data products. This allows you
 to encapsulate business logic and create standardized, trustworthy data assets that can be easily shared and reused across different teams and 
 applications.
 
 Let's define the model for the data product we want to build:
-
 ---
 type: code
 ---
-
 etl = {
-    "name": "patient_names",
-    "fields": [
-        {"id": "patients.first", "name": "first_name"},
-        {"id": "patients.last", "name": "last_name"},
-        {"id": "allergies.start", "name": "start_date"},
-    ],
-    "filter": {
-        "selections": [{"id": "claims.departmentid", "values": ["3", "20"]}],
+  "name": "top_patients_by_claim_count",
+  "fields": [
+    {
+      "id": "patients.first",
+      "name": "first_name",
     },
+    {
+      "id": "patients.last",
+      "name": "last_name",
+    },
+    {
+      "id": "claims.id",
+      "name": "number_of_claims",
+      "category": "measure",
+      "measure_func": "count"
+    }
+  ],
+  "filter": {
+    "sort_by": [
+      {
+        "id": "claims.id",
+        "alias": "number_of_claims",
+        "direction": "desc"
+      }
+    ],
+    "limit": 10
+  }
 }
-
 ---
 type: markdown
 ---
-
 Now, let's use the `DataProductBuilder` to generate the data product:
-
 ---
 type: code
 ---
-
 from intugle.dp_builder import DataProductBuilder
 
 # Create a DataProductBuilder
@@ -217,53 +261,16 @@ dp_builder = DataProductBuilder()
 # Generate the data product
 data_product = dp_builder.build(etl)
 
-# Print the generated SQL query
-print(data_product.data['path'])
-
+data_product.to_df()
 ---
 type: markdown
 ---
-
-The `generate_product` function returns a `DataSet` object. You can use the `to_df()` method to view the data product as a pandas DataFrame:
-
+The `generate_product` function returns a `DataSet` object. You can also view the generated SQL query used for creating the data product:
 ---
 type: code
 ---
-
-data_product.to_df()
-
----
-type: markdown
----
-
-## 6. MCP Server: Interacting with Your Semantic Layer
-
-Now that you have a semantic layer, you can serve it as a MCP server to interact with it using natural language. The MCP server exposes your semantic layer as a set of tools that can be used by any MCP client.
-
-### Starting the MCP Server
-
-To start the MCP server, run the following command in your terminal:
-
-```bash
-intugle-mcp
-```
-
-This will start a server on `localhost:8000`.
-
-### Connecting to the MCP Server
-
-Once the server is running, you can connect to it from any MCP client. The endpoint for the MCP server is:
-
-`http://localhost:8000/semantic_layer/mcp`
-
-You can use a variety of MCP clients to connect to the server, such as Claude Desktop, Gemini CLI etc.
-
-### Use Cases
-
-Once connected, you can interact with your semantic layer using natural language. Here are some exciting applications:
-
-*   **Generate and Execute SQL Queries:** Ask questions in natural language and have the MCP server generate and execute the corresponding SQL query.
-*   **Data Discovery:** Ask questions about the tables and columns in your semantic layer to better understand your data.
+# The generated SQL query
+data_product.sql_query
 
 ---
 type: markdown
@@ -273,10 +280,10 @@ type: markdown
 
 You've learned how to:
 
-*   Configure your LLM provider.
+*   Configure your LLM provider and Embeddings provider.
 *   Build a knowledge base using the `KnowledgeBuilder`.
 *   Access enriched metadata, business glossaries and visualize the relationships between your tables.
+*   Perform semantic search on your knowledge base.
 *   Generate data products from the semantic layer using the `DataProductBuilder`.
-*   Interact with your semantic layer using the MCP server.
 
 This is just a starting point. This project has many other features to explore. We encourage you to try it with your own data and see how it can help you build a powerful semantic layer.

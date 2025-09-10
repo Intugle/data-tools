@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "intugle"
-version = "0.1.3"
+version = "0.1.4"
 authors = [
     { name="Intugle", email="hello@intugle.ai" },
 ]
@@ -52,6 +52,8 @@ dependencies = [
     "duckdb>=1.3.2",
     "scikit-learn<=1.7.1",
     "langchain[anthropic,google-genai,openai]>=0.3.27",
+    "qdrant-client>=1.15.1",
+    "ipykernel>=6.30.1",
 ]
 
 [project.urls]
