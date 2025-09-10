@@ -4,7 +4,7 @@
 </p>
 
 [![Release](https://img.shields.io/github/release/Intugle/data-tools)](https://github.com/Intugle/data-tools/releases/tag/v0.1.0)     
-[![Made with Python](https://img.shields.io/badge/Made_with-Python-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Made with Python](https://img.shields.io/badge/Made_with-Python-blue?logo=python&logoColor=white)](https://www.python.org/) 
 ![contributions - welcome](https://img.shields.io/badge/contributions-welcome-blue)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Open Issues](https://img.shields.io/github/issues-raw/Intugle/data-tools)](https://github.com/Intugle/data-tools/issues)
@@ -85,7 +85,7 @@ For a detailed, hands-on introduction to the project, please see the [`quickstar
 *   **Accessing Enriched Metadata:** Learn how to access the profiling results and business glossary for each dataset.
 *   **Visualizing Relationships:** Visualize the predicted links between your tables.
 *   **Generating Data Products:** Use the semantic layer to generate data products and retrieve data.
-*   **Serving the Semantic Layer:** Learn how to start the MCP server to interact with your semantic layer using natural language.
+*   **Searching the Knowledge Base:** Use semantic search to find relevant columns in your datasets using natural language.
 
 ## Usage
 
@@ -147,7 +147,72 @@ data_product = dp_builder.build(etl)
 print(data_product.to_df())
 ```
 
-For detailed code examples and a complete walkthrough, please refer to our quickstart notebooks.
+For detailed code examples and a complete walkthrough, please see the [`quickstart.ipynb`](quickstart.ipynb) notebook.
+
+### Semantic Search
+
+The semantic search feature allows you to search for columns in your datasets using natural language. It is built on top of the [Qdrant](https://qdrant.tech/) vector database.
+
+#### Prerequisites
+
+To use the semantic search feature, you need to have a running Qdrant instance. You can start one using the following Docker command:
+
+```bash
+docker run -p 6333:6333 -p 6334:6334 \
+    -v qdrant_storage:/qdrant/storage:z \
+    --name qdrant qdrant/qdrant
+```
+
+You also need to configure the Qdrant URL and API key (if using authorization) in your environment variables:
+
+```bash
+export QDRANT_URL="http://localhost:6333"
+export QDRANT_API_KEY="your-qdrant-api-key" # if authorization is used
+```
+
+Currently, the semantic search feature only supports OpenAI embedding models. Therefore, you need to have an OpenAI API key set up in your environment. The default model is `text-embedding-ada-002`. You can change the embedding model by setting the `EMBEDDING_MODEL_NAME` environment variable.
+
+**For OpenAI models:**
+
+```bash
+export OPENAI_API_KEY="your-openai-api-key"
+export EMBEDDING_MODEL_NAME="openai:ada"
+```
+
+**For Azure OpenAI models:**
+
+```bash
+export AZURE_OPENAI_API_KEY="your-azure-openai-api-key"
+export AZURE_OPENAI_ENDPOINT="your-azure-openai-endpoint"
+export OPENAI_API_VERSION="your-openai-api-version"
+export EMBEDDING_MODEL_NAME="azure_openai:ada"
+```
+
+#### Usage
+
+Once you have built the knowledge base, you can use the `search` method to perform a semantic search. The search function returns a pandas DataFrame containing the search results, including the column\'s profiling metrics, category, table name, and table glossary.
+
+```python
+from intugle import KnowledgeBuilder
+
+# Define your datasets
+datasets = {
+    "allergies": {"path": "path/to/allergies.csv", "type": "csv"},
+    "patients": {"path": "path/to/patients.csv", "type": "csv"},
+    "claims": {"path": "path/to/claims.csv", "type": "csv"},
+    # ... add other datasets
+}
+
+# Build the knowledge base
+kb = KnowledgeBuilder(datasets, domain="Healthcare")
+kb.build()
+# Perform a semantic search
+search_results = kb.search("patient allergies")
+
+# View the search results
+print(search_results)
+```
+For detailed code examples and a complete walkthrough, please see the [`quickstart.ipynb`](quickstart.ipynb) notebook.
 
 ## Community
 

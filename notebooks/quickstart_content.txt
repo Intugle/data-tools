@@ -29,12 +29,17 @@ type: markdown
 
 ## 1. LLM Configuration
 
-Before running the project, you need to configure a Large Language Model (LLM). This is used for tasks like generating business glossaries and predicting links between tables.
+Before running the project, you need to configure a Large Language Model (LLM). This is used for tasks like generating business glossaries and predicting links between tables. For the semantic search feature, you will also need to set up Qdrant and provide an OpenAI API key. For detailed setup instructions, please refer to the [README.md](README.md) file.
 
-You can configure the LLM by setting the following environment variables:
+You can configure the necessary services by setting the following environment variables:
 
 *   `LLM_PROVIDER`: The LLM provider and model to use (e.g., `openai:gpt-3.5-turbo`). The format follows langchain's format for initializing chat models. Checkout how to specify your model [here](https://python.langchain.com/docs/integrations/chat/)
-*   `API_KEY`: Your API key for the LLM provider. The exact name of the variable may vary from provider to provider
+*   `API_KEY`: Your API key for the LLM provider. The exact name of the variable may vary from provider to provider (e.g., `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`).
+*   `QDRANT_URL`: The URL of your Qdrant instance (e.g., `http://localhost:6333`).
+*   `QDRANT_API_KEY`: Your API key for the Qdrant instance, if authorization is enabled.
+*   `EMBEDDING_MODEL_NAME`: The embedding model to use. The format follows LangChain's conventions for initializing embedding models (e.g., `openai:ada`, `azure_openai:ada`).
+*   `OPENAI_API_KEY`: Your OpenAI API key, required if you are using an OpenAI embedding model.
+*   `AZURE_OPENAI_API_KEY`, `AZURE_OPENAI_ENDPOINT`, `OPENAI_API_VERSION`: Your Azure OpenAI credentials, required if you are using an Azure OpenAI embedding model.
 
 Here's an example of how to set these variables in your environment:
 
@@ -42,7 +47,6 @@ Here's an example of how to set these variables in your environment:
 export LLM_PROVIDER="openai:gpt-3.5-turbo"
 export OPENAI_API_KEY="your-openai-api-key"
 ```
-
 Alternatively, you can set them in the notebook like this:
 
 ---
@@ -53,6 +57,20 @@ import os
 
 os.environ["LLM_PROVIDER"] = "openai:gpt-3.5-turbo"
 os.environ["OPENAI_API_KEY"] = "your-openai-api-key"  # Replace with your actual key
+
+# Semantic Search Configuration (Optional)
+os.environ["QDRANT_URL"] = "http://localhost:6333"
+os.environ["QDRANT_API_KEY"] = "" # if authorization is used
+os.environ["EMBEDDING_MODEL_NAME"] = "openai:ada"
+os.environ["OPENAI_API_KEY"] = "your-openai-api-key"
+
+# For Azure OpenAI models
+os.environ["EMBEDDING_MODEL_NAME"] = "azure_openai:ada"
+os.environ["AZURE_OPENAI_API_KEY"] = "your-azure-openai-api-key"
+os.environ["AZURE_OPENAI_ENDPOINT"] = "your-azure-openai-endpoint"
+os.environ["OPENAI_API_VERSION"] = "your-openai-api-version"
+
+
 
 ---
 type: markdown
@@ -171,7 +189,25 @@ By default, these files are saved in the current working directory. You can conf
 ---
 type: markdown
 ---
-## 5. Data Product Creation
+## 5. Semantic Search
+
+The semantic search feature allows you to search for columns in your datasets using natural language. 
+
+> **Note:** To use this feature, you need to have a running Qdrant instance and an OpenAI API key. Please refer to the [README.md](README.md) for detailed setup instructions.
+
+Once you have built the knowledge base, you can use the `search` method to perform a semantic search. The search function returns a pandas DataFrame containing the search results, including the column's profiling metrics, category, table name, and table glossary.
+---
+type: code
+---
+# Perform a semantic search
+search_results = kb.search("patient allergies")
+
+# View the search results
+search_results
+---
+type: markdown
+---
+## 6. Data Product Creation
 
 The semantic layer serves as a foundation for the DataProductBuilder, which streamlines the creation of reusable data products. This allows you
 to encapsulate business logic and create standardized, trustworthy data assets that can be easily shared and reused across different teams and 
@@ -244,9 +280,10 @@ type: markdown
 
 You've learned how to:
 
-*   Configure your LLM provider.
+*   Configure your LLM provider and Embeddings provider.
 *   Build a knowledge base using the `KnowledgeBuilder`.
 *   Access enriched metadata, business glossaries and visualize the relationships between your tables.
+*   Perform semantic search on your knowledge base.
 *   Generate data products from the semantic layer using the `DataProductBuilder`.
 
 This is just a starting point. This project has many other features to explore. We encourage you to try it with your own data and see how it can help you build a powerful semantic layer.

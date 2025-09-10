@@ -86,7 +86,7 @@ class KnowledgeBuilder:
         for dataset in self.datasets.values():
             file_path = os.path.join(settings.PROJECT_BASE, f"{dataset.name}.yml")
             if os.path.exists(file_path) and not force_recreate:
-                log.info(f"Dataset {dataset.name} already processed. Loading from file.")
+                print(f"Dataset {dataset.name} already processed. Loading from file.")
                 dataset.load_from_yaml(file_path)
                 continue
             dataset.run(domain=self.domain, save=True)
@@ -109,11 +109,11 @@ class KnowledgeBuilder:
     def initialize_semantic_search(self):
         """Initialize the semantic search engine."""
         try:
-            log.info("Initializing semantic search...")
+            print("Initializing semantic search...")
             search_client = SemanticSearch()
             _run_async_in_sync(search_client.initialize())
             self._semantic_search_initialized = True
-            log.info("Semantic search initialized.")
+            print("Semantic search initialized.")
         except Exception as e:
             log.warning(f"Could not initialize semantic search: {e}")
             raise e
