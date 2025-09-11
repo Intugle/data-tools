@@ -62,6 +62,7 @@ dependencies = [
 
 [project.scripts]
 intugle-mcp = "intugle.mcp.server:main"
+intugle-streamlit = "intugle.cli:export_data"
 
 [dependency-groups]
 test = [
