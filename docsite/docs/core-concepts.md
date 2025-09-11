@@ -10,7 +10,7 @@ The `KnowledgeBuilder` is the main entry point for building the semantic layer. 
 
 ## Data Product Builder
 
-The `DataProductBuilder` is used to generate data products from the semantic layer. It takes an ETL model as input and generates a unified data product that can be used for analysis and exploration.
+The `DataProductBuilder` is used to generate data products from the semantic layer. It takes an config dictionary as input and generates a unified data product that can be used for analysis and exploration.
 
 ## Semantic Search
 
