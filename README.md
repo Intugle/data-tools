@@ -81,8 +81,8 @@ export OPENAI_API_KEY="your-openai-api-key"
 
 For a detailed, hands-on introduction to the project, please see our quickstart notebooks:
 
-*   [`quickstart_healthcare.ipynb`](notebooks/quickstart_healthcare.ipynb): This notebook will walk you through the entire process of building a semantic layer using a healthcare dataset.
-*   [`quickstart_tech_company.ipynb`](notebooks/quickstart_tech_company.ipynb): This notebook demonstrates how to use the library with a technology manufacturing company dataset
+*   [`quickstart_healthcare.ipynb`](notebooks/quickstart_healthcare.ipynb) [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_healthcare.ipynb): This notebook will walk you through the entire process of building a semantic layer using a healthcare dataset. 
+*   [`quickstart_tech_company.ipynb`](notebooks/quickstart_tech_company.ipynb) [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_tech_company.ipynb): This notebook demonstrates how to use the library with a technology manufacturing company dataset
 
 These datasets will take you through the following steps:
 
