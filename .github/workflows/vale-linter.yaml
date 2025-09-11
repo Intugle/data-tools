@@ -32,5 +32,6 @@ jobs:
         uses: errata-ai/vale-action@reviewdog
         with:
           files: docsite/   #  only lint inside docsite/
+          config: docsite/.vale.ini
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
