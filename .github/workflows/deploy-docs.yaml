@@ -1,0 +1,43 @@
+name: Deploy Docusaurus to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docsite/**'   #  Only run if docsite/ changes
+  workflow_dispatch:     # Allow manual triggering if needed
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18   # match your local version
+          cache: 'yarn'
+
+      # Install dependencies
+      - name: Install dependencies
+        working-directory: docsite
+        run: yarn install --frozen-lockfile
+
+      # Build site
+      - name: Build website
+        working-directory: docsite
+        run: yarn build
+
+      # Deploy to gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docsite/build
+          publish_branch: gh-pages
