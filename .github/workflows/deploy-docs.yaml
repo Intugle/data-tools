@@ -5,39 +5,47 @@ on:
     branches:
       - main
     paths:
-      - 'docsite/**'   #  Only run if docsite/ changes
-  workflow_dispatch:     # Allow manual triggering if needed
+      - 'docsite/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write      # 👈 needed for deploy
+  id-token: write   # 👈 needed for OIDC
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      # Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18   # match your local version
-          cache: 'yarn'
+          node-version: 18
+          cache: yarn
 
-      # Install dependencies
       - name: Install dependencies
         working-directory: docsite
         run: yarn install --frozen-lockfile
 
-      # Build site
       - name: Build website
         working-directory: docsite
         run: yarn build
 
-      # Deploy to gh-pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docsite/build
-          publish_branch: gh-pages
+          path: docsite/build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
