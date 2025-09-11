@@ -208,7 +208,7 @@ __marimo__/
 notes.txt
 
 testing_base
-models
+/models
 models_bak
 
 settings.json
