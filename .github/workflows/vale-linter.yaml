@@ -5,33 +5,29 @@ on:
     branches:
       - main
     paths:
-      - 'docsite/**'   # Only run when files in docsite/ change
+      - 'docsite/**'
   pull_request:
     branches:
       - '*'
     paths:
-      - 'docsite/**'   # Only run lint on PRs that touch docsite/
+      - 'docsite/**'
   workflow_dispatch:
 
 jobs:
   prose:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Check out the repository code
+      # Checkout repository
       - name: Checkout Code
-        uses: actions/checkout@v3 
+        uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
+      # Install Vale (safe, no sudo needed)
+      - name: Install Vale
+        run: |
+          curl -fsSL https://github.com/errata-ai/vale/releases/latest/download/vale_Linux_64-bit.tar.gz -o vale.tar.gz
+          tar -xzf vale.tar.gz
+          echo "$PWD" >> $GITHUB_PATH
 
-      # Step 3: Run Vale lint checks
-      - name: Vale Lint
-        uses: errata-ai/vale-action@reviewdog
-        with:
-          files: docsite/   #  only lint inside docsite/
-          config: docsite/.vale.ini
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Run Vale using config inside docsite/
+      - name: Run Vale Lint
+        run: vale --config=docsite/.vale.ini docsite/
