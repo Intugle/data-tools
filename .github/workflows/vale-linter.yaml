@@ -1,0 +1,36 @@
+name: Vale Lint Checker
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docsite/**'   # Only run when files in docsite/ change
+  pull_request:
+    branches:
+      - '*'
+    paths:
+      - 'docsite/**'   # Only run lint on PRs that touch docsite/
+  workflow_dispatch:
+
+jobs:
+  prose:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout Code
+        uses: actions/checkout@v3 
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # Step 3: Run Vale lint checks
+      - name: Vale Lint
+        uses: errata-ai/vale-action@reviewdog
+        with:
+          files: docsite/   #  only lint inside docsite/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
