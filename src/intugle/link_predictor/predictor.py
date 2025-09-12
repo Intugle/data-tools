@@ -18,6 +18,7 @@ from intugle.analysis.steps import (
     TableProfiler,
 )
 from intugle.core import settings
+from intugle.core.console import console, warning_style
 from intugle.core.pipeline.link_prediction.lp import LinkPredictionAgentic
 from intugle.libs.smart_query_generator.utils.join import Join
 from intugle.models.resources.relationship import (
@@ -29,6 +30,11 @@ from intugle.models.resources.relationship import (
 from .models import LinkPredictionResult, PredictedLink
 
 log = logging.getLogger(__name__)
+
+
+class NoLinksFoundError(Exception):
+    """Custom exception raised when no links are found to save."""
+    pass
 
 
 class LinkPredictor:
@@ -165,6 +171,11 @@ class LinkPredictor:
                 print("No links found for this pair.")
 
         self.links = all_links
+
+        if len(self.links) == 0:
+            console.print("No links found between any datasets.", style=warning_style)
+            return self
+
         if save:
             self.save_yaml(file_path=filename)
 
@@ -186,7 +197,7 @@ class LinkPredictor:
         file_path = os.path.join(settings.PROJECT_BASE, file_path)
 
         if len(self.links) == 0:
-            raise ValueError("No links found to save.")
+            raise NoLinksFoundError("No links found to save.")
 
         relationships = {"relationships": [json.loads(link.relationship.model_dump_json()) for link in self.links]}
 

@@ -33,7 +33,7 @@ class TableSchema:
 
         # Iterate through the columns of the table and create the column definitions
         columns_statements = [
-            f"{column.name} {column.type}, -- {column.description}" for column in table_detail.table.columns
+            f"\"{column.name}\" {column.type}, -- {column.description}" for column in table_detail.table.columns
         ]
 
         # join the column definitions into a single string
