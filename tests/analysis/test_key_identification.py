@@ -40,12 +40,6 @@ def test_key_identification_end_to_end():
     analysis_results = pipeline.run(KEY_TEST_DF, DF_NAME)
 
     # Check the final output of the KeyIdentifier step
-    identified_key = analysis_results.results.get("key")
+    identified_key = analysis_results.source_table_model.key
     assert identified_key is not None
-
-    # The result should identify 'order_id' as the primary key.
-    # Based on the implementation, the output is a KeyIdentificationOutput object
-    # which contains the identified key information.
-    # We expect one identified key.
-
     assert identified_key == "order_id"

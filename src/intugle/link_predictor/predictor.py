@@ -95,7 +95,7 @@ class LinkPredictor:
         for dataset in data_list:
             if not dataset.name:
                 raise ValueError("DataSet objects provided in a list must have a 'name' attribute.")
-            if "key" not in dataset.results:
+            if not dataset.source_table_model.key:
                 print(f"Dataset '{dataset.name}' is missing key identification. Running prerequisite analysis...")
                 self._run_prerequisites(dataset)
             else:
@@ -108,7 +108,11 @@ class LinkPredictor:
         return f"{assets[0]}--{assets[1]}"
 
     def _predict_for_pair(
-        self, name_a: str, dataset_a: DataSet, name_b: str, dataset_b: DataSet
+        self,
+        name_a: str,
+        dataset_a: DataSet,
+        name_b: str,
+        dataset_b: DataSet,
     ) -> List[PredictedLink]:
         """
         Contains the core logic for finding links between TWO dataframes.
@@ -117,19 +121,19 @@ class LinkPredictor:
         table_combination = self._create_table_combination_id(name_a, name_b)
         if table_combination in self.already_executed_combo:
             log.warning(f"[!] Skipping already executed combination: {table_combination}")
-            return
+            return []
 
-        dataset_a_column_profiles = [col.model_dump() for col in dataset_a.results["column_profiles"].values()]
-        dataset_b_column_profiles = [col.model_dump() for col in dataset_b.results["column_profiles"].values()]
+        dataset_a_column_profiles = dataset_a.profiling_df
+        dataset_b_column_profiles = dataset_b.profiling_df
         profiling_data = pd.concat(
-            [pd.DataFrame(dataset_a_column_profiles), pd.DataFrame(dataset_b_column_profiles)], ignore_index=True
+            [dataset_a_column_profiles, dataset_b_column_profiles], ignore_index=True
         )
 
         primary_keys = []
-        if dataset_a.results.get("key"):
-            primary_keys.append((name_a, dataset_a.results["key"]))
-        if dataset_b.results.get("key"):
-            primary_keys.append((name_b, dataset_b.results["key"]))
+        if dataset_a.source_table_model.key:
+            primary_keys.append((name_a, dataset_a.source_table_model.key))
+        if dataset_b.source_table_model.key:
+            primary_keys.append((name_b, dataset_b.source_table_model.key))
 
         pipeline = LinkPredictionAgentic(
             profiling_data=profiling_data,

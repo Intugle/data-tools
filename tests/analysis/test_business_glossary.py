@@ -1,6 +1,5 @@
 import pandas as pd
 
-from intugle.adapters.models import BusinessGlossaryOutput, ColumnGlossary
 from intugle.analysis.models import DataSet
 from intugle.analysis.pipeline import Pipeline
 from intugle.analysis.steps import (
@@ -34,34 +33,19 @@ def test_business_glossary_generator():
         BusinessGlossaryGenerator(domain=domain),
     ])
 
-    # 2. Initialize DataSet
-    dataset = DataSet(df, name=table_name)
-
-    # 3. Run prerequisite steps (TableProfiler, ColumnProfiler)
+    # 2. Run the pipeline
     dataset = pipeline.run(df, table_name)
 
-    # 4. Assert the results
-    assert "business_glossary_and_tags" in dataset.results
-    assert "table_glossary" in dataset.results
-
-    glossary_output = dataset.results["business_glossary_and_tags"]
-    table_glossary_str = dataset.results["table_glossary"]
-
-    assert isinstance(glossary_output, BusinessGlossaryOutput)
-    assert glossary_output.table_name == table_name
-    assert isinstance(table_glossary_str, str)
-    assert len(table_glossary_str) > 0
-    assert len(glossary_output.columns) == len(df.columns)
+    # 3. Assert the results
+    assert dataset.source_table_model.description is not None
+    assert len(dataset.source_table_model.description) > 0
+    assert len(dataset.source_table_model.columns) == len(df.columns)
 
     # Check a specific column's glossary entry
-    product_id_glossary = next((col for col in glossary_output.columns if col.column_name == "product_id"), None)
-    assert product_id_glossary is not None
-    assert isinstance(product_id_glossary, ColumnGlossary)
-    assert isinstance(product_id_glossary.business_glossary, str)
-    assert len(product_id_glossary.business_glossary) > 0
-    assert len(product_id_glossary.business_tags) > 0
-
-    # Verify that column profiles were updated
-    assert dataset.results["column_profiles"]["product_id"].business_glossary is not None
-    assert len(dataset.results["column_profiles"]["product_id"].business_tags) > 0
+    product_id_column = dataset._columns_map.get("product_id")
+    assert product_id_column is not None
+    assert product_id_column.description is not None
+    assert len(product_id_column.description) > 0
+    assert product_id_column.tags is not None
+    assert len(product_id_column.tags) > 0
     dataset.save_yaml()

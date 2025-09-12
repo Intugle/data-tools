@@ -22,16 +22,13 @@ def test_profile(sample_dataframe):
     dataset = DataSet(sample_dataframe, name="test_table")
     dataset.profile()
 
-    assert "table_profile" in dataset.results
-    table_profile = dataset.results["table_profile"]
-    assert table_profile is not None
-    assert table_profile.count == 5
-    assert set(table_profile.columns) == {"user_id", "product_name", "price", "purchase_date"}
+    table_model = dataset.source_table_model
+    assert table_model.profiling_metrics is not None
+    assert table_model.profiling_metrics.count == 5
+    assert len(table_model.columns) == 4
+    assert {col.name for col in table_model.columns} == {"user_id", "product_name", "price", "purchase_date"}
 
-    assert "column_profiles" in dataset.results
-    column_profiles = dataset.results["column_profiles"]
-    assert column_profiles is not None
-    assert len(column_profiles) == 4
+    assert all(col.profiling_metrics is not None for col in table_model.columns)
 
 
 def test_identify_datatypes(sample_dataframe):
@@ -40,15 +37,9 @@ def test_identify_datatypes(sample_dataframe):
     dataset.profile()
     dataset.identify_datatypes()
 
-    assert "column_datatypes_l1" in dataset.results
-    column_datatypes_l1 = dataset.results["column_datatypes_l1"]
-    assert column_datatypes_l1 is not None
-    assert len(column_datatypes_l1) == 4
-
-    assert "column_datatypes_l2" in dataset.results
-    column_datatypes_l2 = dataset.results["column_datatypes_l2"]
-    assert column_datatypes_l2 is not None
-    assert len(column_datatypes_l2) == 4
+    table_model = dataset.source_table_model
+    assert all(col.type is not None for col in table_model.columns)
+    assert all(col.category is not None for col in table_model.columns)
 
 
 def test_identify_keys(sample_dataframe):
@@ -58,9 +49,7 @@ def test_identify_keys(sample_dataframe):
     dataset.identify_datatypes()
     dataset.identify_keys()
 
-    assert "key" in dataset.results
-    key = dataset.results["key"]
-    assert key is not None
+    assert dataset.source_table_model.key is not None
 
 
 def test_generate_glossary(sample_dataframe):
@@ -70,12 +59,9 @@ def test_generate_glossary(sample_dataframe):
     dataset.identify_datatypes()
     dataset.generate_glossary(domain="ecommerce")
 
-    assert "business_glossary_and_tags" in dataset.results
-    glossary = dataset.results["business_glossary_and_tags"]
-    assert glossary is not None
-    assert "table_glossary" in dataset.results
-    table_glossary = dataset.results["table_glossary"]
-    assert table_glossary is not None
+    table_model = dataset.source_table_model
+    assert table_model.description is not None
+    assert all(col.description is not None for col in table_model.columns)
 
 
 def test_save_yaml(sample_dataframe, tmp_path):

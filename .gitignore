@@ -209,6 +209,7 @@ notes.txt
 
 testing_base
 /models
+/notebooks/models/
 models_bak
 
 settings.json
