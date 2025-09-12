@@ -1,6 +1,5 @@
 import json
 import os
-import time
 import uuid
 
 from typing import Any, Dict, Optional, Self
@@ -10,15 +9,11 @@ import yaml
 
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import (
-    BusinessGlossaryOutput,
-    ColumnGlossary,
-    ColumnProfile,
     DataSetData,
     DataTypeIdentificationL1Output,
     DataTypeIdentificationL2Input,
     DataTypeIdentificationL2Output,
     KeyIdentificationOutput,
-    ProfilingOutput,
 )
 from intugle.common.exception import errors
 from intugle.core import settings
@@ -27,7 +22,7 @@ from intugle.core.pipeline.datatype_identification.l2_model import L2Model
 from intugle.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
 from intugle.core.pipeline.key_identification.ki import KeyIdentificationLLM
 from intugle.core.utilities.processing import string_standardization
-from intugle.models.resources.model import Column, ColumnProfilingMetrics
+from intugle.models.resources.model import Column, ColumnProfilingMetrics, ModelProfilingMetrics
 from intugle.models.resources.source import Source, SourceTables
 
 
@@ -47,16 +42,17 @@ class DataSet:
         self.adapter = AdapterFactory().create(data)
 
         # A dictionary to store the results of each analysis step
-        self.results: Dict[str, Any] = {}
+        self.source_table_model: SourceTables = SourceTables(name=name, description="")
+        self._columns_map: Dict[str, Column] = {} # A convenience map for quick column lookup
 
         self.load()
 
     @property
     def sql_query(self):
-        if 'type' in self.data and self.data['type'] == 'query':
-            return self.data['path']
+        if "type" in self.data and self.data["type"] == "query":
+            return self.data["path"]
         return None
-    
+
     def load(self):
         try:
             self.adapter.load(self.data, self.name)
@@ -69,7 +65,13 @@ class DataSet:
         """
         Profiles the table and stores the result in the 'results' dictionary.
         """
-        self.results["table_profile"] = self.adapter.profile(self.data, self.name)
+        table_profile = self.adapter.profile(self.data, self.name)
+        if self.source_table_model.profiling_metrics is None:
+            self.source_table_model.profiling_metrics = ModelProfilingMetrics()
+        self.source_table_model.profiling_metrics.count = table_profile.count
+
+        self.source_table_model.columns = [Column(name=col_name) for col_name in table_profile.columns]
+        self._columns_map = {col.name: col for col in self.source_table_model.columns}
         return self
 
     def profile_columns(self) -> Self:
@@ -77,16 +79,24 @@ class DataSet:
         Profiles each column in the dataset and stores the results in the 'results' dictionary.
         This method relies on the 'table_profile' result to get the list of columns.
         """
-        if "table_profile" not in self.results:
+        if not self.source_table_model.columns:
             raise RuntimeError("TableProfiler must be run before profiling columns.")
 
-        table_profile: ProfilingOutput = ProfilingOutput.model_validate(self.results["table_profile"])
-        self.results["column_profiles"] = {
-            col_name: self.adapter.column_profile(
-                self.data, self.name, col_name, table_profile.count, settings.UPSTREAM_SAMPLE_LIMIT
+        count = self.source_table_model.profiling_metrics.count
+
+        for column in self.source_table_model.columns:
+            column_profile = self.adapter.column_profile(
+                self.data, self.name, column.name, count, settings.UPSTREAM_SAMPLE_LIMIT
             )
-            for col_name in table_profile.columns
-        }
+            if column_profile:
+                if column.profiling_metrics is None:
+                    column.profiling_metrics = ColumnProfilingMetrics()
+
+                column.profiling_metrics.count = column_profile.count
+                column.profiling_metrics.null_count = column_profile.null_count
+                column.profiling_metrics.distinct_count = column_profile.distinct_count
+                column.profiling_metrics.sample_data = column_profile.sample_data
+                column.profiling_metrics.dtype_sample = column_profile.dtype_sample
         return self
 
     def identify_datatypes_l1(self) -> "DataSet":
@@ -94,13 +104,16 @@ class DataSet:
         Identifies the data types at Level 1 for each column based on the column profiles.
         This method relies on the 'column_profiles' result.
         """
-        if "column_profiles" not in self.results:
+        if not self.source_table_model.columns or any(
+            c.profiling_metrics is None for c in self.source_table_model.columns
+        ):
             raise RuntimeError("TableProfiler and ColumnProfiler must be run before data type identification.")
 
-        column_profiles: dict[str, ColumnProfile] = self.results["column_profiles"]
         records = []
-        for column_name, stats in column_profiles.items():
-            records.append({"table_name": self.name, "column_name": column_name, "values": stats.dtype_sample})
+        for column in self.source_table_model.columns:
+            records.append(
+                {"table_name": self.name, "column_name": column.name, "values": column.profiling_metrics.dtype_sample}
+            )
 
         l1_df = pd.DataFrame(records)
         di_pipeline = DataTypeIdentificationPipeline()
@@ -108,10 +121,8 @@ class DataSet:
 
         column_datatypes_l1 = [DataTypeIdentificationL1Output(**row) for row in l1_result.to_dict(orient="records")]
 
-        for column in column_datatypes_l1:
-            column_profiles[column.column_name].datatype_l1 = column.datatype_l1
-
-        self.results["column_datatypes_l1"] = column_datatypes_l1
+        for col_l1 in column_datatypes_l1:
+            self._columns_map[col_l1.column_name].type = col_l1.datatype_l1
         return self
 
     def identify_datatypes_l2(self) -> "DataSet":
@@ -119,21 +130,27 @@ class DataSet:
         Identifies the data types at Level 2 for each column based on the column profiles.
         This method relies on the 'column_profiles' result.
         """
-        if "column_profiles" not in self.results:
+        if not self.source_table_model.columns or any(c.type is None for c in self.source_table_model.columns):
             raise RuntimeError("TableProfiler and ColumnProfiler must be run before data type identification.")
 
-        column_profiles: dict[str, ColumnProfile] = self.results["column_profiles"]
-        columns_with_samples = [DataTypeIdentificationL2Input(**col.model_dump()) for col in column_profiles.values()]
+        columns_with_samples = []
+        for column in self.source_table_model.columns:
+            columns_with_samples.append(
+                DataTypeIdentificationL2Input(
+                    column_name=column.name,
+                    table_name=self.name,
+                    sample_data=column.profiling_metrics.sample_data,
+                    datatype_l1=column.type,
+                )
+            )
 
         column_values_df = pd.DataFrame([item.model_dump() for item in columns_with_samples])
         l2_model = L2Model()
         l2_result = l2_model(l1_pred=column_values_df)
         column_datatypes_l2 = [DataTypeIdentificationL2Output(**row) for row in l2_result.to_dict(orient="records")]
 
-        for column in column_datatypes_l2:
-            column_profiles[column.column_name].datatype_l2 = column.datatype_l2
-
-        self.results["column_datatypes_l2"] = column_datatypes_l2
+        for col_l2 in column_datatypes_l2:
+            self._columns_map[col_l2.column_name].category = col_l2.datatype_l2
         return self
 
     def identify_keys(self) -> Self:
@@ -141,21 +158,37 @@ class DataSet:
         Identifies potential primary keys in the dataset based on column profiles.
         This method relies on the 'column_profiles' result.
         """
-        if "column_datatypes_l1" not in self.results or "column_datatypes_l2" not in self.results:
+        if not self.source_table_model.columns or any(
+            c.type is None or c.category is None for c in self.source_table_model.columns
+        ):
             raise RuntimeError("DataTypeIdentifierL1 and L2 must be run before KeyIdentifier.")
 
-        column_profiles: dict[str, ColumnProfile] = self.results["column_profiles"]
-        column_profiles_df = pd.DataFrame([col.model_dump() for col in column_profiles.values()])
+        column_profiles_data = []
+        for column in self.source_table_model.columns:
+            metrics = column.profiling_metrics
+            count = metrics.count if metrics.count is not None else 0
+            null_count = metrics.null_count if metrics.null_count is not None else 0
+            distinct_count = metrics.distinct_count if metrics.distinct_count is not None else 0
+            column_profiles_data.append(
+                {
+                    "column_name": column.name,
+                    "table_name": self.name,
+                    "datatype_l1": column.type,
+                    "datatype_l2": column.category,
+                    "count": count,
+                    "null_count": null_count,
+                    "distinct_count": distinct_count,
+                    "uniqueness": distinct_count / count if count > 0 else 0.0,
+                    "completeness": (count - null_count) / count if count > 0 else 0.0,
+                    "sample_data": metrics.sample_data,
+                }
+            )
+        column_profiles_df = pd.DataFrame(column_profiles_data)
 
         ki_model = KeyIdentificationLLM(profiling_data=column_profiles_df)
         ki_result = ki_model()
         output = KeyIdentificationOutput(**ki_result)
-        key = output.column_name
-
-        if key is not None:
-            self.results["key"] = key
-        else:
-            self.results['key'] = None
+        self.source_table_model.key = output.column_name
         return self
 
     def profile(self) -> Self:
@@ -179,33 +212,40 @@ class DataSet:
         Generates a business glossary for the dataset and stores the result in the 'results' dictionary.
         This method relies on the 'column_datatypes_l1' results.
         """
-        if "column_datatypes_l1" not in self.results:
+        if not self.source_table_model.columns or any(c.type is None for c in self.source_table_model.columns):
             raise RuntimeError("DataTypeIdentifierL1  must be run before Business Glossary Generation.")
 
-        column_profiles: dict[str, ColumnProfile] = self.results["column_profiles"]
-        column_profiles_df = pd.DataFrame([col.model_dump() for col in column_profiles.values()])
+        column_profiles_data = []
+        for column in self.source_table_model.columns:
+            metrics = column.profiling_metrics
+            count = metrics.count if metrics.count is not None else 0
+            null_count = metrics.null_count if metrics.null_count is not None else 0
+            distinct_count = metrics.distinct_count if metrics.distinct_count is not None else 0
+            column_profiles_data.append(
+                {
+                    "column_name": column.name,
+                    "table_name": self.name,
+                    "datatype_l1": column.type,
+                    "datatype_l2": column.category,
+                    "count": count,
+                    "null_count": null_count,
+                    "distinct_count": distinct_count,
+                    "uniqueness": distinct_count / count if count > 0 else 0.0,
+                    "completeness": (count - null_count) / count if count > 0 else 0.0,
+                    "sample_data": metrics.sample_data,
+                }
+            )
+        column_profiles_df = pd.DataFrame(column_profiles_data)
 
         bg_model = BusinessGlossary(profiling_data=column_profiles_df)
         table_glossary, glossary_df = bg_model(table_name=self.name, domain=domain)
-        columns_glossary = []
+
+        self.source_table_model.description = table_glossary
+
         for _, row in glossary_df.iterrows():
-            columns_glossary.append(
-                ColumnGlossary(
-                    column_name=row["column_name"],
-                    business_glossary=row.get("business_glossary", ""),
-                    business_tags=row.get("business_tags", []),
-                )
-            )
-        glossary_output = BusinessGlossaryOutput(
-            table_name=self.name, table_glossary=table_glossary, columns=columns_glossary
-        )
-
-        for column in glossary_output.columns:
-            column_profiles[column.column_name].business_glossary = column.business_glossary
-            column_profiles[column.column_name].business_tags = column.business_tags
-
-        self.results["business_glossary_and_tags"] = glossary_output
-        self.results["table_glossary"] = glossary_output.table_glossary
+            column = self._columns_map[row["column_name"]]
+            column.description = row.get("business_glossary", "")
+            column.tags = row.get("business_tags", [])
         return self
 
     def run(self, domain: str, save: bool = True) -> Self:
@@ -218,55 +258,28 @@ class DataSet:
 
         return self
 
-    # FIXME - this is a temporary solution to save the results of the analysis
-    # need to use model while executing the pipeline
     def save_yaml(self, file_path: Optional[str] = None) -> None:
         if file_path is None:
             file_path = f"{self.name}.yml"
         file_path = os.path.join(settings.PROJECT_BASE, file_path)
 
-        column_profiles = self.results.get("column_profiles")
-        key = self.results.get("key")
-
-        table_description = self.results.get("table_glossary")
-        table_tags = self.results.get("business_glossary_and_tags")
-
-        if column_profiles is None or table_description is None or table_tags is None:
-            raise errors.NotFoundError(
-                "Column profiles not found in the dataset results. Ensure profiling steps were executed."
-            )
-
-        columns: list[Column] = []
-
-        for column_profile in column_profiles.values():
-            column_profile = ColumnProfile.model_validate(column_profile)
-            column = Column(
-                name=column_profile.column_name,
-                description=column_profile.business_glossary,
-                type=column_profile.datatype_l1,
-                category=column_profile.datatype_l2,
-                tags=column_profile.business_tags,
-                profiling_metrics=ColumnProfilingMetrics(
-                    count=column_profile.count,
-                    null_count=column_profile.null_count,
-                    distinct_count=column_profile.distinct_count,
-                    sample_data=column_profile.sample_data,
-                ),
-            )
-            columns.append(column)
-
         details = self.adapter.get_details(self.data)
+        self.source_table_model.details = details
 
-        table = SourceTables(name=self.name, description=table_description, columns=columns, details=details, key=key)
-
-        source = Source(name="healthcare", description=table_description, schema="public", database="", table=table)
+        source = Source(
+            name="healthcare",
+            description=self.source_table_model.description,
+            schema="public",
+            database="",
+            table=self.source_table_model,
+        )
 
         sources = {"sources": [json.loads(source.model_dump_json())]}
 
         # Save the YAML representation of the sources
         with open(file_path, "w") as file:
             yaml.dump(sources, file, sort_keys=False, default_flow_style=False)
-    
+
     def to_df(self):
         return self.adapter.to_df(self.data, self.name)
 
@@ -277,58 +290,40 @@ class DataSet:
         source = data.get("sources", [])[0]
         table = source.get("table", {})
 
-        self.results["table_glossary"] = table.get("description")
-
-        columns = table.get("columns", [])
-        column_profiles = {}
-        for col in columns:
-            profiling_metrics = col.get("profiling_metrics", {})
-            count = profiling_metrics.get("count", 0)
-            null_count = profiling_metrics.get("null_count", 0)
-            distinct_count = profiling_metrics.get("distinct_count", 0)
-
-            column_profiles[col["name"]] = ColumnProfile(
-                column_name=col["name"],
-                business_name=string_standardization(col["name"]),
-                table_name=self.name,
-                business_glossary=col.get("description"),
-                datatype_l1=col.get("type"),
-                datatype_l2=col.get("category"),
-                business_tags=col.get("tags"),
-                count=count,
-                null_count=null_count,
-                distinct_count=distinct_count,
-                uniqueness=distinct_count / count if count > 0 else 0.0,
-                completeness=(count - null_count) / count if count > 0 else 0.0,
-                sample_data=profiling_metrics.get("sample_data"),
-                ts=time.time(),
-            )
-        self.results["column_profiles"] = column_profiles
-
-        self.results["business_glossary_and_tags"] = BusinessGlossaryOutput(
-            table_name=self.name,
-            table_glossary=self.results["table_glossary"],
-            columns=[
-                ColumnGlossary(
-                    column_name=col.column_name,
-                    business_glossary=col.business_glossary,
-                    business_tags=col.business_tags,
-                )
-                for col in column_profiles.values()
-            ],
-        )
-
-        self.results["key"] = table.get('key')
-    
-    def to_df(self):
-        return self.adapter.to_df(self.data, self.name)
+        self.source_table_model = SourceTables.model_validate(table)
+        self._columns_map = {col.name: col for col in self.source_table_model.columns}
 
     @property
     def profiling_df(self):
-        column_profiles = self.results.get("column_profiles")
-        if column_profiles is None:
+        if not self.source_table_model.columns:
             return "<p>No column profiles available.</p>"
-        df = pd.DataFrame([col.model_dump() for col in column_profiles.values()])
+
+        column_profiles_data = []
+        for column in self.source_table_model.columns:
+            metrics = column.profiling_metrics
+            if metrics:
+                count = metrics.count if metrics.count is not None else 0
+                null_count = metrics.null_count if metrics.null_count is not None else 0
+                distinct_count = metrics.distinct_count if metrics.distinct_count is not None else 0
+
+                column_profiles_data.append(
+                    {
+                        "column_name": column.name,
+                        "business_name": string_standardization(column.name),
+                        "table_name": self.name,
+                        "business_glossary": column.description,
+                        "datatype_l1": column.type,
+                        "datatype_l2": column.category,
+                        "business_tags": column.tags,
+                        "count": count,
+                        "null_count": null_count,
+                        "distinct_count": distinct_count,
+                        "uniqueness": distinct_count / count if count > 0 else 0.0,
+                        "completeness": (count - null_count) / count if count > 0 else 0.0,
+                        "sample_data": metrics.sample_data,
+                    }
+                )
+        df = pd.DataFrame(column_profiles_data)
         return df
 
     def _repr_html_(self):

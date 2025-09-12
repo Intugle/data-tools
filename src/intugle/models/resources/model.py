@@ -11,6 +11,7 @@ class ColumnProfilingMetrics(SchemaBase):
     null_count: Optional[int] = None
     distinct_count: Optional[int] = None
     sample_data: Optional[List[Any]] = Field(default_factory=list)
+    dtype_sample: Optional[List[Any]] = Field(default_factory=list, exclude=True)
 
 
 class Column(SchemaBase):

@@ -3,6 +3,7 @@ import pandas as pd
 
 from intugle.analysis.pipeline import Pipeline
 from intugle.analysis.steps import ColumnProfiler, TableProfiler
+from intugle.core.utilities.processing import string_standardization
 
 # --- Test Data ---
 # A more complex and realistic DataFrame for testing.
@@ -26,18 +27,12 @@ def test_pipeline_with_complex_data():
     """
     pipeline = Pipeline([TableProfiler()])
     analysis_results = pipeline.run(COMPLEX_DF, DF_NAME)
-    profile = analysis_results.results.get("table_profile")
+    table_model = analysis_results.source_table_model
 
-    assert profile is not None
-    assert profile.count == 10
-    assert profile.columns == ['user_id', 'product_name', 'price', 'purchase_date', 'is returned']
-    assert profile.dtypes == {
-        'user_id': 'float',  # Floats because of NaN
-        'product_name': 'string',
-        'price': 'float',
-        'purchase_date': 'date & time',
-        'is returned': 'string'  # Objects (mixed types) are treated as strings
-    }
+    assert table_model.profiling_metrics is not None
+    assert table_model.profiling_metrics.count == 10
+    assert len(table_model.columns) == 5
+    assert {col.name for col in table_model.columns} == {'user_id', 'product_name', 'price', 'purchase_date', 'is returned'}
 
 
 def test_column_profiling_with_complex_data():
@@ -49,44 +44,34 @@ def test_column_profiling_with_complex_data():
         ColumnProfiler()
     ])
     analysis_results = pipeline.run(COMPLEX_DF, DF_NAME)
-    column_profiles = analysis_results.results.get("column_profiles")
-    assert column_profiles is not None
-    assert len(column_profiles) == 5
+    columns_map = analysis_results._columns_map
+    assert len(columns_map) == 5
+
     # --- Assertions for 'user_id' ---
-    user_id_profile = column_profiles.get('user_id')
+    user_id_profile = columns_map.get('user_id').profiling_metrics
     assert user_id_profile is not None
-    assert user_id_profile.column_name == 'user_id'
-    assert user_id_profile.table_name == DF_NAME
     assert user_id_profile.count == 10
     assert user_id_profile.null_count == 1
     assert user_id_profile.distinct_count == 7  # 101, 102, 103, 104, 105, 106, 107 -> 101 is repeated
-    assert user_id_profile.uniqueness == 0.7  # 7 distinct out of 10 total  
-    assert user_id_profile.completeness == 0.9  # 9 non-null out of 10 total
 
     # --- Assertions for 'product_name' ---
-    product_profile = column_profiles.get('product_name')
+    product_profile = columns_map.get('product_name').profiling_metrics
     assert product_profile is not None
     assert product_profile.count == 10
     assert product_profile.null_count == 1
     assert product_profile.distinct_count == 6  # Laptop, Mouse, Keyboard, Monitor, Webcam, HDMI Cable
-    assert user_id_profile.uniqueness == 0.7  # 7 distinct out of 10 total  
-    assert user_id_profile.completeness == 0.9  # 9 non-null out of 10 total
 
     # --- Assertions for 'price' ---
-    price_profile = column_profiles.get('price')
+    price_profile = columns_map.get('price').profiling_metrics
     assert price_profile is not None
     assert price_profile.count == 10
     assert price_profile.null_count == 1
     assert price_profile.distinct_count == 8  # 1200.50 is repeated
-    assert user_id_profile.uniqueness == 0.7  # 7 distinct out of 10 total  
-    assert user_id_profile.completeness == 0.9  # 9 non-null out of 10 total
 
     # --- Assertions for 'is returned' ---
-    returned_profile = column_profiles.get('is returned')
+    returned_profile = columns_map.get('is returned').profiling_metrics
     assert returned_profile is not None
     assert returned_profile.count == 10
     assert returned_profile.null_count == 1
     assert returned_profile.distinct_count == 2  # True, False
-    assert returned_profile.business_name == "is_returned"
-    assert user_id_profile.uniqueness == 0.7  # 7 distinct out of 10 total  
-    assert user_id_profile.completeness == 0.9  # 9 non-null out of 10 total
+    assert string_standardization("is returned") == "is_returned"
