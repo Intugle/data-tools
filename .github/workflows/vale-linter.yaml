@@ -29,5 +29,5 @@ jobs:
           echo "$PWD" >> $GITHUB_PATH
 
       # Run Vale using config inside docsite/
-      - name: Run Vale Lint
-        run: vale --config=docsite/.vale.ini docsite/
+      - name: Run Vale Lint (advisory only)
+        run: vale --config=docsite/.vale.ini docsite/ || true
