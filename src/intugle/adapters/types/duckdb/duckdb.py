@@ -62,7 +62,7 @@ class DuckdbAdapter(Adapter):
 
         # Fetching total count of table
         query = f"""
-        SELECT count(*) as count FROM {table_name}
+        SELECT count(*) as count FROM "{table_name}"
         """
         data = duckdb.execute(query).fetchall()
 
@@ -203,12 +203,12 @@ class DuckdbAdapter(Adapter):
         return f"{ld_func}('{data.path}')"
 
     def load_view(self, data: DuckdbConfig, table_name: str):
-        query = f"""CREATE OR REPLACE VIEW {table_name} AS {data.path}"""
+        query = f"""CREATE OR REPLACE VIEW "{table_name}" AS {data.path}"""
         duckdb.execute(query)
 
     def load_file(self, data: DuckdbConfig, table_name: str):
         ld_func = self._get_load_func(data)
-        query = f"""CREATE TABLE IF NOT EXISTS {table_name} AS SELECT * FROM {ld_func};"""
+        query = f"""CREATE VIEW IF NOT EXISTS "{table_name}" AS SELECT * FROM {ld_func};"""
 
         duckdb.execute(query)
 
@@ -224,7 +224,7 @@ class DuckdbAdapter(Adapter):
         return df
 
     def to_df(self, _: DuckdbConfig, table_name: str):
-        query = f"SELECT * from {table_name}"
+        query = f'''SELECT * from "{table_name}"'''
         df = self.execute_df(query)
         return df
 
