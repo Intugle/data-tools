@@ -1,13 +1,11 @@
-import logging
-
-from intugle.analysis.models import DataSet
-from intugle.link_predictor.predictor import LinkPredictor
 import asyncio
+import logging
 import threading
 
 from typing import TYPE_CHECKING, Any, Awaitable, Dict, List, TypeVar
 
 from intugle.analysis.models import DataSet
+from intugle.core.console import console, success_style
 from intugle.link_predictor.predictor import LinkPredictor
 from intugle.semantic_search import SemanticSearch
 
@@ -63,7 +61,7 @@ class KnowledgeBuilder:
             self._initialize_from_list(data_input)
         else:
             raise TypeError("Input must be a dictionary of named dataframes or a list of DataSet objects.")
-        
+
     def _initialize_from_dict(self, data_dict: Dict[str, Any]):
         """Creates and processes DataSet objects from a dictionary of raw dataframes."""
         for name, df in data_dict.items():
@@ -77,26 +75,47 @@ class KnowledgeBuilder:
                 raise ValueError("DataSet objects provided in a list must have a 'name' attribute.")
             self.datasets[dataset.name] = dataset
 
-    def build(self, force_recreate: bool = False):
-        import os
-
-        from intugle.core import settings
-
-        # run analysis on all datasets
+    def profile(self, force_recreate: bool = False):
+        """Run profiling, datatype identification, and key identification for all datasets."""
+        console.print("Starting profiling and key identification stage...", style="yellow")
         for dataset in self.datasets.values():
-            file_path = os.path.join(settings.PROJECT_BASE, f"{dataset.name}.yml")
-            if os.path.exists(file_path) and not force_recreate:
-                print(f"Dataset {dataset.name} already processed. Loading from file.")
-                dataset.load_from_yaml(file_path)
+            # Check if this stage is already complete
+            if dataset.source_table_model.key is not None and not force_recreate:
+                print(f"Dataset '{dataset.name}' already profiled. Skipping.")
                 continue
-            dataset.run(domain=self.domain, save=True)
 
-        # Initialize the predictor
+            console.print(f"Processing dataset: {dataset.name}", style="orange1")
+            dataset.profile(save=True)
+            dataset.identify_datatypes(save=True)
+            dataset.identify_keys(save=True)
+        console.print("Profiling and key identification complete.", style="bold green")
+
+    def predict_links(self):
+        """Run link prediction across all datasets."""
+        console.print("Starting link prediction stage...", style="yellow")
         self.link_predictor = LinkPredictor(list(self.datasets.values()))
-
-        # Run the prediction
         self.link_predictor.predict(save=True)
         self.links: list[PredictedLink] = self.link_predictor.links
+        console.print("Link prediction complete.", style="bold green")
+
+    def generate_glossary(self, force_recreate: bool = False):
+        """Generate business glossary for all datasets."""
+        console.print("Starting business glossary generation stage...", style="yellow")
+        for dataset in self.datasets.values():
+            # Check if this stage is already complete
+            if dataset.source_table_model.description and not force_recreate:
+                console.print(f"Glossary for '{dataset.name}' already exists. Skipping.")
+                continue
+
+            console.print(f"Generating glossary for dataset: {dataset.name}", style=success_style)
+            dataset.generate_glossary(domain=self.domain, save=True)
+        console.print("Business glossary generation complete.", style="bold green")
+
+    def build(self, force_recreate: bool = False):
+        """Run the full end-to-end knowledge building pipeline."""
+        self.profile(force_recreate=force_recreate)
+        self.predict_links()
+        self.generate_glossary(force_recreate=force_recreate)
 
         # Initialize semantic search
         try:

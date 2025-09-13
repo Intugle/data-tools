@@ -1,8 +1,9 @@
 import json
+import logging
 import os
 import uuid
 
-from typing import Any, Dict, Optional, Self
+from typing import Dict, Optional, Self
 
 import pandas as pd
 import yaml
@@ -15,8 +16,8 @@ from intugle.adapters.models import (
     DataTypeIdentificationL2Output,
     KeyIdentificationOutput,
 )
-from intugle.common.exception import errors
 from intugle.core import settings
+from intugle.core.console import console, warning_style
 from intugle.core.pipeline.business_glossary.bg import BusinessGlossary
 from intugle.core.pipeline.datatype_identification.l2_model import L2Model
 from intugle.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
@@ -24,6 +25,8 @@ from intugle.core.pipeline.key_identification.ki import KeyIdentificationLLM
 from intugle.core.utilities.processing import string_standardization
 from intugle.models.resources.model import Column, ColumnProfilingMetrics, ModelProfilingMetrics
 from intugle.models.resources.source import Source, SourceTables
+
+log = logging.getLogger(__name__)
 
 
 class DataSet:
@@ -43,9 +46,47 @@ class DataSet:
 
         # A dictionary to store the results of each analysis step
         self.source_table_model: SourceTables = SourceTables(name=name, description="")
-        self._columns_map: Dict[str, Column] = {} # A convenience map for quick column lookup
+        self._columns_map: Dict[str, Column] = {}  # A convenience map for quick column lookup
+
+        # Check if a YAML file exists and load it
+        file_path = os.path.join(settings.PROJECT_BASE, f"{self.name}.yml")
+        if os.path.exists(file_path):
+            print(f"Found existing YAML for '{self.name}'. Checking for staleness.")
+            self.load_from_yaml(file_path)
 
         self.load()
+
+    def _is_yaml_stale(self, yaml_data: dict) -> bool:
+        """Check if the YAML data is stale by comparing source modification times."""
+        if not isinstance(self.data, dict) or "path" not in self.data or not os.path.exists(self.data["path"]):
+            # Not a file-based source, so we cannot check for staleness.
+            return False
+
+        try:
+            source = yaml_data.get("sources", [])[0]
+            table = source.get("table", {})
+            source_last_modified = table.get("source_last_modified")
+
+            if source_last_modified:
+                current_mtime = os.path.getmtime(self.data["path"])
+                if current_mtime > source_last_modified:
+                    console.print(
+                        f"Warning: Source file for '{self.name}' has been modified since the last analysis.",
+                        style=warning_style,
+                    )
+                    return True
+            return False
+        except (IndexError, KeyError, TypeError):
+            # If YAML is malformed, treat it as stale.
+            console.print(f"Warning: Could not parse existing YAML for '{self.name}'. Treating as stale.", style=warning_style)
+            return True
+
+    def _populate_from_yaml(self, yaml_data: dict):
+        """Populate the DataSet object from YAML data."""
+        source = yaml_data.get("sources", [])[0]
+        table = source.get("table", {})
+        self.source_table_model = SourceTables.model_validate(table)
+        self._columns_map = {col.name: col for col in self.source_table_model.columns}
 
     @property
     def sql_query(self):
@@ -58,7 +99,7 @@ class DataSet:
             self.adapter.load(self.data, self.name)
             print(f"{self.name} loaded")
         except Exception as e:
-            print("eee", e)
+            log.error(e)
             ...
 
     def profile_table(self) -> Self:
@@ -153,7 +194,7 @@ class DataSet:
             self._columns_map[col_l2.column_name].category = col_l2.datatype_l2
         return self
 
-    def identify_keys(self) -> Self:
+    def identify_keys(self, save: bool = False) -> Self:
         """
         Identifies potential primary keys in the dataset based on column profiles.
         This method relies on the 'column_profiles' result.
@@ -188,26 +229,33 @@ class DataSet:
         ki_model = KeyIdentificationLLM(profiling_data=column_profiles_df)
         ki_result = ki_model()
         output = KeyIdentificationOutput(**ki_result)
-        self.source_table_model.key = output.column_name
+        self.source_table_model.key = output.column_name or ""
+
+        if save:
+            self.save_yaml()
         return self
 
-    def profile(self) -> Self:
+    def profile(self, save: bool = False) -> Self:
         """
         Profiles the dataset including table and columns and stores the result in the 'results' dictionary.
         This is a convenience method to run profiling on the raw dataframe.
         """
         self.profile_table().profile_columns()
+        if save:
+            self.save_yaml()
         return self
 
-    def identify_datatypes(self) -> Self:
+    def identify_datatypes(self, save: bool = False) -> Self:
         """
         Identifies the data types for the dataset and stores the result in the 'results' dictionary.
         This is a convenience method to run data type identification on the raw dataframe.
         """
         self.identify_datatypes_l1().identify_datatypes_l2()
+        if save:
+            self.save_yaml()
         return self
 
-    def generate_glossary(self, domain: str = "") -> Self:
+    def generate_glossary(self, domain: str = "", save: bool = False) -> Self:
         """
         Generates a business glossary for the dataset and stores the result in the 'results' dictionary.
         This method relies on the 'column_datatypes_l1' results.
@@ -246,6 +294,9 @@ class DataSet:
             column = self._columns_map[row["column_name"]]
             column.description = row.get("business_glossary", "")
             column.tags = row.get("business_tags", [])
+
+        if save:
+            self.save_yaml()
         return self
 
     def run(self, domain: str, save: bool = True) -> Self:
@@ -266,6 +317,10 @@ class DataSet:
         details = self.adapter.get_details(self.data)
         self.source_table_model.details = details
 
+        # Store the source's last modification time
+        if isinstance(self.data, dict) and "path" in self.data and os.path.exists(self.data["path"]):
+            self.source_table_model.source_last_modified = os.path.getmtime(self.data["path"])
+
         source = Source(
             name="healthcare",
             description=self.source_table_model.description,
@@ -284,14 +339,17 @@ class DataSet:
         return self.adapter.to_df(self.data, self.name)
 
     def load_from_yaml(self, file_path: str) -> None:
-        with open(file_path, "r") as file:
-            data = yaml.safe_load(file)
+        """Loads the dataset from a YAML file, checking for staleness."""
+        with open(file_path, "r") as f:
+            yaml_data = yaml.safe_load(f)
+        if not self._is_yaml_stale(yaml_data):
+            self._populate_from_yaml(yaml_data)
 
-        source = data.get("sources", [])[0]
-        table = source.get("table", {})
-
-        self.source_table_model = SourceTables.model_validate(table)
-        self._columns_map = {col.name: col for col in self.source_table_model.columns}
+    def reload_from_yaml(self, file_path: str) -> None:
+        """Forces a reload from a YAML file, bypassing staleness checks."""
+        with open(file_path, "r") as f:
+            yaml_data = yaml.safe_load(f)
+        self._populate_from_yaml(yaml_data)
 
     @property
     def profiling_df(self):
@@ -309,11 +367,11 @@ class DataSet:
                 column_profiles_data.append(
                     {
                         "column_name": column.name,
-                        "business_name": string_standardization(column.name),
                         "table_name": self.name,
-                        "business_glossary": column.description,
+                        "business_name": string_standardization(column.name),
                         "datatype_l1": column.type,
                         "datatype_l2": column.category,
+                        "business_glossary": column.description,
                         "business_tags": column.tags,
                         "count": count,
                         "null_count": null_count,

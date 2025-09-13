@@ -95,7 +95,7 @@ class LinkPredictor:
         for dataset in data_list:
             if not dataset.name:
                 raise ValueError("DataSet objects provided in a list must have a 'name' attribute.")
-            if not dataset.source_table_model.key:
+            if dataset.source_table_model.key is None:
                 print(f"Dataset '{dataset.name}' is missing key identification. Running prerequisite analysis...")
                 self._run_prerequisites(dataset)
             else:
