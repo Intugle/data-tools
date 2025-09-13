@@ -15,6 +15,7 @@ class SourceTables(SchemaBase):
     columns: List[Column] = Field(default_factory=list)
     profiling_metrics: Optional[ModelProfilingMetrics] = None
     key: Optional[str] = None
+    source_last_modified: Optional[float] = None
 
 
 class Source(BaseResource):
