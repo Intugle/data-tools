@@ -35,7 +35,8 @@ You can initialize the `KnowledgeBuilder` in two ways:
 2.  **With a List of `DataSet` Objects**: If you have already created `DataSet` objects, you can pass a list of them directly.
 
     ```python
-    from intugle import KnowledgeBuilder, DataSet
+    from intugle.analysis.models import DataSet
+    from intugle import KnowledgeBuilder
 
     # Create DataSet objects from file-based sources
     customers_data = {"path": "path/to/customers.csv", "type": "csv"}

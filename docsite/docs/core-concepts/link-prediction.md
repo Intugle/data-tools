@@ -28,7 +28,9 @@ links_list = predictor_instance.links
 To use the `LinkPredictor` manually, you must give it a list of fully profiled `DataSet` objects.
 
 ```python
-from intugle import DataSet, LinkPredictor
+from intugle.analysis.models import DataSet,
+from intugle.link_predictor.predictor import LinkPredictor
+
 
 # 1. Initialize and fully profile your DataSet objects first
 customers_data = {"path": "path/to/customers.csv", "type": "csv"}

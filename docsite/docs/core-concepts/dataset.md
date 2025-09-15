@@ -79,7 +79,7 @@ The `DataSet` object avoids redundant work. When you initialize a `DataSet`, it 
 You can run the analysis pipeline step-by-step for more granular control. Each of these methods includes a `save=True` option to persist the results of that specific stage.
 
 ```python
-from intugle import DataSet
+from intugle.analysis.models import DataSet
 
 # Initialize the dataset
 data_source = {"path": "path/to/my_data.csv", "type": "csv"}
