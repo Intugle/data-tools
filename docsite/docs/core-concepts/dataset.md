@@ -5,7 +5,7 @@ title: DataSet
 
 # DataSet
 
-The `DataSet` class is the heart of the analysis pipeline. It acts as a powerful, in-memory container for a single data source, holding not just the raw data but also all the rich metadata that is generated about it during the `KnowledgeBuilder`'s workflow.
+The `DataSet` class is the heart of the analysis pipeline. It acts as a powerful, in-memory container for a single data source, holding the raw data and all the rich metadata the `KnowledgeBuilder`'s workflow generates about it.
 
 ## Overview
 
@@ -15,19 +15,19 @@ Think of a `DataSet` as a "unit of work" that gets progressively enriched as it 
 2.  **Metadata Storage**: It serves as the central object for storing all analysis results.
 3.  **Intelligent Caching**: It automatically persists and loads its own state, making the entire process efficient and resilient.
 
-## Key Features
+## Key features
 
-### Data Abstraction
+### Data abstraction
 
-The `DataSet` uses a system of **Adapters** under the hood to connect to different data backends. When you initialize a `DataSet` with a file-based source, it uses the appropriate adapter (e.g., `DuckdbAdapter` for CSVs, Parquet, etc.) to handle the specific implementation details for profiling and querying the data. This makes the system easily extensible to support new data sources in the future.
+The `DataSet` uses a system of **Adapters** under the hood to connect to different data backends. When you initialize a `DataSet` with a file-based source, it uses the appropriate adapter (for example, `DuckdbAdapter` for CSV files, Parquet, etc.) to handle the specific implementation details. This design makes the system extensible to support new data sources.
 
-### Centralized Metadata
+### Centralized metadata
 
 All analysis results for a data source are stored within the `dataset.source_table_model` attribute. This attribute is a structured Pydantic model that makes accessing metadata predictable and easy. For more convenient access to column-level data, the `DataSet` also provides a `columns` dictionary.
 
-#### Metadata Structure and Access
+#### Metadata structure and access
 
-The metadata is organized using Pydantic models, but you can access it easily through the `DataSet`'s attributes.
+The library organizes metadata using Pydantic models, but you can access it through the `DataSet`'s attributes.
 
 -   **Table-Level Metadata**: Accessed via `dataset.source_table_model`.
     -   `.name: str`
@@ -35,7 +35,7 @@ The metadata is organized using Pydantic models, but you can access it easily th
     -   `.key: Optional[str]`
 -   **Column-Level Metadata**: Accessed via the `dataset.columns` dictionary, where keys are column names.
     -   `[column_name].description: Optional[str]`
-    -   `[column_name].type: Optional[str]` (e.g., 'integer', 'date')
+    -   `[column_name].type: Optional[str]` (for example, 'integer', 'date')
     -   `[column_name].category: Literal["dimension", "measure"]`
     -   `[column_name].tags: Optional[List[str]]`
     -   `[column_name].profiling_metrics: Optional[ColumnProfilingMetrics]`
@@ -45,7 +45,7 @@ The metadata is organized using Pydantic models, but you can access it easily th
     -   `distinct_count: Optional[int]`
     -   `sample_data: Optional[List[Any]]`
 
-#### Example of Accessing Metadata
+#### Example of accessing metadata
 
 ```python
 # Assuming 'kb' is a built KnowledgeBuilder instance
@@ -66,11 +66,11 @@ if metrics:
     print(f"Distinct Count: {metrics.distinct_count}")
 ```
 
-### Automatic Caching
+### Automatic caching
 
-The `DataSet` object is designed to be efficient by avoiding redundant work. When you initialize a `DataSet`, it automatically checks for a corresponding `.yml` file. If it finds one, it validates that the source data file hasn't changed since the last run. If the data is fresh, it loads the saved metadata, saving significant processing time.
+The `DataSet` object avoids redundant work. When you initialize a `DataSet`, it automatically checks for a corresponding `.yml` file. If it finds one, it validates that the source data file hasn't changed since the last run. If the data is fresh, it loads the saved metadata, saving significant processing time.
 
-### Analysis Stage Functions
+### Analysis stage functions
 
 You can run the analysis pipeline step-by-step for more granular control. Each of these methods includes a `save=True` option to persist the results of that specific stage.
 
@@ -95,7 +95,7 @@ print("Step 4: Generating Glossary...")
 dataset.generate_glossary(domain="my_domain", save=True)
 ```
 
-### Other Useful Methods and Properties
+### Other useful methods and properties
 
 #### `save_yaml()`
 
@@ -116,7 +116,7 @@ dataset.reload_from_yaml(file_path)
 
 #### `profiling_df`
 
-Access a Pandas DataFrame containing the complete profiling results for all columns in the dataset. This is very useful for exploration and validation in a notebook environment.
+Access a Pandas DataFrame containing the complete profiling results for all columns in the dataset. This is useful for exploration and validation in a notebook environment.
 
 ```python
 # Get a comprehensive DataFrame of all column profiles
