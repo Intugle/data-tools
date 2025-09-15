@@ -13,6 +13,20 @@ class ColumnProfilingMetrics(SchemaBase):
     sample_data: Optional[List[Any]] = Field(default_factory=list)
     dtype_sample: Optional[List[Any]] = Field(default_factory=list, exclude=True)
 
+    @property
+    def uniqueness(self) -> Optional[float]:
+        """The ratio of distinct values to total count."""
+        if self.count is not None and self.distinct_count is not None and self.count > 0:
+            return self.distinct_count / self.count
+        return None
+
+    @property
+    def completeness(self) -> Optional[float]:
+        """The ratio of non-null values to total count."""
+        if self.count is not None and self.null_count is not None and self.count > 0:
+            return (self.count - self.null_count) / self.count
+        return None
+
 
 class Column(SchemaBase):
     name: str
