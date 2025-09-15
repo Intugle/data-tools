@@ -40,10 +40,12 @@ The library organizes metadata using Pydantic models, but you can access it thro
     -   `[column_name].tags: Optional[List[str]]`
     -   `[column_name].profiling_metrics: Optional[ColumnProfilingMetrics]`
 -   **`ColumnProfilingMetrics`**: Detailed statistics for a column.
-    -   `count: Optional[int]`
-    -   `null_count: Optional[int]`
-    -   `distinct_count: Optional[int]`
-    -   `sample_data: Optional[List[Any]]`
+    -   `.count: Optional[int]`
+    -   `.null_count: Optional[int]`
+    -   `.distinct_count: Optional[int]`
+    -   `.sample_data: Optional[List[Any]]`
+    -   `.uniqueness: Optional[float]` (Read-only property)
+    -   `.completeness: Optional[float]` (Read-only property)
 
 #### Example of accessing metadata
 
@@ -64,6 +66,8 @@ print(f"Column Description: {email_column.description}")
 metrics = email_column.profiling_metrics
 if metrics:
     print(f"Distinct Count: {metrics.distinct_count}")
+    print(f"Uniqueness: {metrics.uniqueness}")
+    print(f"Completeness: {metrics.completeness}")
 ```
 
 ### Automatic caching
@@ -75,7 +79,7 @@ The `DataSet` object avoids redundant work. When you initialize a `DataSet`, it 
 You can run the analysis pipeline step-by-step for more granular control. Each of these methods includes a `save=True` option to persist the results of that specific stage.
 
 ```python
-from intugle import DataSet
+from intugle.analysis.models import DataSet
 
 # Initialize the dataset
 data_source = {"path": "path/to/my_data.csv", "type": "csv"}

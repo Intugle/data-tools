@@ -4,6 +4,8 @@ import threading
 
 from typing import TYPE_CHECKING, Any, Awaitable, Dict, List, TypeVar
 
+import pandas as pd
+
 from intugle.analysis.models import DataSet
 from intugle.core.console import console, success_style
 from intugle.link_predictor.predictor import LinkPredictor
@@ -125,6 +127,35 @@ class KnowledgeBuilder:
 
         return self
 
+    @property
+    def profiling_df(self) -> pd.DataFrame:
+        """Returns a consolidated DataFrame of profiling metrics for all datasets."""
+        all_profiles = [dataset.profiling_df for dataset in self.datasets.values()]
+        return pd.concat(all_profiles, ignore_index=True)
+
+    @property
+    def links_df(self) -> pd.DataFrame:
+        """Returns the predicted links as a pandas DataFrame."""
+        if hasattr(self, "link_predictor"):
+            return self.link_predictor.get_links_df()
+        return pd.DataFrame()
+
+    @property
+    def glossary_df(self) -> pd.DataFrame:
+        """Returns a consolidated DataFrame of glossary information for all datasets."""
+        glossary_data = []
+        for dataset in self.datasets.values():
+            for column in dataset.source_table_model.columns:
+                glossary_data.append(
+                    {
+                        "table_name": dataset.name,
+                        "column_name": column.name,
+                        "column_description": column.description,
+                        "column_tags": column.tags,
+                    }
+                )
+        return pd.DataFrame(glossary_data)
+
     def initialize_semantic_search(self):
         """Initialize the semantic search engine."""
         try:
@@ -151,4 +182,3 @@ class KnowledgeBuilder:
         except Exception as e:
             log.error(f"Could not perform semantic search: {e}")
             raise e
-        
