@@ -52,7 +52,7 @@ def test_predictor_with_dict_input(mock_predict_for_pair):
     assert predictor.datasets["customers"].source_table_model.key == "id"
 
     # 4. Run prediction
-    results = predictor.predict()
+    results = predictor.predict(force_recreate=True)
 
     # 5. Verify that the mocked prediction was called and results are correct
     assert mock_predict_for_pair.call_count == 1
@@ -86,7 +86,7 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     assert predictor.datasets["orders"].source_table_model.key == "order_id"
 
     # 5. Run prediction
-    results = predictor.predict()
+    results = predictor.predict(force_recreate=True)
 
     # 6. Verify results
     assert mock_predict_for_pair.call_count == 1
@@ -133,7 +133,7 @@ def test_predictor_end_to_end_complex():
     predictor = LinkPredictor(datasets)
 
     # 3. Run the prediction
-    results = predictor.predict()
+    results = predictor.predict(force_recreate=True)
 
     # 4. Assert that the correct links were found
     assert len(results.links) >= 2, "Expected at least two links to be found"
