@@ -129,7 +129,40 @@ link_predictor = kb.link_predictor
 print(f"Primary Key for customers: {customers_dataset.source_table_model.description}")
 print("Discovered Links:")
 print(link_predictor.get_links_df())
-
 ```
+
 Learn more about what you can do with these objects. See the [DataSet](./dataset.md) and [Link Prediction](./link-prediction.md) documentation.
 
+## Utility DataFrames
+
+The `KnowledgeBuilder` provides three convenient properties that consolidate the results from all processed datasets into single Pandas DataFrames.
+
+### `profiling_df`
+
+Returns a DataFrame containing the full profiling metrics for every column across all datasets.
+
+```python
+# Get a single DataFrame of all column profiles
+all_profiles = kb.profiling_df
+print(all_profiles.head())
+```
+
+### `links_df`
+
+A shortcut to the `get_links_df()` method on the `LinkPredictor`, this property returns a DataFrame of all discovered relationships.
+
+```python
+# Get a DataFrame of all predicted links
+all_links = kb.links_df
+print(all_links)
+```
+
+### `glossary_df`
+
+Returns a DataFrame that serves as a consolidated business glossary, listing the table name, column name, description, and tags for every column across all datasets.
+
+```python
+# Get a single, unified business glossary
+full_glossary = kb.glossary_df
+print(full_glossary.head())
+```
