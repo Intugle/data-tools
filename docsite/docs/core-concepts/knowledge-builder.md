@@ -1,25 +1,25 @@
 ---
 sidebar_position: 2
-title: The Knowledge Builder
+title: Knowledge Builder
 ---
 
-# The Knowledge Builder
+# Knowledge builder
 
-The `KnowledgeBuilder` is the primary orchestrator of the data intelligence pipeline. It is the main user-facing class designed to manage multiple data sources and run the end-to-end process of transforming them from raw, disconnected tables into a fully enriched and interconnected semantic layer.
+The `KnowledgeBuilder` is the primary orchestrator of the data intelligence pipeline. It's the main user-facing class that manages many data sources and runs the end-to-end process of transforming them from raw, disconnected tables into a fully enriched and interconnected semantic layer.
 
 ## Overview
 
 At a high level, the `KnowledgeBuilder` is responsible for:
 
-1.  **Initializing and Managing Datasets**: It takes your raw data sources (e.g., file paths) and wraps each one in a `DataSet` object.
+1.  **Initializing and Managing Datasets**: It takes your raw data sources (for example, file paths) and wraps each one in a `DataSet` object.
 2.  **Executing the Analysis Pipeline**: It runs a series of analysis stages in a specific, logical order to build up a rich understanding of your data.
-3.  **Ensuring Resilience**: The pipeline is designed to be modular and resilient. It automatically saves its progress after each major stage, allowing you to resume an interrupted run without losing completed work.
+3.  **Ensuring Resilience**: The pipeline avoids redundant work. It automatically saves its progress after each major stage, letting you resume an interrupted run without losing completed work.
 
 ## Initialization
 
 You can initialize the `KnowledgeBuilder` in two ways:
 
-1.  **With a Dictionary of File-Based Sources**: This is the most common method. You provide a dictionary where keys are the desired names for your datasets and values are dictionary configs pointing to your data.
+1.  **With a Dictionary of File-Based Sources**: This is the most common method. You give a dictionary where keys are the desired names for your datasets and values are dictionary configurations pointing to your data.
 
     ```python
     from intugle import KnowledgeBuilder
@@ -49,13 +49,13 @@ You can initialize the `KnowledgeBuilder` in two ways:
     kb = KnowledgeBuilder(data_input=datasets, domain="e-commerce")
     ```
 
-The `domain` parameter is an optional but highly recommended string that provides context to the underlying AI models, helping them generate more accurate and relevant business glossary terms.
+The `domain` parameter is an optional but highly recommended string that gives context to the underlying AI models, helping them generate more relevant business glossary terms.
 
-## The Analysis Pipeline
+## The analysis pipeline
 
-The `KnowledgeBuilder` executes its workflow in distinct, modular stages. This allows for greater control and makes the process resilient to interruptions.
+The `KnowledgeBuilder` executes its workflow in distinct, modular stages. This design enables greater control and makes the process resilient to interruptions.
 
-### 1. `profile()`
+### Profiling
 
 This is the first and most foundational stage. It performs a deep analysis of each dataset to understand its structure and content, covering profiling, datatype identification, and key identification.
 
@@ -66,7 +66,7 @@ kb.profile()
 
 Progress from this stage is automatically saved to a `.yml` file for each dataset.
 
-### 2. `predict_links()`
+### Link prediction
 
 Once the datasets are profiled, this stage uses the `LinkPredictor` to analyze the metadata from all datasets and discover potential relationships between them. You can learn more about the [Link Prediction](./link-prediction.md) process in its dedicated section.
 
@@ -85,7 +85,7 @@ print(discovered_links)
 
 The discovered relationships are saved to a central `__relationships__.yml` file.
 
-### 3. `generate_glossary()`
+### Business glossary generation
 
 In the final stage, the `KnowledgeBuilder` uses a Large Language Model (LLM) to generate business-friendly context for your data.
 
@@ -97,7 +97,7 @@ kb.generate_glossary()
 
 This information is saved back into each dataset's `.yml` file.
 
-### The `build()` Method
+### The build method
 
 For convenience, the `build()` method runs all three stages (`profile`, `predict_links`, `generate_glossary`) in the correct sequence.
 
@@ -109,11 +109,11 @@ kb.build()
 kb.build(force_recreate=True)
 ```
 
-This modular design means that if your process is interrupted during the `generate_glossary` stage, you can simply re-run `kb.build()`, and it will quickly skip the already-completed stages, picking up right where it left off.
+This modular design means that if the process is interrupted during the `generate_glossary` stage, you can simply re-run `kb.build()`, and it will skip the already-completed stages, picking up right where it left off.
 
-## Accessing Processed Datasets and Predictor
+## Accessing processed datasets and predictor
 
-After running any stage of the pipeline, you can easily access the enriched `DataSet` objects and the `LinkPredictor` instance to explore the results programmatically.
+After running any stage of the pipeline, you can access the enriched `DataSet` objects and the `LinkPredictor` instance to explore the results programmatically.
 
 ```python
 # Run the full build
