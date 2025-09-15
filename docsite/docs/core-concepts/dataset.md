@@ -23,33 +23,29 @@ The `DataSet` uses a system of **Adapters** under the hood to connect to differe
 
 ### Centralized Metadata
 
-All analysis results for a data source are stored within the `dataset.source_table_model` attribute. This attribute is a structured Pydantic model that makes accessing metadata predictable and easy.
+All analysis results for a data source are stored within the `dataset.source_table_model` attribute. This attribute is a structured Pydantic model that makes accessing metadata predictable and easy. For more convenient access to column-level data, the `DataSet` also provides a `columns` dictionary.
 
-#### Metadata Structure
+#### Metadata Structure and Access
 
-The metadata is organized using the following Pydantic models:
+The metadata is organized using Pydantic models, but you can access it easily through the `DataSet`'s attributes.
 
--   `SourceTables`: The root object, containing table-level information.
-    -   `name: str`
-    -   `description: str`
-    -   `key: Optional[str]`
-    -   `columns: List[Column]`
-    -   `profiling_metrics: Optional[ModelProfilingMetrics]`
--   `Column`: Contains metadata for a single column.
-    -   `name: str`
-    -   `description: Optional[str]`
-    -   `type: Optional[str]` (e.g., 'integer', 'date')
-    -   `category: Literal["dimension", "measure"]`
-    -   `tags: Optional[List[str]]`
-    -   `profiling_metrics: Optional[ColumnProfilingMetrics]`
--   `ColumnProfilingMetrics`: Detailed statistics for a column.
+-   **Table-Level Metadata**: Accessed via `dataset.source_table_model`.
+    -   `.name: str`
+    -   `.description: str`
+    -   `.key: Optional[str]`
+-   **Column-Level Metadata**: Accessed via the `dataset.columns` dictionary, where keys are column names.
+    -   `[column_name].description: Optional[str]`
+    -   `[column_name].type: Optional[str]` (e.g., 'integer', 'date')
+    -   `[column_name].category: Literal["dimension", "measure"]`
+    -   `[column_name].tags: Optional[List[str]]`
+    -   `[column_name].profiling_metrics: Optional[ColumnProfilingMetrics]`
+-   **`ColumnProfilingMetrics`**: Detailed statistics for a column.
     -   `count: Optional[int]`
     -   `null_count: Optional[int]`
     -   `distinct_count: Optional[int]`
+    -   `sample_data: Optional[List[Any]]`
 
-#### Accessing Metadata
-
-You can access this rich metadata directly from the `DataSet` object.
+#### Example of Accessing Metadata
 
 ```python
 # Assuming 'kb' is a built KnowledgeBuilder instance
@@ -57,17 +53,15 @@ customers_dataset = kb.datasets['customers']
 
 # Access table-level metadata
 print(f"Table Name: {customers_dataset.source_table_model.name}")
-print(f"Table Description: {customers_dataset.source_table_model.description}")
 print(f"Primary Key: {customers_dataset.source_table_model.key}")
 
-# Access column-level metadata for the first column
-first_column = customers_dataset.source_table_model.columns[0]
-print(f"Column Name: {first_column.name}")
-print(f"Column Description: {first_column.description}")
-print(f"Column Type: {first_column.type}")
+# Access column-level metadata using the 'columns' dictionary
+email_column = customers_dataset.columns['email']
+print(f"Column Name: {email_column.name}")
+print(f"Column Description: {email_column.description}")
 
 # Access profiling metrics for that column
-metrics = first_column.profiling_metrics
+metrics = email_column.profiling_metrics
 if metrics:
     print(f"Distinct Count: {metrics.distinct_count}")
 ```

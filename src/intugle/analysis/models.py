@@ -46,7 +46,7 @@ class DataSet:
 
         # A dictionary to store the results of each analysis step
         self.source_table_model: SourceTables = SourceTables(name=name, description="")
-        self._columns_map: Dict[str, Column] = {}  # A convenience map for quick column lookup
+        self.columns: Dict[str, Column] = {}  # A convenience map for quick column lookup
 
         # Check if a YAML file exists and load it
         file_path = os.path.join(settings.PROJECT_BASE, f"{self.name}.yml")
@@ -86,7 +86,7 @@ class DataSet:
         source = yaml_data.get("sources", [])[0]
         table = source.get("table", {})
         self.source_table_model = SourceTables.model_validate(table)
-        self._columns_map = {col.name: col for col in self.source_table_model.columns}
+        self.columns = {col.name: col for col in self.source_table_model.columns}
 
     @property
     def sql_query(self):
@@ -112,7 +112,7 @@ class DataSet:
         self.source_table_model.profiling_metrics.count = table_profile.count
 
         self.source_table_model.columns = [Column(name=col_name) for col_name in table_profile.columns]
-        self._columns_map = {col.name: col for col in self.source_table_model.columns}
+        self.columns = {col.name: col for col in self.source_table_model.columns}
         return self
 
     def profile_columns(self) -> Self:
@@ -163,7 +163,7 @@ class DataSet:
         column_datatypes_l1 = [DataTypeIdentificationL1Output(**row) for row in l1_result.to_dict(orient="records")]
 
         for col_l1 in column_datatypes_l1:
-            self._columns_map[col_l1.column_name].type = col_l1.datatype_l1
+            self.columns[col_l1.column_name].type = col_l1.datatype_l1
         return self
 
     def identify_datatypes_l2(self) -> "DataSet":
@@ -191,7 +191,7 @@ class DataSet:
         column_datatypes_l2 = [DataTypeIdentificationL2Output(**row) for row in l2_result.to_dict(orient="records")]
 
         for col_l2 in column_datatypes_l2:
-            self._columns_map[col_l2.column_name].category = col_l2.datatype_l2
+            self.columns[col_l2.column_name].category = col_l2.datatype_l2
         return self
 
     def identify_keys(self, save: bool = False) -> Self:
@@ -291,7 +291,7 @@ class DataSet:
         self.source_table_model.description = table_glossary
 
         for _, row in glossary_df.iterrows():
-            column = self._columns_map[row["column_name"]]
+            column = self.columns[row["column_name"]]
             column.description = row.get("business_glossary", "")
             column.tags = row.get("business_tags", [])
 
@@ -345,8 +345,12 @@ class DataSet:
         if not self._is_yaml_stale(yaml_data):
             self._populate_from_yaml(yaml_data)
 
-    def reload_from_yaml(self, file_path: str) -> None:
+    def reload_from_yaml(self, file_path: Optional[str] = None) -> None:
         """Forces a reload from a YAML file, bypassing staleness checks."""
+        if file_path is None:
+            file_path = f"{self.name}.yml"
+        file_path = os.path.join(settings.PROJECT_BASE, file_path)
+
         with open(file_path, "r") as f:
             yaml_data = yaml.safe_load(f)
         self._populate_from_yaml(yaml_data)

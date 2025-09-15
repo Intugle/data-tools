@@ -42,7 +42,7 @@ def test_business_glossary_generator():
     assert len(dataset.source_table_model.columns) == len(df.columns)
 
     # Check a specific column's glossary entry
-    product_id_column = dataset._columns_map.get("product_id")
+    product_id_column = dataset.columns.get("product_id")
     assert product_id_column is not None
     assert product_id_column.description is not None
     assert len(product_id_column.description) > 0
