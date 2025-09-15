@@ -153,11 +153,27 @@ class LinkPredictor:
         ]
         return pair_links
 
-    def predict(self, filename='__relationships__.yml', save: bool = False) -> Self:
+    def predict(self, filename='__relationships__.yml', save: bool = False, force_recreate: bool = False) -> Self:
         """
         Iterates through all unique pairs of datasets, predicts the links for
         each pair, and returns the aggregated results.
         """
+        relationships_file = os.path.join(settings.PROJECT_BASE, filename)
+
+        if not force_recreate and os.path.exists(relationships_file):
+            is_stale = False
+            relationships_mtime = os.path.getmtime(relationships_file)
+            for dataset in self.datasets.values():
+                dataset_yml = os.path.join(settings.PROJECT_BASE, f"{dataset.name}.yml")
+                if os.path.exists(dataset_yml) and os.path.getmtime(dataset_yml) > relationships_mtime:
+                    is_stale = True
+                    break
+            
+            if not is_stale:
+                console.print("Link predictions are up-to-date. Loading from cache.", style="green")
+                self.load_from_yaml(relationships_file)
+                return self
+
         all_links: List[PredictedLink] = []
         dataset_names = list(self.datasets.keys())
 
@@ -185,8 +201,11 @@ class LinkPredictor:
 
         return self
     
-    def get_links_df(self):
-        ...
+    def get_links_df(self) -> pd.DataFrame:
+        """Returns the predicted links as a pandas DataFrame."""
+        if not self.links:
+            return pd.DataFrame()
+        return pd.DataFrame([link.model_dump() for link in self.links])
     
     def show_graph(self):
         links = [link.relationship.link for link in self.links]
@@ -208,6 +227,23 @@ class LinkPredictor:
         # Save the relationships to a YAML file
         with open(file_path, "w") as file:
             yaml.dump(relationships, file, sort_keys=False, default_flow_style=False)
+
+    def load_from_yaml(self, file_path: str) -> None:
+        """Loads link predictions from a YAML file."""
+        with open(file_path, "r") as f:
+            data = yaml.safe_load(f)
+        
+        relationships = data.get("relationships", [])
+        loaded_links = []
+        for rel in relationships:
+            link = PredictedLink(
+                from_dataset=rel["source"]["table"],
+                from_column=rel["source"]["column"],
+                to_dataset=rel["target"]["table"],
+                to_column=rel["target"]["column"],
+            )
+            loaded_links.append(link)
+        self.links = loaded_links
 
 
 class LinkPredictionSaver:
