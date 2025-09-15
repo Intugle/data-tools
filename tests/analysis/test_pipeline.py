@@ -44,7 +44,7 @@ def test_column_profiling_with_complex_data():
         ColumnProfiler()
     ])
     analysis_results = pipeline.run(COMPLEX_DF, DF_NAME)
-    columns_map = analysis_results._columns_map
+    columns_map = analysis_results.columns
     assert len(columns_map) == 5
 
     # --- Assertions for 'user_id' ---

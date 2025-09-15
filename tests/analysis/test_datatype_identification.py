@@ -26,7 +26,7 @@ def test_datatype_identification_l1_end_to_end():
     analysis_results = pipeline.run(COMPLEX_DF, DF_NAME)
 
     # Check the final output of the L1 step
-    columns_map = analysis_results._columns_map
+    columns_map = analysis_results.columns
     assert columns_map['user_id'].type == 'integer'
     assert columns_map['product_name'].type == 'close_ended_text'
     assert columns_map['price'].type == 'float'
@@ -46,7 +46,7 @@ def test_datatype_identification_l2_end_to_end():
     analysis_results = pipeline.run(COMPLEX_DF, DF_NAME)
 
     # Check the final output of the L2 step
-    columns_map = analysis_results._columns_map
+    columns_map = analysis_results.columns
     assert columns_map['user_id'].category == 'dimension'
     assert columns_map['product_name'].category == 'dimension'
     assert columns_map['price'].category == 'measure'
