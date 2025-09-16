@@ -224,7 +224,7 @@ For detailed code examples and a complete walkthrough, please see the quickstart
 Join our community to ask questions, share your projects, and connect with other users.
 
 *   [Join our Slack](https://join.slack.com/share/enQtOTQ4NDc1MzYzOTg2MC02OTc2MTU1Njg3NDEyZjQwN2IzMzEwMjc5NmU4MjhiZmJlMDdiMzMzYjI5YWJiNDhkYWM4ODU0MGY4NTUyNjhi)
-*   [Join our Discord](https://discord.gg/4PNPsQVA)
+*   [Join our Discord](https://discord.gg/NqR9tNWVTm)
 
 
 ## Contributing
