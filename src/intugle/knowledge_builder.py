@@ -1,8 +1,6 @@
-import asyncio
 import logging
-import threading
 
-from typing import TYPE_CHECKING, Any, Awaitable, Dict, List, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List
 
 import pandas as pd
 
@@ -15,39 +13,6 @@ if TYPE_CHECKING:
     from intugle.link_predictor.models import PredictedLink
 
 log = logging.getLogger(__name__)
-
-T = TypeVar("T")
-
-
-def _run_async_in_sync(coro: Awaitable[T]) -> T:
-    """
-    Runs an async coroutine in a sync context, handling cases where an event loop is already running.
-    """
-    try:
-        loop = asyncio.get_running_loop()
-    except RuntimeError:
-        return asyncio.run(coro)
-
-    if loop.is_running():
-        result = None
-        exc = None
-
-        def thread_target():
-            nonlocal result, exc
-            try:
-                result = asyncio.run(coro)
-            except Exception as e:
-                exc = e
-
-        thread = threading.Thread(target=thread_target)
-        thread.start()
-        thread.join()
-
-        if exc:
-            raise exc
-        return result
-    else:
-        return loop.run_until_complete(coro)
 
 
 class KnowledgeBuilder:
@@ -161,7 +126,7 @@ class KnowledgeBuilder:
         try:
             print("Initializing semantic search...")
             search_client = SemanticSearch()
-            _run_async_in_sync(search_client.initialize())
+            search_client.initialize()
             self._semantic_search_initialized = True
             print("Semantic search initialized.")
         except Exception as e:
@@ -178,7 +143,7 @@ class KnowledgeBuilder:
 
         try:
             search_client = SemanticSearch()
-            return _run_async_in_sync(search_client.search(query))
+            return search_client.search(query)
         except Exception as e:
             log.error(f"Could not perform semantic search: {e}")
             raise e

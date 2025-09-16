@@ -1,5 +1,3 @@
-import asyncio
-
 import pandas as pd
 
 from intugle.semantic_search import SemanticSearch
@@ -10,7 +8,7 @@ def test_semantic_search_initialize():
     Tests the initialization of the semantic search.
     """
     search_client = SemanticSearch()
-    asyncio.run(search_client.initialize())
+    search_client.initialize()
 
 
 def test_semantic_search_search():
@@ -22,7 +20,7 @@ def test_semantic_search_search():
 
     # Perform a search
     query = "reaction"
-    data = asyncio.run(search_client.search(query))
+    data = search_client.search(query)
 
     # Assert that the result is a pandas DataFrame
     assert isinstance(data, pd.DataFrame)
@@ -45,7 +43,7 @@ def test_semantic_search_search():
         "completeness",
         "count",
         "null_count",
-        "distinct_count"
+        "distinct_count",
     ]
     assert all(col in data.columns for col in expected_columns)
 

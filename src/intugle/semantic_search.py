@@ -1,3 +1,8 @@
+import asyncio
+import threading
+
+from typing import Awaitable, TypeVar
+
 import pandas as pd
 
 from intugle.core import settings
@@ -6,6 +11,39 @@ from intugle.core.semantic_search.crud import SemanticSearchCRUD
 from intugle.core.semantic_search.semantic_search import HybridDenseLateSearch
 from intugle.core.utilities.processing import string_standardization
 from intugle.parser.manifest import ManifestLoader
+
+T = TypeVar("T")
+
+
+def _run_async_in_sync(coro: Awaitable[T]) -> T:
+    """
+    Runs an async coroutine in a sync context, handling cases where an event loop is already running.
+    """
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        return asyncio.run(coro)
+
+    if loop.is_running():
+        result = None
+        exc = None
+
+        def thread_target():
+            nonlocal result, exc
+            try:
+                result = asyncio.run(coro)
+            except Exception as e:
+                exc = e
+
+        thread = threading.Thread(target=thread_target)
+        thread.start()
+        thread.join()
+
+        if exc:
+            raise exc
+        return result
+    else:
+        return loop.run_until_complete(coro)
 
 
 class SemanticSearch:
@@ -75,22 +113,25 @@ class SemanticSearch:
 
         return column_details
 
-    async def initialize(self):
+    async def _async_initialize(self):
         embeddings = Embeddings(settings.EMBEDDING_MODEL_NAME, settings.TOKENIZER_MODEL_NAME)
         semantic_search_crud = SemanticSearchCRUD(self.collection_name, [embeddings])
         column_details = self.get_column_details()
         column_details = pd.DataFrame.from_records(column_details)
         await semantic_search_crud.initialize(column_details)
 
-    async def _search(self, query):
+    def initialize(self):
+        return _run_async_in_sync(self._async_initialize())
+
+    async def _search_async(self, query):
         embeddings = Embeddings(settings.EMBEDDING_MODEL_NAME, settings.TOKENIZER_MODEL_NAME)
         semantic_search = HybridDenseLateSearch(self.collection_name, embeddings)
 
         data = await semantic_search.search(string_standardization(query))
         return data
 
-    async def search(self, query):
-        search_results = await self._search(query)
+    def search(self, query):
+        search_results = _run_async_in_sync(self._search_async(query))
         if search_results.shape[0] == 0:
             return search_results
         search_results.sort_values(by="score", ascending=False, inplace=True)
