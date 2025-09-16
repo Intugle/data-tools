@@ -5,7 +5,7 @@ title: Aggregations
 
 # Aggregations
 
-> All examples on this and subsequent pages use the sample [healthcare dataset](https-://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
+> All examples on this and subsequent pages use the sample [healthcare dataset](https://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
 
 Aggregations allow you to perform calculations on groups of rows to derive summary insights. This is equivalent to using `GROUP BY` in SQL. The `DataProductBuilder` automatically applies grouping when you mix dimensions and measures in your `fields` list.
 

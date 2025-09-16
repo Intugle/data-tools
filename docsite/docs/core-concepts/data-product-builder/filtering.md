@@ -5,7 +5,7 @@ title: Filtering
 
 # Filtering Data
 
-> All examples on this and subsequent pages use the sample [healthcare dataset](https-://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
+> All examples on this and subsequent pages use the sample [healthcare dataset](https://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
 
 The `filter` object is a powerful tool for narrowing down the results in your data product. You can filter data using precise matches (`selections`) or pattern-based matching (`wildcards`).
 

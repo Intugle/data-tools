@@ -7,7 +7,7 @@ title: Basic Operations
 
 This page covers the fundamental operations for creating a data product: selecting columns, renaming them (aliasing), and limiting the number of results.
 
-> All examples on this and subsequent pages use the sample [healthcare dataset](https-://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
+> All examples on this and subsequent pages use the sample [healthcare dataset](https://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
 
 ## Selecting Fields
 

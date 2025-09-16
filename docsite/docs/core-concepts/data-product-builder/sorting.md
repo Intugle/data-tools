@@ -5,7 +5,7 @@ title: Sorting
 
 # Sorting Results
 
-> All examples on this and subsequent pages use the sample [healthcare dataset](https-://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
+> All examples on this and subsequent pages use the sample [healthcare dataset](https://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
 
 You can control the order of the rows in your final data product by using the `sort_by` property within the `filter` object. This allows you to sort by one or more columns in ascending or descending order.
 
