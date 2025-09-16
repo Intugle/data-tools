@@ -5,7 +5,7 @@ title: Joins
 
 # Handling Joins
 
-> All examples on this and subsequent pages use the sample [healthcare dataset](https-://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
+> All examples on this and subsequent pages use the sample [healthcare dataset](https://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
 
 One of the most powerful features of the `DataProductBuilder` is its ability to automatically handle joins between tables. You don't need to write explicit `JOIN` clauses; the builder infers the required joins based on the fields you select and the relationships defined in the semantic layer.
 

@@ -5,7 +5,7 @@ title: Advanced Examples
 
 # Advanced Examples
 
-> All examples on this and subsequent pages use the sample [healthcare dataset](https-://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
+> All examples on this and subsequent pages use the sample [healthcare dataset](https://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
 
 By combining the concepts from the previous pages—such as aliasing, filtering, aggregations, and joins—you can build sophisticated data products to answer complex business questions. This page provides examples of how to combine these operations.
 
