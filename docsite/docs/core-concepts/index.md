@@ -13,5 +13,5 @@ Understanding these concepts is key to using the library effectively and leverag
 *   [**Knowledge Builder**](./knowledge-builder.md): The main orchestrator that manages the end-to-end analysis pipeline.
 *   [**DataSet**](./dataset.md): The central in-memory container for a data source and all its rich metadata.
 *   [**Link Prediction**](./link-prediction.md): The process of automatically discovering relationships between your datasets.
-*   **Data Product Builder**: The tool used to generate unified data products from the enriched semantic layer.
+*   [**Data Product Builder**](./data-product-builder.md): The tool used to generate unified data products from the enriched semantic layer.
 *   **Semantic Search**: The feature that enables natural language queries on your connected data assets.

@@ -1,0 +1,8 @@
+{
+  "label": "Data Product Builder",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn how to use the Data Product Builder to create unified data products from your semantic layer."
+  }
+}
