@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Intugle Data Tools',
   tagline: 'The GenAI-powered toolkit for automated data intelligence.',
-  favicon: 'img/intugle-logo.png',
+  favicon: 'img/intugle-icon.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -62,7 +62,7 @@ const config: Config = {
       title: 'Data Tools',
       logo: {
         alt: 'Intugle Data Tools Logo',
-        src: 'img/intugle-logo.png',
+        src: 'img/intugle-icon.svg',
       },
       items: [
         {
@@ -72,7 +72,7 @@ const config: Config = {
           label: 'Guide',
         },
         {
-          to: '/docs/intro',
+          to: '/docs/examples',
           label: 'Examples',
           position: 'left'
         },
@@ -99,17 +99,13 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              href: 'https://discord.gg/NqR9tNWVTm',
             },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
+            // {
+            //   label: 'Slack',
+            //   href: 'https://x.com/docusaurus',
+            // },
           ],
         },
         {
@@ -122,7 +118,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Intugle, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Intugle, Inc.`,
     },
     prism: {
       theme: prismThemes.github,
