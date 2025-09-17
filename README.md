@@ -92,6 +92,10 @@ These datasets will take you through the following steps:
 *   **Generating Data Products:** Use the semantic layer to generate data products and retrieve data.
 *   **Searching the Knowledge Base:** Use semantic search to find relevant columns in your datasets using natural language.
 
+## Documentation
+
+For more detailed information, advanced usage, and tutorials, please refer to our full [documentation site](https://intugle.github.io/data-tools/).
+
 ## Usage
 
 The core workflow of the project involves using the `KnowledgeBuilder` to build a semantic layer, and then using the `DataProductBuilder` to generate data products from that layer.
