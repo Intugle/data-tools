@@ -56,6 +56,11 @@ async def get_schema(table_names: list[str]) -> dict[str, str]:
 #     return Prompts.raw_executor_prompt(settings.SQL_DIALECT, settings.DOMAIN, settings.UNIVERSAL_INSTRUCTIONS)
 
 
+@semantic_layer_mcp.prompt(name="create-dp", title="Create Data Product Specification")
+async def create_dp_prompt(user_request: str) -> str:
+    return Prompts.create_dp_prompt(user_request)
+
+
 @semantic_layer_mcp.tool(name="execute_query", description="Return the result of a query execution")
 async def execute_query(sql_query: str) -> list[dict]: 
     data = await adapter_service.execute_query(sql_query)

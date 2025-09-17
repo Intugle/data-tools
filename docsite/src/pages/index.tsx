@@ -14,7 +14,7 @@ function HomepageHeader() {
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <img 
-          src="https://github.com/user-attachments/assets/18f4627b-af6c-4133-994b-830c30a9533b" 
+          src="img/intugle-logo.png" 
           alt="Intugle Logo" 
           width="350" 
         />
