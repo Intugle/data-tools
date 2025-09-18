@@ -26,10 +26,10 @@ const FeatureList: FeatureItem[] = [
     title: 'Examples',
     description: (
       <>
-        Real-world examples and use cases to inspire your projects.
+        Examples and use cases to inspire you to start building.
       </>
     ),
-    link: '/docs/intro',
+    link: '/docs/examples',
     buttonText: 'View examples →'
   },
 ];
