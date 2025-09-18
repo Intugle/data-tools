@@ -19,7 +19,9 @@ Think of a `DataSet` as a "unit of work" that gets progressively enriched as it 
 
 ### Data abstraction
 
-The `DataSet` uses a system of **Adapters** under the hood to connect to different data backends. When you initialize a `DataSet` with a file-based source, it uses the appropriate adapter (for example, `DuckdbAdapter` for CSV files, Parquet, etc.) to handle the specific implementation details. This design makes the system extensible to support new data sources.
+The `DataSet` uses a system of **Adapters** under the hood to connect to different data backends. When you initialize a `DataSet` with a file-based source, it uses the appropriate adapter to handle the specific implementation details.
+
+Currently, the library supports `csv`, `parquet`, and `excel` files. More integrations are on the way. This design makes the system extensible to support new data sources.
 
 ### Centralized metadata
 
@@ -77,6 +79,10 @@ The `DataSet` object avoids redundant work. When you initialize a `DataSet`, it 
 ### Analysis stage functions
 
 You can run the analysis pipeline step-by-step for more granular control. Each of these methods includes a `save=True` option to persist the results of that specific stage.
+
+:::caution Naming Convention
+The `name` you assign to a `DataSet` is used as a key and file name throughout the system. To avoid errors, **dataset names cannot contain whitespaces**. Use underscores (`_`) instead.
+:::
 
 ```python
 from intugle.analysis.models import DataSet
