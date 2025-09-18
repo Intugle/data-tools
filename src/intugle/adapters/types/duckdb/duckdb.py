@@ -200,6 +200,9 @@ class DuckdbAdapter(Adapter):
         if ld_func is None:
             raise errors.NotFoundError(f"Type: {data.type} not supported")
 
+        if data.type == "xlsx":
+            return f"{ld_func}('{data.path}', ignore_errors = true)"  # Replace cells that can't be cast to the corresponding inferred column type with NULL
+
         return f"{ld_func}('{data.path}')"
 
     def load_view(self, data: DuckdbConfig, table_name: str):
