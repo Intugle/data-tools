@@ -3,12 +3,27 @@
  <h3 align="center"><i>The GenAI-powered toolkit for automated data intelligence.</i></h3>
 </p>
 
-[![Release](https://img.shields.io/github/release/Intugle/data-tools)](https://github.com/Intugle/data-tools/releases/tag/v0.1.0)     
-[![Made with Python](https://img.shields.io/badge/Made_with-Python-blue?logo=python&logoColor=white)](https://www.python.org/) 
-![contributions - welcome](https://img.shields.io/badge/contributions-welcome-blue)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Open Issues](https://img.shields.io/github/issues-raw/Intugle/data-tools)](https://github.com/Intugle/data-tools/issues)
-[![GitHub star chart](https://img.shields.io/github/stars/Intugle/data-tools?style=social)](https://github.com/Intugle/data-tools/stargazers)
+<p align="center">
+    <a href="https://pepy.tech/projects/intugle">
+        <img alt="PyPI Downloads" src="https://static.pepy.tech/personalized-badge/intugle?period=total&units=INTERNATIONAL_SYSTEM&left_color=GREY&right_color=BRIGHTGREEN&left_text=downloads">
+    </a>
+    <img alt="Release" src="https://img.shields.io/github/release/Intugle/data-tools">
+    <a href="https://www.python.org/">
+        <img alt="Made with Python" src="https://img.shields.io/badge/Made_with-Python-blue?logo=python&logoColor=white">
+    </a>
+    <a href="https://github.com/Intugle/data-tools/blob/main/CONTRIBUTING.md">
+          <img alt="contributions - welcome" src="https://img.shields.io/badge/contributions-welcome-blue">
+    </a>
+    <a href="https://opensource.org/licenses/Apache-2.0">
+        <img alt="License: Apache 2.0" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg">
+    </a>
+    <a href="https://github.com/Intugle/data-tools/issues">
+        <img alt="Open Issues" src="https://img.shields.io/github/issues-raw/Intugle/data-tools">
+    </a>
+    <!-- <a href="https://github.com/Intugle/data-tools/stargazers">
+        <img alt="GitHub star chart" src="https://img.shields.io/github/stars/Intugle/data-tools?style=social">
+    </a> -->
+</p>
 
 *Transform Fragmented Data into Connected Semantic Layer*
 
