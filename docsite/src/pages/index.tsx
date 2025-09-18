@@ -35,6 +35,7 @@ function HomepageHeader() {
             View on Github
           </Link>
         </div>
+        <img src="img/hero.png" alt="Intugle High Level" style={{marginTop: '6em'}}/>
       </div>
     </header>
   );
