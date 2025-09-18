@@ -19,14 +19,14 @@ At a high level, the `KnowledgeBuilder` is responsible for:
 
 You can initialize the `KnowledgeBuilder` in two ways:
 
-1.  **With a Dictionary of File-Based Sources**: This is the most common method. You give a dictionary where keys are the desired names for your datasets and values are dictionary configurations pointing to your data.
+1.  **With a Dictionary of File-Based Sources**: This is the most common method. You give a dictionary where keys are the desired names for your datasets and values are dictionary configurations pointing to your data. The `path` can be a local file path or a remote URL (e.g., over HTTPS). Currently, `csv`, `parquet`, and `excel` file formats are supported.
 
     ```python
     from intugle import KnowledgeBuilder
 
     data_sources = {
         "customers": {"path": "path/to/customers.csv", "type": "csv"},
-        "orders": {"path": "path/to/orders.csv", "type": "csv"},
+        "orders": {"path": "https://example.com/orders.csv", "type": "csv"},
     }
 
     kb = KnowledgeBuilder(data_input=data_sources, domain="e-commerce")
@@ -51,6 +51,10 @@ You can initialize the `KnowledgeBuilder` in two ways:
     ```
 
 The `domain` parameter is an optional but highly recommended string that gives context to the underlying AI models, helping them generate more relevant business glossary terms.
+
+:::caution Naming Convention
+The `name` you assign to a `DataSet` is used as a key and file name throughout the system. To avoid errors, **dataset names cannot contain whitespaces**. Use underscores (`_`) instead.
+:::
 
 ## The analysis pipeline
 
