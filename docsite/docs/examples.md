@@ -7,11 +7,12 @@ title: Examples
 
 For a detailed, hands-on introduction to the project, please see our quickstart notebooks. They provide a complete walkthrough of the library's capabilities using real-world datasets.
 
-*   **Healthcare Dataset**: This notebook walks you through the entire process of building a semantic layer using a healthcare dataset.
-    *   [`quickstart_healthcare.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_healthcare.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_healthcare.ipynb)
-
-*   **Tech Manufacturing Company Dataset**: This notebook demonstrates how to use the library with a technology manufacturing company dataset.
-    *   [`quickstart_tech_company.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_tech_company.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_tech_company.ipynb)
+| Domain                  | Notebook                                                                                                             | Open in Colab                                                                                                                                                           |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Healthcare**          | [`quickstart_healthcare.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_healthcare.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_healthcare.ipynb) |
+| **Tech Manufacturing**  | [`quickstart_tech_company.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_tech_company.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_tech_company.ipynb) |
+| **FMCG**                | [`quickstart_fmcg.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_fmcg.ipynb)             | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_fmcg.ipynb)             |
+| **Sports Media**        | [`quickstart_sports_media.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_sports_media.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_sports_media.ipynb) |
 
 These notebooks will guide you through the following key steps:
 
