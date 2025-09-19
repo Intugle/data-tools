@@ -1,0 +1,201 @@
+PlayerID,Name,TeamID,Position,Age,Height,Weight,Nationality
+1,Anna Perry,48,Forward,28,5.59,215,Tunisia
+2,Holly Snow,37,Guard,24,6.55,217,Oman
+3,Jessica Hartman,31,Center,33,5.81,235,Uruguay
+4,George Nelson,36,Guard,30,6.75,190,Serbia
+5,Rebecca Thornton,16,Center,29,5.85,221,Madagascar
+6,Lisa Gonzalez,22,Center,39,6.83,170,Israel
+7,Gregory Newman,35,Center,21,5.72,198,Morocco
+8,William Hendricks,16,Guard,23,6.88,158,Honduras
+9,Alan Conrad,5,Guard,22,6.25,196,Italy
+10,Tina King,41,Guard,21,5.66,152,India
+11,Justin Stone,17,Center,20,5.72,214,American Samoa
+12,Todd Thompson,22,Center,40,6.57,170,Afghanistan
+13,Mary Clark,20,Center,35,5.91,206,Gabon
+14,Miguel Dennis,39,Forward,22,6.92,236,Uzbekistan
+15,Robert Patel,11,Guard,28,6.55,223,Saint Lucia
+16,Chad Williamson,15,Center,21,5.92,226,Turkey
+17,Ashley Thomas,18,Forward,37,6.8,169,Algeria
+18,Jonathan Rowe,14,Guard,36,6.21,209,Papua New Guinea
+19,Arthur James,32,Guard,20,6.83,204,Belarus
+20,Mrs. Stephanie Acosta,16,Guard,19,6.74,167,Aruba
+21,Amber Miller,11,Guard,30,6.82,228,Croatia
+22,John Cline,13,Center,21,6.04,178,Cambodia
+23,James Mata,41,Forward,25,6.26,240,Iraq
+24,Peter Serrano,35,Guard,26,6.9,231,Netherlands
+25,Angel Mack,9,Center,25,5.65,173,Syrian Arab Republic
+26,Mary Wall DDS,37,Center,32,6.1,211,Lithuania
+27,Barry White,23,Guard,24,6.37,160,Bahamas
+28,Kevin Simpson,27,Center,21,5.97,177,South Africa
+29,Robert Graham,33,Center,29,6.76,195,Hong Kong
+30,Abigail Schaefer,11,Center,19,6.27,220,Benin
+31,Suzanne Jones,45,Forward,34,5.52,159,Somalia
+32,Meghan Johnson,50,Forward,31,6.7,226,Micronesia
+33,Christine Graves,47,Center,18,6.06,156,Mongolia
+34,Michael Reed,15,Center,32,6.85,196,Afghanistan
+35,Andrea Phillips,42,Forward,33,6.1,211,Iran
+36,Edwin Long,22,Forward,38,6.09,168,British Virgin Islands
+37,Mr. Albert Schultz MD,21,Guard,36,6.15,180,Ukraine
+38,Benjamin Freeman,24,Forward,20,6.76,220,Moldova
+39,Gabriel Fisher,23,Guard,33,5.83,225,Azerbaijan
+40,Benjamin Torres,24,Forward,31,6.49,156,Somalia
+41,Tyler Yates,29,Center,37,6.59,242,Cameroon
+42,Cathy Brown,35,Forward,29,6.36,220,Saudi Arabia
+43,Maria Johnson,6,Guard,30,5.75,246,Mauritania
+44,Susan Morgan,7,Guard,19,6.54,178,Venezuela
+45,Melissa Miller,11,Guard,23,5.52,223,Uganda
+46,Edward Day,47,Forward,37,5.56,242,Kazakhstan
+47,Michael Williams,41,Forward,29,5.74,203,Haiti
+48,Margaret Johnson,9,Guard,39,5.5,241,Samoa
+49,Joshua Hanson,11,Forward,23,6.13,183,Trinidad and Tobago
+50,Amy Walters,43,Forward,35,6.88,226,Malawi
+51,Hunter Brown,42,Guard,20,6.16,157,Saint Pierre and Miquelon
+52,Shirley Harris,27,Guard,28,6.12,227,Qatar
+53,Christopher Johnson,36,Center,30,6.6,203,Argentina
+54,Jason Mann,46,Forward,23,6.37,222,Andorra
+55,James Mitchell,4,Center,31,6.29,240,Libyan Arab Jamahiriya
+56,Jeffrey Stevens,9,Guard,32,6.44,213,Austria
+57,Amber Kirby,32,Guard,38,5.91,150,Czech Republic
+58,Patrick Bautista,5,Guard,22,5.87,185,India
+59,Jessica Mcneil,26,Center,26,6.35,206,Bouvet Island (Bouvetoya)
+60,Kari Lynch,50,Center,26,6.85,199,South Georgia and the South Sandwich Islands
+61,Ryan Evans,14,Center,38,5.71,191,Northern Mariana Islands
+62,Elizabeth Gallegos,36,Center,25,6.52,238,Jersey
+63,Nancy Greer,30,Forward,22,6.56,232,Micronesia
+64,Jessica Bailey,20,Forward,18,6.43,210,Djibouti
+65,Carol Gentry,17,Guard,38,6.22,219,Heard Island and McDonald Islands
+66,Jessica Robinson,29,Center,29,6.34,170,Iraq
+67,Blake Harris,35,Forward,24,6.51,241,Svalbard & Jan Mayen Islands
+68,David Schultz,38,Forward,33,6.51,230,France
+69,Lauren Thompson,35,Center,40,6.12,158,British Virgin Islands
+70,Jeffrey Martinez,41,Center,24,6.41,157,Saint Barthelemy
+71,Brad Johnson,38,Guard,37,6.88,213,Andorra
+72,Amber Fletcher,16,Guard,21,6.65,200,Northern Mariana Islands
+73,Kevin Johnson,18,Forward,25,5.7,167,Libyan Arab Jamahiriya
+74,Tonya Ray,48,Forward,40,6.88,157,Albania
+75,Claire Jackson,32,Forward,26,6.93,221,Bermuda
+76,Misty Dominguez,5,Center,27,6.36,168,Morocco
+77,Ashley Hernandez,13,Forward,31,6.85,214,Saint Barthelemy
+78,Gary Hartman,47,Forward,21,5.57,248,Pitcairn Islands
+79,Gerald Williams,3,Center,26,6.58,165,Faroe Islands
+80,Connor Sanders,43,Forward,26,6.26,151,Morocco
+81,Louis Ward,16,Forward,21,5.79,194,Malaysia
+82,Jesus Carpenter,20,Forward,25,6.07,200,Kazakhstan
+83,Robert Shaw,46,Center,37,5.94,234,Bahrain
+84,Amy Mason,37,Center,33,6.13,244,Pitcairn Islands
+85,Joshua Finley,50,Center,32,6.42,236,Lesotho
+86,Danielle Tucker,38,Center,26,6.39,226,Wallis and Futuna
+87,John Anderson,15,Center,31,5.6,164,American Samoa
+88,Denise Garcia,32,Center,27,6.38,234,Saint Kitts and Nevis
+89,Catherine Soto,35,Center,24,5.8,184,Falkland Islands (Malvinas)
+90,Justin Dominguez,45,Center,29,5.57,212,China
+91,Tammy Mcintosh,9,Forward,19,5.73,162,Spain
+92,John Warren Jr.,30,Center,21,6.82,186,Finland
+93,Virginia Mcintosh,37,Center,27,6.65,184,Cuba
+94,Anthony Wright,44,Forward,20,5.74,247,France
+95,Michael Johnson,32,Forward,23,6.72,214,Russian Federation
+96,Susan Hood,40,Forward,38,5.93,246,Comoros
+97,Angela Curtis,34,Guard,28,5.84,164,Bermuda
+98,Mary Reynolds,12,Guard,19,6.04,159,Reunion
+99,Troy Jones Jr.,35,Guard,39,6.74,233,Hungary
+100,Jeffery Blankenship,33,Center,20,5.86,242,Aruba
+101,Shannon Kennedy,44,Center,33,6.79,244,Mauritania
+102,Maurice James II,8,Forward,32,5.54,241,Iceland
+103,Scott Brown,37,Guard,25,6.38,245,Oman
+104,Meagan Sharp,48,Forward,25,6.98,163,Saint Pierre and Miquelon
+105,Matthew Flores,22,Forward,29,6.47,167,Guyana
+106,David Salazar,20,Guard,19,5.98,219,Belgium
+107,Scott Velasquez,7,Guard,38,6.01,248,Saudi Arabia
+108,Veronica Huynh,34,Center,23,6.84,245,Taiwan
+109,Katelyn Vargas,4,Guard,33,6.85,232,Russian Federation
+110,Teresa Armstrong,1,Center,30,6.66,208,Costa Rica
+111,Anthony Cook,24,Forward,18,6.36,202,Ghana
+112,Jordan Moore,21,Center,26,6.81,239,Congo
+113,Joseph Mckay,35,Forward,27,6.53,185,Vietnam
+114,Lisa Burns,33,Guard,35,6.65,215,Burundi
+115,Misty Tanner,48,Guard,20,6.05,181,Barbados
+116,Ryan Huffman,14,Forward,22,6.4,175,Anguilla
+117,Joshua Deleon,48,Forward,33,6.31,206,Bangladesh
+118,Stephanie Taylor,14,Center,32,6.28,215,Palestinian Territory
+119,Jacob Weaver,10,Guard,30,5.86,229,Argentina
+120,Joseph Mercer,37,Forward,25,6.28,165,Libyan Arab Jamahiriya
+121,Joel Ingram,42,Guard,28,6.59,189,Georgia
+122,Holly Walsh,49,Forward,27,6.59,242,Argentina
+123,Cody Palmer,26,Guard,40,6.19,174,Guyana
+124,Theodore Hamilton,17,Forward,27,6.47,222,Greece
+125,Todd Glass,14,Forward,23,6.53,208,Israel
+126,Jessica Anderson,12,Forward,35,6.21,225,Djibouti
+127,Dana Wallace,37,Center,39,5.73,205,Liberia
+128,Glenn Foster,44,Center,33,6.34,248,Panama
+129,Aaron Vaughan,5,Forward,26,5.58,209,Benin
+130,Kyle Gonzalez,12,Center,36,6.65,176,Brunei Darussalam
+131,Tonya Gutierrez,37,Forward,20,6.14,161,Qatar
+132,David Jackson,17,Center,25,5.74,221,San Marino
+133,Kenneth Wilson,26,Center,36,5.84,247,Italy
+134,Amber Mason,8,Forward,32,5.66,177,Saint Lucia
+135,Melissa Adams,3,Center,30,6.68,190,Ecuador
+136,Stephanie Price,34,Forward,25,6.34,166,Maldives
+137,David Carroll,29,Center,21,6.51,225,Latvia
+138,Pamela Thompson,27,Forward,28,5.97,216,Isle of Man
+139,Pamela Peters,24,Guard,36,6.34,179,Svalbard & Jan Mayen Islands
+140,Julia Bradley,33,Forward,34,5.96,159,Mali
+141,Johnny Brown,50,Guard,27,6.36,227,Guam
+142,Jennifer Anderson,43,Guard,40,6.82,218,British Virgin Islands
+143,Christopher Sandoval,50,Forward,40,6.05,179,Antigua and Barbuda
+144,Mrs. Patricia Nguyen DVM,31,Center,27,6.51,249,Guinea
+145,Nathaniel Smith,38,Center,33,5.69,224,Saint Vincent and the Grenadines
+146,Craig Dixon,40,Center,26,5.92,188,Guinea-Bissau
+147,Matthew Smith,8,Forward,20,6.09,179,Egypt
+148,Thomas Hernandez,9,Guard,32,6.92,198,Anguilla
+149,Taylor Alexander,4,Guard,26,6.64,230,Cape Verde
+150,Matthew Ball,20,Center,25,6.43,211,Chad
+151,Alan Bell,17,Center,23,5.92,217,Azerbaijan
+152,Laura Sandoval,44,Forward,36,6.92,158,Morocco
+153,Joshua Stone,24,Center,32,6.81,196,Morocco
+154,Sandra Pennington,25,Guard,36,6.6,181,Slovenia
+155,Debra Chandler,14,Forward,37,6.18,181,Seychelles
+156,Corey Pollard,34,Center,24,6.83,163,Cote d'Ivoire
+157,Kathryn Edwards,30,Center,29,6.18,245,Iran
+158,Jennifer Russell,9,Center,26,5.7,165,Guinea-Bissau
+159,Erica Brooks MD,8,Forward,32,6.78,183,Nauru
+160,Ana Taylor,45,Guard,23,6.74,174,Mayotte
+161,Dustin Cortez Jr.,25,Center,20,5.6,182,Montenegro
+162,Stacy Graves,17,Guard,39,6.17,153,Slovakia (Slovak Republic)
+163,Susan Hill,3,Guard,33,6.52,178,Equatorial Guinea
+164,Shannon Brown,8,Forward,40,6.95,232,Vietnam
+165,Spencer Johnston,30,Forward,29,6.23,182,Oman
+166,Danny Garza,43,Forward,30,6.2,179,Lebanon
+167,Barbara Garcia,23,Forward,36,6.02,203,Zimbabwe
+168,Craig Green,25,Guard,38,5.59,238,South Africa
+169,Lori Barnett,13,Center,26,5.5,150,Guyana
+170,Victoria Moore,22,Guard,18,6.33,229,Cape Verde
+171,Melissa Price,48,Forward,28,5.52,204,Kazakhstan
+172,Jeremy Lee,16,Guard,24,6.65,180,Djibouti
+173,Charles Fisher,49,Guard,37,5.52,160,Bahamas
+174,Kimberly Smith,7,Center,29,5.88,249,Bosnia and Herzegovina
+175,Brenda Martinez,47,Center,34,6.3,161,Sierra Leone
+176,Jonathan Bryant,24,Guard,38,5.99,190,Romania
+177,Morgan Davis,37,Forward,25,5.6,220,Libyan Arab Jamahiriya
+178,Dr. Angela Murphy,39,Forward,34,6.49,158,Luxembourg
+179,Rachel Wood,12,Guard,18,5.95,202,American Samoa
+180,Samantha Duncan,5,Forward,35,6.37,240,Belgium
+181,Jose Tucker,2,Center,26,6.29,156,Chile
+182,Gary Schmidt,7,Center,19,6.33,161,Ecuador
+183,Marissa Garcia,13,Forward,22,6.0,203,North Macedonia
+184,John Moreno,3,Forward,32,6.95,167,Palau
+185,Timothy Oliver,37,Forward,20,6.47,154,Dominica
+186,Matthew Snyder,29,Center,31,6.44,162,Israel
+187,Terry Wise,4,Center,22,6.64,217,Brunei Darussalam
+188,Carol Gordon,34,Center,39,6.09,181,Palestinian Territory
+189,Melissa Jimenez,17,Forward,27,5.66,226,Slovakia (Slovak Republic)
+190,Kelli Campbell,12,Center,21,6.91,213,Kiribati
+191,Alexander Willis,18,Guard,24,5.84,248,Bolivia
+192,Ian Keith,35,Center,38,5.84,159,Jamaica
+193,Seth Cruz,36,Guard,31,6.29,197,Argentina
+194,Amanda Lee,22,Center,20,6.05,244,Comoros
+195,Carolyn Barnett,18,Center,23,5.71,198,Tuvalu
+196,James Smith,48,Forward,37,6.94,158,Sri Lanka
+197,Lisa Ball,37,Guard,19,6.63,247,Mauritius
+198,Randy Middleton,32,Forward,35,5.73,207,Turkey
+199,Kayla Graham,25,Center,31,6.34,229,Maldives
+200,Amanda Martin,8,Guard,35,6.0,150,Mali

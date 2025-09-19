@@ -1,0 +1,101 @@
+prj_id,prod_id,type,result,amt_spent
+RD101,P150,New Product Development,Failure,119598.66
+RD104,P151,New Product Development,Failure,187147.78
+RD106,P152,New Product Development,Failure,177635.2
+RD108,P153,New Product Development,Success,55526.13
+RD109,P154,New Product Development,Failure,145420.65
+RD110,P155,New Product Development,Success,171887.58
+RD118,P156,New Product Development,Success,64851.24
+RD120,P157,New Product Development,Success,79640.72
+RD121,P158,New Product Development,Partial Success,186187.74
+RD123,P159,New Product Development,Failure,109468.36
+RD125,P160,New Product Development,Failure,61632.59
+RD132,P161,New Product Development,Success,98743.35
+RD134,P162,New Product Development,Partial Success,58808.64
+RD135,P163,New Product Development,Success,141204.86
+RD139,P164,New Product Development,Partial Success,93742.82
+RD140,P165,New Product Development,Partial Success,62895.21
+RD144,P166,New Product Development,Success,88271.54
+RD149,P167,New Product Development,Partial Success,69385.32
+RD153,P168,New Product Development,Partial Success,117479.51
+RD159,P169,New Product Development,Failure,173307.87
+RD160,P170,New Product Development,Failure,164505.36
+RD164,P171,New Product Development,Failure,159970.54
+RD168,P172,New Product Development,Failure,79932.44
+RD170,P173,New Product Development,Success,190620.03
+RD171,P174,New Product Development,Partial Success,77799.59
+RD173,P175,New Product Development,Success,95519.35
+RD176,P176,New Product Development,Success,158152.87
+RD178,P177,New Product Development,Success,127152.66
+RD182,P178,New Product Development,Failure,88170.12
+RD184,P179,New Product Development,Success,120257.84
+RD185,P180,New Product Development,Failure,137862.45
+RD187,P181,New Product Development,Failure,187138.02
+RD188,P182,New Product Development,Failure,57877.64
+RD192,P183,New Product Development,Partial Success,117817.1
+RD195,P184,New Product Development,Partial Success,84903.4
+RD197,P185,New Product Development,Partial Success,167922.13
+RD199,P186,New Product Development,Partial Success,65642.44
+RD102,P100,Packaging Innovation,Partial Success,125381.73
+RD103,P101,Packaging Innovation,Partial Success,63972.7
+RD105,P102,Packaging Innovation,Failure,187726.29
+RD111,P103,Packaging Innovation,Partial Success,89408
+RD113,P104,Packaging Innovation,Success,51172.94
+RD115,P105,Packaging Innovation,Failure,92937.17
+RD116,P106,Packaging Innovation,Failure,69530.16
+RD117,P107,Packaging Innovation,Partial Success,120477.84
+RD122,P108,Packaging Innovation,Failure,62501.76
+RD127,P109,Packaging Innovation,Failure,131697.6
+RD128,P110,Packaging Innovation,Partial Success,55712.22
+RD133,P111,Packaging Innovation,Success,94646.21
+RD137,P112,Packaging Innovation,Success,51357.09
+RD142,P113,Packaging Innovation,Failure,164046.49
+RD150,P114,Packaging Innovation,Partial Success,188073.26
+RD152,P115,Packaging Innovation,Failure,95769.38
+RD154,P116,Packaging Innovation,Partial Success,68218.13
+RD157,P117,Packaging Innovation,Partial Success,127471.2
+RD158,P118,Packaging Innovation,Failure,186535.57
+RD162,P119,Packaging Innovation,Failure,103897.11
+RD163,P120,Packaging Innovation,Partial Success,94326.7
+RD167,P121,Packaging Innovation,Failure,87613.32
+RD172,P122,Packaging Innovation,Success,127131.38
+RD174,P123,Packaging Innovation,Success,90832.41
+RD177,P124,Packaging Innovation,Failure,132949.77
+RD179,P125,Packaging Innovation,Success,55729.89
+RD180,P126,Packaging Innovation,Partial Success,150899.14
+RD181,P127,Packaging Innovation,Success,198963.91
+RD186,P128,Packaging Innovation,Success,137964.83
+RD189,P129,Packaging Innovation,Success,121013.1
+RD190,P130,Packaging Innovation,Partial Success,57171.98
+RD196,P131,Packaging Innovation,Failure,159554.23
+RD100,P135,Product Improvement,Partial Success,108220.7
+RD107,P136,Product Improvement,Partial Success,129960.79
+RD112,P137,Product Improvement,Success,58894.37
+RD114,P138,Product Improvement,Success,185393.66
+RD119,P139,Product Improvement,Failure,199864.43
+RD124,P140,Product Improvement,Success,169754.79
+RD126,P141,Product Improvement,Failure,72192.99
+RD129,P142,Product Improvement,Partial Success,152153.17
+RD130,P143,Product Improvement,Failure,77886.39
+RD131,P144,Product Improvement,Failure,156152.36
+RD136,P145,Product Improvement,Success,138984.81
+RD138,P146,Product Improvement,Failure,196318.77
+RD141,P147,Product Improvement,Partial Success,126758.49
+RD143,P148,Product Improvement,Partial Success,151964.44
+RD145,P149,Product Improvement,Failure,82957.07
+RD146,P150,Product Improvement,Success,190768.04
+RD147,P151,Product Improvement,Success,54446.56
+RD148,P152,Product Improvement,Failure,103585.16
+RD151,P153,Product Improvement,Partial Success,153997.99
+RD155,P154,Product Improvement,Partial Success,181733.9
+RD156,P155,Product Improvement,Partial Success,119335.96
+RD161,P156,Product Improvement,Partial Success,115363.72
+RD165,P157,Product Improvement,Failure,108359.82
+RD166,P158,Product Improvement,Failure,56299.33
+RD169,P159,Product Improvement,Partial Success,196337.23
+RD175,P160,Product Improvement,Success,70664.7
+RD183,P161,Product Improvement,Success,173286.14
+RD191,P162,Product Improvement,Failure,155083.7
+RD193,P163,Product Improvement,Failure,132842.23
+RD194,P164,Product Improvement,Success,156509.6
+RD198,P165,Product Improvement,Partial Success,90762.59

@@ -1,0 +1,101 @@
+prd_id,name,category,brand
+P100,Product 1,Beverage,Brand 2
+P101,Product 2,Home Care,Brand 5
+P102,Product 3,Cakes,Brand 1
+P103,Product 4,Beverage,Brand 5
+P104,Product 5,Biscuits & Cookies,Brand 9
+P105,Product 6,Home Care,Brand 9
+P106,Product 7,Biscuits & Cookies,Brand 8
+P107,Product 8,Biscuits & Cookies,Brand 4
+P108,Product 9,Biscuits & Cookies,Brand 9
+P109,Product 10,Personal Care,Brand 3
+P110,Product 11,Cakes,Brand 7
+P111,Product 12,Beverage,Brand 8
+P112,Product 13,Cakes,Brand 5
+P113,Product 14,Home Care,Brand 5
+P114,Product 15,Cakes,Brand 4
+P115,Product 16,Biscuits & Cookies,Brand 2
+P116,Product 17,Beverage,Brand 4
+P117,Product 18,Cakes,Brand 9
+P118,Product 19,Personal Care,Brand 2
+P119,Product 20,Home Care,Brand 4
+P120,Product 21,Cakes,Brand 6
+P121,Product 22,Home Care,Brand 3
+P122,Product 23,Beverage,Brand 2
+P123,Product 24,Biscuits & Cookies,Brand 8
+P124,Product 25,Personal Care,Brand 1
+P125,Product 26,Home Care,Brand 1
+P126,Product 27,Personal Care,Brand 1
+P127,Product 28,Home Care,Brand 7
+P128,Product 29,Personal Care,Brand 8
+P129,Product 30,Personal Care,Brand 3
+P130,Product 31,Home Care,Brand 10
+P131,Product 32,Cakes,Brand 6
+P132,Product 33,Biscuits & Cookies,Brand 4
+P133,Product 34,Personal Care,Brand 8
+P134,Product 35,Biscuits & Cookies,Brand 9
+P135,Product 36,Cakes,Brand 9
+P136,Product 37,Beverage,Brand 9
+P137,Product 38,Biscuits & Cookies,Brand 3
+P138,Product 39,Cakes,Brand 10
+P139,Product 40,Home Care,Brand 3
+P140,Product 41,Home Care,Brand 1
+P141,Product 42,Personal Care,Brand 1
+P142,Product 43,Personal Care,Brand 1
+P143,Product 44,Home Care,Brand 1
+P144,Product 45,Cakes,Brand 9
+P145,Product 46,Beverage,Brand 3
+P146,Product 47,Personal Care,Brand 6
+P147,Product 48,Beverage,Brand 10
+P148,Product 49,Personal Care,Brand 6
+P149,Product 50,Personal Care,Brand 8
+P150,Product 51,Beverage,Brand 5
+P151,Product 52,Personal Care,Brand 2
+P152,Product 53,Beverage,Brand 3
+P153,Product 54,Beverage,Brand 7
+P154,Product 55,Biscuits & Cookies,Brand 9
+P155,Product 56,Cakes,Brand 9
+P156,Product 57,Beverage,Brand 8
+P157,Product 58,Home Care,Brand 3
+P158,Product 59,Cakes,Brand 10
+P159,Product 60,Beverage,Brand 10
+P160,Product 61,Cakes,Brand 9
+P161,Product 62,Biscuits & Cookies,Brand 3
+P162,Product 63,Beverage,Brand 3
+P163,Product 64,Beverage,Brand 9
+P164,Product 65,Personal Care,Brand 5
+P165,Product 66,Cakes,Brand 1
+P166,Product 67,Beverage,Brand 4
+P167,Product 68,Home Care,Brand 8
+P168,Product 69,Biscuits & Cookies,Brand 6
+P169,Product 70,Home Care,Brand 1
+P170,Product 71,Beverage,Brand 1
+P171,Product 72,Home Care,Brand 6
+P172,Product 73,Beverage,Brand 2
+P173,Product 74,Cakes,Brand 4
+P174,Product 75,Personal Care,Brand 9
+P175,Product 76,Biscuits & Cookies,Brand 3
+P176,Product 77,Personal Care,Brand 10
+P177,Product 78,Personal Care,Brand 9
+P178,Product 79,Cakes,Brand 10
+P179,Product 80,Beverage,Brand 6
+P180,Product 81,Personal Care,Brand 4
+P181,Product 82,Home Care,Brand 7
+P182,Product 83,Home Care,Brand 4
+P183,Product 84,Home Care,Brand 6
+P184,Product 85,Biscuits & Cookies,Brand 3
+P185,Product 86,Cakes,Brand 8
+P186,Product 87,Personal Care,Brand 4
+P187,Product 88,Beverage,Brand 3
+P188,Product 89,Personal Care,Brand 4
+P189,Product 90,Personal Care,Brand 10
+P190,Product 91,Beverage,Brand 8
+P191,Product 92,Beverage,Brand 4
+P192,Product 93,Cakes,Brand 1
+P193,Product 94,Biscuits & Cookies,Brand 10
+P194,Product 95,Cakes,Brand 9
+P195,Product 96,Cakes,Brand 5
+P196,Product 97,Biscuits & Cookies,Brand 7
+P197,Product 98,Personal Care,Brand 5
+P198,Product 99,Beverage,Brand 1
+P199,Product 100,Home Care,Brand 6

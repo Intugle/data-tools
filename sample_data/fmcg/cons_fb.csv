@@ -1,0 +1,101 @@
+p_id,quality_rate,use_rate,csat,csat_field
+P100,3,5,5,Dissatisfied
+P101,1,1,2,Dissatisfied
+P102,4,5,4,Neutral
+P103,3,1,4,Dissatisfied
+P104,1,2,5,Very Satisfied
+P105,2,1,2,Dissatisfied
+P106,2,3,3,Very Satisfied
+P107,5,4,1,Dissatisfied
+P108,2,1,5,Dissatisfied
+P109,1,4,4,Neutral
+P110,1,3,3,Very Dissatisfied
+P111,3,4,2,Very Satisfied
+P112,1,1,3,Neutral
+P113,5,1,2,Satisfied
+P114,5,3,4,Satisfied
+P115,1,2,4,Very Satisfied
+P116,5,5,4,Neutral
+P117,4,1,2,Very Satisfied
+P118,5,5,4,Very Dissatisfied
+P119,2,1,3,Satisfied
+P120,1,4,1,Very Dissatisfied
+P121,3,3,2,Satisfied
+P122,2,1,1,Neutral
+P123,3,2,2,Very Satisfied
+P124,1,4,2,Satisfied
+P125,4,3,5,Satisfied
+P126,1,3,3,Neutral
+P127,4,5,3,Very Satisfied
+P128,5,5,1,Very Satisfied
+P129,3,3,3,Satisfied
+P130,1,3,1,Neutral
+P131,3,2,4,Very Dissatisfied
+P132,5,4,5,Satisfied
+P133,1,2,2,Very Dissatisfied
+P134,5,5,5,Dissatisfied
+P135,2,2,5,Neutral
+P136,1,1,4,Neutral
+P137,2,4,1,Neutral
+P138,5,5,2,Dissatisfied
+P139,5,3,4,Satisfied
+P140,5,5,2,Dissatisfied
+P141,5,1,2,Very Dissatisfied
+P142,1,4,1,Very Dissatisfied
+P143,3,5,2,Very Satisfied
+P144,1,1,3,Dissatisfied
+P145,4,2,3,Very Dissatisfied
+P146,2,3,2,Very Dissatisfied
+P147,1,1,5,Satisfied
+P148,3,5,2,Neutral
+P149,3,2,2,Very Dissatisfied
+P150,4,1,4,Dissatisfied
+P151,1,1,3,Neutral
+P152,3,5,2,Very Dissatisfied
+P153,2,5,4,Very Satisfied
+P154,2,3,5,Very Satisfied
+P155,4,1,5,Neutral
+P156,5,5,4,Neutral
+P157,5,3,5,Satisfied
+P158,2,2,4,Satisfied
+P159,2,5,5,Very Dissatisfied
+P160,3,3,1,Very Dissatisfied
+P161,4,5,2,Dissatisfied
+P162,5,2,2,Very Satisfied
+P163,5,4,5,Neutral
+P164,1,3,4,Satisfied
+P165,3,3,5,Satisfied
+P166,3,2,5,Very Satisfied
+P167,4,4,4,Dissatisfied
+P168,5,4,5,Very Dissatisfied
+P169,3,3,4,Very Dissatisfied
+P170,3,4,5,Dissatisfied
+P171,5,4,5,Dissatisfied
+P172,5,5,2,Very Satisfied
+P173,3,4,1,Very Satisfied
+P174,2,5,4,Dissatisfied
+P175,5,2,3,Satisfied
+P176,2,1,1,Very Dissatisfied
+P177,3,1,1,Dissatisfied
+P178,3,4,3,Dissatisfied
+P179,2,2,4,Neutral
+P180,2,3,1,Very Dissatisfied
+P181,1,3,3,Very Satisfied
+P182,4,2,1,Very Satisfied
+P183,3,4,3,Neutral
+P184,4,3,4,Very Dissatisfied
+P185,2,3,5,Satisfied
+P186,3,2,4,Very Dissatisfied
+P187,5,4,5,Very Satisfied
+P188,2,2,2,Neutral
+P189,4,4,4,Neutral
+P190,2,3,2,Very Satisfied
+P191,1,2,1,Dissatisfied
+P192,5,1,1,Satisfied
+P193,3,3,2,Dissatisfied
+P194,3,4,2,Very Dissatisfied
+P195,4,5,3,Satisfied
+P196,2,4,1,Satisfied
+P197,3,5,4,Very Dissatisfied
+P198,3,5,3,Very Satisfied
+P199,1,2,3,Dissatisfied
