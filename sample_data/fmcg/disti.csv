@@ -1,0 +1,101 @@
+disti_type,prd_id,ops_eff,sc_issue_type
+Direct,P100,95.17,Stockout
+Direct,P101,73.25,Major Delays
+Direct,P102,99.12,Stockout
+Direct,P103,95.62,None
+Direct,P104,90.97,Major Delays
+Direct,P105,88.26,None
+Direct,P106,89.21,Minor Delays
+Direct,P107,85.97,Stockout
+Direct,P108,70.78,
+Direct,P109,72.67,
+Direct,P110,83.07,
+Direct,P111,84.69,Stockout
+Direct,P112,84.75,Major Delays
+Direct,P113,89.08,Minor Delays
+Direct,P114,92.57,Stockout
+Direct,P115,,Stockout
+Direct,P116,,Stockout
+Direct,P117,,Minor Delays
+Direct,P118,,Major Delays
+Direct,P119,71.71,Stockout
+E-commerce,P110,84.15,Minor Delays
+E-commerce,P111,95.79,Major Delays
+E-commerce,P112,90.46,Major Delays
+E-commerce,P113,77.92,
+E-commerce,P114,75.38,
+E-commerce,P115,88.89,
+E-commerce,P116,73.71,Major Delays
+E-commerce,P117,87.89,Stockout
+E-commerce,P118,89.91,None
+E-commerce,P119,93.04,Stockout
+E-commerce,P120,82.26,Major Delays
+E-commerce,P121,86.13,Stockout
+E-commerce,P122,89.04,Minor Delays
+E-commerce,P123,84.4,None
+E-commerce,P124,79.22,Major Delays
+E-commerce,P125,90.09,Minor Delays
+E-commerce,P126,92.12,None
+E-commerce,P127,90.33,Stockout
+E-commerce,P128,74.25,Major Delays
+E-commerce,P120,85.75,None
+E-commerce,P121,92.21,Stockout
+Retailer,P122,70.7,Minor Delays
+Retailer,P123,85.84,Major Delays
+Retailer,P124,83.69,Minor Delays
+Retailer,P125,99.79,Minor Delays
+Retailer,P126,83.91,Stockout
+Retailer,P127,84,Major Delays
+Retailer,P128,89.71,Minor Delays
+Retailer,P129,78.01,Major Delays
+Retailer,P130,86.26,Stockout
+Retailer,P131,86.82,Major Delays
+Retailer,P132,91.39,None
+Retailer,P133,82.09,Major Delays
+Retailer,P134,92.51,None
+Retailer,P135,81.89,Stockout
+Retailer,P136,78.43,None
+Retailer,P137,97.02,None
+Retailer,P138,78.81,None
+Retailer,P139,95.03,Minor Delays
+Retailer,P140,99.97,Stockout
+Retailer,P141,71.62,Major Delays
+Retailer,P142,70.04,Stockout
+Retailer,P143,81.69,Major Delays
+Retailer,P144,92.97,None
+Retailer,P145,95.45,Major Delays
+Retailer,P146,94.61,Minor Delays
+Retailer,P147,77.58,Stockout
+Retailer,P148,89.62,Major Delays
+Retailer,P149,81.76,Major Delays
+Wholesaler,P150,98.72,Major Delays
+Wholesaler,P151,77.06,Stockout
+Wholesaler,P152,85.71,Stockout
+Wholesaler,P153,95.42,Stockout
+Wholesaler,P154,88.67,Major Delays
+Wholesaler,P155,83.95,None
+Wholesaler,P156,95.11,Minor Delays
+Wholesaler,P157,82.21,Major Delays
+Wholesaler,P158,86.74,Major Delays
+Wholesaler,P159,99.58,None
+Wholesaler,P160,95.13,Stockout
+Wholesaler,P161,72.59,Major Delays
+Wholesaler,P162,73.54,Minor Delays
+Wholesaler,P163,78.08,Minor Delays
+Wholesaler,P164,95.8,None
+Wholesaler,P165,75.95,Major Delays
+Wholesaler,P166,84.92,Minor Delays
+Wholesaler,P167,96.63,Stockout
+Wholesaler,P168,93.81,Minor Delays
+Wholesaler,P169,79.71,Stockout
+Wholesaler,P170,79.84,Major Delays
+Wholesaler,P171,82.89,Stockout
+Wholesaler,P172,73.75,Major Delays
+Wholesaler,P173,72.97,Stockout
+Wholesaler,P174,98.74,Stockout
+Wholesaler,P175,98.29,None
+Wholesaler,P176,93.04,Major Delays
+Wholesaler,P177,97.18,None
+Wholesaler,P178,80.19,Major Delays
+Wholesaler,P179,74.47,Minor Delays
+Wholesaler,P180,80.86,Major Delays

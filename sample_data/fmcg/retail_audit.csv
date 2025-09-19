@@ -1,0 +1,201 @@
+date,st_name,pid,stk_status,plmt_type,invt_level
+1/15/22,Outlet A,P100,Available,Lower Shelf,48
+2/3/22,Outlet A,P101,Low Stock,Lower Shelf,172
+2/17/22,Outlet A,P102,Low Stock,Eye Level,188
+2/17/22,Outlet A,P103,Low Stock,Upper Shelf,89
+2/28/22,Outlet A,P104,Available,Eye Level,64
+3/4/22,Outlet A,P105,Available,Eye Level,81
+3/8/22,Outlet A,P106,Out of Stock,Upper Shelf,93
+4/2/22,Outlet A,P107,Out of Stock,Lower Shelf,169
+5/6/22,Outlet A,P108,Available,Upper Shelf,54
+5/9/22,Outlet A,P109,Low Stock,Lower Shelf,27
+5/31/22,Outlet A,P110,Available,Lower Shelf,46
+5/31/22,Outlet A,P111,Out of Stock,Upper Shelf,97
+6/11/22,Outlet A,P112,Low Stock,Eye Level,147
+7/14/22,Outlet A,P113,Available,Lower Shelf,166
+7/18/22,Outlet A,P114,Available,Lower Shelf,156
+8/5/22,Outlet A,P103,Out of Stock,Lower Shelf,155
+8/13/22,Outlet A,P110,Available,Eye Level,97
+9/4/22,Outlet A,P111,Available,Eye Level,186
+9/19/22,Outlet A,P112,Available,Lower Shelf,29
+9/26/22,Outlet A,P113,Out of Stock,Lower Shelf,83
+9/30/22,Outlet A,P114,Low Stock,Upper Shelf,21
+9/30/22,Outlet A,P103,Low Stock,Lower Shelf,110
+9/30/22,Outlet A,P110,Out of Stock,Lower Shelf,33
+10/11/22,Outlet A,P111,Out of Stock,Eye Level,25
+10/29/22,Outlet A,P112,Low Stock,Eye Level,132
+11/5/22,Outlet A,P113,Available,Eye Level,34
+11/24/22,Outlet A,P114,Available,Eye Level,20
+11/27/22,Outlet A,P103,Low Stock,Lower Shelf,76
+12/1/22,Outlet A,P110,Out of Stock,Eye Level,156
+12/5/22,Outlet A,P111,Out of Stock,Eye Level,187
+12/8/22,Outlet A,P112,Low Stock,Lower Shelf,81
+1/15/23,Outlet A,P113,Available,Lower Shelf,48
+2/3/23,Outlet A,P114,Low Stock,Lower Shelf,172
+2/17/23,Outlet A,P115,Low Stock,Eye Level,188
+2/17/23,Outlet A,P116,Low Stock,Upper Shelf,89
+2/28/23,Outlet A,P117,Available,Eye Level,64
+3/4/23,Outlet A,P118,Available,Eye Level,81
+3/8/23,Outlet A,P119,Out of Stock,Upper Shelf,93
+4/2/23,Outlet A,P120,Out of Stock,Lower Shelf,169
+5/6/23,Outlet A,P121,Available,Upper Shelf,54
+5/9/23,Outlet A,P122,Low Stock,Lower Shelf,27
+5/31/23,Outlet A,P123,Available,Lower Shelf,46
+5/31/23,Outlet A,P124,Out of Stock,Upper Shelf,97
+6/11/23,Outlet A,P125,Low Stock,Eye Level,147
+7/14/23,Outlet A,P126,Available,Lower Shelf,166
+7/18/23,Outlet A,P127,Available,Lower Shelf,156
+8/5/23,Outlet A,P128,Out of Stock,Lower Shelf,155
+8/13/23,Outlet A,P129,Available,Eye Level,97
+9/4/23,Outlet A,P130,Available,Eye Level,186
+9/19/23,Outlet A,P127,Available,Lower Shelf,29
+9/26/23,Outlet A,P128,Out of Stock,Lower Shelf,83
+9/30/23,Outlet A,P129,Low Stock,Upper Shelf,21
+9/30/23,Outlet A,P130,Low Stock,Lower Shelf,110
+9/30/23,Outlet A,P101,Out of Stock,Lower Shelf,33
+10/11/23,Outlet A,P100,Out of Stock,Eye Level,25
+10/29/23,Outlet A,P102,Low Stock,Eye Level,132
+11/5/23,Outlet A,P102,Available,Eye Level,34
+11/24/23,Outlet A,P101,Available,Eye Level,20
+11/27/23,Outlet A,P100,Low Stock,Lower Shelf,76
+12/1/23,Outlet A,P100,Out of Stock,Eye Level,156
+12/5/23,Outlet A,P103,Out of Stock,Eye Level,187
+12/8/23,Outlet A,P102,Low Stock,Lower Shelf,81
+1/26/22,Outlet B,P115,Available,Upper Shelf,75
+2/14/22,Outlet B,P116,Available,Eye Level,126
+2/17/22,Outlet B,P117,Out of Stock,Eye Level,159
+2/21/22,Outlet B,P118,Low Stock,Lower Shelf,147
+4/6/22,Outlet B,P119,Low Stock,Eye Level,153
+4/6/22,Outlet B,P120,Low Stock,Upper Shelf,63
+4/6/22,Outlet B,P121,Available,Upper Shelf,171
+4/17/22,Outlet B,P122,Out of Stock,Upper Shelf,151
+4/24/22,Outlet B,P123,Low Stock,Upper Shelf,52
+5/9/22,Outlet B,P124,Available,Eye Level,174
+5/13/22,Outlet B,P125,Available,Eye Level,146
+6/4/22,Outlet B,P126,Low Stock,Upper Shelf,66
+6/8/22,Outlet B,P127,Available,Upper Shelf,159
+6/26/22,Outlet B,P128,Out of Stock,Eye Level,22
+6/26/22,Outlet B,P129,Low Stock,Upper Shelf,98
+7/29/22,Outlet B,P130,Available,Upper Shelf,64
+8/27/22,Outlet B,P131,Low Stock,Lower Shelf,126
+9/4/22,Outlet B,P132,Available,Lower Shelf,144
+9/4/22,Outlet B,P133,Out of Stock,Upper Shelf,161
+9/4/22,Outlet B,P128,Out of Stock,Eye Level,149
+9/19/22,Outlet B,P129,Out of Stock,Eye Level,22
+9/19/22,Outlet B,P130,Available,Eye Level,77
+9/30/22,Outlet B,P131,Available,Eye Level,22
+10/7/22,Outlet B,P132,Low Stock,Upper Shelf,190
+10/18/22,Outlet B,P133,Out of Stock,Upper Shelf,147
+10/29/22,Outlet B,P134,Low Stock,Lower Shelf,43
+10/29/22,Outlet B,P135,Available,Upper Shelf,132
+11/9/22,Outlet B,P136,Available,Upper Shelf,34
+11/13/22,Outlet B,P137,Low Stock,Lower Shelf,184
+11/13/22,Outlet B,P138,Low Stock,Eye Level,29
+11/16/22,Outlet B,P139,Available,Lower Shelf,66
+12/31/22,Outlet B,P140,Available,Eye Level,48
+1/26/23,Outlet B,P141,Available,Upper Shelf,75
+2/14/23,Outlet B,P142,Available,Eye Level,126
+2/17/23,Outlet B,P143,Out of Stock,Eye Level,159
+2/21/23,Outlet B,P144,Low Stock,Lower Shelf,147
+4/6/23,Outlet B,P145,Low Stock,Eye Level,153
+4/6/23,Outlet B,P146,Low Stock,Upper Shelf,63
+4/6/23,Outlet B,P147,Available,Upper Shelf,171
+4/17/23,Outlet B,P148,Out of Stock,Upper Shelf,151
+4/24/23,Outlet B,P149,Low Stock,Upper Shelf,52
+5/9/23,Outlet B,P150,Available,Eye Level,174
+5/13/23,Outlet B,P151,Available,Eye Level,146
+6/4/23,Outlet B,P152,Low Stock,Upper Shelf,66
+6/8/23,Outlet B,P153,Available,Upper Shelf,159
+6/26/23,Outlet B,P154,Out of Stock,Eye Level,22
+6/26/23,Outlet B,P155,Low Stock,Upper Shelf,98
+7/29/23,Outlet B,P156,Available,Upper Shelf,64
+8/27/23,Outlet B,P157,Low Stock,Lower Shelf,126
+9/4/23,Outlet B,P158,Available,Lower Shelf,144
+9/4/23,Outlet B,P159,Out of Stock,Upper Shelf,161
+9/4/23,Outlet B,P160,Out of Stock,Eye Level,149
+9/19/23,Outlet B,P161,Out of Stock,Eye Level,22
+9/19/23,Outlet B,P162,Available,Eye Level,77
+9/30/23,Outlet B,P163,Available,Eye Level,22
+10/7/23,Outlet B,P164,Low Stock,Upper Shelf,190
+10/18/23,Outlet B,P165,Out of Stock,Upper Shelf,147
+10/29/23,Outlet B,P166,Low Stock,Lower Shelf,43
+10/29/23,Outlet B,P167,Available,Upper Shelf,132
+11/9/23,Outlet B,P168,Available,Upper Shelf,34
+11/13/23,Outlet B,P169,Low Stock,Lower Shelf,184
+11/13/23,Outlet B,P170,Low Stock,Eye Level,29
+11/16/23,Outlet B,P171,Available,Lower Shelf,66
+12/31/23,Outlet B,P172,Available,Eye Level,48
+1/4/22,Outlet C,P150,Available,Upper Shelf,47
+1/8/22,Outlet C,P151,Out of Stock,Eye Level,151
+1/8/22,Outlet C,P152,Out of Stock,Eye Level,70
+1/15/22,Outlet C,P153,Out of Stock,Upper Shelf,119
+1/19/22,Outlet C,P154,Available,Upper Shelf,154
+2/6/22,Outlet C,P155,Low Stock,Eye Level,145
+2/21/22,Outlet C,P156,Available,Eye Level,30
+2/25/22,Outlet C,P157,Out of Stock,Upper Shelf,178
+2/28/22,Outlet C,P158,Out of Stock,Lower Shelf,142
+3/8/22,Outlet C,P159,Out of Stock,Upper Shelf,52
+3/11/22,Outlet C,P160,Low Stock,Lower Shelf,95
+3/11/22,Outlet C,P161,Out of Stock,Lower Shelf,51
+3/15/22,Outlet C,P162,Low Stock,Eye Level,175
+4/2/22,Outlet C,P163,Out of Stock,Upper Shelf,137
+4/10/22,Outlet C,P164,Out of Stock,Upper Shelf,197
+4/13/22,Outlet C,P157,Available,Upper Shelf,85
+4/21/22,Outlet C,P158,Out of Stock,Lower Shelf,93
+5/2/22,Outlet C,P159,Available,Lower Shelf,27
+5/2/22,Outlet C,P160,Out of Stock,Upper Shelf,172
+5/6/22,Outlet C,P161,Out of Stock,Eye Level,153
+6/11/22,Outlet C,P162,Available,Eye Level,22
+6/26/22,Outlet C,P163,Available,Eye Level,69
+6/30/22,Outlet C,P164,Available,Eye Level,70
+7/7/22,Outlet C,P165,Available,Lower Shelf,44
+7/22/22,Outlet C,P166,Low Stock,Lower Shelf,119
+8/2/22,Outlet C,P167,Low Stock,Upper Shelf,55
+8/5/22,Outlet C,P168,Available,Lower Shelf,52
+8/31/22,Outlet C,P169,Out of Stock,Eye Level,84
+9/11/22,Outlet C,P170,Out of Stock,Upper Shelf,119
+10/7/22,Outlet C,P171,Low Stock,Lower Shelf,146
+10/22/22,Outlet C,P172,Out of Stock,Lower Shelf,169
+11/2/22,Outlet C,P164,Low Stock,Lower Shelf,165
+11/9/22,Outlet C,P165,Low Stock,Upper Shelf,77
+11/13/22,Outlet C,P166,Available,Eye Level,198
+11/20/22,Outlet C,P167,Low Stock,Upper Shelf,154
+11/24/22,Outlet C,P168,Out of Stock,Upper Shelf,125
+12/12/22,Outlet C,P169,Out of Stock,Upper Shelf,34
+1/4/23,Outlet C,P170,Available,Upper Shelf,47
+1/8/23,Outlet C,P171,Out of Stock,Eye Level,151
+1/8/23,Outlet C,P172,Out of Stock,Eye Level,70
+1/15/23,Outlet C,P173,Out of Stock,Upper Shelf,119
+1/19/23,Outlet C,P174,Available,Upper Shelf,154
+2/6/23,Outlet C,P175,Low Stock,Eye Level,145
+2/21/23,Outlet C,P176,Available,Eye Level,30
+2/25/23,Outlet C,P177,Out of Stock,Upper Shelf,178
+2/28/23,Outlet C,P178,Out of Stock,Lower Shelf,142
+3/8/23,Outlet C,P179,Out of Stock,Upper Shelf,52
+3/11/23,Outlet C,P180,Low Stock,Lower Shelf,95
+3/11/23,Outlet C,P181,Out of Stock,Lower Shelf,51
+3/15/23,Outlet C,P182,Low Stock,Eye Level,175
+4/2/23,Outlet C,P183,Out of Stock,Upper Shelf,137
+4/10/23,Outlet C,P184,Out of Stock,Upper Shelf,197
+4/13/23,Outlet C,P185,Available,Upper Shelf,85
+4/21/23,Outlet C,P171,Out of Stock,Lower Shelf,93
+5/2/23,Outlet C,P172,Available,Lower Shelf,27
+5/2/23,Outlet C,P173,Out of Stock,Upper Shelf,172
+5/6/23,Outlet C,P174,Out of Stock,Eye Level,153
+6/11/23,Outlet C,P175,Available,Eye Level,22
+6/26/23,Outlet C,P176,Available,Eye Level,69
+6/30/23,Outlet C,P177,Available,Eye Level,70
+7/7/23,Outlet C,P178,Available,Lower Shelf,44
+7/22/23,Outlet C,P179,Low Stock,Lower Shelf,119
+8/2/23,Outlet C,P180,Low Stock,Upper Shelf,55
+8/5/23,Outlet C,P181,Available,Lower Shelf,52
+8/31/23,Outlet C,P182,Out of Stock,Eye Level,84
+9/11/23,Outlet C,P183,Out of Stock,Upper Shelf,119
+10/7/23,Outlet C,P184,Low Stock,Lower Shelf,146
+10/22/23,Outlet C,P182,Out of Stock,Lower Shelf,169
+11/2/23,Outlet C,P183,Low Stock,Lower Shelf,165
+11/9/23,Outlet C,P184,Low Stock,Upper Shelf,77
+11/13/23,Outlet C,P185,Available,Eye Level,198
+11/20/23,Outlet C,P186,Low Stock,Upper Shelf,154
+11/24/23,Outlet C,P187,Out of Stock,Upper Shelf,125
+12/12/23,Outlet C,P188,Out of Stock,Upper Shelf,34

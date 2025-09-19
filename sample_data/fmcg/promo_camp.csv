@@ -1,0 +1,201 @@
+date,promo_id,type,duration,sales_inc,cost_promo
+23-Jan,101,Buy One Get One,3,29.03,11190.16
+23-Jan,102,Free Samples,22,11.75,3892.89
+23-Jan,103,Buy One Get One,11,5.18,9973.25
+23-Jan,104,In-Store Promotion,25,27.62,9367.68
+23-Jan,105,In-Store Promotion,19,33.55,13316.82
+23-Jan,106,Discount,9,16.68,6000.88
+23-Jan,107,Discount,4,12.36,13607.86
+22-Jan,108,Buy One Get One,12,17.71,4101.45
+22-Jan,109,Discount,17,41.81,14681.15
+22-Jan,110,Discount,7,15.96,15654.59
+22-Jan,111,Discount,16,22.35,514.54
+22-Jan,112,Discount,25,33.18,9040.4
+22-Jan,113,In-Store Promotion,25,27.62,9367.68
+22-Jan,114,Free Samples,12,24.21,3849.92
+22-Feb,115,,1,16.85,17247.6
+22-Feb,116,,7,43.89,8400.46
+23-Feb,117,,5,36.52,18906.76
+23-Feb,118,,16,16.31,13598.65
+22-Mar,119,In-Store Promotion,24,49.77,11062.39
+22-Mar,120,Free Samples,14,39.04,3789.34
+22-Mar,121,Free Samples,9,16.5,19461.74
+22-Mar,122,Buy One Get One,12,17.71,4101.45
+22-Mar,123,Free Samples,2,6.85,5420.21
+22-Mar,124,Free Samples,19,38.79,16523.02
+22-Mar,125,Discount,5,18.14,8554.74
+22-Mar,126,Free Samples,8,40.83,9752.99
+22-Mar,127,Free Samples,3,18.77,8931.09
+22-Mar,128,Buy One Get One,26,41.09,1331.07
+22-Mar,129,Free Samples,9,16.5,19461.74
+23-Mar,130,Free Samples,12,37.73,9509.79
+23-Mar,131,In-Store Promotion,21,34.09,14362.32
+23-Mar,132,Buy One Get One,11,5.18,9973.25
+23-Mar,133,Free Samples,14,26.07,2186.16
+23-Mar,134,Buy One Get One,14,24.93,15347.92
+23-Mar,135,In-Store Promotion,25,14.99,9810.01
+23-Mar,136,Buy One Get One,22,37.59,784.78
+22-Apr,137,Discount,27,9.16,5054.81
+22-Apr,138,Discount,4,12.36,13607.86
+22-Apr,139,Buy One Get One,25,7.69,19245.35
+22-Apr,140,In-Store Promotion,16,48.26,2906.1
+22-Apr,141,Discount,17,41.81,14681.15
+22-Apr,142,Discount,12,16.66,2330.85
+22-Apr,143,Discount,29,20.72,4516.8
+22-Apr,144,Free Samples,16,16.31,13598.65
+22-Apr,145,Discount,21,43.1,14963.46
+23-Apr,146,Free Samples,22,11.75,3892.89
+23-Apr,147,In-Store Promotion,13,35.71,19169.56
+23-Apr,148,In-Store Promotion,29,23.32,7248.01
+23-Apr,149,Discount,11,44.04,7031.84
+23-Apr,150,In-Store Promotion,4,26.3,13075.84
+23-Apr,151,In-Store Promotion,7,42.75,11918.1
+23-Apr,152,Free Samples,16,27.27,10603.25
+23-Apr,153,Buy One Get One,3,11.65,2589.97
+22-May,154,Discount,13,13.05,16604.86
+22-May,155,In-Store Promotion,14,12.93,2310.28
+22-May,156,Discount,16,22.35,514.54
+22-May,157,Discount,25,33.18,9040.4
+22-May,158,Buy One Get One,11,45.54,14047.25
+22-May,159,Free Samples,27,21.35,1435.16
+22-May,160,Discount,5,20.65,12944.95
+22-May,161,In-Store Promotion,7,42.75,11918.1
+22-May,162,Buy One Get One,3,11.65,2589.97
+23-May,163,Free Samples,18,17.24,7223.47
+23-May,164,In-Store Promotion,10,46.74,12629.08
+23-May,165,Buy One Get One,3,29.03,11190.16
+23-May,166,Buy One Get One,13,9.8,11717.94
+23-May,167,Free Samples,9,44.83,1083.6
+23-May,168,Discount,14,22.63,5160.66
+23-May,169,Discount,5,20.65,12944.95
+23-May,170,Free Samples,1,11.45,17861.2
+22-Jun,171,Discount,27,14.47,8621.62
+22-Jun,172,Buy One Get One,26,41.09,1331.07
+22-Jun,173,Discount,16,24.88,14498.34
+22-Jun,174,Buy One Get One,12,28.49,5339.44
+22-Jun,175,Free Samples,14,26.07,2186.16
+22-Jun,176,In-Store Promotion,25,14.99,9810.01
+22-Jun,177,Buy One Get One,22,37.59,784.78
+22-Jun,178,Discount,27,14.47,8621.62
+22-Jun,179,Buy One Get One,20,5.07,15118.33
+23-Jun,180,Free Samples,19,38.79,16523.02
+23-Jun,181,Free Samples,1,15.6,6866.39
+23-Jun,182,In-Store Promotion,6,18.92,13499.4
+23-Jun,183,Buy One Get One,22,49.26,15779.48
+23-Jun,184,In-Store Promotion,20,18.29,14104.57
+23-Jun,185,Buy One Get One,5,9.87,19506.56
+23-Jul,186,Free Samples,27,37.2,5304.22
+23-Jul,187,Free Samples,16,12.2,6040.08
+22-Jul,188,Discount,7,15.96,15654.59
+22-Jul,189,Discount,29,20.38,16688.56
+22-Jul,190,Free Samples,21,36.75,17791.98
+22-Jul,191,Discount,11,44.04,7031.84
+22-Jul,192,Discount,28,36.76,12739.75
+22-Jul,193,Free Samples,24,37.99,7148.17
+22-Jul,194,Free Samples,16,27.27,10603.25
+22-Jul,195,Discount,10,35.77,9681.66
+22-Jul,196,Discount,8,15.57,9872
+23-Jul,197,Free Samples,14,39.04,3789.34
+23-Jul,198,Discount,4,12.36,11760.6
+23-Jul,199,Free Samples,2,6.85,5420.21
+23-Jul,200,In-Store Promotion,14,12.93,2310.28
+23-Jul,201,Free Samples,3,18.77,8931.09
+23-Jul,202,Discount,2,41.5,13227.61
+23-Jul,203,In-Store Promotion,10,46.74,12629.08
+23-Aug,204,Buy One Get One,20,5.07,15118.33
+22-Aug,205,Discount,21,43.1,14963.46
+22-Aug,206,Buy One Get One,22,21.84,1283.52
+22-Aug,207,Free Samples,1,15.6,6866.39
+22-Aug,208,In-Store Promotion,21,34.09,14362.32
+22-Aug,209,Buy One Get One,1,26.5,16501.96
+22-Aug,210,Buy One Get One,25,46.07,13751.13
+22-Aug,211,In-Store Promotion,20,18.29,14104.57
+22-Aug,212,Discount,21,37.23,14082.91
+22-Aug,213,Free Samples,1,11.45,17861.2
+23-Aug,214,Discount,9,7.74,2128.34
+23-Aug,215,Free Samples,11,7.49,16756.46
+23-Aug,216,In-Store Promotion,24,49.77,11062.39
+23-Aug,217,Free Samples,27,37.2,5304.22
+23-Aug,218,Discount,22,15.25,14147.72
+23-Aug,219,Buy One Get One,25,7.69,19245.35
+23-Aug,220,Free Samples,15,18.32,18118.03
+23-Aug,221,In-Store Promotion,16,48.26,2906.1
+22-Aug,222,Buy One Get One,12,28.49,5339.44
+22-Aug,223,Buy One Get One,3,17.54,7371.91
+22-Aug,224,Discount,21,37.23,14082.91
+22-Aug,225,Buy One Get One,11,45.54,14047.25
+22-Aug,226,Free Samples,24,37.99,7148.17
+22-Aug,227,In-Store Promotion,13,40.45,1920.99
+22-Aug,228,Free Samples,1,16.85,17247.6
+22-Sep,229,Discount,9,7.74,2128.34
+22-Sep,230,In-Store Promotion,2,5.38,12790.81
+23-Sep,231,Discount,7,43.89,8400.46
+23-Sep,232,In-Store Promotion,6,18.92,13499.4
+23-Sep,233,In-Store Promotion,29,23.32,7248.01
+23-Sep,234,Buy One Get One,22,49.26,15779.48
+23-Sep,235,Free Samples,12,24.21,3849.92
+23-Sep,236,In-Store Promotion,25,5.4,11696.92
+23-Sep,237,Buy One Get One,14,24.93,15347.92
+23-Sep,238,Discount,1,16.57,9251.21
+22-Sep,239,Discount,2,41.5,13227.61
+22-Sep,240,Buy One Get One,24,46.12,7960.49
+22-Sep,241,In-Store Promotion,2,5.38,12790.81
+22-Sep,242,Discount,13,13.05,16604.86
+22-Sep,243,Free Samples,21,36.75,17791.98
+22-Sep,244,Discount,12,16.66,2330.85
+22-Oct,245,Free Samples,11,7.49,16756.46
+22-Oct,246,Buy One Get One,24,46.12,7960.49
+22-Oct,247,Discount,22,15.25,14147.72
+23-Oct,248,Free Samples,12,37.73,9509.79
+23-Oct,249,Free Samples,28,19.36,4997.52
+23-Oct,250,Discount,14,22.63,5160.66
+23-Oct,251,Discount,5,36.52,18906.76
+23-Oct,252,In-Store Promotion,9,32.94,12027.61
+23-Oct,253,In-Store Promotion,13,40.45,1920.99
+23-Oct,254,Free Samples,8,8.93,806.05
+23-Oct,255,Free Samples,6,8.44,10344.9
+22-Oct,256,In-Store Promotion,27,36.34,8089.77
+22-Oct,257,Free Samples,11,41.89,8253.8
+22-Oct,258,Discount,16,24.88,14498.34
+22-Oct,259,Buy One Get One,1,26.5,16501.96
+22-Oct,260,In-Store Promotion,9,32.94,12027.61
+22-Oct,261,Discount,28,36.76,12739.75
+22-Oct,262,Free Samples,27,21.35,1435.16
+22-Oct,263,Free Samples,8,40.83,9752.99
+22-Oct,264,Discount,29,20.72,4516.8
+23-Oct,265,Discount,9,16.68,6000.88
+23-Nov,266,Buy One Get One,13,9.8,11717.94
+23-Nov,267,Discount,10,35.77,9681.66
+23-Nov,268,Free Samples,6,8.44,10344.9
+23-Nov,269,Discount,8,15.57,9872
+23-Nov,270,Buy One Get One,21,17.91,5657.55
+23-Nov,271,In-Store Promotion,27,36.34,8089.77
+23-Nov,272,Discount,14,23.16,18482.51
+22-Nov,273,Discount,4,12.36,11760.6
+22-Nov,274,Buy One Get One,10,35.8,13103.25
+22-Nov,275,Free Samples,11,41.89,8253.8
+22-Nov,276,Free Samples,9,44.83,1083.6
+22-Nov,277,In-Store Promotion,6,5.07,11009.69
+22-Nov,278,Buy One Get One,3,17.54,7371.91
+22-Nov,279,In-Store Promotion,13,35.71,19169.56
+22-Nov,280,In-Store Promotion,4,26.3,13075.84
+22-Nov,281,Buy One Get One,17,30.25,4536.09
+23-Nov,282,Discount,27,9.16,5054.81
+23-Nov,283,Buy One Get One,10,35.8,13103.25
+23-Nov,284,Free Samples,16,12.2,6040.08
+23-Nov,285,Free Samples,28,19.36,4997.52
+23-Nov,286,Discount,29,20.38,16688.56
+23-Nov,287,Free Samples,18,17.24,7223.47
+23-Dec,288,Free Samples,8,8.93,806.05
+23-Dec,289,Free Samples,15,18.32,18118.03
+22-Dec,290,Buy One Get One,5,9.87,19506.56
+22-Dec,291,Buy One Get One,21,17.91,5657.55
+22-Dec,292,Discount,14,23.16,18482.51
+22-Dec,293,Buy One Get One,22,21.84,1283.52
+22-Dec,294,Discount,5,18.14,8554.74
+22-Dec,295,In-Store Promotion,6,5.07,11009.69
+22-Dec,296,Buy One Get One,25,46.07,13751.13
+22-Dec,297,In-Store Promotion,25,5.4,11696.92
+22-Dec,298,In-Store Promotion,19,33.55,13316.82
+23-Dec,299,Discount,1,16.57,9251.21
+23-Dec,300,Buy One Get One,17,30.25,4536.09

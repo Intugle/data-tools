@@ -1,0 +1,501 @@
+EngagementID,ViewerID,ContentID,Platform,InteractionType,SentimentScore,Timestamp,EngagementText,Retweets,Likes
+1,652,84,Twitter,Share,Neutral,2023-12-05T07:20:39,Prepare for the match with an in-depth look at the game.,96,625
+2,770,35,Instagram,Comment,Negative,2023-09-01T09:39:30,Relive the moments that didn’t quite hit the mark this season.,11,340
+3,328,500,Facebook,Share,Neutral,2023-12-27T01:58:35,In-depth analysis to understand the game better.,91,66
+4,583,114,Instagram,Comment,Positive,2023-09-02T00:09:25,Relive the best moments and catch up on an incredible season!,45,867
+5,566,148,Facebook,Like,Positive,2024-01-12T04:24:00,In-depth analysis to understand the game better.,84,81
+6,465,349,Facebook,Share,Positive,2023-12-08T02:08:05,Catch up on everything you need to know about the game.,33,211
+7,383,212,Facebook,Comment,Negative,2024-01-06T01:46:34,,65,819
+8,772,74,Twitter,Share,Negative,2024-06-04T14:24:59,Catch up on everything you need to know about the game.,96,378
+9,981,432,Twitter,Share,Neutral,2024-01-16T17:19:17,,65,220
+10,266,187,Facebook,Comment,Neutral,2023-12-16T01:39:54,,17,757
+11,228,142,Twitter,Share,Positive,2023-09-18T17:15:15,A critical look at the season and where things could improve.,48,361
+12,952,473,Instagram,Share,Positive,2024-01-03T08:10:19,,95,491
+13,728,36,Instagram,Comment,Neutral,2024-07-07T07:52:28,,20,161
+14,420,483,Twitter,Like,Positive,2024-02-02T01:39:10,A critical look at the season and where things could improve.,95,481
+15,249,212,Facebook,Like,Negative,2024-03-28T09:09:12,,54,145
+16,865,427,Instagram,Comment,Neutral,2023-12-24T07:54:06,,16,591
+17,912,127,Twitter,Share,Neutral,2023-08-18T07:43:02,,20,7
+18,388,461,Facebook,Like,Neutral,2023-12-26T09:51:59,A critical look at the season and where things could improve.,60,515
+19,169,438,Instagram,Share,Neutral,2024-06-22T03:47:57,,33,363
+20,809,84,Instagram,Share,Negative,2023-12-29T01:31:01,Prepare for the match with an in-depth look at the game.,43,218
+21,245,51,Twitter,Share,Neutral,2024-04-11T01:35:40,Prepare for the match with an in-depth look at the game.,91,402
+22,252,94,Twitter,Share,Positive,2024-07-16T14:00:04,,85,129
+23,60,281,Facebook,Comment,Neutral,2024-03-07T14:16:00,,25,920
+24,861,419,Facebook,Like,Negative,2023-09-03T09:02:00,,71,556
+25,708,222,Twitter,Comment,Negative,2023-11-29T11:12:32,Relive the moments that didn’t quite hit the mark this season.,12,911
+26,856,209,Facebook,Like,Negative,2024-06-04T04:22:01,,22,750
+27,887,236,Facebook,Comment,Neutral,2024-04-17T04:12:40,In-depth analysis to understand the game better.,10,549
+28,938,205,Twitter,Like,Negative,2023-10-04T16:18:58,Prepare for the match with an in-depth look at the game.,18,859
+29,588,18,Facebook,Share,Neutral,2024-05-29T02:48:58,Prepare for the match with an in-depth look at the game.,60,550
+30,100,321,Twitter,Share,Neutral,2024-01-06T14:36:56,Relive the moments that didn’t quite hit the mark this season.,3,488
+31,734,393,Facebook,Like,Neutral,2024-06-24T21:15:51,Catch up on everything you need to know about the game.,100,383
+32,116,62,Facebook,Comment,Negative,2024-05-12T19:20:07,Prepare for the match with an in-depth look at the game.,97,999
+33,552,412,Facebook,Like,Positive,2024-07-06T09:29:03,In-depth analysis to understand the game better.,90,72
+34,655,240,Facebook,Like,Negative,2023-12-01T13:48:26,,4,396
+35,419,215,Twitter,Like,Negative,2023-10-15T01:23:01,,19,356
+36,490,307,Facebook,Like,Positive,2024-06-02T09:24:57,A critical look at the season and where things could improve.,16,512
+37,490,392,Twitter,Comment,Negative,2023-10-24T00:47:26,Prepare for the match with an in-depth look at the game.,22,159
+38,123,162,Twitter,Share,Positive,2024-07-15T02:21:58,Catch up on everything you need to know about the game.,61,59
+39,139,229,Facebook,Like,Negative,2024-02-21T14:04:15,,52,364
+40,426,296,Facebook,Like,Neutral,2024-07-13T03:11:20,A critical look at the season and where things could improve.,63,338
+41,798,398,Facebook,Share,Positive,2024-08-11T10:51:23,Relive the moments that didn’t quite hit the mark this season.,29,61
+42,865,463,Facebook,Comment,Positive,2024-07-18T11:38:20,,94,708
+43,170,154,Facebook,Share,Positive,2024-07-05T15:44:00,,94,854
+44,295,379,Instagram,Comment,Neutral,2024-03-29T02:38:32,In-depth analysis to understand the game better.,36,702
+45,272,81,Facebook,Share,Neutral,2024-01-23T04:38:57,Relive the best moments and catch up on an incredible season!,56,370
+46,220,409,Twitter,Comment,Positive,2023-12-02T01:13:37,Relive the moments that didn’t quite hit the mark this season.,43,125
+47,687,235,Twitter,Like,Negative,2024-03-12T11:09:23,Relive the best moments and catch up on an incredible season!,77,772
+48,493,94,Twitter,Like,Positive,2024-04-17T22:09:30,,37,396
+49,57,315,Twitter,Comment,Negative,2023-10-30T13:48:29,Prepare for the match with an in-depth look at the game.,56,372
+50,460,468,Twitter,Comment,Positive,2024-05-27T19:03:12,,79,410
+51,520,96,Facebook,Comment,Positive,2024-02-01T19:09:34,Catch up on everything you need to know about the game.,4,582
+52,730,30,Twitter,Comment,Neutral,2024-06-09T01:37:39,Catch up on everything you need to know about the game.,62,964
+53,301,148,Instagram,Share,Neutral,2024-01-06T05:34:39,In-depth analysis to understand the game better.,2,496
+54,681,308,Twitter,Share,Negative,2024-08-05T07:51:31,,59,590
+55,56,216,Twitter,Like,Negative,2023-12-21T17:29:16,Prepare for the match with an in-depth look at the game.,20,44
+56,816,258,Twitter,Comment,Neutral,2023-09-11T09:39:08,In-depth analysis to understand the game better.,68,91
+57,355,483,Facebook,Like,Positive,2024-06-22T23:55:13,A critical look at the season and where things could improve.,8,24
+58,683,320,Twitter,Like,Negative,2023-12-31T10:27:46,,39,824
+59,605,82,Twitter,Comment,Negative,2023-11-12T20:25:08,In-depth analysis to understand the game better.,85,103
+60,283,140,Twitter,Share,Negative,2023-09-14T17:29:08,Catch up on everything you need to know about the game.,70,629
+61,202,364,Instagram,Like,Positive,2024-06-17T20:07:56,,52,933
+62,28,245,Facebook,Like,Neutral,2024-05-16T01:39:33,,80,70
+63,563,310,Instagram,Like,Neutral,2024-01-21T12:56:10,Relive the moments that didn’t quite hit the mark this season.,56,870
+64,483,174,Facebook,Share,Negative,2023-08-22T17:04:16,,24,956
+65,198,491,Facebook,Like,Neutral,2023-10-25T03:34:35,Prepare for the match with an in-depth look at the game.,100,528
+66,86,232,Instagram,Share,Positive,2023-10-08T02:04:00,,45,126
+67,97,32,Instagram,Comment,Positive,2024-06-24T04:15:30,A critical look at the season and where things could improve.,34,41
+68,200,366,Twitter,Comment,Negative,2024-04-05T15:29:47,,10,73
+69,578,414,Twitter,Like,Positive,2024-04-08T05:26:43,Prepare for the match with an in-depth look at the game.,19,259
+70,81,457,Facebook,Comment,Neutral,2023-10-16T14:17:21,,43,616
+71,115,178,Instagram,Like,Positive,2023-10-06T09:10:52,Relive the moments that didn’t quite hit the mark this season.,90,929
+72,723,45,Twitter,Comment,Positive,2024-04-08T19:36:33,,52,191
+73,23,169,Instagram,Like,Negative,2024-07-01T12:09:47,Relive the best moments and catch up on an incredible season!,68,491
+74,461,427,Facebook,Like,Neutral,2023-09-30T04:52:38,,32,774
+75,815,116,Twitter,Share,Negative,2024-06-18T14:14:35,,98,754
+76,739,9,Facebook,Comment,Positive,2024-08-04T17:50:05,,63,453
+77,282,485,Instagram,Share,Neutral,2024-05-22T17:40:42,,95,884
+78,674,215,Facebook,Comment,Positive,2023-11-29T06:18:22,,92,218
+79,844,157,Instagram,Comment,Neutral,2024-08-13T08:07:44,,30,412
+80,44,219,Instagram,Like,Positive,2024-06-27T12:33:18,A critical look at the season and where things could improve.,87,817
+81,862,459,Instagram,Comment,Positive,2023-09-28T11:33:50,Catch up on everything you need to know about the game.,82,263
+82,747,207,Instagram,Comment,Neutral,2023-10-06T21:35:54,,52,237
+83,867,132,Twitter,Comment,Neutral,2023-12-11T18:04:27,,97,53
+84,439,101,Twitter,Like,Neutral,2024-06-12T14:26:04,Relive the moments that didn’t quite hit the mark this season.,23,436
+85,404,83,Facebook,Like,Negative,2023-11-12T03:00:47,,21,256
+86,950,295,Twitter,Comment,Neutral,2023-09-03T20:54:15,,13,354
+87,231,198,Instagram,Share,Positive,2024-06-17T19:34:51,,89,875
+88,461,458,Twitter,Share,Neutral,2024-03-15T21:31:16,Prepare for the match with an in-depth look at the game.,56,494
+89,968,149,Twitter,Like,Neutral,2024-02-05T18:52:25,,77,491
+90,72,431,Instagram,Share,Negative,2024-01-06T22:06:39,Relive the moments that didn’t quite hit the mark this season.,38,928
+91,99,347,Instagram,Like,Neutral,2024-02-03T12:14:00,,40,403
+92,982,457,Facebook,Share,Neutral,2024-05-15T18:36:35,,25,316
+93,6,361,Facebook,Like,Negative,2023-10-02T22:29:45,,38,418
+94,854,281,Twitter,Comment,Positive,2023-12-06T17:34:44,,85,892
+95,23,37,Instagram,Like,Neutral,2023-09-08T10:49:34,Relive the best moments and catch up on an incredible season!,20,985
+96,506,59,Instagram,Comment,Positive,2024-08-10T22:37:56,Relive the best moments and catch up on an incredible season!,60,698
+97,404,103,Facebook,Like,Neutral,2023-10-28T17:06:20,Relive the best moments and catch up on an incredible season!,70,576
+98,213,440,Twitter,Comment,Negative,2024-02-26T19:34:26,,43,441
+99,346,358,Twitter,Comment,Positive,2024-03-06T06:25:12,,6,91
+100,408,379,Facebook,Share,Negative,2024-07-18T19:40:12,In-depth analysis to understand the game better.,36,99
+101,661,215,Instagram,Like,Neutral,2024-02-24T05:04:44,,97,876
+102,134,342,Facebook,Like,Neutral,2023-12-17T22:23:52,,50,283
+103,867,181,Facebook,Comment,Neutral,2024-05-01T13:59:18,In-depth analysis to understand the game better.,23,241
+104,850,240,Facebook,Comment,Positive,2024-07-04T20:46:37,,41,770
+105,197,115,Instagram,Like,Neutral,2023-09-27T11:05:28,In-depth analysis to understand the game better.,79,232
+106,632,247,Instagram,Comment,Positive,2023-12-01T19:35:44,In-depth analysis to understand the game better.,7,389
+107,424,472,Twitter,Like,Negative,2023-11-07T13:39:15,A critical look at the season and where things could improve.,48,196
+108,20,170,Twitter,Like,Neutral,2024-07-24T23:22:36,In-depth analysis to understand the game better.,50,948
+109,222,52,Facebook,Share,Neutral,2024-07-24T09:06:59,Catch up on everything you need to know about the game.,48,992
+110,431,296,Twitter,Share,Positive,2023-09-03T02:41:06,A critical look at the season and where things could improve.,66,441
+111,203,486,Twitter,Comment,Positive,2023-08-19T15:11:26,Relive the moments that didn’t quite hit the mark this season.,24,641
+112,378,81,Facebook,Like,Neutral,2024-08-02T22:14:36,Relive the best moments and catch up on an incredible season!,39,292
+113,373,191,Instagram,Comment,Positive,2024-03-03T22:46:15,Relive the best moments and catch up on an incredible season!,67,602
+114,949,126,Twitter,Share,Positive,2023-11-05T07:42:57,In-depth analysis to understand the game better.,42,654
+115,826,428,Instagram,Like,Positive,2024-01-31T13:17:15,A critical look at the season and where things could improve.,34,261
+116,515,257,Facebook,Comment,Positive,2023-11-02T00:52:31,Relive the best moments and catch up on an incredible season!,57,770
+117,429,200,Facebook,Share,Positive,2024-05-22T17:16:28,Relive the moments that didn’t quite hit the mark this season.,20,476
+118,743,12,Twitter,Comment,Positive,2023-11-01T17:33:53,,9,368
+119,178,152,Instagram,Comment,Negative,2023-11-23T22:51:09,,90,757
+120,834,233,Twitter,Like,Neutral,2024-02-08T06:49:13,Relive the moments that didn’t quite hit the mark this season.,13,150
+121,93,94,Twitter,Comment,Neutral,2023-08-19T00:22:07,,58,1
+122,703,73,Facebook,Like,Neutral,2023-09-30T13:16:35,Prepare for the match with an in-depth look at the game.,72,79
+123,143,464,Facebook,Share,Positive,2024-03-17T02:43:57,Relive the moments that didn’t quite hit the mark this season.,77,18
+124,707,328,Facebook,Comment,Neutral,2024-03-19T01:37:27,,66,449
+125,144,444,Facebook,Share,Positive,2024-03-29T14:28:26,Relive the best moments and catch up on an incredible season!,52,134
+126,295,192,Twitter,Share,Positive,2023-11-26T21:20:30,In-depth analysis to understand the game better.,44,389
+127,254,227,Instagram,Comment,Neutral,2024-02-27T07:44:29,Prepare for the match with an in-depth look at the game.,81,367
+128,900,120,Instagram,Share,Negative,2024-01-13T10:16:48,A critical look at the season and where things could improve.,38,421
+129,999,48,Facebook,Comment,Positive,2024-01-18T07:33:24,Relive the best moments and catch up on an incredible season!,100,818
+130,392,244,Facebook,Share,Negative,2024-02-17T06:09:59,Relive the moments that didn’t quite hit the mark this season.,61,815
+131,609,180,Twitter,Like,Positive,2024-02-15T15:10:29,Relive the best moments and catch up on an incredible season!,66,745
+132,856,257,Instagram,Comment,Positive,2024-02-06T15:45:48,Relive the best moments and catch up on an incredible season!,97,973
+133,895,144,Facebook,Comment,Positive,2023-08-21T21:12:45,,70,797
+134,40,170,Facebook,Comment,Negative,2023-12-24T11:36:50,In-depth analysis to understand the game better.,67,765
+135,770,226,Facebook,Comment,Neutral,2024-08-11T04:22:58,,25,181
+136,848,198,Instagram,Comment,Negative,2024-05-28T04:28:00,,49,874
+137,584,417,Twitter,Like,Negative,2023-12-09T03:32:56,A critical look at the season and where things could improve.,43,886
+138,296,168,Instagram,Share,Negative,2024-02-21T16:21:17,,3,458
+139,491,155,Facebook,Like,Neutral,2024-07-18T16:32:52,,53,101
+140,840,224,Facebook,Share,Negative,2024-01-03T19:13:22,Relive the best moments and catch up on an incredible season!,58,849
+141,25,127,Facebook,Share,Negative,2024-05-11T07:41:05,,75,895
+142,345,34,Twitter,Like,Negative,2024-01-24T23:20:28,,21,381
+143,877,289,Instagram,Share,Positive,2023-11-17T17:00:31,,25,552
+144,487,423,Twitter,Like,Positive,2023-10-07T07:28:51,In-depth analysis to understand the game better.,35,214
+145,198,436,Instagram,Like,Neutral,2023-09-20T17:41:01,Prepare for the match with an in-depth look at the game.,44,209
+146,977,62,Instagram,Like,Positive,2024-02-02T11:39:46,Prepare for the match with an in-depth look at the game.,34,865
+147,302,379,Facebook,Like,Positive,2024-02-28T19:24:58,In-depth analysis to understand the game better.,100,455
+148,681,500,Twitter,Comment,Positive,2024-08-08T12:00:47,In-depth analysis to understand the game better.,46,717
+149,403,104,Instagram,Comment,Negative,2024-04-12T09:39:06,In-depth analysis to understand the game better.,17,492
+150,898,32,Instagram,Comment,Negative,2024-06-07T17:12:17,A critical look at the season and where things could improve.,31,941
+151,374,149,Twitter,Share,Negative,2023-10-28T00:08:29,,72,311
+152,253,451,Instagram,Like,Negative,2023-09-21T17:30:22,,85,459
+153,961,70,Facebook,Like,Neutral,2023-12-12T14:23:05,Relive the best moments and catch up on an incredible season!,20,659
+154,649,154,Facebook,Comment,Neutral,2023-12-22T16:11:50,,14,846
+155,920,158,Facebook,Like,Negative,2023-09-15T12:24:34,Relive the best moments and catch up on an incredible season!,71,696
+156,411,29,Twitter,Share,Neutral,2024-03-03T10:10:26,Prepare for the match with an in-depth look at the game.,45,574
+157,248,205,Facebook,Like,Negative,2024-04-09T21:15:03,Prepare for the match with an in-depth look at the game.,12,148
+158,206,477,Facebook,Like,Neutral,2024-03-28T12:28:11,Relive the best moments and catch up on an incredible season!,78,266
+159,599,29,Facebook,Comment,Negative,2023-09-21T16:17:20,Prepare for the match with an in-depth look at the game.,86,361
+160,685,172,Twitter,Like,Positive,2024-03-22T18:06:30,Prepare for the match with an in-depth look at the game.,22,240
+161,964,114,Facebook,Like,Negative,2023-10-11T08:02:40,Relive the best moments and catch up on an incredible season!,65,302
+162,21,288,Facebook,Comment,Positive,2024-07-25T08:24:44,Relive the moments that didn’t quite hit the mark this season.,29,855
+163,790,137,Instagram,Share,Neutral,2024-06-18T11:44:35,In-depth analysis to understand the game better.,19,706
+164,132,188,Twitter,Like,Negative,2024-07-31T07:00:43,,15,62
+165,930,21,Facebook,Comment,Negative,2024-01-31T12:39:56,A critical look at the season and where things could improve.,98,346
+166,133,494,Twitter,Comment,Neutral,2023-11-25T21:54:13,A critical look at the season and where things could improve.,9,474
+167,596,423,Instagram,Comment,Negative,2023-11-01T07:31:15,In-depth analysis to understand the game better.,75,759
+168,236,319,Instagram,Comment,Neutral,2023-12-14T18:21:11,,92,478
+169,634,81,Twitter,Comment,Negative,2023-09-03T08:56:49,Relive the best moments and catch up on an incredible season!,11,640
+170,924,272,Instagram,Comment,Positive,2023-11-20T07:32:56,Catch up on everything you need to know about the game.,27,884
+171,168,476,Twitter,Share,Positive,2024-05-31T23:52:28,,73,934
+172,923,145,Twitter,Share,Positive,2024-03-14T20:44:44,Relive the moments that didn’t quite hit the mark this season.,12,660
+173,694,349,Facebook,Like,Negative,2024-01-20T04:15:19,Catch up on everything you need to know about the game.,43,720
+174,598,331,Facebook,Comment,Neutral,2024-03-30T04:11:29,,49,692
+175,777,59,Instagram,Comment,Positive,2024-07-18T23:47:19,Relive the best moments and catch up on an incredible season!,58,392
+176,990,181,Facebook,Share,Positive,2024-08-13T10:37:00,In-depth analysis to understand the game better.,89,841
+177,89,215,Instagram,Like,Positive,2023-11-01T08:58:42,,72,454
+178,614,243,Twitter,Share,Neutral,2024-03-15T19:48:59,,61,832
+179,145,213,Facebook,Share,Positive,2023-09-27T06:30:50,Relive the best moments and catch up on an incredible season!,52,226
+180,718,316,Facebook,Share,Neutral,2024-07-12T05:33:24,Catch up on everything you need to know about the game.,89,637
+181,454,488,Facebook,Share,Positive,2024-03-27T19:00:50,Relive the best moments and catch up on an incredible season!,75,80
+182,685,138,Instagram,Comment,Negative,2024-01-11T12:47:52,,84,464
+183,353,278,Instagram,Share,Positive,2023-12-31T14:46:58,,94,811
+184,236,95,Instagram,Comment,Positive,2024-05-02T08:06:40,Prepare for the match with an in-depth look at the game.,13,700
+185,274,153,Instagram,Like,Negative,2023-10-18T07:09:54,A critical look at the season and where things could improve.,13,536
+186,636,337,Instagram,Share,Positive,2023-11-05T18:35:51,Prepare for the match with an in-depth look at the game.,100,113
+187,736,494,Twitter,Share,Neutral,2023-11-12T20:41:00,A critical look at the season and where things could improve.,80,519
+188,321,73,Twitter,Like,Positive,2024-08-10T22:34:34,Prepare for the match with an in-depth look at the game.,28,436
+189,598,386,Twitter,Share,Neutral,2024-05-15T22:14:12,,35,915
+190,358,175,Twitter,Share,Negative,2023-11-29T04:57:20,A critical look at the season and where things could improve.,38,731
+191,82,70,Twitter,Comment,Neutral,2024-05-09T03:03:02,Relive the best moments and catch up on an incredible season!,89,663
+192,176,236,Twitter,Comment,Positive,2024-06-06T06:01:37,In-depth analysis to understand the game better.,22,289
+193,916,250,Twitter,Share,Negative,2024-03-08T11:55:36,Catch up on everything you need to know about the game.,72,188
+194,524,180,Twitter,Like,Negative,2023-09-03T17:50:15,Relive the best moments and catch up on an incredible season!,34,868
+195,995,111,Instagram,Share,Positive,2023-09-11T16:52:39,,88,888
+196,780,38,Instagram,Comment,Positive,2024-07-15T12:08:33,In-depth analysis to understand the game better.,32,622
+197,183,496,Instagram,Comment,Positive,2024-08-02T16:07:22,,78,284
+198,635,394,Facebook,Like,Negative,2023-11-19T00:08:28,,18,837
+199,543,430,Facebook,Like,Negative,2024-06-12T11:11:25,,88,498
+200,425,454,Instagram,Like,Negative,2024-03-06T15:38:01,,43,45
+201,456,120,Instagram,Share,Positive,2024-05-23T14:42:20,A critical look at the season and where things could improve.,82,269
+202,72,81,Instagram,Comment,Neutral,2024-03-26T14:45:08,Relive the best moments and catch up on an incredible season!,65,951
+203,856,329,Twitter,Like,Neutral,2024-07-19T06:18:21,A critical look at the season and where things could improve.,91,764
+204,195,330,Instagram,Like,Neutral,2023-09-11T21:50:08,,76,228
+205,239,437,Instagram,Share,Negative,2024-03-05T18:32:59,Catch up on everything you need to know about the game.,14,505
+206,991,147,Facebook,Like,Positive,2024-05-04T07:57:14,Relive the best moments and catch up on an incredible season!,48,224
+207,185,441,Twitter,Like,Neutral,2023-10-13T11:10:01,,0,497
+208,119,303,Facebook,Share,Positive,2023-08-17T05:22:02,,58,661
+209,386,458,Twitter,Share,Neutral,2023-12-20T12:21:06,Prepare for the match with an in-depth look at the game.,87,214
+210,962,355,Facebook,Comment,Positive,2024-03-28T08:39:05,,15,617
+211,562,265,Twitter,Comment,Positive,2024-02-17T10:17:05,,99,133
+212,290,426,Instagram,Comment,Neutral,2024-06-14T13:24:03,Catch up on everything you need to know about the game.,23,342
+213,245,199,Twitter,Like,Neutral,2024-01-09T21:29:00,,100,704
+214,138,260,Twitter,Like,Negative,2024-05-01T18:20:04,Prepare for the match with an in-depth look at the game.,100,358
+215,278,70,Facebook,Like,Negative,2023-11-25T16:31:46,Relive the best moments and catch up on an incredible season!,46,175
+216,353,237,Facebook,Comment,Neutral,2024-01-06T21:10:05,,7,351
+217,574,77,Twitter,Share,Negative,2023-11-29T14:28:01,,83,868
+218,797,389,Instagram,Comment,Neutral,2023-12-18T17:54:56,Relive the best moments and catch up on an incredible season!,95,869
+219,213,250,Instagram,Share,Negative,2024-03-08T16:23:36,Catch up on everything you need to know about the game.,2,46
+220,943,466,Facebook,Like,Neutral,2024-04-17T19:25:37,Relive the best moments and catch up on an incredible season!,60,106
+221,417,114,Facebook,Like,Positive,2024-03-07T22:33:12,Relive the best moments and catch up on an incredible season!,26,637
+222,582,447,Twitter,Like,Neutral,2024-07-02T20:57:41,Prepare for the match with an in-depth look at the game.,49,745
+223,116,172,Instagram,Comment,Neutral,2024-01-19T05:46:28,Prepare for the match with an in-depth look at the game.,21,437
+224,660,455,Twitter,Share,Positive,2024-06-19T00:31:24,Relive the best moments and catch up on an incredible season!,79,518
+225,592,229,Twitter,Share,Negative,2023-10-09T11:18:57,,33,514
+226,762,78,Instagram,Comment,Neutral,2023-09-30T13:24:36,,81,436
+227,512,345,Twitter,Comment,Neutral,2024-05-14T00:47:47,Relive the best moments and catch up on an incredible season!,45,242
+228,99,30,Instagram,Like,Neutral,2024-01-17T21:51:35,Catch up on everything you need to know about the game.,72,901
+229,828,58,Twitter,Like,Positive,2024-05-01T05:37:10,,48,344
+230,498,158,Facebook,Comment,Positive,2023-11-21T14:47:22,Relive the best moments and catch up on an incredible season!,97,404
+231,860,116,Facebook,Comment,Negative,2024-06-11T04:24:16,,37,276
+232,321,383,Instagram,Comment,Negative,2024-01-26T13:52:31,,52,743
+233,992,13,Facebook,Like,Neutral,2024-08-13T02:58:30,Relive the moments that didn’t quite hit the mark this season.,45,25
+234,186,491,Twitter,Share,Neutral,2023-12-16T01:19:01,Prepare for the match with an in-depth look at the game.,7,697
+235,539,377,Facebook,Like,Positive,2024-08-03T04:01:06,,43,619
+236,561,476,Twitter,Like,Negative,2024-01-03T16:07:42,,84,42
+237,256,184,Twitter,Comment,Neutral,2024-02-05T03:19:11,Catch up on everything you need to know about the game.,19,302
+238,90,286,Facebook,Share,Negative,2024-01-21T19:03:11,,71,423
+239,596,458,Instagram,Like,Negative,2023-12-23T10:59:56,Prepare for the match with an in-depth look at the game.,88,221
+240,496,11,Facebook,Like,Neutral,2024-04-28T00:42:10,,84,98
+241,642,244,Facebook,Like,Negative,2024-06-19T06:43:50,Relive the moments that didn’t quite hit the mark this season.,30,644
+242,210,139,Twitter,Comment,Negative,2024-07-06T17:49:31,Prepare for the match with an in-depth look at the game.,1,631
+243,865,377,Instagram,Comment,Neutral,2024-03-12T02:51:10,,10,178
+244,989,292,Twitter,Comment,Neutral,2023-08-20T02:29:57,,2,287
+245,156,351,Instagram,Like,Neutral,2024-06-18T17:21:23,A critical look at the season and where things could improve.,23,741
+246,86,368,Twitter,Share,Neutral,2024-05-25T08:31:24,In-depth analysis to understand the game better.,47,978
+247,803,367,Facebook,Like,Positive,2024-06-04T04:15:04,Relive the best moments and catch up on an incredible season!,88,762
+248,183,341,Facebook,Share,Positive,2023-08-15T17:29:39,,79,649
+249,379,66,Facebook,Share,Negative,2024-02-07T12:55:39,,40,372
+250,405,84,Instagram,Comment,Positive,2024-04-16T03:38:04,Prepare for the match with an in-depth look at the game.,21,968
+251,312,112,Facebook,Share,Positive,2024-05-15T17:00:56,Relive the moments that didn’t quite hit the mark this season.,71,861
+252,852,156,Instagram,Comment,Positive,2023-12-27T00:43:07,Relive the moments that didn’t quite hit the mark this season.,16,672
+253,597,125,Facebook,Share,Negative,2024-03-25T14:45:39,Relive the best moments and catch up on an incredible season!,29,236
+254,113,240,Instagram,Share,Positive,2023-08-23T02:29:47,,46,71
+255,776,486,Instagram,Comment,Positive,2023-09-23T09:53:41,Relive the moments that didn’t quite hit the mark this season.,35,172
+256,144,166,Twitter,Comment,Neutral,2023-08-19T20:14:27,,78,912
+257,294,13,Instagram,Like,Negative,2024-05-08T19:45:53,Relive the moments that didn’t quite hit the mark this season.,60,35
+258,596,19,Twitter,Share,Negative,2023-12-20T03:09:07,Catch up on everything you need to know about the game.,11,985
+259,572,201,Facebook,Share,Positive,2024-07-19T18:16:59,,85,418
+260,750,436,Twitter,Share,Positive,2024-02-16T05:32:46,Prepare for the match with an in-depth look at the game.,14,225
+261,300,264,Facebook,Comment,Negative,2024-02-06T10:32:04,,22,823
+262,786,415,Twitter,Comment,Positive,2023-08-18T06:09:15,Catch up on everything you need to know about the game.,16,749
+263,904,323,Instagram,Like,Neutral,2023-09-11T09:35:02,Relive the best moments and catch up on an incredible season!,41,372
+264,816,316,Instagram,Like,Neutral,2023-09-10T22:38:04,Catch up on everything you need to know about the game.,45,702
+265,459,436,Instagram,Comment,Neutral,2024-04-20T18:49:30,Prepare for the match with an in-depth look at the game.,70,64
+266,585,307,Facebook,Share,Neutral,2023-12-09T18:47:25,A critical look at the season and where things could improve.,2,29
+267,31,248,Facebook,Comment,Neutral,2024-01-16T04:40:55,,9,675
+268,73,126,Facebook,Like,Neutral,2024-07-08T06:34:33,In-depth analysis to understand the game better.,34,884
+269,450,149,Twitter,Share,Positive,2024-01-26T18:47:03,,54,666
+270,59,331,Facebook,Like,Negative,2024-03-23T09:54:09,,99,158
+271,875,308,Instagram,Comment,Negative,2024-01-21T08:11:05,,36,702
+272,995,12,Twitter,Like,Neutral,2024-03-01T09:00:53,,32,356
+273,510,353,Twitter,Comment,Positive,2023-11-16T22:47:47,,64,85
+274,45,100,Twitter,Like,Negative,2023-12-02T13:52:41,,77,324
+275,675,440,Twitter,Like,Neutral,2024-07-07T12:19:21,,60,740
+276,623,157,Twitter,Comment,Neutral,2024-02-17T02:45:28,,91,165
+277,228,275,Instagram,Like,Negative,2023-10-14T10:11:11,,43,534
+278,923,379,Instagram,Share,Positive,2023-08-15T00:08:46,In-depth analysis to understand the game better.,6,504
+279,731,162,Facebook,Comment,Neutral,2024-05-06T18:27:47,Catch up on everything you need to know about the game.,26,917
+280,861,383,Twitter,Share,Positive,2024-04-04T00:25:50,,25,989
+281,252,269,Twitter,Comment,Positive,2024-02-07T20:17:23,In-depth analysis to understand the game better.,68,994
+282,318,81,Facebook,Like,Neutral,2023-12-31T12:44:58,Relive the best moments and catch up on an incredible season!,15,72
+283,22,179,Twitter,Comment,Negative,2023-12-26T04:55:55,,26,103
+284,742,112,Instagram,Like,Positive,2024-07-25T03:28:07,Relive the moments that didn’t quite hit the mark this season.,22,794
+285,239,8,Facebook,Like,Positive,2023-11-18T06:56:15,Catch up on everything you need to know about the game.,69,0
+286,54,164,Facebook,Like,Negative,2023-11-29T08:43:41,A critical look at the season and where things could improve.,77,646
+287,137,394,Twitter,Like,Negative,2023-08-17T23:46:30,,44,580
+288,391,499,Facebook,Like,Neutral,2023-10-20T16:01:15,Relive the best moments and catch up on an incredible season!,22,302
+289,238,414,Facebook,Like,Negative,2023-12-02T01:15:30,Prepare for the match with an in-depth look at the game.,90,752
+290,563,398,Facebook,Share,Positive,2023-08-21T17:51:20,Relive the moments that didn’t quite hit the mark this season.,9,549
+291,505,247,Facebook,Like,Neutral,2024-05-31T01:39:22,In-depth analysis to understand the game better.,79,51
+292,104,462,Twitter,Comment,Positive,2024-05-13T23:46:47,,29,714
+293,744,415,Instagram,Comment,Neutral,2024-02-27T11:50:39,Catch up on everything you need to know about the game.,43,649
+294,983,110,Twitter,Comment,Positive,2024-03-14T11:47:31,,14,47
+295,412,113,Facebook,Comment,Neutral,2024-06-22T13:56:49,,91,835
+296,432,301,Instagram,Like,Positive,2024-07-15T23:53:12,Relive the best moments and catch up on an incredible season!,19,371
+297,906,102,Twitter,Like,Negative,2024-05-31T23:57:18,,15,476
+298,38,417,Facebook,Share,Positive,2023-08-28T11:47:49,A critical look at the season and where things could improve.,82,988
+299,899,241,Twitter,Share,Neutral,2023-09-25T03:48:14,A critical look at the season and where things could improve.,54,808
+300,447,367,Instagram,Share,Neutral,2024-04-07T00:12:50,Relive the best moments and catch up on an incredible season!,62,171
+301,514,417,Twitter,Share,Positive,2024-01-30T21:52:25,A critical look at the season and where things could improve.,87,178
+302,439,408,Twitter,Comment,Negative,2024-03-27T22:24:42,,14,815
+303,807,364,Twitter,Comment,Neutral,2023-08-17T05:46:23,,97,779
+304,766,219,Facebook,Share,Neutral,2024-01-12T00:50:11,A critical look at the season and where things could improve.,43,825
+305,545,162,Twitter,Comment,Negative,2024-07-10T01:31:38,Catch up on everything you need to know about the game.,64,703
+306,789,115,Facebook,Like,Negative,2024-05-03T22:41:29,In-depth analysis to understand the game better.,78,420
+307,519,254,Twitter,Share,Neutral,2023-10-13T02:55:41,,80,538
+308,80,181,Facebook,Comment,Negative,2024-05-03T03:51:42,In-depth analysis to understand the game better.,13,310
+309,927,311,Twitter,Share,Positive,2024-05-24T00:54:43,,42,777
+310,483,376,Twitter,Share,Negative,2023-12-10T11:08:48,Relive the moments that didn’t quite hit the mark this season.,34,911
+311,894,85,Twitter,Comment,Positive,2024-01-26T00:06:16,Catch up on everything you need to know about the game.,91,123
+312,948,195,Twitter,Like,Positive,2024-03-29T15:38:34,Catch up on everything you need to know about the game.,57,608
+313,130,201,Twitter,Like,Negative,2024-02-04T19:40:00,,32,242
+314,294,71,Twitter,Like,Negative,2024-05-16T10:25:59,In-depth analysis to understand the game better.,64,555
+315,195,97,Twitter,Share,Positive,2023-09-18T16:34:48,,71,873
+316,551,121,Facebook,Share,Negative,2024-03-09T21:26:50,,73,491
+317,904,158,Facebook,Comment,Negative,2024-01-07T20:19:39,Relive the best moments and catch up on an incredible season!,13,848
+318,669,144,Facebook,Share,Positive,2024-07-01T09:01:22,,90,779
+319,318,78,Facebook,Comment,Positive,2024-05-01T11:02:48,,57,506
+320,783,498,Facebook,Like,Negative,2024-02-12T05:50:06,,13,233
+321,426,185,Instagram,Comment,Positive,2023-10-08T20:44:49,,0,577
+322,960,194,Facebook,Like,Neutral,2023-11-15T04:16:12,Prepare for the match with an in-depth look at the game.,88,852
+323,664,120,Twitter,Share,Negative,2023-12-15T13:26:24,A critical look at the season and where things could improve.,60,952
+324,701,366,Facebook,Comment,Neutral,2024-02-08T14:03:18,,58,669
+325,224,353,Facebook,Like,Neutral,2023-08-26T18:02:01,,25,964
+326,277,118,Instagram,Like,Positive,2024-06-03T23:37:31,Catch up on everything you need to know about the game.,54,17
+327,886,155,Twitter,Comment,Negative,2024-01-06T16:35:56,,61,766
+328,522,414,Twitter,Like,Positive,2024-06-07T19:35:20,Prepare for the match with an in-depth look at the game.,77,145
+329,572,373,Facebook,Comment,Negative,2023-08-20T00:05:11,A critical look at the season and where things could improve.,80,906
+330,242,99,Facebook,Like,Neutral,2023-09-24T06:29:47,,24,162
+331,232,280,Facebook,Share,Neutral,2024-03-25T19:38:49,In-depth analysis to understand the game better.,95,128
+332,88,420,Facebook,Share,Positive,2023-08-22T19:35:15,Relive the moments that didn’t quite hit the mark this season.,10,543
+333,215,342,Twitter,Comment,Negative,2023-09-15T10:49:40,,84,348
+334,691,183,Twitter,Share,Negative,2023-11-15T12:12:33,Prepare for the match with an in-depth look at the game.,78,14
+335,607,429,Twitter,Like,Neutral,2023-10-19T01:07:06,,53,407
+336,935,434,Instagram,Like,Positive,2023-09-29T13:06:06,In-depth analysis to understand the game better.,93,930
+337,7,245,Facebook,Comment,Neutral,2023-12-09T13:22:52,,35,355
+338,308,146,Instagram,Like,Negative,2024-07-20T02:14:15,,85,891
+339,818,417,Instagram,Comment,Positive,2023-11-30T05:12:42,A critical look at the season and where things could improve.,13,154
+340,594,364,Instagram,Like,Positive,2024-04-03T20:11:52,,93,908
+341,428,175,Twitter,Share,Negative,2023-10-27T22:19:46,A critical look at the season and where things could improve.,84,198
+342,121,405,Instagram,Comment,Positive,2024-05-18T16:51:05,,17,726
+343,364,66,Twitter,Comment,Neutral,2024-04-14T16:17:27,,38,517
+344,934,7,Facebook,Share,Neutral,2024-04-02T08:47:45,Prepare for the match with an in-depth look at the game.,61,897
+345,369,455,Instagram,Share,Positive,2023-10-25T15:28:26,Relive the best moments and catch up on an incredible season!,79,487
+346,278,352,Facebook,Like,Neutral,2024-06-21T07:45:05,,51,153
+347,100,486,Facebook,Share,Positive,2023-12-02T17:55:58,Relive the moments that didn’t quite hit the mark this season.,30,604
+348,992,257,Facebook,Comment,Negative,2024-01-15T11:59:56,Relive the best moments and catch up on an incredible season!,43,142
+349,304,315,Instagram,Comment,Positive,2024-02-12T02:59:50,Prepare for the match with an in-depth look at the game.,41,499
+350,226,468,Instagram,Share,Neutral,2024-07-04T23:09:37,,51,562
+351,384,200,Instagram,Share,Negative,2023-09-25T01:25:12,Relive the moments that didn’t quite hit the mark this season.,26,141
+352,574,209,Facebook,Share,Negative,2024-02-15T07:41:52,,23,528
+353,798,204,Twitter,Like,Negative,2023-12-19T18:37:06,,50,4
+354,520,284,Twitter,Comment,Positive,2024-06-01T18:34:13,,75,578
+355,814,335,Twitter,Comment,Positive,2023-08-20T13:41:38,In-depth analysis to understand the game better.,72,975
+356,503,369,Twitter,Like,Neutral,2023-08-30T05:58:32,,38,847
+357,529,359,Instagram,Comment,Neutral,2023-09-02T02:53:13,Prepare for the match with an in-depth look at the game.,52,621
+358,598,463,Facebook,Like,Positive,2024-01-27T06:45:41,,60,638
+359,704,186,Facebook,Like,Negative,2024-04-11T20:51:41,A critical look at the season and where things could improve.,93,926
+360,465,479,Instagram,Share,Positive,2023-09-15T06:36:39,,30,425
+361,467,132,Instagram,Like,Positive,2023-08-15T15:16:11,,45,857
+362,119,134,Twitter,Comment,Positive,2024-03-20T04:11:15,Relive the moments that didn’t quite hit the mark this season.,5,650
+363,506,262,Instagram,Like,Positive,2024-05-10T18:48:46,,85,465
+364,768,398,Twitter,Comment,Positive,2024-03-27T08:22:04,Relive the moments that didn’t quite hit the mark this season.,25,698
+365,188,7,Instagram,Share,Neutral,2023-08-20T21:02:11,Prepare for the match with an in-depth look at the game.,27,710
+366,913,349,Instagram,Share,Neutral,2024-08-01T02:51:11,Catch up on everything you need to know about the game.,36,718
+367,254,65,Facebook,Like,Negative,2023-10-06T13:56:34,A critical look at the season and where things could improve.,37,188
+368,701,84,Facebook,Like,Negative,2024-02-21T04:45:01,Prepare for the match with an in-depth look at the game.,65,726
+369,402,345,Instagram,Share,Positive,2023-11-01T23:29:27,Relive the best moments and catch up on an incredible season!,92,977
+370,817,190,Facebook,Share,Negative,2024-01-15T23:12:57,,29,850
+371,55,239,Twitter,Comment,Negative,2024-03-17T18:51:33,Catch up on everything you need to know about the game.,80,153
+372,44,364,Instagram,Like,Neutral,2023-10-04T13:55:51,,90,378
+373,2,48,Instagram,Share,Positive,2024-01-08T20:55:32,Relive the best moments and catch up on an incredible season!,34,879
+374,507,65,Instagram,Share,Negative,2024-05-24T18:57:30,A critical look at the season and where things could improve.,75,650
+375,683,253,Twitter,Comment,Negative,2024-01-27T18:05:36,,1,529
+376,717,85,Facebook,Like,Negative,2024-05-14T11:22:15,Catch up on everything you need to know about the game.,33,456
+377,377,431,Instagram,Like,Negative,2024-02-02T08:05:28,Relive the moments that didn’t quite hit the mark this season.,77,301
+378,39,404,Facebook,Share,Positive,2024-04-19T14:39:49,Catch up on everything you need to know about the game.,75,111
+379,726,20,Twitter,Like,Neutral,2023-12-10T15:43:05,,39,950
+380,996,311,Instagram,Comment,Neutral,2023-12-15T08:53:22,,61,448
+381,360,140,Facebook,Like,Positive,2023-12-10T00:25:00,Catch up on everything you need to know about the game.,55,204
+382,374,422,Instagram,Share,Neutral,2024-05-28T15:41:26,Relive the best moments and catch up on an incredible season!,32,281
+383,538,266,Twitter,Like,Negative,2024-06-06T17:59:06,Relive the moments that didn’t quite hit the mark this season.,29,861
+384,979,96,Facebook,Share,Positive,2024-07-24T02:32:54,Catch up on everything you need to know about the game.,100,568
+385,939,139,Instagram,Share,Neutral,2024-07-05T09:41:28,Prepare for the match with an in-depth look at the game.,24,482
+386,771,263,Facebook,Share,Negative,2024-07-29T09:34:26,A critical look at the season and where things could improve.,86,837
+387,916,480,Twitter,Comment,Positive,2024-04-10T17:56:00,Prepare for the match with an in-depth look at the game.,80,734
+388,843,149,Instagram,Share,Neutral,2024-06-07T21:23:42,,63,47
+389,660,105,Twitter,Like,Negative,2023-12-25T19:05:10,,53,383
+390,697,453,Facebook,Share,Positive,2024-04-22T12:53:50,Relive the moments that didn’t quite hit the mark this season.,50,260
+391,414,326,Facebook,Like,Negative,2023-11-13T15:35:29,Prepare for the match with an in-depth look at the game.,25,289
+392,122,312,Facebook,Comment,Negative,2024-03-08T18:46:31,Relive the best moments and catch up on an incredible season!,78,318
+393,977,488,Instagram,Like,Positive,2024-05-15T16:07:27,Relive the best moments and catch up on an incredible season!,36,56
+394,697,90,Instagram,Share,Negative,2024-03-15T10:43:22,Relive the moments that didn’t quite hit the mark this season.,73,10
+395,229,286,Facebook,Like,Positive,2024-05-31T22:31:24,,29,425
+396,387,42,Instagram,Like,Neutral,2024-01-26T03:41:04,,19,172
+397,704,331,Twitter,Comment,Negative,2024-08-01T01:57:09,,84,381
+398,530,187,Twitter,Like,Neutral,2024-02-25T01:33:28,,96,716
+399,870,197,Twitter,Comment,Neutral,2023-08-29T23:29:53,A critical look at the season and where things could improve.,11,613
+400,905,380,Instagram,Comment,Negative,2023-08-31T12:59:20,,79,791
+401,720,29,Facebook,Share,Neutral,2024-01-25T12:53:06,Prepare for the match with an in-depth look at the game.,6,719
+402,277,228,Instagram,Like,Positive,2023-09-11T17:29:56,Catch up on everything you need to know about the game.,71,609
+403,709,118,Twitter,Comment,Neutral,2023-09-23T06:07:27,Catch up on everything you need to know about the game.,5,785
+404,665,328,Instagram,Comment,Negative,2024-05-01T09:33:27,,89,793
+405,192,28,Facebook,Share,Negative,2024-08-04T04:58:45,,19,346
+406,764,344,Instagram,Comment,Negative,2024-03-30T14:04:25,,36,455
+407,349,443,Facebook,Comment,Positive,2023-10-15T00:07:18,,14,780
+408,421,317,Facebook,Comment,Neutral,2023-09-06T11:15:37,,27,509
+409,297,495,Twitter,Comment,Neutral,2023-12-19T10:05:28,,94,345
+410,417,317,Facebook,Like,Negative,2024-02-10T07:15:42,,92,42
+411,202,453,Facebook,Like,Positive,2024-03-27T07:11:03,Relive the moments that didn’t quite hit the mark this season.,38,886
+412,864,402,Instagram,Comment,Negative,2023-12-11T10:52:24,,14,920
+413,303,284,Instagram,Like,Negative,2023-09-07T20:01:15,,50,604
+414,146,52,Twitter,Comment,Negative,2024-04-25T23:42:47,Catch up on everything you need to know about the game.,85,18
+415,127,154,Twitter,Share,Positive,2024-01-25T06:36:43,,99,840
+416,530,394,Instagram,Comment,Neutral,2024-05-12T03:02:16,,26,852
+417,951,68,Instagram,Comment,Neutral,2023-12-13T02:53:09,Relive the moments that didn’t quite hit the mark this season.,9,205
+418,435,135,Facebook,Comment,Negative,2023-10-10T09:42:24,,87,23
+419,914,79,Instagram,Comment,Negative,2024-05-11T05:12:25,Relive the moments that didn’t quite hit the mark this season.,47,908
+420,345,432,Instagram,Share,Neutral,2024-02-04T05:07:28,,87,58
+421,36,175,Facebook,Share,Negative,2024-05-10T05:01:35,A critical look at the season and where things could improve.,14,81
+422,799,303,Twitter,Comment,Neutral,2024-07-31T13:57:05,,6,43
+423,63,319,Facebook,Comment,Positive,2023-10-15T20:52:44,,58,52
+424,804,182,Instagram,Like,Positive,2024-06-10T16:49:34,,76,830
+425,462,1,Facebook,Share,Negative,2024-04-06T11:39:46,,68,305
+426,485,444,Instagram,Comment,Negative,2023-08-26T19:49:08,Relive the best moments and catch up on an incredible season!,27,503
+427,958,306,Instagram,Comment,Positive,2024-01-13T18:28:47,,23,385
+428,901,278,Twitter,Share,Neutral,2024-05-24T06:35:16,,36,302
+429,241,147,Twitter,Share,Negative,2023-11-12T15:54:42,Relive the best moments and catch up on an incredible season!,5,34
+430,981,120,Instagram,Comment,Neutral,2024-06-28T03:08:40,A critical look at the season and where things could improve.,2,7
+431,848,248,Twitter,Share,Neutral,2024-06-29T23:27:07,,42,649
+432,181,140,Twitter,Like,Negative,2024-02-21T05:00:47,Catch up on everything you need to know about the game.,27,965
+433,455,365,Instagram,Comment,Negative,2023-11-13T04:39:44,Relive the moments that didn’t quite hit the mark this season.,24,868
+434,993,405,Facebook,Share,Positive,2023-08-14T11:59:24,,76,815
+435,714,474,Twitter,Like,Neutral,2024-05-31T00:20:16,,85,686
+436,979,493,Twitter,Share,Negative,2023-11-24T19:31:38,,58,686
+437,757,325,Instagram,Share,Positive,2024-04-12T00:17:25,,90,139
+438,450,28,Twitter,Share,Negative,2024-04-07T23:27:51,,51,645
+439,296,399,Instagram,Comment,Positive,2023-10-29T05:07:32,,100,71
+440,977,20,Twitter,Share,Neutral,2023-11-30T17:23:50,,88,615
+441,259,69,Facebook,Share,Negative,2023-12-18T11:13:54,,6,668
+442,706,54,Instagram,Comment,Positive,2024-04-14T17:28:30,A critical look at the season and where things could improve.,35,301
+443,755,183,Twitter,Share,Positive,2023-11-04T03:41:12,Prepare for the match with an in-depth look at the game.,81,204
+444,296,108,Instagram,Comment,Positive,2024-07-05T16:29:00,,87,194
+445,315,357,Facebook,Like,Neutral,2023-10-13T03:34:27,In-depth analysis to understand the game better.,35,943
+446,886,23,Twitter,Comment,Positive,2023-09-11T07:45:12,,48,127
+447,279,41,Twitter,Share,Positive,2024-02-02T01:35:15,Catch up on everything you need to know about the game.,5,559
+448,748,228,Twitter,Like,Neutral,2023-11-02T17:33:06,Catch up on everything you need to know about the game.,50,443
+449,577,44,Facebook,Share,Neutral,2023-09-05T10:38:19,,27,946
+450,156,422,Facebook,Like,Neutral,2024-03-26T07:27:14,Relive the best moments and catch up on an incredible season!,20,898
+451,589,10,Instagram,Like,Positive,2023-12-09T06:16:01,A critical look at the season and where things could improve.,35,682
+452,347,490,Facebook,Share,Negative,2024-04-11T05:28:17,,98,565
+453,125,339,Facebook,Comment,Neutral,2024-05-08T01:22:30,,52,881
+454,902,353,Twitter,Share,Neutral,2023-09-26T13:57:26,,55,310
+455,935,86,Twitter,Comment,Neutral,2024-07-17T23:16:04,,97,654
+456,554,118,Facebook,Like,Negative,2023-11-19T22:05:04,Catch up on everything you need to know about the game.,8,403
+457,284,261,Instagram,Comment,Positive,2024-06-17T10:19:02,Catch up on everything you need to know about the game.,4,533
+458,196,475,Twitter,Share,Negative,2024-08-01T20:53:28,Relive the moments that didn’t quite hit the mark this season.,1,904
+459,926,362,Twitter,Comment,Neutral,2024-01-30T01:30:51,A critical look at the season and where things could improve.,80,715
+460,283,113,Twitter,Share,Positive,2023-09-24T22:29:12,,61,553
+461,601,324,Instagram,Like,Neutral,2024-03-15T09:16:59,In-depth analysis to understand the game better.,32,639
+462,934,145,Facebook,Share,Positive,2023-12-21T08:09:29,Relive the moments that didn’t quite hit the mark this season.,38,983
+463,445,27,Facebook,Comment,Neutral,2024-01-03T03:45:40,In-depth analysis to understand the game better.,95,187
+464,945,213,Twitter,Share,Negative,2023-11-25T03:27:31,Relive the best moments and catch up on an incredible season!,14,948
+465,15,341,Twitter,Comment,Negative,2024-02-22T22:43:05,,43,645
+466,735,428,Instagram,Like,Neutral,2024-06-02T17:41:31,A critical look at the season and where things could improve.,97,980
+467,504,221,Instagram,Comment,Neutral,2024-07-13T14:57:46,,84,231
+468,931,381,Facebook,Like,Positive,2024-05-02T06:54:00,Prepare for the match with an in-depth look at the game.,89,312
+469,835,409,Twitter,Comment,Neutral,2024-05-05T03:05:31,Relive the moments that didn’t quite hit the mark this season.,62,968
+470,598,22,Facebook,Share,Negative,2024-04-30T14:13:04,,23,61
+471,450,364,Twitter,Comment,Negative,2023-12-21T07:02:48,,6,484
+472,521,187,Instagram,Comment,Positive,2024-03-02T04:31:35,,62,245
+473,156,417,Instagram,Comment,Negative,2024-06-30T01:25:00,A critical look at the season and where things could improve.,77,254
+474,427,274,Twitter,Share,Positive,2024-06-09T08:08:23,A critical look at the season and where things could improve.,34,829
+475,489,190,Facebook,Like,Negative,2024-03-07T05:59:24,,81,485
+476,775,324,Facebook,Share,Positive,2023-09-06T05:56:53,In-depth analysis to understand the game better.,65,93
+477,832,89,Instagram,Like,Positive,2023-09-11T15:50:13,,74,757
+478,199,62,Facebook,Comment,Positive,2024-06-06T10:34:13,Prepare for the match with an in-depth look at the game.,2,783
+479,917,276,Instagram,Comment,Negative,2024-06-01T21:20:07,,29,959
+480,803,288,Facebook,Share,Positive,2024-05-14T17:42:45,Relive the moments that didn’t quite hit the mark this season.,75,752
+481,475,418,Facebook,Share,Positive,2024-05-21T03:44:46,,19,802
+482,453,492,Instagram,Share,Negative,2024-01-29T12:56:17,Catch up on everything you need to know about the game.,86,594
+483,351,409,Twitter,Comment,Positive,2024-02-08T04:22:16,Relive the moments that didn’t quite hit the mark this season.,68,675
+484,911,35,Instagram,Comment,Negative,2024-03-06T01:55:05,Relive the moments that didn’t quite hit the mark this season.,29,874
+485,761,274,Instagram,Share,Positive,2024-05-15T05:18:22,A critical look at the season and where things could improve.,6,267
+486,139,103,Facebook,Share,Positive,2024-05-27T08:00:32,Relive the best moments and catch up on an incredible season!,39,830
+487,26,200,Twitter,Share,Positive,2023-11-20T07:37:16,Relive the moments that didn’t quite hit the mark this season.,82,130
+488,592,316,Instagram,Like,Negative,2024-02-04T06:07:33,Catch up on everything you need to know about the game.,38,365
+489,621,180,Twitter,Comment,Positive,2024-08-12T22:24:52,Relive the best moments and catch up on an incredible season!,69,728
+490,567,37,Facebook,Share,Positive,2024-07-16T21:43:01,Relive the best moments and catch up on an incredible season!,19,331
+491,957,219,Instagram,Like,Negative,2024-05-13T11:19:11,A critical look at the season and where things could improve.,5,137
+492,189,112,Instagram,Share,Negative,2024-04-19T15:44:59,Relive the moments that didn’t quite hit the mark this season.,4,14
+493,400,320,Twitter,Like,Positive,2023-09-03T13:53:35,,7,170
+494,190,390,Twitter,Share,Neutral,2023-09-12T15:40:22,In-depth analysis to understand the game better.,62,675
+495,716,201,Facebook,Share,Positive,2024-07-27T12:22:23,,67,363
+496,846,324,Twitter,Comment,Neutral,2024-05-24T16:08:15,In-depth analysis to understand the game better.,76,853
+497,792,176,Instagram,Like,Negative,2023-09-02T16:24:19,,61,303
+498,518,223,Twitter,Comment,Positive,2024-05-30T08:30:47,,71,157
+499,648,201,Facebook,Comment,Neutral,2024-01-01T21:26:59,,68,891
+500,715,392,Twitter,Share,Positive,2024-01-15T00:32:22,Prepare for the match with an in-depth look at the game.,99,233
