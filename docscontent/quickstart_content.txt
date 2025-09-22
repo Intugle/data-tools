@@ -1,13 +1,13 @@
 ---
 type: markdown
 ---
-# Quickstart: Building a GenAI powered Semantic Intelligence with Intugle
+# Quickstart: Building a GenAI powered Semantic Data Model with Intugle
 
-This quickstart shows you how to use Intugle’s open-source library to transform fragmented datasets into a connected semantic layer. The semantic layer captures profiling, relationships, and business meaning of your data — making it instantly usable for exploration, search, and data product creation.
+This quickstart shows you how to use Intugle’s open-source library to transform fragmented datasets into a connected semantic model. The semantic model captures profiling, relationships, and business meaning of your data — making it instantly usable for exploration, search, and data product creation.
 
-**What is Semantic Intelligence?**
+**What is a Semantic Model?**
 
-A semantic layer is an intelligent knowledge graph of your data. It connects tables, discovers relationships, and enriches them with business glossaries — so both data teams and business users can query with clarity, not complexity.
+A semantic model is an intelligent knowledge graph of your data. It connects tables, discovers relationships, and enriches them with business glossaries — so both data teams and business users can query with clarity, not complexity.
 
 **Who is this for?**
 
@@ -17,11 +17,13 @@ A semantic layer is an intelligent knowledge graph of your data. It connects tab
 
 **In this notebook, you will learn how to:**
 
-- **Profile and classify data** : Analyze your data sources to understand their structure, data types, and other characteristics.
-- **Discover links & relationships among data** : Reveal meaningful connections (PK & FK) across fragmented tables.
-- **Generate a business glossary & enable semantic search** : Create business-friendly terms and use them to query data with context.
-- **Create a semantic intelligence layer** : Build a unified model (YAML) of your data and relationships.
-- **Build unified data products** : Generate reusable SQL queries powered by the semantic layer.
+*   **Generate Semantic Model** → The unified layer that transforms fragmented datasets, creating the foundation for connected intelligence.
+    *   **1.1 Profile and classify data** → Analyze your data sources to understand their structure, data types, and other characteristics.
+    *   **1.2 Discover links & relationships among data** → Reveal meaningful connections (PK & FK) across fragmented tables.
+    *   **1.3 Generate a business glossary** → Create business-friendly terms and use them to query data with context.
+    *   **1.4 Enable Semantic search** → Intelligent search that understands meaning, not just keywords—making data more accessible across both technical and business users.
+    *   **1.5 Visualize semantic model** → Get access to enriched metadata of the semantic model and visualize your data and relationships.
+*   **Build Unified Data Products** → Simply pick the attributes across your data tables, and let the toolkit auto-generate queries with all the required joins, transformations, and aggregations using the semantic layer. When executed, these queries produce reusable data products.
 
 Before you start, make sure you install the **Intugle Data Tools**:
 ---
