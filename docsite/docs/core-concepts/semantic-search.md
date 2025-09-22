@@ -35,7 +35,7 @@ To use the semantic search feature, you must have a running Qdrant instance and 
 You can start a Qdrant instance using the following Docker command:
 
 ```bash
-docker run -p 6333:6333 -p 6334:6334 \
+docker run -d -p 6333:6333 -p 6334:6334 \
     -v qdrant_storage:/qdrant/storage:z \
     --name qdrant qdrant/qdrant
 ```

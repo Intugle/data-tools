@@ -187,7 +187,7 @@ The semantic search feature allows you to search for columns in your datasets us
 To use the semantic search feature, you need to have a running Qdrant instance. You can start one using the following Docker command:
 
 ```bash
-docker run -p 6333:6333 -p 6334:6334 \
+docker run -d -p 6333:6333 -p 6334:6334 \
     -v qdrant_storage:/qdrant/storage:z \
     --name qdrant qdrant/qdrant
 ```
