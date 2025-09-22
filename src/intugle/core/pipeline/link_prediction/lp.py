@@ -476,6 +476,92 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
 
             return {"error_msg": final_error_msg_list, "if_error": True}
 
+    def single_link_intersection_checker(self, state):
+        """
+        Checks intersection of values between columns
+
+        Args:
+            state (dict): The current graph state
+
+        Returns:
+            state (dict): New keys added to state, error_msg, error message if intersection between both the columns is low
+        """
+        log_msg = "---CHECKING FOR INTERSECTION BETWEEN COLUMNS---"
+        log.info(log_msg)
+        self.logs.append(log_msg)
+
+        potential_link = state["potential_link"]
+        final_error_msg_list = state["error_msg"]
+
+        table1_name = potential_link["table1"]
+        column1_name = potential_link["column1"]
+        table2_name = potential_link["table2"]
+        column2_name = potential_link["column2"]
+
+        count_distinct_col1 = self.profiling_data.loc[
+            (self.profiling_data.table_name == table1_name)
+            & (self.profiling_data.column_name == column1_name)
+        ]["distinct_count"].values[0]
+        count_distinct_col2 = self.profiling_data.loc[
+            (self.profiling_data.table_name == table2_name)
+            & (self.profiling_data.column_name == column2_name)
+        ]["distinct_count"].values[0]
+
+        # Use adapter from one of the datasets to execute query
+        adapter = self.table1.adapter
+
+        try:
+            intersect_count = adapter.intersect_count(
+                table1=self.table1,
+                column1_name=column1_name,
+                table2=self.table2,
+                column2_name=column2_name
+            )
+        except Exception as e:
+            log.error(f"Error executing intersection query: {e}")
+            error_msg = f"Could not calculate intersection between {table1_name}.{column1_name} and {table2_name}.{column2_name}."
+            try:
+                final_error_msg_list.append(error_msg)
+            except AttributeError:
+                final_error_msg_list = [error_msg]
+            return {"error_msg": final_error_msg_list, "if_error": True}
+
+        intersect_ratio_col1 = intersect_count / count_distinct_col1 if count_distinct_col1 > 0 else 0
+        intersect_ratio_col2 = intersect_count / count_distinct_col2 if count_distinct_col2 > 0 else 0
+
+        if intersect_count == 0:
+            error_msg = f"The intersection between {column1_name} column in table {table1_name} with {column2_name} in table {table2_name} resulted in zero rows"
+            try:
+                final_error_msg_list.append(error_msg)
+            except AttributeError:
+                final_error_msg_list = [error_msg]
+            log.info(error_msg)
+            self.logs.append(error_msg)
+            return {"error_msg": final_error_msg_list, "if_error": True}
+
+        elif max(intersect_ratio_col1, intersect_ratio_col2) < settings.INTERSECT_RATIO_THRESHOLD:
+            error_msg1 = f"Only {intersect_ratio_col1 * 100:.2f} percent of values in {column1_name} in table {table1_name} matched with {column2_name} in table {table2_name}. "
+            error_msg2 = f"Only {intersect_ratio_col2 * 100:.2f} percent of values in {column2_name} in table {table2_name} matched with {column1_name} in table {table1_name}."
+            error_msg = error_msg1 + error_msg2
+            try:
+                final_error_msg_list.append(error_msg)
+            except AttributeError:
+                final_error_msg_list = [error_msg]
+            log.info(error_msg)
+            self.logs.append(error_msg)
+            return {"error_msg": final_error_msg_list, "if_error": True}
+        else:
+            log_msg = "All Good No error found"
+            log.info(log_msg)
+            self.logs.append(log_msg)
+            return {
+                "if_error": False,
+                "intersect_count": intersect_count,
+                "intersect_ratio_col1": round(intersect_ratio_col1, 3),
+                "intersect_ratio_col2": round(intersect_ratio_col2, 3),
+                "accuracy": round(max(intersect_ratio_col1, intersect_ratio_col2), 3),
+            }
+
     def link_check_router(self, state):
         """
         Route the link checks
@@ -549,6 +635,7 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
         )  # table column name checker
         workflow.add_node("single_link_uniqueness_checker", self.single_link_uniqueness_checker)  # uniqueness
         workflow.add_node("single_link_datatype_checker", self.single_link_datatype_checker)  # datatype
+        workflow.add_node("single_link_intersection_checker", self.single_link_intersection_checker)
 
         # Adding edges
         workflow.add_edge(START, "link_identifier")
@@ -583,6 +670,15 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
 
         workflow.add_conditional_edges(
             "single_link_datatype_checker",
+            self.error_checker,
+            {
+                "Yes": "link_identifier",
+                "No": "single_link_intersection_checker",
+            },
+        )
+
+        workflow.add_conditional_edges(
+            "single_link_intersection_checker",
             self.error_checker,
             {
                 "Yes": "link_identifier",
@@ -621,6 +717,8 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
         return res
 
     def __graph_invoke__(self, table1: DataSet, table2: DataSet) -> dict:
+        self.table1 = table1
+        self.table2 = table2
         final_output = {}
         final_output["table1"] = table1.name
         final_output["table2"] = table2.name
@@ -666,6 +764,12 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
         log.info(f"Runtime: {runtime:.2f} seconds")
         log.info(f"[*] link between tables: {event['potential_link']}")
         potential_link = event["potential_link"]
+
+        if potential_link and potential_link.get("table1") != "NA":
+            potential_link["intersect_count"] = event.get("intersect_count")
+            potential_link["intersect_ratio_col1"] = event.get("intersect_ratio_col1")
+            potential_link["intersect_ratio_col2"] = event.get("intersect_ratio_col2")
+            potential_link["accuracy"] = event.get("accuracy")
 
         final_output["links"] = potential_link
         final_output["Runtime_secs"] = runtime

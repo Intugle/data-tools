@@ -11,7 +11,11 @@ class RelationshipTable(SchemaBase):
     column: str
 
 
-class RelationshipProfilingMetrics(SchemaBase): ...
+class RelationshipProfilingMetrics(SchemaBase):
+    intersect_count: Optional[int] = None
+    intersect_ratio_col1: Optional[float] = None
+    intersect_ratio_col2: Optional[float] = None
+    accuracy: Optional[float] = None
 
 
 class RelationshipType(StrEnum):

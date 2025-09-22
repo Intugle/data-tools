@@ -1,11 +1,14 @@
 from abc import ABC, abstractmethod
-from typing import Any
+from typing import Any, TYPE_CHECKING
 
 from intugle.adapters.models import (
     ColumnProfile,
     DataSetData,
     ProfilingOutput,
 )
+
+if TYPE_CHECKING:
+    from intugle.analysis.models import DataSet
 
 
 class Adapter(ABC):
@@ -30,7 +33,7 @@ class Adapter(ABC):
         ...
 
     @abstractmethod
-    def execute():
+    def execute(self, query: str):
         raise NotImplementedError()
     
     @abstractmethod
@@ -39,3 +42,7 @@ class Adapter(ABC):
     
     def get_details(self, _: DataSetData):
         return None
+
+    @abstractmethod
+    def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
+        raise NotImplementedError()

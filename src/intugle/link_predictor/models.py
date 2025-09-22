@@ -1,9 +1,14 @@
-from typing import List
+from typing import List, Optional
 
 from pydantic import BaseModel
 
 from intugle.common.exception import errors
-from intugle.models.resources.relationship import Relationship, RelationshipTable, RelationshipType
+from intugle.models.resources.relationship import (
+    Relationship,
+    RelationshipProfilingMetrics,
+    RelationshipTable,
+    RelationshipType,
+)
 
 
 class PredictedLink(BaseModel):
@@ -15,17 +20,28 @@ class PredictedLink(BaseModel):
     from_column: str
     to_dataset: str
     to_column: str
+    intersect_count: Optional[int] = None
+    intersect_ratio_col1: Optional[float] = None
+    intersect_ratio_col2: Optional[float] = None
+    accuracy: Optional[float] = None
 
     @property
     def relationship(self) -> Relationship:
         source = RelationshipTable(table=self.from_dataset, column=self.from_column)
         target = RelationshipTable(table=self.to_dataset, column=self.to_column)
+        profiling_metrics = RelationshipProfilingMetrics(
+            intersect_count=self.intersect_count,
+            intersect_ratio_col1=self.intersect_ratio_col1,
+            intersect_ratio_col2=self.intersect_ratio_col2,
+            accuracy=self.accuracy,
+        )
         relationship = Relationship(
             name=f"{self.from_dataset}-{self.to_dataset}",
             description="",
             source=source,
             target=target,
             type=RelationshipType.ONE_TO_MANY,
+            profiling_metrics=profiling_metrics,
         )
         return relationship
     

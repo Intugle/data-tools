@@ -242,6 +242,19 @@ class DuckdbAdapter(Adapter):
         data = df.to_dict(orient="records")
         return data
 
+    def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
+        table1_name = table1.name
+        table2_name = table2.name
+        query = f"""
+        SELECT COUNT(*) as intersect_count FROM (
+            SELECT DISTINCT "{column1_name}" FROM "{table1_name}" WHERE "{column1_name}" IS NOT NULL
+            INTERSECT
+            SELECT DISTINCT "{column2_name}" FROM "{table2_name}" WHERE "{column2_name}" IS NOT NULL
+        ) as t
+        """
+        result = self.execute(query)
+        return result[0]['intersect_count']
+
     def get_details(self, data: DuckdbConfig):
         data = self.check_data(data)
         return data.model_dump()
