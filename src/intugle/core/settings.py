@@ -67,17 +67,12 @@ class Settings(BaseSettings):
     # LP
     HALLUCINATIONS_MAX_RETRY: int = 2
     UNIQUENESS_THRESHOLD: float = 0.9
+    INTERSECT_RATIO_THRESHOLD: float = 0.9
 
     # DATETIME
     DATE_TIME_FORMAT_LIMIT: int = 25
     REMOVE_DATETIME_LP: bool = True
 
-    model_config = SettingsConfigDict(
-        env_file=f"{BASE_PATH}/.env",
-        env_file_encoding="utf-8",
-        extra="allow",
-        case_sensitive=True,
-    )
     L2_SAMPLE_LIMIT: int = 10
 
     # LLM CONFIGS
@@ -85,13 +80,6 @@ class Settings(BaseSettings):
     LLM_SAMPLE_LIMIT: int = 15
     STRATA_SAMPLE_LIMIT: int = 4
 
-    # LP
-    HALLUCINATIONS_MAX_RETRY: int = 2
-    UNIQUENESS_THRESHOLD: float = 0.9
-
-    # DATETIME
-    DATE_TIME_FORMAT_LIMIT: int = 25
-    REMOVE_DATETIME_LP: bool = True
 
     # Adapter
     POSTGRES_USER: Optional[str] = None
@@ -107,6 +95,13 @@ class Settings(BaseSettings):
     QDRANT_API_KEY: Optional[str] = None
     EMBEDDING_MODEL_NAME: str = "openai:ada"
     TOKENIZER_MODEL_NAME: str = "cl100k_base"
+
+    model_config = SettingsConfigDict(
+        env_file=f"{BASE_PATH}/.env",
+        env_file_encoding="utf-8",
+        extra="allow",
+        case_sensitive=True,
+    )
 
 
 @lru_cache

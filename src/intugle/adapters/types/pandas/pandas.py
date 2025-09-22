@@ -1,6 +1,5 @@
 import time
-
-from typing import Any, Optional
+from typing import Any, Optional, TYPE_CHECKING
 
 import numpy as np
 import pandas as pd
@@ -14,6 +13,9 @@ from intugle.adapters.models import (
 )
 from intugle.adapters.utils import convert_to_native
 from intugle.core.utilities.processing import string_standardization
+
+if TYPE_CHECKING:
+    from intugle.analysis.models import DataSet
 
 
 class PandasAdapter(Adapter):
@@ -151,11 +153,26 @@ class PandasAdapter(Adapter):
         ...
         # duckdb.sql(f"CREATE TABLE {table_name} AS SELECT * FROM data")
     
-    def execute():
-        ...
+    def execute(self, query: str):
+        raise NotImplementedError("Execute is not supported for PandasAdapter yet.")
     
     def to_df(self, data):
         return data
+
+    def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
+        df1 = table1.data
+        df2 = table2.data
+        
+        if not isinstance(df1, pd.DataFrame) or not isinstance(df2, pd.DataFrame):
+            raise TypeError("Data for intersect_count must be pandas DataFrames for PandasAdapter.")
+
+        col1_unique = df1[column1_name].dropna().unique()
+        col2_unique = df2[column2_name].dropna().unique()
+
+        # Using numpy's intersect1d for performance with large arrays
+        intersection = np.intersect1d(col1_unique, col2_unique, assume_unique=True)
+        
+        return len(intersection)
 
 
 def can_handle_pandas(data: Any) -> bool:

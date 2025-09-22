@@ -57,11 +57,11 @@ class KnowledgeBuilder:
             dataset.identify_keys(save=True)
         console.print("Profiling and key identification complete.", style="bold green")
 
-    def predict_links(self):
+    def predict_links(self, force_recreate: bool = False):
         """Run link prediction across all datasets."""
         console.print("Starting link prediction stage...", style="yellow")
         self.link_predictor = LinkPredictor(list(self.datasets.values()))
-        self.link_predictor.predict(save=True)
+        self.link_predictor.predict(save=True, force_recreate=force_recreate)
         self.links: list[PredictedLink] = self.link_predictor.links
         console.print("Link prediction complete.", style="bold green")
 

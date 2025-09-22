@@ -23,8 +23,10 @@ def mock_predict_for_pair():
                 from_column="id",
                 to_dataset="orders",
                 to_column="customer_id",
-                confidence=0.99,
-                notes="Mocked link",
+                intersect_count=1,
+                intersect_ratio_col1=1.0,
+                intersect_ratio_col2=1.0,
+                accuracy=1.0,
             )
         ],
     ) as mock:
@@ -153,3 +155,129 @@ def test_predictor_end_to_end_complex():
         for link in results.links
     )
     assert link2_found, "Expected link between customers.id and events.user_id not found"
+
+    # Verify that intersection metrics are populated
+    for link in results.links:
+        assert link.intersect_count is not None
+        assert link.intersect_count > 0
+        assert link.intersect_ratio_col1 is not None
+        assert 0 <= link.intersect_ratio_col1 <= 1
+        assert link.intersect_ratio_col2 is not None
+        assert 0 <= link.intersect_ratio_col2 <= 1
+        assert link.accuracy is not None
+        assert 0 <= link.accuracy <= 1
+
+
+def test_predictor_save_and_load_yaml(tmp_path):
+    """
+    Tests that the LinkPredictor can correctly save its predicted links to a YAML
+    file and then load them back, preserving all data including intersection metrics.
+    """
+    # 1. Prepare a LinkPredictor with some dummy data and predicted links
+    customers_df = pd.DataFrame({"id": [1, 2, 3]})
+    orders_df = pd.DataFrame({"order_id": [101, 102], "customer_id": [1, 3]})
+    predictor = LinkPredictor({"customers": customers_df, "orders": orders_df})
+
+    original_links = [
+        PredictedLink(
+            from_dataset="customers",
+            from_column="id",
+            to_dataset="orders",
+            to_column="customer_id",
+            intersect_count=2,
+            intersect_ratio_col1=0.66,
+            intersect_ratio_col2=1.0,
+            accuracy=1.0,
+        ),
+        PredictedLink(
+            from_dataset="users",
+            from_column="user_id",
+            to_dataset="events",
+            to_column="user_id",
+            intersect_count=100,
+            intersect_ratio_col1=0.9,
+            intersect_ratio_col2=0.85,
+            accuracy=0.9,
+        ),
+    ]
+    predictor.links = original_links
+
+    # 2. Save the links to a temporary YAML file
+    temp_yaml_file = tmp_path / "relationships.yml"
+    predictor.save_yaml(temp_yaml_file)
+
+    # 3. Create a new predictor and load the links from the file
+    new_predictor = LinkPredictor({"customers": customers_df, "orders": orders_df})
+    new_predictor.load_from_yaml(temp_yaml_file)
+
+    # 4. Assert that the loaded links are identical to the original ones
+    assert len(new_predictor.links) == len(original_links)
+    for original, loaded in zip(original_links, new_predictor.links):
+        assert original == loaded
+
+
+def test_predictor_end_to_end_duckdb():
+    """
+    Tests the LinkPredictor end-to-end with the DuckDB adapter,
+    using remote CSV files as data sources.
+    """
+    def generate_config(table_name: str) -> str:
+        """Append the base URL to the table name."""
+        return {
+            "path": f"https://raw.githubusercontent.com/Intugle/data-tools/refs/heads/main/sample_data/healthcare/{table_name}.csv",
+            "type": "csv",
+        }
+
+    table_names = [
+        "allergies",
+        "patients",
+        "claims",
+    ]
+
+    datasets = {table: generate_config(table) for table in table_names}
+
+    # 2. Initialize the predictor
+    predictor = LinkPredictor(datasets)
+
+    # 3. Run the prediction
+    results = predictor.predict(force_recreate=True)
+
+    # 4. Assert that the correct links were found
+    assert len(results.links) >= 2, "Expected at least three links to be found"
+
+    breakpoint()
+    # Check for the link between patients and allergies
+    link1_found = any(
+        link.from_dataset == "patients" and link.from_column == "id" and
+        link.to_dataset == "allergies" and link.to_column == "patient"
+        for link in results.links
+    ) or any(
+        link.to_dataset == "patients" and link.to_column == "id" and
+        link.from_dataset == "allergies" and link.from_column == "patient"
+        for link in results.links
+    ) 
+    
+    assert link1_found, "Expected link between patients.id and allergies.patient not found"
+
+    # Check for the link between patients and claims
+    link3_found = any(
+        link.from_dataset == "patients" and link.from_column == "id" and
+        link.to_dataset == "claims" and link.to_column == "patientid"
+        for link in results.links
+    ) or any(
+        link.to_dataset == "patients" and link.to_column == "id" and
+        link.from_dataset == "claims" and link.from_column == "patientid"
+        for link in results.links
+    )
+    assert link3_found, "Expected link between patients.id and claims.patientid not found"
+
+    # Verify that intersection metrics are populated
+    for link in results.links:
+        assert link.intersect_count is not None
+        assert link.intersect_count > 0
+        assert link.intersect_ratio_col1 is not None
+        assert 0 <= link.intersect_ratio_col1 <= 1
+        assert link.intersect_ratio_col2 is not None
+        assert 0 <= link.intersect_ratio_col2 <= 1
+        assert link.accuracy is not None
+        assert 0 <= link.accuracy <= 1
