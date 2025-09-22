@@ -245,7 +245,6 @@ def test_predictor_end_to_end_duckdb():
     # 4. Assert that the correct links were found
     assert len(results.links) >= 2, "Expected at least three links to be found"
 
-    breakpoint()
     # Check for the link between patients and allergies
     link1_found = any(
         link.from_dataset == "patients" and link.from_column == "id" and
