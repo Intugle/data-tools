@@ -23,10 +23,14 @@ A semantic layer is an intelligent knowledge graph of your data. It connects tab
 - **Create a semantic intelligence layer** : Build a unified model (YAML) of your data and relationships.
 - **Build unified data products** : Generate reusable SQL queries powered by the semantic layer.
 
+Before you start, make sure you install the **Intugle Data Tools**:
+---
+type: code
+---
+%pip install intugle
 ---
 type: markdown
 ---
-
 ## 1. LLM Configuration
 
 Before running the project, you need to configure a Large Language Model (LLM). This is used for tasks like generating business glossaries and predicting links between tables. For the semantic search feature, you will also need to set up Qdrant and provide an OpenAI API key. For detailed setup instructions, please refer to the [README.md](README.md) file.
@@ -48,11 +52,9 @@ export LLM_PROVIDER="openai:gpt-3.5-turbo"
 export OPENAI_API_KEY="your-openai-api-key"
 ```
 Alternatively, you can set them in the notebook like this:
-
 ---
 type: code
 ---
-
 import os
 
 os.environ["LLM_PROVIDER"] = "openai:gpt-3.5-turbo"
@@ -69,8 +71,6 @@ os.environ["EMBEDDING_MODEL_NAME"] = "azure_openai:ada"
 os.environ["AZURE_OPENAI_API_KEY"] = "your-azure-openai-api-key"
 os.environ["AZURE_OPENAI_ENDPOINT"] = "your-azure-openai-endpoint"
 os.environ["OPENAI_API_VERSION"] = "your-openai-api-version"
-
-
 
 ---
 type: markdown
@@ -152,8 +152,8 @@ You can access a specific dataset by its name from the `kb.datasets` dictionary:
 ---
 type: code
 ---
-allergies_dataset = kb.datasets['patients']
-allergies_dataset.profiling_df
+patients_dataset = kb.datasets['patients']
+patients_dataset.profiling_df
 ---
 type: markdown
 ---
@@ -173,11 +173,12 @@ kb.links
 ---
 type: markdown
 ---
-You can also visualize these relationships as a graph:
+You can also visualize these relationships as a graph. In case you run into an error, make sure you install/upgrade your ipykernel package:
+> %pip install --upgrade ipykernel
 ---
 type: code
 ---
-kb.visualize()
+kb.visualize()  # To visualize the relationships as a graph
 ---
 type: markdown
 ---
@@ -200,7 +201,7 @@ Once you have built the knowledge base, you can use the `search` method to perfo
 type: code
 ---
 # Perform a semantic search
-search_results = kb.search("patient allergies")
+search_results = kb.search("reason for hospital visit")
 
 # View the search results
 search_results
@@ -217,7 +218,7 @@ Let's define the model for the data product we want to build:
 ---
 type: code
 ---
-etl = {
+data_product_config = {
   "name": "top_patients_by_claim_count",
   "fields": [
     {
@@ -259,7 +260,7 @@ from intugle.dp_builder import DataProductBuilder
 dp_builder = DataProductBuilder()
 
 # Generate the data product
-data_product = dp_builder.build(etl)
+data_product = dp_builder.build(data_product_config)
 
 data_product.to_df()
 ---
@@ -275,7 +276,6 @@ data_product.sql_query
 ---
 type: markdown
 ---
-
 ## Conclusion
 
 You've learned how to:
