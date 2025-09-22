@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 log = logging.getLogger(__name__)
 
 
-class KnowledgeBuilder:
+class SemanticModel:
     def __init__(self, data_input: Dict[str, Any] | List[DataSet], domain: str = ""):
         self.datasets: Dict[str, DataSet] = {}
         self.links: list[PredictedLink] = []

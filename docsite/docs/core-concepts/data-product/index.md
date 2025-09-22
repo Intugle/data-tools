@@ -3,15 +3,15 @@ sidebar_position: 1
 title: Overview
 ---
 
-# Data Product Builder
+# Data Product
 
-The `DataProductBuilder` is the component that activates your semantic layer, turning it into a powerful engine for creating unified data products. It acts as the bridge between a high-level data request and a tangible, queryable `DataSet` object.
+The `DataProduct` is the component that activates your semantic layer, turning it into a powerful engine for creating unified data products. It acts as the bridge between a high-level data request and a tangible, queryable `DataSet` object.
 
-While the `KnowledgeBuilder` is used to *create* the semantic intelligence, the `DataProductBuilder` is used to *consume* it.
+While the `SemanticModel` is used to *create* the semantic intelligence, the `DataProduct` is used to *consume* it.
 
 ## Overview
 
-The primary role of the `DataProductBuilder` is to abstract away the complexity of writing SQL queries across multiple tables. It takes a declarative **product specification** as input, which specifies what data you need, and leverages the manifest (the semantic layer) to figure out how to get it.
+The primary role of the `DataProduct` is to abstract away the complexity of writing SQL queries across multiple tables. It takes a declarative **product specification** as input, which specifies what data you need, and leverages the manifest (the semantic layer) to figure out how to get it.
 
 Its key responsibilities are:
 
@@ -22,14 +22,14 @@ Its key responsibilities are:
 
 ## The Product Specification
 
-The primary input for the `DataProductBuilder` is a product specification, which you define as a Python dictionary. This model declaratively defines the structure of your desired data product.
+The primary input for the `DataProduct` is a product specification, which you define as a Python dictionary. This model declaratively defines the structure of your desired data product.
 
 ## Usage Example
 
-Using the `DataProductBuilder` is straightforward. Once the `KnowledgeBuilder` has successfully built the semantic layer, you can immediately start creating data products.
+Using the `DataProduct` is straightforward. Once the `SemanticModel` has successfully built the semantic layer, you can immediately start creating data products.
 
 ```python
-from intugle import DataProductBuilder
+from intugle import DataProduct
 
 # 1. Define the product specification for your data product
 product_spec = {
@@ -62,12 +62,12 @@ product_spec = {
   }
 }
 
-# 2. Initialize the DataProductBuilder
+# 2. Initialize the DataProduct
 # It automatically loads the manifest from the current directory
-dp_builder = DataProductBuilder()
+dp = DataProduct()
 
 # 3. Build the data product
-data_product = dp_builder.build(product_spec)
+data_product = dp.build(product_spec)
 
 # 4. Access the results
 # View the data as a Pandas DataFrame
@@ -77,7 +77,7 @@ print(data_product.to_df())
 print(data_product.sql_query)
 ```
 
-This workflow allows you to rapidly prototype and generate complex, unified datasets by simply describing what you need, letting the `DataProductBuilder` handle the underlying SQL complexity.
+This workflow allows you to rapidly prototype and generate complex, unified datasets by simply describing what you need, letting the `DataProduct` handle the underlying SQL complexity.
 
 For a detailed breakdown of all capabilities with more examples, please see the following pages:
 

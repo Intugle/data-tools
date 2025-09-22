@@ -5,7 +5,7 @@ title: DataSet
 
 # DataSet
 
-The `DataSet` class is the heart of the analysis pipeline. It acts as a powerful, in-memory container for a single data source, holding the raw data and all the rich metadata the `KnowledgeBuilder`'s workflow generates about it.
+The `DataSet` class is the heart of the semantic model pipeline. It acts as a powerful, in-memory container for a single data source, holding the raw data and all the rich metadata the `SemanticModel`'s workflow generates about it.
 
 ## Overview
 
@@ -52,8 +52,8 @@ The library organizes metadata using Pydantic models, but you can access it thro
 #### Example of accessing metadata
 
 ```python
-# Assuming 'kb' is a built KnowledgeBuilder instance
-customers_dataset = kb.datasets['customers']
+# Assuming 'sm' is a built SemanticModel instance
+customers_dataset = sm.datasets['customers']
 
 # Access table-level metadata
 print(f"Table Name: {customers_dataset.source_table_model.name}")
@@ -76,9 +76,9 @@ if metrics:
 
 The `DataSet` object avoids redundant work. When you initialize a `DataSet`, it automatically checks for a corresponding `.yml` file. If it finds one, it validates that the source data file hasn't changed since the last run. If the data is fresh, it loads the saved metadata, saving significant processing time.
 
-### Analysis stage functions
+### Semantic Model Stage Functions
 
-You can run the analysis pipeline step-by-step for more granular control. Each of these methods includes a `save=True` option to persist the results of that specific stage.
+You can run the semantic model pipeline step-by-step for more granular control. Each of these methods includes a `save=True` option to persist the results of that specific stage.
 
 :::caution Naming Convention
 The `name` you assign to a `DataSet` is used as a key and file name throughout the system. To avoid errors, **dataset names cannot contain whitespaces**. Use underscores (`_`) instead.

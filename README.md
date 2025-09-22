@@ -106,11 +106,11 @@ For a detailed, hands-on introduction to the project, please see our quickstart 
 
 These datasets will take you through the following steps:
 
-*   **Building a Knowledge Base:** Use the `KnowledgeBuilder` to automatically profile your data, generate a business glossary, and predict links between tables.
+*   **Building a Semantic Model:** Use the `SemanticModel` to automatically profile your data, generate a business glossary, and predict links between tables.
 *   **Accessing Enriched Metadata:** Learn how to access the profiling results and business glossary for each dataset.
 *   **Visualizing Relationships:** Visualize the predicted links between your tables.
 *   **Generating Data Products:** Use the semantic layer to generate data products and retrieve data.
-*   **Searching the Knowledge Base:** Use semantic search to find relevant columns in your datasets using natural language.
+*   **Searching the Semantic Model:** Use semantic search to find relevant columns in your datasets using natural language.
 
 ## Documentation
 
@@ -118,10 +118,10 @@ For more detailed information, advanced usage, and tutorials, please refer to ou
 
 ## Usage
 
-The core workflow of the project involves using the `KnowledgeBuilder` to build a semantic layer, and then using the `DataProductBuilder` to generate data products from that layer.
+The core workflow of the project involves using the `SemanticModel` to build a semantic layer, and then using the `DataProduct` to generate data products from that layer.
 
 ```python
-from intugle import KnowledgeBuilder, DataProductBuilder
+from intugle import SemanticModel, DataProduct
 
 # Define your datasets
 datasets = {
@@ -131,12 +131,12 @@ datasets = {
     # ... add other datasets
 }
 
-# Build the knowledge base
-kb = KnowledgeBuilder(datasets, domain="Healthcare")
-kb.build()
+# Build the semantic model
+sm = SemanticModel(datasets, domain="Healthcare")
+sm.build()
 
-# Create a DataProductBuilder
-dp_builder = DataProductBuilder()
+# Create a DataProduct
+dp = DataProduct()
 
 # Define an ETL model
 etl = {
@@ -170,7 +170,7 @@ etl = {
 }
 
 # Generate the data product
-data_product = dp_builder.build(etl)
+data_product = dp.build(etl)
 
 # View the data product as a DataFrame
 print(data_product.to_df())
@@ -219,10 +219,10 @@ export EMBEDDING_MODEL_NAME="azure_openai:ada"
 
 #### Usage
 
-Once you have built the knowledge base, you can use the `search` method to perform a semantic search. The search function returns a pandas DataFrame containing the search results, including the column\'s profiling metrics, category, table name, and table glossary.
+Once you have built the semantic model, you can use the `search` method to perform a semantic search. The search function returns a pandas DataFrame containing the search results, including the column\'s profiling metrics, category, table name, and table glossary.
 
 ```python
-from intugle import KnowledgeBuilder
+from intugle import SemanticModel
 
 # Define your datasets
 datasets = {
@@ -232,11 +232,11 @@ datasets = {
     # ... add other datasets
 }
 
-# Build the knowledge base
-kb = KnowledgeBuilder(datasets, domain="Healthcare")
-kb.build()
+# Build the semantic model
+sm = SemanticModel(datasets, domain="Healthcare")
+sm.build()
 # Perform a semantic search
-search_results = kb.search("reason for hospital visit")
+search_results = sm.search("reason for hospital visit")
 
 # View the search results
 print(search_results)

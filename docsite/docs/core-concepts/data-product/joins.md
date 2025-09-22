@@ -7,11 +7,11 @@ title: Joins
 
 > All examples on this and subsequent pages use the sample [healthcare dataset](https://github.com/Intugle/data-tools/tree/main/sample_data/healthcare) available in the project repository.
 
-One of the most powerful features of the `DataProductBuilder` is its ability to automatically handle joins between tables. You don't need to write explicit `JOIN` clauses; the builder infers the required joins based on the fields you select and the relationships defined in the semantic layer.
+One of the most powerful features of the `DataProduct` is its ability to automatically handle joins between tables. You don't need to write explicit `JOIN` clauses; the builder infers the required joins based on the fields you select and the relationships defined in the semantic layer.
 
 ## Implicit Joins
 
-When you select fields from multiple tables in your `product_spec`, the `DataProductBuilder` automatically finds the shortest, most logical path to connect them. It uses the relationships discovered by the `KnowledgeBuilder` to construct the necessary `JOIN` clauses.
+When you select fields from multiple tables in your `product_spec`, the `DataProduct` automatically finds the shortest, most logical path to connect them. It uses the relationships discovered by the `SemanticModel` to construct the necessary `JOIN` clauses.
 
 ### Syntax
 
@@ -45,7 +45,7 @@ product_spec = {
 
 #### Generated SQL
 
-The `DataProductBuilder` inspects the semantic layer and finds that `patients.id` is linked to `conditions.patient`. It then generates the appropriate `JOIN` clause automatically.
+The `DataProduct` inspects the semantic layer and finds that `patients.id` is linked to `conditions.patient`. It then generates the appropriate `JOIN` clause automatically.
 
 ```sql
 SELECT

@@ -52,7 +52,7 @@ LIMIT 10
 
 ## Joining and Filtering Across Tables
 
-The real power of the `DataProductBuilder` becomes apparent when you combine joins with filters that span multiple tables.
+The real power of the `DataProduct` becomes apparent when you combine joins with filters that span multiple tables.
 
 ### Example
 

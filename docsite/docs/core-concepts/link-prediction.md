@@ -9,15 +9,15 @@ Link prediction is one of the most powerful features of the Intugle Data Tools l
 
 ## The LinkPredictor class
 
-The core part responsible for this process is the `LinkPredictor`. While the `KnowledgeBuilder` manages this process for you, you can also use the `LinkPredictor` directly for more granular control.
+The core part responsible for this process is the `LinkPredictor`. While the `SemanticModel` manages this process for you, you can also use the `LinkPredictor` directly for more granular control.
 
 ### Accessing the LinkPredictor
 
-After running the `predict_links()` or `build()` method on a `KnowledgeBuilder` instance, you can access the underlying `LinkPredictor` instance via the `link_predictor` attribute.
+After running the `predict_links()` or `build()` method on a `SemanticModel` instance, you can access the underlying `LinkPredictor` instance via the `link_predictor` attribute.
 
 ```python
 # After running the pipeline...
-predictor_instance = kb.link_predictor
+predictor_instance = sm.link_predictor
 
 # Now you can use all the methods of the LinkPredictor
 links_list = predictor_instance.links

@@ -15,7 +15,7 @@ This workflow uses the capability of MCP servers to expose **prompts** to an LLM
 
 ## 1. Setting up the MCP Server
 
-Once you have built your semantic layer using the `KnowledgeBuilder`, you can easily expose it as a set of tools for an AI assistant by starting the built-in MCP server.
+Once you have built your semantic layer using the `SemanticModel`, you can easily expose it as a set of tools for an AI assistant by starting the built-in MCP server.
 
 ### Starting the Server
 

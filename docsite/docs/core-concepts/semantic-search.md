@@ -11,7 +11,7 @@ Semantic search transforms how you find and explore your data. Instead of relyin
 
 The semantic search capability is built on a foundation of vector embeddings and a specialized vector database. Here’s a high-level overview of the process:
 
-1.  **Indexing**: After the `KnowledgeBuilder` profiles your data and generates a business glossary, it creates meaningful text from your metadata (column names, descriptions, and tags).
+1.  **Indexing**: After the `SemanticModel` profiles your data and generates a business glossary, it creates meaningful text from your metadata (column names, descriptions, and tags).
 2.  **Vectorization**: This text is then converted into numerical representations—called vector embeddings—using a sophisticated embedding model. These embeddings capture the semantic meaning of the metadata.
 3.  **Storage**: The generated embeddings are stored in a **Qdrant** vector database, creating an indexed, searchable knowledge base of all your columns.
 4.  **Querying**: When you perform a search, your natural language query is also converted into a vector embedding.
@@ -67,14 +67,14 @@ export AZURE_OPENAI_ENDPOINT="your-azure-openai-endpoint"
 export OPENAI_API_VERSION="your-openai-api-version"
 ```
 
-## Usage with KnowledgeBuilder
+## Usage with SemanticModel
 
-The simplest way to use semantic search is through the `KnowledgeBuilder` after the knowledge base has been built.
+The simplest way to use semantic search is through the `SemanticModel` after the semantic model has been built.
 
-The `kb.build()` method generates all the rich metadata that the search engine needs. The first time you run `kb.search()`, this metadata is automatically vectorized and indexed in your Qdrant instance.
+The `sm.build()` method generates all the rich metadata that the search engine needs. The first time you run `sm.search()`, this metadata is automatically vectorized and indexed in your Qdrant instance.
 
 ```python
-from intugle import KnowledgeBuilder
+from intugle import SemanticModel
 
 # Define your datasets
 datasets = {
@@ -83,12 +83,12 @@ datasets = {
     # ... add other datasets
 }
 
-# Initialize and build the knowledge base
-kb = KnowledgeBuilder(datasets, domain="Healthcare")
-kb.build()
+# Initialize and build the semantic model
+sm = SemanticModel(datasets, domain="Healthcare")
+sm.build()
 
 # Perform a semantic search
-search_results = kb.search("reason for hospital visit")
+search_results = sm.search("reason for hospital visit")
 
 # View the search results
 print(search_results)
@@ -96,7 +96,7 @@ print(search_results)
 
 ## Standalone Usage
 
-For more granular control, you can use the `SemanticSearch` class directly. This is useful if you want to build or query the search index without running the entire `KnowledgeBuilder` pipeline, assuming the metadata `.yml` files already exist.
+For more granular control, you can use the `SemanticSearch` class directly. This is useful if you want to build or query the search index without running the entire `SemanticModel` pipeline, assuming the metadata `.yml` files already exist.
 
 ```python
 from intugle.semantic_search import SemanticSearch

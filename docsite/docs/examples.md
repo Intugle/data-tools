@@ -17,8 +17,8 @@ For a detailed, hands-on introduction to the project, please see our quickstart 
 
 These notebooks will guide you through the following key steps:
 
-*   **Building a Knowledge Base:** Use the `KnowledgeBuilder` to automatically profile your data, generate a business glossary, and predict links between tables.
+*   **Building a Semantic Model:** Use the `SemanticModel` to automatically profile your data, generate a business glossary, and predict links between tables.
 *   **Accessing Enriched Metadata:** Learn how to access the profiling results and business glossary for each dataset.
 *   **Visualizing Relationships:** Visualize the predicted links between your tables.
 *   **Generating Data Products:** Use the semantic layer to generate data products and retrieve data.
-*   **Searching the Knowledge Base:** Use semantic search to find relevant columns in your datasets using natural language.
+*   **Searching the Semantic Model:** Use semantic search to find relevant columns in your datasets using natural language.
