@@ -77,6 +77,11 @@ const config: Config = {
           position: 'left'
         },
         {
+          type: 'docsVersionDropdown',
+          versions: ['current', '0.1.0'],
+          position: 'right'
+        },
+        {
           href: 'https://github.com/Intugle/data-tools',
           label: 'GitHub',
           position: 'right',
