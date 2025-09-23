@@ -28,6 +28,10 @@ By running these searches in parallel and intelligently combining their results,
 
 ## Prerequisites
 
+:::caution Current Limitation
+Currently, the semantic search feature requires an OpenAI or Azure OpenAI key as it is tightly coupled with Ada embeddings. We are actively working on decoupling this.
+:::
+
 To use the semantic search feature, you must have a running Qdrant instance and provide API credentials for an embedding model.
 
 ### 1. Run Qdrant

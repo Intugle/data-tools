@@ -123,7 +123,7 @@ For more detailed information, advanced usage, and tutorials, please refer to ou
 The core workflow of the project involves using the `SemanticModel` to build a semantic layer, and then using the `DataProduct` to generate data products from that layer.
 
 ```python
-from intugle import SemanticModel, DataProduct
+from intugle import SemanticModel
 
 # Define your datasets
 datasets = {
@@ -137,8 +137,20 @@ datasets = {
 sm = SemanticModel(datasets, domain="Healthcare")
 sm.build()
 
-# Create a DataProduct
-dp = DataProduct()
+# Access the profiling results
+print(sm.profiling_df.head())
+
+# Access the discovered links
+print(sm.links_df)
+```
+For detailed code examples and a complete walkthrough, please see our [quickstart notebooks](#quickstart).
+
+### Data Product
+
+Once the semantic model is built, you can use the `DataProduct` class to generate unified data products from the semantic layer.
+
+```python
+from intugle import DataProduct
 
 # Define an ETL model
 etl = {
@@ -171,14 +183,13 @@ etl = {
   }
 }
 
-# Generate the data product
+# Create a DataProduct and build it
+dp = DataProduct()
 data_product = dp.build(etl)
 
-# View the data product as a DataFrame/chat
+# View the data product as a DataFrame
 print(data_product.to_df())
 ```
-
-For detailed code examples and a complete walkthrough, please see the quickstart notebooks under the notebooks directory.
 
 ### Semantic Search
 
@@ -243,7 +254,7 @@ search_results = sm.search("reason for hospital visit")
 # View the search results
 print(search_results)
 ```
-For detailed code examples and a complete walkthrough, please see the quickstart notebooks under the notebooks directory.
+For detailed code examples and a complete walkthrough, please see our [quickstart notebooks](#quickstart).
 
 ## Community
 

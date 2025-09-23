@@ -15,10 +15,12 @@ For a detailed, hands-on introduction to the project, please see our quickstart 
 | **Sports Media**        | [`quickstart_sports_media.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_sports_media.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_sports_media.ipynb) |
 | **Databricks Unity Catalog [Health Care]** | [`quickstart_healthcare_databricks.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_healthcare_databricks.ipynb) | Databricks Notebook Only |
 
-These notebooks will guide you through the following key steps:
+These datasets will take you through the following steps:
 
-*   **Building a Semantic Model:** Use the `SemanticModel` to automatically profile your data, generate a business glossary, and predict links between tables.
-*   **Accessing Enriched Metadata:** Learn how to access the profiling results and business glossary for each dataset.
-*   **Visualizing Relationships:** Visualize the predicted links between your tables.
-*   **Generating Data Products:** Use the semantic layer to generate data products and retrieve data.
-*   **Searching the Semantic Model:** Use semantic search to find relevant columns in your datasets using natural language.
+*   **Generate Semantic Model** → The unified layer that transforms fragmented datasets, creating the foundation for connected intelligence.
+    *   **1.1 Profile and classify data** → Analyze your data sources to understand their structure, data types, and other characteristics.
+    *   **1.2 Discover links & relationships among data** → Reveal meaningful connections (PK & FK) across fragmented tables.
+    *   **1.3 Generate a business glossary** → Create business-friendly terms and use them to query data with context.
+    *   **1.4 Enable semantic search** → Intelligent search that understands meaning, not just keywords—making data more accessible across both technical and business users.
+    *   **1.5 Visualize semantic model**→ Get access to enriched metadata of the semantic layer in the form of YAML files and visualize in the form of graph
+*   **Build Unified Data Products** → Simply pick the attributes across your data tables, and let the toolkit auto-generate queries with all the required joins, transformations, and aggregations using the semantic layer. When executed, these queries produce reusable data products.

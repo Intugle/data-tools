@@ -39,9 +39,15 @@ If you installed Python using the official installer from python.org, you may al
 
 Before running the project, you need to configure a Large Language Model (LLM). The library uses the LLM for tasks like generating business glossaries and predicting links between tables.
 
+:::info
+
+Internally, Intugle uses LangChain's `init_chat_model` function to initialize the language model. This is why the `LLM_PROVIDER` format follows [LangChain's conventions](https://python.langchain.com/docs/integrations/chat/).
+
+:::
+
 You can configure the LLM by setting the following environment variables:
 
-*   `LLM_PROVIDER`: The LLM provider and model to use (for example, `openai:gpt-3.5-turbo`) following LangChain's [conventions](https://python.langchain.com/docs/integrations/chat/)
+*   `LLM_PROVIDER`: The LLM provider and model to use (for example, `openai:gpt-3.5-turbo`).
 *   `API_KEY`: Your API key for the LLM provider. The exact name of the variable may vary from provider to provider.
 
 Here's an example of how to set these variables in your environment:
