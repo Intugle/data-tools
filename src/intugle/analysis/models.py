@@ -3,7 +3,7 @@ import logging
 import os
 import uuid
 
-from typing import Dict, Optional, Self
+from typing import Dict, Optional
 
 import pandas as pd
 import yaml
@@ -102,7 +102,7 @@ class DataSet:
             log.error(e)
             ...
 
-    def profile_table(self) -> Self:
+    def profile_table(self) -> 'DataSet':
         """
         Profiles the table and stores the result in the 'results' dictionary.
         """
@@ -115,7 +115,7 @@ class DataSet:
         self.columns = {col.name: col for col in self.source_table_model.columns}
         return self
 
-    def profile_columns(self) -> Self:
+    def profile_columns(self) -> 'DataSet':
         """
         Profiles each column in the dataset and stores the results in the 'results' dictionary.
         This method relies on the 'table_profile' result to get the list of columns.
@@ -194,7 +194,7 @@ class DataSet:
             self.columns[col_l2.column_name].category = col_l2.datatype_l2
         return self
 
-    def identify_keys(self, save: bool = False) -> Self:
+    def identify_keys(self, save: bool = False) -> 'DataSet':
         """
         Identifies potential primary keys in the dataset based on column profiles.
         This method relies on the 'column_profiles' result.
@@ -235,7 +235,7 @@ class DataSet:
             self.save_yaml()
         return self
 
-    def profile(self, save: bool = False) -> Self:
+    def profile(self, save: bool = False) -> 'DataSet':
         """
         Profiles the dataset including table and columns and stores the result in the 'results' dictionary.
         This is a convenience method to run profiling on the raw dataframe.
@@ -245,7 +245,7 @@ class DataSet:
             self.save_yaml()
         return self
 
-    def identify_datatypes(self, save: bool = False) -> Self:
+    def identify_datatypes(self, save: bool = False) -> 'DataSet':
         """
         Identifies the data types for the dataset and stores the result in the 'results' dictionary.
         This is a convenience method to run data type identification on the raw dataframe.
@@ -255,7 +255,7 @@ class DataSet:
             self.save_yaml()
         return self
 
-    def generate_glossary(self, domain: str = "", save: bool = False) -> Self:
+    def generate_glossary(self, domain: str = "", save: bool = False) -> 'DataSet':
         """
         Generates a business glossary for the dataset and stores the result in the 'results' dictionary.
         This method relies on the 'column_datatypes_l1' results.
@@ -299,7 +299,7 @@ class DataSet:
             self.save_yaml()
         return self
 
-    def run(self, domain: str, save: bool = True) -> Self:
+    def run(self, domain: str, save: bool = True) -> 'DataSet':
         """Run all stages"""
 
         self.profile().identify_datatypes().identify_keys().generate_glossary(domain=domain)

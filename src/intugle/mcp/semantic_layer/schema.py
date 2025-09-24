@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class SQLDialect(StrEnum):
+class SQLDialect(str, Enum):
     POSTGRES = "postgresql"
     MSSQL = "mssql"
     SQLITE = "sqlite"

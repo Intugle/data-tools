@@ -116,36 +116,36 @@ class HybridDenseLateSearch:
             must=[models.FieldCondition(key="type", match=models.MatchValue(value="glossary"))]
         )
 
-        async with asyncio.TaskGroup() as tg:
-            task1 = tg.create_task(
-                self.__vector_search__(
-                    query_vector=dense_vector,
-                    using=f"{self.embeddings.model_name}-{EmbeddingsType.DENSE}",
-                    score_threshold=self.threshold_for_less_relevant_result,
-                    query_filter=filter_condition_column_tag,
-                )
-            )
-            task2 = tg.create_task(
-                self.__vector_search__(
-                    query_vector=late_vector,
-                    using=f"{self.embeddings.model_name}-{EmbeddingsType.LATE}",
-                    # score_threshold=self.threshold_for_less_relevant_result,
-                    query_filter=filter_condition_glossary,
-                )
-            )
+        task1_coro = self.__vector_search__(
+            query_vector=dense_vector,
+            using=f"{self.embeddings.model_name}-{EmbeddingsType.DENSE}",
+            score_threshold=self.threshold_for_less_relevant_result,
+            query_filter=filter_condition_column_tag,
+        )
+        task2_coro = self.__vector_search__(
+            query_vector=late_vector,
+            using=f"{self.embeddings.model_name}-{EmbeddingsType.LATE}",
+            # score_threshold=self.threshold_for_less_relevant_result,
+            query_filter=filter_condition_glossary,
+        )
+
+        task1_result, task2_result = await asyncio.gather(task1_coro, task2_coro, return_exceptions=True)
 
         try:
-            dense_embedding_result = task1.result()
+            if isinstance(task1_result, Exception):
+                raise task1_result
+            dense_embedding_result = task1_result
             dense_embedding_result = dense_embedding_result[["column_id", "score"]]
         except Exception as ex:
             log.error(ex)
             log.error(f"[*] Error while performing dense search \nReason: {ex}")
-            late_embedding_result_glossary = pd.DataFrame()
             dense_embedding_result = pd.DataFrame()
 
         try:
+            if isinstance(task2_result, Exception):
+                raise task2_result
             # Do a late embedding search across glossary
-            late_embedding_result_glossary = task2.result()
+            late_embedding_result_glossary = task2_result
             late_embedding_result_glossary = late_embedding_result_glossary[["column_id", "score"]]
         except Exception as ex:
             log.error(f"[*] Error while performing late search \nReason: {ex}")

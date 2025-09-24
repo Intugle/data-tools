@@ -120,22 +120,22 @@ class SemanticSearchCRUD:
         async def run():
             # Run tags col and glossary concurrenty
             try:
-                tasks = {}
-                async with asyncio.TaskGroup() as tg:
-                    for embedding in self.embeddings:
-                        task = tg.create_task(
-                            embedding.aencode(tags_and_columns_content, embeddings_types=[EmbeddingsType.DENSE])
-                        )
-                        tasks[(embedding, "tags_col")] = task
-                        task = tg.create_task(
-                            embedding.aencode(business_glossary_content, embeddings_types=[EmbeddingsType.LATE])
-                        )
-                        tasks[(embedding, "glossary")] = task
+                coroutines = []
+                embedding_map = []
+                for embedding in self.embeddings:
+                    coroutines.append(
+                        embedding.aencode(tags_and_columns_content, embeddings_types=[EmbeddingsType.DENSE])
+                    )
+                    embedding_map.append((embedding, "tags_col"))
+                    coroutines.append(
+                        embedding.aencode(business_glossary_content, embeddings_types=[EmbeddingsType.LATE])
+                    )
+                    embedding_map.append((embedding, "glossary"))
+
+                gathered_results = await asyncio.gather(*coroutines)
 
                 results = {"tags_col": {}, "glossary": {}}
-                for embedding_model, task in tasks.items():
-                    model, typ = embedding_model
-                    result = task.result()
+                for (model, typ), result in zip(embedding_map, gathered_results):
                     if typ == "tags_col":
                         results["tags_col"][model] = result
                     else:
