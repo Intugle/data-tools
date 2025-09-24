@@ -2,7 +2,7 @@ import asyncio
 import logging
 import sys
 
-from typing import Any, Dict, List, Literal, Mapping, Optional, Self
+from typing import Any, Dict, List, Literal, Mapping, Optional
 
 import numpy as np
 import qdrant_client.models as models
@@ -66,7 +66,7 @@ class AsyncQdrantService:
         self.client_config = client_config
         self._client = None
 
-    async def __aenter__(self) -> Self:
+    async def __aenter__(self) -> 'AsyncQdrantService':
         await self.create_collection()
         return self
 

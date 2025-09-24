@@ -3,7 +3,7 @@ import json
 import logging
 import os
 
-from typing import Any, Dict, List, Self
+from typing import Any, Dict, List
 
 import pandas as pd
 import yaml
@@ -157,7 +157,7 @@ class LinkPredictor:
         ]
         return pair_links
 
-    def predict(self, filename='__relationships__.yml', save: bool = False, force_recreate: bool = False) -> Self:
+    def predict(self, filename='__relationships__.yml', save: bool = False, force_recreate: bool = False) -> 'LinkPredictor':
         """
         Iterates through all unique pairs of datasets, predicts the links for
         each pair, and returns the aggregated results.

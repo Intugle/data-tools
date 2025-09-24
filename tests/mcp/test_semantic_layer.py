@@ -1,6 +1,6 @@
 import functools
 
-from enum import StrEnum
+from enum import Enum
 
 import pytest
 import pytest_asyncio
@@ -11,7 +11,7 @@ from mcp.client.streamable_http import streamablehttp_client
 URL = "http://127.0.0.1:8080/semantic_layer/mcp"
 
 
-class Tools(StrEnum):
+class Tools(str, Enum):
     GET_TABLES = "get_tables"
     GET_SCHEMA = "get_schema"
     EXECUTE_QUERY = "execute_query"

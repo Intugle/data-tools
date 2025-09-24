@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class RelevancyCategory(StrEnum):
+class RelevancyCategory(str, Enum):
     MOST_RELEVANT = "most-relevant"
     RELEVANT = "relevant"
     LESS_RELEVANT = "less-relevant"
@@ -13,7 +13,7 @@ class RelevancyCategory(StrEnum):
         return self.value
 
 
-class ScoreStrategy(StrEnum):
+class ScoreStrategy(str, Enum):
     MAX = "maximum"
     AVG = "weighted-avg"
 

@@ -1,6 +1,6 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class NodeType(StrEnum):
+class NodeType(str, Enum):
     MODEL = "model"
     RELATIONSHIP = "relationship"

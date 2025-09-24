@@ -1,4 +1,4 @@
-from enum import StrEnum
+from enum import Enum
 from typing import Optional
 
 from intugle.common.resources.base import BaseResource
@@ -18,7 +18,7 @@ class RelationshipProfilingMetrics(SchemaBase):
     accuracy: Optional[float] = None
 
 
-class RelationshipType(StrEnum):
+class RelationshipType(str, Enum):
     ONE_TO_ONE = "one_to_one"
     ONE_TO_MANY = "one_to_many"
     MANY_TO_ONE = "many_to_one"

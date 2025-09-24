@@ -1,4 +1,4 @@
-from enum import StrEnum
+from enum import Enum
 
 from pydantic import BaseModel, ConfigDict
 
@@ -13,7 +13,7 @@ class SchemaBase(BaseModel):
     )
     
 
-class NodeType(StrEnum):
+class NodeType(str, Enum):
     MODEL = "model"
     RELATIONSHIP = "relationship"
     FEWSHOT = "fewshot"
