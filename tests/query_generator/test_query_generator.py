@@ -37,8 +37,8 @@ def get_test_data():
         ),
     }
     outputs = {
-        "filter_sort": "SELECT sum(claims_transactions.amount) as `claim_amount` FROM `encounters` LEFT JOIN `patients` ON encounters.patient = patients.id LEFT JOIN `claims_transactions` ON claims_transactions.patientid = patients.id WHERE (patients.first IN '['aaa', 'bbb']') ORDER BY `encounters`.`code` DESC",  # noqa: E501
-        "with_different_filters_and_sort": "SELECT count(order_items.price) as `price` FROM `orders` LEFT JOIN `order_items` ON order_items.order_id = orders.order_id LEFT JOIN `products` ON order_items.product_id = products.product_id WHERE (products.product_id IN '['aaa', 'bbb']') ORDER BY `orders`.`order_id` DESC",  # noqa: E501
+        "filter_sort": '''SELECT sum(claims_transactions.amount) as "claim_amount" FROM "encounters" LEFT JOIN "patients" ON encounters.patient = patients.id LEFT JOIN "claims_transactions" ON claims_transactions.patientid = patients.id WHERE (patients.first IN '['aaa', 'bbb']') ORDER BY "encounters"."code" DESC''',  # noqa: E501
+        "with_different_filters_and_sort": '''SELECT count(order_items.price) as "price" FROM "orders" LEFT JOIN "order_items" ON order_items.order_id = orders.order_id LEFT JOIN "products" ON order_items.product_id = products.product_id WHERE (products.product_id IN '['aaa', 'bbb']') ORDER BY "orders"."order_id" DESC''',  # noqa: E501
     }
 
     for key in inputs:
@@ -55,4 +55,4 @@ def test_query_generator(etl, query):
     out_query = sql_generator.generate_query(etl)
     print(out_query)
 
-    # assert query == out_query
+    assert query == out_query

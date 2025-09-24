@@ -149,8 +149,8 @@ class LinkPredictor:
                 to_dataset=row["table2_name"],
                 to_column=row["column2_name"],
                 intersect_count=row.get("intersect_count"),
-                intersect_ratio_col1=row.get("intersect_ratio_col1"),
-                intersect_ratio_col2=row.get("intersect_ratio_col2"),
+                intersect_ratio_from_col=row.get("intersect_ratio_from_col"),
+                intersect_ratio_to_col=row.get("intersect_ratio_to_col"),
                 accuracy=row.get("accuracy"),
             )
             for _, row in llm_result.iterrows()
@@ -247,8 +247,8 @@ class LinkPredictor:
                 to_dataset=rel["target"]["table"],
                 to_column=rel["target"]["column"],
                 intersect_count=metrics.get("intersect_count"),
-                intersect_ratio_col1=metrics.get("intersect_ratio_col1"),
-                intersect_ratio_col2=metrics.get("intersect_ratio_col2"),
+                intersect_ratio_from_col=metrics.get("intersect_ratio_from_col"),
+                intersect_ratio_to_col=metrics.get("intersect_ratio_to_col"),
                 accuracy=metrics.get("accuracy"),
             )
             loaded_links.append(link)

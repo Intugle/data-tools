@@ -24,8 +24,8 @@ def mock_predict_for_pair():
                 to_dataset="orders",
                 to_column="customer_id",
                 intersect_count=1,
-                intersect_ratio_col1=1.0,
-                intersect_ratio_col2=1.0,
+                intersect_ratio_from_col=1.0,
+                intersect_ratio_to_col=1.0,
                 accuracy=1.0,
             )
         ],
@@ -160,10 +160,10 @@ def test_predictor_end_to_end_complex():
     for link in results.links:
         assert link.intersect_count is not None
         assert link.intersect_count > 0
-        assert link.intersect_ratio_col1 is not None
-        assert 0 <= link.intersect_ratio_col1 <= 1
-        assert link.intersect_ratio_col2 is not None
-        assert 0 <= link.intersect_ratio_col2 <= 1
+        assert link.intersect_ratio_from_col is not None
+        assert 0 <= link.intersect_ratio_from_col <= 1
+        assert link.intersect_ratio_to_col is not None
+        assert 0 <= link.intersect_ratio_to_col <= 1
         assert link.accuracy is not None
         assert 0 <= link.accuracy <= 1
 
@@ -185,8 +185,8 @@ def test_predictor_save_and_load_yaml(tmp_path):
             to_dataset="orders",
             to_column="customer_id",
             intersect_count=2,
-            intersect_ratio_col1=0.66,
-            intersect_ratio_col2=1.0,
+            intersect_ratio_from_col=0.66,
+            intersect_ratio_to_col=1.0,
             accuracy=1.0,
         ),
         PredictedLink(
@@ -195,8 +195,8 @@ def test_predictor_save_and_load_yaml(tmp_path):
             to_dataset="events",
             to_column="user_id",
             intersect_count=100,
-            intersect_ratio_col1=0.9,
-            intersect_ratio_col2=0.85,
+            intersect_ratio_from_col=0.9,
+            intersect_ratio_to_col=0.85,
             accuracy=0.9,
         ),
     ]
@@ -274,9 +274,9 @@ def test_predictor_end_to_end_duckdb():
     for link in results.links:
         assert link.intersect_count is not None
         assert link.intersect_count > 0
-        assert link.intersect_ratio_col1 is not None
-        assert 0 <= link.intersect_ratio_col1 <= 1
-        assert link.intersect_ratio_col2 is not None
-        assert 0 <= link.intersect_ratio_col2 <= 1
+        assert link.intersect_ratio_from_col is not None
+        assert 0 <= link.intersect_ratio_from_col <= 1
+        assert link.intersect_ratio_to_col is not None
+        assert 0 <= link.intersect_ratio_to_col <= 1
         assert link.accuracy is not None
         assert 0 <= link.accuracy <= 1
