@@ -13,6 +13,7 @@ For a detailed, hands-on introduction to the project, please see our quickstart 
 | **Tech Manufacturing**  | [`quickstart_tech_company.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_tech_company.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_tech_company.ipynb) |
 | **FMCG**                | [`quickstart_fmcg.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_fmcg.ipynb)             | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_fmcg.ipynb)             |
 | **Sports Media**        | [`quickstart_sports_media.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_sports_media.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_sports_media.ipynb) |
+| **Databricks Unity Catalog [Health Care]** | [`quickstart_healthcare_databricks.ipynb`](notebooks/quickstart_healthcare_databricks.ipynb) | Databricks Notebook Only |
 
 These notebooks will guide you through the following key steps:
 
