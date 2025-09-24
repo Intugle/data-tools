@@ -526,8 +526,8 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
                 final_error_msg_list = [error_msg]
             return {"error_msg": final_error_msg_list, "if_error": True}
 
-        intersect_ratio_col1 = intersect_count / count_distinct_col1 if count_distinct_col1 > 0 else 0
-        intersect_ratio_col2 = intersect_count / count_distinct_col2 if count_distinct_col2 > 0 else 0
+        intersect_ratio_from_col = intersect_count / count_distinct_col1 if count_distinct_col1 > 0 else 0
+        intersect_ratio_to_col = intersect_count / count_distinct_col2 if count_distinct_col2 > 0 else 0
 
         if intersect_count == 0:
             error_msg = f"The intersection between {column1_name} column in table {table1_name} with {column2_name} in table {table2_name} resulted in zero rows"
@@ -539,9 +539,9 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
             self.logs.append(error_msg)
             return {"error_msg": final_error_msg_list, "if_error": True}
 
-        elif max(intersect_ratio_col1, intersect_ratio_col2) < settings.INTERSECT_RATIO_THRESHOLD:
-            error_msg1 = f"Only {intersect_ratio_col1 * 100:.2f} percent of values in {column1_name} in table {table1_name} matched with {column2_name} in table {table2_name}. "
-            error_msg2 = f"Only {intersect_ratio_col2 * 100:.2f} percent of values in {column2_name} in table {table2_name} matched with {column1_name} in table {table1_name}."
+        elif max(intersect_ratio_from_col, intersect_ratio_to_col) < settings.INTERSECT_RATIO_THRESHOLD:
+            error_msg1 = f"Only {intersect_ratio_from_col * 100:.2f} percent of values in {column1_name} in table {table1_name} matched with {column2_name} in table {table2_name}. "
+            error_msg2 = f"Only {intersect_ratio_to_col * 100:.2f} percent of values in {column2_name} in table {table2_name} matched with {column1_name} in table {table1_name}."
             error_msg = error_msg1 + error_msg2
             try:
                 final_error_msg_list.append(error_msg)
@@ -557,9 +557,9 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
             return {
                 "if_error": False,
                 "intersect_count": intersect_count,
-                "intersect_ratio_col1": round(intersect_ratio_col1, 3),
-                "intersect_ratio_col2": round(intersect_ratio_col2, 3),
-                "accuracy": round(max(intersect_ratio_col1, intersect_ratio_col2), 3),
+                "intersect_ratio_from_col": round(intersect_ratio_from_col, 3),
+                "intersect_ratio_to_col": round(intersect_ratio_to_col, 3),
+                "accuracy": round(max(intersect_ratio_from_col, intersect_ratio_to_col), 3),
             }
 
     def link_check_router(self, state):
@@ -767,8 +767,8 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
 
         if potential_link and potential_link.get("table1") != "NA":
             potential_link["intersect_count"] = event.get("intersect_count")
-            potential_link["intersect_ratio_col1"] = event.get("intersect_ratio_col1")
-            potential_link["intersect_ratio_col2"] = event.get("intersect_ratio_col2")
+            potential_link["intersect_ratio_from_col"] = event.get("intersect_ratio_from_col")
+            potential_link["intersect_ratio_to_col"] = event.get("intersect_ratio_to_col")
             potential_link["accuracy"] = event.get("accuracy")
 
         final_output["links"] = potential_link

@@ -21,8 +21,8 @@ class PredictedLink(BaseModel):
     to_dataset: str
     to_column: str
     intersect_count: Optional[int] = None
-    intersect_ratio_col1: Optional[float] = None
-    intersect_ratio_col2: Optional[float] = None
+    intersect_ratio_from_col: Optional[float] = None
+    intersect_ratio_to_col: Optional[float] = None
     accuracy: Optional[float] = None
 
     @property
@@ -31,8 +31,8 @@ class PredictedLink(BaseModel):
         target = RelationshipTable(table=self.to_dataset, column=self.to_column)
         profiling_metrics = RelationshipProfilingMetrics(
             intersect_count=self.intersect_count,
-            intersect_ratio_col1=self.intersect_ratio_col1,
-            intersect_ratio_col2=self.intersect_ratio_col2,
+            intersect_ratio_from_col=self.intersect_ratio_from_col,
+            intersect_ratio_to_col=self.intersect_ratio_to_col,
             accuracy=self.accuracy,
         )
         relationship = Relationship(
