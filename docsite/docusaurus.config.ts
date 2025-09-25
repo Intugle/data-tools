@@ -46,6 +46,12 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/Intugle/data-tools/tree/main/docsite/',
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '1.0.0',
+            },
+          },
         },
         blog: false,
         theme: {
@@ -72,7 +78,8 @@ const config: Config = {
           label: 'Guide',
         },
         {
-          to: '/docs/examples',
+          type: 'doc',
+          docId: 'examples',
           label: 'Examples',
           position: 'left'
         },
