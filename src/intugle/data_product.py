@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from intugle.models.resources.model import Column
 
 
-class DataProductBuilder:
+class DataProduct:
     """Generates data products based on the manifest and ETL configurations."""
 
     def __init__(self, project_base: str = settings.PROJECT_BASE):

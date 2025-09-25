@@ -46,6 +46,12 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/Intugle/data-tools/tree/main/docsite/',
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '1.0.0',
+            },
+          },
         },
         blog: false,
         theme: {
@@ -57,7 +63,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/intugle-social-card.png',
     navbar: {
       title: 'Data Tools',
       logo: {
@@ -72,9 +78,15 @@ const config: Config = {
           label: 'Guide',
         },
         {
-          to: '/docs/examples',
+          type: 'doc',
+          docId: 'examples',
           label: 'Examples',
           position: 'left'
+        },
+        {
+          type: 'docsVersionDropdown',
+          versions: ['current', '0.1.0'],
+          position: 'right'
         },
         {
           href: 'https://github.com/Intugle/data-tools',

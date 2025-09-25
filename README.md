@@ -25,11 +25,11 @@
     </a> -->
 </p>
 
-*Transform Fragmented Data into Connected Semantic Layer*
+*Transform Fragmented Data into Connected Semantic Data Model*
 
 ## Overview
 
-Intugle’s GenAI-powered open-source Python library builds an intelligent semantic layer over your existing data systems. At its core, it discovers meaningful links and relationships across data assets — enriching them with profiles, classifications, and business glossaries. With this connected knowledge layer, you can enable semantic search and auto-generate queries to create unified data products, making data integration and exploration faster, more accurate, and far less manual.
+Intugle’s GenAI-powered open-source Python library builds a semantic data model over your existing data systems. At its core, it discovers meaningful links and relationships across data assets — enriching them with profiles, classifications, and business glossaries. With this connected knowledge layer, you can enable semantic search and auto-generate queries to create unified data products, making data integration and exploration faster, more accurate, and far less manual.
 
 ## Who is this for?
 
@@ -39,9 +39,9 @@ Intugle’s GenAI-powered open-source Python library builds an intelligent seman
 
 ## Features
 
-*   **Semantic Intelligence:** Transform raw, fragmented datasets into an intelligent semantic graph that captures entities, relationships, and context — the foundation for connected intelligence.
+*   **Semantic Data Model -** Transform raw, fragmented datasets into an intelligent semantic graph that captures entities, relationships, and context — the foundation for connected intelligence.
 *   **Business Glossary & Semantic Search:** Auto-generate a business glossary and enable search that understands meaning, not just keywords — making data more accessible across technical and business users.
-*   **Smart SQL & Data Products:** Instantly generate SQL and reusable data products enriched with context, eliminating manual pipelines and accelerating data-to-insight.
+*   **Data Products -** Instantly generate SQL and reusable data products enriched with context, eliminating manual pipelines and accelerating data-to-insight.
 
 ## Getting Started
 
@@ -99,18 +99,20 @@ For a detailed, hands-on introduction to the project, please see our quickstart 
 | Domain                  | Notebook                                                                                                             | Open in Colab                                                                                                                                                           |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Healthcare**          | [`quickstart_healthcare.ipynb`](notebooks/quickstart_healthcare.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_healthcare.ipynb) |
-| **Tech Manufacturing**  | [`quickstart_tech_company.ipynb`](notebooks/quickstart_tech_company.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_tech_company.ipynb) |
+| **Tech Manufacturing**  | [`quickstart_tech_manufacturing.ipynb`](notebooks/quickstart_tech_manufacturing.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_tech_manufacturing.ipynb) |
 | **FMCG**                | [`quickstart_fmcg.ipynb`](notebooks/quickstart_fmcg.ipynb)             | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_fmcg.ipynb)             |
 | **Sports Media**        | [`quickstart_sports_media.ipynb`](notebooks/quickstart_sports_media.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_sports_media.ipynb) |
 | **Databricks Unity Catalog [Health Care]** | [`quickstart_healthcare_databricks.ipynb`](notebooks/quickstart_healthcare_databricks.ipynb) | Databricks Notebook Only |
 
 These datasets will take you through the following steps:
 
-*   **Building a Knowledge Base:** Use the `KnowledgeBuilder` to automatically profile your data, generate a business glossary, and predict links between tables.
-*   **Accessing Enriched Metadata:** Learn how to access the profiling results and business glossary for each dataset.
-*   **Visualizing Relationships:** Visualize the predicted links between your tables.
-*   **Generating Data Products:** Use the semantic layer to generate data products and retrieve data.
-*   **Searching the Knowledge Base:** Use semantic search to find relevant columns in your datasets using natural language.
+*   **Generate Semantic Model** → The unified layer that transforms fragmented datasets, creating the foundation for connected intelligence.
+    *   **1.1 Profile and classify data** → Analyze your data sources to understand their structure, data types, and other characteristics.
+    *   **1.2 Discover links & relationships among data** → Reveal meaningful connections (PK & FK) across fragmented tables.
+    *   **1.3 Generate a business glossary** → Create business-friendly terms and use them to query data with context.
+    *   **1.4 Enable semantic search** → Intelligent search that understands meaning, not just keywords—making data more accessible across both technical and business users.
+    *   **1.5 Visualize semantic model**→ Get access to enriched metadata of the semantic layer in the form of YAML files and visualize in the form of graph
+*   **Build Unified Data Products** → Simply pick the attributes across your data tables, and let the toolkit auto-generate queries with all the required joins, transformations, and aggregations using the semantic layer. When executed, these queries produce reusable data products.
 
 ## Documentation
 
@@ -118,10 +120,10 @@ For more detailed information, advanced usage, and tutorials, please refer to ou
 
 ## Usage
 
-The core workflow of the project involves using the `KnowledgeBuilder` to build a semantic layer, and then using the `DataProductBuilder` to generate data products from that layer.
+The core workflow of the project involves using the `SemanticModel` to build a semantic layer, and then using the `DataProduct` to generate data products from that layer.
 
 ```python
-from intugle import KnowledgeBuilder, DataProductBuilder
+from intugle import SemanticModel
 
 # Define your datasets
 datasets = {
@@ -131,12 +133,24 @@ datasets = {
     # ... add other datasets
 }
 
-# Build the knowledge base
-kb = KnowledgeBuilder(datasets, domain="Healthcare")
-kb.build()
+# Build the semantic model
+sm = SemanticModel(datasets, domain="Healthcare")
+sm.build()
 
-# Create a DataProductBuilder
-dp_builder = DataProductBuilder()
+# Access the profiling results
+print(sm.profiling_df.head())
+
+# Access the discovered links
+print(sm.links_df)
+```
+For detailed code examples and a complete walkthrough, please see our [quickstart notebooks](#quickstart).
+
+### Data Product
+
+Once the semantic model is built, you can use the `DataProduct` class to generate unified data products from the semantic layer.
+
+```python
+from intugle import DataProduct
 
 # Define an ETL model
 etl = {
@@ -169,14 +183,13 @@ etl = {
   }
 }
 
-# Generate the data product
-data_product = dp_builder.build(etl)
+# Create a DataProduct and build it
+dp = DataProduct()
+data_product = dp.build(etl)
 
 # View the data product as a DataFrame
 print(data_product.to_df())
 ```
-
-For detailed code examples and a complete walkthrough, please see the quickstart notebooks under the notebooks directory.
 
 ### Semantic Search
 
@@ -187,7 +200,7 @@ The semantic search feature allows you to search for columns in your datasets us
 To use the semantic search feature, you need to have a running Qdrant instance. You can start one using the following Docker command:
 
 ```bash
-docker run -p 6333:6333 -p 6334:6334 \
+docker run -d -p 6333:6333 -p 6334:6334 \
     -v qdrant_storage:/qdrant/storage:z \
     --name qdrant qdrant/qdrant
 ```
@@ -219,10 +232,10 @@ export EMBEDDING_MODEL_NAME="azure_openai:ada"
 
 #### Usage
 
-Once you have built the knowledge base, you can use the `search` method to perform a semantic search. The search function returns a pandas DataFrame containing the search results, including the column\'s profiling metrics, category, table name, and table glossary.
+Once you have built the semantic model, you can use the `search` method to perform a semantic search. The search function returns a pandas DataFrame containing the search results, including the column\'s profiling metrics, category, table name, and table glossary.
 
 ```python
-from intugle import KnowledgeBuilder
+from intugle import SemanticModel
 
 # Define your datasets
 datasets = {
@@ -232,16 +245,16 @@ datasets = {
     # ... add other datasets
 }
 
-# Build the knowledge base
-kb = KnowledgeBuilder(datasets, domain="Healthcare")
-kb.build()
+# Build the semantic model
+sm = SemanticModel(datasets, domain="Healthcare")
+sm.build()
 # Perform a semantic search
-search_results = kb.search("reason for hospital visit")
+search_results = sm.search("reason for hospital visit")
 
 # View the search results
 print(search_results)
 ```
-For detailed code examples and a complete walkthrough, please see the quickstart notebooks under the notebooks directory.
+For detailed code examples and a complete walkthrough, please see our [quickstart notebooks](#quickstart).
 
 ## Community
 

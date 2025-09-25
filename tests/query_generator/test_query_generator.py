@@ -8,7 +8,7 @@ from intugle.libs.smart_query_generator.models.models import (
     SelectionModel,
     SortByModel,
 )
-from intugle.dp_builder import DataProductBuilder
+from intugle.data_product import DataProduct
 
 
 def get_test_data():
@@ -50,7 +50,7 @@ def get_test_data():
     get_test_data(),
 )
 def test_query_generator(etl, query):
-    sql_generator = DataProductBuilder(project_base=settings.PROJECT_BASE)
+    sql_generator = DataProduct(project_base=settings.PROJECT_BASE)
 
     out_query = sql_generator.generate_query(etl)
     print(out_query)

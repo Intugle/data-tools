@@ -1,13 +1,13 @@
 ---
 type: markdown
 ---
-# Quickstart: Building a GenAI powered Semantic Intelligence with Intugle
+# Quickstart: Building a GenAI powered Semantic Data Model with Intugle
 
-This quickstart shows you how to use Intugle’s open-source library to transform fragmented datasets into a connected semantic layer. The semantic layer captures profiling, relationships, and business meaning of your data — making it instantly usable for exploration, search, and data product creation.
+This quickstart shows you how to use Intugle’s open-source library to transform fragmented datasets into a connected semantic model. The semantic model captures profiling, relationships, and business meaning of your data — making it instantly usable for exploration, search, and data product creation.
 
-**What is Semantic Intelligence?**
+**What is a Semantic Model?**
 
-A semantic layer is an intelligent knowledge graph of your data. It connects tables, discovers relationships, and enriches them with business glossaries — so both data teams and business users can query with clarity, not complexity.
+A semantic model is an intelligent knowledge graph of your data. It connects tables, discovers relationships, and enriches them with business glossaries — so both data teams and business users can query with clarity, not complexity.
 
 **Who is this for?**
 
@@ -17,16 +17,22 @@ A semantic layer is an intelligent knowledge graph of your data. It connects tab
 
 **In this notebook, you will learn how to:**
 
-- **Profile and classify data** : Analyze your data sources to understand their structure, data types, and other characteristics.
-- **Discover links & relationships among data** : Reveal meaningful connections (PK & FK) across fragmented tables.
-- **Generate a business glossary & enable semantic search** : Create business-friendly terms and use them to query data with context.
-- **Create a semantic intelligence layer** : Build a unified model (YAML) of your data and relationships.
-- **Build unified data products** : Generate reusable SQL queries powered by the semantic layer.
+*   **Generate Semantic Model** → The unified layer that transforms fragmented datasets, creating the foundation for connected intelligence.
+    *   **1.1 Profile and classify data** → Analyze your data sources to understand their structure, data types, and other characteristics.
+    *   **1.2 Discover links & relationships among data** → Reveal meaningful connections (PK & FK) across fragmented tables.
+    *   **1.3 Generate a business glossary** → Create business-friendly terms and use them to query data with context.
+    *   **1.4 Enable Semantic search** → Intelligent search that understands meaning, not just keywords—making data more accessible across both technical and business users.
+    *   **1.5 Visualize semantic model** → Get access to enriched metadata of the semantic model and visualize your data and relationships.
+*   **Build Unified Data Products** → Simply pick the attributes across your data tables, and let the toolkit auto-generate queries with all the required joins, transformations, and aggregations using the semantic layer. When executed, these queries produce reusable data products.
 
+Before you start, make sure you install the **Intugle Data Tools**:
+---
+type: code
+---
+%pip install intugle
 ---
 type: markdown
 ---
-
 ## 1. LLM Configuration
 
 Before running the project, you need to configure a Large Language Model (LLM). This is used for tasks like generating business glossaries and predicting links between tables. For the semantic search feature, you will also need to set up Qdrant and provide an OpenAI API key. For detailed setup instructions, please refer to the [README.md](README.md) file.
@@ -48,11 +54,9 @@ export LLM_PROVIDER="openai:gpt-3.5-turbo"
 export OPENAI_API_KEY="your-openai-api-key"
 ```
 Alternatively, you can set them in the notebook like this:
-
 ---
 type: code
 ---
-
 import os
 
 os.environ["LLM_PROVIDER"] = "openai:gpt-3.5-turbo"
@@ -70,8 +74,6 @@ os.environ["AZURE_OPENAI_API_KEY"] = "your-azure-openai-api-key"
 os.environ["AZURE_OPENAI_ENDPOINT"] = "your-azure-openai-endpoint"
 os.environ["OPENAI_API_VERSION"] = "your-openai-api-version"
 
-
-
 ---
 type: markdown
 ---
@@ -79,9 +81,9 @@ type: markdown
 ---
 type: markdown
 ---
-## 2. Building the Knowledge Base
+## 2. Building the Semantic Model
 
-The `KnowledgeBuilder` is the entry point for building your semantic layer. It takes a dictionary of datasets as input and performs the following steps:
+The `SemanticModel` is the entry point for building your semantic layer. It takes a dictionary of datasets as input and performs the following steps:
 
 1.  **Data Profiling:** Calculates statistics for each column, such as distinct count, uniqueness, and completeness.
 2.  **Datatype Identification:** Identifies the data type of each column (e.g., integer, string, datetime).
@@ -126,34 +128,34 @@ datasets = {table: generate_config(table) for table in table_names}
 ---
 type: markdown
 ---
-Now, let's use the `KnowledgeBuilder` to build our semantic layer:
+Now, let's use the `SemanticModel` to build our semantic layer:
 
 > The `domain` parameter helps the LLM generate a more contextual business glossary. It specifies the industry domain that the dataset belongs to (e.g., "Healthcare", "Finance", "E-commerce").
 ---
 type: code
 ---
-from intugle import KnowledgeBuilder
+from intugle import SemanticModel
 
-# Initialize the knowledge builder
-kb = KnowledgeBuilder(datasets, domain="Healthcare")
+# Initialize the semantic model
+sm = SemanticModel(datasets, domain="Healthcare")
 
 # Run the prediction
-kb.build()
+sm.build()
 ---
 type: markdown
 ---
 ## 3. Accessing Enriched Metadata
 
-Now that the knowledge base is built, you can easily access the enriched metadata for each dataset.
+Now that the semantic model is built, you can easily access the enriched metadata for each dataset.
 
 ### Accessing a Dataset
 
-You can access a specific dataset by its name from the `kb.datasets` dictionary:
+You can access a specific dataset by its name from the `sm.datasets` dictionary:
 ---
 type: code
 ---
-allergies_dataset = kb.datasets['patients']
-allergies_dataset.profiling_df
+patients_dataset = sm.datasets['patients']
+patients_dataset.profiling_df
 ---
 type: markdown
 ---
@@ -165,25 +167,26 @@ type: markdown
 
 ### Visualizing Relationships
 
-The `KnowledgeBuilder` automatically discovers the relationships between your tables. You can access the predicted links as a list of `PredictedLink` objects:
+The `SemanticModel` automatically discovers the relationships between your tables. You can access the predicted links as a list of `PredictedLink` objects:
 ---
 type: code
 ---
-kb.links
+sm.links
 ---
 type: markdown
 ---
-You can also visualize these relationships as a graph:
+You can also visualize these relationships as a graph. In case you run into an error, make sure you install/upgrade your ipykernel package:
+> %pip install --upgrade ipykernel
 ---
 type: code
 ---
-kb.visualize()
+sm.visualize()  # To visualize the relationships as a graph
 ---
 type: markdown
 ---
 ## 4. The Semantic Layer
 
-The KnowledgeBuilder results are used to generate YAML files which are saved automatically. These files defines the semantic layer, including the models (tables) and their relationships. 
+The SemanticModel results are used to generate YAML files which are saved automatically. These files defines the semantic layer, including the models (tables) and their relationships. 
 
 By default, these files are saved in the current working directory. You can configure this path by setting the `PROJECT_BASE` environment variable.
 ---
@@ -194,13 +197,17 @@ type: markdown
 The semantic search feature allows you to search for columns in your datasets using natural language. 
 
 > **Note:** To use this feature, you need to have a running Qdrant instance and an OpenAI API key. Please refer to the [README.md](README.md) for detailed setup instructions.
+>
+> **Google Colab Users:** If you are running this notebook in Google Colab, you may not be able to connect to a local Qdrant instance running in Docker. In this case, you will need to use a remotely hosted Qdrant server.
+>
+> **Current Limitation:** Currently, the semantic search feature requires an OpenAI or Azure OpenAI key as it is tightly coupled with Ada embeddings. We are actively working on decoupling this.
 
-Once you have built the knowledge base, you can use the `search` method to perform a semantic search. The search function returns a pandas DataFrame containing the search results, including the column's profiling metrics, category, table name, and table glossary.
+Once you have built the semantic model, you can use the `search` method to perform a semantic search. The search function returns a pandas DataFrame containing the search results, including the column's profiling metrics, category, table name, and table glossary.
 ---
 type: code
 ---
 # Perform a semantic search
-search_results = kb.search("patient allergies")
+search_results = sm.search("reason for hospital visit")
 
 # View the search results
 search_results
@@ -209,7 +216,7 @@ type: markdown
 ---
 ## 6. Data Product Creation
 
-The semantic layer serves as a foundation for the DataProductBuilder, which streamlines the creation of reusable data products. This allows you
+The semantic layer serves as a foundation for the DataProduct, which streamlines the creation of reusable data products. This allows you
 to encapsulate business logic and create standardized, trustworthy data assets that can be easily shared and reused across different teams and 
 applications.
 
@@ -217,7 +224,7 @@ Let's define the model for the data product we want to build:
 ---
 type: code
 ---
-etl = {
+data_product_config = {
   "name": "top_patients_by_claim_count",
   "fields": [
     {
@@ -249,23 +256,23 @@ etl = {
 ---
 type: markdown
 ---
-Now, let's use the `DataProductBuilder` to generate the data product:
+Now, let's use the `DataProduct` to generate the data product:
 ---
 type: code
 ---
-from intugle.dp_builder import DataProductBuilder
+from intugle import DataProduct
 
-# Create a DataProductBuilder
-dp_builder = DataProductBuilder()
+# Create a DataProduct
+dp = DataProduct()
 
 # Generate the data product
-data_product = dp_builder.build(etl)
+data_product = dp.build(data_product_config)
 
 data_product.to_df()
 ---
 type: markdown
 ---
-The `generate_product` function returns a `DataSet` object. You can also view the generated SQL query used for creating the data product:
+The `build` function returns a `DataSet` object. You can also view the generated SQL query used for creating the data product:
 ---
 type: code
 ---
@@ -275,15 +282,14 @@ data_product.sql_query
 ---
 type: markdown
 ---
-
 ## Conclusion
 
 You've learned how to:
 
 *   Configure your LLM provider and Embeddings provider.
-*   Build a knowledge base using the `KnowledgeBuilder`.
+*   Build a semantic model using the `SemanticModel`.
 *   Access enriched metadata, business glossaries and visualize the relationships between your tables.
-*   Perform semantic search on your knowledge base.
-*   Generate data products from the semantic layer using the `DataProductBuilder`.
+*   Perform semantic search on your semantic model.
+*   Generate data products from the semantic layer using the `DataProduct`.
 
 This is just a starting point. This project has many other features to explore. We encourage you to try it with your own data and see how it can help you build a powerful semantic layer.

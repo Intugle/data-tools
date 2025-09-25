@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction
 
-Intugle’s GenAI-powered open-source Python library builds an intelligent semantic model over your existing data systems. At its core, it discovers meaningful relationships across data sets. With this intelligence, you can enable semantic search and auto-generate unified data products, making data exploration faster, more accurate, and far less manual.
+Intugle’s GenAI-powered open-source Python library builds an intelligent semantic layer over your existing data systems. At its core, it discovers meaningful links and relationships across data assets — enriching them with profiles, classifications, and business glossaries. With this connected knowledge layer, you can enable semantic search and auto-generate queries to create unified data products, making data integration and exploration faster, more accurate, and far less manual.
 
 ## Who is this for?
 
@@ -14,6 +14,6 @@ Intugle’s GenAI-powered open-source Python library builds an intelligent seman
 
 ## Features
 
-*   **Semantic Data Model:** Transform raw, fragmented datasets into an intelligent semantic graph that captures entities, relationships, and context — the foundation for connected intelligence.
+*   **Semantic Intelligence:** Transform raw, fragmented datasets into an intelligent semantic graph that captures entities, relationships, and context — the foundation for connected intelligence.
 *   **Business Glossary & Semantic Search:** Auto-generate a business glossary and enable search that understands meaning, not just keywords — making data more accessible across technical and business users.
-*   **Data Products:** Instantly generate SQL and reusable data products enriched with context, eliminating manual pipelines and accelerating data-to-insight.
+*   **Smart SQL & Data Products:** Instantly generate SQL and reusable data products enriched with context, eliminating manual pipelines and accelerating data-to-insight.

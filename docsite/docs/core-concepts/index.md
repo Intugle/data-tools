@@ -8,10 +8,11 @@ This section dives deep into the fundamental components and architectural ideas 
 
 Understanding these concepts is key to using the library effectively and leveraging its full potential for automating data intelligence.
 
-### Key components
+### Key Components
 
-*   [**Knowledge Builder**](./knowledge-builder.md): The main orchestrator that manages the end-to-end analysis pipeline.
-*   [**DataSet**](./dataset.md): The central in-memory container for a data source and all its rich metadata.
-*   [**Link Prediction**](./link-prediction.md): The process of automatically discovering relationships between your datasets.
-*   [**Data Product Builder**](./data-product-builder): The tool used to generate unified data products from the enriched semantic layer.
-*   [**Semantic Search**](./semantic-search.md): The feature that enables natural language queries on your connected data assets.
+*   **Semantic Intelligence**: This is the core engine that automatically analyzes, enriches, and connects your raw data. It's composed of several key parts:
+    *   **`SemanticModel`**: The main orchestrator that runs the entire intelligence pipeline.
+    *   **`DataSet`**: A container for a single data source, holding both the raw data and all the metadata generated about it.
+    *   **Link Prediction**: The process that automatically discovers meaningful relationships and potential join keys between different datasets.
+    *   **Semantic Search**: The capability that allows you to find data using natural language queries.
+*   **Data Product**: This component uses the semantic layer to build unified, queryable datasets. You define *what* data you need, and the `DataProduct` automatically generates the complex SQL to retrieve it.

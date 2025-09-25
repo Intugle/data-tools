@@ -1458,7 +1458,7 @@ wheels = [
 
 [[package]]
 name = "intugle"
-version = "0.1.10"
+version = "1.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "asyncpg" },
@@ -1466,11 +1466,7 @@ dependencies = [
     { name = "fastapi", extra = ["standard"] },
     { name = "langchain", extra = ["anthropic", "google-genai", "openai"] },
     { name = "langchain-community" },
-    { name = "langchain-deepseek" },
-    { name = "langchain-nvidia-ai-endpoints" },
     { name = "langchain-openai" },
-    { name = "langchain-perplexity" },
-    { name = "langchain-xai" },
     { name = "langgraph" },
     { name = "matplotlib" },
     { name = "mcp", extra = ["cli"] },
@@ -1519,18 +1515,14 @@ requires-dist = [
     { name = "fastapi", extras = ["standard"], specifier = ">=0.116.1" },
     { name = "langchain", extras = ["anthropic", "google-genai", "openai"], specifier = ">=0.3.27" },
     { name = "langchain-community", specifier = ">=0.3.21" },
-    { name = "langchain-deepseek", specifier = ">=0.1.4" },
-    { name = "langchain-nvidia-ai-endpoints", specifier = ">=0.3.16" },
     { name = "langchain-openai", specifier = ">=0.3.28" },
-    { name = "langchain-perplexity", specifier = ">=0.1.2" },
-    { name = "langchain-xai", specifier = ">=0.2.5" },
     { name = "langgraph", specifier = ">=0.6.4" },
     { name = "matplotlib", specifier = ">=3.10.5" },
     { name = "mcp", extras = ["cli"], specifier = ">=1.12.4" },
     { name = "networkx", specifier = ">=3.4.2" },
     { name = "nltk", specifier = ">=3.9.1" },
     { name = "numpy", specifier = "<=2.3.0" },
-    { name = "pandas", specifier = ">=2.3.0" },
+    { name = "pandas", specifier = ">=2.2.2" },
     { name = "pyaml", specifier = ">=25.7.0" },
     { name = "pydantic", specifier = ">=2.11.7" },
     { name = "pydantic-settings", specifier = ">=2.10.1" },
@@ -2091,19 +2083,6 @@ wheels = [
 ]
 
 [[package]]
-name = "langchain-deepseek"
-version = "0.1.4"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "langchain-core" },
-    { name = "langchain-openai" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/8a/64/15fe061165574b3ba80011d96cb3f428f9e6f5631cd76058b028333023db/langchain_deepseek-0.1.4.tar.gz", hash = "sha256:dc105138aee4fce03badd0521e69d5508b37f5c087d92b3e8481ffb8f9563d33", size = 8937, upload-time = "2025-07-22T17:37:42.798Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/39/d3/0da6f3f5548e1a771d0500e17da723996f8ba1398bcef7198a2ecbca6e1b/langchain_deepseek-0.1.4-py3-none-any.whl", hash = "sha256:9ce3dbfc7a40f221657ffe31e8623ea6e397f6c90de2a58d38204ac63e8f41ff", size = 7440, upload-time = "2025-07-22T17:37:41.618Z" },
-]
-
-[[package]]
 name = "langchain-google-genai"
 version = "2.1.10"
 source = { registry = "https://pypi.org/simple" }
@@ -2133,20 +2112,6 @@ wheels = [
 ]
 
 [[package]]
-name = "langchain-nvidia-ai-endpoints"
-version = "0.3.17"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "aiohttp" },
-    { name = "filetype" },
-    { name = "langchain-core" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/36/68/c705c092037943894f4f3ff4728302fee24fc199a933a5e2e76de0274547/langchain_nvidia_ai_endpoints-0.3.17.tar.gz", hash = "sha256:fafb56cc71401256a803a1a59a5c436c880532219eecaa2e63d716cf0af51801", size = 40997, upload-time = "2025-09-02T22:46:21.484Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/fc/38/741d1116e85d37605aa2746b353624ee422bb09a7741801c43abd78e6e14/langchain_nvidia_ai_endpoints-0.3.17-py3-none-any.whl", hash = "sha256:90ad6e12e3ab96eb3b7074f61b7a69e43691d1d55833b1af063e1129abc25eea", size = 44307, upload-time = "2025-09-02T22:46:20.636Z" },
-]
-
-[[package]]
 name = "langchain-openai"
 version = "0.3.32"
 source = { registry = "https://pypi.org/simple" }
@@ -2161,19 +2126,6 @@ wheels = [
 ]
 
 [[package]]
-name = "langchain-perplexity"
-version = "0.1.2"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "langchain-core" },
-    { name = "openai" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/53/cc/3bed13a4d82754770cbe12bff4a6a37874eade3ee59de2645c54dfe4a39d/langchain_perplexity-0.1.2.tar.gz", hash = "sha256:bf0d65f7342c2e2e93501efa768bc75b807dd158fad3222b7ce81b705a3699a0", size = 10440, upload-time = "2025-07-22T20:29:52.803Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/d9/45/438bb56cd9bd9bc2b9716085cbd415abfc075e88badb1505cbf117f6644c/langchain_perplexity-0.1.2-py3-none-any.whl", hash = "sha256:d1ba4bd4a393bca4e1eb4b7afe3bc8bfc9e46e5554bc0b8748b31a2f4067146e", size = 8686, upload-time = "2025-07-22T20:29:51.722Z" },
-]
-
-[[package]]
 name = "langchain-text-splitters"
 version = "0.3.11"
 source = { registry = "https://pypi.org/simple" }
@@ -2183,21 +2135,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/11/43/dcda8fd25f0b19cb2835f2f6bb67f26ad58634f04ac2d8eae00526b0fa55/langchain_text_splitters-0.3.11.tar.gz", hash = "sha256:7a50a04ada9a133bbabb80731df7f6ddac51bc9f1b9cab7fa09304d71d38a6cc", size = 46458, upload-time = "2025-08-31T23:02:58.316Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/58/0d/41a51b40d24ff0384ec4f7ab8dd3dcea8353c05c973836b5e289f1465d4f/langchain_text_splitters-0.3.11-py3-none-any.whl", hash = "sha256:cf079131166a487f1372c8ab5d0bfaa6c0a4291733d9c43a34a16ac9bcd6a393", size = 33845, upload-time = "2025-08-31T23:02:57.195Z" },
-]
-
-[[package]]
-name = "langchain-xai"
-version = "0.2.5"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "aiohttp" },
-    { name = "langchain-core" },
-    { name = "langchain-openai" },
-    { name = "requests" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/3e/6c/f491dc55c7f91fe8196b59b6111788ee62b2d4efd629230788caa08e0fd6/langchain_xai-0.2.5.tar.gz", hash = "sha256:e94b17d4928aaa26998acf7cff537bb6b3c72468177e00ed7de7747dc9b2ecdc", size = 11086, upload-time = "2025-07-22T17:22:21.238Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/bf/50/fc6ae91c9b40ca8259d501c0754d91136ac98e2502c67b4a55b78a426fba/langchain_xai-0.2.5-py3-none-any.whl", hash = "sha256:8d351393eddc0ad024a82a1120b815e6e3ccfe83390cbc65a2fce81786584795", size = 9297, upload-time = "2025-07-22T17:22:20.173Z" },
 ]
 
 [[package]]
