@@ -7,13 +7,17 @@ title: Vibe Coding
 
 "Vibe Coding" is an interactive, conversational approach to development where you use natural language to generate code or specifications. Intugle embraces this by allowing you to serve your semantic layer through an MCP (Model Context Protocol) server.
 
-This turns your data into a "self-describing" resource that an AI assistant can understand, allowing you to "vibe" with your data to create data product specifications without writing the JSON by hand.
+This turns your data into a "self-describing" resource that an AI assistant can understand, allowing you to "vibe" with your data to create specifications without writing them by hand.
+
+:::info In Progress
+Currently, Vibe Coding is available for generating **Data Product** specifications. We are actively working on extending this capability to other modules in the Intugle ecosystem. Stay tuned for more updates!
+:::
+
+## 1. Setting up the MCP Server
 
 :::info MCP Prompts
 This workflow uses the capability of MCP servers to expose **prompts** to an LLM client. To use this feature, your LLM client must support the Model Context Protocol and read prompts from the MCP Server.
 :::
-
-## 1. Setting up the MCP Server
 
 Once you have built your semantic layer using the `SemanticModel`, you can easily expose it as a set of tools for an AI assistant by starting the built-in MCP server.
 
@@ -40,11 +44,13 @@ Popular clients that support MCP include AI-powered IDEs and standalone applicat
 -   **Claude Desktop**: [User Quickstart](https://modelcontextprotocol.info/docs/quickstart/user/)
 -   **Gemini CLI**: [Configure MCP Servers](https://cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer#configure-mcp-servers)
 
-## 2. Generating Data Products with `create-dp`
+## 2. Using Vibe Coding
 
-The MCP server exposes a powerful prompt called `create-dp`. This prompt is designed to take your natural language request and convert it directly into a valid `product_spec` dictionary.
+The MCP server exposes powerful prompts that are designed to take your natural language requests and convert them directly into valid specifications.
 
-### How to Use It
+### Example: Generating a Data Product
+
+Currently, you can use the `create-dp` prompt to generate a `product_spec` dictionary for a Data Product.
 
 In your MCP-compatible client, you can invoke the prompt and provide your request. In most clients, this is done by typing `/` followed by the prompt name.
 
@@ -91,5 +97,3 @@ The AI assistant, connected to your MCP server, will understand the request, use
 ```
 
 This workflow allows you to stay in your creative flow, rapidly iterating on data product ideas by describing what you want in plain English.
-
-> **Stay Tuned!** We will be updating this section soon to include how to vibe code with other pieces of Intugle.
