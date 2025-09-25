@@ -18,7 +18,7 @@ source .venv/bin/activate
 Then, install the package:
 
 ```bash
-pip install intugle
+pip install intugle==0.1.10
 ```
 
 ### macOS
