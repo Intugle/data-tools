@@ -272,7 +272,7 @@ data_product.to_df()
 ---
 type: markdown
 ---
-The `generate_product` function returns a `DataSet` object. You can also view the generated SQL query used for creating the data product:
+The `build` function returns a `DataSet` object. You can also view the generated SQL query used for creating the data product:
 ---
 type: code
 ---
