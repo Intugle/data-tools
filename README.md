@@ -104,6 +104,7 @@ For a detailed, hands-on introduction to the project, please see our quickstart 
 | **Sports Media**        | [`quickstart_sports_media.ipynb`](notebooks/quickstart_sports_media.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_sports_media.ipynb) |
 | **Databricks Unity Catalog [Health Care]** | [`quickstart_healthcare_databricks.ipynb`](notebooks/quickstart_healthcare_databricks.ipynb) | Databricks Notebook Only |
 | **Snowflake Horizon Catalog [ FMCG ]** | [`quickstart_fmcg_snowflake.ipynb`](notebooks/quickstart_fmcg_snowflake.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_fmcg_snowflake.ipynb) |
+| **Snowflake Horizon Catalog [ FMCG ]** | [`quickstart_fmcg_snowflake.ipynb`](notebooks/quickstart_fmcg_snowflake.ipynb) | Snowflake Notebook Only |
 
 These datasets will take you through the following steps:
 
