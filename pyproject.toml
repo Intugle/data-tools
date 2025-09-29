@@ -83,4 +83,4 @@ src = ["src"]
 where = ["src"]
 
 [tool.setuptools.package-data]
-"intugle" = ["**/*.yaml", "**/*.txt", "**/*.pkl"]
+"intugle" = ["**/*.yaml", "**/*.txt", "**/*.pkl", "mcp/semantic_layer/prompts/*.md"]
