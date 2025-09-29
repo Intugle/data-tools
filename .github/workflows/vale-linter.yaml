@@ -1,4 +1,6 @@
 name: Vale Lint Checker
+permissions:
+  contents: read
 
 on:
   push:
