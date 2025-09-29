@@ -14,7 +14,7 @@ For a detailed, hands-on introduction to the project, please see our quickstart 
 | **FMCG**                | [`quickstart_fmcg.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_fmcg.ipynb)             | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_fmcg.ipynb)             |
 | **Sports Media**        | [`quickstart_sports_media.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_sports_media.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_sports_media.ipynb) |
 | **Databricks Unity Catalog [Health Care]** | [`quickstart_healthcare_databricks.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_healthcare_databricks.ipynb) | Databricks Notebook Only |
-| **Snowflake Horizon Catalog [ FMCG ]** | [`quickstart_fmcg_snowflake.ipynb`](notebooks/quickstart_fmcg_snowflake.ipynb) | Snowflake Notebook Only |
+| **Snowflake Horizon Catalog [ FMCG ]** | [`quickstart_fmcg_snowflake.ipynb`](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_fmcg_snowflake.ipynb) | Snowflake Notebook Only |
 
 These datasets will take you through the following steps:
 
