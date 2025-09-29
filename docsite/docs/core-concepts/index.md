@@ -2,6 +2,14 @@
 sidebar_position: 1
 ---
 
+:::info
+
+The following modules have been renamed in this version:
+- KnowledgeBuilder -> SemanticModel
+- DataProductBuilder -> DataProduct
+
+:::
+
 # Core concepts
 
 This section dives deep into the fundamental components and architectural ideas that power the Intugle Data Tools library.

@@ -1,8 +1,16 @@
 ---
 sidebar_position: 1
 ---
-
 # Introduction
+
+:::info
+
+The following modules have been renamed in this version:
+- KnowledgeBuilder -> SemanticModel
+- DataProductBuilder -> DataProduct
+
+:::
+
 
 Intugle’s GenAI-powered open-source Python library builds an intelligent semantic model over your existing data systems. At its core, it discovers meaningful relationships across data sets. With this intelligence, you can enable semantic search and auto-generate unified data products, making data exploration faster, more accurate, and far less manual.
 

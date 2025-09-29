@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "intugle"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
     { name="Intugle", email="hello@intugle.ai" },
 ]
@@ -83,4 +83,4 @@ src = ["src"]
 where = ["src"]
 
 [tool.setuptools.package-data]
-"intugle" = ["**/*.yaml", "**/*.txt", "**/*.pkl"]
+"intugle" = ["**/*.yaml", "**/*.txt", "**/*.pkl", "mcp/semantic_layer/prompts/*.md"]
