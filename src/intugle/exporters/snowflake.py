@@ -2,6 +2,7 @@ import re
 from .base import Exporter
 from intugle.libs.smart_query_generator.models.models import CategoryType
 from intugle.core import settings
+from intugle.models.resources.relationship import RelationshipType
 
 RESERVED_WORDS = {'start', 'end', 'select', 'from', 'where', 'order', 'group', 'join', 'table', 'on'}
 
@@ -64,6 +65,12 @@ class SnowflakeExporter(Exporter):
                 "facts": []
             }
 
+            # Add primary key if it exists
+            if source.table.key:
+                table_dict["primary_key"] = {
+                    "columns": [clean_name(source.table.key)]
+                }
+
             # Map columns to dimensions and facts
             for column in source.table.columns:
                 snowflake_type = DATA_TYPE_MAPPING.get(column.type, "TEXT") # Default to TEXT
@@ -89,18 +96,44 @@ class SnowflakeExporter(Exporter):
 
         # Process relationships
         for rel in manifest.relationships.values():
+            source_table_name = rel.source.table
+            target_table_name = rel.target.table
+            
+            source_table_info = manifest.sources.get(source_table_name)
+            target_table_info = manifest.sources.get(target_table_name)
+
+            if not source_table_info or not target_table_info:
+                continue
+
+            # Determine which table is the 'one' side (contains the PK for the join)
+            if source_table_info.table.key == rel.source.column:
+                # source is the 'one' side
+                right_table = source_table_name
+                right_column = rel.source.column
+                left_table = target_table_name
+                left_column = rel.target.column
+            elif target_table_info.table.key == rel.target.column:
+                # target is the 'one' side
+                right_table = target_table_name
+                right_column = rel.target.column
+                left_table = source_table_name
+                left_column = rel.source.column
+            else:
+                # This is not a valid FK relationship for Snowflake's semantic model
+                continue
+
             relationship = {
                 "name": rel.name,
-                "left_table": clean_name(rel.source.table),
-                "right_table": clean_name(rel.target.table),
+                "left_table": clean_name(left_table),
+                "right_table": clean_name(right_table),
                 "relationship_columns": [
                     {
-                        "left_column": clean_name(rel.source.column),
-                        "right_column": clean_name(rel.target.column)
+                        "left_column": clean_name(left_column),
+                        "right_column": clean_name(right_column)
                     }
                 ],
-                "join_type": "left_outer",  # Defaulting join type
-                "relationship_type": rel.type # Use the enum value
+                "join_type": "left_outer",
+                "relationship_type": RelationshipType.MANY_TO_ONE.value
             }
             relationships_list.append(relationship)
 
