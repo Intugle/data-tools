@@ -23,6 +23,18 @@ def quote_identifier(name: str) -> str:
     clean_name = name.strip().strip('"')
     return f'"{clean_name}"'
 
+# Mapping from our types to Snowflake's expected data types
+DATA_TYPE_MAPPING = {
+    "integer": "NUMBER",
+    "float": "FLOAT",
+    "string": "TEXT",
+    "date & time": "DATETIME",
+    "alphanumeric": "TEXT",
+    "close_ended_text": "TEXT",
+    "open_ended_text": "TEXT",
+    # Add other mappings as necessary
+}
+
 class SnowflakeExporter(Exporter):
     def export(self, **kwargs) -> dict:
         """
@@ -54,12 +66,13 @@ class SnowflakeExporter(Exporter):
 
             # Map columns to dimensions and facts
             for column in source.table.columns:
+                snowflake_type = DATA_TYPE_MAPPING.get(column.type, "TEXT") # Default to TEXT
                 if column.category == CategoryType.dimension:
                     dimension = {
                         "name": clean_name(column.name),
                         "description": column.description,
                         "expr": quote_identifier(column.name),
-                        "data_type": column.type,
+                        "data_type": snowflake_type,
                         "unique": column.name == source.table.key
                     }
                     table_dict["dimensions"].append(dimension)
@@ -68,7 +81,7 @@ class SnowflakeExporter(Exporter):
                         "name": clean_name(column.name),
                         "description": column.description,
                         "expr": quote_identifier(column.name),
-                        "data_type": column.type
+                        "data_type": snowflake_type
                     }
                     table_dict["facts"].append(fact)
             
@@ -87,7 +100,7 @@ class SnowflakeExporter(Exporter):
                     }
                 ],
                 "join_type": "left_outer",  # Defaulting join type
-                "relationship_type": rel.type
+                "relationship_type": rel.type # Use the enum value
             }
             relationships_list.append(relationship)
 
