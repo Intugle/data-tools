@@ -134,8 +134,11 @@ class SnowflakeAdapter(Adapter):
         return df
 
     def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
-        table1_df = self.session.table(table1.data.identifier)
-        table2_df = self.session.table(table2.data.identifier)
+        table1_adapter = self.check_data(table1.data)
+        table2_adapter = self.check_data(table2.data)
+        
+        table1_df = self.session.table(table1_adapter.identifier)
+        table2_df = self.session.table(table2_adapter.identifier)
 
         intersect_df = table1_df.select(column1_name).intersect(table2_df.select(column2_name))
         return intersect_df.count()
