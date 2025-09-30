@@ -1,4 +1,5 @@
 import logging
+import yaml
 
 from typing import TYPE_CHECKING, Any, Dict, List
 
@@ -8,6 +9,7 @@ from intugle.analysis.models import DataSet
 from intugle.core.console import console, success_style
 from intugle.link_predictor.predictor import LinkPredictor
 from intugle.semantic_search import SemanticSearch
+from intugle.exporters.factory import factory as exporter_factory
 
 if TYPE_CHECKING:
     from intugle.link_predictor.models import PredictedLink
@@ -91,6 +93,27 @@ class SemanticModel:
             log.warning(f"Semantic search initialization failed during build: {e}")
 
         return self
+
+    def export(self, format: str, **kwargs):
+        """Export the semantic model to a specified format."""
+        # This assumes that the manifest is already loaded in the SemanticModel
+        # In a real implementation, you would get the manifest from the SemanticModel instance
+        from intugle.parser.manifest import ManifestLoader
+        from intugle.core import settings
+        manifest_loader = ManifestLoader(settings.PROJECT_BASE)
+        manifest_loader.load()
+        manifest = manifest_loader.manifest
+
+        exporter = exporter_factory.get_exporter(format, manifest)
+        exported_data = exporter.export(**kwargs)
+        
+        output_path = kwargs.get("path")
+        if output_path:
+            with open(output_path, "w") as f:
+                yaml.dump(exported_data, f, sort_keys=False, default_flow_style=False)
+            print(f"Successfully exported to {output_path}")
+        
+        return exported_data
 
     @property
     def profiling_df(self) -> pd.DataFrame:
