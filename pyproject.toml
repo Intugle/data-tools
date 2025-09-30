@@ -50,6 +50,7 @@ dependencies = [
     "langchain[anthropic,google-genai,openai]>=0.3.27",
     "qdrant-client>=1.15.1",
     "rich>=14.1.0",
+    "snowflake-snowpark-python>=1.12.0",
 ]
 
 [project.urls]

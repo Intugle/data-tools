@@ -9,7 +9,7 @@ from typing import Optional
 from dotenv import load_dotenv
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from intugle.core.utilities.configs import load_model_configuration
+from intugle.core.utilities.configs import load_model_configuration, load_profiles_configuration
 
 load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 
@@ -40,6 +40,9 @@ class Settings(BaseSettings):
     DI_MODEL_VERSION: str = "13052023"
 
     PROJECT_BASE: str = create_project_base_if_not_exists()
+    PROFILES_PATH: str = os.path.join(os.getcwd(), "profiles.yml")
+
+    PROFILES: dict = load_profiles_configuration(PROFILES_PATH)
 
     MCP_SERVER_NAME: str = "intugle"
     MCP_SERVER_DESCRIPTION: str = "Data Tools for MCP"
