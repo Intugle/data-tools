@@ -220,6 +220,9 @@ class DuckdbAdapter(Adapter):
         if data.type == "query":
             self.load_view(data, table_name)
             return
+        if data.type == "table":
+            # The table is already materialized in DuckDB, so there's nothing to load.
+            return
         self.load_file(data, table_name)
     
     def execute_df(self, query):
@@ -235,7 +238,7 @@ class DuckdbAdapter(Adapter):
         return duckdb.sql(query).to_df()
 
     def create_table_from_query(self, table_name: str, query: str):
-        duckdb.sql(f'CREATE OR REPLACE TABLE "{table_name}" AS {query}')
+        duckdb.sql(f'CREATE OR REPLACE VIEW "{table_name}" AS {query}')
 
     def execute(self, query):
         df = self.execute_df(query)

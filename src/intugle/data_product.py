@@ -32,6 +32,15 @@ class DataProduct:
         selected_fields = set(self.field_details.keys())
         self.join = Join(self.links, selected_fields)
 
+        self.load_all()
+
+    def load_all(self):
+        sources = self.manifest.sources
+        for source in sources.values():
+            table_name = source.table.name
+            details = source.table.details
+            DataSet(data=details, name=table_name)
+
     def generate_query(self, etl: ETLModel) -> str:
         """Generates a SQL query based on the ETL model.
 
@@ -89,7 +98,7 @@ class DataProduct:
         # 5. Return a new DataSet pointing to the materialized table
         result_dataset = DataSet(data=new_config, name=etl.name)
         # Attach the query for inspection
-        # result_dataset.sql_query = sql_query 
+        result_dataset.sql_query = sql_query 
 
         return result_dataset
 
