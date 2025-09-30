@@ -133,6 +133,12 @@ class SnowflakeAdapter(Adapter):
         df.columns = [col.strip('"') for col in df.columns]
         return df
 
+    def to_df_from_query(self, query: str) -> pd.DataFrame:
+        return self.session.sql(query).to_pandas()
+
+    def create_table_from_query(self, table_name: str, query: str):
+        self.session.sql(f"CREATE OR REPLACE TABLE {table_name} AS {query}").collect()
+
     def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
         table1_adapter = self.check_data(table1.data)
         table2_adapter = self.check_data(table2.data)

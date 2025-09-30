@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Any, TYPE_CHECKING
 
+import pandas as pd
+
 from intugle.adapters.models import (
     ColumnProfile,
     DataSetData,
@@ -27,22 +29,32 @@ class Adapter(ABC):
         dtype_sample_limit: int = 10000,
     ) -> ColumnProfile:
         pass
-    
+
     @abstractmethod
-    def load():
+    def load(self, data: Any, table_name: str):
         ...
 
     @abstractmethod
     def execute(self, query: str):
         raise NotImplementedError()
-    
+
     @abstractmethod
-    def to_df(self: DataSetData, date, table_name: str):
+    def to_df(self, data: DataSetData, table_name: str):
         raise NotImplementedError()
-    
+
+    @abstractmethod
+    def to_df_from_query(self, query: str) -> pd.DataFrame:
+        raise NotImplementedError()
+
+    @abstractmethod
+    def create_table_from_query(self, table_name: str, query: str):
+        raise NotImplementedError()
+
     def get_details(self, _: DataSetData):
         return None
 
     @abstractmethod
-    def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
+    def intersect_count(
+        self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str
+    ) -> int:
         raise NotImplementedError()

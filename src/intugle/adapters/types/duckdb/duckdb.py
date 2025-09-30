@@ -231,6 +231,12 @@ class DuckdbAdapter(Adapter):
         df = self.execute_df(query)
         return df
 
+    def to_df_from_query(self, query: str) -> pd.DataFrame:
+        return duckdb.sql(query).to_df()
+
+    def create_table_from_query(self, table_name: str, query: str):
+        duckdb.sql(f'CREATE OR REPLACE TABLE "{table_name}" AS {query}')
+
     def execute(self, query):
         df = self.execute_df(query)
         data = df.to_dict(orient="records")
