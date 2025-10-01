@@ -11,15 +11,9 @@ from intugle.link_predictor.predictor import LinkPredictor
 from intugle.semantic_search import SemanticSearch
 from intugle.exporters.factory import factory as exporter_factory
 
-try:
-    from intugle.adapters.types.snowflake.snowflake import SnowflakeAdapter
-    SNOWFLAKE_AVAILABLE = True
-except ImportError:
-    SNOWFLAKE_AVAILABLE = False
-    SnowflakeAdapter = None
-
 if TYPE_CHECKING:
     from intugle.link_predictor.models import PredictedLink
+    from intugle.adapters.adapter import Adapter
 
 log = logging.getLogger(__name__)
 
@@ -196,12 +190,17 @@ class SemanticModel:
         manifest = manifest_loader.manifest
 
         # 2. Find a suitable adapter from the loaded manifest
-        adapter_to_use = None
-        adapter_type_map = {}
-        if SNOWFLAKE_AVAILABLE:
-            adapter_type_map["snowflake"] = SnowflakeAdapter
+        adapter_to_use: "Adapter" = None
         
-        target_adapter_class = adapter_type_map.get(target.lower())
+        # Dynamically get the adapter class from the factory
+        from intugle.adapters.factory import AdapterFactory
+        factory = AdapterFactory()
+        
+        target_adapter_class = None
+        for name, (checker, creator) in factory.dataframe_funcs.items():
+            if name == target.lower():
+                target_adapter_class = creator
+                break
 
         if not target_adapter_class:
             raise ValueError(f"Deployment target '{target}' is not supported or its dependencies are not installed.")
@@ -209,8 +208,6 @@ class SemanticModel:
         # Find a source that matches the target type to instantiate the adapter
         for source in manifest.sources.values():
             if source.table.details and source.table.details.get("type") == target.lower():
-                # We have a matching source, so we can create the adapter
-                # This assumes the adapter can be initialized from the global settings, which SnowflakeAdapter does
                 adapter_to_use = target_adapter_class()
                 break
         
@@ -221,7 +218,7 @@ class SemanticModel:
             )
 
 
-        # 4. Delegate the deployment to the adapter, passing both DDL and the full manifest
+        # 4. Delegate the deployment to the adapter, passing full manifest
         try:
             adapter_to_use.deploy_semantic_model(manifest, **kwargs)
             console.print(f"Successfully deployed semantic model to '{target}'.", style="bold green")

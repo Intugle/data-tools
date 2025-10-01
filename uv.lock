@@ -1523,7 +1523,7 @@ wheels = [
 
 [[package]]
 name = "intugle"
-version = "1.0.2.dev0"
+version = "1.0.2rc1"
 source = { editable = "." }
 dependencies = [
     { name = "asyncpg" },
@@ -1550,10 +1550,14 @@ dependencies = [
     { name = "qdrant-client" },
     { name = "rich" },
     { name = "scikit-learn" },
-    { name = "snowflake-snowpark-python", extra = ["pandas"] },
     { name = "symspellpy" },
     { name = "trieregex" },
     { name = "xgboost" },
+]
+
+[package.optional-dependencies]
+snowflake = [
+    { name = "snowflake-snowpark-python", extra = ["pandas"] },
 ]
 
 [package.dev-dependencies]
@@ -1598,11 +1602,12 @@ requires-dist = [
     { name = "qdrant-client", specifier = ">=1.15.1" },
     { name = "rich", specifier = ">=14.1.0" },
     { name = "scikit-learn", specifier = "<=1.7.1" },
-    { name = "snowflake-snowpark-python", extras = ["pandas"], specifier = ">=1.12.0" },
+    { name = "snowflake-snowpark-python", extras = ["pandas"], marker = "extra == 'snowflake'", specifier = ">=1.12.0" },
     { name = "symspellpy", specifier = ">=6.9.0" },
     { name = "trieregex", specifier = ">=1.0.0" },
     { name = "xgboost", specifier = "<=3.0.4" },
 ]
+provides-extras = ["snowflake"]
 
 [package.metadata.requires-dev]
 dev = [
