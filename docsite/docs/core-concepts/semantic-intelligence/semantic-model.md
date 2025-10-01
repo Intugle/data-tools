@@ -5,50 +5,46 @@ title: Semantic Model
 
 # Semantic Model
 
-The `SemanticModel` is the primary orchestrator of the data intelligence pipeline. It's the main user-facing class that manages many data sources and runs the end-to-end process of transforming them from raw, disconnected tables into a fully enriched and interconnected semantic layer.
-
-## Overview
-
-At a high level, the `SemanticModel` is responsible for:
-
-1.  **Initializing and Managing Datasets**: It takes your raw data sources (for example, file paths) and wraps each one in a `DataSet` object.
-2.  **Executing the Semantic Model Pipeline**: It runs a series of analysis stages in a specific, logical order to build up a rich understanding of your data.
-3.  **Ensuring Resilience**: The pipeline avoids redundant work. It automatically saves its progress after each major stage, letting you resume an interrupted run without losing completed work.
+The `SemanticModel` is the core class in `intugle`. It orchestrates the entire process of profiling, link prediction, and glossary generation to build a unified semantic layer over your data.
 
 ## Initialization
 
-You can initialize the `SemanticModel` in two ways:
+You can initialize the `SemanticModel` in two ways, depending on your use case.
 
-1.  **With a Dictionary of File-Based Sources**: This is the most common method. You give a dictionary where keys are the desired names for your datasets and values are dictionary configurations pointing to your data. The `path` can be a local file path or a remote URL (e.g., over HTTPS). Currently, `csv`, `parquet`, and `excel` file formats are supported.
+### Method 1: From a Dictionary (Recommended)
 
-    ```python
-    from intugle import SemanticModel
+This is the simplest and most common method. You provide a dictionary where each key is a unique name for a dataset, and the value contains its configuration (like path and type).
 
-    data_sources = {
-        "customers": {"path": "path/to/customers.csv", "type": "csv"},
-        "orders": {"path": "https://example.com/orders.csv", "type": "csv"},
-    }
+```python
+from intugle import SemanticModel
 
-    sm = SemanticModel(data_input=data_sources, domain="e-commerce")
-    ```
+datasets = {
+    "allergies": {"path": "path/to/allergies.csv", "type": "csv"},
+    "patients": {"path": "path/to/patients.csv", "type": "csv"},
+    "claims": {"path": "path/to/claims.csv", "type": "csv"},
+}
 
-2.  **With a List of `DataSet` Objects**: If you have already created `DataSet` objects, you can pass a list of them directly.
+sm = SemanticModel(datasets, domain="Healthcare")
+```
 
-    ```python
-    from intugle.analysis.models import DataSet
-    from intugle import SemanticModel
+:::info Connecting to Data Sources
+While these examples use local CSV files, `intugle` can connect to various data sources. See our **[Connectors documentation](../../connectors/snowflake)** for details on specific integrations like Snowflake.
+:::
 
-    # Create DataSet objects from file-based sources
-    customers_data = {"path": "path/to/customers.csv", "type": "csv"}
-    orders_data = {"path": "path/to/orders.csv", "type": "csv"}
-    
-    dataset_one = DataSet(customers_data, name="customers")
-    dataset_two = DataSet(orders_data, name="orders")
+### Method 2: From a List of DataSet Objects
 
-    datasets = [dataset_one, dataset_two]
+For more advanced scenarios, you can initialize the `SemanticModel` with a list of pre-configured `DataSet` objects. This is useful if you have already instantiated `DataSet` objects for other purposes.
 
-    sm = SemanticModel(data_input=datasets, domain="e-commerce")
-    ```
+```python
+from intugle import SemanticModel, DataSet
+
+# Create DataSet objects first
+dataset_allergies = DataSet(data={"path": "path/to/allergies.csv", "type": "csv"}, name="allergies")
+dataset_patients = DataSet(data={"path": "path/to/patients.csv", "type": "csv"}, name="patients")
+
+# Initialize the SemanticModel with the list of objects
+sm = SemanticModel([dataset_allergies, dataset_patients], domain="Healthcare")
+```
 
 The `domain` parameter is an optional but highly recommended string that gives context to the underlying AI models, helping them generate more relevant business glossary terms.
 

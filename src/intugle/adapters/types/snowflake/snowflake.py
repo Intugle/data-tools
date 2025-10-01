@@ -51,7 +51,7 @@ class SnowflakeAdapter(Adapter):
             self.schema = self.session.get_current_schema().strip('"')
         except Exception:
             print("No active Snowpark session found. Creating a new session from profiles.yml.")
-            connection_parameters_dict = settings.PROFILES.get("intugle", {}).get("outputs", {}).get("dev", {})
+            connection_parameters_dict = settings.PROFILES.get("snowflake", {})
             if not connection_parameters_dict:
                 raise ValueError("Could not create Snowflake session. No active session found and no connection details in profiles.yml.")
             

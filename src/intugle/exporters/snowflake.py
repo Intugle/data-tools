@@ -44,7 +44,7 @@ class SnowflakeExporter(Exporter):
         manifest = self.manifest
         
         # Get database and schema from profiles.yml
-        profile = settings.PROFILES.get("intugle", {}).get("outputs", {}).get("dev", {})
+        profile = settings.PROFILES.get("snowflake", {})
         database = profile.get("database")
         schema = profile.get("schema")
 
