@@ -8,10 +8,15 @@ import pandas as pd
 from intugle.analysis.models import DataSet
 from intugle.core.console import console, success_style
 from intugle.link_predictor.predictor import LinkPredictor
-from intugle.models.manifest import Manifest
 from intugle.semantic_search import SemanticSearch
 from intugle.exporters.factory import factory as exporter_factory
-from intugle.adapters.types.snowflake.snowflake import SnowflakeAdapter
+
+try:
+    from intugle.adapters.types.snowflake.snowflake import SnowflakeAdapter
+    SNOWFLAKE_AVAILABLE = True
+except ImportError:
+    SNOWFLAKE_AVAILABLE = False
+    SnowflakeAdapter = None
 
 if TYPE_CHECKING:
     from intugle.link_predictor.models import PredictedLink
@@ -96,16 +101,15 @@ class SemanticModel:
 
         return self
 
-    def export(self, format: str, manifest: "Manifest" = None,**kwargs):
+    def export(self, format: str, **kwargs):
         """Export the semantic model to a specified format."""
         # This assumes that the manifest is already loaded in the SemanticModel
         # In a real implementation, you would get the manifest from the SemanticModel instance
-        if not manifest:
-            from intugle.parser.manifest import ManifestLoader
-            from intugle.core import settings
-            manifest_loader = ManifestLoader(settings.PROJECT_BASE)
-            manifest_loader.load()
-            manifest = manifest_loader.manifest
+        from intugle.parser.manifest import ManifestLoader
+        from intugle.core import settings
+        manifest_loader = ManifestLoader(settings.PROJECT_BASE)
+        manifest_loader.load()
+        manifest = manifest_loader.manifest
 
         exporter = exporter_factory.get_exporter(format, manifest)
         exported_data = exporter.export(**kwargs)
@@ -193,13 +197,14 @@ class SemanticModel:
 
         # 2. Find a suitable adapter from the loaded manifest
         adapter_to_use = None
-        adapter_type_map = {
-            "snowflake": SnowflakeAdapter,
-        }
+        adapter_type_map = {}
+        if SNOWFLAKE_AVAILABLE:
+            adapter_type_map["snowflake"] = SnowflakeAdapter
+        
         target_adapter_class = adapter_type_map.get(target.lower())
 
         if not target_adapter_class:
-            raise ValueError(f"Deployment target '{target}' is not supported.")
+            raise ValueError(f"Deployment target '{target}' is not supported or its dependencies are not installed.")
 
         # Find a source that matches the target type to instantiate the adapter
         for source in manifest.sources.values():

@@ -20,21 +20,45 @@ from intugle.adapters.utils import convert_to_native
 from intugle.core import settings
 from intugle.exporters.snowflake import clean_name, quote_identifier
 
-from snowflake.snowpark import Session
-import snowflake.snowpark.functions as F
-from snowflake.snowpark.functions import col
+try:
+    from snowflake.snowpark import Session
+    import snowflake.snowpark.functions as F
+    from snowflake.snowpark.functions import col
+    from snowflake.snowpark.context import get_active_session
+    SNOWFLAKE_AVAILABLE = True
+except ImportError:
+    SNOWFLAKE_AVAILABLE = False
 
 from intugle.core.utilities.processing import string_standardization
 
 class SnowflakeAdapter(Adapter):
 
     def __init__(self):
-        connection_parameters = settings.PROFILES.get("etl", {}).get("outputs", {}).get("dev", {})
-        self.connection_parameters = SnowflakeConnectionConfig.model_validate(connection_parameters)
-        self.session = self.connect()
+        if not SNOWFLAKE_AVAILABLE:
+            raise ImportError("Snowflake dependencies are not installed. Please run 'pip install intugle[snowflake]'.")
+        
+        self.session: "Session" = None
+        self.database: Optional[str] = None
+        self.schema: Optional[str] = None
+        self.connect()
 
     def connect(self):
-        return Session.builder.configs(self.connection_parameters.model_dump()).create()
+        try:
+            self.session = get_active_session()
+            print("Found active Snowpark session. Using it for connection.")
+            # Get current DB and schema from the active session, stripping quotes
+            self.database = self.session.get_current_database().strip('"')
+            self.schema = self.session.get_current_schema().strip('"')
+        except Exception:
+            print("No active Snowpark session found. Creating a new session from profiles.yml.")
+            connection_parameters_dict = settings.PROFILES.get("intugle", {}).get("outputs", {}).get("dev", {})
+            if not connection_parameters_dict:
+                raise ValueError("Could not create Snowflake session. No active session found and no connection details in profiles.yml.")
+            
+            connection_parameters = SnowflakeConnectionConfig.model_validate(connection_parameters_dict)
+            self.session = Session.builder.configs(connection_parameters.model_dump()).create()
+            self.database = connection_parameters.database
+            self.schema = connection_parameters.schema
 
     @staticmethod
     def check_data(data: Any) -> SnowflakeConfig:
@@ -154,10 +178,8 @@ class SnowflakeAdapter(Adapter):
         """
         print("Syncing metadata to Snowflake tables...")
         
-        # Get database and schema from the global profiles settings
-        profile = settings.PROFILES.get("etl", {}).get("outputs", {}).get("dev", {})
-        database = profile.get("database")
-        schema = profile.get("schema")
+        database = self.database
+        schema = self.schema
 
         if not database or not schema:
             raise ValueError("Database and schema must be defined in your profiles.yml for deployment.")
@@ -213,10 +235,8 @@ class SnowflakeAdapter(Adapter):
         # Step 2: Manually build the CREATE SEMANTIC VIEW SQL statement
         model_name = kwargs.get("model_name", "intugle_semantic_view")
         
-        # Get database and schema from profiles.yml
-        profile = settings.PROFILES.get("etl", {}).get("outputs", {}).get("dev", {})
-        database = profile.get("database")
-        schema = profile.get("schema")
+        database = self.database
+        schema = self.schema
 
         # -- TABLES clause --
         table_clauses = []
@@ -316,4 +336,5 @@ def can_handle_snowflake(df: Any) -> bool:
 
 
 def register(factory: AdapterFactory):
-    factory.register("snowflake", can_handle_snowflake, SnowflakeAdapter)
+    if SNOWFLAKE_AVAILABLE:
+        factory.register("snowflake", can_handle_snowflake, SnowflakeAdapter)
