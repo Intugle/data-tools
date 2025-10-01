@@ -1,13 +1,16 @@
 import time
-from typing import Any, Optional
+from typing import Any, Optional, TYPE_CHECKING
 import yaml
 
 import numpy as np
 import pandas as pd
 
+if TYPE_CHECKING:
+    from intugle.models.manifest import Manifest
+
 from intugle.adapters.adapter import Adapter
 from intugle.adapters.factory import AdapterFactory
-from intugle.adapters.models import (
+from intugle.adapters.models import(
     ColumnProfile,
     DataSetData,
     ProfilingOutput,
@@ -15,6 +18,7 @@ from intugle.adapters.models import (
 from intugle.adapters.types.snowflake.models import SnowflakeConfig, SnowflakeConnectionConfig
 from intugle.adapters.utils import convert_to_native
 from intugle.core import settings
+from intugle.exporters.snowflake import clean_name, quote_identifier
 
 from snowflake.snowpark import Session
 import snowflake.snowpark.functions as F
@@ -144,27 +148,149 @@ class SnowflakeAdapter(Adapter):
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
         return SnowflakeConfig(identifier=etl_name)
 
-    def deploy_semantic_model(self, semantic_model_dict: dict, **kwargs):
+    def _sync_metadata(self, manifest: "Manifest"):
         """
-        Deploys a semantic model view to Snowflake using the provided dictionary.
-        
-        Kwargs:
-            model_name (str, optional): A custom name for the semantic model view.
-                                        Defaults to the name in the YAML structure.
+        Syncs metadata (comments and tags) from the manifest to the physical Snowflake tables.
         """
-        # Allow overriding the model name via kwargs
-        model_name = kwargs.get("model_name", semantic_model_dict.get("name"))
+        print("Syncing metadata to Snowflake tables...")
         
-        # The DDL string requires single quotes to be escaped.
-        model_yaml_string = yaml.dump(semantic_model_dict).replace("'", "''")
+        # Get database and schema from the global profiles settings
+        profile = settings.PROFILES.get("etl", {}).get("outputs", {}).get("dev", {})
+        database = profile.get("database")
+        schema = profile.get("schema")
+
+        if not database or not schema:
+            raise ValueError("Database and schema must be defined in your profiles.yml for deployment.")
+
+        # all_tags = set()
+
+        # # First, collect all unique tags from all sources
+        # for source in manifest.sources.values():
+        #     for column in source.table.columns:
+        #         if column.tags:
+        #             all_tags.update(column.tags)
+
+        # Ensure all tags exist in Snowflake
+        # for tag_name in all_tags:
+        #     self.session.sql(f"CREATE TAG IF NOT EXISTS {tag_name}").collect()
+
+        # Apply comments and tags to tables and columns
+        for source in manifest.sources.values():
+            # Construct the fully qualified table name using details from profiles.yml
+            full_table_name = f"{database}.{schema}.{source.table.name}"
+
+            # Set table comment
+            if source.table.description:
+                table_comment = source.table.description.replace("'", "''")
+                self.session.sql(f"ALTER TABLE {full_table_name} SET COMMENT = '{table_comment}'").collect()
+
+            # Set column comments and tags
+            for column in source.table.columns:
+                comment = (column.description or "").replace("'", "''")
+                
+                # Set column comment
+                self.session.sql(f"ALTER TABLE {full_table_name} MODIFY COLUMN {quote_identifier(column.name)} COMMENT '{comment}'").collect()
+
+                # Set column tags
+                # if column.tags:
+                #     tag_assignments = ", ".join([f"{tag} = 'true'" for tag in column.tags])
+                #     self.session.sql(f"ALTER TABLE {full_table_name} MODIFY COLUMN \"{column.name}\" SET TAG {tag_assignments}").collect()
+        
+        print("Metadata sync complete.")
+
+    def deploy_semantic_model(self, manifest: "Manifest", **kwargs):
+        """
+        Constructs and executes a CREATE SEMANTIC VIEW statement based on the manifest.
+        
+        Args:
+            manifest (Manifest): The project manifest containing all sources and relationships.
+            **kwargs:
+                model_name (str, optional): A custom name for the semantic model view.
+        """
+        # Step 1: Sync metadata to the physical tables first
+        self._sync_metadata(manifest)
+
+        # Step 2: Manually build the CREATE SEMANTIC VIEW SQL statement
+        model_name = kwargs.get("model_name", "intugle_semantic_view")
+        
+        # Get database and schema from profiles.yml
+        profile = settings.PROFILES.get("etl", {}).get("outputs", {}).get("dev", {})
+        database = profile.get("database")
+        schema = profile.get("schema")
+
+        # -- TABLES clause --
+        table_clauses = []
+        for source in manifest.sources.values():
+            table_alias = clean_name(source.table.name)
+            full_table_name = f"{database}.{schema}.{source.table.name}"
+            
+            clause = f"{table_alias} AS {full_table_name}"
+            if source.table.key:
+                clause += f" PRIMARY KEY ({clean_name(source.table.key)})"
+            if source.table.description:
+                comment = source.table.description.replace("'", "''")
+                clause += f" COMMENT = '{comment}'"
+            table_clauses.append(clause)
+
+        # -- RELATIONSHIPS clause --
+        relationship_clauses = []
+        for rel in manifest.relationships.values():
+            source_table_info = manifest.sources.get(rel.source.table)
+            target_table_info = manifest.sources.get(rel.target.table)
+
+            if not source_table_info or not target_table_info:
+                continue
+
+            # Determine which table is the 'one' side (contains the PK for the join)
+            if source_table_info.table.key == rel.source.column:
+                # source is the 'one' side (referenced table)
+                ref_table_alias = clean_name(rel.source.table)
+                ref_column = clean_name(rel.source.column)
+                table_alias = clean_name(rel.target.table)
+                column = clean_name(rel.target.column)
+            elif target_table_info.table.key == rel.target.column:
+                # target is the 'one' side (referenced table)
+                ref_table_alias = clean_name(rel.target.table)
+                ref_column = clean_name(rel.target.column)
+                table_alias = clean_name(rel.source.table)
+                column = clean_name(rel.source.column)
+            else:
+                # This is not a valid FK relationship for the semantic view, skip it
+                continue
+
+            clause = f"{clean_name(rel.name)} AS {table_alias}({column}) REFERENCES {ref_table_alias}({ref_column})"
+            relationship_clauses.append(clause)
+
+        # -- FACTS and DIMENSIONS clauses --
+        fact_clauses = []
+        dimension_clauses = []
+        for source in manifest.sources.values():
+            table_alias = clean_name(source.table.name)
+            for column in source.table.columns:
+                col_alias = clean_name(column.name)
+                expr = f"{table_alias}.{col_alias} AS {quote_identifier(column.name)}"
+                if column.description:
+                    comment = column.description.replace("'", "''")
+                    expr += f" COMMENT = '{comment}'"
+                
+                if column.category == 'measure':
+                    fact_clauses.append(expr)
+                else: # Default to dimension
+                    dimension_clauses.append(expr)
+
+        # -- Assemble the final SQL statement --
+        sql = f"CREATE OR REPLACE SEMANTIC VIEW {model_name}\n"
+        sql += f"  TABLES ({', '.join(table_clauses)})\n"
+        if relationship_clauses:
+            sql += f"  RELATIONSHIPS ({', '.join(relationship_clauses)})\n"
+        if fact_clauses:
+            sql += f"  FACTS ({', '.join(fact_clauses)})\n"
+        if dimension_clauses:
+            sql += f"  DIMENSIONS ({', '.join(dimension_clauses)})\n"
+        sql += "  COMMENT = 'Semantic view generated by Intugle'"
 
         print(f"Deploying semantic model view '{model_name}' to Snowflake...")
-        
-        self.session.sql(f"""
-            CREATE OR REPLACE SEMANTIC MODEL {model_name}
-            FROM DDL '{model_yaml_string}';
-        """).collect()
-        
+        self.session.sql(sql).collect()
         print(f"Semantic model view '{model_name}' deployed successfully.")
 
     def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:

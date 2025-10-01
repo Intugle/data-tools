@@ -8,6 +8,7 @@ import pandas as pd
 from intugle.analysis.models import DataSet
 from intugle.core.console import console, success_style
 from intugle.link_predictor.predictor import LinkPredictor
+from intugle.models.manifest import Manifest
 from intugle.semantic_search import SemanticSearch
 from intugle.exporters.factory import factory as exporter_factory
 from intugle.adapters.types.snowflake.snowflake import SnowflakeAdapter
@@ -95,15 +96,16 @@ class SemanticModel:
 
         return self
 
-    def export(self, format: str, **kwargs):
+    def export(self, format: str, manifest: "Manifest" = None,**kwargs):
         """Export the semantic model to a specified format."""
         # This assumes that the manifest is already loaded in the SemanticModel
         # In a real implementation, you would get the manifest from the SemanticModel instance
-        from intugle.parser.manifest import ManifestLoader
-        from intugle.core import settings
-        manifest_loader = ManifestLoader(settings.PROJECT_BASE)
-        manifest_loader.load()
-        manifest = manifest_loader.manifest
+        if not manifest:
+            from intugle.parser.manifest import ManifestLoader
+            from intugle.core import settings
+            manifest_loader = ManifestLoader(settings.PROJECT_BASE)
+            manifest_loader.load()
+            manifest = manifest_loader.manifest
 
         exporter = exporter_factory.get_exporter(format, manifest)
         exported_data = exporter.export(**kwargs)
@@ -174,47 +176,49 @@ class SemanticModel:
 
     def deploy(self, target: str, **kwargs):
         """
-        Deploys the semantic model to a specified target platform.
+        Deploys the semantic model to a specified target platform based on the persisted YAML files.
 
         Args:
             target (str): The target platform to deploy to (e.g., "snowflake").
             **kwargs: Additional keyword arguments specific to the target platform.
-                      For Snowflake, this can include 'model_name'.
         """
-        console.print(f"Starting deployment to '{target}'...", style="yellow")
+        console.print(f"Starting deployment to '{target}' based on project YAML files...", style="yellow")
 
+        # 1. Load the entire project state from YAML files
+        from intugle.parser.manifest import ManifestLoader
+        from intugle.core import settings
+        manifest_loader = ManifestLoader(settings.PROJECT_BASE)
+        manifest_loader.load()
+        manifest = manifest_loader.manifest
+
+        # 2. Find a suitable adapter from the loaded manifest
         adapter_to_use = None
         adapter_type_map = {
             "snowflake": SnowflakeAdapter,
-            # Future targets can be added here:
-            # "databricks": DatabricksAdapter,
-            # "dbt": DbtAdapter,
         }
-
         target_adapter_class = adapter_type_map.get(target.lower())
 
         if not target_adapter_class:
             raise ValueError(f"Deployment target '{target}' is not supported.")
 
-        # Find an adapter instance of the correct type from the initialized datasets
-        for dataset in self.datasets.values():
-            if isinstance(dataset.adapter, target_adapter_class):
-                adapter_to_use = dataset.adapter
+        # Find a source that matches the target type to instantiate the adapter
+        for source in manifest.sources.values():
+            if source.table.details and source.table.details.get("type") == target.lower():
+                # We have a matching source, so we can create the adapter
+                # This assumes the adapter can be initialized from the global settings, which SnowflakeAdapter does
+                adapter_to_use = target_adapter_class()
                 break
         
         if not adapter_to_use:
             raise RuntimeError(
-                f"Cannot deploy to '{target}'. No {target} dataset found in the semantic model "
+                f"Cannot deploy to '{target}'. No '{target}' source found in the project YAML files "
                 "to provide connection details."
             )
 
-        # Export the model definition for the specified target
-        console.print(f"Generating semantic model definition for '{target}'...", style="cyan")
-        semantic_model_dict = self.export(format=target, **kwargs)
 
-        # Delegate the actual deployment to the adapter
+        # 4. Delegate the deployment to the adapter, passing both DDL and the full manifest
         try:
-            adapter_to_use.deploy_semantic_model(semantic_model_dict, **kwargs)
+            adapter_to_use.deploy_semantic_model(manifest, **kwargs)
             console.print(f"Successfully deployed semantic model to '{target}'.", style="bold green")
         except Exception as e:
             console.print(f"Failed to deploy semantic model to '{target}': {e}", style="bold red")

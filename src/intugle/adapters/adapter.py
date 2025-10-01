@@ -11,6 +11,7 @@ from intugle.adapters.models import (
 
 if TYPE_CHECKING:
     from intugle.analysis.models import DataSet
+    from intugle.models.manifest import Manifest
 
 
 class Adapter(ABC):
@@ -54,7 +55,7 @@ class Adapter(ABC):
     def create_new_config_from_etl(self, etl_name: str) -> DataSetData:
         raise NotImplementedError()
 
-    def deploy_semantic_model(self, semantic_model_dict: dict, **kwargs):
+    def deploy_semantic_model(self, manifest: "Manifest", **kwargs):
         """Deploys a semantic model to the target system."""
         raise NotImplementedError()
 
