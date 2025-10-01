@@ -89,11 +89,7 @@ class DataProduct:
         execution_adapter.create_table_from_query(etl.name, sql_query)
 
         # 4. Create a new config object pointing to the newly created table
-        if primary_source.table.details["type"] == "snowflake":
-            new_config = SnowflakeConfig(identifier=etl.name)
-        else:
-            # Assuming DuckDB for file-based sources
-            new_config = DuckdbConfig(path=etl.name, type="table")
+        new_config = execution_adapter.create_new_config_from_etl(etl.name)
 
         # 5. Return a new DataSet pointing to the materialized table
         result_dataset = DataSet(data=new_config, name=etl.name)

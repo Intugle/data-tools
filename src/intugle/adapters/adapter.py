@@ -50,6 +50,10 @@ class Adapter(ABC):
     def create_table_from_query(self, table_name: str, query: str):
         raise NotImplementedError()
 
+    @abstractmethod
+    def create_new_config_from_etl(self, etl_name: str) -> DataSetData:
+        raise NotImplementedError()
+
     def get_details(self, _: DataSetData):
         return None
 

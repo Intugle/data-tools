@@ -8,6 +8,7 @@ from intugle.adapters.adapter import Adapter
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import (
     ColumnProfile,
+    DataSetData,
     ProfilingOutput,
 )
 from intugle.adapters.types.snowflake.models import SnowflakeConfig, SnowflakeConnectionConfig
@@ -138,6 +139,9 @@ class SnowflakeAdapter(Adapter):
 
     def create_table_from_query(self, table_name: str, query: str):
         self.session.sql(f"CREATE OR REPLACE TABLE {table_name} AS {query}").collect()
+
+    def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
+        return SnowflakeConfig(identifier=etl_name)
 
     def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
         table1_adapter = self.check_data(table1.data)

@@ -10,6 +10,7 @@ from intugle.adapters.adapter import Adapter
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import (
     ColumnProfile,
+    DataSetData,
     ProfilingOutput,
 )
 from intugle.adapters.types.duckdb.models import DuckdbConfig
@@ -239,6 +240,9 @@ class DuckdbAdapter(Adapter):
 
     def create_table_from_query(self, table_name: str, query: str):
         duckdb.sql(f'CREATE OR REPLACE VIEW "{table_name}" AS {query}')
+
+    def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
+        return DuckdbConfig(path=etl_name, type="table")
 
     def execute(self, query):
         df = self.execute_df(query)
