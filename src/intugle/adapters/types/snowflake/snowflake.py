@@ -1,5 +1,6 @@
 import time
 from typing import Any, Optional
+import yaml
 
 import numpy as np
 import pandas as pd
@@ -142,6 +143,29 @@ class SnowflakeAdapter(Adapter):
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
         return SnowflakeConfig(identifier=etl_name)
+
+    def deploy_semantic_model(self, semantic_model_dict: dict, **kwargs):
+        """
+        Deploys a semantic model view to Snowflake using the provided dictionary.
+        
+        Kwargs:
+            model_name (str, optional): A custom name for the semantic model view.
+                                        Defaults to the name in the YAML structure.
+        """
+        # Allow overriding the model name via kwargs
+        model_name = kwargs.get("model_name", semantic_model_dict.get("name"))
+        
+        # The DDL string requires single quotes to be escaped.
+        model_yaml_string = yaml.dump(semantic_model_dict).replace("'", "''")
+
+        print(f"Deploying semantic model view '{model_name}' to Snowflake...")
+        
+        self.session.sql(f"""
+            CREATE OR REPLACE SEMANTIC MODEL {model_name}
+            FROM DDL '{model_yaml_string}';
+        """).collect()
+        
+        print(f"Semantic model view '{model_name}' deployed successfully.")
 
     def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
         table1_adapter = self.check_data(table1.data)

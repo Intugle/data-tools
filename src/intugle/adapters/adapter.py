@@ -54,6 +54,10 @@ class Adapter(ABC):
     def create_new_config_from_etl(self, etl_name: str) -> DataSetData:
         raise NotImplementedError()
 
+    def deploy_semantic_model(self, semantic_model_dict: dict, **kwargs):
+        """Deploys a semantic model to the target system."""
+        raise NotImplementedError()
+
     def get_details(self, _: DataSetData):
         return None
 

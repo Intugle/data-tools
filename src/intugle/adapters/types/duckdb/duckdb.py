@@ -244,6 +244,10 @@ class DuckdbAdapter(Adapter):
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
         return DuckdbConfig(path=etl_name, type="table")
 
+    def deploy_semantic_model(self, semantic_model_dict: dict, **kwargs):
+        """Deploys a semantic model to the target system."""
+        raise NotImplementedError("Deployment is not supported for the DuckdbAdapter.")
+
     def execute(self, query):
         df = self.execute_df(query)
         data = df.to_dict(orient="records")

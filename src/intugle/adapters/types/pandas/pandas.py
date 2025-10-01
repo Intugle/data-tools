@@ -169,6 +169,10 @@ class PandasAdapter(Adapter):
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
         raise NotImplementedError("create_new_config_from_etl is not supported for PandasAdapter yet.")
 
+    def deploy_semantic_model(self, semantic_model_dict: dict, **kwargs):
+        """Deploys a semantic model to the target system."""
+        raise NotImplementedError("Deployment is not supported for the PandasAdapter.")
+
     def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
         df1 = table1.data
         df2 = table2.data

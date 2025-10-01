@@ -10,6 +10,7 @@ from intugle.core.console import console, success_style
 from intugle.link_predictor.predictor import LinkPredictor
 from intugle.semantic_search import SemanticSearch
 from intugle.exporters.factory import factory as exporter_factory
+from intugle.adapters.types.snowflake.snowflake import SnowflakeAdapter
 
 if TYPE_CHECKING:
     from intugle.link_predictor.models import PredictedLink
@@ -170,3 +171,51 @@ class SemanticModel:
         except Exception as e:
             log.error(f"Could not perform semantic search: {e}")
             raise e
+
+    def deploy(self, target: str, **kwargs):
+        """
+        Deploys the semantic model to a specified target platform.
+
+        Args:
+            target (str): The target platform to deploy to (e.g., "snowflake").
+            **kwargs: Additional keyword arguments specific to the target platform.
+                      For Snowflake, this can include 'model_name'.
+        """
+        console.print(f"Starting deployment to '{target}'...", style="yellow")
+
+        adapter_to_use = None
+        adapter_type_map = {
+            "snowflake": SnowflakeAdapter,
+            # Future targets can be added here:
+            # "databricks": DatabricksAdapter,
+            # "dbt": DbtAdapter,
+        }
+
+        target_adapter_class = adapter_type_map.get(target.lower())
+
+        if not target_adapter_class:
+            raise ValueError(f"Deployment target '{target}' is not supported.")
+
+        # Find an adapter instance of the correct type from the initialized datasets
+        for dataset in self.datasets.values():
+            if isinstance(dataset.adapter, target_adapter_class):
+                adapter_to_use = dataset.adapter
+                break
+        
+        if not adapter_to_use:
+            raise RuntimeError(
+                f"Cannot deploy to '{target}'. No {target} dataset found in the semantic model "
+                "to provide connection details."
+            )
+
+        # Export the model definition for the specified target
+        console.print(f"Generating semantic model definition for '{target}'...", style="cyan")
+        semantic_model_dict = self.export(format=target, **kwargs)
+
+        # Delegate the actual deployment to the adapter
+        try:
+            adapter_to_use.deploy_semantic_model(semantic_model_dict, **kwargs)
+            console.print(f"Successfully deployed semantic model to '{target}'.", style="bold green")
+        except Exception as e:
+            console.print(f"Failed to deploy semantic model to '{target}': {e}", style="bold red")
+            raise
