@@ -1,5 +1,8 @@
 from typing import TYPE_CHECKING
 
+from intugle.adapters.factory import AdapterFactory
+from intugle.adapters.types.duckdb.models import DuckdbConfig
+from intugle.adapters.types.snowflake.models import SnowflakeConfig
 from intugle.analysis.models import DataSet
 from intugle.core import settings
 from intugle.libs.smart_query_generator import SmartQueryGenerator
@@ -60,25 +63,40 @@ class DataProduct:
         return sql_query
         
     def build(self, etl: ETLModel) -> DataSet:
-        """Generates a dataset on the ETL model.
+        """Generates and materializes a data product based on the ETL model.
 
         Args:
-            etl (ETLModel): The ETL model containing the configuration for the query.
+            etl (ETLModel): The ETL model containing the configuration for the data product.
 
         Returns:
-            Dataset: The dataset.
+            DataSet: A new DataSet object pointing to the materialized table.
         """
         etl = ETLModel.model_validate(etl)
 
+        if not etl.fields:
+            raise ValueError("ETL model must have at least one field.")
+
+        # 1. Determine the primary adapter from the first field in the ETL model
+        first_field_id = etl.fields[0].id
+        primary_asset_id = self.field_details[first_field_id].asset_id
+        primary_source = self.manifest.sources[primary_asset_id]
+        execution_adapter = AdapterFactory().create(primary_source.table.details)
+
+        # 2. Generate the SQL query
         sql_query = self.generate_query(etl)
 
-        data = {
-            "path": sql_query,
-            "type": "query"
-        }
-        print(etl.name)
-        dataset = DataSet(data, etl.name)
-        return dataset
+        # 3. Materialize the query as a new table in the target database
+        execution_adapter.create_table_from_query(etl.name, sql_query)
+
+        # 4. Create a new config object pointing to the newly created table
+        new_config = execution_adapter.create_new_config_from_etl(etl.name)
+
+        # 5. Return a new DataSet pointing to the materialized table
+        result_dataset = DataSet(data=new_config, name=etl.name)
+        # Attach the query for inspection
+        result_dataset.sql_query = sql_query 
+
+        return result_dataset
 
     def get_all_field_details(self) -> dict[str, FieldDetailsModel]:
         """Fetches all field details from the manifest."""

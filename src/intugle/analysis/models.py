@@ -40,6 +40,7 @@ class DataSet:
         self.id = uuid.uuid4()
         self.name = name
         self.data = data
+        self._sql_query: Optional[str] = None
 
         # The factory creates the correct wrapper for consistent API access
         self.adapter = AdapterFactory().create(data)
@@ -90,9 +91,11 @@ class DataSet:
 
     @property
     def sql_query(self):
-        if "type" in self.data and self.data["type"] == "query":
-            return self.data["path"]
-        return None
+        return self._sql_query
+
+    @sql_query.setter
+    def sql_query(self, value: str):
+        self._sql_query = value
 
     def load(self):
         try:

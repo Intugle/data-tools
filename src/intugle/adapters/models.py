@@ -6,9 +6,10 @@ import pandas as pd
 from pydantic import BaseModel, Field
 
 from intugle.adapters.types.duckdb.models import DuckdbConfig
+from intugle.adapters.types.snowflake.models import SnowflakeConfig
 
 # FIXME load dynamically
-DataSetData = pd.DataFrame | DuckdbConfig
+DataSetData = pd.DataFrame | DuckdbConfig | SnowflakeConfig
 
 
 class ProfilingOutput(BaseModel):

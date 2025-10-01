@@ -26,13 +26,13 @@ def generate_create_table_query(table_columns: list,
                                    mapping_dtypes_to_sql: bool = False
                                    ):
     
-    create_table_query = f"CREATE TABLE {table_name.lower()} ("
+    create_table_query = f"CREATE TABLE {table_name} ("
     column_parts = []
     lngth = len(table_columns)
 
     for i, column in enumerate(table_columns, 1):
         parts = []
-        parts.append(f"{column}")
+        parts.append(f"\"{column}\"")
         column_id = (table_name, column)    
         if column_id in column_datatypes:
             datatype = column_datatypes[column_id] if not mapping_dtypes_to_sql else DTYPE_MAPPING[column_datatypes[column_id]]
@@ -77,8 +77,8 @@ def read_column_datatypes(dtype: pd.DataFrame,):
     column_datatypes = {}
     try:
         for row in range(len(dtype)): 
-            table_name = dtype['table_name'][row].lower()
-            column_name = dtype['column_name'][row].lower()
+            table_name = dtype['table_name'][row]
+            column_name = dtype['column_name'][row]
             datatype = dtype['datatype_l1'][row]
             column_datatypes[(table_name, column_name)] = datatype
     except Exception as ex:

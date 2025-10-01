@@ -57,4 +57,10 @@ def load_model_configuration(pipeline_name: str, custom_config: dict):
             default_config[key] = user_config[key]
     
     return {**default_config}
+
+def load_profiles_configuration(profiles_path: str):
+    if not os.path.exists(profiles_path):
+        return {}
+    with open(profiles_path, "r") as f:
+        return yaml.safe_load(f)
     

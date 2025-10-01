@@ -1,4 +1,5 @@
 import logging
+import yaml
 
 from typing import TYPE_CHECKING, Any, Dict, List
 
@@ -8,9 +9,11 @@ from intugle.analysis.models import DataSet
 from intugle.core.console import console, success_style
 from intugle.link_predictor.predictor import LinkPredictor
 from intugle.semantic_search import SemanticSearch
+from intugle.exporters.factory import factory as exporter_factory
 
 if TYPE_CHECKING:
     from intugle.link_predictor.models import PredictedLink
+    from intugle.adapters.adapter import Adapter
 
 log = logging.getLogger(__name__)
 
@@ -92,6 +95,27 @@ class SemanticModel:
 
         return self
 
+    def export(self, format: str, **kwargs):
+        """Export the semantic model to a specified format."""
+        # This assumes that the manifest is already loaded in the SemanticModel
+        # In a real implementation, you would get the manifest from the SemanticModel instance
+        from intugle.parser.manifest import ManifestLoader
+        from intugle.core import settings
+        manifest_loader = ManifestLoader(settings.PROJECT_BASE)
+        manifest_loader.load()
+        manifest = manifest_loader.manifest
+
+        exporter = exporter_factory.get_exporter(format, manifest)
+        exported_data = exporter.export(**kwargs)
+        
+        output_path = kwargs.get("path")
+        if output_path:
+            with open(output_path, "w") as f:
+                yaml.dump(exported_data, f, sort_keys=False, default_flow_style=False)
+            print(f"Successfully exported to {output_path}")
+        
+        return exported_data
+
     @property
     def profiling_df(self) -> pd.DataFrame:
         """Returns a consolidated DataFrame of profiling metrics for all datasets."""
@@ -147,3 +171,57 @@ class SemanticModel:
         except Exception as e:
             log.error(f"Could not perform semantic search: {e}")
             raise e
+
+    def deploy(self, target: str, **kwargs):
+        """
+        Deploys the semantic model to a specified target platform based on the persisted YAML files.
+
+        Args:
+            target (str): The target platform to deploy to (e.g., "snowflake").
+            **kwargs: Additional keyword arguments specific to the target platform.
+        """
+        console.print(f"Starting deployment to '{target}' based on project YAML files...", style="yellow")
+
+        # 1. Load the entire project state from YAML files
+        from intugle.parser.manifest import ManifestLoader
+        from intugle.core import settings
+        manifest_loader = ManifestLoader(settings.PROJECT_BASE)
+        manifest_loader.load()
+        manifest = manifest_loader.manifest
+
+        # 2. Find a suitable adapter from the loaded manifest
+        adapter_to_use: "Adapter" = None
+        
+        # Dynamically get the adapter class from the factory
+        from intugle.adapters.factory import AdapterFactory
+        factory = AdapterFactory()
+        
+        target_adapter_class = None
+        for name, (checker, creator) in factory.dataframe_funcs.items():
+            if name == target.lower():
+                target_adapter_class = creator
+                break
+
+        if not target_adapter_class:
+            raise ValueError(f"Deployment target '{target}' is not supported or its dependencies are not installed.")
+
+        # Find a source that matches the target type to instantiate the adapter
+        for source in manifest.sources.values():
+            if source.table.details and source.table.details.get("type") == target.lower():
+                adapter_to_use = target_adapter_class()
+                break
+        
+        if not adapter_to_use:
+            raise RuntimeError(
+                f"Cannot deploy to '{target}'. No '{target}' source found in the project YAML files "
+                "to provide connection details."
+            )
+
+
+        # 4. Delegate the deployment to the adapter, passing full manifest
+        try:
+            adapter_to_use.deploy_semantic_model(manifest, **kwargs)
+            console.print(f"Successfully deployed semantic model to '{target}'.", style="bold green")
+        except Exception as e:
+            console.print(f"Failed to deploy semantic model to '{target}': {e}", style="bold red")
+            raise

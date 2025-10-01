@@ -26,7 +26,11 @@ The primary input for the `DataProduct` is a product specification, which you de
 
 ## Usage Example
 
-Using the `DataProduct` is straightforward. Once the `SemanticModel` has successfully built the semantic layer, you can immediately start creating data products.
+Once the `SemanticModel` is built, you can use the `DataProduct` class to generate unified data products from the semantic layer. This allows you to select fields from across different tables, and `intugle` will automatically handle the joins and generate the final, unified dataset.
+
+## Building a Data Product
+
+To build a data product, you define an product specification model specifying the fields you want, any transformations, and filters.
 
 ```python
 from intugle import DataProduct
@@ -77,9 +81,11 @@ print(data_product.to_df())
 print(data_product.sql_query)
 ```
 
-This workflow allows you to rapidly prototype and generate complex, unified datasets by simply describing what you need, letting the `DataProduct` handle the underlying SQL complexity.
+:::info Materialization with Connectors
+When using a database connector like **[Snowflake](../../connectors/snowflake)**, the `build()` method will materialize the data product as a new table directly within your connected database schema. For file-based sources, it is materialized as a view in an in-memory DuckDB database.
+:::
 
-For a detailed breakdown of all capabilities with more examples, please see the following pages:
+The `DataProduct` class provides a powerful way to query your connected data without writing complex SQL manually. For more detailed operations, see the other guides in this section:
 
 *   **[Basic Operations](./basic-operations.md)**: Learn how to select, alias, and limit fields.
 *   **[Sorting](./sorting.md)**: See how to order your data products.

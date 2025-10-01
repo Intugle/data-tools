@@ -21,6 +21,7 @@ def import_module(name: str) -> ModuleInterface:
 DEFAULT_PLUGINS = [
     "intugle.adapters.types.pandas.pandas",
     "intugle.adapters.types.duckdb.duckdb",
+    "intugle.adapters.types.snowflake.snowflake",
 ]
 
 
@@ -35,8 +36,12 @@ class AdapterFactory:
         plugins.extend(DEFAULT_PLUGINS)
 
         for _plugin in plugins:
-            plugin = import_module(_plugin)
-            plugin.register(self)
+            try:
+                plugin = import_module(_plugin)
+                plugin.register(self)
+            except ImportError:
+                print(f"Warning: Could not load plugin '{_plugin}' due to missing dependencies. This adapter will not be available.")
+                pass
 
     @classmethod
     def register(

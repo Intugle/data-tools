@@ -10,6 +10,7 @@ from intugle.adapters.adapter import Adapter
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import (
     ColumnProfile,
+    DataSetData,
     ProfilingOutput,
 )
 from intugle.adapters.types.duckdb.models import DuckdbConfig
@@ -220,6 +221,9 @@ class DuckdbAdapter(Adapter):
         if data.type == "query":
             self.load_view(data, table_name)
             return
+        if data.type == "table":
+            # The table is already materialized in DuckDB, so there's nothing to load.
+            return
         self.load_file(data, table_name)
     
     def execute_df(self, query):
@@ -230,6 +234,19 @@ class DuckdbAdapter(Adapter):
         query = f'''SELECT * from "{table_name}"'''
         df = self.execute_df(query)
         return df
+
+    def to_df_from_query(self, query: str) -> pd.DataFrame:
+        return duckdb.sql(query).to_df()
+
+    def create_table_from_query(self, table_name: str, query: str):
+        duckdb.sql(f'CREATE OR REPLACE VIEW "{table_name}" AS {query}')
+
+    def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
+        return DuckdbConfig(path=etl_name, type="table")
+
+    def deploy_semantic_model(self, semantic_model_dict: dict, **kwargs):
+        """Deploys a semantic model to the target system."""
+        raise NotImplementedError("Deployment is not supported for the DuckdbAdapter.")
 
     def execute(self, query):
         df = self.execute_df(query)

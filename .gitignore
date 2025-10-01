@@ -215,3 +215,6 @@ models_bak
 settings.json
 archived/
 /experiments/
+
+profiles.yml
+profiles.yaml

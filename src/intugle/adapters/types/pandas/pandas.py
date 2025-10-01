@@ -9,6 +9,7 @@ from intugle.adapters.adapter import Adapter
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import (
     ColumnProfile,
+    DataSetData,
     ProfilingOutput,
 )
 from intugle.adapters.utils import convert_to_native
@@ -158,6 +159,19 @@ class PandasAdapter(Adapter):
     
     def to_df(self, data):
         return data
+
+    def to_df_from_query(self, query: str) -> pd.DataFrame:
+        raise NotImplementedError("to_df_from_query is not supported for PandasAdapter yet.")
+
+    def create_table_from_query(self, table_name: str, query: str):
+        raise NotImplementedError("create_table_from_query is not supported for PandasAdapter yet.")
+
+    def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
+        raise NotImplementedError("create_new_config_from_etl is not supported for PandasAdapter yet.")
+
+    def deploy_semantic_model(self, semantic_model_dict: dict, **kwargs):
+        """Deploys a semantic model to the target system."""
+        raise NotImplementedError("Deployment is not supported for the PandasAdapter.")
 
     def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
         df1 = table1.data

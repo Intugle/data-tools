@@ -36,7 +36,7 @@ class PredictedLink(BaseModel):
             accuracy=self.accuracy,
         )
         relationship = Relationship(
-            name=f"{self.from_dataset}-{self.to_dataset}",
+            name=f"{self.from_dataset}_{self.to_dataset}",
             description="",
             source=source,
             target=target,
