@@ -1,16 +1,18 @@
+import re
 import time
-from typing import Any, Optional, TYPE_CHECKING
-import yaml
+
+from typing import TYPE_CHECKING, Any, Optional
 
 import numpy as np
 import pandas as pd
 
 if TYPE_CHECKING:
+    from intugle.analysis.models import DataSet
     from intugle.models.manifest import Manifest
 
 from intugle.adapters.adapter import Adapter
 from intugle.adapters.factory import AdapterFactory
-from intugle.adapters.models import(
+from intugle.adapters.models import (
     ColumnProfile,
     DataSetData,
     ProfilingOutput,
@@ -21,22 +23,24 @@ from intugle.core import settings
 from intugle.exporters.snowflake import clean_name, quote_identifier
 
 try:
-    from snowflake.snowpark import Session
     import snowflake.snowpark.functions as F
-    from snowflake.snowpark.functions import col
+
+    from snowflake.snowpark import Session
     from snowflake.snowpark.context import get_active_session
+    from snowflake.snowpark.functions import col
+
     SNOWFLAKE_AVAILABLE = True
 except ImportError:
     SNOWFLAKE_AVAILABLE = False
 
 from intugle.core.utilities.processing import string_standardization
 
-class SnowflakeAdapter(Adapter):
 
+class SnowflakeAdapter(Adapter):
     def __init__(self):
         if not SNOWFLAKE_AVAILABLE:
             raise ImportError("Snowflake dependencies are not installed. Please run 'pip install intugle[snowflake]'.")
-        
+
         self.session: "Session" = None
         self.database: Optional[str] = None
         self.schema: Optional[str] = None
@@ -53,8 +57,10 @@ class SnowflakeAdapter(Adapter):
             print("No active Snowpark session found. Creating a new session from profiles.yml.")
             connection_parameters_dict = settings.PROFILES.get("snowflake", {})
             if not connection_parameters_dict:
-                raise ValueError("Could not create Snowflake session. No active session found and no connection details in profiles.yml.")
-            
+                raise ValueError(
+                    "Could not create Snowflake session. No active session found and no connection details in profiles.yml."
+                )
+
             connection_parameters = SnowflakeConnectionConfig.model_validate(connection_parameters_dict)
             self.session = Session.builder.configs(connection_parameters.model_dump()).create()
             self.database = connection_parameters.database
@@ -134,7 +140,7 @@ class SnowflakeAdapter(Adapter):
         # --- Convert numpy types to native Python types for JSON compatibility --- #
         native_sample_data = convert_to_native(sample_data)
         native_dtype_sample = convert_to_native(dtype_sample)
-        
+
         business_name = string_standardization(column_name)
 
         return ColumnProfile(
@@ -148,15 +154,15 @@ class SnowflakeAdapter(Adapter):
             completeness=(total_count - null_count) / total_count if total_count > 0 else 0.0,
             sample_data=native_sample_data,
             dtype_sample=native_dtype_sample,
-            ts=time.time() - start_ts
+            ts=time.time() - start_ts,
         )
 
     def load(self, data: SnowflakeConfig, table_name: str):
         self.check_data(data)
-    
+
     def execute(self, query: str):
         return self.session.sql(query).collect()
-    
+
     def to_df(self, data: SnowflakeConfig, table_name: str):
         data = self.check_data(data)
         df = self.session.table(data.identifier).to_pandas()
@@ -167,6 +173,11 @@ class SnowflakeAdapter(Adapter):
         return self.session.sql(query).to_pandas()
 
     def create_table_from_query(self, table_name: str, query: str):
+        def _clean_column_quotes(sql: str) -> str:
+            # This regex finds ""..."" and replaces with "..."
+            return re.sub(r'""(.*?)""', r'"\1"', sql)
+        
+        query = _clean_column_quotes(query)
         self.session.sql(f"CREATE OR REPLACE TABLE {table_name} AS {query}").collect()
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
@@ -177,7 +188,7 @@ class SnowflakeAdapter(Adapter):
         Syncs metadata (comments and tags) from the manifest to the physical Snowflake tables.
         """
         print("Syncing metadata to Snowflake tables...")
-        
+
         database = self.database
         schema = self.schema
 
@@ -209,21 +220,23 @@ class SnowflakeAdapter(Adapter):
             # Set column comments and tags
             for column in source.table.columns:
                 comment = (column.description or "").replace("'", "''")
-                
+
                 # Set column comment
-                self.session.sql(f"ALTER TABLE {full_table_name} MODIFY COLUMN {quote_identifier(column.name)} COMMENT '{comment}'").collect()
+                self.session.sql(
+                    f"ALTER TABLE {full_table_name} MODIFY COLUMN {quote_identifier(column.name)} COMMENT '{comment}'"
+                ).collect()
 
                 # Set column tags
                 # if column.tags:
                 #     tag_assignments = ", ".join([f"{tag} = 'true'" for tag in column.tags])
                 #     self.session.sql(f"ALTER TABLE {full_table_name} MODIFY COLUMN \"{column.name}\" SET TAG {tag_assignments}").collect()
-        
+
         print("Metadata sync complete.")
 
     def deploy_semantic_model(self, manifest: "Manifest", **kwargs):
         """
         Constructs and executes a CREATE SEMANTIC VIEW statement based on the manifest.
-        
+
         Args:
             manifest (Manifest): The project manifest containing all sources and relationships.
             **kwargs:
@@ -234,7 +247,7 @@ class SnowflakeAdapter(Adapter):
 
         # Step 2: Manually build the CREATE SEMANTIC VIEW SQL statement
         model_name = kwargs.get("model_name", "intugle_semantic_view")
-        
+
         database = self.database
         schema = self.schema
 
@@ -243,7 +256,7 @@ class SnowflakeAdapter(Adapter):
         for source in manifest.sources.values():
             table_alias = clean_name(source.table.name)
             full_table_name = f"{database}.{schema}.{source.table.name}"
-            
+
             clause = f"{table_alias} AS {full_table_name}"
             if source.table.key:
                 clause += f" PRIMARY KEY ({clean_name(source.table.key)})"
@@ -292,10 +305,10 @@ class SnowflakeAdapter(Adapter):
                 if column.description:
                     comment = column.description.replace("'", "''")
                     expr += f" COMMENT = '{comment}'"
-                
-                if column.category == 'measure':
+
+                if column.category == "measure":
                     fact_clauses.append(expr)
-                else: # Default to dimension
+                else:  # Default to dimension
                     dimension_clauses.append(expr)
 
         # -- Assemble the final SQL statement --
@@ -316,7 +329,7 @@ class SnowflakeAdapter(Adapter):
     def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
         table1_adapter = self.check_data(table1.data)
         table2_adapter = self.check_data(table2.data)
-        
+
         table1_df = self.session.table(table1_adapter.identifier)
         table2_df = self.session.table(table2_adapter.identifier)
 
@@ -326,6 +339,7 @@ class SnowflakeAdapter(Adapter):
     def get_details(self, data: SnowflakeConfig):
         data = self.check_data(data)
         return data.model_dump()
+
 
 def can_handle_snowflake(df: Any) -> bool:
     try:
