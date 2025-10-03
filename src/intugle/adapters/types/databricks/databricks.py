@@ -42,7 +42,7 @@ except ImportError:
     SQLGLOT_AVAILABLE = False
 
 
-DATABRICKS_AVAILABLE = PYSPARK_AVAILABLE or DATABRICKS_SQL_AVAILABLE or SQLGLOT_AVAILABLE
+DATABRICKS_AVAILABLE = PYSPARK_AVAILABLE and DATABRICKS_SQL_AVAILABLE and SQLGLOT_AVAILABLE
 
 
 def clean_tag(name: str) -> str:
@@ -325,7 +325,7 @@ class DatabricksAdapter(Adapter):
 
                 if sync_tags and column.tags:
                     cleaned_tags = [clean_tag(tag) for tag in column.tags]
-                    tag_assignments = ", ".join([f"'{tag}'" for tag in cleaned_tags])
+                    # tag_assignments = ", ".join([f"'{tag}'" for tag in cleaned_tags])
                     for tag in cleaned_tags:
                         try:
                             self._execute_sql(f"SET TAG ON COLUMN {fqn}.`{column.name}` `{tag}`")
