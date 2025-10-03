@@ -5,11 +5,12 @@ import pandas as pd
 
 from pydantic import BaseModel, Field
 
+from intugle.adapters.types.databricks.models import DatabricksConfig
 from intugle.adapters.types.duckdb.models import DuckdbConfig
 from intugle.adapters.types.snowflake.models import SnowflakeConfig
 
 # FIXME load dynamically
-DataSetData = pd.DataFrame | DuckdbConfig | SnowflakeConfig
+DataSetData = pd.DataFrame | DuckdbConfig | SnowflakeConfig | DatabricksConfig
 
 
 class ProfilingOutput(BaseModel):

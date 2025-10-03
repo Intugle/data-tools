@@ -11,6 +11,7 @@ if TYPE_CHECKING:
     from intugle.models.manifest import Manifest
 
 from intugle.adapters.adapter import Adapter
+from intugle.adapters.common.relationships import resolve_relationship_direction
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import (
     ColumnProfile,
@@ -37,7 +38,18 @@ from intugle.core.utilities.processing import string_standardization
 
 
 class SnowflakeAdapter(Adapter):
+    _instance = None
+    _initialized = False
+
+    def __new__(cls, *args, **kwargs):
+        if not cls._instance:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+
     def __init__(self):
+        if self._initialized:
+            return
+
         if not SNOWFLAKE_AVAILABLE:
             raise ImportError("Snowflake dependencies are not installed. Please run 'pip install intugle[snowflake]'.")
 
@@ -45,6 +57,7 @@ class SnowflakeAdapter(Adapter):
         self.database: Optional[str] = None
         self.schema: Optional[str] = None
         self.connect()
+        self._initialized = True
 
     def connect(self):
         try:
@@ -179,6 +192,7 @@ class SnowflakeAdapter(Adapter):
         
         query = _clean_column_quotes(query)
         self.session.sql(f"CREATE OR REPLACE TABLE {table_name} AS {query}").collect()
+        return query
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
         return SnowflakeConfig(identifier=etl_name)
@@ -268,28 +282,16 @@ class SnowflakeAdapter(Adapter):
         # -- RELATIONSHIPS clause --
         relationship_clauses = []
         for rel in manifest.relationships.values():
-            source_table_info = manifest.sources.get(rel.source.table)
-            target_table_info = manifest.sources.get(rel.target.table)
-
-            if not source_table_info or not target_table_info:
+            resolved = resolve_relationship_direction(rel, manifest.sources)
+            if not resolved:
                 continue
 
-            # Determine which table is the 'one' side (contains the PK for the join)
-            if source_table_info.table.key == rel.source.column:
-                # source is the 'one' side (referenced table)
-                ref_table_alias = clean_name(rel.source.table)
-                ref_column = clean_name(rel.source.column)
-                table_alias = clean_name(rel.target.table)
-                column = clean_name(rel.target.column)
-            elif target_table_info.table.key == rel.target.column:
-                # target is the 'one' side (referenced table)
-                ref_table_alias = clean_name(rel.target.table)
-                ref_column = clean_name(rel.target.column)
-                table_alias = clean_name(rel.source.table)
-                column = clean_name(rel.source.column)
-            else:
-                # This is not a valid FK relationship for the semantic view, skip it
-                continue
+            # The table with the FK is the "referencing" table
+            table_alias = clean_name(resolved.child_table)
+            column = clean_name(resolved.child_column)
+            # The table with the PK is the "referenced" table
+            ref_table_alias = clean_name(resolved.parent_table)
+            ref_column = clean_name(resolved.parent_column)
 
             clause = f"{clean_name(rel.name)} AS {table_alias}({column}) REFERENCES {ref_table_alias}({ref_column})"
             relationship_clauses.append(clause)

@@ -1,10 +1,14 @@
 import re
-from .base import Exporter
-from intugle.libs.smart_query_generator.models.models import CategoryType
+
+from intugle.adapters.common.relationships import resolve_relationship_direction
 from intugle.core import settings
+from intugle.libs.smart_query_generator.models.models import CategoryType
 from intugle.models.resources.relationship import RelationshipType
 
+from .base import Exporter
+
 RESERVED_WORDS = {'start', 'end', 'select', 'from', 'where', 'order', 'group', 'join', 'table', 'on'}
+
 
 def clean_name(name: str) -> str:
     """Cleans an identifier to be a safe logical name for the Snowflake Semantic Model."""
@@ -19,10 +23,12 @@ def clean_name(name: str) -> str:
         return f'_{cleaned}'
     return cleaned
 
+
 def quote_identifier(name: str) -> str:
     """Ensure the identifier is wrapped in exactly one pair of double quotes."""
     clean_name = name.strip().strip('"')
     return f'"{clean_name}"'
+
 
 # Mapping from our types to Snowflake's expected data types
 DATA_TYPE_MAPPING = {
@@ -35,6 +41,7 @@ DATA_TYPE_MAPPING = {
     "open_ended_text": "TEXT",
     # Add other mappings as necessary
 }
+
 
 class SnowflakeExporter(Exporter):
     def export(self, **kwargs) -> dict:
@@ -73,7 +80,7 @@ class SnowflakeExporter(Exporter):
 
             # Map columns to dimensions and facts
             for column in source.table.columns:
-                snowflake_type = DATA_TYPE_MAPPING.get(column.type, "TEXT") # Default to TEXT
+                snowflake_type = DATA_TYPE_MAPPING.get(column.type, "TEXT")  # Default to TEXT
                 if column.category == CategoryType.dimension:
                     dimension = {
                         "name": clean_name(column.name),
@@ -96,40 +103,18 @@ class SnowflakeExporter(Exporter):
 
         # Process relationships
         for rel in manifest.relationships.values():
-            source_table_name = rel.source.table
-            target_table_name = rel.target.table
-            
-            source_table_info = manifest.sources.get(source_table_name)
-            target_table_info = manifest.sources.get(target_table_name)
-
-            if not source_table_info or not target_table_info:
-                continue
-
-            # Determine which table is the 'one' side (contains the PK for the join)
-            if source_table_info.table.key == rel.source.column:
-                # source is the 'one' side
-                right_table = source_table_name
-                right_column = rel.source.column
-                left_table = target_table_name
-                left_column = rel.target.column
-            elif target_table_info.table.key == rel.target.column:
-                # target is the 'one' side
-                right_table = target_table_name
-                right_column = rel.target.column
-                left_table = source_table_name
-                left_column = rel.source.column
-            else:
-                # This is not a valid FK relationship for Snowflake's semantic model
+            resolved = resolve_relationship_direction(rel, manifest.sources)
+            if not resolved:
                 continue
 
             relationship = {
                 "name": rel.name,
-                "left_table": clean_name(left_table),
-                "right_table": clean_name(right_table),
+                "left_table": clean_name(resolved.child_table),
+                "right_table": clean_name(resolved.parent_table),
                 "relationship_columns": [
                     {
-                        "left_column": clean_name(left_column),
-                        "right_column": clean_name(right_column)
+                        "left_column": clean_name(resolved.child_column),
+                        "right_column": clean_name(resolved.parent_column)
                     }
                 ],
                 "join_type": "left_outer",
