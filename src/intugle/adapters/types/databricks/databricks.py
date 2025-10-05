@@ -315,7 +315,7 @@ class DatabricksAdapter(Adapter):
             # Set table comment
             if sync_glossary and source.table.description:
                 table_comment = source.table.description.replace("'", "\\'")
-                self._execute_sql(f"COMMENT ON TABLE {fqn} IS '{table_comment}'")
+                self._execute_sql(f"COMMENT ON TABLE {fqn} IS '{table_comment}'") #Works for views too
 
             # Set column comments and tags
             for column in source.table.columns:
@@ -325,12 +325,17 @@ class DatabricksAdapter(Adapter):
 
                 if sync_tags and column.tags:
                     cleaned_tags = [clean_tag(tag) for tag in column.tags]
-                    # tag_assignments = ", ".join([f"'{tag}'" for tag in cleaned_tags])
-                    for tag in cleaned_tags:
+                    tag_assignments = ", ".join([f"'{tag}'" for tag in cleaned_tags])
+
+                    # FIXME: Need to differentiate between TABLES and VIEWS for setting tags
+                    try:
+                        self._execute_sql(f"ALTER TABLE {fqn} ALTER COLUMN `{column.name}` SET TAGS ({tag_assignments})")
+                    except Exception as e:
                         try:
-                            self._execute_sql(f"SET TAG ON COLUMN {fqn}.`{column.name}` `{tag}`")
+                            self._execute_sql(f"ALTER VIEW {fqn} ALTER COLUMN `{column.name}` SET TAGS ({tag_assignments})")
                         except Exception as e:
-                            print(f"Could not set tag '{tag}' on {fqn}.`{column.name}`: {e}")
+                            print(f"Could not set tags '{tag_assignments}' on {fqn}.`{column.name}`: {e}")
+                            
 
         print("Metadata sync complete.")
 
@@ -352,6 +357,7 @@ class DatabricksAdapter(Adapter):
                 self._execute_sql(f"ALTER TABLE {fqn} ALTER COLUMN `{pk_column}` SET NOT NULL")
                 # Then, add the primary key constraint
                 self._execute_sql(f"ALTER TABLE {fqn} ADD CONSTRAINT {constraint_name} PRIMARY KEY (`{pk_column}`)")
+                print(f"Set primary key on {fqn} (`{pk_column}`)")
             except Exception as e:
                 print(f"Could not set primary key for {fqn}: {e}")
         print("Primary key setting complete.")
@@ -370,7 +376,7 @@ class DatabricksAdapter(Adapter):
             try:
                 child_fqn = self._get_fqn(resolved.child_table)
                 parent_fqn = self._get_fqn(resolved.parent_table)
-                constraint_name = f"fk_{resolved.child_table}_{resolved.child_column}"
+                constraint_name = f"fk_{rel.name}"
                 cleaned_constraint_name = clean_name(constraint_name)
 
                 self._execute_sql(
