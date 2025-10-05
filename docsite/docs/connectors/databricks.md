@@ -14,7 +14,7 @@ To use `intugle` with Databricks, you must install the optional dependencies:
 pip install "intugle[databricks]"
 ```
 
-This installs the `pyspark` and `databricks-sql-connector` libraries.
+This installs the `pyspark`, `sqlglot` and  `databricks-sql-connector` libraries.
 
 ## Configuration
 
