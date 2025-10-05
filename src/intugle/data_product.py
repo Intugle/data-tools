@@ -86,7 +86,7 @@ class DataProduct:
         sql_query = self.generate_query(etl)
 
         # 3. Materialize the query as a new table in the target database
-        execution_adapter.create_table_from_query(etl.name, sql_query)
+        dialect_sql = execution_adapter.create_table_from_query(etl.name, sql_query)
 
         # 4. Create a new config object pointing to the newly created table
         new_config = execution_adapter.create_new_config_from_etl(etl.name)
@@ -94,7 +94,7 @@ class DataProduct:
         # 5. Return a new DataSet pointing to the materialized table
         result_dataset = DataSet(data=new_config, name=etl.name)
         # Attach the query for inspection
-        result_dataset.sql_query = sql_query 
+        result_dataset.sql_query = dialect_sql 
 
         return result_dataset
 

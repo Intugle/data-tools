@@ -1,6 +1,6 @@
 import time
 
-from typing import Any, Optional
+from typing import TYPE_CHECKING, Any, Optional
 
 import duckdb
 import numpy as np
@@ -17,6 +17,9 @@ from intugle.adapters.types.duckdb.models import DuckdbConfig
 from intugle.adapters.utils import convert_to_native
 from intugle.common.exception import errors
 from intugle.core.utilities.processing import string_standardization
+
+if TYPE_CHECKING:
+    from intugle.analysis.models import DataSet
 
 
 class DuckdbAdapter(Adapter):
@@ -240,6 +243,7 @@ class DuckdbAdapter(Adapter):
 
     def create_table_from_query(self, table_name: str, query: str):
         duckdb.sql(f'CREATE OR REPLACE VIEW "{table_name}" AS {query}')
+        return query
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
         return DuckdbConfig(path=etl_name, type="table")

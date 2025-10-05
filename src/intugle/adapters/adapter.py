@@ -48,7 +48,7 @@ class Adapter(ABC):
         raise NotImplementedError()
 
     @abstractmethod
-    def create_table_from_query(self, table_name: str, query: str):
+    def create_table_from_query(self, table_name: str, query: str) -> str:
         raise NotImplementedError()
 
     @abstractmethod
