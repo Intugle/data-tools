@@ -1,6 +1,6 @@
 import logging
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Optional
 
 from langchain.chat_models import init_chat_model
 from langchain.output_parsers import (
@@ -30,7 +30,7 @@ class ChatModelLLM:
 
     def __init__(
         self,
-        model_name: str,
+        model_name: Optional[str] = None,
         response_schemas: list[ResponseSchema] = None,
         output_parser=StructuredOutputParser,
         prompt_template=ChatPromptTemplate,
@@ -39,9 +39,14 @@ class ChatModelLLM:
         *args,
         **kwargs,
     ):
-        self.model: BaseChatModel = init_chat_model(
-            model_name, max_retries=self.MAX_RETRIES, rate_limiter=self._get_rate_limiter(), **config
-        )  # llm model
+        if settings.CUSTOM_LLM_INSTANCE:
+            self.model: "BaseChatModel" = settings.CUSTOM_LLM_INSTANCE
+        elif model_name:
+            self.model: "BaseChatModel" = init_chat_model(
+                model_name, max_retries=self.MAX_RETRIES, rate_limiter=self._get_rate_limiter(), **config
+            )
+        else:
+            raise ValueError("Either 'settings.CUSTOM_LLM_INSTANCE' must be set or 'LLM_PROVIDER' must be provided.")
 
         self.parser: StructuredOutputParser = output_parser  # the output parser
 
@@ -135,6 +140,8 @@ class ChatModelLLM:
 
     @classmethod
     def get_llm(cls, model_name: str, llm_config: dict = {}):
+        if settings.CUSTOM_LLM_INSTANCE:
+            return settings.CUSTOM_LLM_INSTANCE
         return init_chat_model(
             model_name, max_retries=cls.MAX_RETRIES, rate_limiter=cls._get_rate_limiter(), **llm_config
         )

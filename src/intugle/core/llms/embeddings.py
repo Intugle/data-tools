@@ -8,6 +8,8 @@ import tiktoken
 
 from langchain.embeddings.base import init_embeddings
 
+from intugle.core import settings
+
 
 class EmbeddingsType(str, Enum):
     DENSE = "dense"
@@ -30,7 +32,10 @@ class Embeddings:
         embeddings_size: Optional[int] = None,
     ):
         self.model_name = model_name
-        self.model = init_embeddings(model_name, **config)
+        if settings.CUSTOM_EMBEDDINGS_INSTANCE:
+            self.model = settings.CUSTOM_EMBEDDINGS_INSTANCE
+        else:
+            self.model = init_embeddings(model_name, **config)
         self._embed_func: Dict[EmbeddingsType, Callable] = {
             EmbeddingsType.DENSE: self.dense,
             EmbeddingsType.SPARSE: self.sparse,
