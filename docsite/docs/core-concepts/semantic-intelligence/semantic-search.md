@@ -71,6 +71,30 @@ export AZURE_OPENAI_ENDPOINT="your-azure-openai-endpoint"
 export OPENAI_API_VERSION="your-openai-api-version"
 ```
 
+#### Using a Custom Embeddings Instance
+
+If you need to use a pre-initialized embeddings model, you can directly inject the model instance.
+
+The custom model must be an instance of `langchain_core.embeddings.embeddings.Embeddings`.
+
+You can set the custom instance by modifying the `intugle.core.settings` module **before** you import and use the `SemanticModel`.
+
+**Example:**
+```python
+# main.py
+from intugle.core import settings
+
+# This must be an object that inherits from Embeddings
+my_embeddings_instance = ... 
+
+# Set the custom instance in the settings
+settings.CUSTOM_EMBEDDINGS_INSTANCE = my_embeddings_instance
+
+# Now, any intugle modules imported after this point will use your custom model
+# from intugle import SemanticModel
+# ...
+```
+
 ## Usage with SemanticModel
 
 The simplest way to use semantic search is through the `SemanticModel` after the semantic model has been built.

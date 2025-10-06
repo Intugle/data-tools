@@ -4,7 +4,7 @@ import os
 
 from functools import lru_cache
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 
 from dotenv import load_dotenv
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -66,6 +66,8 @@ class Settings(BaseSettings):
     MAX_RETRIES: int = 5
     SLEEP_TIME: int = 25
     ENABLE_RATE_LIMITER: bool = False
+    CUSTOM_LLM_INSTANCE: Optional[Any] = None
+    CUSTOM_EMBEDDINGS_INSTANCE: Optional[Any] = None
 
     # LP
     HALLUCINATIONS_MAX_RETRY: int = 2
