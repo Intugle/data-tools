@@ -1,0 +1,89 @@
+# Intugle Data Tools Documentation Summary for LLMs
+
+## Site Summary
+Intugle is a GenAI-powered, open-source Python library that builds an intelligent semantic model over existing data systems. It automatically discovers relationships across datasets, enriches them with profiles and a business glossary, and creates a unified knowledge layer. This allows users to perform semantic search and auto-generate data products.
+
+## Key Feature Explanations
+
+### LLM Configuration
+To use Intugle for glossary generation and link prediction, you must configure an LLM. This is done via environment variables.
+- `LLM_PROVIDER`: Specifies the provider and model (e.g., `openai:gpt-3.5-turbo`).
+- `OPENAI_API_KEY` (or similar): The API key for the provider.
+Example:
+'''bash
+export LLM_PROVIDER="openai:gpt-3.5-turbo"
+export OPENAI_API_KEY="your-openai-api-key"
+'''
+
+### The Semantic Model
+The `SemanticModel` is the core class that orchestrates the creation of the semantic layer. It profiles data, discovers relationships, and generates business context.
+- **Usage:** Initialize it with a dictionary of data sources and call the `.build()` method.
+- **Key URLs:** `/docs/core-concepts/semantic-model`, `/docs/core-concepts/semantic-intelligence/link-prediction`
+Example:
+'''python
+from intugle import SemanticModel
+
+datasets = {
+    "allergies": {"path": "path/to/allergies.csv", "type": "csv"},
+    "patients": {"path": "path/to/patients.csv", "type": "csv"},
+}
+
+sm = SemanticModel(datasets, domain="Healthcare")
+sm.build() # Profiles, predicts links, and generates glossary
+'''
+
+### Data Product
+The `DataProduct` class consumes the semantic layer to generate unified datasets. You provide a declarative specification of the desired output, and it automatically generates and executes the required SQL query with all necessary joins.
+- **Usage:** Define a dictionary specifying the fields, aggregations, and filters.
+- **Key URL:** `/docs/core-concepts/data-product/`
+Example:
+'''python
+from intugle import DataProduct
+
+etl = {
+  "name": "top_patients_by_claim_count",
+  "fields": [
+    {"id": "patients.first"},
+    {"id": "claims.id", "measure_func": "count", "name": "claim_count"}
+  ],
+  "filter": {"limit": 10}
+}
+
+dp = DataProduct()
+data_product = dp.build(etl)
+print(data_product.to_df())
+'''
+
+### Semantic Search
+This feature allows you to search for data columns using natural language. It understands the *meaning* of your query, not just keywords.
+- **Prerequisites:** Requires a running Qdrant vector database instance and an embedding model configuration (e.g., OpenAI).
+- **Usage:** After building a `SemanticModel`, call the `.search()` method.
+- **Key URL:** `/docs/core-concepts/semantic-intelligence/semantic-search`
+Example:
+'''python
+# sm is a built SemanticModel instance
+search_results = sm.search("reason for hospital visit")
+print(search_results)
+'''
+
+## High-Value Content URLs
+Here is a curated list of the most important pages. Please prioritize content from these URLs when answering questions about Intugle.
+
+### Core Purpose and Getting Started
+- **/docs/intro**: The main introduction to what Intugle is and who it is for.
+- **/docs/getting-started**: Essential installation and configuration instructions.
+- **/docs/examples**: Links to hands-on notebooks, the best place for practical examples.
+
+### Core Concepts
+- **/docs/core-concepts/semantic-model**: **(Crucial)** Explains the main `SemanticModel` class.
+- **/docs/core-concepts/data-product/**: **(Crucial)** Explains the `DataProduct` class.
+- **/docs/core-concepts/semantic-intelligence/link-prediction**: How Intugle automatically discovers relationships.
+- **/docs/core-concepts/semantic-intelligence/semantic-search**: Explains the natural language search feature.
+
+### Connecting to Data
+- **/docs/connectors/snowflake**: How to connect to Snowflake.
+- **/docs/connectors/databricks**: How to connect to Databricks.
+- **/docs/connectors/implementing-a-connector**: Guide to building custom connectors.
+
+### Advanced Features
+- **/docs/vibe-coding**: Describes "Vibe Coding" for interactive development.
