@@ -56,3 +56,27 @@ Here's an example of how to set these variables in your environment:
 export LLM_PROVIDER="openai:gpt-3.5-turbo"
 export OPENAI_API_KEY="your-openai-api-key"
 ```
+
+### Using a Custom LLM Instance
+
+For environments where you need to use a pre-initialized language model, you can directly inject the model instance.
+
+The custom LLM must be an instance of `langchain_core.language_models.chat_models.BaseChatModel`.
+
+You can set the custom instance by modifying the `intugle.core.settings` module **before** you import and use any `intugle` classes.
+
+**Example:**
+```python
+# main.py
+from intugle.core import settings
+
+# This must be an object that inherits from BaseChatModel
+my_llm_instance = ... 
+
+# Set the custom instance in the settings
+settings.CUSTOM_LLM_INSTANCE = my_llm_instance
+
+# Now, any intugle modules imported after this point will use your custom LLM
+
+# ... rest of your code
+```
