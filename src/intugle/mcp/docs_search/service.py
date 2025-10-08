@@ -10,6 +10,7 @@ class DocsSearchService:
 
     BASE_URL = "https://raw.githubusercontent.com/Intugle/data-tools/main/docsite/docs/"
     API_URL = "https://api.github.com/repos/Intugle/data-tools/contents/docsite/docs"
+    BLACKLISTED_ROUTES = ["mcp-server.md", "vibe-coding.md"]
 
     def __init__(self):
         self._doc_paths = None
@@ -39,8 +40,9 @@ class DocsSearchService:
                 
                 for item in items:
                     if item['type'] == 'file' and (item['name'].endswith('.md') or item['name'].endswith('.mdx')):
-                        # Strip the base 'docsite/docs/' part to make it a relative path
-                        paths.append(item['path'].replace('docsite/docs/', '', 1))
+                        relative_path = item['path'].replace('docsite/docs/', '', 1)
+                        if relative_path not in self.BLACKLISTED_ROUTES:
+                            paths.append(relative_path)
                     elif item['type'] == 'dir':
                         paths.extend(await self._fetch_paths_recursively(session, item['url']))
         except Exception as e:
