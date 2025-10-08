@@ -35,7 +35,7 @@ type: markdown
 ---
 ## 1. LLM Configuration
 
-Before running the project, you need to configure a Large Language Model (LLM). This is used for tasks like generating business glossaries and predicting links between tables. For the semantic search feature, you will also need to set up Qdrant and provide an OpenAI API key. For detailed setup instructions, please refer to the [README.md](README.md) file.
+Before running the project, you need to configure a Large Language Model (LLM). This is used for tasks like generating business glossaries and predicting links between tables. For the semantic search feature, you will also need to set up Qdrant and provide an OpenAI API key. For detailed setup instructions, please refer to the [README.md](https://github.com/Intugle/data-tools/blob/main/README.md) file.
 
 You can configure the necessary services by setting the following environment variables:
 
@@ -196,7 +196,7 @@ type: markdown
 
 The semantic search feature allows you to search for columns in your datasets using natural language. 
 
-> **Note:** To use this feature, you need to have a running Qdrant instance and an OpenAI API key. Please refer to the [README.md](README.md) for detailed setup instructions.
+> **Note:** To use this feature, you need to have a running Qdrant instance and an OpenAI API key. Please refer to the [README.md](https://github.com/Intugle/data-tools/blob/main/README.md) for detailed setup instructions.
 >
 > **Google Colab Users:** If you are running this notebook in Google Colab, you may not be able to connect to a local Qdrant instance running in Docker. In this case, you will need to use a remotely hosted Qdrant server.
 >
