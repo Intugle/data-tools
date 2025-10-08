@@ -66,15 +66,15 @@ async def intugle_vibe_prompt(user_query: str) -> str:
     return await Prompts.intugle_vibe_prompt(user_query)
 
 
-@semantic_layer_mcp.prompt(name="create-dp", title="Create Data Product Specification")
-async def create_dp_prompt(user_request: str) -> str:
-    return Prompts.create_dp_prompt(user_request)
+# @semantic_layer_mcp.prompt(name="create-dp", title="Create Data Product Specification")
+# async def create_dp_prompt(user_request: str) -> str:
+#     return Prompts.create_dp_prompt(user_request)
 
 
-@semantic_layer_mcp.tool(name="execute_query", description="Return the result of a query execution")
-async def execute_query(sql_query: str) -> list[dict]: 
-    data = await adapter_service.execute_query(sql_query)
-    return data
+# @semantic_layer_mcp.tool(name="execute_query", description="Return the result of a query execution")
+# async def execute_query(sql_query: str) -> list[dict]: 
+#     data = await adapter_service.execute_query(sql_query)
+#     return data
 
 
 @semantic_layer_mcp.tool(

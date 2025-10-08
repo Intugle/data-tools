@@ -1,17 +1,13 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 title: Vibe Coding
 ---
 
 # Vibe Coding with the MCP Server
 
-"Vibe Coding" is an interactive, conversational approach to development where you use natural language to generate code or specifications. Intugle embraces this by allowing you to serve your semantic layer through an MCP (Model Context Protocol) server.
+"Vibe Coding" is an interactive, conversational approach to data intelligence. Intugle embraces this by allowing you to serve your project as an MCP (Model Context Protocol) server.
 
-This turns your data into a "self-describing" resource that an AI assistant can understand, allowing you to "vibe" with your data to create specifications without writing them by hand.
-
-:::info In Progress
-Currently, Vibe Coding is available for generating **Data Product** specifications. We are actively working on extending this capability to other modules in the Intugle ecosystem. Stay tuned for more updates!
-:::
+This turns your entire data workflow into a "self-describing" resource that an AI assistant can understand and operate. It allows you to "vibe" with the intugle library—using natural language to build semantic models, perform searches, and create data products from scratch.
 
 ## 1. Setting up the MCP Server
 
@@ -29,13 +25,13 @@ To start the server, run the following command in your terminal from your projec
 intugle-mcp
 ```
 
-This will start a server on `localhost:8000` by default. You should see output indicating that the server is running and that the `semantic_layer` and `adapter` services are mounted.
+This will start a server on `localhost:8080` by default. You should see output indicating that the server is running and that the `semantic_layer` service is mounted.
 
 ### Connecting from an MCP Client
 
 With the server running, you can connect to it from any MCP-compatible client. The endpoint for the semantic layer is:
 
-`http://localhost:8000/semantic_layer/mcp`
+`http://localhost:8080/semantic_layer/mcp`
 
 Popular clients that support MCP include AI-powered IDEs and standalone applications. Here’s how to configure a few of them:
 
@@ -44,56 +40,43 @@ Popular clients that support MCP include AI-powered IDEs and standalone applicat
 -   **Claude Desktop**: [User Quickstart](https://modelcontextprotocol.info/docs/quickstart/user/)
 -   **Gemini CLI**: [Configure MCP Servers](https://cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer#configure-mcp-servers)
 
-## 2. Using Vibe Coding
+## 2. Vibe Coding
 
-The MCP server exposes powerful prompts that are designed to take your natural language requests and convert them directly into valid specifications.
-
-### Example: Generating a Data Product
-
-Currently, you can use the `create-dp` prompt to generate a `product_spec` dictionary for a Data Product.
+The MCP server exposes the `intugle-vibe` prompt. This prompt equips an AI assistant with knowledge of the Intugle library and access to its core tools. You can use it to guide you through the entire data intelligence workflow using natural language.
 
 In your MCP-compatible client, you can invoke the prompt and provide your request. In most clients, this is done by typing `/` followed by the prompt name.
 
+### Example 1: Getting Started and Building a Semantic Model
+
+If you are unsure how to start, you can ask for guidance. You can also ask the assistant to perform actions like creating a semantic model.
+
 ```
-/create-dp show me the top 5 patients with the most claims
+/intugle-vibe How do I create a semantic model?
 ```
-
-:::tip Client-Specific Commands
-The exact command to invoke a prompt (e.g., using `/` or another prefix) can vary between clients. Be sure to check the documentation for your specific tool.
-:::
-
-The AI assistant, connected to your MCP server, will understand the request, use the `get_tables` and `get_schema` tools to find the `patients` and `claims` tables, and generate the following `product_spec`:
-
-```json
-{
-  "name": "top_5_patients_by_claims",
-  "fields": [
-    {
-      "id": "patients.first",
-      "name": "first_name"
-    },
-    {
-      "id": "patients.last",
-      "name": "last_name"
-    },
-    {
-      "id": "claims.id",
-      "name": "number_of_claims",
-      "category": "measure",
-      "measure_func": "count"
-    }
-  ],
-  "filter": {
-    "sort_by": [
-      {
-        "id": "claims.id",
-        "alias": "number_of_claims",
-        "direction": "desc"
-      }
-    ],
-    "limit": 5
-  }
-}
+```
+/intugle-vibe Create a semantic model over my healthcare data.
 ```
 
-This workflow allows you to stay in your creative flow, rapidly iterating on data product ideas by describing what you want in plain English.
+The assistant will read the relevant documentation and guide you through the process or execute the steps if possible.
+
+### Example 2: Generating a Data Product Specification
+
+Once you have a semantic model, you can ask the assistant to create a specification for a reusable data product.
+
+```
+/intugle-vibe create a data product specification for the top 5 patients with the most claims
+```
+
+The AI assistant, connected to your MCP server, will understand that you are requesting a `product_spec`. It will use the `get_tables` and `get_schema` tools to find the `patients` and `claims` tables, and generate the specification.
+
+### Example 3: Performing a Semantic Search
+
+You can also perform a semantic search on your data.
+
+```
+/intugle-vibe use semantic search to find columns related to 'hospital visit reasons'
+```
+
+The assistant will code out the semantic search capabilities of your `SemanticModel` to find and return relevant columns from your datasets.
+
+This workflow accelerates your journey from raw data to insightful data products. Simply describe what you want in plain English and let the assistant handle the details, freeing you from the hassle of digging through documentation.

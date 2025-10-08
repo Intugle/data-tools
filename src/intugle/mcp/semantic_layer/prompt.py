@@ -40,15 +40,15 @@ class Prompts:
             user_query=query_section
         )
 
-    @classmethod
-    def create_dp_prompt(cls, user_request: str) -> str:
-        """
-        Returns the prompt for creating a data product specification.
-        """
-        prompt_path = Path(__file__).parent / "prompts" / "create_dp_prompt.md"
-        with open(prompt_path, "r") as f:
-            base_prompt = f.read()
-        return base_prompt.format(user_request=user_request)
+    # @classmethod
+    # def create_dp_prompt(cls, user_request: str) -> str:
+    #     """
+    #     Returns the prompt for creating a data product specification.
+    #     """
+    #     prompt_path = Path(__file__).parent / "prompts" / "create_dp_prompt.md"
+    #     with open(prompt_path, "r") as f:
+    #         base_prompt = f.read()
+    #     return base_prompt.format(user_request=user_request)
 
     @classmethod
     def raw_executor_prompt(
