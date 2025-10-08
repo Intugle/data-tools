@@ -70,6 +70,7 @@ class Settings(BaseSettings):
     CUSTOM_EMBEDDINGS_INSTANCE: Optional[Any] = None
 
     # LP
+    RELATIONSHIPS_FILE: str = "__relationships__.yml"
     HALLUCINATIONS_MAX_RETRY: int = 2
     UNIQUENESS_THRESHOLD: float = 0.9
     INTERSECT_RATIO_THRESHOLD: float = 0.9

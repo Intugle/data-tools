@@ -157,11 +157,14 @@ class LinkPredictor:
         ]
         return pair_links
 
-    def predict(self, filename='__relationships__.yml', save: bool = False, force_recreate: bool = False) -> 'LinkPredictor':
+    def predict(self, filename: str = None, save: bool = False, force_recreate: bool = False) -> 'LinkPredictor':
         """
         Iterates through all unique pairs of datasets, predicts the links for
         each pair, and returns the aggregated results.
         """
+        if filename is None:
+            filename = settings.RELATIONSHIPS_FILE
+
         relationships_file = os.path.join(settings.PROJECT_BASE, filename)
 
         if not force_recreate and os.path.exists(relationships_file):
