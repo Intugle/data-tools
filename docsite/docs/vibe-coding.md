@@ -79,4 +79,14 @@ You can also perform a semantic search on your data.
 
 The assistant will code out the semantic search capabilities of your `SemanticModel` to find and return relevant columns from your datasets.
 
+:::tip Agent Mode
+Most modern, AI-powered clients support an "agent mode" where the coding assistant can handle the entire workflow for you.
+
+For example, you can directly ask for a final output, like a CSV file:
+
+`/intugle-vibe create a CSV of the top 10 patients by claim count`
+
+The agent will understand the end goal and perform all the necessary intermediate steps for you. It will realize it needs to build the semantic model, generate the data product specification, execute it, and finally provide you with the resulting CSV file—all without you needing to manage the code or the process.
+:::
+
 This workflow accelerates your journey from raw data to insightful data products. Simply describe what you want in plain English and let the assistant handle the details, freeing you from the hassle of digging through documentation.
