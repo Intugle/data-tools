@@ -62,7 +62,7 @@ async def get_schema(table_names: list[str]) -> dict[str, str]:
     title="Intugle Vibe Prompt",
     description="A helpful AI assistant for the Intugle library.",
 )
-async def intugle_vibe_prompt(user_query: str = "") -> str:
+async def intugle_vibe_prompt(user_query: str) -> str:
     return await Prompts.intugle_vibe_prompt(user_query)
 
 
