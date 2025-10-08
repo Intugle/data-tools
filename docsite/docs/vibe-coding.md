@@ -35,10 +35,102 @@ With the server running, you can connect to it from any MCP-compatible client. T
 
 Popular clients that support MCP include AI-powered IDEs and standalone applications. Here’s how to configure a few of them:
 
--   **Cursor**: [Configuring MCP Servers](https://docs.cursor.com/en/context/mcp#configuring-mcp-servers)
--   **Claude Code**: [Using MCP with Claude Code](https://docs.claude.com/en/docs/claude-code/mcp)
--   **Claude Desktop**: [User Quickstart](https://modelcontextprotocol.info/docs/quickstart/user/)
--   **Gemini CLI**: [Configure MCP Servers](https://cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer#configure-mcp-servers)
+<details>
+<summary><b>Install in Cursor</b></summary>
+
+Go to: `Settings` -> `Cursor Settings` -> `MCP` -> `Add new global MCP server`
+
+Pasting the following configuration into your Cursor `~/.cursor/mcp.json` file is the recommended approach. See [Cursor MCP docs](https://docs.cursor.com/context/model-context-protocol) for more info.
+
+```json
+{
+  "mcpServers": {
+    "intugle": {
+      "url": "http://localhost:8080/semantic_layer/mcp",
+      "trust": true
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><b>Install in VS Code</b></summary>
+
+Add this to your VS Code `settings.json` file. See [VS Code MCP docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) for more info.
+
+```json
+"mcp": {
+  "servers": {
+    "intugle": {
+      "type": "http",
+      "url": "http://localhost:8080/semantic_layer/mcp"
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><b>Install in Gemini CLI</b></summary>
+
+See [Gemini CLI Configuration](https://google-gemini.github.io/gemini-cli/docs/tools/mcp-server.html) for details.
+
+1.  Open the Gemini CLI settings file at `~/.gemini/settings.json`.
+2.  Add the following to the `mcpServers` object in your `settings.json` file:
+
+```json
+{
+  "mcpServers": {
+    "intugle": {
+      "httpUrl": "http://localhost:8080/semantic_layer/mcp",
+      "trust" : true
+    }
+  }
+}
+```
+
+If the `mcpServers` object does not exist, create it.
+
+</details>
+
+<details>
+<summary><b>Install in JetBrains AI Assistant</b></summary>
+
+See [JetBrains AI Assistant Documentation](https://www.jetbrains.com/help/ai-assistant/configure-an-mcp-server.html) for more details.
+
+1. In your JetBrains IDE, go to `Settings` -> `Tools` -> `AI Assistant` -> `Model Context Protocol (MCP)`.
+2. Click `+ Add`.
+3. Select `As JSON` from the list.
+4. Add this configuration and click `OK`:
+
+```json
+{
+  "mcpServers": {
+    "intugle": {
+      "type": "streamable-http",
+      "url": "http://localhost:8080/semantic_layer/mcp"
+    }
+  }
+}
+```
+
+5. Click `Apply` to save changes.
+
+</details>
+
+<details>
+<summary><b>Install in Claude Code</b></summary>
+
+Run this command in your terminal. See [Claude Code MCP docs](https://docs.anthropic.com/en/docs/claude-code/mcp) for more info.
+
+```sh
+claude mcp add --transport http intugle http://localhost:8080/semantic_layer/mcp
+```
+
+</details>
 
 ## 2. Vibe Coding
 
