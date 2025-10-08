@@ -57,6 +57,15 @@ async def get_schema(table_names: list[str]) -> dict[str, str]:
 #     return Prompts.raw_executor_prompt(settings.SQL_DIALECT, settings.DOMAIN, settings.UNIVERSAL_INSTRUCTIONS)
 
 
+@semantic_layer_mcp.prompt(
+    name="intugle-vibe",
+    title="Intugle Vibe Prompt",
+    description="A helpful AI assistant for the Intugle library.",
+)
+async def intugle_vibe_prompt(user_query: str = "") -> str:
+    return await Prompts.intugle_vibe_prompt(user_query)
+
+
 @semantic_layer_mcp.prompt(name="create-dp", title="Create Data Product Specification")
 async def create_dp_prompt(user_request: str) -> str:
     return Prompts.create_dp_prompt(user_request)
