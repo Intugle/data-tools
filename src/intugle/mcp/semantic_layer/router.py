@@ -2,6 +2,7 @@ from mcp.server.fastmcp import FastMCP
 
 from intugle.core.settings import settings
 from intugle.mcp.adapter.service import adapter_service
+from intugle.mcp.docs_search.service import docs_search_service
 from intugle.mcp.semantic_layer.prompt import Prompts
 from intugle.mcp.semantic_layer.service import semantic_layer_service
 
@@ -56,12 +57,38 @@ async def get_schema(table_names: list[str]) -> dict[str, str]:
 #     return Prompts.raw_executor_prompt(settings.SQL_DIALECT, settings.DOMAIN, settings.UNIVERSAL_INSTRUCTIONS)
 
 
-@semantic_layer_mcp.prompt(name="create-dp", title="Create Data Product Specification")
-async def create_dp_prompt(user_request: str) -> str:
-    return Prompts.create_dp_prompt(user_request)
+@semantic_layer_mcp.prompt(
+    name="intugle-vibe",
+    title="Intugle Vibe Prompt",
+    description="A helpful AI assistant for the Intugle library.",
+)
+async def intugle_vibe_prompt(user_query: str) -> str:
+    return await Prompts.intugle_vibe_prompt(user_query)
 
 
-@semantic_layer_mcp.tool(name="execute_query", description="Return the result of a query execution")
-async def execute_query(sql_query: str) -> list[dict]: 
-    data = await adapter_service.execute_query(sql_query)
-    return data
+# @semantic_layer_mcp.prompt(name="create-dp", title="Create Data Product Specification")
+# async def create_dp_prompt(user_request: str) -> str:
+#     return Prompts.create_dp_prompt(user_request)
+
+
+# @semantic_layer_mcp.tool(name="execute_query", description="Return the result of a query execution")
+# async def execute_query(sql_query: str) -> list[dict]: 
+#     data = await adapter_service.execute_query(sql_query)
+#     return data
+
+
+@semantic_layer_mcp.tool(
+    name="search_intugle_docs",
+    description="Fetches content from the Intugle documentation for a given list of page paths.",
+)
+async def search_intugle_docs(paths: list[str]) -> str:
+    """
+    Fetches content from the Intugle documentation.
+
+    Args:
+        paths (list[str]): A list of markdown file paths (e.g., ["intro.md", "core-concepts/semantic-model.md"])
+
+    Returns:
+        str: The concatenated content of the documentation files.
+    """
+    return await docs_search_service.search_docs(paths)

@@ -2,6 +2,7 @@ import textwrap
 
 from pathlib import Path
 
+from intugle.mcp.docs_search.service import docs_search_service
 from intugle.mcp.semantic_layer.schema import SQLDialect
 
 
@@ -11,14 +12,43 @@ class Prompts:
     """
 
     @classmethod
-    def create_dp_prompt(cls, user_request: str) -> str:
+    async def intugle_vibe_prompt(cls, user_query: str = "") -> str:
         """
-        Returns the prompt for creating a data product specification.
+        Returns the prompt for the Intugle Vibe agent.
         """
-        prompt_path = Path(__file__).parent / "prompts" / "create_dp_prompt.md"
+        prompt_path = Path(__file__).parent / "prompts" / "intugle_vibe_prompt.md"
         with open(prompt_path, "r") as f:
             base_prompt = f.read()
-        return base_prompt.format(user_request=user_request)
+
+        library_overview = textwrap.dedent("""
+            Intugle is a GenAI-powered open-source Python library that builds a semantic data model over your existing data systems.
+            It discovers meaningful links and relationships across data assets, enriching them with profiles, classifications, and business glossaries.
+            With this connected knowledge layer, you can enable semantic search and auto-generate queries to create unified data products,
+            making data integration and exploration faster, more accurate, and far less manual.
+        """)
+
+        doc_paths = await docs_search_service.list_doc_paths()
+        formatted_doc_paths = "\n".join(f"- `{path}`" for path in doc_paths)
+
+        query_section = ""
+        if user_query:
+            query_section = f"Conversation starts:\n\n---\n\n{user_query}"
+
+        return base_prompt.format(
+            library_overview=library_overview.strip(),
+            doc_paths=formatted_doc_paths,
+            user_query=query_section
+        )
+
+    # @classmethod
+    # def create_dp_prompt(cls, user_request: str) -> str:
+    #     """
+    #     Returns the prompt for creating a data product specification.
+    #     """
+    #     prompt_path = Path(__file__).parent / "prompts" / "create_dp_prompt.md"
+    #     with open(prompt_path, "r") as f:
+    #         base_prompt = f.read()
+    #     return base_prompt.format(user_request=user_request)
 
     @classmethod
     def raw_executor_prompt(
