@@ -98,3 +98,19 @@ After running the prediction, you can visualize the discovered relationships as 
 # This will render a graph of the relationships
 predictor.show_graph()
 ```
+
+:::note For Non-Interactive Environments
+The `show_graph()` method is designed for interactive environments like Jupyter notebooks where a GUI is available to display the plot.
+
+If you run this method in a non-interactive script, you will see a `UserWarning` because no interactive backend is available. To save the graph to a file instead, you can use `matplotlib`:
+
+```python
+import matplotlib.pyplot as plt
+
+# This will generate the plot and raise a warning
+predictor.show_graph()
+
+# This will save the generated plot to a file
+plt.savefig("link_prediction_graph.png")
+```
+:::
