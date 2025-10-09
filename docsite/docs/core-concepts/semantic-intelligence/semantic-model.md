@@ -167,3 +167,14 @@ Returns a DataFrame that serves as a consolidated business glossary, listing the
 full_glossary = sm.glossary_df
 print(full_glossary.head())
 ```
+
+## Visualizing the Knowledge Graph
+
+After the link prediction stage has run, you can visualize the connections between your datasets as a knowledge graph.
+
+```python
+# Display the knowledge graph
+sm.visualize()
+```
+
+This will render a graph where each node represents a table and each edge represents a discovered link between them, providing a clear, high-level view of your data's structure.
