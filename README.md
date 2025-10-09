@@ -259,6 +259,20 @@ print(search_results)
 ```
 For detailed code examples and a complete walkthrough, please see our [quickstart notebooks](#quickstart).
 
+### MCP Server
+
+Intugle includes a built-in MCP (Model Context Protocol) server that exposes your semantic layer to AI assistants and LLM-powered clients. Its main purpose is to allow agents to understand your data's structure by using tools like `get_tables` and `get_schema`.
+
+Once your semantic model is built, you can start the server with a simple command:
+
+```bash
+intugle-mcp
+```
+
+This enables AI agents to programmatically interact with your data context. This also enables vibe coding with the library
+
+For detailed instructions on setting up the server and connecting your favorite client, please see our full [documentation](https://intugle.github.io/data-tools/docs/mcp-server).
+
 ## Community
 
 Join our community to ask questions, share your projects, and connect with other users.
