@@ -178,3 +178,19 @@ sm.visualize()
 ```
 
 This will render a graph where each node represents a table and each edge represents a discovered link between them, providing a clear, high-level view of your data's structure.
+
+:::note For Non-Interactive Environments
+The `sm.visualize()` method is designed for interactive environments like Jupyter notebooks where a GUI is available to display the plot.
+
+If you run this method in a non-interactive script, you will see a `UserWarning` because no interactive backend is available. To save the graph to a file instead, you can use `matplotlib`:
+
+```python
+import matplotlib.pyplot as plt
+
+# This will generate the plot and raise a warning
+sm.visualize()
+
+# This will save the generated plot to a file
+plt.savefig("semantic_model.png")
+```
+:::
