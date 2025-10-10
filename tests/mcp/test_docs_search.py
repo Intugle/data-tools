@@ -80,5 +80,4 @@ async def test_mcp_search_intugle_docs(mcp_server_tools):
 @pytest.mark.mcp
 @pytest.mark.asyncio
 async def test_mcp_intugle_vibe_prompt(mcp_server_tools):
-    await mcp_server_tools.intugle_vibe_prompt()
- 
+    await mcp_server_tools.intugle_vibe_prompt() 

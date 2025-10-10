@@ -6,6 +6,7 @@ unsafe-fixes = true
 show-fixes = true
 indent-width = 4
 src = ["src"]
+exclude = ["**/*.ipynb"]
 
 # Linting configuration
 [lint]
@@ -23,7 +24,7 @@ select = [
     "RUF100",   # Ruff-specific rule: unused noqa
     "UP007"     # pyupgrade: use | for Union
 ]
-ignore = ["FURB101"]
+ignore = ["FURB101", "E501"]
 preview = true
 
 [lint.per-file-ignores]

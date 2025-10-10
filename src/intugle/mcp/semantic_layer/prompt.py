@@ -102,7 +102,7 @@ class Prompts:
         {universal_instructions}
 
         NOTE: **Think step-by-step and communicate clearly and concisely**
-        """)  # noqa: E501
+        """)
 
         if len(universal_instructions.strip()) != 0:
             universal_instructions = f"""\n\n## Universal Instructions (MUST FOLLOW): \n{universal_instructions}"""
