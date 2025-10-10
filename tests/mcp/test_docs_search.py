@@ -54,7 +54,7 @@ class MCPTools:
 
     @connection_decorator()
     async def intugle_vibe_prompt(self, session: ClientSession = None):
-        prompt = await session.get_prompt(name=Prompts.INTUGLE_VIBE, arguments={})
+        prompt = await session.get_prompt(name=Prompts.INTUGLE_VIBE, arguments={"user_query": "What is Intugle?"})
 
         prompt_text = prompt.messages[0].content.text
 
@@ -71,11 +71,14 @@ async def mcp_server_tools() -> MCPTools:
     return MCPTools()
 
 
+@pytest.mark.mcp
 @pytest.mark.asyncio
 async def test_mcp_search_intugle_docs(mcp_server_tools):
     await mcp_server_tools.search_intugle_docs()
 
 
+@pytest.mark.mcp
 @pytest.mark.asyncio
 async def test_mcp_intugle_vibe_prompt(mcp_server_tools):
-    await mcp_server_tools.intugle_vibe_prompt() 
+    await mcp_server_tools.intugle_vibe_prompt()
+ 

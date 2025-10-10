@@ -72,6 +72,13 @@ class SemanticModel:
     def predict_links(self, force_recreate: bool = False):
         """Run link prediction across all datasets."""
         console.print("Starting link prediction stage...", style="yellow")
+        if len(self.datasets) < 2:
+            console.print(
+                "Link prediction requires at least two datasets. Skipping.",
+                style="yellow",
+            )
+            return
+
         self.link_predictor = LinkPredictor(list(self.datasets.values()))
         self.link_predictor.predict(save=True, force_recreate=force_recreate)
         self.links: list[PredictedLink] = self.link_predictor.links
