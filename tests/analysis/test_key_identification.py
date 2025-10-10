@@ -1,14 +1,7 @@
 
 import pandas as pd
 
-from intugle.analysis.pipeline import Pipeline
-from intugle.analysis.steps import (
-    ColumnProfiler,
-    DataTypeIdentifierL1,
-    DataTypeIdentifierL2,
-    KeyIdentifier,
-    TableProfiler,
-)
+from intugle.analysis.models import DataSet
 
 # --- Test Data ---
 KEY_TEST_DF = pd.DataFrame(
@@ -25,21 +18,12 @@ DF_NAME = "key_test_df"
 
 def test_key_identification_end_to_end():
     """
-    Tests the KeyIdentifier step in an end-to-end pipeline.
+    Tests the key identification convenience method on the DataSet.
     """
-    pipeline = Pipeline(
-        [
-            TableProfiler(),
-            ColumnProfiler(),
-            DataTypeIdentifierL1(),
-            DataTypeIdentifierL2(),
-            KeyIdentifier(),
-        ]
-    )
-
-    analysis_results = pipeline.run(KEY_TEST_DF, DF_NAME)
+    dataset = DataSet(KEY_TEST_DF, DF_NAME)
+    dataset.profile().identify_datatypes().identify_keys()
 
     # Check the final output of the KeyIdentifier step
-    identified_key = analysis_results.source_table_model.key
+    identified_key = dataset.source_table_model.key
     assert identified_key is not None
     assert identified_key == "order_id"

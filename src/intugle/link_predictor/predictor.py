@@ -9,14 +9,6 @@ import pandas as pd
 import yaml
 
 from intugle.analysis.models import DataSet
-from intugle.analysis.pipeline import Pipeline
-from intugle.analysis.steps import (
-    ColumnProfiler,
-    DataTypeIdentifierL1,
-    DataTypeIdentifierL2,
-    KeyIdentifier,
-    TableProfiler,
-)
 from intugle.core import settings
 from intugle.core.console import console, warning_style
 from intugle.core.pipeline.link_prediction.lp import LinkPredictionAgentic
@@ -54,13 +46,6 @@ class LinkPredictor:
                         of DataSet objects.
         """
         self.datasets: Dict[str, DataSet] = {}
-        self._prerequisite_pipeline = Pipeline([
-            TableProfiler(),
-            ColumnProfiler(),
-            DataTypeIdentifierL1(),
-            DataTypeIdentifierL2(),
-            KeyIdentifier(),
-        ])
         self.links: list[PredictedLink] = []
 
         if isinstance(data_input, dict):
@@ -79,8 +64,7 @@ class LinkPredictor:
 
     def _run_prerequisites(self, dataset: DataSet):
         """Runs the prerequisite analysis steps on a given DataSet."""
-        for step in self._prerequisite_pipeline.steps:
-            step.analyze(dataset)
+        dataset.profile().identify_datatypes().identify_keys()
 
     def _initialize_from_dict(self, data_dict: Dict[str, Any]):
         """Creates and processes DataSet objects from a dictionary of raw dataframes."""

@@ -94,8 +94,13 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     assert mock_predict_for_pair.call_count == 1
     assert len(results.links) == 1
 
-    # 7. Save yml
-    results.save_yaml("__re__.yml")
+
+def test_predictor_raises_error_with_insufficient_datasets():
+    """
+    Tests that LinkPredictor raises a ValueError if initialized with fewer than two datasets.
+    """
+    with pytest.raises(ValueError, match="LinkPredictor requires at least two datasets"):
+        LinkPredictor({"customers": pd.DataFrame({"id": [1]})})
 
 
 def test_predictor_end_to_end_complex():

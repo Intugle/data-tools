@@ -1,19 +1,11 @@
 import pandas as pd
 
 from intugle.analysis.models import DataSet
-from intugle.analysis.pipeline import Pipeline
-from intugle.analysis.steps import (
-    BusinessGlossaryGenerator,
-    ColumnProfiler,
-    DataTypeIdentifierL1,
-    DataTypeIdentifierL2,
-    TableProfiler,
-)
 
 
 def test_business_glossary_generator():
     """
-    Tests the BusinessGlossaryGenerator analysis step.
+    Tests the business glossary generation convenience method on the DataSet.
     """
     # 1. Prepare dummy data
     df = pd.DataFrame({
@@ -25,16 +17,11 @@ def test_business_glossary_generator():
     table_name = "products"
     domain = "e-commerce"
 
-    pipeline = Pipeline([
-        TableProfiler(),
-        ColumnProfiler(),
-        DataTypeIdentifierL1(),
-        DataTypeIdentifierL2(),
-        BusinessGlossaryGenerator(domain=domain),
-    ])
-
-    # 2. Run the pipeline
-    dataset = pipeline.run(df, table_name)
+    # 2. Run the analysis using DataSet convenience methods
+    dataset = DataSet(df, table_name)
+    dataset.profile()
+    dataset.identify_datatypes()
+    dataset.generate_glossary(domain=domain)
 
     # 3. Assert the results
     assert dataset.source_table_model.description is not None
@@ -48,4 +35,3 @@ def test_business_glossary_generator():
     assert len(product_id_column.description) > 0
     assert product_id_column.tags is not None
     assert len(product_id_column.tags) > 0
-    dataset.save_yaml()

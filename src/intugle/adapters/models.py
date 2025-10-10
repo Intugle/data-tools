@@ -51,7 +51,7 @@ class ColumnProfile(BaseModel):
     )
     datatype_l2: Optional[str] = Field(
         default=None,
-        description="The inferred data type category (dimension/measure) for the column, based on the datatype l1 results",  # noqa: E501
+        description="The inferred data type category (dimension/measure) for the column, based on the datatype l1 results",
     )
     business_glossary: Optional[str] = Field(
         default=None, description="The business glossary entry for the column, if available."

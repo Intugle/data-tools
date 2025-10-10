@@ -1,5 +1,6 @@
 from intugle.common.schema import SchemaBase
 
+
 class SnowflakeConnectionConfig(SchemaBase):
     account: str
     user: str
@@ -9,6 +10,7 @@ class SnowflakeConnectionConfig(SchemaBase):
     database: str
     schema: str
     type: str
+
 
 class SnowflakeConfig(SchemaBase):
     identifier: str

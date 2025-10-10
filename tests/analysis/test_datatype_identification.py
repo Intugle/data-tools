@@ -1,7 +1,6 @@
 import pandas as pd
 
-from intugle.analysis.pipeline import Pipeline
-from intugle.analysis.steps import ColumnProfiler, DataTypeIdentifierL1, DataTypeIdentifierL2, TableProfiler
+from intugle.analysis.models import DataSet
 
 # --- Test Data ---
 COMPLEX_DF = pd.DataFrame({
@@ -13,40 +12,19 @@ COMPLEX_DF = pd.DataFrame({
 DF_NAME = "complex_test_df"
 
 
-def test_datatype_identification_l1_end_to_end():
+def test_datatype_identification_end_to_end():
     """
-    Tests the DatatypeIdentifierL1 step in an end-to-end pipeline.
+    Tests the identify_datatypes convenience method on the DataSet.
     """
-    pipeline = Pipeline([
-        TableProfiler(),
-        ColumnProfiler(),
-        DataTypeIdentifierL1(),
-    ])
+    dataset = DataSet(COMPLEX_DF, DF_NAME)
+    dataset.profile().identify_datatypes()
 
-    analysis_results = pipeline.run(COMPLEX_DF, DF_NAME)
-
-    # Check the final output of the L1 step
-    columns_map = analysis_results.columns
+    # Check the final output of the L1 and L2 steps
+    columns_map = dataset.columns
     assert columns_map['user_id'].type == 'integer'
     assert columns_map['product_name'].type == 'close_ended_text'
     assert columns_map['price'].type == 'float'
 
-
-def test_datatype_identification_l2_end_to_end():
-    """
-    Tests the DatatypeIdentifierL1 step in an end-to-end pipeline.
-    """
-    pipeline = Pipeline([
-        TableProfiler(),
-        ColumnProfiler(),
-        DataTypeIdentifierL1(),
-        DataTypeIdentifierL2(),
-    ])
-
-    analysis_results = pipeline.run(COMPLEX_DF, DF_NAME)
-
-    # Check the final output of the L2 step
-    columns_map = analysis_results.columns
     assert columns_map['user_id'].category == 'dimension'
     assert columns_map['product_name'].category == 'dimension'
     assert columns_map['price'].category == 'measure'

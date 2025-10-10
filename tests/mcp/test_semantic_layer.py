@@ -62,7 +62,7 @@ class MCPTools:
 
     @connection_decorator()
     async def execute_query(self, session: ClientSession = None):
-        data = await session.call_tool(
+        await session.call_tool(
             name=Tools.EXECUTE_QUERY, arguments={"sql_query": "SELECT 1"}
         )
         # assert isinstance(schemas.structuredContent, dict)
@@ -73,16 +73,19 @@ async def mcp_server_tools() -> MCPTools:
     return MCPTools()
 
 
+@pytest.mark.mcp
 @pytest.mark.asyncio
 async def test_mcp_get_tables(mcp_server_tools):
     await mcp_server_tools.get_tables()
 
 
+@pytest.mark.mcp
 @pytest.mark.asyncio
 async def test_mcp_get_schema(mcp_server_tools):
     await mcp_server_tools.get_schema()
 
 
+@pytest.mark.mcp
 @pytest.mark.asyncio
 async def test_mcp_execute_query(mcp_server_tools):
     await mcp_server_tools.execute_query()

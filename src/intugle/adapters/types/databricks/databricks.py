@@ -315,7 +315,7 @@ class DatabricksAdapter(Adapter):
             # Set table comment
             if sync_glossary and source.table.description:
                 table_comment = source.table.description.replace("'", "\\'")
-                self._execute_sql(f"COMMENT ON TABLE {fqn} IS '{table_comment}'") #Works for views too
+                self._execute_sql(f"COMMENT ON TABLE {fqn} IS '{table_comment}'")  # Works for views too
 
             # Set column comments and tags
             for column in source.table.columns:
@@ -330,13 +330,12 @@ class DatabricksAdapter(Adapter):
                     # FIXME: Need to differentiate between TABLES and VIEWS for setting tags
                     try:
                         self._execute_sql(f"ALTER TABLE {fqn} ALTER COLUMN `{column.name}` SET TAGS ({tag_assignments})")
-                    except Exception as e:
+                    except Exception:
                         try:
                             self._execute_sql(f"ALTER VIEW {fqn} ALTER COLUMN `{column.name}` SET TAGS ({tag_assignments})")
                         except Exception as e:
                             print(f"Could not set tags '{tag_assignments}' on {fqn}.`{column.name}`: {e}")
                             
-
         print("Metadata sync complete.")
 
     def _set_primary_keys(self, manifest: "Manifest"):

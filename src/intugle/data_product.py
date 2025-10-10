@@ -1,8 +1,6 @@
 from typing import TYPE_CHECKING
 
 from intugle.adapters.factory import AdapterFactory
-from intugle.adapters.types.duckdb.models import DuckdbConfig
-from intugle.adapters.types.snowflake.models import SnowflakeConfig
 from intugle.analysis.models import DataSet
 from intugle.core import settings
 from intugle.libs.smart_query_generator import SmartQueryGenerator

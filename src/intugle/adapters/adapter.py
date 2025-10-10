@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Any, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 import pandas as pd
 

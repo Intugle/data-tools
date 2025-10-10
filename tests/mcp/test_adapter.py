@@ -2,7 +2,6 @@ import functools
 
 from enum import Enum
 
-import pytest
 import pytest_asyncio
 
 from mcp import ClientSession
