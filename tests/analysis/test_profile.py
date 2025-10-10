@@ -8,7 +8,7 @@ def test_profile():
     """
     # 1. Prepare dummy data
     data = DuckdbConfig.model_validate({
-        "path": "https://raw.githubusercontent.com/Intugle/data-tools/refs/heads/main/sample_data/healthcare/allergies.csv",  # noqa: E501
+        "path": "https://raw.githubusercontent.com/Intugle/data-tools/refs/heads/main/sample_data/healthcare/allergies.csv",
         "type": "csv"
     })
     table_name = "allergies"

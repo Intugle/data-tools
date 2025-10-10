@@ -1,13 +1,15 @@
 import os
+
+from unittest.mock import AsyncMock, MagicMock, patch
+
 import pandas as pd
 import pytest
 import yaml
-from unittest.mock import patch, MagicMock, AsyncMock
 
-from intugle.semantic_search import SemanticSearch
 from intugle.models.manifest import Manifest
-from intugle.models.resources.source import Source, SourceTables
 from intugle.models.resources.model import Column, ColumnProfilingMetrics
+from intugle.models.resources.source import Source, SourceTables
+from intugle.semantic_search import SemanticSearch
 
 # Pytest marker to skip live tests unless an environment variable is set
 requires_live_services = pytest.mark.skipif(

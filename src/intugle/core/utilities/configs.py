@@ -58,6 +58,7 @@ def load_model_configuration(pipeline_name: str, custom_config: dict):
     
     return {**default_config}
 
+
 def load_profiles_configuration(profiles_path: str):
     if not os.path.exists(profiles_path):
         return {}

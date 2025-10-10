@@ -1,9 +1,9 @@
 import pytest
 
-from tests.adapters.base_adapter_tests import BaseAdapterTests
 from intugle.adapters.types.duckdb.duckdb import DuckdbAdapter
 from intugle.adapters.types.duckdb.models import DuckdbConfig
 from intugle.analysis.models import DataSet
+from tests.adapters.base_adapter_tests import BaseAdapterTests
 
 
 def get_healthcare_config(table_name: str) -> DuckdbConfig:
