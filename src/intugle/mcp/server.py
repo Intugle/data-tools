@@ -8,7 +8,8 @@ from starlette.applications import Starlette
 from starlette.routing import Mount
 
 from intugle.core.settings import settings
-from intugle.mcp.adapter.router import adapter_mcp
+
+# from intugle.mcp.adapter.router import adapter_mcp
 from intugle.mcp.semantic_layer.router import semantic_layer_mcp
 
 log = getLogger(__name__)
@@ -30,7 +31,7 @@ app = Starlette(
     routes=[
         # Using settings-based configuration
         Mount("/semantic_layer", app=semantic_layer_mcp.streamable_http_app()),
-        Mount("/adapter", app=adapter_mcp.streamable_http_app()),
+        # Mount("/adapter", app=adapter_mcp.streamable_http_app()),
     ],
     lifespan=lifespan
 )
