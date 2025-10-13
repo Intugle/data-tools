@@ -1,6 +1,7 @@
 from mcp.server.fastmcp import FastMCP
 
 from intugle.core.settings import settings
+
 # from intugle.mcp.adapter.service import adapter_service
 from intugle.mcp.docs_search.service import docs_search_service
 from intugle.mcp.semantic_layer.prompt import Prompts

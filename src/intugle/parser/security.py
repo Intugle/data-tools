@@ -1,4 +1,5 @@
 import re
+
 from typing import Optional
 
 # ---------------------------------------------------------------------
@@ -7,6 +8,7 @@ from typing import Optional
 
 SAFE_IDENTIFIER_PATTERN = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 
+
 def safe_identifier(name: str) -> str:
     """Validate and return a safe SQL identifier (double-quote-wrapped)."""
     if not name:
@@ -14,6 +16,7 @@ def safe_identifier(name: str) -> str:
     if not SAFE_IDENTIFIER_PATTERN.match(name):
         raise ValueError(f"Unsafe identifier: {name!r}")
     return f"\"{name}\""
+
 
 def escape_literal(value: Optional[str]) -> str:
     """Escape literal values used inside SQL strings."""
