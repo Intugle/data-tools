@@ -1,3 +1,4 @@
+import ast
 import logging
 import re
 
@@ -53,7 +54,7 @@ def compute_stats(values):
 def adjust_sample(sample_data, expected_size, sample=True, distinct=False, empty_return_na: bool = True):
     if not isinstance(sample_data, list):
         try:
-            sample_data = eval(sample_data)
+            sample_data = ast.literal_eval(sample_data)
         except Exception:
             log.error("[!] Error when evaluating sample_data")
             return [np.nan] * 2
@@ -143,7 +144,7 @@ def classify_datetime_format(sampled_values: list) -> list | str:
     DATETIME_TYPE = "date & time"
     if not isinstance(sampled_values, list):
         try:
-            sampled_values = eval(sampled_values)
+            sampled_values = ast.literal_eval(sampled_values)
         except Exception:
             return DATETIME_TYPE
 
@@ -220,7 +221,7 @@ def preprocess_profiling_data(
     def __sample_process__(sample_data, limit=5):
         try:
             if isinstance(sample_data, str):
-                sample_data = eval(sample_data)
+                sample_data = ast.literal_eval(sample_data)
 
             if truncate_sample_data:
                 sample_data = [str(sample)[:20] for sample in sample_data]

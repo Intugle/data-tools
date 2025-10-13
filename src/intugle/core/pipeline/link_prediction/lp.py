@@ -1,5 +1,6 @@
 import logging
 import time
+import ast
 
 from enum import Enum
 from typing import List, Optional, Tuple
@@ -694,7 +695,7 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
     def __post_processing__(self, data: pd.DataFrame) -> pd.DataFrame:
         def process(result: str):
             try:
-                result = eval(result) if isinstance(result, str) else result
+                result = ast.literal_eval(result) if isinstance(result, str) else result
                 return result if result["table1"] != "NA" else ""
             except Exception as ex:
                 log.info(f"[!] Error while parsing: {ex}")

@@ -37,6 +37,10 @@ class AdapterFactory:
         plugins.extend(DEFAULT_PLUGINS)
 
         for _plugin in plugins:
+            # Security check: Ensure the plugin is in the correct namespace
+            if not _plugin.startswith("intugle.adapters.types."):
+                print(f"Warning: Skipping potentially unsafe plugin '{_plugin}'.")
+                continue
             try:
                 plugin = import_module(_plugin)
                 plugin.register(self)
