@@ -1,5 +1,6 @@
 
 import asyncio
+import os
 
 from typing import List
 
@@ -17,6 +18,29 @@ class DocsSearchService:
 
     def __init__(self):
         self._doc_paths = None
+
+    def _sanitize_path(self, path: str) -> str | None:
+        """
+        Sanitizes a relative path to prevent path traversal attacks.
+        Returns the original path if it's safe, otherwise None.
+        """
+    
+        # Reject absolute paths immediately
+        if os.path.isabs(path):
+            return None
+    
+        # Normalize the path (removes ../, //, etc.)
+        normalized_path = os.path.normpath(path)
+    
+        # Ensure it does not traverse outside allowed directory
+        if normalized_path.startswith("..") or "\\" in normalized_path:
+            return None
+    
+        # Optionally, you could enforce allowed file extensions
+        if not (normalized_path.endswith(".md") or normalized_path.endswith(".mdx")):
+            return None
+    
+        return normalized_path
 
     async def list_doc_paths(self) -> List[str]:
         """
@@ -73,7 +97,11 @@ class DocsSearchService:
         """
         Fetches a single documentation file.
         """
-        url = f"{self.BASE_URL}{path}"
+        sanitized_path = self._sanitize_path(path)
+        if sanitized_path is None:
+            return f"Error: Invalid path {path}"
+        
+        url = f"{self.BASE_URL}{sanitized_path}"
         try:
             async with session.get(url) as response:
                 if response.status == 200:
