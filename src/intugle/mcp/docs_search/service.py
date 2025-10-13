@@ -25,15 +25,22 @@ class DocsSearchService:
         Returns the original path if it's safe, otherwise None.
         """
     
-        # A virtual base directory for validation
-        safe_base = "/github/docs"
-
-        resolved_path = os.path.normpath(os.path.join(safe_base, path))
-    
-        if not resolved_path.startswith(safe_base) or os.path.isabs(path):
+        # Reject absolute paths immediately
+        if os.path.isabs(path):
             return None
     
-        return path
+        # Normalize the path (removes ../, //, etc.)
+        normalized_path = os.path.normpath(path)
+    
+        # Ensure it does not traverse outside allowed directory
+        if normalized_path.startswith("..") or "\\" in normalized_path:
+            return None
+    
+        # Optionally, you could enforce allowed file extensions
+        if not (normalized_path.endswith(".md") or normalized_path.endswith(".mdx")):
+            return None
+    
+        return normalized_path
 
     async def list_doc_paths(self) -> List[str]:
         """
