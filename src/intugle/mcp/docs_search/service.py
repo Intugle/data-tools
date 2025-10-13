@@ -1,5 +1,6 @@
 
 import asyncio
+import os
 
 from typing import List
 
@@ -17,6 +18,22 @@ class DocsSearchService:
 
     def __init__(self):
         self._doc_paths = None
+
+    def _sanitize_path(self, path: str) -> str | None:
+        """
+        Sanitizes a relative path to prevent path traversal attacks.
+        Returns the original path if it's safe, otherwise None.
+        """
+    
+        # A virtual base directory for validation
+        safe_base = "/github/docs"
+
+        resolved_path = os.path.normpath(os.path.join(safe_base, path))
+    
+        if not resolved_path.startswith(safe_base) or os.path.isabs(path):
+            return None
+    
+        return path
 
     async def list_doc_paths(self) -> List[str]:
         """
@@ -73,7 +90,11 @@ class DocsSearchService:
         """
         Fetches a single documentation file.
         """
-        url = f"{self.BASE_URL}{path}"
+        sanitized_path = self._sanitize_path(path)
+        if sanitized_path is None:
+            return f"Error: Invalid path {path}"
+        
+        url = f"{self.BASE_URL}{sanitized_path}"
         try:
             async with session.get(url) as response:
                 if response.status == 200:
