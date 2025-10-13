@@ -1,5 +1,5 @@
 import time
-
+import re
 from typing import TYPE_CHECKING, Any, Optional
 
 import duckdb
@@ -22,18 +22,28 @@ if TYPE_CHECKING:
     from intugle.analysis.models import DataSet
 
 
+def safe_identifier(name: str) -> str:
+    """
+    Wraps an SQL identifier in double quotes, allowing almost any character except
+    double quotes and semicolons (to prevent SQL injection).
+    """
+    if '"' in name or ';' in name:
+        raise ValueError(f"Invalid SQL identifier: {name}")
+    return f'"{name}"'
+
+
 class DuckdbAdapter(Adapter):
 
     def __init__(self):
         duckdb.install_extension('httpfs')
-        duckdb.load_extension('httpfs')        
+        duckdb.load_extension('httpfs')
 
     @staticmethod
     def check_data(data: Any) -> DuckdbConfig:
         try:
             data = DuckdbConfig.model_validate(data)
         except Exception:
-            raise TypeError("Input must be a duckdb config.")
+            raise TypeError("Input must be a DuckdbConfig instance.")
         return data
 
     def profile(self, data: DuckdbConfig, table_name: str) -> ProfilingOutput:
@@ -50,9 +60,9 @@ class DuckdbAdapter(Adapter):
             - "dtypes": A dictionary mapping column names to generalized data types.
         """
         data = self.check_data(data)
+        table_name_safe = safe_identifier(table_name)
 
         def __format_dtype__(dtype: Any) -> str:
-            """Maps dtype to a generalized type string."""
             type_map = {
                 "VARCHAR": "string",
                 "DATE": "date & time",
@@ -64,24 +74,15 @@ class DuckdbAdapter(Adapter):
 
         self.load(data, table_name)
 
-        # Fetching total count of table
-        query = f"""
-        SELECT count(*) as count FROM "{table_name}"
-        """
-        data = duckdb.execute(query).fetchall()
+        # Fetch total count
+        query = f"SELECT COUNT(*) as count FROM {table_name_safe}"
+        total_count = duckdb.execute(query).fetchone()[0]
 
-        total_count = data[0][0]
-
-        # Fetching column name and their data types of table
-        query = """
-        SELECT column_name, data_type
-        FROM duckdb_columns()
-        WHERE table_name = ?
-        """
-        data = duckdb.execute(query, [table_name]).fetchall()
-
-        dtypes = {col: __format_dtype__(dtype) for col, dtype in data}
-        columns = [col for col, _ in data]
+        # Fetch column names and types
+        query = "SELECT column_name, data_type FROM duckdb_columns() WHERE table_name = ?"
+        column_data = duckdb.execute(query, [table_name]).fetchall()
+        dtypes = {col: __format_dtype__(dtype) for col, dtype in column_data}
+        columns = [col for col, _ in column_data]
 
         return ProfilingOutput(
             count=total_count,
@@ -99,7 +100,7 @@ class DuckdbAdapter(Adapter):
         dtype_sample_limit: int = 10000,
     ) -> Optional[ColumnProfile]:
         """
-        Generates a detailed profile for a single column of a pandas DataFrame.
+        Generates a detailed profile for a single column of a table.
 
         It calculates null and distinct counts, and generates two types of samples:
         1.  `sample_data`: A sample of unique values.
@@ -116,37 +117,32 @@ class DuckdbAdapter(Adapter):
             column does not exist.
         """
         data = self.check_data(data)
+        table_name_safe = safe_identifier(table_name)
+        column_name_safe = safe_identifier(column_name)
 
         self.load(data, table_name)
-
         start_ts = time.time()
 
-        # --- Calculations --- #
+        # --- Nulls and distinct counts ---
         query = f"""
         SELECT 
-            COUNT(DISTINCT "{column_name}") AS distinct_count,
-            SUM(CASE WHEN "{column_name}" IS NULL THEN 1 ELSE 0 END) AS null_count
-        FROM  
-            "{table_name}"
+            COUNT(DISTINCT {column_name_safe}) AS distinct_count,
+            SUM(CASE WHEN {column_name_safe} IS NULL THEN 1 ELSE 0 END) AS null_count
+        FROM {table_name_safe}
         """
-        distinct_null_data = duckdb.execute(query).fetchall()
-
-        distinct_count, null_count = distinct_null_data[0]
+        distinct_null_data = duckdb.execute(query).fetchone()
+        distinct_count, null_count = distinct_null_data
         not_null_count = total_count - null_count
 
-        # --- Sampling Logic --- #
-        # 1. Get a sample of distinct values.
+        # --- Sampling ---
         sample_query = f"""
-        SELECT 
-            DISTINCT CAST( "{column_name}" AS VARCHAR) AS sample_values 
-        FROM 
-            "{table_name}"
-        WHERE 
-            "{column_name}" IS NOT NULL LIMIT {dtype_sample_limit}
+        SELECT DISTINCT CAST({column_name_safe} AS VARCHAR) AS sample_values
+        FROM {table_name_safe}
+        WHERE {column_name_safe} IS NOT NULL
+        LIMIT {dtype_sample_limit}
         """
-        data = duckdb.execute(sample_query).fetchall()
-        distinct_values = [d[0] for d in data]
-
+        data_sample = duckdb.execute(sample_query).fetchall()
+        distinct_values = [d[0] for d in data_sample]
         not_null_series = pd.Series(distinct_values)
 
         if distinct_count > 0:
@@ -155,30 +151,19 @@ class DuckdbAdapter(Adapter):
         else:
             sample_data = []
 
-        # 2. Create a combined sample for data type analysis.
-        dtype_sample = None
+        # dtype_sample
+        dtype_sample = []
         if distinct_count >= dtype_sample_limit:
-            # If we have enough distinct values, that's the best sample.
             dtype_sample = sample_data
         elif distinct_count > 0 and not_null_count > 0:
-            # If distinct values are few, supplement them with random non-distinct values.
             remaining_sample_size = dtype_sample_limit - distinct_count
-
-            # Use replace=True in case the number of non-null values is less than the remaining sample size needed.
             additional_samples = list(not_null_series.sample(n=remaining_sample_size, replace=True))
-
-            # Combine the full set of unique values with the additional random samples.
             dtype_sample = list(distinct_values) + additional_samples
-        else:
-            dtype_sample = []
 
-        # --- Convert numpy types to native Python types for JSON compatibility --- #
         native_sample_data = convert_to_native(sample_data)
         native_dtype_sample = convert_to_native(dtype_sample)
-
         business_name = string_standardization(column_name)
 
-        # --- Final Profile --- #
         return ColumnProfile(
             column_name=column_name,
             business_name=business_name,
@@ -186,8 +171,8 @@ class DuckdbAdapter(Adapter):
             null_count=null_count,
             count=total_count,
             distinct_count=distinct_count,
-            uniqueness=distinct_count / total_count if total_count > 0 else 0.0,
-            completeness=not_null_count / total_count if total_count > 0 else 0.0,
+            uniqueness=distinct_count / total_count if total_count else 0.0,
+            completeness=not_null_count / total_count if total_count else 0.0,
             sample_data=native_sample_data[:sample_limit],
             dtype_sample=native_dtype_sample,
             ts=time.time() - start_ts,
@@ -195,82 +180,77 @@ class DuckdbAdapter(Adapter):
 
     @staticmethod
     def _get_load_func(data: DuckdbConfig):
-        func = {
-            "csv": "read_csv",
-            "parquet": "read_parquet",
-            "xlsx": "read_xlsx",
-        }
+        func = {"csv": "read_csv", "parquet": "read_parquet", "xlsx": "read_xlsx"}
         ld_func = func.get(data.type)
         if ld_func is None:
             raise errors.NotFoundError(f"Type: {data.type} not supported")
 
         if data.type == "xlsx":
-            return f"{ld_func}('{data.path}', ignore_errors = true)"  # Replace cells that can't be cast to the corresponding inferred column type with NULL
-
+            return f"{ld_func}('{data.path}', ignore_errors = true)"
         return f"{ld_func}('{data.path}')"
 
     def load_view(self, data: DuckdbConfig, table_name: str):
-        query = f"""CREATE OR REPLACE VIEW "{table_name}" AS {data.path}"""
+        table_name_safe = safe_identifier(table_name)
+        query = f"CREATE OR REPLACE VIEW {table_name_safe} AS {data.path}"
         duckdb.execute(query)
 
     def load_file(self, data: DuckdbConfig, table_name: str):
+        table_name_safe = safe_identifier(table_name)
         ld_func = self._get_load_func(data)
-        query = f"""CREATE VIEW IF NOT EXISTS "{table_name}" AS SELECT * FROM {ld_func};"""
-
+        query = f"CREATE VIEW IF NOT EXISTS {table_name_safe} AS SELECT * FROM {ld_func};"
         duckdb.execute(query)
 
     def load(self, data: DuckdbConfig, table_name: str):
         data = self.check_data(data)
         if data.type == "query":
             self.load_view(data, table_name)
+        elif data.type == "table":
             return
-        if data.type == "table":
-            # The table is already materialized in DuckDB, so there's nothing to load.
-            return
-        self.load_file(data, table_name)
-    
-    def execute_df(self, query):
-        df = duckdb.sql(query).to_df()
-        return df
+        else:
+            self.load_file(data, table_name)
 
-    def to_df(self, _: DuckdbConfig, table_name: str):
-        query = f'''SELECT * from "{table_name}"'''
-        df = self.execute_df(query)
-        return df
+    def execute_df(self, query: str) -> pd.DataFrame:
+        return duckdb.sql(query).to_df()
+
+    def to_df(self, _: DuckdbConfig, table_name: str) -> pd.DataFrame:
+        table_name_safe = safe_identifier(table_name)
+        query = f"SELECT * FROM {table_name_safe}"
+        return self.execute_df(query)
 
     def to_df_from_query(self, query: str) -> pd.DataFrame:
         return duckdb.sql(query).to_df()
 
     def create_table_from_query(self, table_name: str, query: str):
-        duckdb.sql(f'CREATE OR REPLACE VIEW "{table_name}" AS {query}')
+        table_name_safe = safe_identifier(table_name)
+        duckdb.sql(f'CREATE OR REPLACE VIEW {table_name_safe} AS {query}')
         return query
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
         return DuckdbConfig(path=etl_name, type="table")
 
     def deploy_semantic_model(self, semantic_model_dict: dict, **kwargs):
-        """Deploys a semantic model to the target system."""
         raise NotImplementedError("Deployment is not supported for the DuckdbAdapter.")
 
-    def execute(self, query):
+    def execute(self, query: str):
         df = self.execute_df(query)
-        data = df.to_dict(orient="records")
-        return data
+        return df.to_dict(orient="records")
 
-    async def aexecute(self, query):
+    async def aexecute(self, query: str):
         result = duckdb.sql(query).fetchnumpy()
         df = pd.DataFrame(result)
-        data = df.to_dict(orient="records")
-        return data
+        return df.to_dict(orient="records")
 
     def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
-        table1_name = table1.name
-        table2_name = table2.name
+        table1_name_safe = safe_identifier(table1.name)
+        table2_name_safe = safe_identifier(table2.name)
+        column1_safe = safe_identifier(column1_name)
+        column2_safe = safe_identifier(column2_name)
+
         query = f"""
         SELECT COUNT(*) as intersect_count FROM (
-            SELECT DISTINCT "{column1_name}" FROM "{table1_name}" WHERE "{column1_name}" IS NOT NULL
+            SELECT DISTINCT {column1_safe} FROM {table1_name_safe} WHERE {column1_safe} IS NOT NULL
             INTERSECT
-            SELECT DISTINCT "{column2_name}" FROM "{table2_name}" WHERE "{column2_name}" IS NOT NULL
+            SELECT DISTINCT {column2_safe} FROM {table2_name_safe} WHERE {column2_safe} IS NOT NULL
         ) as t
         """
         result = self.execute(query)
@@ -283,10 +263,10 @@ class DuckdbAdapter(Adapter):
 
 def can_handle_pandas(df: Any) -> bool:
     try:
-        df = DuckdbAdapter.check_data(df)
+        DuckdbAdapter.check_data(df)
+        return True
     except Exception:
         return False
-    return True
 
 
 def register(factory: AdapterFactory):
