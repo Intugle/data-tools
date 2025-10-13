@@ -1,7 +1,10 @@
 
 import asyncio
-import aiohttp
+
 from typing import List
+
+import aiohttp
+
 
 class DocsSearchService:
     """
@@ -81,5 +84,6 @@ class DocsSearchService:
         except Exception as e:
             # Optionally log the exception
             return f"Error: Exception while fetching {url}: {e}"
+
 
 docs_search_service = DocsSearchService()

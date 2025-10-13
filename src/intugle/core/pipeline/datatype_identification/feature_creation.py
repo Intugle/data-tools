@@ -87,7 +87,7 @@ class DIFeatureCreation:
             log.info(f"[**] FEATS COMPUTATION <dtype_features> ==> {round((end - start) / 60, 3)} minutes")
             assert features_df.shape[0] != 0, "Features dataframe is empty"
             # Get the total number of null features and replace them with 0
-             # Get the feature execution stats
+            # Get the feature execution stats
             features_df['start_time'] = start_ft
             features_df['end_time'] = datetime.now()
             features_df['execution_time'] = datetime.now() - start_ft

@@ -1,5 +1,6 @@
 import time
-from typing import Any, Optional, TYPE_CHECKING
+
+from typing import TYPE_CHECKING, Any, Optional
 
 import numpy as np
 import pandas as pd

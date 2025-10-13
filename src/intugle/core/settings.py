@@ -86,7 +86,6 @@ class Settings(BaseSettings):
     LLM_SAMPLE_LIMIT: int = 15
     STRATA_SAMPLE_LIMIT: int = 4
 
-
     # Adapter
     POSTGRES_USER: Optional[str] = None
     POSTGRES_PASSWORD: Optional[str] = None

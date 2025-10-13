@@ -1,8 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from intugle.analysis.pipeline import Pipeline
-from intugle.analysis.steps import ColumnProfiler, TableProfiler
+from intugle.analysis.models import DataSet
 from intugle.core.utilities.processing import string_standardization
 
 # --- Test Data ---
@@ -21,13 +20,13 @@ COMPLEX_DF = pd.DataFrame({
 DF_NAME = "complex_test_df"
 
 
-def test_pipeline_with_complex_data():
+def test_table_profiling_with_complex_data():
     """
-    Tests that the pipeline can run the TableProfiler step with complex data.
+    Tests table-level profiling on a DataSet with complex data.
     """
-    pipeline = Pipeline([TableProfiler()])
-    analysis_results = pipeline.run(COMPLEX_DF, DF_NAME)
-    table_model = analysis_results.source_table_model
+    dataset = DataSet(COMPLEX_DF, DF_NAME)
+    dataset.profile_table()
+    table_model = dataset.source_table_model
 
     assert table_model.profiling_metrics is not None
     assert table_model.profiling_metrics.count == 10
@@ -37,14 +36,11 @@ def test_pipeline_with_complex_data():
 
 def test_column_profiling_with_complex_data():
     """
-    Tests the ColumnProfiler step with a more complex and realistic dataset.
+    Tests column-level profiling on a DataSet with a more complex and realistic dataset.
     """
-    pipeline = Pipeline([
-        TableProfiler(),
-        ColumnProfiler()
-    ])
-    analysis_results = pipeline.run(COMPLEX_DF, DF_NAME)
-    columns_map = analysis_results.columns
+    dataset = DataSet(COMPLEX_DF, DF_NAME)
+    dataset.profile()  # Runs table and column profiling
+    columns_map = dataset.columns
     assert len(columns_map) == 5
 
     # --- Assertions for 'user_id' ---
@@ -75,3 +71,32 @@ def test_column_profiling_with_complex_data():
     assert returned_profile.null_count == 1
     assert returned_profile.distinct_count == 2  # True, False
     assert string_standardization("is returned") == "is_returned"
+
+
+def test_profiling_empty_dataframe():
+    """Tests that profiling an empty DataFrame does not raise an error."""
+    empty_df = pd.DataFrame({'col1': [], 'col2': []})
+    dataset = DataSet(empty_df, "empty_df")
+    dataset.profile()
+
+    assert dataset.source_table_model.profiling_metrics.count == 0
+    assert len(dataset.columns) == 2
+    
+    col1_profile = dataset.columns['col1'].profiling_metrics
+    assert col1_profile.count == 0
+    assert col1_profile.null_count == 0
+    assert col1_profile.distinct_count == 0
+
+
+def test_profiling_column_with_all_nulls():
+    """Tests that a column with all nulls is profiled correctly."""
+    df = pd.DataFrame({'id': [1, 2, 3], 'notes': [None, np.nan, None]})
+    dataset = DataSet(df, "all_nulls_df")
+    dataset.profile()
+
+    notes_profile = dataset.columns['notes'].profiling_metrics
+    assert notes_profile.count == 3
+    assert notes_profile.null_count == 3
+    assert notes_profile.distinct_count == 0
+    assert notes_profile.uniqueness == 0.0
+    assert notes_profile.completeness == 0.0
