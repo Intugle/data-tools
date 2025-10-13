@@ -1,5 +1,6 @@
 from intugle.common.exception import errors
 from intugle.models.manifest import Manifest
+from intugle.parser.security import escape_literal, safe_identifier
 
 
 class TableSchema:
@@ -28,21 +29,32 @@ class TableSchema:
         if not table_detail:
             raise errors.NotFoundError(f"Table {table_name} not found in manifest.")
 
-        # Start with the CREATE TABLE statement
-        schema = f"CREATE TABLE {table_detail.table.name} -- {table_detail.table.description}"
+        # 1. Define the SQL template with placeholders
+        schema_template = "CREATE TABLE {table_name} -- {table_comment}\n(\n{column_definitions}\n);"
 
-        # Iterate through the columns of the table and create the column definitions
-        columns_statements = [
-            f"\"{column.name}\" {column.type}, -- {column.description}" for column in table_detail.table.columns
-        ]
+        # 2. Sanitize all dynamic parts that will go into the template
+        params = {
+            "table_name": safe_identifier(table_detail.table.name),
+            "table_comment": escape_literal(table_detail.table.description),
+        }
 
-        # join the column definitions into a single string
-        column_schema = "\n".join(columns_statements)
+        # Sanitize each column definition separately
+        column_statements = []
+        for column in table_detail.table.columns:
+            # Here we assume column.type is safe and doesn't come from user input.
+            # If it can be user-defined, it needs its own validation.
+            column_template = "    {column_name} {column_type}, -- {column_comment}"
+            column_params = {
+                "column_name": safe_identifier(column.name),
+                "column_type": column.type,
+                "column_comment": escape_literal(column.description),
+            }
+            column_statements.append(column_template.format(**column_params))
 
-        # Add the column definitions to the schema
-        schema += "\n(" + column_schema + "\n);"
+        params["column_definitions"] = "\n".join(column_statements)
 
-        return schema
+        # 3. Format the final schema string with the sanitized parameters
+        return schema_template.format(**params)
 
     def get_table_schema(self, table_name: str):
         """Get the SQL schema for a specified table, generating it if not already cached.
