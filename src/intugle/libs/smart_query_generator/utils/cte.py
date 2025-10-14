@@ -27,8 +27,8 @@ from ..models.models import (
 )
 
 SEPERATOR = "____"
-SQL_CODE_REGEX_PATTERN = r"@\{([\d\-]+)\}\[([\w\-\.\`]+)\]"
-CF_REGEX_PATTERN = r"([A-Za-z_\s]+)\(([^()]+)\)"
+SQL_CODE_REGEX_PATTERN = re.compile(r"@\{([\d\-]+)\}\[([\w\-\.\`]+)\]")
+CF_REGEX_PATTERN = re.compile(r"([A-Za-z_]+(?:\s+[A-Za-z_]+)*)(\s*)\(([^()]*?)\)")
 
 
 class CTE:
@@ -404,8 +404,8 @@ class CTE:
         matches = re.findall(CF_REGEX_PATTERN, sql_code)
 
         for match in matches:
-            func = match[0]
-            args = match[1]
+            func = match[0] + match[1]
+            args = match[2]
             _fields, _assets = self.__get_field_ids_asset_ids(args, fields)
             if len(_assets) == 1:
                 _id = [field_id, *_fields, *_assets]
