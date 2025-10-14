@@ -17,7 +17,7 @@ semantic_layer_mcp = FastMCP(
     name="get_tables",
     description="Get list of tables in database along with their technical description",
 )
-async def get_tables() -> list[dict]:
+def get_tables() -> list[dict]:
     """
     Module used for fetching all the tables and their technical description for a subscription
     Args:
@@ -26,7 +26,7 @@ async def get_tables() -> list[dict]:
     Returns:
         dir: List of tables along with their technical description
     """
-    tables = await semantic_layer_service.get_tables()
+    tables = semantic_layer_service.get_tables()
     return tables
 
 
@@ -34,7 +34,7 @@ async def get_tables() -> list[dict]:
     name="get_schema",
     description="Given database table names, get the schemas of the tables",
 )
-async def get_schema(table_names: list[str]) -> dict[str, str]:
+def get_schema(table_names: list[str]) -> dict[str, str]:
     """
     Given database table names fetch the schema along with some sample rows
     Args:
@@ -48,7 +48,7 @@ async def get_schema(table_names: list[str]) -> dict[str, str]:
     Returns:
         dict[str, str]: List of tables with there schemas along with shortlisted sample rows (dynamic + sample rows)
     """
-    schemas = await semantic_layer_service.get_schema(table_names)
+    schemas = semantic_layer_service.get_schema(table_names)
     return schemas
 
 

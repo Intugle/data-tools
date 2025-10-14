@@ -216,4 +216,4 @@ class SemanticSearchCRUD:
 
                 points = await self.vectorize(content)
 
-                await vdb.bulk_insert(points)
+                vdb.bulk_insert(points)

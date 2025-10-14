@@ -235,11 +235,6 @@ class DuckdbAdapter(Adapter):
         df = self.execute_df(query)
         return df.to_dict(orient="records")
 
-    async def aexecute(self, query: str):
-        result = duckdb.sql(query).fetchnumpy()
-        df = pd.DataFrame(result)
-        return df.to_dict(orient="records")
-
     def intersect_count(self, table1: "DataSet", column1_name: str, table2: "DataSet", column2_name: str) -> int:
         table1_name_safe = safe_identifier(table1.name)
         table2_name_safe = safe_identifier(table2.name)

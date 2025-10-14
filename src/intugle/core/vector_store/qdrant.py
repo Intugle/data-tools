@@ -119,17 +119,16 @@ class AsyncQdrantService:
             log.error(f"AsyncQdrantService: Couldn't create collection, reason: {e}")
             raise e
 
-    async def bulk_insert(self, points: models.PointStruct | List[models.PointStruct]):
+    def bulk_insert(self, points: models.PointStruct | List[models.PointStruct]):
         try:
-            task = asyncio.create_task(self.aupload_point(points))
-            result = await task
+            result = self.upload_point(points)
             log.debug(f"Upload Status: {result}")
             return result
         except Exception as e:
             log.error(f"Couldn't bulk insert data: {e}")
             raise e
 
-    async def aupload_point(self, points):
+    def upload_point(self, points):
         try:
             self.client.upload_points(
                 collection_name=self.collection_name,

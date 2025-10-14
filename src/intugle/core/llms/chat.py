@@ -90,8 +90,6 @@ class ChatModelLLM:
             )
         return rate_limiter
 
-    def message_builder(): ...
-
     def invoke(self, *args, **kwargs):
         """
         The final invoke method that takes any arguments that is to be finally added in the prompt message and invokes the llm call.

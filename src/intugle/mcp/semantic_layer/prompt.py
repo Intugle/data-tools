@@ -1,5 +1,5 @@
 import textwrap
-
+import aiofiles
 from pathlib import Path
 
 from intugle.mcp.docs_search.service import docs_search_service
@@ -17,8 +17,8 @@ class Prompts:
         Returns the prompt for the Intugle Vibe agent.
         """
         prompt_path = Path(__file__).parent / "prompts" / "intugle_vibe_prompt.md"
-        with open(prompt_path, "r") as f:
-            base_prompt = f.read()
+        async with aiofiles.open(prompt_path, "r") as f:
+            base_prompt = await f.read()
 
         library_overview = textwrap.dedent("""
             Intugle is a GenAI-powered open-source Python library that builds a semantic data model over your existing data systems.
