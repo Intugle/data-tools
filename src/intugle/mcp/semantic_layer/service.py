@@ -14,7 +14,7 @@ class SemanticLayerService:
 
         self.table_schema = TableSchema(self.manifest)
 
-    async def get_tables(self) -> list[dict]:
+    def get_tables(self) -> list[dict]:
         """
         Fetches all the tables and their technical description for a subscription.
 
@@ -33,7 +33,7 @@ class SemanticLayerService:
 
         return tables
 
-    async def get_schema(self, tables: list[str]) -> dict[str, str]:
+    def get_schema(self, tables: list[str]) -> dict[str, str]:
         """
         Fetches the schema along with some sample rows for given database table names.
 

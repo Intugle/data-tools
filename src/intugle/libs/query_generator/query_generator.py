@@ -98,13 +98,14 @@ class QueryGenerator:
                 )
         return join_query
 
-    def _filter(self, filterFields):
+    @classmethod
+    def _filter(cls, filterFields):
         fields = filterFields.get("fields", [])
         filterCols = []
         for _field in fields:
             _fields = _field.get("fields", None)
             if _fields:
-                expr = self._filter(self, _field)
+                expr = cls._filter(_field)
                 expr = f"({expr})"
             else:
                 expr = Operators.operator_factory(_field)
@@ -116,7 +117,7 @@ class QueryGenerator:
         # Filter Expression
         filterExpr = ""
         if filterFields != {}:
-            filterCols = cls._filter(cls, filterFields)
+            filterCols = cls._filter(filterFields)
             if filterCols:
                 filterExpr = filterExpr + " WHERE " + filterCols
         return filterExpr
