@@ -1725,6 +1725,7 @@ snowflake = [
 dev = [
     { name = "databricks-sql-connector" },
     { name = "ipykernel" },
+    { name = "pysonar" },
     { name = "pyspark" },
     { name = "pytest" },
     { name = "pytest-asyncio" },
@@ -1787,6 +1788,7 @@ provides-extras = ["snowflake", "databricks"]
 dev = [
     { name = "databricks-sql-connector", specifier = ">=4.1.3" },
     { name = "ipykernel", specifier = ">=6.30.1" },
+    { name = "pysonar", specifier = ">=1.2.0.2419" },
     { name = "pyspark", specifier = ">=4.0.1" },
     { name = "pytest", specifier = ">=8.4.1" },
     { name = "pytest-asyncio", specifier = ">=1.1.0" },
@@ -2056,6 +2058,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/e8/5d/447af5ea094b9e4c4054f82e223ada074c552335b9b4b2d14bd9b35a67c4/joblib-1.5.2.tar.gz", hash = "sha256:3faa5c39054b2f03ca547da9b2f52fde67c06240c31853f306aea97f13647b55", size = 331077, upload-time = "2025-08-27T12:15:46.575Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/1e/e8/685f47e0d754320684db4425a0967f7d3fa70126bffd76110b7009a0090f/joblib-1.5.2-py3-none-any.whl", hash = "sha256:4e1f0bdbb987e6d843c70cf43714cb276623def372df3c22fe5266b2670bc241", size = 308396, upload-time = "2025-08-27T12:15:45.188Z" },
+]
+
+[[package]]
+name = "jproperties"
+version = "2.1.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "six" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/be/27/00abf648c6d573275d409b70196b66d9fb40ef03b8d1baf671ae3774e145/jproperties-2.1.2.tar.gz", hash = "sha256:036fcd52c10a8a1c21e6fa2a1c292c93892e759b76490acc4809213a36ddc329", size = 23860, upload-time = "2024-07-21T20:40:50.29Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/75/6f/55bc5837e9fe7a86a5acb553adec901257d709062bfaef7debd4d8cfee12/jproperties-2.1.2-py2.py3-none-any.whl", hash = "sha256:4108e868353a9f4a12bb86a92df5462d0e18d00119169533972ce473029be79a", size = 17981, upload-time = "2024-07-21T20:40:49.034Z" },
 ]
 
 [[package]]
@@ -3839,6 +3853,15 @@ wheels = [
 ]
 
 [[package]]
+name = "pyfakefs"
+version = "5.9.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/9b/66/a90124bc9f0d2335897a7d077941f12eaa06c851c8d1b1f37967424d7aa8/pyfakefs-5.9.3.tar.gz", hash = "sha256:b458b11abc8862d4d8500816170a9b25e10d07437332b9dffd651069f3d4c40c", size = 229964, upload-time = "2025-08-29T18:34:21.032Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e7/61/d2b795a4d19713a2312d54b0c001002441f71188d6a3e11e43ddfa03bb1b/pyfakefs-5.9.3-py3-none-any.whl", hash = "sha256:14a0514e94ff156543208c0b4832facc68bdf19de993799b67d58dd5ca05ef30", size = 245197, upload-time = "2025-08-29T18:34:19.112Z" },
+]
+
+[[package]]
 name = "pyfunctional"
 version = "1.5.0"
 source = { registry = "https://pypi.org/simple" }
@@ -3890,6 +3913,22 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz", hash = "sha256:2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6", size = 1099274, upload-time = "2025-09-21T04:11:06.277Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/10/5e/1aa9a93198c6b64513c9d7752de7422c06402de6600a8767da1524f9570b/pyparsing-3.2.5-py3-none-any.whl", hash = "sha256:e38a4f02064cf41fe6593d328d0512495ad1f3d8a91c4f73fc401b3079a59a5e", size = 113890, upload-time = "2025-09-21T04:11:04.117Z" },
+]
+
+[[package]]
+name = "pysonar"
+version = "1.2.0.2419"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "jproperties" },
+    { name = "pyfakefs" },
+    { name = "requests" },
+    { name = "responses" },
+    { name = "tomli" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a7/b1/4b408bc6abfc804f1bbb14f76a78128d5abde0e27433d358df1c2fbcdfc7/pysonar-1.2.0.2419.tar.gz", hash = "sha256:3b48f24bc520c930981fb19979bc39e02fee707bdc3bb39292f517e0a805ba94", size = 26409, upload-time = "2025-09-15T14:47:55.687Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ce/a0/6a0e78854900d6c4474b37fe645d68794899b2f8b008a44ce1226c634548/pysonar-1.2.0.2419-py3-none-any.whl", hash = "sha256:a9b8cf858b11709b68d82c4a9395dd8381378eab93497d44ed08aeeb54cb7447", size = 39522, upload-time = "2025-09-15T14:47:54.734Z" },
 ]
 
 [[package]]
@@ -4345,6 +4384,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/f3/61/d7545dafb7ac2230c70d38d31cbfe4cc64f7144dc41f6e4e4b78ecd9f5bb/requests-toolbelt-1.0.0.tar.gz", hash = "sha256:7681a0a3d047012b5bdc0ee37d7f8f07ebe76ab08caeccfc3921ce23c88d5bc6", size = 206888, upload-time = "2023-05-01T04:11:33.229Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/3f/51/d4db610ef29373b879047326cbf6fa98b6c1969d6f6dc423279de2b1be2c/requests_toolbelt-1.0.0-py2.py3-none-any.whl", hash = "sha256:cccfdd665f0a24fcf4726e690f65639d272bb0637b9b92dfd91a5568ccf6bd06", size = 54481, upload-time = "2023-05-01T04:11:28.427Z" },
+]
+
+[[package]]
+name = "responses"
+version = "0.25.8"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyyaml" },
+    { name = "requests" },
+    { name = "urllib3" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/0e/95/89c054ad70bfef6da605338b009b2e283485835351a9935c7bfbfaca7ffc/responses-0.25.8.tar.gz", hash = "sha256:9374d047a575c8f781b94454db5cab590b6029505f488d12899ddb10a4af1cf4", size = 79320, upload-time = "2025-08-08T19:01:46.709Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1c/4c/cc276ce57e572c102d9542d383b2cfd551276581dc60004cb94fe8774c11/responses-0.25.8-py3-none-any.whl", hash = "sha256:0c710af92def29c8352ceadff0c3fe340ace27cf5af1bbe46fb71275bcd2831c", size = 34769, upload-time = "2025-08-08T19:01:45.018Z" },
 ]
 
 [[package]]

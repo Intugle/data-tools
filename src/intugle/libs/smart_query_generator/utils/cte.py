@@ -29,6 +29,7 @@ from ..models.models import (
 SEPERATOR = "____"
 SQL_CODE_REGEX_PATTERN = re.compile(r"@\{([\d\-]+)\}\[([\w\-\.\`]+)\]")
 CF_REGEX_PATTERN = re.compile(r"([A-Za-z_]+(?:\s+[A-Za-z_]+)*)(\s*)\(([^()]*?)\)")
+MAX_SQL_CODE_LENGTH = 10000
 
 
 class CTE:
@@ -399,6 +400,9 @@ class CTE:
         return sql_code
 
     def parse_function_fields(self, field_id: int, sql_code: str, fields={}):
+        if len(sql_code) > MAX_SQL_CODE_LENGTH:
+            return sql_code, {}
+
         multiple_asset_field = False
 
         matches = re.findall(CF_REGEX_PATTERN, sql_code)
