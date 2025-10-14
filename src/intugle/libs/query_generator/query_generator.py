@@ -99,9 +99,9 @@ class QueryGenerator:
         return join_query
 
     @classmethod
-    def _filter(cls, filterFields):
-        fields = filterFields.get("fields", [])
-        filterCols = []
+    def _filter(cls, filter_fields):
+        fields = filter_fields.get("fields", [])
+        filter_cols = []
         for _field in fields:
             _fields = _field.get("fields", None)
             if _fields:
@@ -109,17 +109,17 @@ class QueryGenerator:
                 expr = f"({expr})"
             else:
                 expr = Operators.operator_factory(_field)
-            filterCols.append(expr)
-        return " {} ".format(filterFields["condition"].upper()).join(filterCols)
+            filter_cols.append(expr)
+        return " {} ".format(filter_fields["condition"].upper()).join(filter_cols)
 
     @classmethod
     def get_filter_expr(cls, filterFields):
         # Filter Expression
         filterExpr = ""
         if filterFields != {}:
-            filterCols = cls._filter(filterFields)
-            if filterCols:
-                filterExpr = filterExpr + " WHERE " + filterCols
+            filter_cols = cls._filter(filterFields)
+            if filter_cols:
+                filterExpr = filterExpr + " WHERE " + filter_cols
         return filterExpr
 
     @classmethod
