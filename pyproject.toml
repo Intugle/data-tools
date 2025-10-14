@@ -51,7 +51,7 @@ dependencies = [
     "qdrant-client>=1.15.1",
     "rich>=14.1.0",
     "aiohttp>=3.9.5",
-]
+    ]
 
 [project.optional-dependencies]
 snowflake = [
@@ -109,3 +109,10 @@ where = ["src"]
 markers = [
     "mcp: marks tests that require the MCP server to be running",
 ]
+
+[tool.sonar]
+projectKey = "Intugle-Data-Tools"
+projectName = "Intugle Data Tools"
+sources = "src"
+python.version = "3.12"
+python.coverage.reportPaths = "coverage.xml"
