@@ -19,7 +19,7 @@ BASE_PATH = Path(__file__).resolve().parent.parent
 
 def create_project_base_if_not_exists():
     """Create the base path directory if it does not exist."""
-    project_base = Path(os.getenv("VSCODE_WORKSPACE", os.getcwd()), "models")
+    project_base = Path(os.getenv("VSCODE_WORKSPACE", os.getcwd()), "intugle")
     if not project_base.exists():
         project_base.mkdir(parents=True, exist_ok=True)
     return str(project_base)
@@ -40,6 +40,9 @@ class Settings(BaseSettings):
     DI_MODEL_VERSION: str = "13052023"
 
     PROJECT_BASE: str = create_project_base_if_not_exists()
+    MODELS_DIR_NAME: str = "models"
+    MODELS_DIR: str = os.path.join(PROJECT_BASE, MODELS_DIR_NAME)
+
     PROFILES_PATH: str = os.path.join(os.getcwd(), "profiles.yml")
 
     PROFILES: dict = load_profiles_configuration(PROFILES_PATH)

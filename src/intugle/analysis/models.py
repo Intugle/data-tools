@@ -50,7 +50,7 @@ class DataSet:
         self.columns: Dict[str, Column] = {}  # A convenience map for quick column lookup
 
         # Check if a YAML file exists and load it
-        file_path = os.path.join(settings.PROJECT_BASE, f"{self.name}.yml")
+        file_path = os.path.join(settings.MODELS_DIR, f"{self.name}.yml")
         if os.path.exists(file_path):
             print(f"Found existing YAML for '{self.name}'. Checking for staleness.")
             self.load_from_yaml(file_path)
@@ -315,7 +315,10 @@ class DataSet:
     def save_yaml(self, file_path: Optional[str] = None) -> None:
         if file_path is None:
             file_path = f"{self.name}.yml"
-        file_path = os.path.join(settings.PROJECT_BASE, file_path)
+
+        # Ensure the models directory exists
+        os.makedirs(settings.MODELS_DIR, exist_ok=True)
+        file_path = os.path.join(settings.MODELS_DIR, file_path)
 
         details = self.adapter.get_details(self.data)
         self.source_table_model.details = details
@@ -352,7 +355,7 @@ class DataSet:
         """Forces a reload from a YAML file, bypassing staleness checks."""
         if file_path is None:
             file_path = f"{self.name}.yml"
-        file_path = os.path.join(settings.PROJECT_BASE, file_path)
+        file_path = os.path.join(settings.MODELS_DIR, file_path)
 
         with open(file_path, "r") as f:
             yaml_data = yaml.safe_load(f)

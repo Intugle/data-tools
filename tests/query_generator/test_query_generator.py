@@ -139,7 +139,7 @@ def test_query_generator_is_isolated(mock_load, mock_manifest):
         mock_instance.manifest = mock_manifest
 
         # 3. Initialize DataProduct. The project_base path is now irrelevant.
-        sql_generator = DataProduct(project_base="/dummy/path")
+        sql_generator = DataProduct(models_dir_path="/dummy/path")
         generated_query = sql_generator.generate_query(etl_model)
 
     # 4. Define the expected query and assert the result

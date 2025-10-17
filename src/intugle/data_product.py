@@ -16,12 +16,12 @@ if TYPE_CHECKING:
 class DataProduct:
     """Generates data products based on the manifest and ETL configurations."""
 
-    def __init__(self, project_base: str = settings.PROJECT_BASE):
-        self.manifest_loader = ManifestLoader(project_base)
+    def __init__(self, models_dir_path: str = settings.MODELS_DIR):
+        self.manifest_loader = ManifestLoader(models_dir_path)
         self.manifest_loader.load()
         self.manifest = self.manifest_loader.manifest
 
-        self.project_base = project_base
+        self.models_dir_path = models_dir_path
 
         self.field_details = self.get_all_field_details()
 

@@ -16,29 +16,29 @@ from intugle.models.resources.source import Source, SourceTables
 class FileReaderFromFileSystem:
     """Reads files from the file system and provides methods to filter and read YAML files."""
 
-    def __init__(self, project_base_path: str):
-        """Initializes the file reader with the project base path.
+    def __init__(self, models_dir_path: str):
+        """Initializes the file reader with the models directory path.
 
         Args:
-            project_base_path (str): The base directory path of the project.
+            models_dir_path (str): The base directory path of the models.
 
         Attributes:
-            project_base_path (str): Stores the base directory path of the project.
+            models_dir_path (str): Stores the base directory path of the models.
             _files (Optional[str]): A list to store file paths, initialized as None.
         """
-        self.project_base_path = project_base_path
+        self.models_dir_path = models_dir_path
         self._files: Optional[str] = None
 
     def get_files(self):
-        """Retrieves all files from the project base path.
+        """Retrieves all files from the models directory path.
 
-        This method walks through the directory structure starting from the project base path
+        This method walks through the directory structure starting from the models directory path
         and collects all file paths into the _files attribute.
         """
         _files = []
 
         # Walk through the directory structure and collect file paths
-        for root, _, fs in os.walk(self.project_base_path):
+        for root, _, fs in os.walk(self.models_dir_path):
             for file in fs:
                 _files.append(os.path.join(root, file))
 
@@ -46,7 +46,7 @@ class FileReaderFromFileSystem:
 
     @property
     def files(self):
-        """Returns the list of files in the project base path."""
+        """Returns the list of files in the models directory path."""
         if self._files is None:
             self.get_files()
         return self._files
@@ -69,22 +69,22 @@ class ManifestLoader:
     """
     Loads and parses manifest files for a data project.
 
-    This class is responsible for reading YAML manifest files from a given project base path,
+    This class is responsible for reading YAML manifest files from a given models directory path,
     parsing their contents, and populating a Manifest object with sources and other resources.
     """
 
-    def __init__(self, project_base_path: str):
+    def __init__(self, models_dir_path: str):
         """
-        Initializes the parser with the given project base path.
+        Initializes the parser with the given models directory path.
 
         Args:
-            project_base_path (str): The base directory path of the project.
+            models_dir_path (str): The base directory path of the models.
 
         Attributes:
-            project_base_path (str): Stores the base directory path of the project.
+            models_dir_path (str): Stores the base directory path of the models.
             manifest (Manifest): An instance of the Manifest class for managing project manifests.
         """
-        self.project_base_path = project_base_path
+        self.models_dir_path = models_dir_path
         self.manifest = Manifest()
 
     def parse_source(self, srcs: dict):
@@ -155,12 +155,12 @@ class ManifestLoader:
                 self.parse_resource(value, resource, resource_model)
 
     def load(self):
-        """Loads and parses all manifest files in the project base path."""
+        """Loads and parses all manifest files in the models directory path."""
 
         # get the file reader instance
-        file_reader = FileReaderFromFileSystem(self.project_base_path)
+        file_reader = FileReaderFromFileSystem(self.models_dir_path)
 
-        # get all yamls from the project base path
+        # get all yamls from the models directory path
         yaml_files = file_reader.filter_yaml_files()
 
         # iterate through each yaml file and read its contents and populate the manifest

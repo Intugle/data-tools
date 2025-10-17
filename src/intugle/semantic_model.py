@@ -124,7 +124,7 @@ class SemanticModel:
         from intugle.core import settings
         from intugle.parser.manifest import ManifestLoader
 
-        manifest_loader = ManifestLoader(settings.PROJECT_BASE)
+        manifest_loader = ManifestLoader(settings.MODELS_DIR)
         manifest_loader.load()
         manifest = manifest_loader.manifest
 
@@ -212,7 +212,7 @@ class SemanticModel:
         from intugle.core import settings
         from intugle.parser.manifest import ManifestLoader
 
-        manifest_loader = ManifestLoader(settings.PROJECT_BASE)
+        manifest_loader = ManifestLoader(settings.MODELS_DIR)
         manifest_loader.load()
         manifest = manifest_loader.manifest
 
@@ -262,3 +262,4 @@ class SemanticModel:
                 f"Failed to deploy semantic model to '{target}': {e}", style="bold red"
             )
             raise
+

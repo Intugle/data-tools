@@ -48,14 +48,14 @@ def _run_async_in_sync(coro: Awaitable[T]) -> T:
 
 class SemanticSearch:
     def __init__(
-        self, project_base: str = settings.PROJECT_BASE, collection_name: str = settings.VECTOR_COLLECTION_NAME
+        self, models_dir_path: str = settings.MODELS_DIR, collection_name: str = settings.VECTOR_COLLECTION_NAME
     ):
-        self.manifest_loader = ManifestLoader(project_base)
+        self.manifest_loader = ManifestLoader(models_dir_path)
         self.manifest_loader.load()
         self.manifest = self.manifest_loader.manifest
         self.collection_name = collection_name
 
-        self.project_base = project_base
+        self.models_dir_path = models_dir_path
 
     def get_column_details(self):
         sources = self.manifest.sources
