@@ -2,6 +2,7 @@ from typing import TYPE_CHECKING
 
 from intugle.adapters.factory import AdapterFactory
 from intugle.analysis.models import DataSet
+from intugle.conceptual_search.models import MappedPlan
 from intugle.core import settings
 from intugle.libs.smart_query_generator import SmartQueryGenerator
 from intugle.libs.smart_query_generator.models.models import ETLModel, FieldDetailsModel, LinkModel
@@ -31,6 +32,25 @@ class DataProduct:
         self.join = Join(self.links, selected_fields)
 
         self.load_all()
+
+    @staticmethod
+    def etl_from_mapped_plan(plan: MappedPlan, product_name: str) -> dict:
+        """Creates an ETLModel dictionary from a mapped conceptual plan."""
+        fields = []
+        for attr in plan.attributes:
+            field = {
+                "id": attr.column_id,
+                "name": attr.name,
+            }
+            if attr.measure_func:
+                field["category"] = "measure"
+                field["measure_func"] = attr.measure_func.lower()
+            fields.append(field)
+
+        return {
+            "name": product_name,
+            "fields": fields
+        }
 
     def load_all(self):
         sources = self.manifest.sources
