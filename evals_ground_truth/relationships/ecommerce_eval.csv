@@ -1,0 +1,11 @@
+﻿accuracy,left_master_id,left_table,right_table,left_column,right_column,intersect_count,left_intersect_ratio,right_intersect_ratio,right_master_id,in_ground_truth,in_predicted
+1,656$$##$$customerid,customers,orders,customerid,customerid,99441,1,1,655$$##$$customerid,TRUE,TRUE
+1,653$$##$$orderid,order_payments,order_items,orderid,orderid,98665,1,0.992,659$$##$$orderid,TRUE,TRUE
+0.992,659$$##$$orderid,order_items,order_reviews,orderid,orderid,97917,0.992,0.992,660$$##$$orderid,TRUE,TRUE
+1,659$$##$$orderid,order_items,orders,orderid,orderid,98666,0.992,1,655$$##$$orderid,TRUE,TRUE
+1,659$$##$$productid,order_items,products,productid,productid,32951,1,1,661$$##$$productid,TRUE,TRUE
+1,13071$$##$$sellerid,order_items,sellers,sellerid,sellerid,3095,1,1,13069$$##$$sellerid,TRUE,TRUE
+1,653$$##$$orderid,order_payments,order_reviews,orderid,orderid,98672,1,0.992,660$$##$$orderid,TRUE,TRUE
+1,653$$##$$orderid,order_payments,orders,orderid,orderid,99440,1,1,655$$##$$orderid,TRUE,TRUE
+1,660$$##$$orderid,order_reviews,orders,orderid,orderid,98673,0.992,1,655$$##$$orderid,TRUE,TRUE
+1,658$$##$$productcategoryname,product_category_name_translation,products,productcategoryname,productcategoryname,71,0.959,1,661$$##$$productcategoryname,TRUE,TRUE

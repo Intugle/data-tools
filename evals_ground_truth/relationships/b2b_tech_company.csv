@@ -1,0 +1,38 @@
+﻿left_master_id,left_table,right_table,left_column,right_column,intersect_count,left_intersect_ratio,right_intersect_ratio,right_master_id,ts,in_ground_truth,in_predicted
+671$$##$$Camp ID,campaign_survey,campaigns,Camp ID,Campaign ID,635,0.635,1,670$$##$$Campaign ID,,TRUE,TRUE
+upstream_dataset$$##$$campaigns$$##$$Prospect ID,campaigns,customers,Prospect ID,C_ID,622,0.622,1,upstream_dataset$$##$$customers$$##$$C_ID,,TRUE,TRUE
+upstream_dataset$$##$$campaigns$$##$$Prod_ID,campaigns,products,Prod_ID,Product ID,633,0.633,1,upstream_dataset$$##$$products$$##$$Product ID,,TRUE,TRUE
+670$$##$$Campaign ID,campaigns,website,Campaign ID,Cmgn ID,618,1,0.618,677$$##$$Cmgn ID,,TRUE,TRUE
+666$$##$$Party ID,customer_hierarchy,customers,Party ID,C_ID,616,0.616,1,681$$##$$C_ID,,TRUE,TRUE
+upstream_dataset$$##$$customers$$##$$C_ID,customers,delivery_survey,C_ID,Customer ID,627,1,0.627,upstream_dataset$$##$$delivery_survey$$##$$Customer ID,,TRUE,TRUE
+681$$##$$C_ID,customers,expense,C_ID,Contact ID,646,1,0.646,675$$##$$Contact ID,,TRUE,TRUE
+681$$##$$C_ID,customers,install_base,C_ID,Party ID,638,1,0.638,663$$##$$Party ID,,TRUE,TRUE
+680$$##$$Cust_ID,logistics,customers,Cust_ID,C_ID,612,0.612,1,681$$##$$C_ID,,TRUE,TRUE
+668$$##$$Customer_ID,nps_survey,customers,Customer_ID,C_ID,615,0.615,1,681$$##$$C_ID,,TRUE,TRUE
+upstream_dataset$$##$$customers$$##$$C_ID,customers,opportunity,C_ID,Cust ID,636,1,0.636,upstream_dataset$$##$$opportunity$$##$$Cust ID,,TRUE,TRUE
+681$$##$$C_ID,customers,orders,C_ID,Party ID,994,1,0.994,664$$##$$Party ID,,TRUE,TRUE
+679$$##$$Customer Name,prob_statement_issue,customers,Customer Name,Customer Name,624,0.647,1,681$$##$$Customer Name,,FALSE,TRUE
+upstream_dataset$$##$$customers$$##$$C_ID,customers,renewals,C_ID,Cus ID,637,1,0.637,upstream_dataset$$##$$renewals$$##$$Cus ID,,TRUE,TRUE
+upstream_dataset$$##$$customers$$##$$C_ID,customers,returns,C_ID,Customer ID,652,1,0.652,upstream_dataset$$##$$returns$$##$$Customer ID,,TRUE,TRUE
+upstream_dataset$$##$$customers$$##$$C_ID,customers,service_requests,C_ID,C ID,993,1,0.993,upstream_dataset$$##$$service_requests$$##$$C ID,,TRUE,TRUE
+678$$##$$Odr ID,delivery_survey,orders,Odr ID,Order ID,893,0.179,1,664$$##$$Order ID,,TRUE,TRUE
+673$$##$$Product ID,products,delivery_survey,Product ID,PD ID,640,1,0.64,678$$##$$PD ID,,TRUE,TRUE
+upstream_dataset$$##$$expense$$##$$Invoice Number,expense,inventory,Invoice Number,Inventory ID,1000,1,1,upstream_dataset$$##$$inventory$$##$$Inventory ID,,TRUE,TRUE
+upstream_dataset$$##$$install_base$$##$$Order ID,install_base,orders,Order ID,Order ID,1000,0.2,1,upstream_dataset$$##$$orders$$##$$Order ID,,TRUE,TRUE
+upstream_dataset$$##$$install_base$$##$$Product ID,install_base,products,Product ID,Product ID,630,0.63,1,upstream_dataset$$##$$products$$##$$Product ID,,TRUE,TRUE
+upstream_dataset$$##$$inventory$$##$$Prod_ID,inventory,products,Prod_ID,Product ID,621,0.621,1,upstream_dataset$$##$$products$$##$$Product ID,,TRUE,TRUE
+680$$##$$Od_Contract_ID,logistics,orders,Od_Contract_ID,Order ID,890,0.178,1,664$$##$$Order ID,,TRUE,TRUE
+668$$##$$Return_ID,nps_survey,returns,Return_ID,Return_ID,627,0.627,1,669$$##$$Return_ID,,FALSE,TRUE
+upstream_dataset$$##$$nps_survey$$##$$Incident ID,nps_survey,service_requests,Incident ID,SR ID,911,0.182,1,upstream_dataset$$##$$service_requests$$##$$SR ID,,TRUE,TRUE
+673$$##$$Product ID,products,orders,Product ID,Product ID,994,1,0.994,664$$##$$Product ID,,TRUE,TRUE
+676$$##$$Od ID,renewals,orders,Od ID,Order ID,906,0.181,1,664$$##$$Order ID,,TRUE,TRUE
+669$$##$$R Order ID,returns,orders,R Order ID,Order ID,925,0.185,1,664$$##$$Order ID,,TRUE,TRUE
+upstream_dataset$$##$$service_requests$$##$$Sales Ord ID,service_requests,orders,Sales Ord ID,Order ID,3223,0.645,1,upstream_dataset$$##$$orders$$##$$Order ID,,TRUE,FALSE
+673$$##$$Product ID,products,prob_statement_issue,Product ID,Pd_ID,628,1,0.628,679$$##$$Pd_ID,,TRUE,TRUE
+upstream_dataset$$##$$prob_statement_issue$$##$$SR ID,prob_statement_issue,service_requests,SR ID,SR ID,890,0.178,1,upstream_dataset$$##$$service_requests$$##$$SR ID,,TRUE,TRUE
+665$$##$$P_ID,product_feature,products,P_ID,Product ID,644,0.644,1,673$$##$$Product ID,,TRUE,TRUE
+upstream_dataset$$##$$product_hierarchy$$##$$Product ID,product_hierarchy,products,Product ID,Product ID,631,0.631,1,upstream_dataset$$##$$products$$##$$Product ID,,TRUE,TRUE
+673$$##$$Product ID,products,renewals,Product ID,Pr ID,646,1,0.646,676$$##$$Pr ID,,TRUE,TRUE
+669$$##$$Product ID,returns,products,Product ID,Product ID,642,0.642,1,673$$##$$Product ID,,TRUE,TRUE
+upstream_dataset$$##$$products$$##$$Product ID,products,service_requests,Product ID,Prod ID,993,1,0.993,upstream_dataset$$##$$service_requests$$##$$Prod ID,,TRUE,TRUE
+upstream_dataset$$##$$returns$$##$$SR ID,returns,service_requests,SR ID,SR ID,1000,0.2,1,upstream_dataset$$##$$service_requests$$##$$SR ID,,TRUE,TRUE
