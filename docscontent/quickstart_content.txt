@@ -33,6 +33,34 @@ type: code
 ---
 type: markdown
 ---
+### Downloading the dataset
+
+Make sure you download the sample data before getting started. We will be using a **fast moving consumer goods (fmcg)**  dataset for this demo. You can run the following cell to download the datasets automatically:
+---
+type: code
+---
+import os
+import requests
+
+raw_datasets='healthcare'
+api_url = f"https://api.github.com/repos/Intugle/data-tools/contents/sample_data/{raw_datasets}"
+local_dir = f"sample_data/{raw_datasets}"
+os.makedirs(local_dir, exist_ok=True)
+
+r = requests.get(api_url)
+r.raise_for_status()
+
+for item in r.json():
+    if item["name"].endswith(".csv"):
+        print(f"Downloading {item['name']}...")
+        file_data = requests.get(item["download_url"])
+        with open(os.path.join(local_dir, item["name"]), "wb") as f:
+            f.write(file_data.content)
+
+print("All CSV files downloaded successfully.")
+---
+type: markdown
+---
 ## 1. LLM Configuration
 
 Before running the project, you need to configure a Large Language Model (LLM). This is used for tasks like generating business glossaries and predicting links between tables. For the semantic search feature, you will also need to set up Qdrant and provide an OpenAI API key. For detailed setup instructions, please refer to the [README.md](https://github.com/Intugle/data-tools/blob/main/README.md) file.
@@ -98,7 +126,7 @@ type: code
 def generate_config(table_name: str) -> str:
     """Append the base URL to the table name."""
     return {
-        "path": f"https://raw.githubusercontent.com/Intugle/data-tools/refs/heads/main/sample_data/healthcare/{table_name}.csv",
+        "path": f"./sample_data/healthcare/{table_name}.csv",
         "type": "csv",
     }
 
