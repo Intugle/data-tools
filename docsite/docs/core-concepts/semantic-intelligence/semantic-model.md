@@ -31,6 +31,10 @@ sm = SemanticModel(datasets, domain="Healthcare")
 While these examples use local CSV files, `intugle` can connect to various data sources. See our **[Connectors documentation](../../connectors/snowflake)** for details on specific integrations like Snowflake.
 :::
 
+:::warning Working with Remote URLs
+While `intugle` supports providing remote URLs (e.g., a raw GitHub file link) in the `path`, it is **not recommended for large datasets**. For best performance and stability, we recommend downloading files to your local filesystem first and providing a local path.
+:::
+
 ### Method 2: From a List of DataSet Objects
 
 For more advanced scenarios, you can initialize the `SemanticModel` with a list of pre-configured `DataSet` objects. This is useful if you have already instantiated `DataSet` objects for other purposes.
