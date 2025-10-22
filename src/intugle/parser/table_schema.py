@@ -30,7 +30,7 @@ class TableSchema:
             raise errors.NotFoundError(f"Table {table_name} not found in manifest.")
 
         # 1. Define the SQL template with placeholders
-        schema_template = "CREATE TABLE {table_name} -- {table_comment}\n(\n{column_definitions}\n);"
+        schema_template = "CREATE TABLE {table_name} -- {table_comment}\n(\n{definitions}\n);"
 
         # 2. Sanitize all dynamic parts that will go into the template
         params = {
@@ -39,19 +39,33 @@ class TableSchema:
         }
 
         # Sanitize each column definition separately
-        column_statements = []
+        column_definitions = []
         for column in table_detail.table.columns:
             # Here we assume column.type is safe and doesn't come from user input.
             # If it can be user-defined, it needs its own validation.
-            column_template = "    {column_name} {column_type}, -- {column_comment}"
+            column_template = "    {column_name} {column_type} -- {column_comment}"
             column_params = {
                 "column_name": safe_identifier(column.name),
                 "column_type": column.type,
                 "column_comment": escape_literal(column.description),
             }
-            column_statements.append(column_template.format(**column_params))
+            column_definitions.append(column_template.format(**column_params))
 
-        params["column_definitions"] = "\n".join(column_statements)
+        # Add foreign key constraints
+        fk_definitions = []
+        for relationship in self.manifest.relationships.values():
+            if relationship.source.table == table_name:
+                fk_template = "    FOREIGN KEY ({from_column}) REFERENCES {to_table}({to_column})"
+                fk_params = {
+                    "from_column": safe_identifier(relationship.source.column),
+                    "to_table": safe_identifier(relationship.target.table),
+                    "to_column": safe_identifier(relationship.target.column),
+                }
+                fk_definitions.append(fk_template.format(**fk_params))
+
+        # Join all definitions with a comma
+        all_definitions = column_definitions + fk_definitions
+        params["definitions"] = ",\n".join(all_definitions)
 
         # 3. Format the final schema string with the sanitized parameters
         return schema_template.format(**params)
