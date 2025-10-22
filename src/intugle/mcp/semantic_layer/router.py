@@ -32,7 +32,7 @@ def get_tables() -> list[dict]:
 
 @semantic_layer_mcp.tool(
     name="get_schema",
-    description="Given database table names, get the schemas of the tables",
+    description="Given database table names, get the schemas of the tables including their relationships",
 )
 def get_schema(table_names: list[str]) -> dict[str, str]:
     """
