@@ -1,6 +1,5 @@
 from intugle.common.exception import errors
 from intugle.models.manifest import Manifest
-from intugle.parser.security import escape_literal, safe_identifier
 
 
 class TableSchema:
@@ -34,8 +33,8 @@ class TableSchema:
 
         # 2. Sanitize all dynamic parts that will go into the template
         params = {
-            "table_name": safe_identifier(table_detail.table.name),
-            "table_comment": escape_literal(table_detail.table.description),
+            "table_name": table_detail.table.name,
+            "table_comment": table_detail.table.description,
         }
 
         # Sanitize each column definition separately
@@ -45,9 +44,9 @@ class TableSchema:
             # If it can be user-defined, it needs its own validation.
             column_template = "    {column_name} {column_type} -- {column_comment}"
             column_params = {
-                "column_name": safe_identifier(column.name),
+                "column_name": column.name,
                 "column_type": column.type,
-                "column_comment": escape_literal(column.description),
+                "column_comment": column.description,
             }
             column_definitions.append(column_template.format(**column_params))
 
@@ -57,9 +56,9 @@ class TableSchema:
             if relationship.source.table == table_name:
                 fk_template = "    FOREIGN KEY ({from_column}) REFERENCES {to_table}({to_column})"
                 fk_params = {
-                    "from_column": safe_identifier(relationship.source.column),
-                    "to_table": safe_identifier(relationship.target.table),
-                    "to_column": safe_identifier(relationship.target.column),
+                    "from_column": relationship.source.column,
+                    "to_table": relationship.target.table,
+                    "to_column": relationship.target.column,
                 }
                 fk_definitions.append(fk_template.format(**fk_params))
 
