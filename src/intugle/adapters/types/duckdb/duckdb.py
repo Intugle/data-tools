@@ -1,5 +1,5 @@
 import time
-import re
+
 from typing import TYPE_CHECKING, Any, Optional
 
 import duckdb

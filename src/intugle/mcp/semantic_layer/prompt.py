@@ -1,6 +1,8 @@
 import textwrap
-import aiofiles
+
 from pathlib import Path
+
+import aiofiles
 
 from intugle.mcp.docs_search.service import docs_search_service
 from intugle.mcp.semantic_layer.schema import SQLDialect

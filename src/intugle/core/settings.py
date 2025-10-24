@@ -39,9 +39,13 @@ class Settings(BaseSettings):
 
     DI_MODEL_VERSION: str = "13052023"
 
+    # DIRECTORY STRUCTURE ENVS
     PROJECT_BASE: str = create_project_base_if_not_exists()
     MODELS_DIR_NAME: str = "models"
+    GRAPH_DIR_NAME: str = "kg"
     MODELS_DIR: str = os.path.join(PROJECT_BASE, MODELS_DIR_NAME)
+    GRAPH_DIR: str = os.path.join(PROJECT_BASE, GRAPH_DIR_NAME)
+    COL_DESCRIPTION_DIR: str = os.path.join(PROJECT_BASE, "column_descriptions")
 
     PROFILES_PATH: str = os.path.join(os.getcwd(), "profiles.yml")
 

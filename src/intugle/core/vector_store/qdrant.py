@@ -1,4 +1,3 @@
-import asyncio
 import logging
 import sys
 
@@ -17,17 +16,25 @@ log = logging.getLogger(__name__)
 
 
 class QdrantVectorConfiguration(BaseModel):
+
     vectors_config: Optional[qdrant_types.VectorParams | Mapping[str, qdrant_types.VectorParams]] = None
+
     sparse_vectors_config: Optional[Mapping[str, qdrant_types.SparseVectorParams]] = None
 
 
 # Used for standardization
+
 class VDocument(BaseModel):
+
     id: Optional[str | int] = None
+
     page_content: Optional[str] = None
+
     metadata: Optional[Dict[str, Any]] = None
+
     options: Dict[str, Any] = {}  # Refere to QDocumentOptions
-    embeddings: Optional[Dict[str, List[float]]] = None
+
+    embeddings: Optional[Dict[str, List[float] | List[List[float]]]] = None
 
 
 # Used for standardization
@@ -117,6 +124,13 @@ class AsyncQdrantService:
 
         except Exception as e:
             log.error(f"AsyncQdrantService: Couldn't create collection, reason: {e}")
+            raise e
+
+    async def count(self) -> qdrant_types.CountResult:
+        try:
+            return await self.client.count(collection_name=self.collection_name)
+        except Exception as e:
+            log.error(f"AsyncQdrantService: Couldn't count collection, reason: {e}")
             raise e
 
     def bulk_insert(self, points: models.PointStruct | List[models.PointStruct]):
