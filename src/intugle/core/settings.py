@@ -108,6 +108,12 @@ class Settings(BaseSettings):
     EMBEDDING_MODEL_NAME: str = "openai:ada"
     TOKENIZER_MODEL_NAME: str = "cl100k_base"
 
+    # NETWORKX GRAPH
+    NETWORKX_GRAPH_TOP_K_COLUMN: int = 4
+    NETWORKX_GRAPH_MAX_DEPTH_COLUMN: int = 4
+    NETWORKX_GRAPH_TOP_K_TABLE: int = 2
+    NETWORKX_GRAPH_MAX_DEPTH_TABLE: int = 2
+
     model_config = SettingsConfigDict(
         env_file=f"{BASE_PATH}/.env",
         env_file_encoding="utf-8",
