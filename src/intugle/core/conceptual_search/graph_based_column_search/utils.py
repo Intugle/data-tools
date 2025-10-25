@@ -162,6 +162,7 @@ def remove_unwanted_concepts(concepts: list, filter_out: list):
 
     return list(filter(lambda concept: concept not in filter_out, concepts))
 
+
 def extract_concepts_column(text, llm):
     """
     Extract key concepts from a column description.

@@ -191,7 +191,7 @@ def prepare_chunk_document(manifest):
 
         table_description_df = fetch_table_with_description(manifest)
 
-        def build_table_description(row:pd.Series):
+        def build_table_description(row: pd.Series):
             
             description = []
         
@@ -201,26 +201,26 @@ def prepare_chunk_document(manifest):
              
                 description.append(f"Table Domain: {domain.strip()}")
         
-            description += [f"Table Name: {row['table_name']}",f"Table Description: {row['table_description']}"]
+            description += [f"Table Name: {row['table_name']}", f"Table Description: {row['table_description']}"]
         
             return "\n".join(description)
     
-        table_description_df['table_description'] = table_description_df.apply(build_table_description,axis=1)
+        table_description_df['table_description'] = table_description_df.apply(build_table_description, axis=1)
         table_description_df['id'] = table_description_df['table_name']
     
         log.info("[*] Extracting concepts for tables")
         
-        for i,data in tqdm(enumerate(list(batched(table_description_df,30)),1)):
+        for i, data in tqdm(enumerate(list(batched(table_description_df, 30)), 1)):
 
-            concepts = data["table_description"].apply(extract_concepts_table,llm=llm)
+            concepts = data["table_description"].apply(extract_concepts_table, llm=llm)
             
-            table_description_df.loc[data.index,"concepts"] = concepts
+            table_description_df.loc[data.index, "concepts"] = concepts
             
             log.info(f"[*] Batch {i} completed")
 
         table_description_df["concepts"] = table_description_df.concepts.apply(clean_concepts)
 
-        table_description_df.to_csv(table_description_path,index=False)
+        table_description_df.to_csv(table_description_path, index=False)
 
     else:
 
@@ -228,9 +228,9 @@ def prepare_chunk_document(manifest):
 
         table_description_df["concepts"] = table_description_df.concepts.apply(ast.literal_eval)
 
-        def remove_concepts(concepts:list,to_remove=["hvac industry"]):
+        def remove_concepts(concepts: list, to_remove=["hvac industry"]):
 
-            return list(filter(lambda concept:concept.strip().lower() not in to_remove,concepts))
+            return list(filter(lambda concept: concept.strip().lower() not in to_remove, concepts))
         
         table_description_df["concepts"] = table_description_df.concepts.apply(remove_concepts)
 
@@ -238,6 +238,6 @@ def prepare_chunk_document(manifest):
 
     for index, row in table_description_df.iterrows():
         
-        data_documents.append(VDocument(page_content=row['table_description'].strip().lower(), metadata={"source": row['id'], "row": index,"concepts":row['concepts']}))
+        data_documents.append(VDocument(page_content=row['table_description'].strip().lower(), metadata={"source": row['id'], "row": index, "concepts": row['concepts']}))
     
     return data_documents

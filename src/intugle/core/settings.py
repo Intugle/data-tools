@@ -105,6 +105,7 @@ class Settings(BaseSettings):
     VECTOR_COLLECTION_NAME: str = os.getcwd().split('/')[-1]
     QDRANT_URL: str = "http://localhost:6333"
     QDRANT_API_KEY: Optional[str] = None
+    TAVILY_API_KEY: Optional[str] = None
     EMBEDDING_MODEL_NAME: str = "openai:ada"
     TOKENIZER_MODEL_NAME: str = "cl100k_base"
 

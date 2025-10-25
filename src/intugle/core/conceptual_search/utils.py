@@ -88,7 +88,7 @@ def fetch_table_with_description(manifest: "Manifest") -> pd.DataFrame:
             {
                 "table_name": table.name,
                 "table_description": table.description or "",
-                "domain_name": source.schema, # Using schema as domain for now
+                "domain_name": source.schema,  # Using schema as domain for now
             }
         )
 
