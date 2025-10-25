@@ -51,7 +51,6 @@ def colbert_score_numpy(
 
 def manual_concept_extraction(ai_msg):
     try:
-        # Try to parse a clean JSON array of strings
         concepts = json.loads(ai_msg.content)
         if isinstance(concepts, list) and all(isinstance(c, str) for c in concepts):
             return concepts
@@ -63,7 +62,6 @@ def manual_concept_extraction(ai_msg):
     # --- Fallback strategy ---
     try:
         raw_text = getattr(ai_msg, "content", "")
-        # Attempt to extract a list manually from the raw text
         matches = re.findall(r"\[(.*?)\]", raw_text, re.DOTALL)
         if matches:
             items = re.findall(r'"([^"]+)"', matches[0])
@@ -71,48 +69,38 @@ def manual_concept_extraction(ai_msg):
         else:
             log.info("Fallback regex parsing did not find any matches.")
     except Exception as ex:
-        log.error(f"Fallback regex parsing didnot find any matches\nReason: {ex}")
+        log.error(f"Fallback regex parsing failed: {ex}")
 
     return []
 
 
-def extract_concepts_column(text, llm):
+def fetch_table_with_description(manifest: "Manifest") -> pd.DataFrame:
     """
-    Extract key concepts from text using GROQ's API.
-
-    Args:
-        text (str): Text to extract concepts from
-
-    Returns:
-        List[str]: List of key concepts or entities
+    Fetches all table details from the manifest.
     """
-    system_message = """
-    # Instructions:
-    - Extract key concepts and entities from the provided description of a field in database .
-    - Return ONLY a list of 2 key terms, entities, or concepts that are most important in this text.
-    - Return a valid JSON array of strings. Example:["Entity1", "Entity2"]
-    - Donot mention table names or field name itself, or irrelevant terms , irrelevant entities or irreleavant concepts.
-    - The list of terms should be unique.
-    """
+    table_data = []
+    for source in manifest.sources.values():
+        table = source.table
+        if not table:
+            continue
 
-    messages = [
-        ("system", system_message),
-        ("user", f"Extract key concepts from field description:\n\n{text[:3000]}"),
-    ]
-    try:
-        ai_msg = llm.invoke(messages)
-        concepts = manual_concept_extraction(ai_msg)
-        return concepts
-    except Exception as fallback_err:
-        log.info(f"Fallback parsing also failed: {fallback_err}")
+        table_data.append(
+            {
+                "table_name": table.name,
+                "table_description": table.description or "",
+                "domain_name": source.schema, # Using schema as domain for now
+            }
+        )
 
-    return []
+    if not table_data:
+        return pd.DataFrame(columns=["table_name", "table_description", "domain_name"])
+
+    return pd.DataFrame(table_data)
 
 
 def fetch_column_with_description(manifest: "Manifest") -> pd.DataFrame:
     """
     Fetches all column details from the manifest.
-    This replaces the original SQL-based implementation.
     """
     column_data = []
     for source in manifest.sources.values():

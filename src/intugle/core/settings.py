@@ -45,8 +45,8 @@ class Settings(BaseSettings):
     GRAPH_DIR_NAME: str = "kg"
     MODELS_DIR: str = os.path.join(PROJECT_BASE, MODELS_DIR_NAME)
     GRAPH_DIR: str = os.path.join(PROJECT_BASE, GRAPH_DIR_NAME)
-    COL_DESCRIPTION_DIR: str = os.path.join(PROJECT_BASE, "column_descriptions")
-
+    DESCRIPTIONS_DIR: str = os.path.join(PROJECT_BASE, "descriptions")
+    
     PROFILES_PATH: str = os.path.join(os.getcwd(), "profiles.yml")
 
     PROFILES: dict = load_profiles_configuration(PROFILES_PATH)
