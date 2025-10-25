@@ -53,20 +53,19 @@ class ConceptualSearchRetrievers:
         )
         return []
 
-    def table_retriever(self, query: str) -> list[Document]:
-        results = asyncio.run(self.table_graph.get_shortlisted_tables(query))
+    async def table_retriever(self, query: str) -> list[Document]:
+        results = await self.table_graph.get_shortlisted_tables(query)
         return self.to_documents(results)
 
-    def column_retriever(
+    async def column_retriever(
         self, attribute_name: str, attribute_description: str = ""
     ) -> list[Document]:
-        results_attribute_name = asyncio.run(
-            self.column_graph.get_shortlisted_columns(query=attribute_name)
+        # Run column searches concurrently
+        results = await asyncio.gather(
+            self.column_graph.get_shortlisted_columns(query=attribute_name),
+            self.column_graph.get_shortlisted_columns(query=attribute_description),
         )
-
-        results_attribue_description = asyncio.run(
-            self.column_graph.get_shortlisted_columns(query=attribute_description)
-        )
+        results_attribute_name, results_attribue_description = results
 
         if results_attribute_name.empty and results_attribue_description.empty:
             return []

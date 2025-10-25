@@ -145,3 +145,4 @@ class Embeddings:
             print("Error: ", e)
             import traceback
             print(traceback.format_exc())
+            raise e

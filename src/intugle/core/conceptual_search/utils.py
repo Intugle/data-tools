@@ -133,3 +133,51 @@ def fetch_column_with_description(manifest: "Manifest") -> pd.DataFrame:
         )
 
     return pd.DataFrame(column_data)
+
+
+def extract_data_product_info(documents):
+    extracted_info = []
+
+    if not documents:
+        print("No documents found.")
+        return extracted_info  # Return empty list if no documents are present
+
+    for doc in documents:
+        data_product_name = None
+        dimensions = []
+        measures = []
+
+        # Extracting Data Product Name from page_content
+        # if "Data_Product:" in doc.page_content:
+        data_product_name = doc.page_content.split("Data_Product:")[-1].strip()
+
+        # Extracting Dimensions and Measures from metadata
+        dimensions = doc.metadata.get("Dimensions", "").split(", ")
+        measures = doc.metadata.get("Measures", "").split(", ")
+
+        # Append extracted information as a dictionary
+        extracted_info.append(
+            {
+                "Data_Product": data_product_name,
+                "Dimensions": dimensions,
+                "Measures": measures,
+            }
+        )
+
+    return extracted_info
+
+
+def extract_table_details(documents):
+    extracted_info = []
+    if not documents:
+        print("No tables found.")
+        return extracted_info  # Return empty list if no documents are present
+
+    for doc in documents:
+        # Extracting table details
+        table_details = doc.page_content.strip("text: ")
+
+        # Append extracted information as a dictionary
+        extracted_info.append({doc.metadata["table"]: table_details})
+
+    return extracted_info

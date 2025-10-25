@@ -49,7 +49,7 @@ class DataProductPlannerAgentTools:
             ),
             StructuredTool.from_function(
                 name="retrieve_table_details",
-                func=self.retrieve_table_details,
+                coroutine=self.retrieve_table_details,
                 description="""
                 Retrieve table details from a database based on a natural language statement.
 
@@ -106,7 +106,7 @@ class DataProductPlannerAgentTools:
             log.error(f"ERROR: An exception occurred during data product retrieval: {e}", exc_info=True)
             return [f"ERROR: An exception occurred during data product retrieval: {e}"]
 
-    def retrieve_table_details(
+    async def retrieve_table_details(
         self,
         statement: Annotated[
             str,
@@ -117,7 +117,7 @@ class DataProductPlannerAgentTools:
     ) -> List[Dict[str, Any]]:
         log.info(f"--- Executing retrieve_table_details for statement: '{statement}' ---")
         try:
-            documents = self.retrieval_tool.table_retriever(statement)
+            documents = await self.retrieval_tool.table_retriever(statement)
             log.info(f"Retriever returned {len(documents)} potential document(s).")
 
             if not documents:
@@ -299,7 +299,7 @@ class DataProductBuilderAgentTools:
         )
         return "\n".join(stored_entries)
 
-    def column_retriever(
+    async def column_retriever(
         self,
         table_names: Annotated[
             List[str], "A list of table names to restrict the search to."
@@ -325,7 +325,7 @@ class DataProductBuilderAgentTools:
                 - 'table_name': The table the column belongs to
                 - 'column_name': The name of the relevant column
         """
-        retrieved_results = self._retrieval_tool.column_retriever(
+        retrieved_results = await self._retrieval_tool.column_retriever(
             attribute_name=attribute_name, attribute_description=attribute_description
         )
 
@@ -373,7 +373,7 @@ class DataProductBuilderAgentTools:
                 """,
             ),
             StructuredTool.from_function(
-                func=self.column_retriever,
+                coroutine=self.column_retriever,
                 name="column_retriever",
                 description="""Retrieves relevant columns from the provided list of tables that semantically match the given attribute name and description.
                 Returns:
