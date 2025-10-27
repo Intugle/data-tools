@@ -89,12 +89,11 @@ def fetch_table_with_description(manifest: "Manifest") -> pd.DataFrame:
             {
                 "table_name": table.name,
                 "table_description": table.description or "",
-                "domain_name": source.schema,  # Using schema as domain for now
             }
         )
 
     if not table_data:
-        return pd.DataFrame(columns=["table_name", "table_description", "domain_name"])
+        return pd.DataFrame(columns=["table_name", "table_description"])
 
     return pd.DataFrame(table_data)
 

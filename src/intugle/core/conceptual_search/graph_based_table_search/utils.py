@@ -200,12 +200,6 @@ def prepare_chunk_document(manifest):
             
             description = []
         
-            domain = row["domain_name"]
-
-            if not pd.isna(domain) and len(domain.strip()) != 0:
-             
-                description.append(f"Table Domain: {domain.strip()}")
-        
             description += [f"Table Name: {row['table_name']}", f"Table Description: {row['table_description']}"]
         
             return "\n".join(description)

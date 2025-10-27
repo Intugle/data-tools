@@ -79,7 +79,6 @@ class ConceptualSearch:
         total_records = attributes_df.shape[0]
         log.info(f"🚀 Starting processing of {total_records} attributes...")
 
-        cost = 0
         for b in batched(attributes_df, BATCH_SIZE):
             messages = [
                 {
@@ -107,7 +106,7 @@ class ConceptualSearch:
 
         dp = pd.read_csv("column_logic_results.csv")
         dp["source"] = dp["table_name"] + "$$##$$" + dp["column_name"]
-        return dp, cost
+        return dp
 
     async def generate_data_product_plan(self, query: str, additional_context: str = None):
         if additional_context and additional_context.strip():
@@ -123,6 +122,6 @@ class ConceptualSearch:
         )
 
         if os.path.exists("attributes.csv"):
-            return pd.read_csv("attributes.csv").head(5)
+            return pd.read_csv("attributes.csv")
 
         return None, None
