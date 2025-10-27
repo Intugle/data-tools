@@ -28,7 +28,12 @@ log = logging.getLogger(__name__)
 
 tqdm.pandas()
 
-CONCEPTUAL_SEARCH_COLLECTION_NAME = "conceptual_search_columns"
+
+def conceptual_search_collection_name():
+    return f"{settings.PROJECT_ID}_conceptual_search_columns"
+
+
+CONCEPTUAL_SEARCH_COLLECTION_NAME = conceptual_search_collection_name()
 
 
 def collection_name(prefix: str, suffix: str = QdrantCollectionSuffix.FIELD):

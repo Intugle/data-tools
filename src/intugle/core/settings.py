@@ -9,6 +9,7 @@ from typing import Any, Optional
 from dotenv import load_dotenv
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+from intugle.core.project import Project
 from intugle.core.utilities.configs import load_model_configuration, load_profiles_configuration
 
 load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
@@ -29,7 +30,9 @@ class Settings(BaseSettings):
     """Global Configuration"""
 
     UPSTREAM_SAMPLE_LIMIT: int = 10
-    MODEL_DIR_PATH: str = str(Path(os.path.split(os.path.abspath(__file__))[0]).parent.joinpath("artifacts"))
+    MODEL_DIR_PATH: str = str(
+        Path(os.path.split(os.path.abspath(__file__))[0]).parent.joinpath("artifacts")
+    )
     MODEL_RESULTS_PATH: str = os.path.join("model", "model_results")
 
     DI_CONFIG: dict = load_model_configuration("DI", {})
@@ -41,12 +44,13 @@ class Settings(BaseSettings):
 
     # DIRECTORY STRUCTURE ENVS
     PROJECT_BASE: str = create_project_base_if_not_exists()
+    PROJECT_ID: str = Project(PROJECT_BASE).project_id
     MODELS_DIR_NAME: str = "models"
     GRAPH_DIR_NAME: str = "kg"
     MODELS_DIR: str = os.path.join(PROJECT_BASE, MODELS_DIR_NAME)
     GRAPH_DIR: str = os.path.join(PROJECT_BASE, GRAPH_DIR_NAME)
     DESCRIPTIONS_DIR: str = os.path.join(PROJECT_BASE, "descriptions")
-    
+
     PROFILES_PATH: str = os.path.join(os.getcwd(), "profiles.yml")
 
     PROFILES: dict = load_profiles_configuration(PROFILES_PATH)
@@ -102,7 +106,7 @@ class Settings(BaseSettings):
     POSTGRES_SCHEMA: Optional[str] = "public"
 
     # Vector
-    VECTOR_COLLECTION_NAME: str = os.getcwd().split('/')[-1]
+    VECTOR_COLLECTION_NAME: str = os.getcwd().split("/")[-1]
     QDRANT_URL: str = "http://localhost:6333"
     QDRANT_API_KEY: Optional[str] = None
     TAVILY_API_KEY: Optional[str] = None

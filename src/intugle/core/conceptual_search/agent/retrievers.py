@@ -22,7 +22,12 @@ from intugle.core.vector_store.qdrant import (
 
 log = logging.getLogger(__name__)
 
-DATA_PRODUCTS_COLLECTION_NAME = "data_products"
+
+def data_products_collection_name():
+    return f"{settings.PROJECT_ID}_data_products"
+
+
+DATA_PRODUCTS_COLLECTION_NAME = data_products_collection_name()
 
 
 class ConceptualSearchRetrievers:
