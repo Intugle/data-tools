@@ -87,6 +87,7 @@ lint = ["ruff"]
 dev = [
     "databricks-sql-connector>=4.1.3",
     "ipykernel>=6.30.1",
+    "langfuse==2.60.4",
     "pysonar>=1.2.0.2419",
     "pyspark>=4.0.1",
     "pytest>=8.4.1",

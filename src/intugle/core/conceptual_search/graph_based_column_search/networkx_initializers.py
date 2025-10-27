@@ -42,7 +42,7 @@ def build_knowledge_graph(doc):
     
     # Run asyncio in a separate thread to avoid "event loop is already running" error in notebooks
     with ThreadPoolExecutor(max_workers=1) as executor:
-        future = executor.submit(asyncio.run, create_embeddings(doc))
+        future = executor.submit(asyncio.run, create_embeddings(doc, recreate=True))
         embeddings = future.result()
     
     # Add nodes to the graph

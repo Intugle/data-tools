@@ -109,11 +109,11 @@ class ConceptualSearch:
         dp["source"] = dp["table_name"] + "$$##$$" + dp["column_name"]
         return dp, cost
 
-    def generate_data_product_plan(self, query: str, additional_context: str = None):
+    async def generate_data_product_plan(self, query: str, additional_context: str = None):
         if additional_context and additional_context.strip():
             query += f"\nAdditional Context:\n{additional_context}"
 
-        self._data_product_planner_agent.invoke(
+        await self._data_product_planner_agent.ainvoke(
             input={"messages": [("user", query)]},
             config={
                     "callbacks": self.callbacks,
