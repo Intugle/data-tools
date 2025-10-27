@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 import re
 
 from typing import TYPE_CHECKING, Any
@@ -181,3 +182,31 @@ def extract_table_details(documents):
         extracted_info.append({doc.metadata["table"]: table_details})
 
     return extracted_info
+
+
+def langfuse_callback_handler():
+    try:
+        from langfuse.callback import CallbackHandler
+    except ImportError:
+        log.info(
+            "[!] langfuse package not installed. Please install it to use langfuse callback handler."
+        )
+        return None
+    
+    langfuse_handler = CallbackHandler(
+        public_key=os.environ["LANGFUSE_PUBLIC_KEY"],
+        secret_key=os.environ["LANGFUSE_SECRET_KEY"],
+        host=os.environ["LANGFUSE_HOST"],
+        environment=os.environ.get("LANGFUSE_ENVIRONMENT_NAME", "dev"),
+        # trace_name=trace_name,
+        # session_id=session_id,
+        # tags=tags
+    )
+
+    # Check for langfuse handler then only add it to the callback
+    try:
+        langfuse_handler.auth_check()
+        return langfuse_handler
+    except Exception as ex:
+        log.info(f"[!] Could not connect to langfuse: {str(ex)}")
+        return None

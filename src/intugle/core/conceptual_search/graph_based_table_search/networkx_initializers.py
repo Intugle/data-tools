@@ -63,11 +63,11 @@ def build_knowledge_graph(doc):
     return graph, embeddings
 
 
-def prepare_networkx_graph(manifest):
+def prepare_networkx_graph(manifest, force_recreate=False):
 
     graph_path = os.path.join(settings.GRAPH_DIR, GraphFileName.TABLE)
 
-    if os.path.exists(graph_path):
+    if os.path.exists(graph_path) and not force_recreate:
         print('[!] Table search graph already built... skipping the step')
         return
     

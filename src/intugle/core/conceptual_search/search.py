@@ -3,7 +3,7 @@ import os
 
 import pandas as pd
 
-from langchain_community.callbacks import get_openai_callback
+from langchain_core.runnables import chain
 
 from intugle.core import settings
 from intugle.core.conceptual_search.agent.initializer import (
@@ -21,7 +21,10 @@ from intugle.core.conceptual_search.graph_based_column_search.networkx_initializ
 from intugle.core.conceptual_search.graph_based_table_search.networkx_initializers import (
     prepare_networkx_graph as prepare_table_networkx_graph,
 )
-from intugle.core.conceptual_search.utils import batched
+from intugle.core.conceptual_search.utils import (
+    batched,
+    langfuse_callback_handler,
+)
 from intugle.core.llms.chat import ChatModelLLM
 from intugle.parser.manifest import Manifest, ManifestLoader
 
@@ -29,10 +32,10 @@ log = logging.getLogger(__name__)
 
 
 class ConceptualSearch:
-    def __init__(self):
+    def __init__(self, force_recreate=False):
         log.info("Initializing ConceptualSearch...")
         self.manifest = self._load_manifest()
-        self._initialize_graphs()
+        self._initialize_graphs(force_recreate=force_recreate)
         self.retriever = ConceptualSearchRetrievers()
 
         self.llm = ChatModelLLM.get_llm(
@@ -53,6 +56,7 @@ class ConceptualSearch:
         self._data_product_builder_agent = data_product_builder_agent(
             llm=self.llm, tools=self._data_product_builder_tool.list_tools()
         )
+        self.callbacks = [langfuse_callback_handler()]
 
     def _load_manifest(self) -> Manifest:
         log.info(f"Loading manifest from project base: {settings.PROJECT_BASE}")
@@ -60,13 +64,13 @@ class ConceptualSearch:
         manifest_loader.load()
         return manifest_loader.manifest
 
-    def _initialize_graphs(self):
+    def _initialize_graphs(self, force_recreate=False):
         log.info("Initializing conceptual search graphs...")
-        prepare_table_networkx_graph(self.manifest)
-        prepare_column_networkx_graph(self.manifest)
+        prepare_table_networkx_graph(self.manifest, force_recreate)
+        prepare_column_networkx_graph(self.manifest, force_recreate)
         log.info("Conceptual search graphs initialized.")
 
-    def generate_data_product(self, attributes_df: pd.DataFrame):
+    async def generate_data_product(self, attributes_df: pd.DataFrame):
         BATCH_SIZE = 2
 
         if attributes_df.shape[0] <= 0:
@@ -89,9 +93,17 @@ class ConceptualSearch:
                 for _, row in b.iterrows()
             ]
 
-            with get_openai_callback() as cb:
-                self._data_product_builder_agent.batch(messages)
-                cost += cb.total_cost
+            @chain
+            async def run(inputs: dict):
+                await self._data_product_builder_agent.abatch(inputs["messages"])
+
+            await run.ainvoke(
+                {"messages": messages},
+                config={
+                    "callbacks": self.callbacks,
+                    "run_name": "Data Product Building",
+                },
+            )
 
         dp = pd.read_csv("column_logic_results.csv")
         dp["source"] = dp["table_name"] + "$$##$$" + dp["column_name"]
@@ -101,14 +113,16 @@ class ConceptualSearch:
         if additional_context and additional_context.strip():
             query += f"\nAdditional Context:\n{additional_context}"
 
-        total_cost = 0.0
-        with get_openai_callback() as cb:
-            self._data_product_planner_agent.invoke(
-                input={"messages": [("user", query)]},
-            )
-            total_cost = cb.total_cost
+        self._data_product_planner_agent.invoke(
+            input={"messages": [("user", query)]},
+            config={
+                    "callbacks": self.callbacks,
+                    "metadata": {"Query": query},
+                    "run_name": "Data product planning",
+                },
+        )
 
         if os.path.exists("attributes.csv"):
-            return pd.read_csv("attributes.csv"), total_cost
+            return pd.read_csv("attributes.csv").head(5)
 
         return None, None
