@@ -4,15 +4,25 @@ import logging
 import pandas as pd
 
 from langchain_core.documents import Document
+from qdrant_client import models
 
+from intugle.core import settings
 from intugle.core.conceptual_search.graph_based_column_search.retreiver import (
     GraphSearch as ColumnGraphSearch,
 )
 from intugle.core.conceptual_search.graph_based_table_search.retreiver import (
     GraphSearch as TableGraphSearch,
 )
+from intugle.core.llms.embeddings import Embeddings, EmbeddingsType
+from intugle.core.vector_store import AsyncQdrantService
+from intugle.core.vector_store.qdrant import (
+    QdrantVectorConfiguration,
+    VectorSearchKwargs,
+)
 
 log = logging.getLogger(__name__)
+
+DATA_PRODUCTS_COLLECTION_NAME = "data_products"
 
 
 class ConceptualSearchRetrievers:
@@ -39,19 +49,82 @@ class ConceptualSearchRetrievers:
     def __init__(self):
         self.table_graph = TableGraphSearch()
         self.column_graph = ColumnGraphSearch()
+        self.embedding_model = Embeddings(
+            model_name=settings.EMBEDDING_MODEL_NAME,
+            tokenizer_model=settings.TOKENIZER_MODEL_NAME,
+        )
 
-    def data_products_retriever(
+    async def data_products_retriever(
         self,
         query: str,
     ) -> list[Document]:
         """
-        Retrieves existing data products.
-        NOTE: This is a placeholder and currently returns no documents.
+        Retrieves existing data products from the vector store.
         """
-        log.warning(
-            f"Attempted to retrieve data products for query: '{query}'. This feature is not yet implemented."
+        log.info(f"Retrieving data products for query: '{query}'")
+
+        # 1. Vectorize query
+        vectors = await self.embedding_model.aencode(
+            [query], embeddings_types=[EmbeddingsType.DENSE]
         )
-        return []
+        query_vector = vectors[EmbeddingsType.DENSE][0]
+        vector_name = f"{self.embedding_model.model_name}-{EmbeddingsType.DENSE}"
+
+        # 2. Configure Qdrant
+        vectors_config = {
+            vector_name: models.VectorParams(
+                size=self.embedding_model.embeddings_size,
+                distance=models.Distance.COSINE,
+            )
+        }
+        configuration = QdrantVectorConfiguration(vectors_config=vectors_config)
+
+        # 3. Search Qdrant
+        async with AsyncQdrantService(
+            collection_name=DATA_PRODUCTS_COLLECTION_NAME,
+            collection_configurations=configuration,
+        ) as qdb:
+            try:
+                results = await qdb.search(
+                    query=query_vector,
+                    search_using=vector_name,
+                    includes=["metadata"],
+                    search_kwargs=dict(
+                        VectorSearchKwargs(
+                            search_type="similarity",
+                            score_threshold=0.5,
+                            top_k=2,
+                            search_params=models.SearchParams(
+                                hnsw_ef=128,
+                                exact=False,
+                            ),
+                        )
+                    ),
+                )
+            except Exception as e:
+                log.error(
+                    f"Failed to search data products collection '{DATA_PRODUCTS_COLLECTION_NAME}': {e}",
+                    exc_info=True,
+                )
+                return []
+
+        if not results or not results.points:
+            log.info("No data products found for the query.")
+            return []
+
+        # 4. Format results
+        formatted_results = [
+            Document(
+                page_content=res.payload.get("content", ""),
+                metadata={
+                    "Dimensions": res.payload.get("Dimensions"),
+                    "Measures": res.payload.get("Measures"),
+                },
+            )
+            for res in results.points
+        ]
+        log.info(f"Found {len(formatted_results)} data products.")
+        return formatted_results
 
     async def table_retriever(self, query: str) -> list[Document]:
         results = await self.table_graph.get_shortlisted_tables(query)

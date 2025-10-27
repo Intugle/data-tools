@@ -32,7 +32,7 @@ class DataProductPlannerAgentTools:
         return [
             StructuredTool.from_function(
                 name="retrieve_existing_data_products",
-                func=self.retrieve_existing_data_products,
+                coroutine=self.retrieve_existing_data_products,
                 description="""Retrieve dimensions and measures for similar existing data products.
 
         This function uses a retriever (retriever_dp) to fetch documents describing
@@ -82,7 +82,7 @@ class DataProductPlannerAgentTools:
             ),
         ]
 
-    def retrieve_existing_data_products(
+    async def retrieve_existing_data_products(
         self,
         statement: Annotated[
             str,
@@ -92,7 +92,7 @@ class DataProductPlannerAgentTools:
     ) -> List[Dict[str, Any]]:
         log.info(f"--- Executing retrieve_existing_data_products for statement: '{statement}' ---")
         try:
-            documents = self.retrieval_tool.data_products_retriever(statement)
+            documents = await self.retrieval_tool.data_products_retriever(statement)
             log.info(f"Retriever returned {len(documents)} potential document(s).")
 
             if not documents:

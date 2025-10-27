@@ -3,6 +3,8 @@ import logging
 import os
 import pickle
 
+from concurrent.futures import ThreadPoolExecutor
+
 import networkx as nx
 
 from intugle.core import settings
@@ -38,7 +40,10 @@ def build_knowledge_graph(doc):
     log.info(f"doc length: {len(doc)}")
     print("*" * 100)
     
-    embeddings = asyncio.run(create_embeddings(doc))
+    # Run asyncio in a separate thread to avoid "event loop is already running" error in notebooks
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        future = executor.submit(asyncio.run, create_embeddings(doc))
+        embeddings = future.result()
     
     # Add nodes to the graph
     print("Adding nodes to the graph...")
