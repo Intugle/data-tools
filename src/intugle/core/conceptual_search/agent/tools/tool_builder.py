@@ -97,14 +97,14 @@ class DataProductPlannerAgentTools:
 
             if not documents:
                 log.info("No similar data product documents were found by the retriever.")
-                return ["No similar data product documents were found by the retriever."]
+                return []
 
             result = extract_data_product_info(documents)
             log.info(f"Extraction process resulted in {len(result)} structured data product detail(s).")
             return result
         except Exception as e:
             log.error(f"ERROR: An exception occurred during data product retrieval: {e}", exc_info=True)
-            return [f"ERROR: An exception occurred during data product retrieval: {e}"]
+            raise e
 
     async def retrieve_table_details(
         self,
