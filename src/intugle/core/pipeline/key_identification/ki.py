@@ -33,13 +33,7 @@ INSTRUCTIONS: {format_instructions}"""
 
     primary_key = [ResponseSchema(name='PRIMARY KEY', description="Returns ONLY a SINGLE potential primary key."),]
     LLM_CONFIG = {
-        "temperature": 1,
-        # "model_kwargs":{
-        "top_p": 0.5,
-        "frequency_penalty": 0,
-        "presence_penalty": 0,
-        "stop": "END",
-        # }
+        "temperature": 0.2,
     }
 
     def __init__(self, profiling_data: pd.DataFrame,
@@ -82,7 +76,7 @@ INSTRUCTIONS: {format_instructions}"""
         
         profiling_txt = f"Table Name: {table_name}\n\n"
 
-        temp = profiling_data[["column_name", "count", "distinct_count", "null_count", "datatype_l1", "sample_data"]]
+        temp = profiling_data[["column_name", "count", "distinct_count", "null_count", "datatype_l1", "sample_data"]].copy()
 
         temp.rename(columns={"datatype_l1": "datatype"}, inplace=True)
 

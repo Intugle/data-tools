@@ -56,14 +56,12 @@ class BusinessGlossary:
 
     TEMPLATE_NAME = "gpt-4o-mini"
 
-    LLM_CONFIG_1 = {
-        "temperature": 0.4,
-        "stop": "END",
+    LLM_GLOSSARY_CONFIG = {
+        "temperature": 0.6,
     }
 
-    LLM_CONFIG_2 = {
-        "temperature": 0.05,
-        "stop": "END",
+    LLM_TAG_CONFIG = {
+        "temperature": 0.4,
     }
 
     def __init__(self, profiling_data: pd.DataFrame, *args, **kwargs):
@@ -90,7 +88,7 @@ class BusinessGlossary:
 
         self.__table_glossary_llm = ChatModelLLM.build(
             model_name=settings.LLM_PROVIDER,
-            llm_config=self.LLM_CONFIG_1,
+            llm_config=self.LLM_GLOSSARY_CONFIG,
             response_schemas=table_glossary,
             template_string=BUSINESS_GLOSSARY_PROMPTS[self.TEMPLATE_NAME][
                 "TABLE_GLOSSARY_TEMPLATE"
@@ -100,7 +98,7 @@ class BusinessGlossary:
 
         self.__business_glossary_llm = ChatModelLLM.build(
             model_name=settings.LLM_PROVIDER,
-            llm_config=self.LLM_CONFIG_2,
+            llm_config=self.LLM_GLOSSARY_CONFIG,
             response_schemas=column_glossary,
             template_string=BUSINESS_GLOSSARY_PROMPTS[self.TEMPLATE_NAME][
                 "BUSINESS_GLOSSARY_TEMPLATE"
@@ -109,7 +107,7 @@ class BusinessGlossary:
         )
         self.__business_tags_llm = ChatModelLLM.build(
             model_name=settings.LLM_PROVIDER,
-            llm_config=self.LLM_CONFIG_2,
+            llm_config=self.LLM_TAG_CONFIG,
             response_schemas=column_tag_glossary,
             template_string=BUSINESS_GLOSSARY_PROMPTS[self.TEMPLATE_NAME][
                 "BUSINESS_TAGS_TEMPLATE"
