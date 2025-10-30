@@ -670,6 +670,24 @@ if st.session_state["route"] == "home":
             else:
                 new_path = _csv_path_for(new_name,MODIFIED_DIR)
 
+                # Check that new_path is within MODIFIED_DIR to prevent path traversal or escapes
+                resolved_dir = MODIFIED_DIR.resolve()
+                resolved_path = new_path.resolve()
+                try:
+                    # Python 3.9+ has is_relative_to
+                    if hasattr(resolved_path, "is_relative_to"):
+                        if not resolved_path.is_relative_to(resolved_dir):
+                            st.error("Unsafe file name: resulting path is outside the allowed directory.")
+                            st.stop()
+                    else:
+                        # Fallback for Python <3.9
+                        if str(resolved_path).find(str(resolved_dir)) != 0:
+                            st.error("Unsafe file name: resulting path is outside the allowed directory.")
+                            st.stop()
+                except Exception as check_exc:
+                    st.error(f"Error verifying target path: {check_exc}")
+                    st.stop()
+
                 # Move/rename the CSV on disk (if it exists). If it doesn't, create from in-memory df.
                 try:
                     if current_path.exists():
