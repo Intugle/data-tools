@@ -868,8 +868,8 @@ with st.sidebar:
     with st.expander("LLM Settings",expanded=st.session_state.creds_saved==False ):
       provider = st.selectbox(
           "Choose LLM provider",
-          options=["openai", "azure-openai", "gemini"],
-          index=["openai", "azure-openai", "gemini"].index(st.session_state.llm_choice),
+          options=["openai", "azure-openai", "google_genai"],
+          index=["openai", "azure-openai", "google_genai"].index(st.session_state.llm_choice),
           help="Pick your LLM backend."
       )
       st.session_state.llm_choice = provider
@@ -958,9 +958,9 @@ with st.sidebar:
                   st.rerun()
 
       # --------- GEMINI ---------
-      elif provider == "gemini":
+      elif provider == "google_genai":
           # Gemini keys are commonly under GEMINI_API_KEY or GOOGLE_API_KEY
-          pre_key = get_secret("GEMINI_API_KEY") or get_secret("GOOGLE_API_KEY") or ""
+          pre_key = get_secret("GOOGLE_API_KEY") or ""
           model = st.selectbox(
               "Model",
               ["gemini-2.5-pro", "gemini-2.5-flash", "gemini-2.5-flash-lite"],
@@ -981,7 +981,7 @@ with st.sidebar:
                   # })
                   os.environ["GOOGLE_API_KEY"] = api_key.strip()
                   os.environ["LLM_PROVIDER"] = model
-                  settings.LLM_PROVIDER = f"gemini:{model}"
+                  settings.LLM_PROVIDER = f"google_genai:{model}"
                   st.session_state.creds_saved = True
                   st.success("Gemini settings saved.")
                   st.rerun()
