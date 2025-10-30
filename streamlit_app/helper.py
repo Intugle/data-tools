@@ -774,7 +774,7 @@ def llm_ready_check() -> tuple[bool, str]:
             return False, "Azure OpenAI config missing: " + ", ".join(missing) + ". Set them in the sidebar."
         return True, ""
 
-    if provider in {"gemini", "google"}:
+    if provider in {"google_genai", "google"}:
         key = _get_secret_env("GEMINI_API_KEY") or _get_secret_env("GOOGLE_API_KEY")  # type: ignore[name-defined]
         if not key:
             return False, "Gemini key missing. Please set **GEMINI_API_KEY** (or GOOGLE_API_KEY) in the sidebar."

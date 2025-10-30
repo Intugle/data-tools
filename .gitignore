@@ -221,3 +221,7 @@ archived/
 
 profiles.yml
 profiles.yaml
+
+/intugle/
+.mcpregistry_github_token
+.mcpregistry_registry_token
