@@ -273,6 +273,8 @@ This enables AI agents to programmatically interact with your data context. This
 
 For detailed instructions on setting up the server and connecting your favorite client, please see our full [documentation](https://intugle.github.io/data-tools/docs/mcp-server).
 
+<!-- mcp-name: io.github.intugle/intugle-vibe-mcp -->
+
 ## Community
 
 Join our community to ask questions, share your projects, and connect with other users.

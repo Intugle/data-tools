@@ -1,6 +1,6 @@
 {
     "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
-    "name": "io.github.intugle/data-tools",
+    "name": "io.github.intugle/intugle-vibe-mcp",
     "title": "Intugle Data Tools",
     "version": "1.0.11",
     "description": "A GenAI-powered Python library for building semantic layers.",
@@ -26,12 +26,6 @@
                     "value": "intugle-mcp"
                 }
             ]
-        }
-    ],
-    "remotes": [
-        {
-            "type": "streamable-http",
-            "url": "http://localhost:8080/semantic_layer/mcp"
         }
     ]
 }
