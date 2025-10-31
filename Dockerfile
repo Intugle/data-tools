@@ -13,11 +13,12 @@ RUN uv pip install --system intugle
 # Download NLTK data during the build process
 RUN python -c "import nltk; nltk.download('words'); nltk.download('punkt'); nltk.download('stopwords')"
 
+RUN mkdir -p models/
 # Expose the port the app runs on
 EXPOSE 8080
 
 # Set environment variables for the MCP server
-# ENV PROJECT_BASE="/app/models"
+ENV PROJECT_BASE="models"
 ENV MCP_SERVER_HOST="0.0.0.0"
 
 # Command to run the application
