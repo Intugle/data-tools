@@ -25,6 +25,7 @@ log = logging.getLogger(__name__)
 class DataProductPlannerAgentTools:
     def __init__(self, retrieval_tool: ConceptualSearchRetrievers):
         self.retrieval_tool = retrieval_tool
+        self.generated_plan: Optional[pd.DataFrame] = None
 
     def list_tools(
         self,
@@ -190,6 +191,8 @@ class DataProductPlannerAgentTools:
                 error_msg = f"An unexpected error occurred while processing item {item}: {e}"
                 log.error(error_msg, exc_info=True)
                 return error_msg
+
+        self.generated_plan = pd.DataFrame(processed_data, columns=headers)
 
         try:
             with open(filename, "w", newline="", encoding="utf-8") as csvfile:

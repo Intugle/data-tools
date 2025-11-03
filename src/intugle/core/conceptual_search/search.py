@@ -121,9 +121,15 @@ class ConceptualSearch:
         return dp
 
     async def generate_data_product_plan(
-        self, query: str, additional_context: str = None
+        self, query: str, additional_context: str = None, use_cache: bool = False
     ) -> DataProductPlan | None:
-        
+        if use_cache and os.path.exists("attributes.csv"):
+            log.info("Loading data product plan from attributes.csv (cache).")
+            return DataProductPlan(pd.read_csv("attributes.csv"))
+
+        log.info("Generating new data product plan...")
+        self._data_product_planner_tool.generated_plan = None  # Clear previous plan
+
         if additional_context and additional_context.strip():
             query += f"\nAdditional Context:\n{additional_context}"
 
@@ -136,6 +142,7 @@ class ConceptualSearch:
             },
         )
 
-        if os.path.exists("attributes.csv"):
-            return DataProductPlan(pd.read_csv("attributes.csv"))
+        if self._data_product_planner_tool.generated_plan is not None:
+            return DataProductPlan(self._data_product_planner_tool.generated_plan)
+
         return None
