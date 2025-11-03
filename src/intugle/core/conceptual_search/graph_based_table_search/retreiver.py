@@ -13,6 +13,7 @@ from intugle.core.conceptual_search.graph_based_table_search.utils import (
     CONCEPTUAL_SEARCH_COLLECTION_NAME,
 )
 from intugle.core.conceptual_search.models import GraphFileName
+from intugle.core.conceptual_search.utils import clean_query
 from intugle.core.llms.embeddings import Embeddings, EmbeddingsType
 from intugle.core.vector_store import AsyncQdrantService
 from intugle.core.vector_store.qdrant import VectorSearchKwargs
@@ -134,6 +135,8 @@ class GraphSearch:
             return pd.DataFrame()
 
         log.info("Graph loaded successfully")
+
+        query = clean_query(query)
 
         _, traversal_path, search_result = await self.traverse_graph(
             query,

@@ -85,7 +85,7 @@ class DataProductPlannerAgentTools:
                 self.save_data_product,
                 name="save_data_product",
                 description="""
-                Processes a list of attribute dictionaries and saves them to a CSV file,
+                Processes a list of attribute dictionaries and saves them
                 with detailed print statements for monitoring.
 
                 Each dictionary in the input list should represent a single attribute,

@@ -14,6 +14,12 @@ if TYPE_CHECKING:
 log = logging.getLogger(__name__)
 
 
+def clean_query(s: str) -> str:
+    s = s.lower()
+    s = ' '.join(s.split())
+    return s
+
+
 def batched(data: Any, n):
     for index in range(0, len(data), n):
         yield data[index : index + n]
