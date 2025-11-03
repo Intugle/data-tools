@@ -187,7 +187,7 @@ def langfuse_callback_handler():
     try:
         from langfuse.callback import CallbackHandler
     except ImportError:
-        log.info(
+        log.warning(
             "[!] langfuse package not installed. Please install it to use langfuse callback handler."
         )
         return None
@@ -207,5 +207,5 @@ def langfuse_callback_handler():
         langfuse_handler.auth_check()
         return langfuse_handler
     except Exception as ex:
-        log.info(f"[!] Could not connect to langfuse: {str(ex)}")
+        log.warning(f"[!] Could not connect to langfuse: {str(ex)}")
         return None

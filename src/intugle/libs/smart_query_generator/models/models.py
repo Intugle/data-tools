@@ -3,6 +3,8 @@ from typing import Optional
 
 from pydantic import BaseModel, field_validator
 
+from intugle.libs.smart_query_generator.utils.helpers import normalize_column_name
+
 
 class MeasureFunctionType(str, Enum):
     count = "count"
@@ -107,6 +109,12 @@ class FieldsModel(BaseModel):
     sql_code: Optional[str] = None
     join_opt: Optional[JoinOpt] = None
 
+    @field_validator("name", mode="before")
+    def normalize_name(cls, v):
+        if isinstance(v, str):
+            return normalize_column_name(v)
+        return v
+
 
 class RangeModel(BaseModel):
     id: int | str
@@ -126,6 +134,9 @@ class ETLModel(BaseModel):
     measure_filter: Optional[MeasureFilterModel] = None
     cart_id: int = 0
     join: Optional[dict] = None
+
+    def __str__(self):
+        return self.model_dump_json()
 
 
 class FieldDetailsModel(BaseModel):

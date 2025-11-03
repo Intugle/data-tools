@@ -8,6 +8,7 @@ import pandas as pd
 
 from langchain_core.documents import Document
 from langchain_core.tools import StructuredTool
+from pydantic import BaseModel
 
 from intugle.core.conceptual_search.agent.retrievers import (
     ConceptualSearchRetrievers,
@@ -17,9 +18,23 @@ from intugle.core.conceptual_search.utils import (
     extract_table_details,
     fetch_table_with_description,
 )
+from intugle.libs.smart_query_generator.models.models import (
+    CategoryType,
+    MeasureFunctionType,
+)
 from intugle.parser.manifest import Manifest
 
 log = logging.getLogger(__name__)
+
+
+class MappedAttribute(BaseModel):
+    attribute_name: str
+    attribute_description: str
+    attribute_classification: CategoryType
+    table_name: Optional[str] = None
+    column_name: Optional[str] = None
+    logic: Optional[str] = None
+    measure_func: Optional[MeasureFunctionType] = None
 
 
 class DataProductPlannerAgentTools:
@@ -217,7 +232,7 @@ class DataProductBuilderAgentTools:
     ):
         self._retrieval_tool = retrieval_tool
         self.manifest = manifest
-        self.column_logic_results = []
+        self.column_logic_results: List[MappedAttribute] = []
         self.table_description = None
 
     def list_tables(
@@ -239,68 +254,53 @@ class DataProductBuilderAgentTools:
 
     def column_logic_store(
         self,
+        attribute_name: Annotated[str, "Name of the attribute that was mapped."],
+        attribute_description: Annotated[str, "Description of the attribute."],
+        attribute_classification: Annotated[
+            CategoryType,
+            "Classification of the attribute as 'dimension' or 'measure'.",
+        ],
         column_table_combined: Annotated[
-            Optional[str | List[str]],
-            "column_table_combined (str or List[str]): One or more strings in the format 'column_name$$##$$table_name",
+            Optional[str],
+            "A single string in the format 'column_name$$##$$table_name'. Use this if a direct column mapping is found. Set to None if no mapping is found.",
         ],
-        attribute: Annotated[
-            str, "Name of the attribute that was used to fetch the columns."
-        ],
-        attribute_description: Annotated[str, "Description about the attribute"],
         logic: Annotated[
-            Optional[str | List[str]],
-            "One or more logic expressions corresponding to the columns.",
+            Optional[str],
+            "The transformation or aggregation logic (e.g., 'SUM', 'COUNT', or a SQL expression).",
+        ],
+        measure_func: Annotated[
+            Optional[MeasureFunctionType],
+            "The aggregation function for a measure (e.g., 'sum', 'count'). Required if attribute_classification is 'measure'.",
         ],
     ) -> str:
         """
-        Stores logic used to derive an attribute from one or more column-table combinations.
-
-        Args:
-            column_table_combined (str or List[str]): One or more strings in the format 'column_name$$##$$table_name'.
-            logic (str or List[str]): One or more logic expressions corresponding to the columns.
-            attribute (str): Name of the attribute that was used to fetch the columns.
-            attribute_description (str): Description about the attribute
-
-        Returns:
-            str: A success or error message confirming what was stored or explaining the failure.
+        Stores the derived logic for a single data product attribute.
         """
-        if column_table_combined is None or logic is None:
-            self.column_logic_results.append(
-                {"table_name": None, "column_name": None, "logic": None}
-            )
-            return "[Stored] No matching column found. Logic: None"
-
-        if isinstance(column_table_combined, str):
-            column_table_combined = [column_table_combined]
-        if isinstance(logic, str):
-            logic = [logic]
-
-        if len(column_table_combined) != len(logic):
-            return "[Error] Mismatch: number of column-table strings and logic expressions must match."
-
-        stored_entries = []
-        for ct_str, lg in zip(column_table_combined, logic):
+        table_name, column_name = None, None
+        if column_table_combined:
             try:
-                column_name, table_name = ct_str.split("$$##$$")
+                column_name, table_name = column_table_combined.split("$$##$$")
             except ValueError:
-                return f"[Error] Invalid format in '{ct_str}' (expected 'column_name$$##$$table_name')"
+                return f"[Error] Invalid format in '{column_table_combined}' (expected 'column_name$$##$$table_name')"
 
-            self.column_logic_results.append(
-                {
-                    "table_name": table_name,
-                    "column_name": column_name,
-                    "logic": lg,
-                    "attribute": attribute,
-                    "attribute_description": attribute_description,
-                }
-            )
-            stored_entries.append(
-                f"[Stored] Logic: {lg} | Column: '{column_name}' | Table: '{table_name}'"
-            )
-        pd.DataFrame(self.column_logic_results).to_csv(
-            "column_logic_results.csv", index=False
+        if (
+            attribute_classification == CategoryType.measure
+            and measure_func is None
+        ):
+            return "[Error] For a 'measure' attribute, 'measure_func' is required."
+
+        mapped_attribute = MappedAttribute(
+            attribute_name=attribute_name,
+            attribute_description=attribute_description,
+            attribute_classification=attribute_classification,
+            table_name=table_name,
+            column_name=column_name,
+            logic=logic,
+            measure_func=measure_func,
         )
-        return "\n".join(stored_entries)
+        self.column_logic_results.append(mapped_attribute)
+
+        return f"[Stored] Successfully stored logic for attribute: {attribute_name}"
 
     async def column_retriever(
         self,
@@ -369,11 +369,7 @@ class DataProductBuilderAgentTools:
             StructuredTool.from_function(
                 func=self.column_logic_store,
                 name="column_logic_store",
-                description="""
-                Stores logic used to derive an attribute from one or more column-table combinations.
-                Returns:
-                str: A success or error message confirming what was stored or explaining the failure.
-                """,
+                description="""Stores the derived logic for a single data product attribute.""",
             ),
             StructuredTool.from_function(
                 coroutine=self.column_retriever,

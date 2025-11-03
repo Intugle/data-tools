@@ -1,6 +1,5 @@
 import logging
 import os
-from typing import Union
 
 import pandas as pd
 
@@ -28,6 +27,11 @@ from intugle.core.conceptual_search.utils import (
     langfuse_callback_handler,
 )
 from intugle.core.llms.chat import ChatModelLLM
+from intugle.libs.smart_query_generator import (
+    CategoryType,
+    ETLModel,
+    FieldsModel,
+)
 from intugle.parser.manifest import Manifest, ManifestLoader
 
 log = logging.getLogger(__name__)
@@ -74,12 +78,14 @@ class ConceptualSearch:
         log.info("Conceptual search graphs initialized.")
 
     async def generate_data_product(
-        self, plan: Union[DataProductPlan, pd.DataFrame]
-    ):
+        self, plan: DataProductPlan | pd.DataFrame
+    ) -> ETLModel:
         if isinstance(plan, DataProductPlan):
             attributes_df = plan.to_df()
+            product_name = plan.name
         elif isinstance(plan, pd.DataFrame):
             attributes_df = plan
+            product_name = attributes_df["Data Product Name"].iloc[0]
         else:
             raise TypeError("plan must be either a DataProductPlan or a pandas DataFrame.")
 
@@ -88,8 +94,11 @@ class ConceptualSearch:
         if attributes_df.shape[0] <= 0:
             raise ValueError("Empty data product plan")
 
+        # Clear previous results before starting
+        self._data_product_builder_tool.column_logic_results = []
+
         total_records = attributes_df.shape[0]
-        log.info(f"🚀 Starting processing of {total_records} attributes...")
+        log.info(f"Starting processing of {total_records} attributes...")
 
         for b in batched(attributes_df, BATCH_SIZE):
             messages = [
@@ -97,7 +106,7 @@ class ConceptualSearch:
                     "messages": [
                         (
                             "user",
-                            f"attribute_name: {row['Attribute Name']} \n\n attribute_description: {row['Attribute Description']} \n\n attribute_type: {row['Attribute Classification']}",
+                            f"attribute_name: {row['Attribute Name']} \n\n attribute_description: {row['Attribute Description']} \n\n attribute_classification: {row['Attribute Classification']}",
                         )
                     ]
                 }
@@ -116,19 +125,66 @@ class ConceptualSearch:
                 },
             )
 
-        dp = pd.read_csv("column_logic_results.csv")
-        dp["source"] = dp["table_name"] + "$$##$$" + dp["column_name"]
-        return dp
+        # Construct ETLModel from in-memory results
+        fields = []
+        mapped_attributes = self._data_product_builder_tool.column_logic_results
+
+        # Create a lookup for all columns in the manifest to get their IDs
+        column_id_map = {
+            f"{source.table.name}.{column.name}": f"{source.table.name}.{column.name}"
+            for source in self.manifest.sources.values()
+            for column in source.table.columns
+        }
+
+        for attr in mapped_attributes:
+            if not attr.table_name or not attr.column_name:
+                log.warning(
+                    f"Could not map attribute '{attr.attribute_name}', skipping."
+                )
+                continue
+
+            column_id_key = f"{attr.table_name}.{attr.column_name}"
+            column_id = column_id_map.get(column_id_key)
+
+            if not column_id:
+                log.warning(
+                    f"Could not find ID for column '{column_id_key}' for attribute '{attr.attribute_name}', skipping."
+                )
+                continue
+
+            field = FieldsModel(
+                id=column_id,
+                name=attr.attribute_name,
+                category=attr.attribute_classification,
+            )
+
+            if attr.attribute_classification == CategoryType.measure:
+                if not attr.measure_func:
+                    log.warning(
+                        f"Measure '{attr.attribute_name}' is missing a measure_func, defaulting to 'count'."
+                    )
+                    field.measure_func = "count"
+                else:
+                    field.measure_func = attr.measure_func
+
+            fields.append(field)
+
+        return ETLModel(name=product_name, fields=fields)
 
     async def generate_data_product_plan(
-        self, query: str, additional_context: str = None, use_cache: bool = False
+        self,
+        query: str,
+        additional_context: str = None,
+        use_cache: bool = False,
     ) -> DataProductPlan | None:
         if use_cache and os.path.exists("attributes.csv"):
             log.info("Loading data product plan from attributes.csv (cache).")
             return DataProductPlan(pd.read_csv("attributes.csv"))
 
         log.info("Generating new data product plan...")
-        self._data_product_planner_tool.generated_plan = None  # Clear previous plan
+        self._data_product_planner_tool.generated_plan = (
+            None  # Clear previous plan
+        )
 
         if additional_context and additional_context.strip():
             query += f"\nAdditional Context:\n{additional_context}"
@@ -143,6 +199,8 @@ class ConceptualSearch:
         )
 
         if self._data_product_planner_tool.generated_plan is not None:
-            return DataProductPlan(self._data_product_planner_tool.generated_plan)
+            return DataProductPlan(
+                self._data_product_planner_tool.generated_plan
+            )
 
         return None
