@@ -57,6 +57,29 @@ class DataSet:
 
         self.load()
 
+    def __str__(self):
+        """Human-Friendly summary"""
+        path = None
+        dtype = None
+
+        if isinstance(self.data, dict):
+            path = self.data.get("path")
+            dtype = self.data.get("type")
+
+        return(
+            f"DataSet(name='{self.name}', )"
+            f"path='{path}, "
+            f"type='{dtype}"
+        )
+
+    def __repr__(self):
+        """Developer-friendly"""
+        return (
+            f"DataSet(name={self.name!r}), "
+            f"id={self.id!r}, "
+            f"data={self.data!r}"
+        )
+
     def _is_yaml_stale(self, yaml_data: dict) -> bool:
         """Check if the YAML data is stale by comparing source modification times."""
         if not isinstance(self.data, dict) or "path" not in self.data or not os.path.exists(self.data["path"]):
