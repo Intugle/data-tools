@@ -1,5 +1,6 @@
 import logging
 import os
+from typing import Union
 
 import pandas as pd
 
@@ -21,6 +22,7 @@ from intugle.core.conceptual_search.graph_based_column_search.networkx_initializ
 from intugle.core.conceptual_search.graph_based_table_search.networkx_initializers import (
     prepare_networkx_graph as prepare_table_networkx_graph,
 )
+from intugle.core.conceptual_search.plan import DataProductPlan
 from intugle.core.conceptual_search.utils import (
     batched,
     langfuse_callback_handler,
@@ -56,7 +58,8 @@ class ConceptualSearch:
         self._data_product_builder_agent = data_product_builder_agent(
             llm=self.llm, tools=self._data_product_builder_tool.list_tools()
         )
-        self.callbacks = [langfuse_callback_handler()]
+        handler = langfuse_callback_handler()
+        self.callbacks = [handler] if handler else []
 
     def _load_manifest(self) -> Manifest:
         log.info(f"Loading manifest from project base: {settings.PROJECT_BASE}")
@@ -70,7 +73,16 @@ class ConceptualSearch:
         prepare_column_networkx_graph(self.manifest, force_recreate)
         log.info("Conceptual search graphs initialized.")
 
-    async def generate_data_product(self, attributes_df: pd.DataFrame):
+    async def generate_data_product(
+        self, plan: Union[DataProductPlan, pd.DataFrame]
+    ):
+        if isinstance(plan, DataProductPlan):
+            attributes_df = plan.to_df()
+        elif isinstance(plan, pd.DataFrame):
+            attributes_df = plan
+        else:
+            raise TypeError("plan must be either a DataProductPlan or a pandas DataFrame.")
+
         BATCH_SIZE = 2
 
         if attributes_df.shape[0] <= 0:
@@ -108,20 +120,22 @@ class ConceptualSearch:
         dp["source"] = dp["table_name"] + "$$##$$" + dp["column_name"]
         return dp
 
-    async def generate_data_product_plan(self, query: str, additional_context: str = None):
+    async def generate_data_product_plan(
+        self, query: str, additional_context: str = None
+    ) -> DataProductPlan | None:
+        
         if additional_context and additional_context.strip():
             query += f"\nAdditional Context:\n{additional_context}"
 
         await self._data_product_planner_agent.ainvoke(
             input={"messages": [("user", query)]},
             config={
-                    "callbacks": self.callbacks,
-                    "metadata": {"Query": query},
-                    "run_name": "Data product planning",
-                },
+                "callbacks": self.callbacks,
+                "metadata": {"Query": query},
+                "run_name": "Data product planning",
+            },
         )
 
         if os.path.exists("attributes.csv"):
-            return pd.read_csv("attributes.csv")
-
-        return None, None
+            return DataProductPlan(pd.read_csv("attributes.csv"))
+        return None
