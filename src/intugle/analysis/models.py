@@ -46,16 +46,14 @@ class DataSet:
         self.adapter = AdapterFactory().create(data)
 
         # A dictionary to store the results of each analysis step
-        self.source_table_model: SourceTables = SourceTables(
-            name=name, description="")
+        self.source_table_model: SourceTables = SourceTables(name=name, description="")
         # A convenience map for quick column lookup
         self.columns: Dict[str, Column] = {}
 
         # Check if a YAML file exists and load it
         file_path = os.path.join(settings.PROJECT_BASE, f"{self.name}.yml")
         if os.path.exists(file_path):
-            print(
-                f"Found existing YAML for '{self.name}'. Checking for staleness.")
+            print(f"Found existing YAML for '{self.name}'. Checking for staleness.")
             self.load_from_yaml(file_path)
 
         self.load()
@@ -100,8 +98,7 @@ class DataSet:
             return False
         except (IndexError, KeyError, TypeError):
             # If YAML is malformed, treat it as stale.
-            console.print(
-                f"Warning: Could not parse existing YAML for '{self.name}'. Treating as stale.", style=warning_style)
+            console.print(f"Warning: Could not parse existing YAML for '{self.name}'. Treating as stale.", style=warning_style)
             return True
 
     def _populate_from_yaml(self, yaml_data: dict):
@@ -109,8 +106,7 @@ class DataSet:
         source = yaml_data.get("sources", [])[0]
         table = source.get("table", {})
         self.source_table_model = SourceTables.model_validate(table)
-        self.columns = {
-            col.name: col for col in self.source_table_model.columns}
+        self.columns = {col.name: col for col in self.source_table_model.columns}
 
     @property
     def sql_query(self):
@@ -137,10 +133,8 @@ class DataSet:
             self.source_table_model.profiling_metrics = ModelProfilingMetrics()
         self.source_table_model.profiling_metrics.count = table_profile.count
 
-        self.source_table_model.columns = [
-            Column(name=col_name) for col_name in table_profile.columns]
-        self.columns = {
-            col.name: col for col in self.source_table_model.columns}
+        self.source_table_model.columns = [Column(name=col_name) for col_name in table_profile.columns]
+        self.columns = {col.name: col for col in self.source_table_model.columns}
         return self
 
     def profile_columns(self) -> 'DataSet':
@@ -149,8 +143,7 @@ class DataSet:
         This method relies on the 'table_profile' result to get the list of columns.
         """
         if not self.source_table_model.columns:
-            raise RuntimeError(
-                "TableProfiler must be run before profiling columns.")
+            raise RuntimeError("TableProfiler must be run before profiling columns.")
 
         count = self.source_table_model.profiling_metrics.count
 
@@ -177,22 +170,19 @@ class DataSet:
         if not self.source_table_model.columns or any(
             c.profiling_metrics is None for c in self.source_table_model.columns
         ):
-            raise RuntimeError(
-                "TableProfiler and ColumnProfiler must be run before data type identification.")
+            raise RuntimeError("TableProfiler and ColumnProfiler must be run before data type identification.")
 
         records = []
         for column in self.source_table_model.columns:
             records.append(
-                {"table_name": self.name, "column_name": column.name,
-                    "values": column.profiling_metrics.dtype_sample}
+                {"table_name": self.name, "column_name": column.name,"values": column.profiling_metrics.dtype_sample}
             )
 
         l1_df = pd.DataFrame(records)
         di_pipeline = DataTypeIdentificationPipeline()
         l1_result = di_pipeline(sample_values_df=l1_df)
 
-        column_datatypes_l1 = [DataTypeIdentificationL1Output(
-            **row) for row in l1_result.to_dict(orient="records")]
+        column_datatypes_l1 = [DataTypeIdentificationL1Output(**row) for row in l1_result.to_dict(orient="records")]
 
         for col_l1 in column_datatypes_l1:
             self.columns[col_l1.column_name].type = col_l1.datatype_l1
@@ -204,8 +194,7 @@ class DataSet:
         This method relies on the 'column_profiles' result.
         """
         if not self.source_table_model.columns or any(c.type is None for c in self.source_table_model.columns):
-            raise RuntimeError(
-                "TableProfiler and ColumnProfiler must be run before data type identification.")
+            raise RuntimeError("TableProfiler and ColumnProfiler must be run before data type identification.")
 
         columns_with_samples = []
         for column in self.source_table_model.columns:
@@ -218,12 +207,10 @@ class DataSet:
                 )
             )
 
-        column_values_df = pd.DataFrame(
-            [item.model_dump() for item in columns_with_samples])
+        column_values_df = pd.DataFrame([item.model_dump() for item in columns_with_samples])
         l2_model = L2Model()
         l2_result = l2_model(l1_pred=column_values_df)
-        column_datatypes_l2 = [DataTypeIdentificationL2Output(
-            **row) for row in l2_result.to_dict(orient="records")]
+        column_datatypes_l2 = [DataTypeIdentificationL2Output(**row) for row in l2_result.to_dict(orient="records")]
 
         for col_l2 in column_datatypes_l2:
             self.columns[col_l2.column_name].category = col_l2.datatype_l2
@@ -237,8 +224,7 @@ class DataSet:
         if not self.source_table_model.columns or any(
             c.type is None or c.category is None for c in self.source_table_model.columns
         ):
-            raise RuntimeError(
-                "DataTypeIdentifierL1 and L2 must be run before KeyIdentifier.")
+            raise RuntimeError("DataTypeIdentifierL1 and L2 must be run before KeyIdentifier.")
 
         column_profiles_data = []
         for column in self.source_table_model.columns:
@@ -297,8 +283,7 @@ class DataSet:
         This method relies on the 'column_datatypes_l1' results.
         """
         if not self.source_table_model.columns or any(c.type is None for c in self.source_table_model.columns):
-            raise RuntimeError(
-                "DataTypeIdentifierL1  must be run before Business Glossary Generation.")
+            raise RuntimeError("DataTypeIdentifierL1  must be run before Business Glossary Generation.")
 
         column_profiles_data = []
         for column in self.source_table_model.columns:
@@ -323,8 +308,7 @@ class DataSet:
         column_profiles_df = pd.DataFrame(column_profiles_data)
 
         bg_model = BusinessGlossary(profiling_data=column_profiles_df)
-        table_glossary, glossary_df = bg_model(
-            table_name=self.name, domain=domain)
+        table_glossary, glossary_df = bg_model(table_name=self.name, domain=domain)
 
         self.source_table_model.description = table_glossary
 
@@ -357,8 +341,7 @@ class DataSet:
 
         # Store the source's last modification time
         if isinstance(self.data, dict) and "path" in self.data and os.path.exists(self.data["path"]):
-            self.source_table_model.source_last_modified = os.path.getmtime(
-                self.data["path"])
+            self.source_table_model.source_last_modified = os.path.getmtime(self.data["path"])
 
         source = Source(
             name="healthcare",
