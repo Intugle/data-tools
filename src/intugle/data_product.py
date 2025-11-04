@@ -2,7 +2,6 @@ from typing import TYPE_CHECKING, Optional
 
 from intugle.adapters.factory import AdapterFactory
 from intugle.analysis.models import DataSet
-from intugle.conceptual_search.models import MappedPlan
 from intugle.core import settings
 from intugle.core.conceptual_search.plan import DataProductPlan
 from intugle.core.conceptual_search.search import ConceptualSearch
@@ -101,25 +100,6 @@ class DataProduct:
         """
         etl_model = await self.create_etl_model_from_plan(plan)
         return self.build(etl=etl_model)
-
-    @staticmethod
-    def etl_from_mapped_plan(plan: MappedPlan, product_name: str) -> dict:
-        """Creates an ETLModel dictionary from a mapped conceptual plan."""
-        fields = []
-        for attr in plan.attributes:
-            field = {
-                "id": attr.column_id,
-                "name": attr.name,
-            }
-            if attr.measure_func:
-                field["category"] = "measure"
-                field["measure_func"] = attr.measure_func.lower()
-            fields.append(field)
-
-        return {
-            "name": product_name,
-            "fields": fields
-        }
 
     def load_all(self):
         sources = self.manifest.sources
