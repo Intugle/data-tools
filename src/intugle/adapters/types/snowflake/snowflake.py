@@ -353,4 +353,4 @@ def can_handle_snowflake(df: Any) -> bool:
 
 def register(factory: AdapterFactory):
     if SNOWFLAKE_AVAILABLE:
-        factory.register("snowflake", can_handle_snowflake, SnowflakeAdapter)
+        factory.register("snowflake", can_handle_snowflake, SnowflakeAdapter, SnowflakeConfig)

@@ -417,4 +417,4 @@ def can_handle_databricks(df: Any) -> bool:
 
 def register(factory: AdapterFactory):
     if DATABRICKS_AVAILABLE:
-        factory.register("databricks", can_handle_databricks, DatabricksAdapter)
+        factory.register("databricks", can_handle_databricks, DatabricksAdapter, DatabricksConfig)
