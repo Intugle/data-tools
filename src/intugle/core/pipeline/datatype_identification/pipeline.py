@@ -11,7 +11,7 @@ from .l1_model import L1Model
 log = logging.getLogger(__name__)
 
 
-MODEL_VERSION = "13052023"
+MODEL_VERSION = settings.DI_MODEL_VERSION
 
 
 class DataTypeIdentificationPipeline:
