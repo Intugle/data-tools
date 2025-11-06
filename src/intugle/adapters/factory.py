@@ -23,6 +23,7 @@ DEFAULT_PLUGINS = [
     "intugle.adapters.types.duckdb.duckdb",
     "intugle.adapters.types.snowflake.snowflake",
     "intugle.adapters.types.databricks.databricks",
+    "intugle.adapters.types.postgres.postgres",
 ]
 
 

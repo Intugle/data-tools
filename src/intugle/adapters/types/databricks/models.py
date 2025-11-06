@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Literal, Optional
 
 from intugle.common.schema import SchemaBase
 
@@ -18,4 +18,4 @@ class DatabricksNotebookConfig(SchemaBase):
 
 class DatabricksConfig(SchemaBase):
     identifier: str
-    type: str = "databricks"
+    type: Literal["databricks"] = "databricks"
