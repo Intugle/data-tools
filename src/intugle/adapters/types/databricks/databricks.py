@@ -302,10 +302,17 @@ class DatabricksAdapter(Adapter):
     def to_df_from_query(self, query: str) -> pd.DataFrame:
         return self._get_pandas_df(query)
 
-    def create_table_from_query(self, table_name: str, query: str):
+    def create_table_from_query(
+        self, table_name: str, query: str, materialize: str = "view", **kwargs
+    ) -> str:
         fqn = self._get_fqn(table_name)
         transpiled_sql = transpile(query, write="databricks")[0]
-        self._execute_sql(f"CREATE OR REPLACE VIEW {fqn} AS {transpiled_sql}")
+        if materialize == "table":
+            self._execute_sql(
+                f"CREATE OR REPLACE TABLE {fqn} AS {transpiled_sql}"
+            )
+        else:
+            self._execute_sql(f"CREATE OR REPLACE VIEW {fqn} AS {transpiled_sql}")
         return transpiled_sql
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":

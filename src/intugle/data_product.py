@@ -60,11 +60,13 @@ class DataProduct:
         sql_query = sql_builder.get_query()
         return sql_query
         
-    def build(self, etl: ETLModel) -> DataSet:
+    def build(self, etl: ETLModel, materialize: str = "view", **kwargs) -> DataSet:
         """Generates and materializes a data product based on the ETL model.
 
         Args:
             etl (ETLModel): The ETL model containing the configuration for the data product.
+            materialize (str): Whether to build the data product as a 'view' or a 'table'.
+            **kwargs: Additional keyword arguments to pass to the adapter.
 
         Returns:
             DataSet: A new DataSet object pointing to the materialized table.
@@ -84,7 +86,9 @@ class DataProduct:
         sql_query = self.generate_query(etl)
 
         # 3. Materialize the query as a new table in the target database
-        dialect_sql = execution_adapter.create_table_from_query(etl.name, sql_query)
+        dialect_sql = execution_adapter.create_table_from_query(
+            etl.name, sql_query, materialize=materialize, **kwargs
+        )
 
         # 4. Create a new config object pointing to the newly created table
         new_config = execution_adapter.create_new_config_from_etl(etl.name)
@@ -92,7 +96,7 @@ class DataProduct:
         # 5. Return a new DataSet pointing to the materialized table
         result_dataset = DataSet(data=new_config, name=etl.name)
         # Attach the query for inspection
-        result_dataset.sql_query = dialect_sql 
+        result_dataset.sql_query = dialect_sql
 
         return result_dataset
 
@@ -197,4 +201,3 @@ class DataProduct:
         graph = self.join.generate_graph(list(assets), only_connected=False)
 
         self.plot_graph(graph)
-    

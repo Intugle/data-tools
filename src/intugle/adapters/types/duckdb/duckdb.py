@@ -232,9 +232,14 @@ class DuckdbAdapter(Adapter):
     def to_df_from_query(self, query: str) -> pd.DataFrame:
         return duckdb.sql(query).to_df()
 
-    def create_table_from_query(self, table_name: str, query: str):
+    def create_table_from_query(
+        self, table_name: str, query: str, materialize: str = "view", **kwargs
+    ) -> str:
         table_name_safe = safe_identifier(table_name)
-        duckdb.sql(f'CREATE OR REPLACE VIEW {table_name_safe} AS {query}')
+        if materialize == "table":
+            duckdb.sql(f"CREATE OR REPLACE TABLE {table_name_safe} AS {query}")
+        else:
+            duckdb.sql(f"CREATE OR REPLACE VIEW {table_name_safe} AS {query}")
         return query
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":

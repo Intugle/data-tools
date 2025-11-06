@@ -206,13 +206,22 @@ class SnowflakeAdapter(Adapter):
     def to_df_from_query(self, query: str) -> pd.DataFrame:
         return self.session.sql(query).to_pandas()
 
-    def create_table_from_query(self, table_name: str, query: str):
+    def create_table_from_query(
+        self, table_name: str, query: str, materialize: str = "view", **kwargs
+    ) -> str:
         def _clean_column_quotes(sql: str) -> str:
             # This regex finds ""..."" and replaces with "..."
             return re.sub(r'""(.*?)""', r'"\1"', sql)
-        
+
         query = _clean_column_quotes(query)
-        self.session.sql(f"CREATE OR REPLACE TABLE {table_name} AS {query}").collect()
+        if materialize == "table":
+            self.session.sql(
+                f"CREATE OR REPLACE TABLE {table_name} AS {query}"
+            ).collect()
+        else:
+            self.session.sql(
+                f"CREATE OR REPLACE VIEW {table_name} AS {query}"
+            ).collect()
         return query
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":

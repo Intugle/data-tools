@@ -177,8 +177,12 @@ class PandasAdapter(Adapter):
     def to_df_from_query(self, query: str) -> pd.DataFrame:
         raise NotImplementedError("to_df_from_query is not supported for PandasAdapter yet.")
 
-    def create_table_from_query(self, table_name: str, query: str):
-        raise NotImplementedError("create_table_from_query is not supported for PandasAdapter yet.")
+    def create_table_from_query(
+        self, table_name: str, query: str, materialize: str = "view", **kwargs
+    ):
+        raise NotImplementedError(
+            "create_table_from_query is not supported for PandasAdapter yet."
+        )
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
         raise NotImplementedError("create_new_config_from_etl is not supported for PandasAdapter yet.")
