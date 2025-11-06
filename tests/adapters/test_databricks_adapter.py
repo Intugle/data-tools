@@ -77,7 +77,7 @@ class TestDatabricksAdapterContract:
 
     def test_registered_in_factory(self):
         """Verify adapter can be registered and detected by factory."""
-        AdapterFactory.register("databricks", can_handle_databricks, DatabricksAdapter)
+        AdapterFactory.register("databricks", can_handle_databricks, DatabricksAdapter, DatabricksConfig)
 
         config = DatabricksConfig(identifier="test_table")
 

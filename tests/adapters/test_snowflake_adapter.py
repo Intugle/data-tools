@@ -77,7 +77,7 @@ class TestSnowflakeAdapterContract:
 
     def test_registered_in_factory(self):
         """Verify adapter can be registered and detected by factory."""
-        AdapterFactory.register("snowflake", can_handle_snowflake, SnowflakeAdapter)
+        AdapterFactory.register("snowflake", can_handle_snowflake, SnowflakeAdapter, SnowflakeConfig)
 
         config = SnowflakeConfig(identifier="test_table")
 
