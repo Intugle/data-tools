@@ -16,6 +16,7 @@ from intugle.adapters.models import (
 from intugle.adapters.types.duckdb.models import DuckdbConfig
 from intugle.adapters.utils import convert_to_native
 from intugle.common.exception import errors
+from intugle.core import settings
 from intugle.core.utilities.processing import string_standardization
 
 if TYPE_CHECKING:
@@ -33,6 +34,17 @@ def safe_identifier(name: str) -> str:
 
 
 class DuckdbAdapter(Adapter):
+    @property
+    def database(self) -> Optional[str]:
+        return None
+
+    @property
+    def schema(self) -> Optional[str]:
+        return None
+    
+    @property
+    def source_name(self) -> str:
+        return settings.PROFILES.get("duckdb", {}).get("name", "my_local_source")
 
     def __init__(self):
         duckdb.install_extension('httpfs')

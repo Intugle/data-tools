@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, Optional
 
 import pandas as pd
 
@@ -15,6 +15,21 @@ if TYPE_CHECKING:
 
 
 class Adapter(ABC):
+    @property
+    @abstractmethod
+    def database(self) -> Optional[str]:
+        pass
+
+    @property
+    @abstractmethod
+    def schema(self) -> Optional[str]:
+        pass
+
+    @property
+    @abstractmethod
+    def source_name(self) -> Optional[str]:
+        pass
+
     @abstractmethod
     def profile(self, data: Any, table_name: str) -> ProfilingOutput:
         pass

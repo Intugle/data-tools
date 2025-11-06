@@ -52,10 +52,18 @@ class TestSnowflakeAdapterContract:
             'check_data',
             'get_details',
         ]
+        required_properties = [
+            'source_name',
+            'database',
+            'schema'
+        ]
 
         for method in required_methods:
             assert hasattr(mock_adapter, method), f"Missing method: {method}"
             assert callable(getattr(mock_adapter, method)), f"{method} is not callable"
+
+        for propery in required_properties:
+            assert hasattr(mock_adapter, propery), f"Missing property: {propery}"
 
     def test_inherits_from_adapter(self, mock_adapter):
         """Verify SnowflakeAdapter inherits from Adapter base class."""

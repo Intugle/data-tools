@@ -26,8 +26,8 @@ def test_table_profiling_with_complex_data():
     """
     dataset = DataSet(COMPLEX_DF, DF_NAME)
     dataset.profile_table()
-    table_model = dataset.source_table_model
 
+    table_model = dataset.source.table
     assert table_model.profiling_metrics is not None
     assert table_model.profiling_metrics.count == 10
     assert len(table_model.columns) == 5
@@ -79,7 +79,7 @@ def test_profiling_empty_dataframe():
     dataset = DataSet(empty_df, "empty_df")
     dataset.profile()
 
-    assert dataset.source_table_model.profiling_metrics.count == 0
+    assert dataset.source.table.profiling_metrics.count == 0
     assert len(dataset.columns) == 2
     
     col1_profile = dataset.columns['col1'].profiling_metrics

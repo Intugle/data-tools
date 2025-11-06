@@ -35,11 +35,17 @@ class BaseAdapterTests:
         pytest.fail("Subclass must implement this fixture")
 
     def test_profile(self, adapter_instance: Adapter, test_data):
-        """Tests the profile() method of an adapter."""
+        """
+        Tests the profile() method of an adapter.
+        """
         # Act
         profile_output = adapter_instance.profile(test_data, "allergies")
 
         # Assert
+        assert adapter_instance.source_name is not None
+        assert adapter_instance.database is None or isinstance(adapter_instance.database, str)
+        assert adapter_instance.schema is None or isinstance(adapter_instance.schema, str)
+
         # Note: These values are specific to the sample 'allergies.csv' file.
         assert profile_output.count > 0
         profile_columns_upper = [col.upper() for col in profile_output.columns]
@@ -48,7 +54,9 @@ class BaseAdapterTests:
         assert isinstance(profile_output.dtypes, dict)
 
     def test_column_profile(self, adapter_instance: Adapter, test_data):
-        """Tests the column_profile() method of an adapter."""
+        """
+        Tests the column_profile() method of an adapter.
+        """
         # First, get the total count from the profile method
         profile_output = adapter_instance.profile(test_data, "allergies")
         total_count = profile_output.count
@@ -70,6 +78,10 @@ class BaseAdapterTests:
         )
 
         # Assert
+        assert adapter_instance.source_name is not None
+        assert adapter_instance.database is None or isinstance(adapter_instance.database, str)
+        assert adapter_instance.schema is None or isinstance(adapter_instance.schema, str)
+
         assert column_profile.column_name.upper() == "PATIENT"
         assert column_profile.count == total_count
         assert column_profile.null_count is not None
@@ -95,6 +107,13 @@ class BaseAdapterTests:
         )
 
         # Assert: Check that the intersection is greater than 0.
+        assert table1_dataset.source.name is not None
+        assert table1_dataset.source.database is None or isinstance(table1_dataset.source.database, str)
+        assert table1_dataset.source.schema is None or isinstance(table1_dataset.source.schema, str)
+        assert table2_dataset.source.name is not None
+        assert table2_dataset.source.database is None or isinstance(table2_dataset.source.database, str)
+        assert table2_dataset.source.schema is None or isinstance(table2_dataset.source.schema, str)
+
         assert intersect_count > 0
 
     def test_create_table_from_query(
@@ -107,6 +126,10 @@ class BaseAdapterTests:
         query = "SELECT * FROM allergies WHERE \"DESCRIPTION1\" = 'Sneezing'"
 
         adapter_instance.create_table_from_query(new_table_name, query)
+
+        assert adapter_instance.source_name is not None
+        assert adapter_instance.database is None or isinstance(adapter_instance.database, str)
+        assert adapter_instance.schema is None or isinstance(adapter_instance.schema, str)
 
         result_df = adapter_instance.to_df_from_query(
             f"SELECT * FROM {new_table_name}"
@@ -122,6 +145,10 @@ class BaseAdapterTests:
 
         new_config = adapter_instance.create_new_config_from_etl(new_table_name)
 
+        assert adapter_instance.source_name is not None
+        assert adapter_instance.database is None or isinstance(adapter_instance.database, str)
+        assert adapter_instance.schema is None or isinstance(adapter_instance.schema, str)
+
         try:
             AdapterFactory().create(new_config)
         except ValueError:
@@ -134,6 +161,10 @@ class BaseAdapterTests:
         Tests that the adapter can execute an arbitrary query and return a DataFrame.
         """
         df = adapter_instance.to_df_from_query("SELECT count(*) as count FROM allergies")
+
+        assert adapter_instance.source_name is not None
+        assert adapter_instance.database is None or isinstance(adapter_instance.database, str)
+        assert adapter_instance.schema is None or isinstance(adapter_instance.schema, str)
 
         assert isinstance(df, pd.DataFrame)
         assert not df.empty

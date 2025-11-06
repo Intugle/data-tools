@@ -14,6 +14,7 @@ from intugle.adapters.models import (
     ProfilingOutput,
 )
 from intugle.adapters.utils import convert_to_native
+from intugle.core import settings
 from intugle.core.utilities.processing import string_standardization
 
 if TYPE_CHECKING:
@@ -21,6 +22,18 @@ if TYPE_CHECKING:
 
 
 class PandasAdapter(Adapter):
+    @property
+    def database(self) -> Optional[str]:
+        return None
+
+    @property
+    def schema(self) -> Optional[str]:
+        return None
+    
+    @property
+    def source_name(self) -> str:
+        return settings.PROFILES.get("pandas", {}).get("name", "my_pandas_source")
+    
     def profile(self, data: pd.DataFrame, _: str) -> ProfilingOutput:
         """
         Generates a profile of a pandas DataFrame.
