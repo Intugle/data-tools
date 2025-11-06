@@ -55,7 +55,7 @@ class AdapterFactory:
         env_type: str,
         checker_fn: Callable[[Any], bool],
         creator_fn: Callable[..., Adapter],
-        config_type: Type[Any] = None,
+        config_type: Type[Any],
     ) -> None:
         """Register a new execution engine type with its configuration type"""
         cls.dataframe_funcs[env_type] = (checker_fn, creator_fn)
