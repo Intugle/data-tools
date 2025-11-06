@@ -25,13 +25,18 @@ Currently, the library supports `csv`, `parquet`, and `excel` files. More integr
 
 ### Centralized metadata
 
-All analysis results for a data source are stored within the `dataset.source_table_model` attribute. This attribute is a structured Pydantic model that makes accessing metadata predictable and easy. For more convenient access to column-level data, the `DataSet` also provides a `columns` dictionary.
+All analysis results for a data source are stored within the `dataset.source` attribute. This attribute is a structured Pydantic model that contains the `Source` object, which in turn holds the `SourceTables` model. This makes accessing metadata predictable and easy. For more convenient access to column-level data, the `DataSet` also provides a `columns` dictionary.
 
 #### Metadata structure and access
 
 The library organizes metadata using Pydantic models, but you can access it through the `DataSet`'s attributes.
 
--   **Table-Level Metadata**: Accessed via `dataset.source_table_model`.
+-   **Source-Level Metadata**: Accessed via `dataset.source`.
+    -   `.name: str`
+    -   `.description: str`
+    -   `.schema: str`
+    -   `.database: str`
+-   **Table-Level Metadata**: Accessed via `dataset.source.table`.
     -   `.name: str`
     -   `.description: str`
     -   `.key: Optional[str]`
@@ -55,9 +60,15 @@ The library organizes metadata using Pydantic models, but you can access it thro
 # Assuming 'sm' is a built SemanticModel instance
 customers_dataset = sm.datasets['customers']
 
+# Access source-level metadata
+print(f"Source Name: {customers_dataset.source.name}")
+print(f"Database: {customers_dataset.source.database}")
+print(f"Schema: {customers_dataset.source.schema}")
+
 # Access table-level metadata
-print(f"Table Name: {customers_dataset.source_table_model.name}")
-print(f"Primary Key: {customers_dataset.source_table_model.key}")
+print(f"Table Name: {customers_dataset.source.table.name}")
+print(f"Table Description: {customers_dataset.source.table.description}")
+print(f"Primary Key: {customers_dataset.source.table.key}")
 
 # Access column-level metadata using the 'columns' dictionary
 email_column = customers_dataset.columns['email']
