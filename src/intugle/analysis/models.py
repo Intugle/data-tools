@@ -178,7 +178,7 @@ class DataSet:
         records = []
         for column in self.source.table.columns:
             records.append(
-                {"table_name": self.name, "column_name": column.name,"values": column.profiling_metrics.dtype_sample}
+                {"table_name": self.name, "column_name": column.name, "values": column.profiling_metrics.dtype_sample}
             )
 
         l1_df = pd.DataFrame(records)

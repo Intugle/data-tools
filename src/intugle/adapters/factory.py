@@ -1,6 +1,6 @@
 import importlib
 
-from typing import Any, Callable, Type, Union, get_args
+from typing import Any, Callable, Type, Union
 
 from .adapter import Adapter
 
