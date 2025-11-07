@@ -19,6 +19,10 @@ def test_datatype_identification_end_to_end():
     dataset = DataSet(COMPLEX_DF, DF_NAME)
     dataset.profile().identify_datatypes()
 
+    assert dataset.source.name == "my_pandas_source"
+    assert dataset.source.database == ''
+    assert dataset.source.schema == ''
+
     # Check the final output of the L1 and L2 steps
     columns_map = dataset.columns
     assert columns_map['user_id'].type == 'integer'

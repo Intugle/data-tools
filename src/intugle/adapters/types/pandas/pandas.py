@@ -14,6 +14,7 @@ from intugle.adapters.models import (
     ProfilingOutput,
 )
 from intugle.adapters.utils import convert_to_native
+from intugle.core import settings
 from intugle.core.utilities.processing import string_standardization
 
 if TYPE_CHECKING:
@@ -21,6 +22,18 @@ if TYPE_CHECKING:
 
 
 class PandasAdapter(Adapter):
+    @property
+    def database(self) -> Optional[str]:
+        return None
+
+    @property
+    def schema(self) -> Optional[str]:
+        return None
+    
+    @property
+    def source_name(self) -> str:
+        return settings.PROFILES.get("pandas", {}).get("name", "my_pandas_source")
+    
     def profile(self, data: pd.DataFrame, _: str) -> ProfilingOutput:
         """
         Generates a profile of a pandas DataFrame.
@@ -164,8 +177,12 @@ class PandasAdapter(Adapter):
     def to_df_from_query(self, query: str) -> pd.DataFrame:
         raise NotImplementedError("to_df_from_query is not supported for PandasAdapter yet.")
 
-    def create_table_from_query(self, table_name: str, query: str):
-        raise NotImplementedError("create_table_from_query is not supported for PandasAdapter yet.")
+    def create_table_from_query(
+        self, table_name: str, query: str, materialize: str = "view", **kwargs
+    ):
+        raise NotImplementedError(
+            "create_table_from_query is not supported for PandasAdapter yet."
+        )
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
         raise NotImplementedError("create_new_config_from_etl is not supported for PandasAdapter yet.")

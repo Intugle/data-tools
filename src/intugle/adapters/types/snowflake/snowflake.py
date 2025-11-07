@@ -41,6 +41,26 @@ class SnowflakeAdapter(Adapter):
     _instance = None
     _initialized = False
 
+    @property
+    def source_name(self) -> str:
+        return self._source_name
+
+    @property
+    def database(self) -> Optional[str]:
+        return self._database
+    
+    @database.setter
+    def database(self, value: str):
+        self._database = value
+
+    @property
+    def schema(self) -> Optional[str]:
+        return self._schema
+    
+    @schema.setter
+    def schema(self, value: str):
+        self._schema = value
+
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
             cls._instance = super().__new__(cls)
@@ -54,8 +74,9 @@ class SnowflakeAdapter(Adapter):
             raise ImportError("Snowflake dependencies are not installed. Please run 'pip install intugle[snowflake]'.")
 
         self.session: "Session" = None
-        self.database: Optional[str] = None
-        self.schema: Optional[str] = None
+        self._database: Optional[str] = None
+        self._schema: Optional[str] = None
+        self._source_name: str = settings.PROFILES.get("snowflake", {}).get("name", "my_snowflake_source")
         self.connect()
         self._initialized = True
 
@@ -64,8 +85,8 @@ class SnowflakeAdapter(Adapter):
             self.session = get_active_session()
             print("Found active Snowpark session. Using it for connection.")
             # Get current DB and schema from the active session, stripping quotes
-            self.database = self.session.get_current_database().strip('"')
-            self.schema = self.session.get_current_schema().strip('"')
+            self._database = self.session.get_current_database().strip('"')
+            self._schema = self.session.get_current_schema().strip('"')
         except Exception:
             print("No active Snowpark session found. Creating a new session from profiles.yml.")
             connection_parameters_dict = settings.PROFILES.get("snowflake", {})
@@ -76,8 +97,8 @@ class SnowflakeAdapter(Adapter):
 
             connection_parameters = SnowflakeConnectionConfig.model_validate(connection_parameters_dict)
             self.session = Session.builder.configs(connection_parameters.model_dump()).create()
-            self.database = connection_parameters.database
-            self.schema = connection_parameters.schema
+            self._database = connection_parameters.database
+            self._schema = connection_parameters.schema
 
     @staticmethod
     def check_data(data: Any) -> SnowflakeConfig:
@@ -185,13 +206,22 @@ class SnowflakeAdapter(Adapter):
     def to_df_from_query(self, query: str) -> pd.DataFrame:
         return self.session.sql(query).to_pandas()
 
-    def create_table_from_query(self, table_name: str, query: str):
+    def create_table_from_query(
+        self, table_name: str, query: str, materialize: str = "view", **kwargs
+    ) -> str:
         def _clean_column_quotes(sql: str) -> str:
             # This regex finds ""..."" and replaces with "..."
             return re.sub(r'""(.*?)""', r'"\1"', sql)
-        
+
         query = _clean_column_quotes(query)
-        self.session.sql(f"CREATE OR REPLACE TABLE {table_name} AS {query}").collect()
+        if materialize == "table":
+            self.session.sql(
+                f"CREATE OR REPLACE TABLE {table_name} AS {query}"
+            ).collect()
+        else:
+            self.session.sql(
+                f"CREATE OR REPLACE VIEW {table_name} AS {query}"
+            ).collect()
         return query
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
@@ -203,8 +233,8 @@ class SnowflakeAdapter(Adapter):
         """
         print("Syncing metadata to Snowflake tables...")
 
-        database = self.database
-        schema = self.schema
+        database = self._database
+        schema = self._schema
 
         if not database or not schema:
             raise ValueError("Database and schema must be defined in your profiles.yml for deployment.")
@@ -262,8 +292,8 @@ class SnowflakeAdapter(Adapter):
         # Step 2: Manually build the CREATE SEMANTIC VIEW SQL statement
         model_name = kwargs.get("model_name", "intugle_semantic_view")
 
-        database = self.database
-        schema = self.schema
+        database = self._database
+        schema = self._schema
 
         # -- TABLES clause --
         table_clauses = []

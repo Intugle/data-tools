@@ -24,9 +24,9 @@ def test_business_glossary_generator():
     dataset.generate_glossary(domain=domain)
 
     # 3. Assert the results
-    assert dataset.source_table_model.description is not None
-    assert len(dataset.source_table_model.description) > 0
-    assert len(dataset.source_table_model.columns) == len(df.columns)
+    assert dataset.source.table.description is not None
+    assert len(dataset.source.table.description) > 0
+    assert len(dataset.source.table.columns) == len(df.columns)
 
     # Check a specific column's glossary entry
     product_id_column = dataset.columns.get("product_id")

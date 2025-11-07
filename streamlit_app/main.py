@@ -4,30 +4,22 @@
 # -----------------------
 # Standard library
 import hashlib
-import io
 import os
 import re
 import shutil
 import time
-import uuid
-import zipfile
-from dataclasses import asdict, is_dataclass
+
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Mapping, Optional, Tuple, Literal
-from urllib.parse import unquote, urlparse
+from typing import Dict, Literal
 
 # Third-party
-import matplotlib.pyplot as plt
-import networkx as nx
 import pandas as pd
-import plotly.graph_objects as go
-import requests
 import streamlit as st
+
 from graphviz import Digraph
-from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_openai import AzureChatOpenAI
+from langchain_openai import AzureChatOpenAI, ChatOpenAI
 
 # Local package: intugle
 try:
@@ -38,7 +30,7 @@ except Exception:
     st.error("`intugle` package not available. Please install and restart the app.")
     st.stop()
 from helper import *
-from helper import _on_select_change, _on_name_edit, _csv_path_for, _normalized_table_name
+from helper import _csv_path_for, _normalized_table_name, _on_name_edit, _on_select_change
 
 # -----------------------
 # Config & constants
@@ -110,10 +102,12 @@ MAX_MB: int = 25
 ACCEPTED_TYPES = (".csv", ".xls", ".xlsx")
 PREVIEW_ROWS: int = 100
 
+
 # ---- Session-scoped base directory helpers ----
 def _timestamp_folder() -> str:
     """Return a filesystem-safe timestamp like '2025-10-19_14-32-07'."""
     return datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
 
 def ensure_base_dir() -> Path:
     """
@@ -130,10 +124,12 @@ def ensure_base_dir() -> Path:
         st.toast(f"Base dir: {base}")
     return base
 
+
 def relpath(path: str | Path) -> Path:
     """Build a path under the session's base dir."""
     base = ensure_base_dir()
     return base / Path(path)
+
 
 # ---- Initialize I/O directories ----
 def init_io_dirs() -> Dict[str, Path]:
@@ -159,6 +155,7 @@ def init_io_dirs() -> Dict[str, Path]:
         pass
 
     return paths
+
 
 # ---- Call once near top of script ----
 dirs = init_io_dirs()
@@ -195,10 +192,12 @@ DEFAULT_STATE = {
     "just_uploaded_rerun": False,
 }
 
+
 def init_session_state(defaults: dict) -> None:
     """Idempotently seed st.session_state with defaults."""
     for k, v in defaults.items():
         st.session_state.setdefault(k, v)
+
 
 # Initialize once at top of file
 init_session_state(DEFAULT_STATE)
@@ -264,13 +263,11 @@ upload_expander: bool = (st.session_state["uploader_key"] == 0)
 #     upload_expander = False
 
 
-
-
 # -----------------------
 # UI: Header
 # -----------------------
 
-### download image
+# download image
 # if upload_expander:
 #   # url = "https://commons.wikimedia.org/wiki/File:Intugle_icon.png"
 #   url = "https://commons.wikimedia.org/wiki/File:Intugle_main_logo.png"
@@ -278,7 +275,7 @@ upload_expander: bool = (st.session_state["uploader_key"] == 0)
 #   print(f"Image downloaded to: {path}")
 
 # Layout: logo + title side by side
-_ , tcol1, tcol2 = st.columns([1, 2, 0.5])
+_, tcol1, tcol2 = st.columns([1, 2, 0.5])
 
 with tcol1:
     st.title(":violet[Intugle Semantic Modeler]")
@@ -291,10 +288,8 @@ with tcol2:
 st.logo(
     # 'https://commons.wikimedia.org/wiki/File:Intugle_icon.png',
     "intugle_assets/Intugle_main_logo.png",
-    size = 'large'
+    size='large'
 )
-
-
 
 
 # =========================
@@ -302,18 +297,18 @@ st.logo(
 # =========================
 
 # ---- your booleans
-upload_done    = bool(st.session_state["seen_files"])
-creds_done     = bool(st.session_state["creds_saved"])
-freeze_done    = st.session_state.get("route") == "semantic_all"
+upload_done = bool(st.session_state["seen_files"])
+creds_done = bool(st.session_state["creds_saved"])
+freeze_done = st.session_state.get("route") == "semantic_all"
 profiling_done = bool(st.session_state["data_profiling_glossary"])
-links_done     = bool(st.session_state["semantic_model_done"])
+links_done = bool(st.session_state["semantic_model_done"])
 
 # ---- stages in order
 stages = [
-    ("Upload Files",                 upload_done),
-    ("LLM Credentials",              creds_done),
-    ("Rename Tables & Columns",      freeze_done),
-    ("Profiling & Glossary",         profiling_done),
+    ("Upload Files", upload_done),
+    ("LLM Credentials", creds_done),
+    ("Rename Tables & Columns", freeze_done),
+    ("Profiling & Glossary", profiling_done),
     ("Semantic Link Identification", links_done),
 ]
 
@@ -363,7 +358,7 @@ with st.sidebar:
 
     st.markdown("".join(html_parts) + "</div>", unsafe_allow_html=True)
     st.divider()
-#------------------------------------------
+# ------------------------------------------
 # st.title("Intugle Semantic Modeler")
 
 
@@ -421,7 +416,6 @@ if st.session_state["route"] == "home":
     accept_multiple_files=True,
     key=f"uploader_{st.session_state['uploader_key']}",)
 
-
     if uploaded_files:
         st.caption(f"Received {len(uploaded_files)} file(s).")
 
@@ -470,7 +464,7 @@ if st.session_state["route"] == "home":
                 df = standardize_columns(df)
 
             # # Initial table name (no extra counters unless a different file collides)
-            input_path = INPUT_DIR / safe_filename(clean_table_name(upl.name), '.csv' )
+            input_path = INPUT_DIR / safe_filename(clean_table_name(upl.name), '.csv')
             try:
                 if (not input_path.exists()) or (hashlib.sha1(input_path.read_bytes()).hexdigest() != sha):
                     input_path.write_bytes(file_bytes)
@@ -506,7 +500,6 @@ if st.session_state["route"] == "home":
                 "modified_path": str(modified_path),   # <— new
             }
 
-
             # Save table and fingerprint
             with st.spinner(f"Saving `{unique_default}`..."):
                 add_table_to_state(unique_default, df, meta)
@@ -532,7 +525,7 @@ if st.session_state["route"] == "home":
         st.toast("Processing completed for all eligible files.")
         # Clear the uploader selection and force exactly one rerun
         st.session_state["uploader_key"] += 1          # resets file_uploader
-        st.session_state["just_uploaded_rerun"] = True # one-shot marker
+        st.session_state["just_uploaded_rerun"] = True  # one-shot marker
         st.rerun()
 
   # -----------------------
@@ -545,10 +538,8 @@ if st.session_state["route"] == "home":
           if row.get("source_file") == info.get("source_file") and row.get("status", "").startswith("✅"):
               row["table_name"] = latest_name
 
-
   if st.session_state.get("tables") or st.session_state.get("ingest_log"):
       with st.expander("1) Review Tables", expanded=False):
-
 
         # Summary now shows status/details only; no inline actions
         if st.session_state.get("ingest_log"):
@@ -578,7 +569,7 @@ if st.session_state["route"] == "home":
       st.toast("""
       **Welcome to Intugle!**
       We’re thrilled to have you here.
-      """,icon='🕸️')
+      """, icon='🕸️')
 
   # -----------------------
   # Modify table & columns (MAIN PAGE, under the review table)
@@ -603,7 +594,7 @@ if st.session_state["route"] == "home":
       has_tables = bool(st.session_state.get("tables"))
       tnames = sorted(st.session_state["tables"].keys()) if has_tables else []
       options = tnames if has_tables else ["— no tables loaded —"]
-      col1,col2,col3,col4  = st.columns([2,0.5,2,2])
+      col1, col2, col3, col4 = st.columns([2, 0.5, 2, 2])
       with col1:
           sel = st.selectbox(
               "Select table to modify",
@@ -632,7 +623,7 @@ if st.session_state["route"] == "home":
           # st.markdown("<div style='text-align: center; font-size: 24px;'>➡️</div>", unsafe_allow_html=True)
           st.image(
             "https://upload.wikimedia.org/wikipedia/commons/c/ca/Eo_circle_purple_arrow-right.svg",
-            width=80, # Manually Adjust the width of the image as per requirement
+            width=80,  # Manually Adjust the width of the image as per requirement
         )
 
       with col3:
@@ -642,20 +633,19 @@ if st.session_state["route"] == "home":
               "Rename table (optional)",
               # key="main_modify_final_name",
               # value=st.session_state.get("main_modify_final_name", sel) or sel,
-              value = sel,
+              value=sel,
               on_change=_on_name_edit,
               help="Defaults to the selected table name. Will be normalized to lowercase with underscores."
           )
 
-
       # Current paths
       current_name = sel
-      current_path = _csv_path_for(current_name,MODIFIED_DIR)
+      current_path = _csv_path_for(current_name, MODIFIED_DIR)
 
       # -------------------------------
       # ACTIONS
       # -------------------------------
-      __,_, act_col1, ___, = st.columns([2,0.5,2,2])
+      __, _, act_col1, ___, = st.columns([2, 0.5, 2, 2])
 
       # 1) RENAME TABLE (and CSV file) — no column changes here
       with act_col1:
@@ -668,7 +658,7 @@ if st.session_state["route"] == "home":
             if new_name == current_name:
                 st.toast("Table name unchanged.")
             else:
-                new_path = _csv_path_for(new_name,MODIFIED_DIR)
+                new_path = _csv_path_for(new_name, MODIFIED_DIR)
 
                 # Move/rename the CSV on disk (if it exists). If it doesn't, create from in-memory df.
                 try:
@@ -704,8 +694,6 @@ if st.session_state["route"] == "home":
                 st.success(f"Renamed **{current_name}** → **{new_name}** and updated CSV file.")
                 st.rerun()
 
-
-
       # Column editor (unchanged)
       st.markdown("**Edit or ignore columns**")
       editor_src = {
@@ -727,13 +715,12 @@ if st.session_state["route"] == "home":
       # ---------- Editor UI already created above ----------
       # sel, df_current, orig_cols, final_name_raw, edit_df exist
 
-
       # 2) FREEZE COLUMN NAMES — apply edits/ignores & save back to SAME file name (CSV overwrite)
       # with act_col2:
       if st.button("Freeze column names", type="primary", width="content", key="btn_freeze_cols"):
           # Pull edits
           new_names_input = list(edit_df["new_column_name"])
-          ignored_flags   = list(edit_df["ignore_column"])
+          ignored_flags = list(edit_df["ignore_column"])
 
           # Validate proposed names
           errs = validate_column_names(orig_cols, new_names_input, ignored_flags)
@@ -743,9 +730,9 @@ if st.session_state["route"] == "home":
               st.stop()
 
           # Build modified DataFrame
-          keep_idx   = [i for i, ig in enumerate(ignored_flags) if not ig]
-          kept_cols  = [orig_cols[i] for i in keep_idx]
-          new_names  = [normalize_col_name(new_names_input[i]) for i in keep_idx]
+          keep_idx = [i for i, ig in enumerate(ignored_flags) if not ig]
+          kept_cols = [orig_cols[i] for i in keep_idx]
+          new_names = [normalize_col_name(new_names_input[i]) for i in keep_idx]
 
           df_mod = df_current.loc[:, kept_cols].copy()
           df_mod.columns = new_names
@@ -754,7 +741,7 @@ if st.session_state["route"] == "home":
           # live_name = st.session_state["main_modify_select"]
           live_name = final_name_raw
           st.info(live_name)
-          live_path = _csv_path_for(live_name,MODIFIED_DIR)
+          live_path = _csv_path_for(live_name, MODIFIED_DIR)
 
           # Save back to the SAME file (overwrite)
           try:
@@ -771,9 +758,6 @@ if st.session_state["route"] == "home":
 
           st.success(f"Column names frozen and saved to `{live_path.name}`.")
           st.rerun()
-
-
-        
 
 
 # -----------------------
@@ -795,8 +779,6 @@ with st.sidebar:
             # st.write(f"**OPENAI_API_KEY:** {mask(get_secret('OPENAI_API_KEY'))}")
             # pip install -U langchain-openai
 
-            
-            
             llm_temp = ChatOpenAI(
                 model=os.environ["LLM_PROVIDER"],   # pick your OpenAI model
                 temperature=0,
@@ -838,15 +820,13 @@ with st.sidebar:
             # st.write(f'OPENAI_API_VERSION: {os.environ["OPENAI_API_VERSION"]}')
             # st.write(f'AZURE_OPENAI_ENDPOINT: {os.environ["AZURE_OPENAI_ENDPOINT"]}')
 
-
         elif choice == "gemini":
             # st.write(f"**Model:** `{cfg.get('model','')}`")
             # Common env names for Gemini: GEMINI_API_KEY or GOOGLE_API_KEY
             # st.write(f"**GEMINI/GOOGLE_API_KEY:** {mask(get_secret('GEMINI_API_KEY') or get_secret('GOOGLE_API_KEY'))}")
             
-
             llm_temp = ChatGoogleGenerativeAI(
-                model= os.environ["LLM_PROVIDER"],
+                model=os.environ["LLM_PROVIDER"],
                 temperature=0,
                 # google_api_key="...",     # or set env var: GOOGLE_API_KEY=...
             )
@@ -865,7 +845,7 @@ with st.sidebar:
         #     st.stop()
 
     # Otherwise: render the provider picker + provider-specific fields
-    with st.expander("LLM Settings",expanded=st.session_state.creds_saved==False ):
+    with st.expander("LLM Settings", expanded=not st.session_state.creds_saved):
       provider = st.selectbox(
           "Choose LLM provider",
           options=["openai", "azure-openai", "google_genai"],
@@ -891,7 +871,7 @@ with st.sidebar:
               placeholder="sk-********************************"
           )
 
-          if st.button("Save provider settings",type="primary", width="stretch"):
+          if st.button("Save provider settings", type="primary", width="stretch"):
               if not api_key or len(api_key) < 20:
                   st.error("Please enter a valid OpenAI API key.")
               else:
@@ -922,7 +902,7 @@ with st.sidebar:
           api_version = st.text_input("API version", value=pre_version, placeholder="2024-06-01")
           api_key = st.text_input("Azure OpenAI API key", type="password", value=pre_key, placeholder="****************")
 
-          if st.button("Save provider settings" ,type="primary", width="stretch"):
+          if st.button("Save provider settings", type="primary", width="stretch"):
               errs = []
               if not endpoint.startswith("http"):
                   errs.append("Endpoint must start with http/https.")
@@ -949,9 +929,9 @@ with st.sidebar:
                   # })
                   os.environ["LLM_PROVIDER"] = str(llm_provider.strip())
                   settings.LLM_PROVIDER = str(llm_provider.strip())
-                  os.environ["AZURE_OPENAI_API_KEY"]=str(api_key.strip())
-                  os.environ["OPENAI_API_VERSION"]=str(api_version.strip())
-                  os.environ["AZURE_OPENAI_ENDPOINT"]=str(endpoint.strip())
+                  os.environ["AZURE_OPENAI_API_KEY"] = str(api_key.strip())
+                  os.environ["OPENAI_API_VERSION"] = str(api_version.strip())
+                  os.environ["AZURE_OPENAI_ENDPOINT"] = str(endpoint.strip())
 
                   st.session_state.creds_saved = True
                   st.success("Azure OpenAI settings saved.")
@@ -968,7 +948,7 @@ with st.sidebar:
           )
           api_key = st.text_input("Gemini API key", type="password", value=pre_key, placeholder="********************************")
 
-          if st.button("Save provider settings" , type="primary", width="stretch"):
+          if st.button("Save provider settings", type="primary", width="stretch"):
               if not api_key or len(api_key) < 20:
                   st.error("Please enter a valid Gemini API key.")
               else:
@@ -1013,7 +993,6 @@ with st.sidebar:
       st.rerun()
 
 
-
 # ----------------------- ----------------------- ----------------------- ----------------------- -----------------------
 # 5) Create a Semantic Model (uses all files in modified_input/)
 # ----------------------- ----------------------- ----------------------- ----------------------- -----------------------
@@ -1024,12 +1003,13 @@ with st.sidebar:
 def _list_modified_files():
     return sorted(list(MODIFIED_DIR.glob("*.csv")) + list(MODIFIED_DIR.glob("*.xlsx")))
 
+
 def _source_type_from_suffix(p: Path) -> str:
     return "csv" if p.suffix.lower() == ".csv" else "excel"
 
 
 # Find modified files
-modified_csv  = list(MODIFIED_DIR.glob("*.csv"))
+modified_csv = list(MODIFIED_DIR.glob("*.csv"))
 modified_xlsx = list(MODIFIED_DIR.glob("*.xlsx"))
 modified_files = modified_csv + modified_xlsx
 n_files = len(modified_files)
@@ -1039,8 +1019,6 @@ ok, err = llm_ready_check()
 if not ok:
     st.error(err)
     st.stop()
-
-
 
 
 if n_files == 0:
@@ -1092,7 +1070,7 @@ if st.session_state.get("route") == "semantic_all":
   st.header("3) 🧠 Build Semantic Model")
   # 2) Define domain BEFORE using it
   st.markdown("#### Domain")
-  dcol1, dcol2 = st.columns([1,1])
+  dcol1, dcol2 = st.columns([1, 1])
   with dcol1:
       # show whatever is currently saved as the default in the box
       domain = st.text_input(
@@ -1124,7 +1102,6 @@ if st.session_state.get("route") == "semantic_all":
 
   st.caption(f"Semantic Model will be built for **{len(files)}** table(s).")
 
-
   gdf_iter_ph = st.empty()
   # optional: keep a cumulative copy if you still want it elsewhere
   st.session_state.setdefault("semantic_gdf_all", None)
@@ -1133,10 +1110,10 @@ if st.session_state.get("route") == "semantic_all":
   my_bar = st.progress(0, text="Preparing data for semantic model creation. Please wait.")
 
   for idx, p in enumerate(files, start=1):  # start=2 because first file already processed
-      if idx ==1:
+      if idx == 1:
         # Initialize with the first file
         first = files[0]
-        data_sources = { first.stem: {"path": str(first), "type": _source_type_from_suffix(first)} }
+        data_sources = {first.stem: {"path": str(first), "type": _source_type_from_suffix(first)}}
 
         with st.spinner(f"Initializing Semantic Model with `{first.name}` …"):
             sm = SemanticModel(data_input=data_sources, domain=domain.strip())
@@ -1161,12 +1138,11 @@ if st.session_state.get("route") == "semantic_all":
       #     st.write(f"Generating glossary for `{ds_name}` …")
       #     sm.generate_glossary()
       percent_complete = (idx / total)
-      my_bar.progress(percent_complete , text=f"Preparing data for semantic model creation {round(percent_complete*100)}%. Please wait.")
+      my_bar.progress(percent_complete, text=f"Preparing data for semantic model creation {round(percent_complete * 100)}%. Please wait.")
 
       try:
           profiling_df = sm.profiling_df.copy()
           glossary_df = sm.glossary_df.copy()
-
 
           gdf_this = pd.merge(
               glossary_df,
@@ -1182,20 +1158,18 @@ if st.session_state.get("route") == "semantic_all":
               st.toast(f"##### ✅ Glossary for `{ds_name}` ({idx}/{total})")
               # add title to the table
               st.markdown(f"### Glossary & Profiling details for `{idx}` tables")
-              st.dataframe(gdf_this[['table_name','column_name', 'datatype_l1', 'datatype_l2', 'count','null_count','distinct_count',
-                                      'uniqueness', 'completeness', 'business_glossary', 'business_tags','sample_data']],
+              st.dataframe(gdf_this[['table_name', 'column_name', 'datatype_l1', 'datatype_l2', 'count', 'null_count', 'distinct_count',
+                                      'uniqueness', 'completeness', 'business_glossary', 'business_tags', 'sample_data']],
                             hide_index=True, width="stretch")
               st.session_state["sm"] = sm
-
 
       except Exception as e:
           st.warning(f"Could not render glossary view for `{ds_name}`: {e}")
 
   st.success("Semantic model profiling & glossary generation completed for all tables.")
-  if st.session_state["data_profiling_glossary"] == False:
+  if not st.session_state["data_profiling_glossary"]:
       st.session_state["data_profiling_glossary"] = True
       st.rerun()
-
 
   # Link prediction and back button (unchanged)
   st.divider()
@@ -1228,7 +1202,6 @@ if st.session_state.get("route") == "semantic_all":
       #         # Now you can use all the methods of the LinkPredictor
       #         links_list = predictor_instance.links
       #     st.success("Link prediction completed.")
-
 
       #     try:
       #         # ---------- usage ----------

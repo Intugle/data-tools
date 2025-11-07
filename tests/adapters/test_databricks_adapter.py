@@ -52,10 +52,19 @@ class TestDatabricksAdapterContract:
             'check_data',
             'get_details',
         ]
+        
+        required_properties = [
+            'source_name',
+            'database',
+            'schema'
+        ]
 
         for method in required_methods:
             assert hasattr(mock_adapter, method), f"Missing method: {method}"
             assert callable(getattr(mock_adapter, method)), f"{method} is not callable"
+
+        for propery in required_properties:
+            assert hasattr(mock_adapter, propery), f"Missing property: {propery}"
 
     def test_inherits_from_adapter(self, mock_adapter):
         """Verify DatabricksAdapter inherits from Adapter base class."""
@@ -100,6 +109,7 @@ class TestDatabricksSpecificBehavior:
             self.connection = MagicMock()
             self.catalog = "test_catalog"
             self.schema = "test_schema"
+            self.source_name = "databricks"
             self._initialized = True
 
         mocker.patch(
@@ -111,12 +121,16 @@ class TestDatabricksSpecificBehavior:
         DatabricksAdapter._initialized = False
         return DatabricksAdapter()
 
-    def test_catalog_and_schema_properties(self, mock_adapter):
-        """Verify adapter stores catalog and schema from connection."""
-        assert hasattr(mock_adapter, 'catalog')
+    def test_database_and_schema_properties(self, mock_adapter):
+        """Verify adapter stores database and schema from connection."""
+        assert hasattr(mock_adapter, 'database')
         assert hasattr(mock_adapter, 'schema')
-        assert mock_adapter.catalog == "test_catalog"
+        assert hasattr(mock_adapter, 'source_name')
+        assert mock_adapter.database == "test_catalog"
         assert mock_adapter.schema == "test_schema"
+        assert mock_adapter.source_name == "databricks"
+        assert hasattr(mock_adapter, 'catalog')
+        assert mock_adapter.catalog == "test_catalog"
 
     def test_check_data_validates_databricks_config(self):
         """Test that check_data properly validates DatabricksConfig."""

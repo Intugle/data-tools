@@ -1,3 +1,5 @@
+from typing import Literal
+
 from intugle.common.schema import SchemaBase
 
 
@@ -14,4 +16,4 @@ class SnowflakeConnectionConfig(SchemaBase):
 
 class SnowflakeConfig(SchemaBase):
     identifier: str
-    type: str = "snowflake"
+    type: Literal["snowflake"] = "snowflake"
