@@ -1,7 +1,7 @@
 import asyncio
 import threading
 import time
-from queue import Queue
+
 from typing import TYPE_CHECKING, Any, Coroutine, Optional
 
 import numpy as np

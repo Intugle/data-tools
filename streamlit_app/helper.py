@@ -3,31 +3,20 @@
 # Import Packages
 # -----------------------
 # Standard library
-import hashlib
 import io
 import os
 import re
-import shutil
-import time
-import uuid
 import zipfile
+
 from dataclasses import asdict, is_dataclass
-from datetime import datetime
 from pathlib import Path
-from typing import Dict, Mapping, Optional, Tuple, Literal
-from typing import Any, Iterable, Mapping, Sequence
-from urllib.parse import unquote, urlparse
+from typing import Any, Dict, Iterable, Mapping, Optional, Sequence, Tuple
 
 # Third-party
-import matplotlib.pyplot as plt
 import networkx as nx
 import pandas as pd
 import plotly.graph_objects as go
-import requests
 import streamlit as st
-from graphviz import Digraph
-
-
 
 # -----------------------
 # Helpers
@@ -104,7 +93,7 @@ from graphviz import Digraph
 # # --- open dialog on first load
 # open_email_dialog()
 
-def build_yaml_zip(asset_dir: str ) -> tuple[bytes, int]:
+def build_yaml_zip(asset_dir: str) -> tuple[bytes, int]:
     """
     Create an in-memory ZIP archive containing all .yml/.yaml files under `asset_dir`.
 
@@ -532,6 +521,7 @@ def standardize_columns(df: pd.DataFrame) -> pd.DataFrame:
 
 # ------------------------------ File → DataFrame ------------------------------
 
+
 def read_file_to_df(uploaded_file) -> Tuple[pd.DataFrame, str]:
     """
     Read an uploaded CSV/XLS/XLSX into a DataFrame.
@@ -706,6 +696,7 @@ def _get_secret_env(name: str) -> str | None:
 
 # ------------------------------ Name helpers ------------------------------
 
+
 def _normalized_table_name(raw: str) -> str:
     """
     Normalize table names using the strongest available normalizer.
@@ -716,7 +707,7 @@ def _normalized_table_name(raw: str) -> str:
     return normalize_col_name(raw)          # type: ignore[name-defined]
 
 
-def _csv_path_for(name: str,MODIFIED_DIR) -> Path:
+def _csv_path_for(name: str, MODIFIED_DIR) -> Path:
     """
     Return the output CSV path for a given table name within MODIFIED_DIR.
     Requires `MODIFIED_DIR` and `safe_filename` to be defined globally.
@@ -774,7 +765,7 @@ def llm_ready_check() -> tuple[bool, str]:
             return False, "Azure OpenAI config missing: " + ", ".join(missing) + ". Set them in the sidebar."
         return True, ""
 
-    if provider in {"gemini", "google"}:
+    if provider in {"google_genai", "google"}:
         key = _get_secret_env("GEMINI_API_KEY") or _get_secret_env("GOOGLE_API_KEY")  # type: ignore[name-defined]
         if not key:
             return False, "Gemini key missing. Please set **GEMINI_API_KEY** (or GOOGLE_API_KEY) in the sidebar."
@@ -835,6 +826,7 @@ def predicted_links_to_df(links: Sequence[Any]) -> pd.DataFrame:
     return df
 
 # ---------- new: plotly network (tables as nodes) ----------
+
 
 def plotly_table_graph(
     df: pd.DataFrame,
@@ -966,7 +958,7 @@ def plotly_table_graph(
             if len(data["labels"]) == 1:
                 edge_label_text.append(data["labels"][0])
             else:
-                edge_label_text.append(f"{data['labels'][0]} (+{len(data['labels'])-1} more)")
+                edge_label_text.append(f"{data['labels'][0]} (+{len(data['labels']) - 1} more)")
 
         edge_traces.append(
             go.Scatter(
@@ -1004,7 +996,7 @@ def plotly_table_graph(
             if len(data["labels"]) == 1:
                 edge_label_text.append(data["labels"][0])
             else:
-                edge_label_text.append(f"{data['labels'][0]} (+{len(data['labels'])-1} more)")
+                edge_label_text.append(f"{data['labels'][0]} (+{len(data['labels']) - 1} more)")
 
     # Edge labels as a single text layer
     edge_label_trace = go.Scatter(
