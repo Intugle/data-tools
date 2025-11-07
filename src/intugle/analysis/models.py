@@ -47,7 +47,8 @@ class DataSet:
 
         # A dictionary to store the results of each analysis step
         self.source_table_model: SourceTables = SourceTables(name=name, description="")
-        self.columns: Dict[str, Column] = {}  # A convenience map for quick column lookup
+        # A convenience map for quick column lookup
+        self.columns: Dict[str, Column] = {}
 
         # Check if a YAML file exists and load it
         file_path = os.path.join(settings.PROJECT_BASE, f"{self.name}.yml")
@@ -56,6 +57,24 @@ class DataSet:
             self.load_from_yaml(file_path)
 
         self.load()
+
+    # It checks if Data isn't empty and displays the name and the data
+    def __str__(self) -> str:
+        """Human-Friendly summary"""
+        data_str = str(self.data) if self.data is not None else "No Data"
+        return (
+            f"DataSet(name='{self.name}', "
+            f"data={data_str})"
+        )
+
+    # Avoids errors if id isn't present
+    def __repr__(self) -> str:
+        """Developer-friendly"""
+        return (
+            f"DataSet(name={self.name!r},"
+            f"id={getattr(self, 'id', None)!r}, "
+            f"data={self.data!r})"
+        )
 
     def _is_yaml_stale(self, yaml_data: dict) -> bool:
         """Check if the YAML data is stale by comparing source modification times."""
@@ -156,7 +175,7 @@ class DataSet:
         records = []
         for column in self.source_table_model.columns:
             records.append(
-                {"table_name": self.name, "column_name": column.name, "values": column.profiling_metrics.dtype_sample}
+                {"table_name": self.name, "column_name": column.name,"values": column.profiling_metrics.dtype_sample}
             )
 
         l1_df = pd.DataFrame(records)

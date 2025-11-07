@@ -195,4 +195,4 @@ def can_handle_pandas(data: Any) -> bool:
 
 
 def register(factory: AdapterFactory):
-    factory.register("pandas", can_handle_pandas, PandasAdapter)
+    factory.register("pandas", can_handle_pandas, PandasAdapter, pd.DataFrame)

@@ -1,16 +1,29 @@
 from enum import Enum
-from typing import Any, List, Optional
+from typing import Any, List, Optional, TYPE_CHECKING
 
 import pandas as pd
 
 from pydantic import BaseModel, Field
 
-from intugle.adapters.types.databricks.models import DatabricksConfig
-from intugle.adapters.types.duckdb.models import DuckdbConfig
-from intugle.adapters.types.snowflake.models import SnowflakeConfig
+# Dynamic type registration - DataSetData is now built from registered adapters
+# This avoids hardcoding specific config types
+def get_dataset_data_type() -> type:
+    """
+    Returns the dynamically constructed DataSetData Union type.
+    This function retrieves the type from AdapterFactory after all adapters have been registered.
+    """
+    from intugle.adapters.factory import AdapterFactory
+    return AdapterFactory.get_dataset_data_type()
 
-# FIXME load dynamically
-DataSetData = pd.DataFrame | DuckdbConfig | SnowflakeConfig | DatabricksConfig
+# For type hints that need DataSetData before runtime, we use a forward reference
+if TYPE_CHECKING:
+    from intugle.adapters.types.databricks.models import DatabricksConfig
+    from intugle.adapters.types.duckdb.models import DuckdbConfig
+    from intugle.adapters.types.snowflake.models import SnowflakeConfig
+    DataSetData = pd.DataFrame | DuckdbConfig | SnowflakeConfig | DatabricksConfig
+else:
+    # At runtime, this is dynamically determined
+    DataSetData = Any
 
 
 class ProfilingOutput(BaseModel):

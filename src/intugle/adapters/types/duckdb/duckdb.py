@@ -265,4 +265,4 @@ def can_handle_pandas(df: Any) -> bool:
 
 
 def register(factory: AdapterFactory):
-    factory.register("duckdb", can_handle_pandas, DuckdbAdapter)
+    factory.register("duckdb", can_handle_pandas, DuckdbAdapter, DuckdbConfig)
