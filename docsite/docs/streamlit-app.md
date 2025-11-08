@@ -25,8 +25,8 @@ Follow these instructions to set up and run the application on your local machin
 
 ### Prerequisites
 
-- Python 3.8+
-- `uv` (for `uvx` command)
+- Python 3.10+
+- `uv` (Optional: for `uvx` command)
 
 ### 1. Installation
 
