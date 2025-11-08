@@ -175,6 +175,7 @@ def safe_filename(name: str, ext: str) -> str:
     str
         A sanitized filename like 'my_table.csv'.
     """
+    name = os.path.basename(name) # Sanitize against path traversal
     base = re.sub(r"[^A-Za-z0-9_.-]+", "_", name).strip("._")
     if not base:
         base = "table"
