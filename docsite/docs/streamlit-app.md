@@ -64,3 +64,9 @@ The application guides you through a simple, multi-step process, which is tracke
 4.  **Build Semantic Model**: After preparing your data, click **"Create Semantic Model"**. You will be prompted to provide a "domain" (e.g., *Healthcare*, *Manufacturing*) to give the LLM context. The app will then profile the data and generate a business glossary for each table.
 5.  **Predict Links**: Once profiling is complete, click **"Run Link Prediction"** to discover the relationships between your datasets.
 6.  **Explore & Download**: View the results as an interactive graph or a detailed table. You can download the underlying YAML configuration files from the sidebar at any time.
+
+## Running on Google Colab
+
+To run the Streamlit app in a cloud environment like Google Colab, which requires exposing the server via a public URL, please refer to our quickstart notebook:
+
+-   [**Streamlit Quickstart Notebook**](https://github.com/Intugle/data-tools/blob/main/notebooks/quickstart_streamlit.ipynb)
