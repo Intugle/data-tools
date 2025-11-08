@@ -290,7 +290,7 @@ You can launch the Streamlit application using the `intugle-mcp` command or `uvx
 ```bash
 intugle-streamlit
 # Or using uvx
-uvx --from intugle intugle-streamlit
+uvx --from intugle[streamlit] intugle-streamlit
 ```
 
 Open the URL provided in your terminal (usually `http://localhost:8501`) to access the application. For more details, refer to the [Streamlit App documentation](https://intugle.github.io/data-tools/docs/streamlit-app).

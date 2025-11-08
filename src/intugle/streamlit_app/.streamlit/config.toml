@@ -6,11 +6,3 @@ backgroundColor = "#ffffff"
 secondaryBackgroundColor = "#F7F5FF"
 textColor = "#111827"
 font = "sans serif"
-
-[smtp]
-host = "smtp.gmail.com"
-port = 465
-username = "hello@intugle.ai"
-password = "1234"
-from_email = "hello@intugle.ai"
-from_name = "Intugle Bot"
