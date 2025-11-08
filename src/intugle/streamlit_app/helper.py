@@ -175,6 +175,7 @@ def safe_filename(name: str, ext: str) -> str:
     str
         A sanitized filename like 'my_table.csv'.
     """
+    name = os.path.basename(name)  # Sanitize against path traversal
     base = re.sub(r"[^A-Za-z0-9_.-]+", "_", name).strip("._")
     if not base:
         base = "table"
@@ -904,7 +905,8 @@ def plotly_table_graph(
     node_x, node_y, node_text, node_deg, node_labels = [], [], [], [], []
     for n in G.nodes():
         x, y = pos[n]
-        node_x.append(x); node_y.append(y)
+        node_x.append(x)
+        node_y.append(y)
         indeg = G.in_degree(n)
         outdeg = G.out_degree(n)
         node_text.append(f"<b>{n}</b><br>in: {indeg} • out: {outdeg}")
@@ -947,14 +949,16 @@ def plotly_table_graph(
         # Fast path: one trace with constant width (keeps things interactive for big graphs)
         edge_x, edge_y, edge_hover_texts = [], [], []
         for u, v, data in edges_list:
-            x0, y0 = pos[u]; x1, y1 = pos[v]
+            x0, y0 = pos[u]
+            x1, y1 = pos[v]
             edge_x += [x0, x1, None]
             edge_y += [y0, y1, None]
             edge_hover_texts.append(edge_hover(u, v, data))
 
             # midpoint label text
             mx, my = (x0 + x1) / 2, (y0 + y1) / 2
-            edge_label_x.append(mx); edge_label_y.append(my)
+            edge_label_x.append(mx)
+            edge_label_y.append(my)
             if len(data["labels"]) == 1:
                 edge_label_text.append(data["labels"][0])
             else:
@@ -974,7 +978,8 @@ def plotly_table_graph(
     else:
         # Accurate path: one trace per edge so we can vary width by mean accuracy
         for u, v, data in edges_list:
-            x0, y0 = pos[u]; x1, y1 = pos[v]
+            x0, y0 = pos[u]
+            x1, y1 = pos[v]
             acc_mean = sum(data["accs"]) / max(1, len(data["accs"]))
             width = max(edge_min_width, acc_mean * edge_width_scale)
 
@@ -992,7 +997,8 @@ def plotly_table_graph(
 
             # midpoint label
             mx, my = (x0 + x1) / 2, (y0 + y1) / 2
-            edge_label_x.append(mx); edge_label_y.append(my)
+            edge_label_x.append(mx)
+            edge_label_y.append(my)
             if len(data["labels"]) == 1:
                 edge_label_text.append(data["labels"][0])
             else:

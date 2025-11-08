@@ -1,9 +1,11 @@
+---
+sidebar_position: 8
+title: Streamlit App
+---
+
 # Intugle - Streamlit App
 
 This Streamlit application provides an interactive web interface for the `intugle` library. It allows users to upload their tabular data (CSV/Excel), configure a Large Language Model (LLM), and step through the process of building a semantic data model. The app profiles the data, generates a business glossary, identifies relationships between datasets, and visualizes the resulting semantic graph.
-
-<!-- ![App Screenshot](httpshttps://github.com/user-attachments/assets/d883018a-80c1-4e8b-9a3b-13303133204d) -->
-
 
 ## ✨ Features
 
@@ -23,26 +25,15 @@ Follow these instructions to set up and run the application on your local machin
 
 ### Prerequisites
 
-- Python 3.8+
-- A Python virtual environment tool (e.g., `venv`)
+- Python 3.10+
+- `uv` (Optional: for `uvx` command)
 
 ### 1. Installation
 
-First, clone the repository and navigate into the application directory. Then, create a virtual environment and install the required dependencies.
+To use the Streamlit app, install `intugle` with the `streamlit` extra:
 
 ```bash
-# Clone the repository (if you haven't already)
-# git clone https://github.com/Intugle/data-tools.git
-
-# Navigate to the Streamlit app directory
-cd data-tools/streamlit_app
-
-# Create and activate a virtual environment
-python -m venv .venv
-source .venv/bin/activate  # On Windows, use: .\.venv\Scripts\activate
-
-# Install the required packages
-pip install -r requirements.txt
+pip install intugle[streamlit]
 ```
 
 ### 2. Configuration
@@ -53,10 +44,12 @@ You can configure your LLM provider and API keys directly in the application's s
 
 ### 3. Running the App
 
-Once the installation is complete, you can run the app using the following command:
+You can launch the Streamlit application using the `intugle-streamlit` command or `uvx`:
 
 ```bash
-streamlit run main.py
+intugle-streamlit
+# Or using uvx
+uvx --from intugle intugle-streamlit
 ```
 
 Open the URL provided in your terminal (usually `http://localhost:8501`) to access the application.

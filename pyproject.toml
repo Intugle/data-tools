@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "intugle"
-version = "1.0.11"
+version = "1.0.12"
 authors = [
     { name="Intugle", email="hello@intugle.ai" },
 ]
@@ -69,6 +69,15 @@ postgres = [
     "sqlglot>=27.20.0",
 ]
 
+streamlit = [
+    "streamlit==1.50.0",
+    "pyngrok==7.4.0",
+    "python-dotenv==1.1.1",
+    "xlsxwriter==3.2.9",
+    "plotly",
+    "graphviz"
+]
+
 
 [project.urls]
 "Homepage" = "https://github.com/Intugle/data-tools"
@@ -76,7 +85,7 @@ postgres = [
 
 [project.scripts]
 intugle-mcp = "intugle.mcp.server:main"
-intugle-streamlit = "intugle.cli:export_data"
+intugle-streamlit = "intugle.cli:run_streamlit_app"
 
 [dependency-groups]
 test = [
@@ -111,7 +120,7 @@ src = ["src"]
 where = ["src"]
 
 [tool.setuptools.package-data]
-"intugle" = ["**/*.yaml", "**/*.txt", "**/*.pkl", "mcp/semantic_layer/prompts/*.md"]
+"intugle" = ["**/*.yaml", "**/*.txt", "**/*.pkl", "mcp/semantic_layer/prompts/*.md", "streamlit_app/**/*"]
 
 [tool.pytest.ini_options]
 markers = [
