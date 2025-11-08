@@ -275,6 +275,26 @@ For detailed instructions on setting up the server and connecting your favorite 
 
 <!-- mcp-name: io.github.intugle/intugle-vibe-mcp -->
 
+### Streamlit App
+
+The `intugle` library includes a Streamlit application that provides an interactive web interface for building and visualizing semantic data models.
+
+To use the Streamlit app, install `intugle` with the `streamlit` extra:
+
+```bash
+pip install intugle[streamlit]
+```
+
+You can launch the Streamlit application using the `intugle-mcp` command or `uvx`:
+
+```bash
+intugle-streamlit
+# Or using uvx
+uvx --from intugle intugle-streamlit
+```
+
+Open the URL provided in your terminal (usually `http://localhost:8501`) to access the application. For more details, refer to the [Streamlit App documentation](https://intugle.github.io/data-tools/docs/streamlit-app).
+
 ## Community
 
 Join our community to ask questions, share your projects, and connect with other users.
