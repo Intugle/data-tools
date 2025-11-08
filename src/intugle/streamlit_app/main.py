@@ -285,9 +285,10 @@ with tcol2:
   st.link_button("GitHub Repo", "https://intugle.github.io/data-tools/")
 
 
+logo_path = os.path.join(os.path.dirname(__file__), "intugle_assets", "Intugle_main_logo.png")
 st.logo(
     # 'https://commons.wikimedia.org/wiki/File:Intugle_icon.png',
-    "intugle_assets/Intugle_main_logo.png",
+    logo_path,
     size='large'
 )
 

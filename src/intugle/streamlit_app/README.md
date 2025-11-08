@@ -1,4 +1,4 @@
-# Intugle - Streamlit App
+w# Intugle - Streamlit App
 
 This Streamlit application provides an interactive web interface for the `intugle` library. It allows users to upload their tabular data (CSV/Excel), configure a Large Language Model (LLM), and step through the process of building a semantic data model. The app profiles the data, generates a business glossary, identifies relationships between datasets, and visualizes the resulting semantic graph.
 
