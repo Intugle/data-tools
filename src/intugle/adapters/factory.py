@@ -76,7 +76,7 @@ class AdapterFactory:
             return Any
         if len(cls.config_types) == 1:
             return cls.config_types[0]
-        return Union[tuple(cls.config_types)]  # type: ignore
+        return Union[tuple(cls.config_types)]  # noqa: UP007
 
     @classmethod
     def create(cls, df: Any) -> Adapter:

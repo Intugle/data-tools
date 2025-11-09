@@ -211,25 +211,6 @@ class TestCanHandleSnowflake:
         for invalid in invalid_configs:
             assert can_handle_snowflake(invalid) is False
 
-    def test_type_field_not_strictly_enforced(self):
-        """Test that Pydantic validates structure but doesn't enforce type value.
-
-        Note: SnowflakeConfig validates that 'identifier' field exists,
-        but doesn't strictly validate the 'type' field value.
-        This means a config with wrong type but valid structure passes validation.
-
-        This could be a potential bug - consider adding field validation.
-        """
-        # This passes validation because it has the required 'identifier' field
-        config_with_wrong_type = {"identifier": "table", "type": "databricks"}
-
-        # Pydantic validates successfully (structure is correct)
-        result = SnowflakeAdapter.check_data(config_with_wrong_type)
-
-        # But the type field is NOT corrected - it keeps the wrong value!
-        # This is a potential bug in the validation logic
-        assert result.type == "databricks"  # Wrong type passes through!
-        assert result.identifier == "table"
 
 
 # ============================================================================

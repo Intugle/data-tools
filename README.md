@@ -106,6 +106,7 @@ For a detailed, hands-on introduction to the project, please see our quickstart 
 | **Snowflake Horizon Catalog [ FMCG ]** | [`quickstart_fmcg_snowflake.ipynb`](notebooks/quickstart_fmcg_snowflake.ipynb) | Snowflake Notebook Only |
 | **Native Snowflake with Cortex Analyst [ Tech Manufacturing ]** | [`quickstart_native_snowflake.ipynb`](notebooks/quickstart_native_snowflake.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_native_snowflake.ipynb) |
 | **Native Databricks with AI/BI Genie [ Tech Manufacturing ]** | [`quickstart_native_databricks.ipynb`](notebooks/quickstart_native_databricks.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_native_databricks.ipynb) |
+| **Streamlit App**       | [`quickstart_streamlit.ipynb`](notebooks/quickstart_streamlit.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_streamlit.ipynb) |
 
 These datasets will take you through the following steps:
 
@@ -274,6 +275,28 @@ This enables AI agents to programmatically interact with your data context. This
 For detailed instructions on setting up the server and connecting your favorite client, please see our full [documentation](https://intugle.github.io/data-tools/docs/mcp-server).
 
 <!-- mcp-name: io.github.intugle/intugle-vibe-mcp -->
+
+### Streamlit App
+
+The `intugle` library includes a Streamlit application that provides an interactive web interface for building and visualizing semantic data models.
+
+To use the Streamlit app, install `intugle` with the `streamlit` extra:
+
+```bash
+pip install intugle[streamlit]
+```
+
+You can launch the Streamlit application using the `intugle-mcp` command or `uvx`:
+
+```bash
+intugle-streamlit
+# Or using uvx
+uvx --from intugle[streamlit] intugle-streamlit
+```
+
+Open the URL provided in your terminal (usually `http://localhost:8501`) to access the application. For more details, refer to the [Streamlit App documentation](https://intugle.github.io/data-tools/docs/streamlit-app).
+
+To run the app in a cloud environment like Google Colab, please refer to our [Streamlit quickstart notebook](notebooks/quickstart_streamlit.ipynb).
 
 ## Community
 
