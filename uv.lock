@@ -276,6 +276,36 @@ wheels = [
 ]
 
 [[package]]
+name = "azure-core"
+version = "1.36.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "requests" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/0a/c4/d4ff3bc3ddf155156460bff340bbe9533f99fac54ddea165f35a8619f162/azure_core-1.36.0.tar.gz", hash = "sha256:22e5605e6d0bf1d229726af56d9e92bc37b6e726b141a18be0b4d424131741b7", size = 351139, upload-time = "2025-10-15T00:33:49.083Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b1/3c/b90d5afc2e47c4a45f4bba00f9c3193b0417fad5ad3bb07869f9d12832aa/azure_core-1.36.0-py3-none-any.whl", hash = "sha256:fee9923a3a753e94a259563429f3644aaf05c486d45b1215d098115102d91d3b", size = 213302, upload-time = "2025-10-15T00:33:51.058Z" },
+]
+
+[[package]]
+name = "azure-identity"
+version = "1.25.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "azure-core" },
+    { name = "cryptography", version = "45.0.7", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.14' and platform_python_implementation != 'PyPy'" },
+    { name = "cryptography", version = "46.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.14' or platform_python_implementation == 'PyPy'" },
+    { name = "msal" },
+    { name = "msal-extensions" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/06/8d/1a6c41c28a37eab26dc85ab6c86992c700cd3f4a597d9ed174b0e9c69489/azure_identity-1.25.1.tar.gz", hash = "sha256:87ca8328883de6036443e1c37b40e8dc8fb74898240f61071e09d2e369361456", size = 279826, upload-time = "2025-10-06T20:30:02.194Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/83/7b/5652771e24fff12da9dde4c20ecf4682e606b104f26419d139758cc935a6/azure_identity-1.25.1-py3-none-any.whl", hash = "sha256:e9edd720af03dff020223cd269fa3a61e8f345ea75443858273bcb44844ab651", size = 191317, upload-time = "2025-10-06T20:30:04.251Z" },
+]
+
+[[package]]
 name = "backports-asyncio-runner"
 version = "1.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1796,6 +1826,10 @@ snowflake = [
     { name = "snowflake-snowpark-python", extra = ["pandas"] },
     { name = "sqlglot" },
 ]
+sqlserver = [
+    { name = "mssql-python" },
+    { name = "sqlglot" },
+]
 streamlit = [
     { name = "graphviz" },
     { name = "plotly" },
@@ -1810,6 +1844,7 @@ dev = [
     { name = "asyncpg" },
     { name = "databricks-sql-connector" },
     { name = "ipykernel" },
+    { name = "mssql-python" },
     { name = "pysonar" },
     { name = "pyspark" },
     { name = "pytest" },
@@ -1849,6 +1884,7 @@ requires-dist = [
     { name = "langgraph", specifier = ">=0.6.4" },
     { name = "matplotlib", specifier = ">=3.10.5" },
     { name = "mcp", extras = ["cli"], specifier = ">=1.12.4" },
+    { name = "mssql-python", marker = "extra == 'sqlserver'", specifier = ">=0.13.1" },
     { name = "networkx", specifier = ">=3.4.2" },
     { name = "nltk", specifier = ">=3.9.1" },
     { name = "numpy", specifier = "<=2.3.0" },
@@ -1859,7 +1895,7 @@ requires-dist = [
     { name = "pydantic-settings", specifier = ">=2.10.1" },
     { name = "pyfunctional", specifier = ">=1.5.0" },
     { name = "pyngrok", marker = "extra == 'streamlit'", specifier = "==7.4.0" },
-    { name = "pyspark", marker = "extra == 'databricks'", specifier = ">=3.5.0" },
+    { name = "pyspark", marker = "extra == 'databricks'", specifier = ">=3.5.0,<4.0.0" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
     { name = "python-dotenv", marker = "extra == 'streamlit'", specifier = "==1.1.1" },
     { name = "pyyaml", specifier = ">=6.0.2" },
@@ -1870,21 +1906,23 @@ requires-dist = [
     { name = "sqlglot", marker = "extra == 'databricks'", specifier = ">=27.20.0" },
     { name = "sqlglot", marker = "extra == 'postgres'", specifier = ">=27.20.0" },
     { name = "sqlglot", marker = "extra == 'snowflake'", specifier = ">=27.20.0" },
+    { name = "sqlglot", marker = "extra == 'sqlserver'", specifier = ">=27.20.0" },
     { name = "streamlit", marker = "extra == 'streamlit'", specifier = "==1.50.0" },
     { name = "symspellpy", specifier = ">=6.9.0" },
     { name = "trieregex", specifier = ">=1.0.0" },
     { name = "xgboost", specifier = ">=3.0.4" },
     { name = "xlsxwriter", marker = "extra == 'streamlit'", specifier = "==3.2.9" },
 ]
-provides-extras = ["snowflake", "databricks", "postgres", "streamlit"]
+provides-extras = ["snowflake", "databricks", "postgres", "sqlserver", "streamlit"]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "asyncpg", specifier = ">=0.30.0" },
     { name = "databricks-sql-connector", specifier = ">=4.1.3" },
     { name = "ipykernel", specifier = ">=6.30.1" },
+    { name = "mssql-python", specifier = ">=0.13.1" },
     { name = "pysonar", specifier = ">=1.2.0.2419" },
-    { name = "pyspark", specifier = ">=4.0.1" },
+    { name = "pyspark", specifier = ">=3.5.0,<4.0.0" },
     { name = "pytest", specifier = ">=8.4.1" },
     { name = "pytest-asyncio", specifier = ">=1.1.0" },
     { name = "pytest-cov", specifier = ">=6.2.1" },
@@ -2870,6 +2908,70 @@ wheels = [
 ]
 
 [[package]]
+name = "msal"
+version = "1.34.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "cryptography", version = "45.0.7", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.14' and platform_python_implementation != 'PyPy'" },
+    { name = "cryptography", version = "46.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.14' or platform_python_implementation == 'PyPy'" },
+    { name = "pyjwt", extra = ["crypto"] },
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/cf/0e/c857c46d653e104019a84f22d4494f2119b4fe9f896c92b4b864b3b045cc/msal-1.34.0.tar.gz", hash = "sha256:76ba83b716ea5a6d75b0279c0ac353a0e05b820ca1f6682c0eb7f45190c43c2f", size = 153961, upload-time = "2025-09-22T23:05:48.989Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c2/dc/18d48843499e278538890dc709e9ee3dea8375f8be8e82682851df1b48b5/msal-1.34.0-py3-none-any.whl", hash = "sha256:f669b1644e4950115da7a176441b0e13ec2975c29528d8b9e81316023676d6e1", size = 116987, upload-time = "2025-09-22T23:05:47.294Z" },
+]
+
+[[package]]
+name = "msal-extensions"
+version = "1.3.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "msal" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/01/99/5d239b6156eddf761a636bded1118414d161bd6b7b37a9335549ed159396/msal_extensions-1.3.1.tar.gz", hash = "sha256:c5b0fd10f65ef62b5f1d62f4251d51cbcaf003fcedae8c91b040a488614be1a4", size = 23315, upload-time = "2025-03-14T23:51:03.902Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5e/75/bd9b7bb966668920f06b200e84454c8f3566b102183bc55c5473d96cb2b9/msal_extensions-1.3.1-py3-none-any.whl", hash = "sha256:96d3de4d034504e969ac5e85bae8106c8373b5c6568e4c8fa7af2eca9dbe6bca", size = 20583, upload-time = "2025-03-14T23:51:03.016Z" },
+]
+
+[[package]]
+name = "mssql-python"
+version = "0.13.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "azure-identity" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c7/fa/1d65839b858c975e079bd79f5220be4fa229236693bc38d42cf6c9d27d17/mssql_python-0.13.1-cp310-cp310-macosx_15_0_x86_64.whl", hash = "sha256:9ae88f302b338936ba3d85b6a65af7da27978f7d8870f6aafd86ae1fc64fd318", size = 22590820, upload-time = "2025-10-14T15:06:55.561Z" },
+    { url = "https://files.pythonhosted.org/packages/94/75/7bea0ec63145dcf337645b0e5f3a6e2f9925dca6188f4145f3b88c6aad76/mssql_python-0.13.1-cp310-cp310-manylinux_2_28_aarch64.whl", hash = "sha256:0277a009191f9d888c66bb7ebd6a370abd5517984d974fc32126b4c43ec4a448", size = 22293324, upload-time = "2025-10-14T15:06:59.023Z" },
+    { url = "https://files.pythonhosted.org/packages/ea/5e/2244461025ecec492f8529553c14e833e2d8f35ed92f339ddd15d7206dc5/mssql_python-0.13.1-cp310-cp310-manylinux_2_28_x86_64.whl", hash = "sha256:bab53e15a9072ec432daa5892bb52ae04266455d63b4d08c261837a98e42c73e", size = 22315197, upload-time = "2025-10-14T15:07:01.833Z" },
+    { url = "https://files.pythonhosted.org/packages/a4/c3/5ccc8305bc468a7cdef4747bf00f3274aa2dddd78d6ed9b35a8105b9f3ec/mssql_python-0.13.1-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:ed48d45a76ac7eeb4f2e8d77b034d46a3dea6bbcebadba41d1725f0845dbc989", size = 22233248, upload-time = "2025-10-14T15:07:04.424Z" },
+    { url = "https://files.pythonhosted.org/packages/1a/61/d57da2f7c173beaefec29ef52a6ff202b14916f14579872359d72d542e47/mssql_python-0.13.1-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:a1ff57dd3be57f357ef8bc3bdbc8835029a4a79cc2032b493964c60afd888989", size = 22239361, upload-time = "2025-10-14T15:07:06.789Z" },
+    { url = "https://files.pythonhosted.org/packages/25/06/e2bfade798c98a2214ec58356ac8dd94d3dc312cc97d008cbc2ffec7b859/mssql_python-0.13.1-cp310-cp310-win_amd64.whl", hash = "sha256:732c9bf5d54ed011fa2913f4113df023fe871f3c429deaeb342775df69e36519", size = 12473080, upload-time = "2025-10-14T15:07:09.133Z" },
+    { url = "https://files.pythonhosted.org/packages/55/42/0bb5a7e737949fd2119af852d210202e973974e2f731ec2d29f88963b3ce/mssql_python-0.13.1-cp311-cp311-macosx_15_0_universal2.whl", hash = "sha256:f2169228457f9bbfce156bc9a1b17eb6e38311431186cbbbe262e89ae7294a4e", size = 22591169, upload-time = "2025-10-14T15:07:11.394Z" },
+    { url = "https://files.pythonhosted.org/packages/b0/59/62b280c0785c324bfe7bf9e4f36e7852d0506de0dc7f8da98d22ca827cfa/mssql_python-0.13.1-cp311-cp311-manylinux_2_28_aarch64.whl", hash = "sha256:8345887cac017babb54998e517c8693f2d4399c8adb25872dd6f07e8ccce3aba", size = 23156237, upload-time = "2025-10-14T15:07:13.907Z" },
+    { url = "https://files.pythonhosted.org/packages/1f/e3/5356d6e623803d0dfc280e2fa2029ceb56d8b16692d12cbf3e1ceb8d5f0f/mssql_python-0.13.1-cp311-cp311-manylinux_2_28_x86_64.whl", hash = "sha256:3568eff3bbcc2a4a514f355683454cc21041e44af8603b4bced2193f25826b51", size = 23199704, upload-time = "2025-10-14T15:07:16.759Z" },
+    { url = "https://files.pythonhosted.org/packages/51/cf/a08627e814144a2480af6e8e83356a40b1edfda1531a3681d6ef77fa87bf/mssql_python-0.13.1-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:b70e0e73de5ba9e6a34b540adc4ab4acca01211c931acd8513f0d6868736d7fb", size = 23036583, upload-time = "2025-10-14T15:07:19.387Z" },
+    { url = "https://files.pythonhosted.org/packages/65/63/4cfaa1804554aae264597457d35dd6f86f74a9c2487700c26d8f36ca90ff/mssql_python-0.13.1-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:f021abdc9e04ff661d75f115eb136795b27769b032eba389d1482167bcf1e9d7", size = 23048855, upload-time = "2025-10-14T15:07:22.241Z" },
+    { url = "https://files.pythonhosted.org/packages/41/4f/6d715716567b804712efa8835b672359bf7fe71064ac34728f645b9dbcf6/mssql_python-0.13.1-cp311-cp311-win_amd64.whl", hash = "sha256:536e91061b22ac63013c553bef80fd160796ad714ae6909675f0d976bacf9821", size = 12474099, upload-time = "2025-10-14T15:07:25.027Z" },
+    { url = "https://files.pythonhosted.org/packages/9c/45/46e36fa1a478c8e573b7a1cdc062ad041a42bb66b070e4cdc94dbe6e2440/mssql_python-0.13.1-cp311-cp311-win_arm64.whl", hash = "sha256:cc16cb0ac113d9a83ae3207217de5f6062669e1329cab536181d21aa30adef08", size = 15616130, upload-time = "2025-10-14T15:07:28.269Z" },
+    { url = "https://files.pythonhosted.org/packages/79/5d/d157d5f88047051b266c7c6ecbb02c3086650c0c2aa63cbda7f037bae652/mssql_python-0.13.1-cp312-cp312-macosx_15_0_universal2.whl", hash = "sha256:4875049e6c29c48dcc2ce42ad83d04f0c25888ad62668c470a9d5ba1aede80fe", size = 22595707, upload-time = "2025-10-14T15:07:31.018Z" },
+    { url = "https://files.pythonhosted.org/packages/fb/82/c07f8dbe37ff583e0d8f9f9e554c6562da8184261f3cf179d85b09b6d03d/mssql_python-0.13.1-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:412e870db92674d1d24d8afabdae8640e9cff39c673045a77e5e32e34d582f15", size = 24021144, upload-time = "2025-10-14T15:07:33.949Z" },
+    { url = "https://files.pythonhosted.org/packages/64/eb/34ad320fff5f6e128121015298cb4d80c37d95591f54f64455aab68d4297/mssql_python-0.13.1-cp312-cp312-manylinux_2_28_x86_64.whl", hash = "sha256:4964a13172fa1ccff4d1d6d2c19b3f1a810bf12b28f2d16c6e8a9cd862f776ba", size = 24085959, upload-time = "2025-10-14T15:07:36.859Z" },
+    { url = "https://files.pythonhosted.org/packages/16/11/d1e76b16648b666ccb7a221fcf4fb84422b2fd2185b19ad07173e60d52c8/mssql_python-0.13.1-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:e96e2c2c062f3f4edf482f42361863f8341c02855bdc0d058d8a016c05060f75", size = 23842405, upload-time = "2025-10-14T15:07:39.554Z" },
+    { url = "https://files.pythonhosted.org/packages/71/0d/b6e26dcec9bcdab1d0cdc05ea521728708efe01e6fe2c049f1c1eaef65e8/mssql_python-0.13.1-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:db2f7b965d22d316ab373b9fc82987333d088f55040549beba19fa2d883e86c6", size = 23860413, upload-time = "2025-10-14T15:07:41.981Z" },
+    { url = "https://files.pythonhosted.org/packages/63/fa/dc48caedb29d6a07513f26d0c2b487fabc3a08a779da2a2f84a5a71bd589/mssql_python-0.13.1-cp312-cp312-win_amd64.whl", hash = "sha256:07372d846c89a12a8287fc469a6a80a04ef322bdcdb35b5d3f4780b4d801a353", size = 12476596, upload-time = "2025-10-14T15:07:44.742Z" },
+    { url = "https://files.pythonhosted.org/packages/da/7b/bca1199cfb5e8b161482a9581ab56509db800397db030f964bb252288193/mssql_python-0.13.1-cp312-cp312-win_arm64.whl", hash = "sha256:d65afa8ea8c7462d24a29c6fe595497c8bcae7cb9d51a56b4e721f71df17869b", size = 15618258, upload-time = "2025-10-14T15:07:47.131Z" },
+    { url = "https://files.pythonhosted.org/packages/fe/13/73ea47eae7fd3965c4e4e3050d6bdac34d16c698e3f7cbf4d67cc870471c/mssql_python-0.13.1-cp313-cp313-macosx_15_0_universal2.whl", hash = "sha256:8c07bac13ef148f4b832d66e562e379746df6a6e1b34f9e52e1a2945a48f77a1", size = 22596048, upload-time = "2025-10-14T15:07:50.15Z" },
+    { url = "https://files.pythonhosted.org/packages/85/a9/e6fa633ee35d5f51c7f6f0d52bba1e1fd24521cfda2c2e58c037b7c9567b/mssql_python-0.13.1-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:56aac87b3a711a0be943118d87bfb1517466bf425eb67b751095c4e84ecfd5c9", size = 24886235, upload-time = "2025-10-14T15:07:54.211Z" },
+    { url = "https://files.pythonhosted.org/packages/ef/35/4048438da194dcf7662baab0ddfa317f444b044ebd35dc4e82b2bbb50113/mssql_python-0.13.1-cp313-cp313-manylinux_2_28_x86_64.whl", hash = "sha256:005d6775bdbcc8fdac91d4baf8494cab4426db053b89a3bf5046e6f94999cd7a", size = 24972422, upload-time = "2025-10-14T15:07:57.182Z" },
+    { url = "https://files.pythonhosted.org/packages/09/9b/e9a2d43522f55715ab1e359b7f190984433f1acda457e53526d3ce64342c/mssql_python-0.13.1-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:0fb7367c6b64629015d87fef60153fa92a5a46c4eb2893510b919ae716b03db3", size = 24648630, upload-time = "2025-10-14T15:07:59.73Z" },
+    { url = "https://files.pythonhosted.org/packages/60/aa/b6b063cb7e7d02a2c3887da4376910fa7d5ccc24b6608b1dd8b5489632ad/mssql_python-0.13.1-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:82c2ac027df2ff38dd3962c730b642d1b1371976006451a1a19328952e8744f0", size = 24672185, upload-time = "2025-10-14T15:08:02.548Z" },
+    { url = "https://files.pythonhosted.org/packages/0e/d8/0ccdbfe9adfc60180d2f2f8ca63ab4e701f9a4a89ea54668ce493cba8634/mssql_python-0.13.1-cp313-cp313-win_amd64.whl", hash = "sha256:e98ae2e0ede7cd79a5ad360cc0480fbfc9f99ead5b9b545458c7c164851e7f5e", size = 12476560, upload-time = "2025-10-14T15:08:05.182Z" },
+    { url = "https://files.pythonhosted.org/packages/5e/ab/358edc6fdf50e4861e8e432c54f9d932046348f5deffb2d6b571647fc9ca/mssql_python-0.13.1-cp313-cp313-win_arm64.whl", hash = "sha256:bf99c01d5d587a756263c54a2fca6124f099875fff29145863cafea75adaa476", size = 15618238, upload-time = "2025-10-14T15:08:07.721Z" },
+]
+
+[[package]]
 name = "multidict"
 version = "6.6.4"
 source = { registry = "https://pypi.org/simple" }
@@ -3759,11 +3861,11 @@ wheels = [
 
 [[package]]
 name = "py4j"
-version = "0.10.9.9"
+version = "0.10.9.7"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/38/31/0b210511177070c8d5d3059556194352e5753602fa64b85b7ab81ec1a009/py4j-0.10.9.9.tar.gz", hash = "sha256:f694cad19efa5bd1dee4f3e5270eb406613c974394035e5bfc4ec1aba870b879", size = 761089, upload-time = "2025-01-15T03:53:18.624Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/1e/f2/b34255180c72c36ff7097f7c2cdca02abcbd89f5eebf7c7c41262a9a0637/py4j-0.10.9.7.tar.gz", hash = "sha256:0b6e5315bb3ada5cf62ac651d107bb2ebc02def3dee9d9548e3baac644ea8dbb", size = 1508234, upload-time = "2022-08-12T22:49:09.792Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/bd/db/ea0203e495be491c85af87b66e37acfd3bf756fd985f87e46fc5e3bf022c/py4j-0.10.9.9-py2.py3-none-any.whl", hash = "sha256:c7c26e4158defb37b0bb124933163641a2ff6e3a3913f7811b0ddbe07ed61533", size = 203008, upload-time = "2025-01-15T03:53:15.648Z" },
+    { url = "https://files.pythonhosted.org/packages/10/30/a58b32568f1623aaad7db22aa9eafc4c6c194b429ff35bdc55ca2726da47/py4j-0.10.9.7-py2.py3-none-any.whl", hash = "sha256:85defdfd2b2376eb3abf5ca6474b51ab7e0de341c75a02f46dc9b5976f5a5c1b", size = 200481, upload-time = "2022-08-12T22:49:07.05Z" },
 ]
 
 [[package]]
@@ -4026,6 +4128,12 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/61/ad/689f02752eeec26aed679477e80e632ef1b682313be70793d798c1d5fc8f/PyJWT-2.10.1-py3-none-any.whl", hash = "sha256:dcdd193e30abefd5debf142f9adfcdd2b58004e644f25406ffaebd50bd98dacb", size = 22997, upload-time = "2024-11-28T03:43:27.893Z" },
 ]
 
+[package.optional-dependencies]
+crypto = [
+    { name = "cryptography", version = "45.0.7", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.14' and platform_python_implementation != 'PyPy'" },
+    { name = "cryptography", version = "46.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.14' or platform_python_implementation == 'PyPy'" },
+]
+
 [[package]]
 name = "pyngrok"
 version = "7.4.0"
@@ -4079,12 +4187,12 @@ wheels = [
 
 [[package]]
 name = "pyspark"
-version = "4.0.1"
+version = "3.5.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "py4j" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ae/40/1414582f16c1d7b051c668c2e19c62d21a18bd181d944cb24f5ddbb2423f/pyspark-4.0.1.tar.gz", hash = "sha256:9d1f22d994f60369228397e3479003ffe2dd736ba79165003246ff7bd48e2c73", size = 434204896, upload-time = "2025-09-06T07:15:57.091Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/cb/65/2764b1840aa6ea5f7e668a36702c3128ac54d0b861d3d57669b2453469a6/pyspark-3.5.7.tar.gz", hash = "sha256:80e36514e0c5c126d35a26adf4f405cd4a69de96a8ea8a3c1e9a65fce2fb4eaa", size = 317370347, upload-time = "2025-09-23T19:46:10.326Z" }
 
 [[package]]
 name = "pytest"

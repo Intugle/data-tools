@@ -61,11 +61,15 @@ snowflake = [
 ]
 databricks = [
     "databricks-sql-connector>=4.1.3",
-    "pyspark>=3.5.0",
+    "pyspark>=3.5.0,<4.0.0",
     "sqlglot>=27.20.0",
 ]
 postgres = [
     "asyncpg>=0.30.0",
+    "sqlglot>=27.20.0",
+]
+sqlserver = [
+    "mssql-python>=0.13.1",
     "sqlglot>=27.20.0",
 ]
 
@@ -101,8 +105,9 @@ dev = [
     "asyncpg>=0.30.0",
     "databricks-sql-connector>=4.1.3",
     "ipykernel>=6.30.1",
+    "mssql-python>=0.13.1",
     "pysonar>=1.2.0.2419",
-    "pyspark>=4.0.1",
+    "pyspark>=3.5.0,<4.0.0",
     "pytest>=8.4.1",
     "pytest-asyncio>=1.1.0",
     "pytest-cov>=6.2.1",
