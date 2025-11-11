@@ -131,7 +131,7 @@ from intugle.semantic_search import SemanticSearch
 
 # This assumes your project's .yml files are in the default location.
 # You can also specify the path to your models directory:
-# search_client = SemanticSearch(project_base="/path/to/your/models")
+# search_client = SemanticSearch(models_dir_path="/path/to/your/models")
 search_client = SemanticSearch()
 
 # 1. Initialize the search index.
