@@ -51,8 +51,14 @@ class Settings(BaseSettings):
     GRAPH_DIR: str = os.path.join(PROJECT_BASE, GRAPH_DIR_NAME)
     DESCRIPTIONS_DIR: str = os.path.join(PROJECT_BASE, "descriptions")
 
-    PROFILES_PATH: str = os.path.join(os.getcwd(), "profiles.yml")
+    def set_project_base(self, project_base: str):
+        self.PROJECT_BASE = project_base
+        self.PROJECT_ID = Project(self.PROJECT_BASE).project_id
+        self.MODELS_DIR = os.path.join(self.PROJECT_BASE, self.MODELS_DIR_NAME)
+        self.GRAPH_DIR = os.path.join(self.PROJECT_BASE, self.GRAPH_DIR_NAME)
+        self.DESCRIPTIONS_DIR = os.path.join(self.PROJECT_BASE, "descriptions")
 
+    PROFILES_PATH: str = os.path.join(os.getcwd(), "profiles.yml")
     PROFILES: dict = load_profiles_configuration(PROFILES_PATH)
 
     MCP_SERVER_NAME: str = "intugle"
