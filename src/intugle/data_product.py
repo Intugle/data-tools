@@ -1,10 +1,16 @@
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Optional
 
 from intugle.adapters.factory import AdapterFactory
 from intugle.analysis.models import DataSet
 from intugle.core import settings
+from intugle.core.conceptual_search.plan import DataProductPlan
+from intugle.core.conceptual_search.search import ConceptualSearch
 from intugle.libs.smart_query_generator import SmartQueryGenerator
-from intugle.libs.smart_query_generator.models.models import ETLModel, FieldDetailsModel, LinkModel
+from intugle.libs.smart_query_generator.models.models import (
+    ETLModel,
+    FieldDetailsModel,
+    LinkModel,
+)
 from intugle.libs.smart_query_generator.utils.join import Join
 from intugle.parser.manifest import ManifestLoader
 
@@ -15,12 +21,12 @@ if TYPE_CHECKING:
 class DataProduct:
     """Generates data products based on the manifest and ETL configurations."""
 
-    def __init__(self, project_base: str = settings.PROJECT_BASE):
-        self.manifest_loader = ManifestLoader(project_base)
+    def __init__(self, models_dir_path: str = settings.MODELS_DIR):
+        self.manifest_loader = ManifestLoader(models_dir_path)
         self.manifest_loader.load()
         self.manifest = self.manifest_loader.manifest
 
-        self.project_base = project_base
+        self.models_dir_path = models_dir_path
 
         self.field_details = self.get_all_field_details()
 
@@ -31,6 +37,69 @@ class DataProduct:
         self.join = Join(self.links, selected_fields)
 
         self.load_all()
+        self._conceptual_search: Optional[ConceptualSearch] = None
+
+    def _get_conceptual_search(self) -> ConceptualSearch:
+        """Initializes and returns the ConceptualSearch instance."""
+        if self._conceptual_search is None:
+            self._conceptual_search = ConceptualSearch()
+        return self._conceptual_search
+
+    async def plan(
+        self,
+        query: str,
+        additional_context: str = None,
+        use_cache: bool = False,
+    ) -> Optional[DataProductPlan]:
+        """
+        Generates a data product plan from a natural language query.
+
+        Args:
+            query: The natural language query describing the desired data product.
+            additional_context: Optional additional context to guide the planning.
+            use_cache: Whether to use a cached plan if available.
+
+        Returns:
+            A DataProductPlan object that can be reviewed and modified, or None if planning fails.
+        """
+        cs = self._get_conceptual_search()
+        plan = await cs.generate_data_product_plan(
+            query, additional_context=additional_context, use_cache=use_cache
+        )
+        return plan
+
+    async def create_etl_model_from_plan(self, plan: DataProductPlan) -> ETLModel:
+        """
+        Generates an ETLModel from a DataProductPlan.
+
+        This method converts the high-level plan into a detailed, executable
+        ETLModel that defines the data product's fields and transformations.
+
+        Args:
+            plan: The DataProductPlan to convert.
+
+        Returns:
+            The generated ETLModel.
+        """
+        cs = self._get_conceptual_search()
+        etl_model = await cs.generate_data_product(plan)
+        return etl_model
+
+    async def build_from_plan(self, plan: DataProductPlan) -> DataSet:
+        """
+        Builds a data product from a DataProductPlan.
+
+        This is a convenience method that first generates the ETLModel from the
+        plan and then immediately builds the data product.
+
+        Args:
+            plan: The DataProductPlan to build.
+
+        Returns:
+            A new DataSet object pointing to the materialized table.
+        """
+        etl_model = await self.create_etl_model_from_plan(plan)
+        return self.build(etl=etl_model)
 
     def load_all(self):
         sources = self.manifest.sources

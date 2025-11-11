@@ -42,6 +42,8 @@ Intugle’s GenAI-powered open-source Python library builds a semantic data mode
 *   **Semantic Data Model -** Transform raw, fragmented datasets into an intelligent semantic graph that captures entities, relationships, and context — the foundation for connected intelligence.
 *   **Business Glossary & Semantic Search:** Auto-generate a business glossary and enable search that understands meaning, not just keywords — making data more accessible across technical and business users.
 *   **Data Products -** Instantly generate SQL and reusable data products enriched with context, eliminating manual pipelines and accelerating data-to-insight.
+*   **Conceptual Search -** Generate data product plans from natural language queries, bridging the gap between business questions and executable data product definitions. Learn more in the [documentation](https://intugle.github.io/data-tools/docs/core-concepts/data-product/conceptual-search).
+
 
 ## Getting Started
 
@@ -107,7 +109,7 @@ For a detailed, hands-on introduction to the project, please see our quickstart 
 | **Native Snowflake with Cortex Analyst [ Tech Manufacturing ]** | [`quickstart_native_snowflake.ipynb`](notebooks/quickstart_native_snowflake.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_native_snowflake.ipynb) |
 | **Native Databricks with AI/BI Genie [ Tech Manufacturing ]** | [`quickstart_native_databricks.ipynb`](notebooks/quickstart_native_databricks.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_native_databricks.ipynb) |
 | **Streamlit App**       | [`quickstart_streamlit.ipynb`](notebooks/quickstart_streamlit.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_streamlit.ipynb) |
-
+| **Conceptual Search**   | [`quickstart_conceptual_search.ipynb`](notebooks/quickstart_conceptual_search.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_conceptual_search.ipynb) |
 These datasets will take you through the following steps:
 
 *   **Generate Semantic Model** → The unified layer that transforms fragmented datasets, creating the foundation for connected intelligence.

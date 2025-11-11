@@ -159,7 +159,7 @@ def init_io_dirs() -> Dict[str, Path]:
     paths = {
         "INPUT_DIR": relpath("input"),
         "MODIFIED_DIR": relpath("modified_input"),
-        "ASSET_DIR": relpath("models"),  # adjust if your folder name differs
+        "ASSET_DIR": relpath("intugle/models"),  # adjust if your folder name differs
         # "ICON_DIR": relpath("intugle_assets"),
     }
 
@@ -169,7 +169,7 @@ def init_io_dirs() -> Dict[str, Path]:
     # If intugle settings is available, set project base
     try:
         # 'settings' should be imported earlier from intugle.core.settings
-        settings.PROJECT_BASE = str(paths["ASSET_DIR"])
+        settings.set_project_base(str(relpath("intugle")))
     except NameError:
         # settings not imported/available; skip without failing the app
         pass

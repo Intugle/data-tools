@@ -21,7 +21,7 @@ def update_relationship_file_mtime() -> None:
     if not settings.RELATIONSHIPS_FILE:
         return
 
-    file_path = os.path.join(settings.PROJECT_BASE, settings.RELATIONSHIPS_FILE)
+    file_path = os.path.join(settings.MODELS_DIR, settings.RELATIONSHIPS_FILE)
     
     # Check if the file exists before touching it
     if os.path.exists(file_path):

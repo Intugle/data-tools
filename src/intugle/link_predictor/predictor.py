@@ -149,13 +149,13 @@ class LinkPredictor:
         if filename is None:
             filename = settings.RELATIONSHIPS_FILE
 
-        relationships_file = os.path.join(settings.PROJECT_BASE, filename)
+        relationships_file = os.path.join(settings.MODELS_DIR, filename)
 
         if not force_recreate and os.path.exists(relationships_file):
             is_stale = False
             relationships_mtime = os.path.getmtime(relationships_file)
             for dataset in self.datasets.values():
-                dataset_yml = os.path.join(settings.PROJECT_BASE, f"{dataset.name}.yml")
+                dataset_yml = os.path.join(settings.MODELS_DIR, f"{dataset.name}.yml")
                 if os.path.exists(dataset_yml) and os.path.getmtime(dataset_yml) > relationships_mtime:
                     is_stale = True
                     break
@@ -208,7 +208,8 @@ class LinkPredictor:
         join.plot_graph(graph)
 
     def save_yaml(self, file_path: str) -> None:
-        file_path = os.path.join(settings.PROJECT_BASE, file_path)
+        os.makedirs(settings.MODELS_DIR, exist_ok=True)
+        file_path = os.path.join(settings.MODELS_DIR, file_path)
 
         if len(self.links) == 0:
             raise NoLinksFoundError("No links found to save.")
@@ -245,7 +246,8 @@ class LinkPredictor:
 class LinkPredictionSaver:
     @classmethod
     def save_yaml(cls, result: LinkPredictionResult, file_path: str) -> None:
-        file_path = os.path.join(settings.PROJECT_BASE, file_path)
+        os.makedirs(settings.MODELS_DIR, exist_ok=True)
+        file_path = os.path.join(settings.MODELS_DIR, file_path)
 
         links = result.links
 

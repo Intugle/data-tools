@@ -174,7 +174,7 @@ def test_live_search_end_to_end(live_test_project_dir):
     """
     # 1. Arrange: Instantiate SemanticSearch with the temporary project directory
     # This will use real clients and APIs because they are not mocked.
-    search_client = SemanticSearch(project_base=live_test_project_dir)
+    search_client = SemanticSearch(models_dir_path=live_test_project_dir)
 
     # 2. Act: Run the full initialize and search process
     try:

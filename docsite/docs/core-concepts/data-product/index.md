@@ -93,3 +93,4 @@ The `DataProduct` class provides a powerful way to query your connected data wit
 *   **[Aggregations](./aggregations.md)**: Understand how to perform grouping and aggregation functions like `COUNT` and `SUM`.
 *   **[Joins](./joins.md)**: Discover how the builder automatically handles joins between tables.
 *   **[Advanced Examples](./advanced-examples.md)**: See how to combine these concepts to build complex data products.
+*   **[Conceptual Search](./conceptual-search.md)**: Learn how to generate data products from natural language queries.
