@@ -7,8 +7,9 @@ from typing import List, Optional, Tuple
 
 import pandas as pd
 
+from langchain.output_parsers import OutputFixingParser
 from langchain_core.messages import HumanMessage
-from langchain_core.output_parsers import JsonOutputParser
+from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import PromptTemplate
 from langgraph.errors import GraphRecursionError
 from tqdm import tqdm
@@ -18,7 +19,6 @@ from intugle.core import settings
 from intugle.core.llms.chat import ChatModelLLM
 from intugle.core.pipeline.link_prediction.utils import (
     dtype_check,
-    extract_innermost_dict,
     linkage,
     preprocess_profiling_df,
 )
@@ -105,7 +105,10 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
             else llm
         )
 
-        self.parser_linkages = JsonOutputParser(pydantic_object=linkage)
+        pydantic_parser = PydanticOutputParser(pydantic_object=linkage)
+        self.parser_linkages = OutputFixingParser.from_llm(
+            llm=self.llm, parser=pydantic_parser
+        )
 
         self.prompt_link = PromptTemplate(
             template=self.PROMPT_TEMPLATE,
@@ -198,42 +201,39 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
             self.status = Status.HALLUCINATED_INVOKE
             log.info(log_msg)
 
-            # log.info('[!] Killing LLM run due to halucinations in output')
-            potential_link = {
-                "table1": "NA",
-                "column1": "NA",
-                "table2": "NA",
-                "column2": "NA",
-            }
+            potential_link = linkage(
+                table1="NA",
+                column1="NA",
+                table2="NA",
+                column2="NA",
+            )
         iteration = current_attempt
-
-        # Recursively search for the innermost dictionary
-        potential_link_innermost_dict = extract_innermost_dict(potential_link)
+        potential_link_dict = potential_link.model_dump()
 
         # checking for a possibility of recurcive loop in llm
         if iteration > 1:
             previous_potential_link = state["potential_link"]
-            if previous_potential_link == potential_link_innermost_dict:
-                log_msg = f"[!] Killing LLM run due to possibility of recurssion: {potential_link_innermost_dict}"
+            if previous_potential_link == potential_link_dict:
+                log_msg = f"[!] Killing LLM run due to possibility of recurssion: {potential_link_dict}"
                 self.status = Status.HALLUCINATED_RECURSION
                 log.info(log_msg)
                 self.logs.append(log_msg)
-                potential_link_innermost_dict = {
+                potential_link_dict = {
                     "table1": "NA",
                     "column1": "NA",
                     "table2": "NA",
                     "column2": "NA",
                 }
                 return {
-                    "potential_link": potential_link_innermost_dict,
+                    "potential_link": potential_link_dict,
                     "iteration": iteration,
                 }
 
-        log_msg = "[*] This is the link:" + str(potential_link_innermost_dict)
+        log_msg = "[*] This is the link:" + str(potential_link_dict)
         log.info(log_msg)
         self.logs.append(log_msg)
 
-        return {"potential_link": potential_link_innermost_dict, "iteration": iteration}
+        return {"potential_link": potential_link_dict, "iteration": iteration}
 
     def single_link_table_column_name_checker(self, state):
         """
@@ -693,13 +693,10 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
         return graph
 
     def __post_processing__(self, data: pd.DataFrame) -> pd.DataFrame:
-        def process(result: str):
-            try:
-                result = ast.literal_eval(result) if isinstance(result, str) else result
-                return result if result["table1"] != "NA" else ""
-            except Exception as ex:
-                log.info(f"[!] Error while parsing: {ex}")
-                return ""
+        def process(result):
+            if isinstance(result, dict) and result.get("table1") != "NA":
+                return result
+            return ""
 
         data["links"] = data.links.apply(process)
         res = data.links.tolist()
@@ -766,9 +763,11 @@ Based on your evaluation of the data and metadata, please proceed to attempt ide
         log.info(f"[*] link between tables: {event['potential_link']}")
         potential_link = event["potential_link"]
 
-        if potential_link and potential_link.get("table1") != "NA":
+        if isinstance(potential_link, dict) and potential_link.get("table1") != "NA":
             potential_link["intersect_count"] = event.get("intersect_count")
-            potential_link["intersect_ratio_from_col"] = event.get("intersect_ratio_from_col")
+            potential_link["intersect_ratio_from_col"] = event.get(
+                "intersect_ratio_from_col"
+            )
             potential_link["intersect_ratio_to_col"] = event.get("intersect_ratio_to_col")
             potential_link["accuracy"] = event.get("accuracy")
 

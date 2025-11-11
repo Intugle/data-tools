@@ -1,0 +1,15 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discord Community
+    url: https://discord.gg/NqR9tNWVTm
+    about: Join our Discord server for questions, discussions, and community support
+  - name: 📚 Documentation
+    url: https://intugle.github.io/data-tools/
+    about: Check our documentation for guides, tutorials, and API reference
+  - name: 🚀 Quickstart Notebooks
+    url: https://github.com/Intugle/data-tools/tree/main/notebooks
+    about: Explore our quickstart notebooks for different domains
+  - name: ❓ General Questions
+    url: https://github.com/Intugle/data-tools/discussions
+    about: Ask questions and discuss ideas with the community
+

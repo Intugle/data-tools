@@ -24,6 +24,6 @@ def test_key_identification_end_to_end():
     dataset.profile().identify_datatypes().identify_keys()
 
     # Check the final output of the KeyIdentifier step
-    identified_key = dataset.source_table_model.key
+    identified_key = dataset.source.table.key
     assert identified_key is not None
     assert identified_key == "order_id"

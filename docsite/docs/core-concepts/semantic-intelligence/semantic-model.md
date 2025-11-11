@@ -131,7 +131,7 @@ customers_dataset = sm.datasets['customers']
 link_predictor = sm.link_predictor
 
 # Now you can explore rich metadata or results
-print(f"Primary Key for customers: {customers_dataset.source_table_model.description}")
+print(f"Primary Key for customers: {customers_dataset.source.table.description}")
 print("Discovered Links:")
 print(link_predictor.get_links_df())
 ```

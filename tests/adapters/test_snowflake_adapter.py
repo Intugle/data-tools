@@ -52,10 +52,18 @@ class TestSnowflakeAdapterContract:
             'check_data',
             'get_details',
         ]
+        required_properties = [
+            'source_name',
+            'database',
+            'schema'
+        ]
 
         for method in required_methods:
             assert hasattr(mock_adapter, method), f"Missing method: {method}"
             assert callable(getattr(mock_adapter, method)), f"{method} is not callable"
+
+        for propery in required_properties:
+            assert hasattr(mock_adapter, propery), f"Missing property: {propery}"
 
     def test_inherits_from_adapter(self, mock_adapter):
         """Verify SnowflakeAdapter inherits from Adapter base class."""
@@ -77,7 +85,7 @@ class TestSnowflakeAdapterContract:
 
     def test_registered_in_factory(self):
         """Verify adapter can be registered and detected by factory."""
-        AdapterFactory.register("snowflake", can_handle_snowflake, SnowflakeAdapter)
+        AdapterFactory.register("snowflake", can_handle_snowflake, SnowflakeAdapter, SnowflakeConfig)
 
         config = SnowflakeConfig(identifier="test_table")
 
@@ -203,25 +211,6 @@ class TestCanHandleSnowflake:
         for invalid in invalid_configs:
             assert can_handle_snowflake(invalid) is False
 
-    def test_type_field_not_strictly_enforced(self):
-        """Test that Pydantic validates structure but doesn't enforce type value.
-
-        Note: SnowflakeConfig validates that 'identifier' field exists,
-        but doesn't strictly validate the 'type' field value.
-        This means a config with wrong type but valid structure passes validation.
-
-        This could be a potential bug - consider adding field validation.
-        """
-        # This passes validation because it has the required 'identifier' field
-        config_with_wrong_type = {"identifier": "table", "type": "databricks"}
-
-        # Pydantic validates successfully (structure is correct)
-        result = SnowflakeAdapter.check_data(config_with_wrong_type)
-
-        # But the type field is NOT corrected - it keeps the wrong value!
-        # This is a potential bug in the validation logic
-        assert result.type == "databricks"  # Wrong type passes through!
-        assert result.identifier == "table"
 
 
 # ============================================================================

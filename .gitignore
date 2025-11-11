@@ -222,8 +222,15 @@ archived/
 profiles.yml
 profiles.yaml
 
+# Intugle Folder
 /intugle/
+
+# GITHUB MCP Registry tokens
 .mcpregistry_github_token
 .mcpregistry_registry_token
 
+# GEMINI
 /.gemini/
+
+# ISSUE DRAFTS
+/issues/

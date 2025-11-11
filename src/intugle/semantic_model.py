@@ -57,7 +57,7 @@ class SemanticModel:
         )
         for dataset in self.datasets.values():
             # Check if this stage is already complete
-            if dataset.source_table_model.key is not None and not force_recreate:
+            if dataset.source.table.key is not None and not force_recreate:
                 print(f"Dataset '{dataset.name}' already profiled. Skipping.")
                 continue
 
@@ -89,7 +89,7 @@ class SemanticModel:
         console.print("Starting business glossary generation stage...", style="yellow")
         for dataset in self.datasets.values():
             # Check if this stage is already complete
-            if dataset.source_table_model.description and not force_recreate:
+            if dataset.source.table.description and not force_recreate:
                 console.print(
                     f"Glossary for '{dataset.name}' already exists. Skipping."
                 )
@@ -157,7 +157,7 @@ class SemanticModel:
         """Returns a consolidated DataFrame of glossary information for all datasets."""
         glossary_data = []
         for dataset in self.datasets.values():
-            for column in dataset.source_table_model.columns:
+            for column in dataset.source.table.columns:
                 glossary_data.append(
                     {
                         "table_name": dataset.name,

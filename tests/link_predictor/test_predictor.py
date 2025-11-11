@@ -51,7 +51,7 @@ def test_predictor_with_dict_input(mock_predict_for_pair):
     assert "orders" in predictor.datasets
     assert isinstance(predictor.datasets["customers"], DataSet)
     # Check that the prerequisite step was completed
-    assert predictor.datasets["customers"].source_table_model.key == "id"
+    assert predictor.datasets["customers"].source.table.key == "id"
 
     # 4. Run prediction
     results = predictor.predict(force_recreate=True)
@@ -71,7 +71,7 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     customers_df = pd.DataFrame({"id": [1, 2, 3]})
     processed_dataset = DataSet(customers_df, name="customers")
     # Manually add the key to simulate it being pre-analyzed
-    processed_dataset.source_table_model.key = "id"
+    processed_dataset.source.table.key = "id"
 
     # 2. Prepare a raw DataSet that needs analysis
     orders_df = pd.DataFrame({"order_id": [101, 102], "customer_id": [1, 3]})
@@ -83,9 +83,9 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     # 4. Verify that both datasets are now fully processed
     assert "customers" in predictor.datasets
     assert "orders" in predictor.datasets
-    assert predictor.datasets["customers"].source_table_model.key is not None
-    assert predictor.datasets["orders"].source_table_model.key is not None
-    assert predictor.datasets["orders"].source_table_model.key == "order_id"
+    assert predictor.datasets["customers"].source.table.key is not None
+    assert predictor.datasets["orders"].source.table.key is not None
+    assert predictor.datasets["orders"].source.table.key == "order_id"
 
     # 5. Run prediction
     results = predictor.predict(force_recreate=True)

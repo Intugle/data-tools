@@ -54,6 +54,30 @@ class DatabricksAdapter(Adapter):
     _instance = None
     _initialized = False
 
+    @property
+    def database(self) -> Optional[str]:
+        return self.catalog
+    
+    @database.setter
+    def database(self, value: str):
+        self.catalog = value
+
+    @property
+    def schema(self) -> Optional[str]:
+        return self._schema
+    
+    @schema.setter
+    def schema(self, value: str):
+        self._schema = value
+    
+    @property
+    def source_name(self) -> str:
+        return self._source_name
+    
+    @source_name.setter
+    def source_name(self, value: str):
+        self._source_name = value
+
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
             cls._instance = super().__new__(cls)
@@ -71,7 +95,8 @@ class DatabricksAdapter(Adapter):
         self.spark: Optional["SparkSession"] = None
         self.connection: Optional[Any] = None
         self.catalog: Optional[str] = None
-        self.schema: Optional[str] = None
+        self._schema: Optional[str] = None
+        self._source_name: str = settings.PROFILES.get("databricks", {}).get("name", "my_databricks_source")
         self.connect()
         self._initialized = True
 
@@ -90,7 +115,7 @@ class DatabricksAdapter(Adapter):
                     print("Found active Spark session. Using it for execution.")
                     params = DatabricksNotebookConfig.model_validate(connection_parameters_dict)
                     self.catalog = params.catalog
-                    self.schema = params.schema
+                    self._schema = params.schema
                     return
             except (AttributeError, TypeError):
                 self.spark = None
@@ -104,7 +129,7 @@ class DatabricksAdapter(Adapter):
             print("No active Spark session found. Creating a new SQL connector connection.")
             params = DatabricksSQLConnectorConfig.model_validate(connection_parameters_dict)
             self.catalog = params.catalog
-            self.schema = params.schema
+            self._schema = params.schema
             self.connection = sql.connect(
                 server_hostname=params.host, http_path=params.http_path, access_token=params.token
             )
@@ -116,7 +141,7 @@ class DatabricksAdapter(Adapter):
             return identifier
         
         # Backticks are used to handle reserved keywords and special characters.
-        safe_schema = f"`{self.schema}`"
+        safe_schema = f"`{self._schema}`"
         safe_identifier = f"`{identifier}`"
 
         if self.catalog:
@@ -137,15 +162,15 @@ class DatabricksAdapter(Adapter):
         if self.spark:
             if self.catalog:
                 self.spark.sql(f"USE CATALOG `{self.catalog}`")
-            if self.schema:
-                self.spark.sql(f"USE `{self.schema}`")
+            if self._schema:
+                self.spark.sql(f"USE `{self._schema}`")
             return self.spark.sql(query).collect()
         elif self.connection:
             with self.connection.cursor() as cursor:
                 if self.catalog:
                     cursor.execute(f"USE CATALOG `{self.catalog}`")
-                if self.schema:
-                    cursor.execute(f"USE `{self.schema}`")
+                if self._schema:
+                    cursor.execute(f"USE `{self._schema}`")
                 cursor.execute(query)
                 try:
                     return cursor.fetchall()
@@ -157,15 +182,15 @@ class DatabricksAdapter(Adapter):
         if self.spark:
             if self.catalog:
                 self.spark.sql(f"USE CATALOG `{self.catalog}`")
-            if self.schema:
-                self.spark.sql(f"USE `{self.schema}`")
+            if self._schema:
+                self.spark.sql(f"USE `{self._schema}`")
             return self.spark.sql(query).toPandas()
         elif self.connection:
             with self.connection.cursor() as cursor:
                 if self.catalog:
                     cursor.execute(f"USE CATALOG `{self.catalog}`")
-                if self.schema:
-                    cursor.execute(f"USE `{self.schema}`")
+                if self._schema:
+                    cursor.execute(f"USE `{self._schema}`")
                 cursor.execute(query)
                 data = cursor.fetchall()
                 columns = [column[0] for column in cursor.description]
@@ -277,10 +302,17 @@ class DatabricksAdapter(Adapter):
     def to_df_from_query(self, query: str) -> pd.DataFrame:
         return self._get_pandas_df(query)
 
-    def create_table_from_query(self, table_name: str, query: str):
+    def create_table_from_query(
+        self, table_name: str, query: str, materialize: str = "view", **kwargs
+    ) -> str:
         fqn = self._get_fqn(table_name)
         transpiled_sql = transpile(query, write="databricks")[0]
-        self._execute_sql(f"CREATE OR REPLACE VIEW {fqn} AS {transpiled_sql}")
+        if materialize == "table":
+            self._execute_sql(
+                f"CREATE OR REPLACE TABLE {fqn} AS {transpiled_sql}"
+            )
+        else:
+            self._execute_sql(f"CREATE OR REPLACE VIEW {fqn} AS {transpiled_sql}")
         return transpiled_sql
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
@@ -417,4 +449,4 @@ def can_handle_databricks(df: Any) -> bool:
 
 def register(factory: AdapterFactory):
     if DATABRICKS_AVAILABLE:
-        factory.register("databricks", can_handle_databricks, DatabricksAdapter)
+        factory.register("databricks", can_handle_databricks, DatabricksAdapter, DatabricksConfig)

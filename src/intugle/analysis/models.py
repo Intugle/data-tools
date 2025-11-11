@@ -44,10 +44,15 @@ class DataSet:
 
         # The factory creates the correct wrapper for consistent API access
         self.adapter = AdapterFactory().create(data)
-
-        # A dictionary to store the results of each analysis step
-        self.source_table_model: SourceTables = SourceTables(name=name, description="")
-        self.columns: Dict[str, Column] = {}  # A convenience map for quick column lookup
+        self.source: Source = Source(
+            name=self.adapter.source_name or "",
+            description="",
+            schema=self.adapter.schema or "",
+            database=self.adapter.database or "",
+            table=SourceTables(name=name, description=""),
+        )
+        # A convenience map for quick column lookup
+        self.columns: Dict[str, Column] = {}
 
         # Check if a YAML file exists and load it
         file_path = os.path.join(settings.MODELS_DIR, f"{self.name}.yml")
@@ -56,6 +61,24 @@ class DataSet:
             self.load_from_yaml(file_path)
 
         self.load()
+
+    # It checks if Data isn't empty and displays the name and the data
+    def __str__(self) -> str:
+        """Human-Friendly summary"""
+        data_str = str(self.data) if self.data is not None else "No Data"
+        return (
+            f"DataSet(name='{self.name}', "
+            f"data={data_str})"
+        )
+
+    # Avoids errors if id isn't present
+    def __repr__(self) -> str:
+        """Developer-friendly"""
+        return (
+            f"DataSet(name={self.name!r},"
+            f"id={getattr(self, 'id', None)!r}, "
+            f"data={self.data!r})"
+        )
 
     def _is_yaml_stale(self, yaml_data: dict) -> bool:
         """Check if the YAML data is stale by comparing source modification times."""
@@ -85,9 +108,8 @@ class DataSet:
     def _populate_from_yaml(self, yaml_data: dict):
         """Populate the DataSet object from YAML data."""
         source = yaml_data.get("sources", [])[0]
-        table = source.get("table", {})
-        self.source_table_model = SourceTables.model_validate(table)
-        self.columns = {col.name: col for col in self.source_table_model.columns}
+        self.source = Source.model_validate(source)
+        self.columns = {col.name: col for col in self.source.table.columns}
 
     @property
     def sql_query(self):
@@ -110,12 +132,12 @@ class DataSet:
         Profiles the table and stores the result in the 'results' dictionary.
         """
         table_profile = self.adapter.profile(self.data, self.name)
-        if self.source_table_model.profiling_metrics is None:
-            self.source_table_model.profiling_metrics = ModelProfilingMetrics()
-        self.source_table_model.profiling_metrics.count = table_profile.count
+        if self.source.table.profiling_metrics is None:
+            self.source.table.profiling_metrics = ModelProfilingMetrics()
+        self.source.table.profiling_metrics.count = table_profile.count
 
-        self.source_table_model.columns = [Column(name=col_name) for col_name in table_profile.columns]
-        self.columns = {col.name: col for col in self.source_table_model.columns}
+        self.source.table.columns = [Column(name=col_name) for col_name in table_profile.columns]
+        self.columns = {col.name: col for col in self.source.table.columns}
         return self
 
     def profile_columns(self) -> 'DataSet':
@@ -123,12 +145,12 @@ class DataSet:
         Profiles each column in the dataset and stores the results in the 'results' dictionary.
         This method relies on the 'table_profile' result to get the list of columns.
         """
-        if not self.source_table_model.columns:
+        if not self.source.table.columns:
             raise RuntimeError("TableProfiler must be run before profiling columns.")
 
-        count = self.source_table_model.profiling_metrics.count
+        count = self.source.table.profiling_metrics.count
 
-        for column in self.source_table_model.columns:
+        for column in self.source.table.columns:
             column_profile = self.adapter.column_profile(
                 self.data, self.name, column.name, count, settings.UPSTREAM_SAMPLE_LIMIT
             )
@@ -148,13 +170,13 @@ class DataSet:
         Identifies the data types at Level 1 for each column based on the column profiles.
         This method relies on the 'column_profiles' result.
         """
-        if not self.source_table_model.columns or any(
-            c.profiling_metrics is None for c in self.source_table_model.columns
+        if not self.source.table.columns or any(
+            c.profiling_metrics is None for c in self.source.table.columns
         ):
             raise RuntimeError("TableProfiler and ColumnProfiler must be run before data type identification.")
 
         records = []
-        for column in self.source_table_model.columns:
+        for column in self.source.table.columns:
             records.append(
                 {"table_name": self.name, "column_name": column.name, "values": column.profiling_metrics.dtype_sample}
             )
@@ -174,11 +196,11 @@ class DataSet:
         Identifies the data types at Level 2 for each column based on the column profiles.
         This method relies on the 'column_profiles' result.
         """
-        if not self.source_table_model.columns or any(c.type is None for c in self.source_table_model.columns):
+        if not self.source.table.columns or any(c.type is None for c in self.source.table.columns):
             raise RuntimeError("TableProfiler and ColumnProfiler must be run before data type identification.")
 
         columns_with_samples = []
-        for column in self.source_table_model.columns:
+        for column in self.source.table.columns:
             columns_with_samples.append(
                 DataTypeIdentificationL2Input(
                     column_name=column.name,
@@ -202,13 +224,13 @@ class DataSet:
         Identifies potential primary keys in the dataset based on column profiles.
         This method relies on the 'column_profiles' result.
         """
-        if not self.source_table_model.columns or any(
-            c.type is None or c.category is None for c in self.source_table_model.columns
+        if not self.source.table.columns or any(
+            c.type is None or c.category is None for c in self.source.table.columns
         ):
             raise RuntimeError("DataTypeIdentifierL1 and L2 must be run before KeyIdentifier.")
 
         column_profiles_data = []
-        for column in self.source_table_model.columns:
+        for column in self.source.table.columns:
             metrics = column.profiling_metrics
             count = metrics.count if metrics.count is not None else 0
             null_count = metrics.null_count if metrics.null_count is not None else 0
@@ -232,7 +254,7 @@ class DataSet:
         ki_model = KeyIdentificationLLM(profiling_data=column_profiles_df)
         ki_result = ki_model()
         output = KeyIdentificationOutput(**ki_result)
-        self.source_table_model.key = output.column_name or ""
+        self.source.table.key = output.column_name or ""
 
         if save:
             self.save_yaml()
@@ -263,11 +285,11 @@ class DataSet:
         Generates a business glossary for the dataset and stores the result in the 'results' dictionary.
         This method relies on the 'column_datatypes_l1' results.
         """
-        if not self.source_table_model.columns or any(c.type is None for c in self.source_table_model.columns):
+        if not self.source.table.columns or any(c.type is None for c in self.source.table.columns):
             raise RuntimeError("DataTypeIdentifierL1  must be run before Business Glossary Generation.")
 
         column_profiles_data = []
-        for column in self.source_table_model.columns:
+        for column in self.source.table.columns:
             metrics = column.profiling_metrics
             count = metrics.count if metrics.count is not None else 0
             null_count = metrics.null_count if metrics.null_count is not None else 0
@@ -291,7 +313,7 @@ class DataSet:
         bg_model = BusinessGlossary(profiling_data=column_profiles_df)
         table_glossary, glossary_df = bg_model(table_name=self.name, domain=domain)
 
-        self.source_table_model.description = table_glossary
+        self.source.table.description = table_glossary
 
         for _, row in glossary_df.iterrows():
             column = self.columns[row["column_name"]]
@@ -321,21 +343,13 @@ class DataSet:
         file_path = os.path.join(settings.MODELS_DIR, file_path)
 
         details = self.adapter.get_details(self.data)
-        self.source_table_model.details = details
+        self.source.table.details = details
 
         # Store the source's last modification time
         if isinstance(self.data, dict) and "path" in self.data and os.path.exists(self.data["path"]):
-            self.source_table_model.source_last_modified = os.path.getmtime(self.data["path"])
+            self.source.table.source_last_modified = os.path.getmtime(self.data["path"])
 
-        source = Source(
-            name="healthcare",
-            description=self.source_table_model.description,
-            schema="public",
-            database="",
-            table=self.source_table_model,
-        )
-
-        sources = {"sources": [json.loads(source.model_dump_json())]}
+        sources = {"sources": [json.loads(self.source.model_dump_json())]}
 
         # Save the YAML representation of the sources
         with open(file_path, "w") as file:
@@ -363,11 +377,11 @@ class DataSet:
 
     @property
     def profiling_df(self):
-        if not self.source_table_model.columns:
+        if not self.source.table.columns:
             return "<p>No column profiles available.</p>"
 
         column_profiles_data = []
-        for column in self.source_table_model.columns:
+        for column in self.source.table.columns:
             metrics = column.profiling_metrics
             if metrics:
                 count = metrics.count if metrics.count is not None else 0

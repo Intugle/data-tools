@@ -79,7 +79,7 @@ class LinkPredictor:
         for dataset in data_list:
             if not dataset.name:
                 raise ValueError("DataSet objects provided in a list must have a 'name' attribute.")
-            if dataset.source_table_model.key is None:
+            if dataset.source.table.key is None:
                 print(f"Dataset '{dataset.name}' is missing key identification. Running prerequisite analysis...")
                 self._run_prerequisites(dataset)
             else:
@@ -114,10 +114,10 @@ class LinkPredictor:
         )
 
         primary_keys = []
-        if dataset_a.source_table_model.key:
-            primary_keys.append((name_a, dataset_a.source_table_model.key))
-        if dataset_b.source_table_model.key:
-            primary_keys.append((name_b, dataset_b.source_table_model.key))
+        if dataset_a.source.table.key:
+            primary_keys.append((name_a, dataset_a.source.table.key))
+        if dataset_b.source.table.key:
+            primary_keys.append((name_b, dataset_b.source.table.key))
 
         pipeline = LinkPredictionAgentic(
             profiling_data=profiling_data,

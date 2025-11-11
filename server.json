@@ -1,0 +1,32 @@
+{
+    "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+    "name": "io.github.intugle/intugle-vibe-mcp",
+    "title": "Intugle Data Tools",
+    "version": "1.0.11",
+    "description": "A GenAI-powered Python library for building semantic layers.",
+    "repository": {
+        "url": "https://github.com/Intugle/data-tools",
+        "source": "github",
+        "id": "1030305512"
+    },
+    "packages": [
+        {
+            "registryType": "pypi",
+            "registryBaseUrl": "https://pypi.org",
+            "identifier": "intugle",
+            "version": "1.0.11",
+            "runtimeHint": "uvx",
+            "transport": {
+                "type": "streamable-http",
+                "url": "http://localhost:8080/semantic_layer/mcp"
+            },
+            "packageArguments": [
+                {
+                    "type": "positional",
+                    "value": "intugle-mcp"
+                }
+            ]
+        }
+    ]
+}
+

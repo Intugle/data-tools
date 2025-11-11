@@ -1,5 +1,6 @@
 import pandas as pd
 import pytest
+import yaml
 
 from intugle.analysis.models import DataSet
 
@@ -22,7 +23,7 @@ def test_profile(sample_dataframe):
     dataset = DataSet(sample_dataframe, name="test_table")
     dataset.profile()
 
-    table_model = dataset.source_table_model
+    table_model = dataset.source.table
     assert table_model.profiling_metrics is not None
     assert table_model.profiling_metrics.count == 5
     assert len(table_model.columns) == 4
@@ -37,7 +38,7 @@ def test_identify_datatypes(sample_dataframe):
     dataset.profile()
     dataset.identify_datatypes()
 
-    table_model = dataset.source_table_model
+    table_model = dataset.source.table
     assert all(col.type is not None for col in table_model.columns)
     assert all(col.category is not None for col in table_model.columns)
 
@@ -49,7 +50,7 @@ def test_identify_keys(sample_dataframe):
     dataset.identify_datatypes()
     dataset.identify_keys()
 
-    assert dataset.source_table_model.key is not None
+    assert dataset.source.table.key is not None
 
 
 def test_generate_glossary(sample_dataframe):
@@ -59,7 +60,7 @@ def test_generate_glossary(sample_dataframe):
     dataset.identify_datatypes()
     dataset.generate_glossary(domain="ecommerce")
 
-    table_model = dataset.source_table_model
+    table_model = dataset.source.table
     assert table_model.description is not None
     assert all(col.description is not None for col in table_model.columns)
 
@@ -76,5 +77,25 @@ def test_save_yaml(sample_dataframe, tmp_path):
 
     assert file_path.exists()
     with open(file_path, "r") as file:
-        content = file.read()
-        assert "sources" in content
+        content = yaml.safe_load(file)
+
+    # Assertions for the loaded YAML content
+    assert "sources" in content
+    loaded_source = content["sources"][0]
+    assert loaded_source["name"] == "my_pandas_source"
+    assert loaded_source["database"] == ""
+    assert loaded_source["schema"] == ""
+    assert loaded_source["table"]["name"] == "test_table"
+    assert loaded_source["table"]["details"] is None
+
+    # Test loading from YAML
+    new_dataset = DataSet(sample_dataframe, name="test_table")
+    new_dataset.load_from_yaml(file_path=str(file_path))
+
+    assert new_dataset.source.name == "my_pandas_source"
+    assert new_dataset.source.database == ""
+    assert new_dataset.source.schema == ""
+    assert new_dataset.source.table.name == "test_table"
+    assert new_dataset.source.table.description == dataset.source.table.description
+    assert new_dataset.source.table.key == dataset.source.table.key
+    assert new_dataset.source.table.details is None
