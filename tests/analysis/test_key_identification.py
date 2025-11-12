@@ -32,7 +32,8 @@ def test_key_identification_end_to_end():
     # Check the final output of the KeyIdentifier step
     identified_key = dataset.source.table.key
     assert identified_key is not None
-    assert identified_key == ["order_id"]
+    assert identified_key.columns == ["order_id"]
+    assert identified_key.distinct_count == 100
 
 
 def test_composite_key_identification_end_to_end():
@@ -45,6 +46,13 @@ def test_composite_key_identification_end_to_end():
     dataset.profile().identify_datatypes().identify_keys()
 
     identified_key = dataset.source.table.key
+
     assert identified_key is not None
+
     # Sort for assertion consistency, as the order is not guaranteed
-    assert sorted(identified_key) == ["product_id", "user_id"]
+
+    assert sorted(identified_key.columns) == ["product_id", "user_id"]
+
+    assert identified_key.distinct_count == 6
+
+    

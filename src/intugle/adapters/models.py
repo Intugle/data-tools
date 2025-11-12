@@ -135,17 +135,6 @@ class DataTypeIdentificationL2Output(BaseModel):
     )
 
 
-class KeyIdentificationOutput(BaseModel):
-    """
-    A Pydantic model for validating the response of the key_identification function.
-
-    """
-
-    column_name: Optional[str | List[str]] = Field(
-        default=None,
-        description="The identified primary key(s) for the table. Can be a single column name (str) or a list of column names (List[str]) for composite keys."
-    )
-
 
 class ColumnGlossary(BaseModel):
     """
