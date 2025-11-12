@@ -55,7 +55,7 @@ class KeyIdentificationAgent:
         self.dataset_data = dataset_data
         self.adapter = adapter
         self.table_name = self.profiling_data["table_name"].iloc[0]
-        self.last_distinct_count: Optional[int] = None
+        self.composite_key_cache: dict = {}
         self.llm = ChatModelLLM.build(
             model_name=settings.LLM_PROVIDER,
             llm_config={"temperature": 0.2, "timeout": 60},
@@ -176,7 +176,8 @@ class KeyIdentificationAgent:
             distinct_count = self.adapter.get_composite_key_uniqueness(
                 table_name=self.table_name, columns=fields, dataset_data=self.dataset_data
             )
-            self.last_distinct_count = distinct_count
+            cache_key = tuple(sorted(fields))
+            self.composite_key_cache[cache_key] = distinct_count
 
             total_count = self.profiling_data["count"].iloc[0]
 
@@ -255,8 +256,8 @@ Task: Identify the Primary Key (Single or Composite) for a database table using 
         distinct_count = None
 
         if len(key_columns) > 1:
-            # It's a composite key, use the stored distinct count
-            distinct_count = self.last_distinct_count
+            cache_key = tuple(sorted(key_columns))
+            distinct_count = self.composite_key_cache.get(cache_key)
         elif len(key_columns) == 1:
             # It's a single key, get the distinct count from profiling data
             try:
