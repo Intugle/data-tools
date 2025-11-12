@@ -283,6 +283,38 @@ class DuckdbAdapter(Adapter):
         result = self.execute(query)
         return result[0]['distinct_count']
 
+    def intersect_composite_keys_count(
+        self,
+        table1: "DataSet",
+        columns1: list[str],
+        table2: "DataSet",
+        columns2: list[str],
+    ) -> int:
+        table1_name_safe = safe_identifier(table1.name)
+        table2_name_safe = safe_identifier(table2.name)
+
+        columns1_safe = [safe_identifier(col) for col in columns1]
+        columns2_safe = [safe_identifier(col) for col in columns2]
+
+        # Construct the JOIN conditions
+        join_conditions = " AND ".join(
+            [f"t1.{c1} = t2.{c2}" for c1, c2 in zip(columns1_safe, columns2_safe)]
+        )
+
+        # Construct NULL filters for both sets of columns
+        null_filter1 = " AND ".join(f"t1.{c} IS NOT NULL" for c in columns1_safe)
+        null_filter2 = " AND ".join(f"t2.{c} IS NOT NULL" for c in columns2_safe)
+
+        query = f"""
+        SELECT COUNT(*) as intersect_count
+        FROM {table1_name_safe} AS t1
+        JOIN {table2_name_safe} AS t2
+        ON {join_conditions}
+        WHERE {null_filter1} AND {null_filter2}
+        """
+        result = self.execute(query)
+        return result[0]['intersect_count']
+
     def get_details(self, data: DuckdbConfig):
         data = self.check_data(data)
         return data.model_dump()

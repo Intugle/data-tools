@@ -281,60 +281,12 @@ class LinkPredictionTools:
             count_distinct_composite1 = kwargs.get("count_distinct_composite1")
             count_distinct_composite2 = kwargs.get("count_distinct_composite2")
 
-            # Use adapter's intersect_count for composite keys
-            # This assumes the adapter's intersect_count can handle multiple columns for composite keys
-            # If not, this part needs further adaptation or a new adapter method.
-            # For now, I'll assume a simplified approach or that the adapter can handle it.
-            # A more robust solution might involve creating a temporary view/table with concatenated keys
-            # and then calling intersect_count on those.
-            # For this implementation, I'll assume the adapter's intersect_count can take a list of columns
-            # or that the underlying adapter implementation will handle the composite key intersection.
-            # Given the current adapter.py, intersect_count only takes single column names.
-            # So, for composite keys, we need to construct a query or a temporary representation.
-
-            # For now, I'll use a simplified approach for composite keys,
-            # which might need refinement if the adapter doesn't directly support it.
-            # A more accurate approach would be to create a temporary concatenated column
-            # or a more complex query using the adapter's execute method.
-
-            # Since the adapter's intersect_count only takes single columns,
-            # I will simulate the composite key intersection by constructing a query
-            # and using the adapter's execute method.
-
-            # This part needs careful consideration based on the actual adapter capabilities.
-            # For now, I'll use the existing adapter.intersect_count for each individual link
-            # and then combine the results, which is not ideal for true composite key intersection.
-            # A better approach would be to add a `intersect_composite_keys` method to the Adapter.
-
-            # Given the prompt, I need to use the existing adapter methods.
-            # The `intersect_count` method in `adapter.py` takes `column1_name` and `column2_name` as strings.
-            # It does not directly support a list of columns for composite keys.
-            # Therefore, I will need to construct a query that the adapter can execute.
-
-            # Let's assume for now that the `adapter.execute` method can run arbitrary SQL.
-            # If not, this part will need a new method in the Adapter interface.
-
-            # Constructing a join condition for composite keys
-            join_conditions = " AND ".join(
-                [
-                    f"t1.{self._adapter.safe_identifier(lnk.column1)} = t2.{self._adapter.safe_identifier(lnk.column2)}"
-                    for lnk in links
-                ]
+            intersect_count = self._adapter.intersect_composite_keys_count(
+                table1=self._table1_dataset,
+                columns1=table1_columns,
+                table2=self._table2_dataset,
+                columns2=table2_columns,
             )
-
-            # Constructing the query to get the intersection count for composite keys
-            query = f"""
-            SELECT COUNT(*) AS intersect_count
-            FROM {self._adapter.safe_identifier(table1_name)} AS t1
-            JOIN {self._adapter.safe_identifier(table2_name)} AS t2
-            ON {join_conditions}
-            WHERE {' AND '.join([f't1.{self._adapter.safe_identifier(col)} IS NOT NULL' for col in table1_columns])}
-            AND {' AND '.join([f't2.{self._adapter.safe_identifier(col)} IS NOT NULL' for col in table2_columns])}
-            """
-
-            intersect_count_result = self._adapter.execute(query)
-            intersect_count = intersect_count_result[0]['intersect_count'] if intersect_count_result else 0
-
 
             composite_key1 = f"({', '.join(table1_columns)})"
             composite_key2 = f"({', '.join(table2_columns)})"

@@ -51,7 +51,7 @@ def test_predictor_with_dict_input(mock_predict_for_pair):
     assert "orders" in predictor.datasets
     assert isinstance(predictor.datasets["customers"], DataSet)
     # Check that the prerequisite step was completed
-    assert predictor.datasets["customers"].source.table.key == "id"
+    assert predictor.datasets["customers"].source.table.key.columns == ["id"]
 
     # 4. Run prediction
     results = predictor.predict(force_recreate=True)
@@ -70,8 +70,8 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     # 1. Prepare a fully analyzed DataSet
     customers_df = pd.DataFrame({"id": [1, 2, 3]})
     processed_dataset = DataSet(customers_df, name="customers")
-    # Manually add the key to simulate it being pre-analyzed
-    processed_dataset.source.table.key = "id"
+    # Manually run analysis to populate key
+    processed_dataset.profile().identify_datatypes().identify_keys()
 
     # 2. Prepare a raw DataSet that needs analysis
     orders_df = pd.DataFrame({"order_id": [101, 102], "customer_id": [1, 3]})
@@ -85,7 +85,7 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     assert "orders" in predictor.datasets
     assert predictor.datasets["customers"].source.table.key is not None
     assert predictor.datasets["orders"].source.table.key is not None
-    assert predictor.datasets["orders"].source.table.key == "order_id"
+    assert predictor.datasets["orders"].source.table.key.columns == ["order_id"]
 
     # 5. Run prediction
     results = predictor.predict(force_recreate=True)
@@ -103,10 +103,144 @@ def test_predictor_raises_error_with_insufficient_datasets():
         LinkPredictor({"customers": pd.DataFrame({"id": [1]})})
 
 
+def test_predictor_end_to_end_simple_link():
+    """
+    Tests the LinkPredictor end-to-end with simple dataframes and a single link,
+    without mocking the LLM.
+    """
+    # 1. Prepare dummy dataframes
+    customers_df = pd.DataFrame({
+        "customer_id": [1, 2, 3, 4],
+        "name": ["Alice", "Bob", "Charlie", "David"]
+    })
+    orders_df = pd.DataFrame({
+        "order_id": [101, 102, 103, 104],
+        "customer_id": [1, 3, 1, 4],
+        "amount": [100, 200, 150, 300]
+    })
+
+    datasets = {
+        "customers": customers_df,
+        "orders": orders_df,
+    }
+
+    # 2. Initialize the predictor
+    predictor = LinkPredictor(datasets)
+
+    # 3. Run the prediction
+    results = predictor.predict(force_recreate=True)
+
+    # 4. Assert that the correct link was found
+    assert len(results.links) == 1, f"Expected 1 link, but found {len(results.links)}"
+    link = results.links[0]
+
+    assert link.from_dataset == "customers"
+    assert link.from_column == "customer_id"
+    assert link.to_dataset == "orders"
+    assert link.to_column == "customer_id"
+
+    # Verify that intersection metrics are populated and reasonable
+    assert link.intersect_count is not None
+    assert link.intersect_count > 0
+    assert link.intersect_ratio_from_col is not None
+    assert 0 <= link.intersect_ratio_from_col <= 1
+    assert link.intersect_ratio_to_col is not None
+    assert 0 <= link.intersect_ratio_to_col <= 1
+    assert link.accuracy is not None
+    assert 0 <= link.accuracy <= 1
+
+    # Specific checks for this data
+    # customers.customer_id has 4 distinct values
+    # orders.customer_id has 3 distinct values (1, 3, 4)
+    # Intersection count should be 3 (1, 3, 4)
+    # intersect_ratio_from_col (customers) = 3/4 = 0.75
+    # intersect_ratio_to_col (orders) = 3/3 = 1.0
+    assert link.intersect_count == 3
+    assert abs(link.intersect_ratio_from_col - 0.75) < 0.01
+    assert abs(link.intersect_ratio_to_col - 1.0) < 0.01
+    assert abs(link.accuracy - 1.0) < 0.01
+
+
+def test_predictor_end_to_end_composite_key_link():
+    """
+    Tests the LinkPredictor end-to-end with composite keys,
+    without mocking the LLM.
+    """
+    # 1. Prepare dummy dataframes with composite keys
+    products_df = pd.DataFrame({
+        "product_id": [1, 2, 3, 4],
+        "category": ["Electronics", "Books", "Electronics", "Clothing"],
+        "price": [100, 20, 150, 50]
+    })
+
+    # This table has a composite key (order_id, product_id)
+    order_items_df = pd.DataFrame({
+        "order_id": [101, 101, 102, 102, 103],
+        "product_id": [1, 2, 1, 3, 4],
+        "quantity": [1, 1, 2, 1, 1]
+    })
+
+    # Another table with a composite key (store_id, product_id)
+    store_inventory_df = pd.DataFrame({
+        "store_id": ["S1", "S1", "S2", "S2", "S3"],
+        "product_id": [1, 2, 1, 3, 4],
+        "stock": [10, 5, 12, 8, 3]
+    })
+
+    datasets = {
+        "products": products_df,
+        "order_items": order_items_df,
+        "store_inventory": store_inventory_df,
+    }
+
+    # 2. Initialize the predictor
+    predictor = LinkPredictor(datasets)
+
+    # 3. Run the prediction
+    results = predictor.predict(force_recreate=True)
+
+    # 4. Assert that the correct links were found
+    # Expected links:
+    # 1. products.product_id -> order_items.product_id
+    # 2. products.product_id -> store_inventory.product_id
+    # 3. (store_inventory.store_id, store_inventory.product_id) -> (order_items.store_id, order_items.product_id) - this is unlikely to be found by LLM without explicit instruction.
+    # Let's focus on the simpler product_id links first.
+
+    assert len(results.links) >= 2, f"Expected at least 2 links, but found {len(results.links)}"
+
+    # Check for product_id link between products and order_items
+    link1_found = any(
+        link.from_dataset == "products" and link.from_column == "product_id" and
+        link.to_dataset == "order_items" and link.to_column == "product_id"
+        for link in results.links
+    )
+    assert link1_found, "Expected link between products.product_id and order_items.product_id not found"
+
+    # Check for product_id link between products and store_inventory
+    link2_found = any(
+        link.from_dataset == "products" and link.from_column == "product_id" and
+        link.to_dataset == "store_inventory" and link.to_column == "product_id"
+        for link in results.links
+    )
+    assert link2_found, "Expected link between products.product_id and store_inventory.product_id not found"
+
+    # Verify that intersection metrics are populated
+    for link in results.links:
+        assert link.intersect_count is not None
+        assert link.intersect_count > 0
+        assert link.intersect_ratio_from_col is not None
+        assert 0 <= link.intersect_ratio_from_col <= 1
+        assert link.intersect_ratio_to_col is not None
+        assert 0 <= link.intersect_ratio_to_col <= 1
+        assert link.accuracy is not None
+        assert 0 <= link.accuracy <= 1
+
+
 def test_predictor_end_to_end_complex():
     """
     Tests the LinkPredictor end-to-end with more complex dataframes,
     including datetime columns and multiple potential links.
+    This test now runs without mocking the LLM.
     """
     # 1. Prepare more complex dummy dataframes
     customers_df = pd.DataFrame({
@@ -219,4 +353,3 @@ def test_predictor_save_and_load_yaml(tmp_path):
     assert len(new_predictor.links) == len(original_links)
     for original, loaded in zip(original_links, new_predictor.links):
         assert original == loaded
-

@@ -1,4 +1,4 @@
-from typing import List, Optional, Annotated, Sequence, Dict, Union
+from typing import List, Optional, Annotated, Sequence, Dict, TypedDict, Union
 
 from pydantic import BaseModel, Field
 from langchain_core.messages import BaseMessage

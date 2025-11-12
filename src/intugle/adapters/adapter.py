@@ -90,3 +90,13 @@ class Adapter(ABC):
         self, table_name: str, columns: list[str], dataset_data: DataSetData
     ) -> int:
         raise NotImplementedError()
+
+    @abstractmethod
+    def intersect_composite_keys_count(
+        self,
+        table1: "DataSet",
+        columns1: list[str],
+        table2: "DataSet",
+        columns2: list[str],
+    ) -> int:
+        raise NotImplementedError()
