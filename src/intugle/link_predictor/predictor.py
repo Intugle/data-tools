@@ -11,7 +11,7 @@ import yaml
 from intugle.analysis.models import DataSet
 from intugle.core import settings
 from intugle.core.console import console, warning_style
-from intugle.core.pipeline.link_prediction.lp import LinkPredictionAgentic
+from intugle.core.pipeline.link_prediction.agent import MultiLinkPredictionAgent
 from intugle.libs.smart_query_generator.utils.join import Join
 from intugle.models.resources.relationship import (
     Relationship,
@@ -119,12 +119,19 @@ class LinkPredictor:
         if dataset_b.source.table.key:
             primary_keys.append((name_b, dataset_b.source.table.key))
 
-        pipeline = LinkPredictionAgentic(
-            profiling_data=profiling_data,
-            primary_keys=primary_keys,
+        agent = MultiLinkPredictionAgent(
+            table1_dataset=dataset_a,
+            table2_dataset=dataset_b,
         )
 
-        llm_result, raw_llm_result = pipeline([(dataset_a, dataset_b)])
+        llm_result = agent() # The agent.__call__ method returns a dictionary directly
+
+        # The new agent returns a dictionary with a 'links' key containing a list of dictionaries
+        # We need to convert this list of dictionaries into a DataFrame for the subsequent processing
+        if llm_result and llm_result.get("links"):
+            llm_result_df = pd.DataFrame(llm_result["links"])
+        else:
+            llm_result_df = pd.DataFrame() # Empty DataFrame if no links or unexpected format
 
         pair_links: List[PredictedLink] = [
             PredictedLink(

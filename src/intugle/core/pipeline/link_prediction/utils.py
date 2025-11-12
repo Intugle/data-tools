@@ -1,6 +1,6 @@
 import logging
 
-from typing import List, Optional, TypedDict
+from typing import List, Optional, TypedDict, Dict
 
 import pandas as pd
 
@@ -8,6 +8,8 @@ from pydantic import BaseModel, Field
 
 from intugle.core import settings
 from intugle.core.utilities.processing import classify_datetime_format, preprocess_profiling_data
+from intugle.analysis.models import DataSet
+from intugle.models.resources.model import PrimaryKey
 
 log = logging.getLogger(__name__)
 
@@ -119,3 +121,113 @@ def preprocess_profiling_df(profiling_data: pd.DataFrame):
     )
 
     return profiling_data
+
+DTYPE_MAPPING = {
+    "integer": "INTEGER",
+    "float": "FLOAT",
+    "date & time": "DATETIME",
+    "close_ended_text": "TEXT",
+    "open_ended_text": "TEXT",
+    "alphanumeric": "TEXT",
+    "others": "TEXT",
+    "range_type": "TEXT",
+}
+
+def generate_table_ddl_statements(
+    table_columns: list,
+    column_datatypes: dict = {},
+    table_name: str = "",
+    profiling_data: pd.DataFrame = None,
+    columns_required: list = [],
+    primary_key_obj: Optional[PrimaryKey] = None,
+):
+    create_table_query = f"CREATE TABLE {table_name.lower()} (\n"
+    column_parts = []
+
+    for column in table_columns:
+        parts = []
+        parts.append(f"  {column}")
+        if column in column_datatypes:
+            datatype = DTYPE_MAPPING[column_datatypes[column]]
+            datatype = f"({datatype})"
+        else:
+            datatype = "VARCHAR(20)"
+
+        parts.append(datatype)
+
+        profiling = ""
+        if profiling_data is not None:
+            try:
+                profiling_row = profiling_data.loc[
+                    profiling_data["upstream_column_name"] == column,
+                    list(columns_required),
+                ].to_dict(orient="records")[0]
+            except IndexError:
+                # Column not found in profiling_data, skip adding profiling info
+                profiling_row = {}
+
+            if profiling_row:
+                # Format sample_data as a string representation of a list
+                sample_data_str = str(profiling_row.pop("sample_data", []))
+                profiling_str = json.dumps(profiling_row).replace("{", "").replace("}", "").replace("\"", "")
+                profiling = f" -- {profiling_str}, sample_data: {sample_data_str}"
+
+        column_parts.append(" ".join(parts) + profiling)
+
+    pk_clause = []
+    if primary_key_obj and primary_key_obj.columns:
+        pk_cols = ", ".join([f'"{col}"' for col in primary_key_obj.columns])
+        pk_clause.append(f"  PRIMARY KEY ({pk_cols})")
+
+    all_parts = column_parts
+    if pk_clause:
+        all_parts.append(pk_clause[0])
+
+    create_table_query += ",\n".join(all_parts)
+    create_table_query += "\n);"
+
+    return create_table_query
+
+
+def prepare_ddl_statements(dataset: DataSet) -> Dict[str, str]:
+    ddl_statements = {}
+    table_name = dataset.name
+    profiling_df = dataset.profiling_df.copy()
+    profiling_df.rename(columns={
+        "column_name": "upstream_column_name",
+        "table_name": "upstream_table_name",
+        "distinct_count": "distinct_value_count",
+        "predicted_datatype_l1": "datatype_l1",
+        "predicted_datatype_l2": "datatype_l2",
+        "uniqueness": "uniqueness_ratio",
+        "completeness": "completeness_ratio",
+        "business_glossary": "glossary",
+    }, inplace=True)
+
+    column_datatypes = {
+        col.name: col.type
+        for col in dataset.source.table.columns
+        if col.type is not None
+    }
+
+    ddl_statement = generate_table_ddl_statements(
+        table_columns=profiling_df["upstream_column_name"].to_list(),
+        table_name=table_name,
+        profiling_data=profiling_df,
+        columns_required=[
+            "glossary",
+            "datatype_l1",
+            "distinct_value_count",
+            "uniqueness_ratio",
+            "completeness_ratio",
+            "sample_data"
+        ],
+        column_datatypes=column_datatypes,
+        primary_key_obj=dataset.source.table.key,
+    )
+
+    ddl_statements[table_name] = ddl_statement
+
+    return ddl_statements
+
+import json
