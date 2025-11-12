@@ -14,6 +14,7 @@ from pydantic import BaseModel, Field
 from intugle.adapters.adapter import Adapter
 from intugle.adapters.models import DataSetData
 from intugle.core.llms.chat import ChatModelLLM
+from intugle.core.observability import get_langfuse_handler
 from intugle.core.settings import settings
 
 
@@ -241,11 +242,16 @@ Task: Identify the Primary Key (Single or Composite) for a database table using 
 
         table_schema = self._generate_ddl_statement()
 
+        # Get Langfuse handler if enabled
+        langfuse_handler = get_langfuse_handler(trace_name=f"key-id-{self.table_name}")
+        config = {"callbacks": [langfuse_handler]} if langfuse_handler else {}
+
         result = agent.invoke(
             input={
                 "messages": [("user", f"#Input Schema:\n{table_schema}")],
                 "table_name": self.table_name,
             },
+            config=config,
         )
 
         response = result.get("structured_response")
