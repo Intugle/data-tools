@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Union
 
 from pydantic import Field
 
@@ -14,7 +14,7 @@ class SourceTables(SchemaBase):
     details: Optional[dict] = None
     columns: List[Column] = Field(default_factory=list)
     profiling_metrics: Optional[ModelProfilingMetrics] = None
-    key: Optional[str] = None
+    key: Optional[Union[str, List[str]]] = None
     source_last_modified: Optional[float] = None
 
 

@@ -21,7 +21,7 @@ from intugle.core.console import console, warning_style
 from intugle.core.pipeline.business_glossary.bg import BusinessGlossary
 from intugle.core.pipeline.datatype_identification.l2_model import L2Model
 from intugle.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
-from intugle.core.pipeline.key_identification.ki import KeyIdentificationLLM
+from intugle.core.pipeline.key_identification.agent import KeyIdentificationAgent
 from intugle.core.utilities.processing import string_standardization
 from intugle.models.resources.model import Column, ColumnProfilingMetrics, ModelProfilingMetrics
 from intugle.models.resources.source import Source, SourceTables
@@ -251,10 +251,15 @@ class DataSet:
             )
         column_profiles_df = pd.DataFrame(column_profiles_data)
 
-        ki_model = KeyIdentificationLLM(profiling_data=column_profiles_df)
-        ki_result = ki_model()
+        ki_agent = KeyIdentificationAgent(profiling_data=column_profiles_df, adapter=self.adapter)
+        ki_result = ki_agent()
         output = KeyIdentificationOutput(**ki_result)
-        self.source.table.key = output.column_name or ""
+        
+        # Handle both single and composite keys
+        if isinstance(output.column_name, list):
+            self.source.table.key = output.column_name
+        else:
+            self.source.table.key = [output.column_name] if output.column_name else []
 
         if save:
             self.save_yaml()
