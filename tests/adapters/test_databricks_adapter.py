@@ -228,6 +228,7 @@ class TestCanHandleDatabricks:
 # Error Handling Tests
 # ============================================================================
 
+
 class TestDatabricksErrorHandling:
     """Test error handling and informative error messages."""
 

@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import TYPE_CHECKING, Any, List, Optional, Union
+from typing import TYPE_CHECKING, Any, List, Optional
 
 from pydantic import BaseModel, Field
 
@@ -141,7 +141,7 @@ class KeyIdentificationOutput(BaseModel):
 
     """
 
-    column_name: Optional[Union[str, List[str]]] = Field(
+    column_name: Optional[str | List[str]] = Field(
         default=None,
         description="The identified primary key(s) for the table. Can be a single column name (str) or a list of column names (List[str]) for composite keys."
     )

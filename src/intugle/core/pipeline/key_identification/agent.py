@@ -1,7 +1,9 @@
 import json
-from typing import Annotated, List, Optional, Sequence, TypedDict, Union
+
+from typing import Annotated, List, Optional, Sequence, TypedDict
 
 import pandas as pd
+
 from langchain_core.messages import BaseMessage
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.tools import tool

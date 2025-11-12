@@ -1,4 +1,5 @@
 import time
+
 from typing import TYPE_CHECKING, Any, Optional
 
 import numpy as np
@@ -127,7 +128,7 @@ class SQLServerAdapter(Adapter):
             cursor.execute(query, *args)
             try:
                 return cursor.fetchall()
-            except mssql_python.ProgrammingError: # No results
+            except mssql_python.ProgrammingError:  # No results
                 return []
 
     def _get_pandas_df(self, query: str, *args) -> pd.DataFrame:
@@ -258,7 +259,7 @@ class SQLServerAdapter(Adapter):
         if materialize == "view":
             self._execute_sql(f"IF OBJECT_ID('{fqn}', 'V') IS NOT NULL DROP VIEW {fqn}")
             self._execute_sql(f"CREATE VIEW {fqn} AS {transpiled_sql}")
-        else: # table
+        else:  # table
             self._execute_sql(f"IF OBJECT_ID('{fqn}', 'U') IS NOT NULL DROP TABLE {fqn}")
             self._execute_sql(f"SELECT * INTO {fqn} FROM ({transpiled_sql}) as tmp")
         
@@ -289,6 +290,7 @@ class SQLServerAdapter(Adapter):
     def get_details(self, data: SQLServerConfig):
         data = self.check_data(data)
         return data.model_dump()
+
 
 def can_handle_sqlserver(df: Any) -> bool:
     try:
