@@ -53,8 +53,8 @@ class KeyIdentificationAgent:
         self.table_name = self.profiling_data["table_name"].iloc[0]
         self.llm = ChatModelLLM.build(
             model_name=settings.LLM_PROVIDER,
-            llm_config={"temperature": 0.2, "max_retries": 5, "timeout": 60},
-        ).chat_llm
+            llm_config={"temperature": 0.2, "timeout": 60},
+        )
 
         # Define tools as methods bound to the instance
         bound_uniqueness_check_composite_key = self._uniqueness_check_composite_key
@@ -237,7 +237,7 @@ Task: Identify the Primary Key (Single or Composite) for a database table using 
         agent_tools = [self.uniqueness_check_composite_key_tool, self.validate_key_tool]
 
         agent = create_react_agent(
-            model=self.llm,
+            model=self.llm.model,
             tools=agent_tools,
             prompt=key_identification_agent_prompt,
             state_schema=AgentState,

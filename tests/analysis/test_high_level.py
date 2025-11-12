@@ -50,7 +50,7 @@ def test_identify_keys(sample_dataframe):
     dataset.identify_datatypes()
     dataset.identify_keys()
 
-    assert dataset.source.table.key is not None
+    assert dataset.source.table.key == ["user_id"]
 
 
 def test_generate_glossary(sample_dataframe):
@@ -70,6 +70,7 @@ def test_save_yaml(sample_dataframe, tmp_path):
     dataset = DataSet(sample_dataframe, name="test_table")
     dataset.profile()
     dataset.identify_datatypes()
+    dataset.identify_keys()
     dataset.generate_glossary(domain="ecommerce")
 
     file_path = tmp_path / "test_table.yml"
