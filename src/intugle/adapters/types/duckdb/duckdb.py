@@ -268,6 +268,21 @@ class DuckdbAdapter(Adapter):
         result = self.execute(query)
         return result[0]['intersect_count']
 
+    def get_composite_key_uniqueness(self, table_name: str, columns: list[str]) -> int:
+        table_name_safe = safe_identifier(table_name)
+        columns_safe = [safe_identifier(col) for col in columns]
+        column_list = ", ".join(columns_safe)
+        null_cols_filter = " AND ".join(f"{c} IS NOT NULL" for c in columns_safe)
+
+        query = f"""
+        SELECT COUNT(*) as distinct_count FROM (
+            SELECT DISTINCT {column_list} FROM {table_name_safe}
+            WHERE {null_cols_filter}
+        ) as t
+        """
+        result = self.execute(query)
+        return result[0]['distinct_count']
+
     def get_details(self, data: DuckdbConfig):
         data = self.check_data(data)
         return data.model_dump()

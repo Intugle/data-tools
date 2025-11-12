@@ -206,6 +206,24 @@ class PandasAdapter(Adapter):
         
         return len(intersection)
 
+    def get_composite_key_uniqueness(self, table_name: str, columns: list[str], dataset_data: pd.DataFrame) -> int:
+        if not isinstance(dataset_data, pd.DataFrame):
+            raise TypeError("Data for get_composite_key_uniqueness must be a pandas DataFrame for PandasAdapter.")
+
+        df = dataset_data
+
+        # Ensure all columns exist in the DataFrame
+        if not all(col in df.columns for col in columns):
+            raise ValueError(f"One or more columns {columns} not found in DataFrame.")
+
+        # Drop rows where any of the key columns have null values
+        df_filtered = df.dropna(subset=columns)
+
+        # Calculate the number of unique combinations
+        distinct_count = df_filtered.groupby(columns).size().count()
+
+        return distinct_count
+
 
 def can_handle_pandas(data: Any) -> bool:
     return isinstance(data, pd.DataFrame)

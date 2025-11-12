@@ -251,7 +251,7 @@ class DataSet:
             )
         column_profiles_df = pd.DataFrame(column_profiles_data)
 
-        ki_agent = KeyIdentificationAgent(profiling_data=column_profiles_df, adapter=self.adapter)
+        ki_agent = KeyIdentificationAgent(profiling_data=column_profiles_df, adapter=self.adapter, dataset_data=self.data)
         ki_result = ki_agent()
         output = KeyIdentificationOutput(**ki_result)
         

@@ -10,6 +10,7 @@ from langgraph.prebuilt import create_react_agent
 from pydantic import BaseModel, Field
 
 from intugle.adapters.adapter import Adapter
+from intugle.adapters.models import DataSetData
 from intugle.core.llms.chat import ChatModelLLM
 from intugle.core.settings import settings
 
@@ -47,8 +48,9 @@ class KeyIdentificationAgent:
     SINGLE_KEY_THRESHOLD = 1.0
     COMPLETENESS_THRESHOLD = 1.0
 
-    def __init__(self, profiling_data: pd.DataFrame, adapter: Adapter):
+    def __init__(self, profiling_data: pd.DataFrame, adapter: Adapter, dataset_data: DataSetData):
         self.profiling_data = profiling_data
+        self.dataset_data = dataset_data
         self.adapter = adapter
         self.table_name = self.profiling_data["table_name"].iloc[0]
         self.llm = ChatModelLLM.build(
@@ -168,21 +170,9 @@ class KeyIdentificationAgent:
             return "This tool is for checking composite keys. Please provide at least two fields."
 
         try:
-            safe_fields = [f'"{field}"' for field in fields]
-            column_list = ", ".join(safe_fields)
-
-            query_distinct = f"""
-            SELECT COUNT(*)
-            FROM (
-                SELECT DISTINCT {column_list}
-                FROM "{self.table_name}"
-            ) AS sub;
-            """
-
-            result = self.adapter.execute(query_distinct)
-            distinct_count = list(result[0].values())[
-                0
-            ]  # Get first value from first dict
+            distinct_count = self.adapter.get_composite_key_uniqueness(
+                table_name=self.table_name, columns=fields, dataset_data=self.dataset_data
+            )
 
             total_count = self.profiling_data["count"].iloc[0]
 
