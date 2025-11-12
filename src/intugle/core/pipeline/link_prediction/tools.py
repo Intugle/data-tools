@@ -90,12 +90,12 @@ class LinkPredictionTools:
         dtype1 = self._profiling_data.loc[
             (self._profiling_data.upstream_table_name == link.table1)
             & (self._profiling_data.upstream_column_name == link.column1),
-            "predicted_datatype_l1",
+            "datatype_l1",
         ].values[0]
         dtype2 = self._profiling_data.loc[
             (self._profiling_data.upstream_table_name == link.table2)
             & (self._profiling_data.upstream_column_name == link.column2),
-            "predicted_datatype_l1",
+            "datatype_l1",
         ].values[0]
 
         msg = "- Datatypes between columns are valid."

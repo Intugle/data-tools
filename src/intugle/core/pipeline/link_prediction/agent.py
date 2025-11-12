@@ -16,6 +16,7 @@ from tqdm import tqdm
 from intugle.analysis.models import DataSet
 from intugle.core import settings
 from intugle.core.llms.chat import ChatModelLLM
+from intugle.core.observability import get_langfuse_handler
 from intugle.core.pipeline.link_prediction.utils import (
     dtype_check,
     preprocess_profiling_df,
@@ -89,8 +90,6 @@ class MultiLinkPredictionAgent:
             "distinct_count": "distinct_value_count",
             "predicted_datatype_l1": "datatype_l1",
             "predicted_datatype_l2": "datatype_l2",
-            "uniqueness": "uniqueness_ratio",
-            "completeness": "completeness_ratio",
             "business_glossary": "glossary",
         }, inplace=True)
 
@@ -132,6 +131,10 @@ class MultiLinkPredictionAgent:
             "remaining_steps": 25, # This is for the prebuilt agent, not directly used in our custom graph
         }
 
+        # Get Langfuse handler if enabled
+        langfuse_handler = get_langfuse_handler(trace_name=f"lp-id-{self.table1_dataset.name}-{self.table2_dataset.name}")
+        config = {"callbacks": [langfuse_handler]} if langfuse_handler else {}
+
         try:
             event = {}
             for event in self.agent.stream(
@@ -140,6 +143,7 @@ class MultiLinkPredictionAgent:
                 config={
                     "recursion_limit": 20,
                     "metadata": {"table_combo": tuple(sorted([self.table1_dataset.name, self.table2_dataset.name]))},
+                    **config,
                 },
             ):
                 for key in [list(event.keys())[-1]]:

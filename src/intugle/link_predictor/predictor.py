@@ -107,45 +107,40 @@ class LinkPredictor:
             log.warning(f"[!] Skipping already executed combination: {table_combination}")
             return []
 
-        dataset_a_column_profiles = dataset_a.profiling_df
-        dataset_b_column_profiles = dataset_b.profiling_df
-        profiling_data = pd.concat(
-            [dataset_a_column_profiles, dataset_b_column_profiles], ignore_index=True
-        )
-
-        primary_keys = []
-        if dataset_a.source.table.key:
-            primary_keys.append((name_a, dataset_a.source.table.key))
-        if dataset_b.source.table.key:
-            primary_keys.append((name_b, dataset_b.source.table.key))
-
         agent = MultiLinkPredictionAgent(
             table1_dataset=dataset_a,
             table2_dataset=dataset_b,
         )
 
-        llm_result = agent() # The agent.__call__ method returns a dictionary directly
+        llm_result = agent()  # The agent.__call__ method returns a dictionary directly
 
-        # The new agent returns a dictionary with a 'links' key containing a list of dictionaries
-        # We need to convert this list of dictionaries into a DataFrame for the subsequent processing
+        pair_links: List[PredictedLink] = []
         if llm_result and llm_result.get("links"):
-            llm_result_df = pd.DataFrame(llm_result["links"])
-        else:
-            llm_result_df = pd.DataFrame() # Empty DataFrame if no links or unexpected format
+            # llm_result["links"] is a list of OutputSchema-like dictionaries
+            for link_data in llm_result["links"]:
+                if link_data.get('links'):
+                    from_columns = [link['column1'] for link in link_data['links']]
+                    to_columns = [link['column2'] for link in link_data['links']]
+                    
+                    # Assuming table names are consistent across all parts of a composite key
+                    from_dataset = link_data['links'][0]['table1']
+                    to_dataset = link_data['links'][0]['table2']
 
-        pair_links: List[PredictedLink] = [
-            PredictedLink(
-                from_dataset=row["table1_name"],
-                from_column=row["column1_name"],
-                to_dataset=row["table2_name"],
-                to_column=row["column2_name"],
-                intersect_count=row.get("intersect_count"),
-                intersect_ratio_from_col=row.get("intersect_ratio_from_col"),
-                intersect_ratio_to_col=row.get("intersect_ratio_to_col"),
-                accuracy=row.get("accuracy"),
-            )
-            for _, row in llm_result.iterrows()
-        ]
+                    pair_links.append(
+                        PredictedLink(
+                            from_dataset=from_dataset,
+                            from_columns=from_columns,
+                            to_dataset=to_dataset,
+                            to_columns=to_columns,
+                            intersect_count=link_data.get("intersect_count"),
+                            intersect_ratio_from_col=link_data.get("intersect_ratio_from_col"),
+                            intersect_ratio_to_col=link_data.get("intersect_ratio_to_col"),
+                            accuracy=max(
+                                link_data.get("intersect_ratio_from_col", 0) or 0,
+                                link_data.get("intersect_ratio_to_col", 0) or 0
+                            ),
+                        )
+                    )
         return pair_links
 
     def predict(self, filename: str = None, save: bool = False, force_recreate: bool = False) -> 'LinkPredictor':
