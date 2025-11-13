@@ -368,6 +368,40 @@ class SnowflakeAdapter(Adapter):
         intersect_df = table1_df.select(column1_name).intersect(table2_df.select(column2_name))
         return intersect_df.count()
 
+    def get_composite_key_uniqueness(self, table_name: str, columns: list[str], dataset_data: DataSetData) -> int:
+        data = self.check_data(dataset_data)
+        table = self.session.table(data.identifier)
+        
+        # Drop rows where any of the key columns have null values and count distinct
+        distinct_count = table.dropna(subset=columns).select(columns).distinct().count()
+        return distinct_count
+
+    def intersect_composite_keys_count(
+        self,
+        table1: "DataSet",
+        columns1: list[str],
+        table2: "DataSet",
+        columns2: list[str],
+    ) -> int:
+        table1_adapter = self.check_data(table1.data)
+        table2_adapter = self.check_data(table2.data)
+
+        df1 = self.session.table(table1_adapter.identifier)
+        df2 = self.session.table(table2_adapter.identifier)
+
+        # Get unique combinations of composite keys, dropping nulls
+        df1_unique_keys = df1.dropna(subset=columns1).select(columns1).distinct()
+        df2_unique_keys = df2.dropna(subset=columns2).select(columns2).distinct()
+
+        # Create join condition
+        join_expr = df1_unique_keys[columns1[0]] == df2_unique_keys[columns2[0]]
+        for i in range(1, len(columns1)):
+            join_expr = join_expr & (df1_unique_keys[columns1[i]] == df2_unique_keys[columns2[i]])
+
+        # Perform the join and count the results
+        intersect_count = df1_unique_keys.join(df2_unique_keys, join_expr).count()
+        return intersect_count
+
     def get_details(self, data: SnowflakeConfig):
         data = self.check_data(data)
         return data.model_dump()

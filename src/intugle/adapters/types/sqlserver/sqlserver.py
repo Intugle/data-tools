@@ -287,6 +287,59 @@ class SQLServerAdapter(Adapter):
         """
         return self._execute_sql(query)[0][0]
 
+    def get_composite_key_uniqueness(self, table_name: str, columns: list[str], dataset_data: DataSetData) -> int:
+        data = self.check_data(dataset_data)
+        fqn = self._get_fqn(data.identifier)
+        safe_columns = [f"[{col}]" for col in columns]
+        column_list = ", ".join(safe_columns)
+        null_cols_filter = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns)
+
+        query = f"""
+        SELECT COUNT(*) FROM (
+            SELECT DISTINCT {column_list} FROM {fqn}
+            WHERE {null_cols_filter}
+        ) as t
+        """
+        return self._execute_sql(query)[0][0]
+
+    def intersect_composite_keys_count(
+        self,
+        table1: "DataSet",
+        columns1: list[str],
+        table2: "DataSet",
+        columns2: list[str],
+    ) -> int:
+        table1_adapter = self.check_data(table1.data)
+        table2_adapter = self.check_data(table2.data)
+
+        fqn1 = self._get_fqn(table1_adapter.identifier)
+        fqn2 = self._get_fqn(table2_adapter.identifier)
+
+        safe_columns1 = [f"[{col}]" for col in columns1]
+        safe_columns2 = [f"[{col}]" for col in columns2]
+
+        # Subquery for distinct keys from table 1
+        distinct_cols1 = ", ".join(safe_columns1)
+        null_filter1 = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns1)
+        subquery1 = f"(SELECT DISTINCT {distinct_cols1} FROM {fqn1} WHERE {null_filter1}) AS t1"
+
+        # Subquery for distinct keys from table 2
+        distinct_cols2 = ", ".join(safe_columns2)
+        null_filter2 = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns2)
+        subquery2 = f"(SELECT DISTINCT {distinct_cols2} FROM {fqn2} WHERE {null_filter2}) AS t2"
+
+        # Join conditions
+        join_conditions = " AND ".join(
+            [f"t1.{c1} = t2.{c2}" for c1, c2 in zip(safe_columns1, safe_columns2)]
+        )
+
+        query = f"""
+        SELECT COUNT(*)
+        FROM {subquery1}
+        INNER JOIN {subquery2} ON {join_conditions}
+        """
+        return self._execute_sql(query)[0][0]
+
     def get_details(self, data: SQLServerConfig):
         data = self.check_data(data)
         return data.model_dump()

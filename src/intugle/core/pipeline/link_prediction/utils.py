@@ -104,7 +104,7 @@ def preprocess_profiling_df(profiling_data: pd.DataFrame):
 
         profiling_data.loc[condn, "datatype"] = profiling_data.loc[condn].apply(
             lambda row: datetime_format(
-                row["predicted_datatype_l1"], row["date_time_format"]
+                row["datatype_l1"], row["date_time_format"]
             ),
             axis=1,
         )
