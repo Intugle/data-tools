@@ -233,9 +233,9 @@ class LinkPredictor:
             metrics = rel.get("profiling_metrics", {}) or {}
             link = PredictedLink(
                 from_dataset=rel["source"]["table"],
-                from_column=rel["source"]["column"],
+                from_columns=rel["source"]["columns"],
                 to_dataset=rel["target"]["table"],
-                to_column=rel["target"]["column"],
+                to_columns=rel["target"]["columns"],
                 intersect_count=metrics.get("intersect_count"),
                 intersect_ratio_from_col=metrics.get("intersect_ratio_from_col"),
                 intersect_ratio_to_col=metrics.get("intersect_ratio_to_col"),

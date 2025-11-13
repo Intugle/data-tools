@@ -102,8 +102,10 @@ class MultiLinkPredictionAgent:
 
         self.lpt = LinkPredictionTools(
             profiling_data=self.profiling_data,
-            table1_dataset=self.table1_dataset,
-            table2_dataset=self.table2_dataset,
+            datasets={
+                self.table1_dataset.name: self.table1_dataset,
+                self.table2_dataset.name: self.table2_dataset,
+            },
             adapter=self.table1_dataset.adapter,
         )
 

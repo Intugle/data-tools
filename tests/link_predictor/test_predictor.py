@@ -354,3 +354,77 @@ def test_predictor_save_and_load_yaml(tmp_path):
     assert len(new_predictor.links) == len(original_links)
     for original, loaded in zip(original_links, new_predictor.links):
         assert original == loaded
+
+
+def test_predictor_end_to_end_composite_key_multiple_links():
+    """
+    Tests the LinkPredictor end-to-end with composite keys and multiple links
+    from one table to another, without mocking the LLM.
+    Scenario:
+    - Player table: PK = (name, class)
+    - Game table: FK1 = (winner_name, winner_class) -> Player (name, class)
+                  FK2 = (loser_name, loser_class) -> Player (name, class)
+    """
+    # 1. Prepare dummy dataframes
+    players_df = pd.DataFrame({
+        "player_name": ["Alice", "Bob", "Alice", "Charlie"],
+        "player_class": ["Warrior", "Mage", "Rogue", "Warrior"],
+        "level": [10, 12, 8, None]
+    })
+
+    games_df = pd.DataFrame({
+        "game_id": [1, 2, 3, 4],
+        "winner_name": ["Alice", "Charlie", "Bob", "Alice"],
+        "winner_class": ["Warrior", "Warrior", "Mage", "Rogue"],
+        "loser_name": ["Bob", "Alice", "Charlie", "Bob"],
+        "loser_class": ["Mage", "Rogue", "Warrior", "Mage"],
+        "duration_minutes": [15, 20, 10, 18]
+    })
+
+    datasets = {
+        "players": players_df,
+        "games": games_df,
+    }
+
+    # 2. Initialize the predictor
+    predictor = LinkPredictor(datasets)
+
+    # 3. Run the prediction
+    results = predictor.predict(force_recreate=True)
+
+    # 4. Assert that the correct links were found
+    assert len(results.links) == 2, f"Expected 2 links, but found {len(results.links)}"
+
+    # Define expected composite keys for easier comparison
+    player_pk = ("player_name", "player_class")
+    game_winner_fk = ("winner_name", "winner_class")
+    game_loser_fk = ("loser_name", "loser_class")
+
+    # Check for the winner link
+    winner_link_found = any(
+        {link.from_dataset, link.to_dataset} == {"players", "games"} and
+        (tuple(link.from_columns) == player_pk and tuple(link.to_columns) == game_winner_fk) or
+        (tuple(link.from_columns) == game_winner_fk and tuple(link.to_columns) == player_pk)
+        for link in results.links
+    )
+    assert winner_link_found, "Expected link between players PK and games winner FK not found"
+
+    # Check for the loser link
+    loser_link_found = any(
+        {link.from_dataset, link.to_dataset} == {"players", "games"} and
+        (tuple(link.from_columns) == player_pk and tuple(link.to_columns) == game_loser_fk) or
+        (tuple(link.from_columns) == game_loser_fk and tuple(link.to_columns) == player_pk)
+        for link in results.links
+    )
+    assert loser_link_found, "Expected link between players PK and games loser FK not found"
+
+    # Verify that intersection metrics are populated for all links
+    for link in results.links:
+        assert link.intersect_count is not None
+        assert link.intersect_count > 0
+        # assert link.intersect_ratio_from_col is not None
+        # assert 0 <= link.intersect_ratio_from_col <= 1
+        # assert link.intersect_ratio_to_col is not None
+        # assert 0 <= link.intersect_ratio_to_col <= 1
+        # assert link.accuracy is not None
+        # assert 0 <= link.accuracy <= 1

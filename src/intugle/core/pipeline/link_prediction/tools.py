@@ -18,14 +18,12 @@ class LinkPredictionTools:
     def __init__(
         self,
         profiling_data: pd.DataFrame,
-        table1_dataset: DataSet,
-        table2_dataset: DataSet,
+        datasets: Dict[str, DataSet],
         adapter: Adapter,
     ):
         self._profiling_data = profiling_data
         self._links: Dict[tuple, Dict[str, OutputSchema]] = {}
-        self._table1_dataset = table1_dataset
-        self._table2_dataset = table2_dataset
+        self._datasets = datasets
         self._adapter = adapter
         self._lock = Lock()
 
@@ -154,33 +152,36 @@ class LinkPredictionTools:
 
         table1_name = link.table1
         table2_name = link.table2
+        
+        table1_dataset = self._datasets[table1_name]
+        table2_dataset = self._datasets[table2_name]
 
         table1_columns = [lnk.column1 for lnk in links]
         table2_columns = [lnk.column2 for lnk in links]
 
         # Check for pre-computed distinct_count in PrimaryKey model
         count_distinct_composite1 = None
-        table1_pk: Optional[PrimaryKey] = self._table1_dataset.source.table.key
+        table1_pk: Optional[PrimaryKey] = table1_dataset.source.table.key
         if table1_pk and sorted(table1_pk.columns) == sorted(table1_columns) and table1_pk.distinct_count is not None:
             count_distinct_composite1 = table1_pk.distinct_count
         else:
             # Fallback to adapter if not pre-computed
             count_distinct_composite1 = self._adapter.get_composite_key_uniqueness(
-                table_name=table1_name, columns=table1_columns, dataset_data=self._table1_dataset.data
+                table_name=table1_name, columns=table1_columns, dataset_data=table1_dataset.data
             )
 
         count_distinct_composite2 = None
-        table2_pk: Optional[PrimaryKey] = self._table2_dataset.source.table.key
+        table2_pk: Optional[PrimaryKey] = table2_dataset.source.table.key
         if table2_pk and sorted(table2_pk.columns) == sorted(table2_columns) and table2_pk.distinct_count is not None:
             count_distinct_composite2 = table2_pk.distinct_count
         else:
             # Fallback to adapter if not pre-computed
             count_distinct_composite2 = self._adapter.get_composite_key_uniqueness(
-                table_name=table2_name, columns=table2_columns, dataset_data=self._table2_dataset.data
+                table_name=table2_name, columns=table2_columns, dataset_data=table2_dataset.data
             )
 
-        table1_total_count = self._table1_dataset.profiling_df.loc[self._table1_dataset.profiling_df['upstream_table_name'] == table1_name, 'count'].iloc[0]
-        table2_total_count = self._table2_dataset.profiling_df.loc[self._table2_dataset.profiling_df['upstream_table_name'] == table2_name, 'count'].iloc[0]
+        table1_total_count = self._profiling_data.loc[self._profiling_data['upstream_table_name'] == table1_name, 'count'].iloc[0]
+        table2_total_count = self._profiling_data.loc[self._profiling_data['upstream_table_name'] == table2_name, 'count'].iloc[0]
 
         uniqueness_composite1 = count_distinct_composite1 / table1_total_count if table1_total_count > 0 else 0
         uniqueness_composite2 = count_distinct_composite2 / table2_total_count if table2_total_count > 0 else 0
@@ -215,6 +216,9 @@ class LinkPredictionTools:
 
         table1_name = links[0].table1
         table2_name = links[0].table2
+        
+        table1_dataset = self._datasets[table1_name]
+        table2_dataset = self._datasets[table2_name]
 
         if len(links) == 1:
             link = links[0]
@@ -232,9 +236,9 @@ class LinkPredictionTools:
             ].values[0]
 
             intersect_count = self._adapter.intersect_count(
-                table1=self._table1_dataset,
+                table1=table1_dataset,
                 column1_name=link.column1,
-                table2=self._table2_dataset,
+                table2=table2_dataset,
                 column2_name=link.column2
             )
 
@@ -282,9 +286,9 @@ class LinkPredictionTools:
             count_distinct_composite2 = kwargs.get("count_distinct_composite2")
 
             intersect_count = self._adapter.intersect_composite_keys_count(
-                table1=self._table1_dataset,
+                table1=table1_dataset,
                 columns1=table1_columns,
-                table2=self._table2_dataset,
+                table2=table2_dataset,
                 columns2=table2_columns,
             )
 
