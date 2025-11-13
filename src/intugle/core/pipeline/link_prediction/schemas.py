@@ -23,6 +23,8 @@ class OutputSchema(BaseModel):
     intersect_count: Optional[int]
     intersect_ratio_col1: Optional[float]
     intersect_ratio_col2: Optional[float]
+    from_uniqueness_ratio: Optional[float] = None
+    to_uniqueness_ratio: Optional[float] = None
     table1_name: str
     table2_name: str
     save: bool = False

@@ -135,6 +135,8 @@ class LinkPredictor:
                             intersect_count=link_data.get("intersect_count"),
                             intersect_ratio_from_col=link_data.get("intersect_ratio_col1"),
                             intersect_ratio_to_col=link_data.get("intersect_ratio_col2"),
+                            from_uniqueness_ratio=link_data.get("from_uniqueness_ratio"),
+                            to_uniqueness_ratio=link_data.get("to_uniqueness_ratio"),
                             accuracy=max(
                                 link_data.get("intersect_ratio_col1", 0) or 0,
                                 link_data.get("intersect_ratio_col2", 0) or 0
@@ -239,6 +241,8 @@ class LinkPredictor:
                 intersect_count=metrics.get("intersect_count"),
                 intersect_ratio_from_col=metrics.get("intersect_ratio_from_col"),
                 intersect_ratio_to_col=metrics.get("intersect_ratio_to_col"),
+                from_uniqueness_ratio=metrics.get("from_uniqueness_ratio"),
+                to_uniqueness_ratio=metrics.get("to_uniqueness_ratio"),
                 accuracy=metrics.get("accuracy"),
             )
             loaded_links.append(link)

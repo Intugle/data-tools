@@ -11,6 +11,39 @@ from intugle.models.resources.relationship import (
 )
 
 
+def _determine_relationship_cardinality(
+    from_dataset: str,
+    from_columns: List[str],
+    to_dataset: str,
+    to_columns: List[str],
+    from_uniqueness_ratio: Optional[float],
+    to_uniqueness_ratio: Optional[float],
+) -> tuple[str, List[str], str, List[str], RelationshipType]:
+    """Determines relationship type and swaps source/target for M:1 cases."""
+    UNIQUENESS_THRESHOLD = 0.8
+
+    from_is_unique = (from_uniqueness_ratio or 0) >= UNIQUENESS_THRESHOLD
+    to_is_unique = (to_uniqueness_ratio or 0) >= UNIQUENESS_THRESHOLD
+
+    source_table = from_dataset
+    source_columns = from_columns
+    target_table = to_dataset
+    target_columns = to_columns
+
+    if from_is_unique and to_is_unique:
+        rel_type = RelationshipType.ONE_TO_ONE
+    elif from_is_unique and not to_is_unique:
+        rel_type = RelationshipType.ONE_TO_MANY
+    elif not from_is_unique and to_is_unique:
+        rel_type = RelationshipType.ONE_TO_MANY  # Treat M:1 as 1:M by swapping
+        source_table, target_table = target_table, source_table
+        source_columns, target_columns = target_columns, source_columns
+    else:  # not from_is_unique and not to_is_unique
+        rel_type = RelationshipType.MANY_TO_MANY
+
+    return source_table, source_columns, target_table, target_columns, rel_type
+
+
 class PredictedLink(BaseModel):
     """
     Represents a single predicted link between columns from different datasets.
@@ -24,6 +57,8 @@ class PredictedLink(BaseModel):
     intersect_count: Optional[int] = None
     intersect_ratio_from_col: Optional[float] = None
     intersect_ratio_to_col: Optional[float] = None
+    from_uniqueness_ratio: Optional[float] = None
+    to_uniqueness_ratio: Optional[float] = None
     accuracy: Optional[float] = None
 
     @field_validator("from_columns", "to_columns", mode="before")
@@ -35,25 +70,40 @@ class PredictedLink(BaseModel):
 
     @property
     def relationship(self) -> Relationship:
-        source = RelationshipTable(table=self.from_dataset, columns=self.from_columns)
-        target = RelationshipTable(table=self.to_dataset, columns=self.to_columns)
+        source_table, source_columns, target_table, target_columns, rel_type = (
+            _determine_relationship_cardinality(
+                self.from_dataset,
+                self.from_columns,
+                self.to_dataset,
+                self.to_columns,
+                self.from_uniqueness_ratio,
+                self.to_uniqueness_ratio,
+            )
+        )
+
+        source = RelationshipTable(table=source_table, columns=source_columns)
+        target = RelationshipTable(table=target_table, columns=target_columns)
         profiling_metrics = RelationshipProfilingMetrics(
             intersect_count=self.intersect_count,
             intersect_ratio_from_col=self.intersect_ratio_from_col,
             intersect_ratio_to_col=self.intersect_ratio_to_col,
             accuracy=self.accuracy,
+            from_uniqueness_ratio=self.from_uniqueness_ratio,
+            to_uniqueness_ratio=self.to_uniqueness_ratio,
         )
         # Generate a more descriptive name for composite keys
         from_cols_str = "_".join(self.from_columns)
         to_cols_str = "_".join(self.to_columns)
-        relationship_name = f"{self.from_dataset}_{from_cols_str}_{self.to_dataset}_{to_cols_str}"
+        relationship_name = (
+            f"{self.from_dataset}_{from_cols_str}_{self.to_dataset}_{to_cols_str}"
+        )
 
         relationship = Relationship(
             name=relationship_name,
             description="",
             source=source,
             target=target,
-            type=RelationshipType.ONE_TO_MANY, # This might need to be determined more dynamically in the future
+            type=rel_type,
             profiling_metrics=profiling_metrics,
         )
         return relationship

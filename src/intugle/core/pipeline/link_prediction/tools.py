@@ -134,9 +134,18 @@ class LinkPredictionTools:
         else:
             msg += ", This uniqueness is within acceptable limit"
             valid = True
-
-        return ValiditySchema(message=msg, valid=valid)
-
+    
+        return ValiditySchema(
+            message=msg,
+            valid=valid,
+            extra={
+                "uniqueness_ratios": {
+                    "from_uniqueness_ratio": uniqueness_ratio_1,
+                    "to_uniqueness_ratio": uniqueness_ratio_2,
+                }
+            },
+        )
+    
     def _uniquesness_check_composite(
         self, links: list[Link]
     ) -> Union[ValiditySchema, Tuple[ValiditySchema, dict]]:
@@ -199,7 +208,16 @@ class LinkPredictionTools:
         else:
             msg += ", This uniqueness is within acceptable limit"
             valid = True
-            return ValiditySchema(message=msg, valid=valid), {
+            return ValiditySchema(
+                message=msg,
+                valid=valid,
+                extra={
+                    "uniqueness_ratios": {
+                        "from_uniqueness_ratio": uniqueness_composite1,
+                        "to_uniqueness_ratio": uniqueness_composite2,
+                    }
+                },
+            ), {
                 "count_distinct_composite1": count_distinct_composite1,
                 "count_distinct_composite2": count_distinct_composite2,
             }
@@ -273,6 +291,8 @@ class LinkPredictionTools:
                         "intersect_count": intersect_count,
                         "intersect_ratio_col1": intersect_ratio_col1,
                         "intersect_ratio_col2": intersect_ratio_col2,
+                        "from_uniqueness_ratio": kwargs.get("from_uniqueness_ratio"),
+                        "to_uniqueness_ratio": kwargs.get("to_uniqueness_ratio"),
                     }
                 },
             )
@@ -326,6 +346,8 @@ class LinkPredictionTools:
                         "intersect_count": intersect_count,
                         "intersect_ratio_col1": intersect_ratio_col1,
                         "intersect_ratio_col2": intersect_ratio_col2,
+                        "from_uniqueness_ratio": kwargs.get("from_uniqueness_ratio"),
+                        "to_uniqueness_ratio": kwargs.get("to_uniqueness_ratio"),
                     }
                 },
             )
@@ -355,8 +377,10 @@ class LinkPredictionTools:
 
         checks.append(check3.message)
 
+        uniqueness_ratios = check3.extra.get("uniqueness_ratios", {})
+
         ### Intersection check
-        check4 = self._intersection_count_check(links=[link])
+        check4 = self._intersection_count_check(links=[link], **uniqueness_ratios)
         if not check4.valid:
             return check4.message
 
@@ -399,11 +423,14 @@ class LinkPredictionTools:
             return checks_3.message
 
         schema, count_metrics = checks_3
+        uniqueness_ratios = schema.extra.get("uniqueness_ratios", {})
 
         checks.append(schema.message)
 
         ### Intersection count
-        checks_4 = self._intersection_count_check(links=links, **count_metrics)
+        checks_4 = self._intersection_count_check(
+            links=links, **count_metrics, **uniqueness_ratios
+        )
         if not checks_4.valid:
             return checks_4.message
 

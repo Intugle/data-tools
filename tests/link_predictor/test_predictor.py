@@ -26,6 +26,8 @@ def mock_predict_for_pair():
                 intersect_ratio_from_col=1.0,
                 intersect_ratio_to_col=1.0,
                 accuracy=1.0,
+                from_uniqueness_ratio=1.0,
+                to_uniqueness_ratio=0.75,
             )
         ],
     ) as mock:
@@ -59,6 +61,8 @@ def test_predictor_with_dict_input(mock_predict_for_pair):
     assert mock_predict_for_pair.call_count == 1
     assert len(results.links) == 1
     assert results.links[0].from_dataset == "customers"
+    assert results.links[0].from_uniqueness_ratio == 1.0
+    assert results.links[0].to_uniqueness_ratio == 0.75
 
 
 def test_predictor_with_list_input(mock_predict_for_pair):
@@ -92,7 +96,8 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     # 6. Verify results
     assert mock_predict_for_pair.call_count == 1
     assert len(results.links) == 1
-
+    assert results.links[0].from_uniqueness_ratio == 1.0
+    assert results.links[0].to_uniqueness_ratio == 0.75
 
 def test_predictor_raises_error_with_insufficient_datasets():
     """
@@ -162,10 +167,14 @@ def test_predictor_end_to_end_simple_link():
         assert abs(link.intersect_ratio_from_col - 0.75) < 0.01
         assert abs(link.intersect_ratio_to_col - 1.0) < 0.01
         assert abs(link.accuracy - 1.0) < 0.01
+        assert abs(link.from_uniqueness_ratio - 1.0) < 0.01
+        assert abs(link.to_uniqueness_ratio - 0.75) < 0.01
     else: # from_dataset is "orders"
         assert abs(link.intersect_ratio_from_col - 1.0) < 0.01
         assert abs(link.intersect_ratio_to_col - 0.75) < 0.01
         assert abs(link.accuracy - 1.0) < 0.01
+        assert abs(link.from_uniqueness_ratio - 0.75) < 0.01
+        assert abs(link.to_uniqueness_ratio - 1.0) < 0.01
 
 
 def test_predictor_end_to_end_composite_key_link():
@@ -235,6 +244,10 @@ def test_predictor_end_to_end_composite_key_link():
         assert 0 <= link.intersect_ratio_to_col <= 1
         assert link.accuracy is not None
         assert 0 <= link.accuracy <= 1
+        assert link.from_uniqueness_ratio is not None
+        assert 0 <= link.from_uniqueness_ratio <= 1
+        assert link.to_uniqueness_ratio is not None
+        assert 0 <= link.to_uniqueness_ratio <= 1
 
 
 def test_predictor_end_to_end_complex():
@@ -295,7 +308,7 @@ def test_predictor_end_to_end_complex():
         for link in results.links
     )
     assert link2_found, "Expected link between customers.id and events.user_id not found"
-
+    
     # Verify that intersection metrics are populated
     for link in results.links:
         assert link.intersect_count is not None
@@ -306,7 +319,10 @@ def test_predictor_end_to_end_complex():
         assert 0 <= link.intersect_ratio_to_col <= 1
         assert link.accuracy is not None
         assert 0 <= link.accuracy <= 1
-
+        assert link.from_uniqueness_ratio is not None
+        assert 0 <= link.from_uniqueness_ratio <= 1
+        assert link.to_uniqueness_ratio is not None
+        assert 0 <= link.to_uniqueness_ratio <= 1
 
 def test_predictor_save_and_load_yaml(tmp_path):
     """
@@ -328,6 +344,8 @@ def test_predictor_save_and_load_yaml(tmp_path):
             intersect_ratio_from_col=0.66,
             intersect_ratio_to_col=1.0,
             accuracy=1.0,
+            from_uniqueness_ratio=1.0,
+            to_uniqueness_ratio=0.75,
         ),
         PredictedLink(
             from_dataset="users",
@@ -338,6 +356,8 @@ def test_predictor_save_and_load_yaml(tmp_path):
             intersect_ratio_from_col=0.9,
             intersect_ratio_to_col=0.85,
             accuracy=0.9,
+            from_uniqueness_ratio=0.95,
+            to_uniqueness_ratio=0.80,
         ),
     ]
     predictor.links = original_links
@@ -428,3 +448,7 @@ def test_predictor_end_to_end_composite_key_multiple_links():
         assert 0 <= link.intersect_ratio_to_col <= 1
         assert link.accuracy is not None
         assert 0 <= link.accuracy <= 1
+        assert link.from_uniqueness_ratio is not None
+        assert 0 <= link.from_uniqueness_ratio <= 1
+        assert link.to_uniqueness_ratio is not None
+        assert 0 <= link.to_uniqueness_ratio <= 1

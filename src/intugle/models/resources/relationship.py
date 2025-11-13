@@ -25,6 +25,8 @@ class RelationshipProfilingMetrics(SchemaBase):
     intersect_ratio_from_col: Optional[float] = None
     intersect_ratio_to_col: Optional[float] = None
     accuracy: Optional[float] = None
+    from_uniqueness_ratio: Optional[float] = None
+    to_uniqueness_ratio: Optional[float] = None
 
 
 class RelationshipType(str, Enum):
