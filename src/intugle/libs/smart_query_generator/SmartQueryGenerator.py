@@ -85,31 +85,35 @@ class SmartQueryGenerator:
             if not _dataset:
                 continue
             _tmp_join[_key]["dataset"] = _dataset["name"]
-            fields = []
+            join_conditions = []
             if "fields" not in _value:
                 continue
-            for field in _value["fields"]:
-                field = LinkModel.model_validate(field)
-                # if not field.is_selected:
-                #     continue
+            for link_data in _value["fields"]:
+                link = LinkModel.model_validate(link_data)
 
-                left_field = self.__field_details.get(field.source_field_id)
-                right_field = self.__field_details.get(field.target_field_id)
+                for i in range(len(link.source_field_ids)):
+                    left_field_id = link.source_field_ids[i]
+                    right_field_id = link.target_field_ids[i]
 
-                fields.append({
-                    "left_field_id": left_field.id,
-                    "left_dataset_id": left_field.asset_id,
-                    "left_field": left_field.sql_code,
-                    "left_dataset": left_field.asset_name,
-                    "left_sql_code": left_field.sql_code,
-                    "right_field_id": right_field.id,
-                    "right_dataset_id": right_field.asset_id,
-                    "right_field": right_field.sql_code,
-                    "right_dataset": right_field.asset_name,
-                    "right_sql_code": right_field.sql_code,
-                    **field.model_dump(),
-                })
-            _tmp_join[_key]["fields"] = fields
+                    left_field = self.__field_details.get(left_field_id)
+                    right_field = self.__field_details.get(right_field_id)
+
+                    if not left_field or not right_field:
+                        continue
+
+                    join_conditions.append({
+                        "left_field_id": left_field.id,
+                        "left_dataset_id": left_field.asset_id,
+                        "left_field": left_field.sql_code,
+                        "left_dataset": left_field.asset_name,
+                        "left_sql_code": left_field.sql_code,
+                        "right_field_id": right_field.id,
+                        "right_dataset_id": right_field.asset_id,
+                        "right_field": right_field.sql_code,
+                        "right_dataset": right_field.asset_name,
+                        "right_sql_code": right_field.sql_code,
+                    })
+            _tmp_join[_key]["fields"] = join_conditions
 
         return _tmp_join
 

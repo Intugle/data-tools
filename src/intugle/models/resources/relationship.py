@@ -43,18 +43,13 @@ class Relationship(BaseResource):
 
     @property
     def link(self) -> LinkModel:
-        # For simplicity in the LinkModel, we'll join composite keys with a separator.
-        # This might need a more sophisticated handling depending on the consumer of LinkModel.
-        source_column_id = ".".join(self.source.columns)
-        target_column_id = ".".join(self.target.columns)
-
-        source_field_id = f"{self.source.table}.{source_column_id}"
-        target_field_id = f"{self.target.table}.{target_column_id}"
+        source_field_ids = [f"{self.source.table}.{col}" for col in self.source.columns]
+        target_field_ids = [f"{self.target.table}.{col}" for col in self.target.columns]
         link: LinkModel = LinkModel(
             id=self.name,
-            source_field_id=source_field_id,
+            source_field_ids=source_field_ids,
             source_asset_id=self.source.table,
-            target_field_id=target_field_id,
+            target_field_ids=target_field_ids,
             target_asset_id=self.target.table,
         )
         return link

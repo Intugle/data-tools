@@ -43,26 +43,27 @@ class Manifest(SchemaBase):
         link_data = []
         for relationship in self.relationships.values():
             left_table_name = relationship.source.table
-            left_column_name = relationship.source.column
+            left_column_names = relationship.source.columns
             right_table_name = relationship.target.table
-            right_column_name = relationship.target.column
+            right_column_names = relationship.target.columns
 
             left_source = self.sources.get(left_table_name)
             right_source = self.sources.get(right_table_name)
 
             if left_source and right_source:
-                left_column = next((c for c in left_source.table.columns if c.name == left_column_name), None)
-                right_column = next((c for c in right_source.table.columns if c.name == right_column_name), None)
+                # For metrics, we'll use the first column in the key as a representative sample.
+                left_first_column = next((c for c in left_source.table.columns if c.name == left_column_names[0]), None)
+                right_first_column = next((c for c in right_source.table.columns if c.name == right_column_names[0]), None)
 
-                if left_column and right_column:
-                    left_metrics = left_column.profiling_metrics
-                    right_metrics = right_column.profiling_metrics
+                if left_first_column and right_first_column:
+                    left_metrics = left_first_column.profiling_metrics
+                    right_metrics = right_first_column.profiling_metrics
                     link_data.append(
                         {
                             "left_table": left_table_name,
-                            "left_column": left_column_name,
-                            "left_data_type_l1": left_column.type,
-                            "left_data_type_l2": left_column.category,
+                            "left_column": ", ".join(left_column_names),
+                            "left_data_type_l1": left_first_column.type,
+                            "left_data_type_l2": left_first_column.category,
                             "left_count": left_metrics.count,
                             "left_uniqueness": left_metrics.distinct_count / left_metrics.count
                             if left_metrics.count
@@ -72,9 +73,9 @@ class Manifest(SchemaBase):
                             else 0,
                             "left_sample_values": left_metrics.sample_data,
                             "right_table": right_table_name,
-                            "right_column": right_column_name,
-                            "right_data_type_l1": right_column.type,
-                            "right_data_type_l2": right_column.category,
+                            "right_column": ", ".join(right_column_names),
+                            "right_data_type_l1": right_first_column.type,
+                            "right_data_type_l2": right_first_column.category,
                             "right_count": right_metrics.count,
                             "right_uniqueness": right_metrics.distinct_count / right_metrics.count
                             if right_metrics.count

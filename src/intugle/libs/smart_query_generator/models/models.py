@@ -166,8 +166,8 @@ class SinkModel(BaseModel):
 
 class LinkModel(BaseModel):
     id: int | str
-    source_field_id: int | str
-    target_field_id: int | str
+    source_field_ids: list[int | str]
+    target_field_ids: list[int | str]
     source_asset_id: int | str
     target_asset_id: int | str
     source_count: int = 1

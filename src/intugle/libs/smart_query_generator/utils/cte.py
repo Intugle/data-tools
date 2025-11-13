@@ -67,8 +67,8 @@ class CTE:
         ta = TypeAdapter(list[LinkModel])
         link = ta.validate_python(link)
         for _l in link:
-            source = self.__field_details[_l.source_field_id]
-            target = self.__field_details[_l.target_field_id]
+            source = self.__field_details[_l.source_field_ids[0]]
+            target = self.__field_details[_l.target_field_ids[0]]
             source_uniqueness = source.distinct_count / source.count
             target_uniqueness = target.distinct_count / target.count
 
@@ -80,7 +80,7 @@ class CTE:
                 break
 
         return flag
-    
+
     def get_cte_assets(self):
         join = self.__join
         assets: dict[int, list[int]] = {}
@@ -105,8 +105,8 @@ class CTE:
                 if link.target_asset_id not in assets:
                     assets[link.target_asset_id] = []
 
-                assets[link.source_asset_id].append(link.source_field_id)
-                assets[link.target_asset_id].append(link.target_field_id)
+                assets[link.source_asset_id].extend(link.source_field_ids)
+                assets[link.target_asset_id].extend(link.target_field_ids)
 
         return assets
 
@@ -131,9 +131,9 @@ class CTE:
                 if link.ignore:
                     continue
                 if link.source_asset_id in assets:
-                    assets[link.source_asset_id].append(link.source_field_id)
+                    assets[link.source_asset_id].extend(link.source_field_ids)
                 if link.target_asset_id in assets:
-                    assets[link.target_asset_id].append(link.target_field_id)
+                    assets[link.target_asset_id].extend(link.target_field_ids)
 
         for _asset, _fields in assets.items():
             self.__generate_cte_asset(_asset, _fields)

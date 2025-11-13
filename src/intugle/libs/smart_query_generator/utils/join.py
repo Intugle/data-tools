@@ -14,9 +14,8 @@ class Join:
         self.selected_fields = set(selected_fields)
 
     def check_if_selected(self, link: LinkModel):
-        if (
-            link.source_field_id in self.selected_fields
-            or link.target_field_id in self.selected_fields
+        if any(fid in self.selected_fields for fid in link.source_field_ids) or any(
+            fid in self.selected_fields for fid in link.target_field_ids
         ):
             return True
         return False
@@ -97,13 +96,13 @@ class Join:
 
         for link in self._links:
             src_table = link.source_asset_id
-            src_field = link.source_field_id
+            src_fields = link.source_field_ids
             target_table = link.target_asset_id
-            target_field = link.source_field_id
+            target_fields = link.target_field_ids
 
-            table_connected_fields[src_table].append(src_field)
+            table_connected_fields[src_table].extend(src_fields)
 
-            table_connected_fields[target_table].append(target_field)
+            table_connected_fields[target_table].extend(target_fields)
 
             table_connected_tables[src_table].add(src_table)
 
@@ -402,8 +401,8 @@ class Join:
             for join in join_json.values():
                 for link in links:
                     if join["dataset_id"] == link.source_asset_id:
-                        fields.add(link.source_field_id)
+                        fields.update(link.source_field_ids)
                     elif join["dataset_id"] == link.target_asset_id:
-                        fields.add(link.target_field_id)
+                        fields.update(link.target_field_ids)
 
         return fields
