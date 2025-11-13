@@ -56,9 +56,9 @@ class TableSchema:
             if relationship.source.table == table_name:
                 fk_template = "    FOREIGN KEY ({from_column}) REFERENCES {to_table}({to_column})"
                 fk_params = {
-                    "from_column": relationship.source.column,
+                    "from_column": ','.join(relationship.source.columns),
                     "to_table": relationship.target.table,
-                    "to_column": relationship.target.column,
+                    "to_column": ','.join(relationship.target.columns),
                 }
                 fk_definitions.append(fk_template.format(**fk_params))
 
@@ -85,3 +85,6 @@ class TableSchema:
             self.table_schemas[table_name] = table_schema
 
         return table_schema
+    
+
+    
