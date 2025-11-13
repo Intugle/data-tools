@@ -133,11 +133,11 @@ class LinkPredictor:
                             to_dataset=to_dataset,
                             to_columns=to_columns,
                             intersect_count=link_data.get("intersect_count"),
-                            intersect_ratio_from_col=link_data.get("intersect_ratio_from_col"),
-                            intersect_ratio_to_col=link_data.get("intersect_ratio_to_col"),
+                            intersect_ratio_from_col=link_data.get("intersect_ratio_col1"),
+                            intersect_ratio_to_col=link_data.get("intersect_ratio_col2"),
                             accuracy=max(
-                                link_data.get("intersect_ratio_from_col", 0) or 0,
-                                link_data.get("intersect_ratio_to_col", 0) or 0
+                                link_data.get("intersect_ratio_col1", 0) or 0,
+                                link_data.get("intersect_ratio_col2", 0) or 0
                             ),
                         )
                     )
@@ -256,22 +256,9 @@ class LinkPredictionSaver:
         if len(links) == 0:
             raise ValueError("No links found to save.")
 
-        relationships: list[Relationship] = []
-        for link in links:
-            source = RelationshipTable(table=link.from_dataset, column=link.from_column)
-            target = RelationshipTable(table=link.to_dataset, column=link.to_column)
-            relationship = Relationship(
-                name=f"{link.from_dataset}-{link.to_dataset}",
-                description="",
-                source=source,
-                target=target,
-                type=RelationshipType.ONE_TO_MANY,
-            )
-
-            relationships.append(relationship)
-
-        relationships = {"relationships": [json.loads(r.model_dump_json()) for r in relationships]}
+        relationships = [link.relationship for link in links]
+        relationships_data = {"relationships": [json.loads(r.model_dump_json()) for r in relationships]}
 
         # Save the relationships to a YAML file
         with open(file_path, "w") as file:
-            yaml.dump(relationships, file, sort_keys=False, default_flow_style=False)
+            yaml.dump(relationships_data, file, sort_keys=False, default_flow_style=False)

@@ -147,25 +147,25 @@ def test_predictor_end_to_end_simple_link():
     # Verify that intersection metrics are populated and reasonable
     assert link.intersect_count is not None
     assert link.intersect_count > 0
-    # assert link.intersect_ratio_from_col is not None
-    # assert 0 <= link.intersect_ratio_from_col <= 1
-    # assert link.intersect_ratio_to_col is not None
-    # assert 0 <= link.intersect_ratio_to_col <= 1
-    # assert link.accuracy is not None
-    # assert 0 <= link.accuracy <= 1
+    assert link.intersect_ratio_from_col is not None
+    assert 0 <= link.intersect_ratio_from_col <= 1
+    assert link.intersect_ratio_to_col is not None
+    assert 0 <= link.intersect_ratio_to_col <= 1
+    assert link.accuracy is not None
+    assert 0 <= link.accuracy <= 1
 
     # Specific checks for this data
     assert link.intersect_count == 3
     
     # The ratios depend on the direction, so we check both possibilities
-    # if link.from_dataset == "customers":
-    #     assert abs(link.intersect_ratio_from_col - 0.75) < 0.01
-    #     assert abs(link.intersect_ratio_to_col - 1.0) < 0.01
-    #     assert abs(link.accuracy - 1.0) < 0.01
-    # else: # from_dataset is "orders"
-    #     assert abs(link.intersect_ratio_from_col - 1.0) < 0.01
-    #     assert abs(link.intersect_ratio_to_col - 0.75) < 0.01
-    #     assert abs(link.accuracy - 1.0) < 0.01
+    if link.from_dataset == "customers":
+        assert abs(link.intersect_ratio_from_col - 0.75) < 0.01
+        assert abs(link.intersect_ratio_to_col - 1.0) < 0.01
+        assert abs(link.accuracy - 1.0) < 0.01
+    else: # from_dataset is "orders"
+        assert abs(link.intersect_ratio_from_col - 1.0) < 0.01
+        assert abs(link.intersect_ratio_to_col - 0.75) < 0.01
+        assert abs(link.accuracy - 1.0) < 0.01
 
 
 def test_predictor_end_to_end_composite_key_link():
@@ -229,12 +229,12 @@ def test_predictor_end_to_end_composite_key_link():
     for link in results.links:
         assert link.intersect_count is not None
         assert link.intersect_count > 0
-        # assert link.intersect_ratio_from_col is not None
-        # assert 0 <= link.intersect_ratio_from_col <= 1
-        # assert link.intersect_ratio_to_col is not None
-        # assert 0 <= link.intersect_ratio_to_col <= 1
-        # assert link.accuracy is not None
-        # assert 0 <= link.accuracy <= 1
+        assert link.intersect_ratio_from_col is not None
+        assert 0 <= link.intersect_ratio_from_col <= 1
+        assert link.intersect_ratio_to_col is not None
+        assert 0 <= link.intersect_ratio_to_col <= 1
+        assert link.accuracy is not None
+        assert 0 <= link.accuracy <= 1
 
 
 def test_predictor_end_to_end_complex():
@@ -300,12 +300,12 @@ def test_predictor_end_to_end_complex():
     for link in results.links:
         assert link.intersect_count is not None
         assert link.intersect_count > 0
-        # assert link.intersect_ratio_from_col is not None
-        # assert 0 <= link.intersect_ratio_from_col <= 1
-        # assert link.intersect_ratio_to_col is not None
-        # assert 0 <= link.intersect_ratio_to_col <= 1
-        # assert link.accuracy is not None
-        # assert 0 <= link.accuracy <= 1
+        assert link.intersect_ratio_from_col is not None
+        assert 0 <= link.intersect_ratio_from_col <= 1
+        assert link.intersect_ratio_to_col is not None
+        assert 0 <= link.intersect_ratio_to_col <= 1
+        assert link.accuracy is not None
+        assert 0 <= link.accuracy <= 1
 
 
 def test_predictor_save_and_load_yaml(tmp_path):
@@ -422,9 +422,9 @@ def test_predictor_end_to_end_composite_key_multiple_links():
     for link in results.links:
         assert link.intersect_count is not None
         assert link.intersect_count > 0
-        # assert link.intersect_ratio_from_col is not None
-        # assert 0 <= link.intersect_ratio_from_col <= 1
-        # assert link.intersect_ratio_to_col is not None
-        # assert 0 <= link.intersect_ratio_to_col <= 1
-        # assert link.accuracy is not None
-        # assert 0 <= link.accuracy <= 1
+        assert link.intersect_ratio_from_col is not None
+        assert 0 <= link.intersect_ratio_from_col <= 1
+        assert link.intersect_ratio_to_col is not None
+        assert 0 <= link.intersect_ratio_to_col <= 1
+        assert link.accuracy is not None
+        assert 0 <= link.accuracy <= 1
