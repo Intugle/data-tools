@@ -53,5 +53,6 @@ class Relationship(BaseResource):
             source_asset_id=self.source.table,
             target_field_ids=target_field_ids,
             target_asset_id=self.target.table,
+            type=self.type,
         )
         return link

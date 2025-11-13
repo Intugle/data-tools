@@ -164,12 +164,20 @@ class SinkModel(BaseModel):
     destination: str
 
 
+class LinkType(str, Enum):
+    ONE_TO_ONE = "one_to_one"
+    ONE_TO_MANY = "one_to_many"
+    MANY_TO_ONE = "many_to_one"
+    MANY_TO_MANY = "many_to_many"
+
+
 class LinkModel(BaseModel):
     id: int | str
     source_field_ids: list[int | str]
     target_field_ids: list[int | str]
     source_asset_id: int | str
     target_asset_id: int | str
+    type: LinkType
     source_count: int = 1
     target_count: int = 1
     source_count_distinct: int = 1

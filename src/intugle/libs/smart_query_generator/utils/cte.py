@@ -62,24 +62,17 @@ class CTE:
         self.__links = links
 
     # TODO need proper logic for composite key
-    def __check_if_need_to_create_cte(self, link: list[LinkModel]):
-        flag = True
+    def __check_if_need_to_create_cte(self, links: list[LinkModel]) -> bool:
+        """
+        Checks if a CTE is needed based on the relationship type.
+        A CTE is required for MANY_TO_MANY relationships to prevent row duplication.
+        """
         ta = TypeAdapter(list[LinkModel])
-        link = ta.validate_python(link)
-        for _l in link:
-            source = self.__field_details[_l.source_field_ids[0]]
-            target = self.__field_details[_l.target_field_ids[0]]
-            source_uniqueness = source.distinct_count / source.count
-            target_uniqueness = target.distinct_count / target.count
-
-            if (
-                source_uniqueness >= self.__uniqueness_threshold
-                or target_uniqueness >= self.__uniqueness_threshold
-            ):
-                flag = False
-                break
-
-        return flag
+        validated_links = ta.validate_python(links)
+        for link in validated_links:
+            if link.type == "many_to_many":
+                return True
+        return False
 
     def get_cte_assets(self):
         join = self.__join
