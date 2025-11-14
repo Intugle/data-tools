@@ -44,6 +44,35 @@ def _determine_relationship_cardinality(
     return source_table, source_columns, target_table, target_columns, rel_type
 
 
+def _get_final_profiling_metrics(
+    link: "PredictedLink",
+    source_table: str,
+) -> RelationshipProfilingMetrics:
+    """
+    Returns the final profiling metrics, swapping them if the source table
+    was changed during cardinality determination (i.e., a M:1 was treated as 1:M).
+    """
+    # If the final source_table is the original to_dataset, it means a swap happened.
+    if source_table == link.to_dataset:
+        return RelationshipProfilingMetrics(
+            intersect_count=link.intersect_count,
+            intersect_ratio_from_col=link.intersect_ratio_to_col,
+            intersect_ratio_to_col=link.intersect_ratio_from_col,
+            accuracy=link.accuracy,
+            from_uniqueness_ratio=link.to_uniqueness_ratio,
+            to_uniqueness_ratio=link.from_uniqueness_ratio,
+        )
+    # Otherwise, no swap occurred, so use the original metrics.
+    return RelationshipProfilingMetrics(
+        intersect_count=link.intersect_count,
+        intersect_ratio_from_col=link.intersect_ratio_from_col,
+        intersect_ratio_to_col=link.intersect_ratio_to_col,
+        accuracy=link.accuracy,
+        from_uniqueness_ratio=link.from_uniqueness_ratio,
+        to_uniqueness_ratio=link.to_uniqueness_ratio,
+    )
+
+
 class PredictedLink(BaseModel):
     """
     Represents a single predicted link between columns from different datasets.
@@ -83,19 +112,13 @@ class PredictedLink(BaseModel):
 
         source = RelationshipTable(table=source_table, columns=source_columns)
         target = RelationshipTable(table=target_table, columns=target_columns)
-        profiling_metrics = RelationshipProfilingMetrics(
-            intersect_count=self.intersect_count,
-            intersect_ratio_from_col=self.intersect_ratio_from_col,
-            intersect_ratio_to_col=self.intersect_ratio_to_col,
-            accuracy=self.accuracy,
-            from_uniqueness_ratio=self.from_uniqueness_ratio,
-            to_uniqueness_ratio=self.to_uniqueness_ratio,
-        )
-        # Generate a more descriptive name for composite keys
-        from_cols_str = "_".join(self.from_columns)
-        to_cols_str = "_".join(self.to_columns)
+        profiling_metrics = _get_final_profiling_metrics(self, source_table)
+
+        # Generate a more descriptive name for composite keys using the final source/target
+        source_cols_str = "_".join(source_columns)
+        target_cols_str = "_".join(target_columns)
         relationship_name = (
-            f"{self.from_dataset}_{from_cols_str}_{self.to_dataset}_{to_cols_str}"
+            f"{source_table}_{source_cols_str}_{target_table}_{target_cols_str}"
         )
 
         relationship = Relationship(
