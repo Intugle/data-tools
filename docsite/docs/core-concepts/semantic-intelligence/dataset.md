@@ -39,7 +39,10 @@ The library organizes metadata using Pydantic models, but you can access it thro
 -   **Table-Level Metadata**: Accessed via `dataset.source.table`.
     -   `.name: str`
     -   `.description: str`
-    -   `.key: Optional[str]`
+    -   `.key: Optional[PrimaryKey]`
+-   **`PrimaryKey`**: Defines the primary key for a table.
+    -   `.columns: List[str]` (A list of column names that make up the primary key.)
+    -   `.distinct_count: Optional[int]` (The number of distinct values in the primary key column(s).)
 -   **Column-Level Metadata**: Accessed via the `dataset.columns` dictionary, where keys are column names.
     -   `[column_name].description: Optional[str]`
     -   `[column_name].type: Optional[str]` (for example, 'integer', 'date')
@@ -68,7 +71,7 @@ print(f"Schema: {customers_dataset.source.schema}")
 # Access table-level metadata
 print(f"Table Name: {customers_dataset.source.table.name}")
 print(f"Table Description: {customers_dataset.source.table.description}")
-print(f"Primary Key: {customers_dataset.source.table.key}")
+print(f"Primary Key Columns: {customers_dataset.source.table.key.columns}")
 
 # Access column-level metadata using the 'columns' dictionary
 email_column = customers_dataset.columns['email']
