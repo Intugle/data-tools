@@ -2,31 +2,23 @@ import logging
 import time
 
 from enum import Enum
-from typing import List, Optional, Tuple
 
 import pandas as pd
 
 from langchain.output_parsers import OutputFixingParser
 from langchain_core.messages import HumanMessage
 from langchain_core.output_parsers import PydanticOutputParser
-from langchain_core.prompts import PromptTemplate
 from langgraph.errors import GraphRecursionError
-from tqdm import tqdm
+from langgraph.prebuilt import create_react_agent
 
 from intugle.analysis.models import DataSet
 from intugle.core import settings
 from intugle.core.llms.chat import ChatModelLLM
 from intugle.core.observability import get_langfuse_handler
-from intugle.core.pipeline.link_prediction.utils import (
-    dtype_check,
-    preprocess_profiling_df,
-    prepare_ddl_statements
-)
-from intugle.core.pipeline.link_prediction.schemas import Link, GraphState
-from intugle.core.pipeline.link_prediction.tools import LinkPredictionTools
 from intugle.core.pipeline.link_prediction.prompt import link_identification_agent_prompt
-
-from langgraph.prebuilt import create_react_agent
+from intugle.core.pipeline.link_prediction.schemas import GraphState, Link
+from intugle.core.pipeline.link_prediction.tools import LinkPredictionTools
+from intugle.core.pipeline.link_prediction.utils import prepare_ddl_statements, preprocess_profiling_df
 
 log = logging.getLogger(__name__)
 
@@ -125,12 +117,12 @@ class MultiLinkPredictionAgent:
         final_output["table2"] = self.table2_dataset.name
 
         start_time = time.time()
-        input_message = HumanMessage(content=f"{self.table1_dataset.name} & {self.table2_dataset.name}")
+        HumanMessage(content=f"{self.table1_dataset.name} & {self.table2_dataset.name}")
         init_data = {
             "messages": [("user", f"### Table Schemas:\n```sql\n{self.table_ddl_statements[self.table1_dataset.name]}\n```\n```sql\n{self.table_ddl_statements[self.table2_dataset.name]}\n```")],
             "table1_name": self.table1_dataset.name,
             "table2_name": self.table2_dataset.name,
-            "remaining_steps": 25, # This is for the prebuilt agent, not directly used in our custom graph
+            "remaining_steps": 25,  # This is for the prebuilt agent, not directly used in our custom graph
         }
 
         # Get Langfuse handler if enabled
@@ -176,8 +168,8 @@ class MultiLinkPredictionAgent:
 
         final_output["links"] = links_data
         final_output["Runtime_secs"] = runtime
-        final_output["logs"] = "\n".join(self.logs) # Agent logs are not directly captured here yet
-        final_output["status"] = self.status # This status needs to be set by the agent
+        final_output["logs"] = "\n".join(self.logs)  # Agent logs are not directly captured here yet
+        final_output["status"] = self.status  # This status needs to be set by the agent
         final_output["validation_logs"] = event.get("error_msg", "")
 
         return final_output

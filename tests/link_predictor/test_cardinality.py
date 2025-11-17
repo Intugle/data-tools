@@ -1,4 +1,5 @@
 import pytest
+
 from intugle.link_predictor.models import PredictedLink
 from intugle.models.resources.relationship import RelationshipType
 

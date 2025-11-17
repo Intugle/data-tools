@@ -1,4 +1,5 @@
 import logging
+
 from unittest.mock import patch
 
 import pandas as pd
@@ -99,6 +100,7 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     assert results.links[0].from_uniqueness_ratio == 1.0
     assert results.links[0].to_uniqueness_ratio == 0.75
 
+
 def test_predictor_raises_error_with_insufficient_datasets():
     """
     Tests that LinkPredictor raises a ValueError if initialized with fewer than two datasets.
@@ -139,12 +141,12 @@ def test_predictor_end_to_end_simple_link():
     
     # Find the link regardless of direction
     link = None
-    for l in results.links:
+    for temp_link in results.links:
         if (
-            {l.from_dataset, l.to_dataset} == {"customers", "orders"} and
-            {tuple(l.from_columns), tuple(l.to_columns)} == {("customer_id",)}
+            {temp_link.from_dataset, temp_link.to_dataset} == {"customers", "orders"} and
+            {tuple(temp_link.from_columns), tuple(temp_link.to_columns)} == {("customer_id",)}
         ):
-            link = l
+            link = temp_link
             break
     
     assert link is not None, "Expected link between customers.customer_id and orders.customer_id not found"
@@ -169,7 +171,7 @@ def test_predictor_end_to_end_simple_link():
         assert abs(link.accuracy - 1.0) < 0.01
         assert abs(link.from_uniqueness_ratio - 1.0) < 0.01
         assert abs(link.to_uniqueness_ratio - 0.75) < 0.01
-    else: # from_dataset is "orders"
+    else:  # from_dataset is "orders"
         assert abs(link.intersect_ratio_from_col - 1.0) < 0.01
         assert abs(link.intersect_ratio_to_col - 0.75) < 0.01
         assert abs(link.accuracy - 1.0) < 0.01
@@ -323,6 +325,7 @@ def test_predictor_end_to_end_complex():
         assert 0 <= link.from_uniqueness_ratio <= 1
         assert link.to_uniqueness_ratio is not None
         assert 0 <= link.to_uniqueness_ratio <= 1
+
 
 def test_predictor_save_and_load_yaml(tmp_path):
     """

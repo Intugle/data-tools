@@ -13,11 +13,6 @@ from intugle.core import settings
 from intugle.core.console import console, warning_style
 from intugle.core.pipeline.link_prediction.agent import MultiLinkPredictionAgent
 from intugle.libs.smart_query_generator.utils.join import Join
-from intugle.models.resources.relationship import (
-    Relationship,
-    RelationshipTable,
-    RelationshipType,
-)
 
 from .models import LinkPredictionResult, PredictedLink
 

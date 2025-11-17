@@ -1,6 +1,5 @@
 import re
 
-from intugle.adapters.common.relationships import resolve_relationship_direction
 from intugle.core import settings
 from intugle.libs.smart_query_generator.models.models import CategoryType
 from intugle.models.resources.relationship import RelationshipType

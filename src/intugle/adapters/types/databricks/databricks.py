@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 from intugle.adapters.adapter import Adapter
-from intugle.adapters.common.relationships import clean_name, resolve_relationship_direction
+from intugle.adapters.common.relationships import clean_name
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import ColumnProfile, DataSetData, ProfilingOutput
 from intugle.adapters.types.databricks.models import (
@@ -405,7 +405,6 @@ class DatabricksAdapter(Adapter):
             #     print(f"Skipping invalid or ambiguous relationship '{rel.name}'.")
             #     continue
             
-
             try:
                 child_fqn = self._get_fqn(rel.target.table)
                 parent_fqn = self._get_fqn(rel.source.table)

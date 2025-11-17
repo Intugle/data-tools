@@ -11,7 +11,6 @@ if TYPE_CHECKING:
     from intugle.models.manifest import Manifest
 
 from intugle.adapters.adapter import Adapter
-from intugle.adapters.common.relationships import resolve_relationship_direction
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import (
     ColumnProfile,
@@ -312,7 +311,6 @@ class SnowflakeAdapter(Adapter):
         # -- RELATIONSHIPS clause --
         relationship_clauses = []
         for rel in manifest.relationships.values():
-
 
             # The table with the FK is the "referencing" table
             table_alias = rel.target.table

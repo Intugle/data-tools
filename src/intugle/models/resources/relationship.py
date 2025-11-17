@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import List, Optional, Union
+from typing import List, Optional
 
 from pydantic import field_validator
 
@@ -14,7 +14,7 @@ class RelationshipTable(SchemaBase):
 
     @field_validator("columns", mode="before")
     @classmethod
-    def validate_columns(cls, value: Union[str, List[str]]) -> List[str]:
+    def validate_columns(cls, value: str | List[str]) -> List[str]:
         if isinstance(value, str):
             return [value]
         return value

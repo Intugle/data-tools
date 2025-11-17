@@ -1,4 +1,4 @@
-from typing import List, Optional, Union
+from typing import List, Optional
 
 from pydantic import BaseModel, field_validator
 
@@ -96,7 +96,7 @@ class PredictedLink(BaseModel):
 
     @field_validator("from_columns", "to_columns", mode="before")
     @classmethod
-    def validate_columns(cls, value: Union[str, List[str]]) -> List[str]:
+    def validate_columns(cls, value: str | List[str]) -> List[str]:
         if isinstance(value, str):
             return [value]
         return value

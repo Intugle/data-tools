@@ -1,4 +1,4 @@
-from typing import List, Optional, Union
+from typing import List, Optional
 
 from pydantic import Field, field_validator
 
@@ -19,7 +19,7 @@ class SourceTables(SchemaBase):
 
     @field_validator("key", mode="before")
     @classmethod
-    def validate_key(cls, value: Union[str, List[str], dict]) -> Optional[dict]:
+    def validate_key(cls, value: str | List[str] | dict) -> Optional[dict]:
         if value is None:
             return None
         if isinstance(value, str):

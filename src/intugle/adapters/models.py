@@ -135,7 +135,6 @@ class DataTypeIdentificationL2Output(BaseModel):
     )
 
 
-
 class ColumnGlossary(BaseModel):
     """
     Represents the business glossary and tags for a single column.

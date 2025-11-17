@@ -1,14 +1,17 @@
-from typing import Any, Dict, List, Tuple, Union, Optional, Annotated
 from threading import Lock
+from typing import TYPE_CHECKING, Annotated, Dict, List, Optional, Tuple
 
 import pandas as pd
+
 from langchain_core.tools import StructuredTool
 from langgraph.prebuilt import InjectedState
 
 from intugle.adapters.adapter import Adapter
 from intugle.analysis.models import DataSet
-from intugle.core.pipeline.link_prediction.schemas import Link, ValiditySchema, OutputSchema
-from intugle.models.resources.model import PrimaryKey
+from intugle.core.pipeline.link_prediction.schemas import Link, OutputSchema, ValiditySchema
+
+if TYPE_CHECKING:
+    from intugle.models.resources.model import PrimaryKey
 
 
 class LinkPredictionTools:
@@ -29,7 +32,7 @@ class LinkPredictionTools:
 
     def _check_table_and_column_presence(
         self, table_name: str, column_name: str
-    ) -> Union[str, bool]:
+    ) -> str | bool:
         """
         Check whether the table name and column name provided by llm are valid or not
         Args:
@@ -148,7 +151,7 @@ class LinkPredictionTools:
     
     def _uniquesness_check_composite(
         self, links: list[Link]
-    ) -> Union[ValiditySchema, Tuple[ValiditySchema, dict]]:
+    ) -> ValiditySchema | Tuple[ValiditySchema, dict]:
         """
         Check if the link provided llm the uniqueness of column is matching the threshold or not
         Args:
@@ -354,23 +357,23 @@ class LinkPredictionTools:
 
     def _single_link_validity(
         self, link: Link
-    ) -> Union[str, Tuple[str, ValiditySchema]]:
+    ) -> str | Tuple[str, ValiditySchema]:
         checks = []
-        ### Table, Column presence check
+        # Table, Column presence check
         check1 = self._check_table_column(link=link)
         if not check1.valid:
             return check1.message
 
         checks.append(check1.message)
 
-        ### Datatype check
+        # Datatype check
         check2 = self._datatype_check(link=link)
         if not check2.valid:
             return check2.message
 
         checks.append(check2.message)
 
-        ### Uniqueness check
+        # Uniqueness check
         check3 = self._uniqueness_check_single(link=link)
         if not check3.valid:
             return check3.message
@@ -379,7 +382,7 @@ class LinkPredictionTools:
 
         uniqueness_ratios = check3.extra.get("uniqueness_ratios", {})
 
-        ### Intersection check
+        # Intersection check
         check4 = self._intersection_count_check(links=[link], **uniqueness_ratios)
         if not check4.valid:
             return check4.message
@@ -390,10 +393,10 @@ class LinkPredictionTools:
 
     def _multi_link_validity(
         self, links: List[Link]
-    ) -> Union[str, Tuple[str, ValiditySchema]]:
+    ) -> str | Tuple[str, ValiditySchema]:
         checks = []
 
-        ### Check for table column name
+        # Check for table column name
         checks_1 = list(
             filter(
                 lambda check: not check.valid,
@@ -405,7 +408,7 @@ class LinkPredictionTools:
 
         checks.append("- Table name and Column names are valid.")
 
-        ### Datatype check
+        # Datatype check
         checks_2 = list(
             filter(
                 lambda check: not check.valid,
@@ -417,7 +420,7 @@ class LinkPredictionTools:
 
         checks.append("- Datatype between columns are also matching.")
 
-        ### Uniqueness Check
+        # Uniqueness Check
         checks_3 = self._uniquesness_check_composite(links=links)
         if not isinstance(checks_3, tuple) and not checks_3.valid:
             return checks_3.message
@@ -427,7 +430,7 @@ class LinkPredictionTools:
 
         checks.append(schema.message)
 
-        ### Intersection count
+        # Intersection count
         checks_4 = self._intersection_count_check(
             links=links, **count_metrics, **uniqueness_ratios
         )

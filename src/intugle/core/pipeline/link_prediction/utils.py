@@ -1,14 +1,15 @@
+import json
 import logging
 
-from typing import List, Optional, TypedDict, Dict
+from typing import Dict, List, Optional, TypedDict
 
 import pandas as pd
 
 from pydantic import BaseModel, Field
 
+from intugle.analysis.models import DataSet
 from intugle.core import settings
 from intugle.core.utilities.processing import classify_datetime_format, preprocess_profiling_data
-from intugle.analysis.models import DataSet
 from intugle.models.resources.model import PrimaryKey
 
 log = logging.getLogger(__name__)
@@ -122,6 +123,7 @@ def preprocess_profiling_df(profiling_data: pd.DataFrame):
 
     return profiling_data
 
+
 DTYPE_MAPPING = {
     "integer": "INTEGER",
     "float": "FLOAT",
@@ -132,6 +134,7 @@ DTYPE_MAPPING = {
     "others": "TEXT",
     "range_type": "TEXT",
 }
+
 
 def generate_table_ddl_statements(
     table_columns: list,
@@ -230,4 +233,4 @@ def prepare_ddl_statements(dataset: DataSet) -> Dict[str, str]:
 
     return ddl_statements
 
-import json
+

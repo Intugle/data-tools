@@ -129,7 +129,6 @@ class Join:
     @staticmethod
     def plot_graph(graph, path=None, draw_weight=False):
         import matplotlib.pyplot as plt
-        import numpy as np
 
         plt.figure(figsize=(24, 24))
         pos = nx.spring_layout(graph, k=0.9, iterations=20, seed=42)
