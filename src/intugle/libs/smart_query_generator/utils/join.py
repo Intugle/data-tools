@@ -175,11 +175,26 @@ class Join:
             alpha=0.8,
             edge_color="black",
             style="dashed",
+            label="Composite Key Link",
         )
+
+        # Create custom legend handles
+        from matplotlib.lines import Line2D
+
+        legend_handles = [
+            Line2D([0], [0], color='gray', lw=1.5, label='Simple Key Link', linestyle='-'),
+            Line2D([0], [0], color='black', lw=2.0, label='Composite Key Link', linestyle='--'),
+        ]
+
+        plt.legend(handles=legend_handles, loc='upper left', fontsize=12)
 
         # Draw node labels
         nx.draw_networkx_labels(
-            graph, pos, font_size=14, font_weight="bold", font_family="sans-serif"
+            graph,
+            pos,
+            font_size=14,
+            font_weight="bold",
+            font_family="sans-serif",
         )
 
         # Draw edge labels for relationship type
@@ -268,7 +283,7 @@ class Join:
                 link.target_asset_id,
                 weight=link_weight,
                 composite=is_composite,
-                label=link.type.value,
+                # label=f"{link.source_asset_id}.{', '.join(link.source_field_ids)} -> {link.target_asset_id}.{', '.join(link.target_field_ids)}",
             )
 
         # self.plot_graph(graph)

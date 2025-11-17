@@ -1787,7 +1787,7 @@ wheels = [
 
 [[package]]
 name = "intugle"
-version = "2.0.0rc1"
+version = "1.2.0"
 source = { editable = "." }
 dependencies = [
     { name = "aiofiles" },
