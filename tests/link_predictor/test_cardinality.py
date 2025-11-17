@@ -84,6 +84,9 @@ def test_relationship_cardinality_determination(
         # This is the M:1 case that should be swapped
         from_table, to_table = to_table, from_table
 
+    if expected_type == RelationshipType.ONE_TO_ONE and from_uniqueness <= to_uniqueness:
+        from_table, to_table = to_table, from_table
+
     link = PredictedLink(
         from_dataset=from_table,
         from_columns=["id"],
