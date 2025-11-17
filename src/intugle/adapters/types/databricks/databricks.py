@@ -388,7 +388,6 @@ class DatabricksAdapter(Adapter):
                     # First, ensure the column is not nullable
                     self._execute_sql(f"ALTER TABLE {fqn} ALTER COLUMN `{col}` SET NOT NULL")
                 # Then, add the primary key constraint
-                print("query: ", f"ALTER TABLE {fqn} ADD CONSTRAINT {constraint_name} PRIMARY KEY (`" + "`, `".join(pk_columns) + "`)")
                 self._execute_sql(f"ALTER TABLE {fqn} ADD CONSTRAINT {constraint_name} PRIMARY KEY (`" + "`, `".join(pk_columns) + "`)")
                 print(f"Set primary key on {fqn} (`{pk_columns}`)")
             except Exception as e:
@@ -413,8 +412,6 @@ class DatabricksAdapter(Adapter):
                 constraint_name = f"fk_{rel.name}"
                 cleaned_constraint_name = clean_name(constraint_name)
 
-                print("query: ", f"ALTER TABLE {child_fqn} ADD CONSTRAINT {cleaned_constraint_name} "
-                    f"FOREIGN KEY (`{'`, '.join(rel.target.columns)}`) REFERENCES {parent_fqn} (`{'`, '.join(rel.source.columns)}`)")
                 self._execute_sql(
                     f"ALTER TABLE {child_fqn} ADD CONSTRAINT {cleaned_constraint_name} "
                     f"FOREIGN KEY (`{'`, '.join(rel.target.columns)}`) REFERENCES {parent_fqn} (`{'`, '.join(rel.source.columns)}`)"
