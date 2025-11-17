@@ -186,10 +186,10 @@ class SQLServerAdapter(Adapter):
 
         # Sampling
         sample_query = f"""
-        SELECT DISTINCT CAST([{column_name}] AS NVARCHAR(MAX)) FROM {fqn} WHERE [{column_name}] IS NOT NULL
+        SELECT DISTINCT TOP ({dtype_sample_limit}) [{column_name}] FROM {fqn} WHERE [{column_name}] IS NOT NULL
         """
         distinct_values_result = self._execute_sql(sample_query)
-        distinct_values = [row[0] for row in distinct_values_result]
+        distinct_values = [str(row[0]) for row in distinct_values_result]
 
         if distinct_count > 0:
             distinct_sample_size = min(distinct_count, dtype_sample_limit)
@@ -205,13 +205,13 @@ class SQLServerAdapter(Adapter):
         elif distinct_count > 0 and not_null_count > 0:
             remaining_sample_size = dtype_sample_limit - distinct_count
             additional_samples_query = f"""
-            SELECT TOP {remaining_sample_size} CAST([{column_name}] AS NVARCHAR(MAX))
+            SELECT TOP {remaining_sample_size} [{column_name}]
             FROM {fqn}
             WHERE [{column_name}] IS NOT NULL
             ORDER BY NEWID()
             """
             additional_samples_result = self._execute_sql(additional_samples_query)
-            additional_samples = [row[0] for row in additional_samples_result]
+            additional_samples = [str(row[0]) for row in additional_samples_result]
             dtype_sample = list(distinct_values) + additional_samples
         else:
             dtype_sample = []
@@ -279,11 +279,9 @@ class SQLServerAdapter(Adapter):
         fqn2 = self._get_fqn(table2_adapter.identifier)
 
         query = f"""
-        SELECT COUNT(*) FROM (
-            SELECT DISTINCT [{column1_name}] FROM {fqn1} WHERE [{column1_name}] IS NOT NULL
-            INTERSECT
-            SELECT DISTINCT [{column2_name}] FROM {fqn2} WHERE [{column2_name}] IS NOT NULL
-        ) as t
+        SELECT COUNT(DISTINCT t1.[{column1_name}])
+        FROM {fqn1} AS t1
+        INNER JOIN {fqn2} AS t2 ON t1.[{column1_name}] = t2.[{column2_name}]
         """
         return self._execute_sql(query)[0][0]
 
