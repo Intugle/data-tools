@@ -886,7 +886,7 @@ def plotly_table_graph(
     node_fill: str = "#F3E8FF",
     node_stroke: str = "#8B5CF6",
     edge_color: str = "#8B5CF6",
-    composite_edge_color: str = "#FF6B6B",
+    composite_edge_color: str = "#4E195E",
     edge_min_width: float = 1.0,
     edge_width_scale: float = 4.0,
 ) -> go.Figure:
