@@ -141,7 +141,7 @@ def generate_table_ddl_statements(
     columns_required: list = [],
     primary_key_obj: Optional[PrimaryKey] = None,
 ):
-    create_table_query = f"CREATE TABLE {table_name.lower()} (\n"
+    create_table_query = f"CREATE TABLE {table_name} (\n"
     column_parts = []
 
     for column in table_columns:

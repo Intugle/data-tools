@@ -32,6 +32,10 @@ def _determine_relationship_cardinality(
 
     if from_is_unique and to_is_unique:
         rel_type = RelationshipType.ONE_TO_ONE
+        # In a 1:1, prefer the table with higher uniqueness as the source (PK)
+        if (to_uniqueness_ratio or 0) >= (from_uniqueness_ratio or 0):
+            source_table, target_table = target_table, source_table
+            source_columns, target_columns = target_columns, source_columns
     elif from_is_unique and not to_is_unique:
         rel_type = RelationshipType.ONE_TO_MANY
     elif not from_is_unique and to_is_unique:

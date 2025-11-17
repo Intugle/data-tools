@@ -82,7 +82,7 @@ class Settings(BaseSettings):
     STRATA_SAMPLE_LIMIT: int = 4
     MAX_RETRIES: int = 5
     SLEEP_TIME: int = 25
-    ENABLE_RATE_LIMITER: bool = True
+    ENABLE_RATE_LIMITER: bool = False
     CUSTOM_LLM_INSTANCE: Optional[Any] = None
     CUSTOM_EMBEDDINGS_INSTANCE: Optional[Any] = None
 

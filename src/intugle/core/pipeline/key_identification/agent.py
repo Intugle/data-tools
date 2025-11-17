@@ -80,7 +80,7 @@ class KeyIdentificationAgent:
             .set_index("column_name") \
             .to_dict()["datatype_l1"]
 
-        create_table_query = f"CREATE TABLE {self.table_name.lower()} ("
+        create_table_query = f"CREATE TABLE {self.table_name} ("
         column_parts = []
 
         for column in table_columns:

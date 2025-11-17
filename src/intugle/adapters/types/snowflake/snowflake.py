@@ -186,7 +186,7 @@ class SnowflakeAdapter(Adapter):
             distinct_count=distinct_count,
             uniqueness=distinct_count / total_count if total_count > 0 else 0.0,
             completeness=(total_count - null_count) / total_count if total_count > 0 else 0.0,
-            sample_data=native_sample_data,
+            sample_data=native_sample_data[:sample_limit],
             dtype_sample=native_dtype_sample,
             ts=time.time() - start_ts,
         )
@@ -303,7 +303,7 @@ class SnowflakeAdapter(Adapter):
 
             clause = f"{table_alias} AS {full_table_name}"
             if source.table.key:
-                clause += f" PRIMARY KEY ({clean_name(source.table.key)})"
+                clause += ' PRIMARY KEY ("' + '", "'.join(source.table.key.columns) + '")'
             if source.table.description:
                 comment = source.table.description.replace("'", "''")
                 clause += f" COMMENT = '{comment}'"
@@ -312,16 +312,14 @@ class SnowflakeAdapter(Adapter):
         # -- RELATIONSHIPS clause --
         relationship_clauses = []
         for rel in manifest.relationships.values():
-            resolved = resolve_relationship_direction(rel, manifest.sources)
-            if not resolved:
-                continue
+
 
             # The table with the FK is the "referencing" table
-            table_alias = clean_name(resolved.child_table)
-            column = clean_name(resolved.child_column)
+            table_alias = rel.target.table
+            column = '"' + '", "'.join(rel.target.columns) + '"'
             # The table with the PK is the "referenced" table
-            ref_table_alias = clean_name(resolved.parent_table)
-            ref_column = clean_name(resolved.parent_column)
+            ref_table_alias = rel.source.table
+            ref_column = '"' + '", "'.join(rel.source.columns) + '"'
 
             clause = f"{clean_name(rel.name)} AS {table_alias}({column}) REFERENCES {ref_table_alias}({ref_column})"
             relationship_clauses.append(clause)
