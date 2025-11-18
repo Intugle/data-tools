@@ -36,8 +36,8 @@ def test_manifest_loader_is_isolated(tmp_path):
             {
                 "name": "orders_to_users",
                 "description": "Link between orders and users",
-                "source": {"table": "orders", "column": "user_id"},
-                "target": {"table": "users", "column": "id"},
+                "source": {"table": "orders", "columns": ["user_id"]},
+                "target": {"table": "users", "columns": ["id"]},
                 "type": "many_to_one",
             }
         ]

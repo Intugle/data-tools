@@ -5,7 +5,7 @@ title: Link Prediction
 
 # Link prediction
 
-Link prediction is one of the most powerful features of the Intugle Data Tools library. It's the process of automatically discovering meaningful relationships and potential join keys between different, isolated datasets. This turns a collection of separate tables into a connected semantic graph, which is the foundation for building unified data products.
+Link prediction is one of the most powerful features of the Intugle Data Tools library. It's the process of automatically discovering meaningful relationships and potential join keys between different, isolated datasets. This turns a collection of separate tables into a connected semantic graph, which is the foundation for building unified data products. The library now supports the prediction of **composite key** relationships, where multiple columns together form a link between tables.
 
 ## The LinkPredictor class
 
@@ -28,7 +28,7 @@ links_list = predictor_instance.links
 To use the `LinkPredictor` manually, you must give it a list of fully profiled `DataSet` objects.
 
 ```python
-from intugle.analysis.models import DataSet,
+from intugle.analysis.models import DataSet
 from intugle.link_predictor.predictor import LinkPredictor
 
 
@@ -52,7 +52,7 @@ predictor.predict(save=True)
 # The discovered links are stored as a list of PredictedLink objects in the `links` attribute
 links_list = predictor.links
 for link in links_list:
-    print(f"Found link from {link.from_dataset}.{link.from_column} to {link.to_dataset}.{link.to_column}")
+    print(f"Found link from {link.from_dataset}.{link.from_columns} to {link.to_dataset}.{link.to_columns}")
 ```
 
 ### Caching mechanism
@@ -74,7 +74,7 @@ A utility function that converts the `links` list into a Pandas DataFrame. This 
 links_df = predictor.get_links_df()
 
 # Display the DataFrame
-# columns: from_dataset, from_column, to_dataset, to_column
+# columns: from_dataset, from_columns, to_dataset, to_columns
 print(links_df)
 ```
 

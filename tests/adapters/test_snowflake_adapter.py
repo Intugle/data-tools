@@ -212,7 +212,6 @@ class TestCanHandleSnowflake:
             assert can_handle_snowflake(invalid) is False
 
 
-
 # ============================================================================
 # Error Handling Tests
 # ============================================================================

@@ -14,9 +14,8 @@ class Join:
         self.selected_fields = set(selected_fields)
 
     def check_if_selected(self, link: LinkModel):
-        if (
-            link.source_field_id in self.selected_fields
-            or link.target_field_id in self.selected_fields
+        if any(fid in self.selected_fields for fid in link.source_field_ids) or any(
+            fid in self.selected_fields for fid in link.target_field_ids
         ):
             return True
         return False
@@ -97,13 +96,13 @@ class Join:
 
         for link in self._links:
             src_table = link.source_asset_id
-            src_field = link.source_field_id
+            src_fields = link.source_field_ids
             target_table = link.target_asset_id
-            target_field = link.source_field_id
+            target_fields = link.target_field_ids
 
-            table_connected_fields[src_table].append(src_field)
+            table_connected_fields[src_table].extend(src_fields)
 
-            table_connected_fields[target_table].append(target_field)
+            table_connected_fields[target_table].extend(target_fields)
 
             table_connected_tables[src_table].add(src_table)
 
@@ -130,70 +129,90 @@ class Join:
     @staticmethod
     def plot_graph(graph, path=None, draw_weight=False):
         import matplotlib.pyplot as plt
-        import numpy as np
 
-        pos = nx.spring_layout(
-            graph, k=0.3 * 1 / np.sqrt(len(graph.nodes())), iterations=2, seed=5
-        )
+        plt.figure(figsize=(24, 24))
+        pos = nx.spring_layout(graph, k=0.9, iterations=20, seed=42)
 
-        # Draw the graph (without edge labels initially)
-        plt.figure(3, figsize=(20, 20))
+        # Separate edges based on composite key
+        composite_edges = [
+            (u, v)
+            for u, v, d in graph.edges(data=True)
+            if d.get("composite", False)
+        ]
+        simple_edges = [
+            (u, v)
+            for u, v, d in graph.edges(data=True)
+            if not d.get("composite", False)
+        ]
 
-        # Draw nodes and edges
-        nx.draw(
+        # Draw nodes
+        nx.draw_networkx_nodes(
             graph,
             pos,
-            with_labels=True,
             node_color="skyblue",
-            node_size=2000,
-            font_size=15,
-            font_weight="bold",
+            node_size=5000,
+            alpha=0.9,
+        )
+
+        # Draw simple edges (solid)
+        nx.draw_networkx_edges(
+            graph,
+            pos,
+            edgelist=simple_edges,
+            width=1.5,
+            alpha=0.7,
             edge_color="gray",
+            style="solid",
+        )
+
+        # Draw composite key edges (dashed)
+        nx.draw_networkx_edges(
+            graph,
+            pos,
+            edgelist=composite_edges,
+            width=2.0,
+            alpha=0.8,
+            edge_color="black",
+            style="dashed",
+            label="Composite Key Link",
+        )
+
+        # Create custom legend handles
+        from matplotlib.lines import Line2D
+
+        legend_handles = [
+            Line2D([0], [0], color='gray', lw=1.5, label='Simple Key Link', linestyle='-'),
+            Line2D([0], [0], color='black', lw=2.0, label='Composite Key Link', linestyle='--'),
+        ]
+
+        plt.legend(handles=legend_handles, loc='upper left', fontsize=12)
+
+        # Draw node labels
+        nx.draw_networkx_labels(
+            graph,
+            pos,
+            font_size=14,
+            font_weight="bold",
+            font_family="sans-serif",
+        )
+
+        # Draw edge labels for relationship type
+        edge_labels = nx.get_edge_attributes(graph, "label")
+        nx.draw_networkx_edge_labels(
+            graph, pos, edge_labels=edge_labels, font_color="red", font_size=10
         )
 
         if draw_weight:
-            # Manually handle and draw edge labels for multiedges
-            edge_labels = {}
-            for u, v, key, data in graph.edges(data=True, keys=True):
-                label = f"w={data['weight']}"
-                if (u, v) not in edge_labels:
-                    edge_labels[(u, v)] = []
-                edge_labels[(u, v)].append((key, label))
-
-            # Draw edge labels, considering multiple edges
-            for (u, v), labels in edge_labels.items():
-                for key, label in labels:
-                    # For multiple edges, offset the label slightly to avoid overlap
-                    x_offset = 0.05 * key  # offset for placing labels of multiple edges
-                    y_offset = 0.05 * key
-                    label_pos = (
-                        (pos[u][0] + pos[v][0]) / 2 + x_offset,
-                        (pos[u][1] + pos[v][1]) / 2 + y_offset,
-                    )
-                    plt.text(
-                        label_pos[0],
-                        label_pos[1],
-                        label,
-                        color="red",
-                        fontsize=12,
-                        ha="center",
-                        va="center",
-                    )
-
-            # Manually draw node labels for their weights
-            node_labels = nx.get_node_attributes(graph, "weight")
-            for node, weight in node_labels.items():
-                # Position the weight label slightly above the node
-                label_pos = pos[node]
-                plt.text(
-                    label_pos[0],
-                    label_pos[1] + 0.03,
-                    f"{weight}",
-                    fontsize=12,
-                    ha="center",
-                    va="bottom",
-                    color="green",
-                )
+            edge_weights = nx.get_edge_attributes(graph, "weight")
+            formatted_weights = {k: f"{v:.2f}" for k, v in edge_weights.items()}
+            nx.draw_networkx_edge_labels(
+                graph,
+                pos,
+                edge_labels=formatted_weights,
+                font_color="green",
+                font_size=8,
+                label_pos=0.3,
+            )
 
         if path:
             path_edges = list(zip(path, path[1:]))
@@ -201,10 +220,9 @@ class Join:
             nx.draw_networkx_edges(
                 graph, pos, edgelist=path_edges, edge_color="y", width=10
             )
-            plt.axis("equal")
 
-        # Display the plot
-        plt.title("Multigraph with Node and Edge Weights")
+        plt.title("Semantic Data Model Graph", size=20)
+        plt.axis("off")
         plt.show()
 
     def generate_graph(self, datasets_data: list[int], only_connected: bool = True):
@@ -257,8 +275,14 @@ class Join:
 
             link_weight = min(link_weight, 10) + 1
 
+            is_composite = len(link.source_field_ids) > 1
+
             graph.add_edge(
-                link.source_asset_id, link.target_asset_id, weight=link_weight
+                link.source_asset_id,
+                link.target_asset_id,
+                weight=link_weight,
+                composite=is_composite,
+                # label=f"{link.source_asset_id}.{', '.join(link.source_field_ids)} -> {link.target_asset_id}.{', '.join(link.target_field_ids)}",
             )
 
         # self.plot_graph(graph)
@@ -402,8 +426,8 @@ class Join:
             for join in join_json.values():
                 for link in links:
                     if join["dataset_id"] == link.source_asset_id:
-                        fields.add(link.source_field_id)
+                        fields.update(link.source_field_ids)
                     elif join["dataset_id"] == link.target_asset_id:
-                        fields.add(link.target_field_id)
+                        fields.update(link.target_field_ids)
 
         return fields

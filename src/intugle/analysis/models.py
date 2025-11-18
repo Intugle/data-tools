@@ -14,16 +14,15 @@ from intugle.adapters.models import (
     DataTypeIdentificationL1Output,
     DataTypeIdentificationL2Input,
     DataTypeIdentificationL2Output,
-    KeyIdentificationOutput,
 )
 from intugle.core import settings
 from intugle.core.console import console, warning_style
 from intugle.core.pipeline.business_glossary.bg import BusinessGlossary
 from intugle.core.pipeline.datatype_identification.l2_model import L2Model
 from intugle.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
-from intugle.core.pipeline.key_identification.ki import KeyIdentificationLLM
+from intugle.core.pipeline.key_identification.agent import KeyIdentificationAgent
 from intugle.core.utilities.processing import string_standardization
-from intugle.models.resources.model import Column, ColumnProfilingMetrics, ModelProfilingMetrics
+from intugle.models.resources.model import Column, ColumnProfilingMetrics, ModelProfilingMetrics, PrimaryKey
 from intugle.models.resources.source import Source, SourceTables
 
 log = logging.getLogger(__name__)
@@ -251,10 +250,13 @@ class DataSet:
             )
         column_profiles_df = pd.DataFrame(column_profiles_data)
 
-        ki_model = KeyIdentificationLLM(profiling_data=column_profiles_df)
-        ki_result = ki_model()
-        output = KeyIdentificationOutput(**ki_result)
-        self.source.table.key = output.column_name or ""
+        ki_agent = KeyIdentificationAgent(
+            profiling_data=column_profiles_df, adapter=self.adapter, dataset_data=self.data
+        )
+        ki_result = ki_agent()
+
+        if ki_result:
+            self.source.table.key = PrimaryKey(**ki_result)
 
         if save:
             self.save_yaml()

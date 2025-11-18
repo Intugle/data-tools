@@ -110,11 +110,13 @@ For a detailed, hands-on introduction to the project, please see our quickstart 
 | **Native Databricks with AI/BI Genie [ Tech Manufacturing ]** | [`quickstart_native_databricks.ipynb`](notebooks/quickstart_native_databricks.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_native_databricks.ipynb) |
 | **Streamlit App**       | [`quickstart_streamlit.ipynb`](notebooks/quickstart_streamlit.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_streamlit.ipynb) |
 | **Conceptual Search**   | [`quickstart_conceptual_search.ipynb`](notebooks/quickstart_conceptual_search.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_conceptual_search.ipynb) |
+| **Composite Relationships Prediction**   | [`quickstart_basketball_composite_links.ipynb`](notebooks/quickstart_basketball_composite_links.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_basketball_composite_links.ipynb) |
+
 These datasets will take you through the following steps:
 
 *   **Generate Semantic Model** → The unified layer that transforms fragmented datasets, creating the foundation for connected intelligence.
     *   **1.1 Profile and classify data** → Analyze your data sources to understand their structure, data types, and other characteristics.
-    *   **1.2 Discover links & relationships among data** → Reveal meaningful connections (PK & FK) across fragmented tables.
+    *   **1.2 Discover links & relationships among data** → Reveal meaningful connections (PK & FK), including composite keys, across fragmented tables.
     *   **1.3 Generate a business glossary** → Create business-friendly terms and use them to query data with context.
     *   **1.4 Enable semantic search** → Intelligent search that understands meaning, not just keywords—making data more accessible across both technical and business users.
     *   **1.5 Visualize semantic model**→ Get access to enriched metadata of the semantic layer in the form of YAML files and visualize in the form of graph

@@ -11,13 +11,8 @@ import yaml
 from intugle.analysis.models import DataSet
 from intugle.core import settings
 from intugle.core.console import console, warning_style
-from intugle.core.pipeline.link_prediction.lp import LinkPredictionAgentic
+from intugle.core.pipeline.link_prediction.agent import MultiLinkPredictionAgent
 from intugle.libs.smart_query_generator.utils.join import Join
-from intugle.models.resources.relationship import (
-    Relationship,
-    RelationshipTable,
-    RelationshipType,
-)
 
 from .models import LinkPredictionResult, PredictedLink
 
@@ -107,38 +102,42 @@ class LinkPredictor:
             log.warning(f"[!] Skipping already executed combination: {table_combination}")
             return []
 
-        dataset_a_column_profiles = dataset_a.profiling_df
-        dataset_b_column_profiles = dataset_b.profiling_df
-        profiling_data = pd.concat(
-            [dataset_a_column_profiles, dataset_b_column_profiles], ignore_index=True
+        agent = MultiLinkPredictionAgent(
+            table1_dataset=dataset_a,
+            table2_dataset=dataset_b,
         )
 
-        primary_keys = []
-        if dataset_a.source.table.key:
-            primary_keys.append((name_a, dataset_a.source.table.key))
-        if dataset_b.source.table.key:
-            primary_keys.append((name_b, dataset_b.source.table.key))
+        llm_result = agent()  # The agent.__call__ method returns a dictionary directly
 
-        pipeline = LinkPredictionAgentic(
-            profiling_data=profiling_data,
-            primary_keys=primary_keys,
-        )
+        pair_links: List[PredictedLink] = []
+        if llm_result and llm_result.get("links"):
+            # llm_result["links"] is a list of OutputSchema-like dictionaries
+            for link_data in llm_result["links"]:
+                if link_data.get('links'):
+                    from_columns = [link['column1'] for link in link_data['links']]
+                    to_columns = [link['column2'] for link in link_data['links']]
+                    
+                    # Assuming table names are consistent across all parts of a composite key
+                    from_dataset = link_data['links'][0]['table1']
+                    to_dataset = link_data['links'][0]['table2']
 
-        llm_result, raw_llm_result = pipeline([(dataset_a, dataset_b)])
-
-        pair_links: List[PredictedLink] = [
-            PredictedLink(
-                from_dataset=row["table1_name"],
-                from_column=row["column1_name"],
-                to_dataset=row["table2_name"],
-                to_column=row["column2_name"],
-                intersect_count=row.get("intersect_count"),
-                intersect_ratio_from_col=row.get("intersect_ratio_from_col"),
-                intersect_ratio_to_col=row.get("intersect_ratio_to_col"),
-                accuracy=row.get("accuracy"),
-            )
-            for _, row in llm_result.iterrows()
-        ]
+                    pair_links.append(
+                        PredictedLink(
+                            from_dataset=from_dataset,
+                            from_columns=from_columns,
+                            to_dataset=to_dataset,
+                            to_columns=to_columns,
+                            intersect_count=link_data.get("intersect_count"),
+                            intersect_ratio_from_col=link_data.get("intersect_ratio_col1"),
+                            intersect_ratio_to_col=link_data.get("intersect_ratio_col2"),
+                            from_uniqueness_ratio=link_data.get("from_uniqueness_ratio"),
+                            to_uniqueness_ratio=link_data.get("to_uniqueness_ratio"),
+                            accuracy=max(
+                                link_data.get("intersect_ratio_col1", 0) or 0,
+                                link_data.get("intersect_ratio_col2", 0) or 0
+                            ),
+                        )
+                    )
         return pair_links
 
     def predict(self, filename: str = None, save: bool = False, force_recreate: bool = False) -> 'LinkPredictor':
@@ -231,12 +230,14 @@ class LinkPredictor:
             metrics = rel.get("profiling_metrics", {}) or {}
             link = PredictedLink(
                 from_dataset=rel["source"]["table"],
-                from_column=rel["source"]["column"],
+                from_columns=rel["source"]["columns"],
                 to_dataset=rel["target"]["table"],
-                to_column=rel["target"]["column"],
+                to_columns=rel["target"]["columns"],
                 intersect_count=metrics.get("intersect_count"),
                 intersect_ratio_from_col=metrics.get("intersect_ratio_from_col"),
                 intersect_ratio_to_col=metrics.get("intersect_ratio_to_col"),
+                from_uniqueness_ratio=metrics.get("from_uniqueness_ratio"),
+                to_uniqueness_ratio=metrics.get("to_uniqueness_ratio"),
                 accuracy=metrics.get("accuracy"),
             )
             loaded_links.append(link)
@@ -254,22 +255,9 @@ class LinkPredictionSaver:
         if len(links) == 0:
             raise ValueError("No links found to save.")
 
-        relationships: list[Relationship] = []
-        for link in links:
-            source = RelationshipTable(table=link.from_dataset, column=link.from_column)
-            target = RelationshipTable(table=link.to_dataset, column=link.to_column)
-            relationship = Relationship(
-                name=f"{link.from_dataset}-{link.to_dataset}",
-                description="",
-                source=source,
-                target=target,
-                type=RelationshipType.ONE_TO_MANY,
-            )
-
-            relationships.append(relationship)
-
-        relationships = {"relationships": [json.loads(r.model_dump_json()) for r in relationships]}
+        relationships = [link.relationship for link in links]
+        relationships_data = {"relationships": [json.loads(r.model_dump_json()) for r in relationships]}
 
         # Save the relationships to a YAML file
         with open(file_path, "w") as file:
-            yaml.dump(relationships, file, sort_keys=False, default_flow_style=False)
+            yaml.dump(relationships_data, file, sort_keys=False, default_flow_style=False)

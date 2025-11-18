@@ -1,5 +1,6 @@
+
 import pandas as pd
-from typing import List
+
 
 class DataProductPlan:
     """
@@ -97,22 +98,22 @@ class DataProductPlan:
         name = self.name
         description = self.description
 
-        html = f"<div>"
+        html = "<div>"
         html += f"  <h3>Data Product: {name}</h3>"
         html += f"  <p><b>Description:</b> {description}</p>"
-        html += f"  <h4>Attributes:</h4>"
-        html += f"  <table border=\"1\" style=\"width:100%; border-collapse: collapse;\">"
-        html += f"    <tr><th>Attribute Name</th><th>Classification</th><th>Description</th><th>Status</th></tr>"
+        html += "  <h4>Attributes:</h4>"
+        html += "  <table border=\"1\" style=\"width:100%; border-collapse: collapse;\">"
+        html += "    <tr><th>Attribute Name</th><th>Classification</th><th>Description</th><th>Status</th></tr>"
         for _, row in self._df.iterrows():
             status = "Active" if row['_is_active'] else "Disabled"
-            html += f"    <tr>"
+            html += "    <tr>"
             html += f"      <td>{row['Attribute Name']}</td>"
             html += f"      <td>{row['Attribute Classification']}</td>"
             html += f"      <td>{row['Attribute Description']}</td>"
             html += f"      <td>{status}</td>"
-            html += f"    </tr>"
-        html += f"  </table>"
-        html += f"</div>"
+            html += "    </tr>"
+        html += "  </table>"
+        html += "</div>"
         return html
 
     def display(self):

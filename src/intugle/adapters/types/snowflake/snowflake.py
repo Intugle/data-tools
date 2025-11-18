@@ -11,7 +11,6 @@ if TYPE_CHECKING:
     from intugle.models.manifest import Manifest
 
 from intugle.adapters.adapter import Adapter
-from intugle.adapters.common.relationships import resolve_relationship_direction
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import (
     ColumnProfile,
@@ -186,7 +185,7 @@ class SnowflakeAdapter(Adapter):
             distinct_count=distinct_count,
             uniqueness=distinct_count / total_count if total_count > 0 else 0.0,
             completeness=(total_count - null_count) / total_count if total_count > 0 else 0.0,
-            sample_data=native_sample_data,
+            sample_data=native_sample_data[:sample_limit],
             dtype_sample=native_dtype_sample,
             ts=time.time() - start_ts,
         )
@@ -303,7 +302,7 @@ class SnowflakeAdapter(Adapter):
 
             clause = f"{table_alias} AS {full_table_name}"
             if source.table.key:
-                clause += f" PRIMARY KEY ({clean_name(source.table.key)})"
+                clause += ' PRIMARY KEY ("' + '", "'.join(source.table.key.columns) + '")'
             if source.table.description:
                 comment = source.table.description.replace("'", "''")
                 clause += f" COMMENT = '{comment}'"
@@ -312,16 +311,13 @@ class SnowflakeAdapter(Adapter):
         # -- RELATIONSHIPS clause --
         relationship_clauses = []
         for rel in manifest.relationships.values():
-            resolved = resolve_relationship_direction(rel, manifest.sources)
-            if not resolved:
-                continue
 
             # The table with the FK is the "referencing" table
-            table_alias = clean_name(resolved.child_table)
-            column = clean_name(resolved.child_column)
+            table_alias = rel.target.table
+            column = '"' + '", "'.join(rel.target.columns) + '"'
             # The table with the PK is the "referenced" table
-            ref_table_alias = clean_name(resolved.parent_table)
-            ref_column = clean_name(resolved.parent_column)
+            ref_table_alias = rel.source.table
+            ref_column = '"' + '", "'.join(rel.source.columns) + '"'
 
             clause = f"{clean_name(rel.name)} AS {table_alias}({column}) REFERENCES {ref_table_alias}({ref_column})"
             relationship_clauses.append(clause)
@@ -367,6 +363,40 @@ class SnowflakeAdapter(Adapter):
 
         intersect_df = table1_df.select(column1_name).intersect(table2_df.select(column2_name))
         return intersect_df.count()
+
+    def get_composite_key_uniqueness(self, table_name: str, columns: list[str], dataset_data: DataSetData) -> int:
+        data = self.check_data(dataset_data)
+        table = self.session.table(data.identifier)
+        
+        # Drop rows where any of the key columns have null values and count distinct
+        distinct_count = table.dropna(subset=columns).select(columns).distinct().count()
+        return distinct_count
+
+    def intersect_composite_keys_count(
+        self,
+        table1: "DataSet",
+        columns1: list[str],
+        table2: "DataSet",
+        columns2: list[str],
+    ) -> int:
+        table1_adapter = self.check_data(table1.data)
+        table2_adapter = self.check_data(table2.data)
+
+        df1 = self.session.table(table1_adapter.identifier)
+        df2 = self.session.table(table2_adapter.identifier)
+
+        # Get unique combinations of composite keys, dropping nulls
+        df1_unique_keys = df1.dropna(subset=columns1).select(columns1).distinct()
+        df2_unique_keys = df2.dropna(subset=columns2).select(columns2).distinct()
+
+        # Create join condition
+        join_expr = df1_unique_keys[columns1[0]] == df2_unique_keys[columns2[0]]
+        for i in range(1, len(columns1)):
+            join_expr = join_expr & (df1_unique_keys[columns1[i]] == df2_unique_keys[columns2[i]])
+
+        # Perform the join and count the results
+        intersect_count = df1_unique_keys.join(df2_unique_keys, join_expr).count()
+        return intersect_count
 
     def get_details(self, data: SnowflakeConfig):
         data = self.check_data(data)

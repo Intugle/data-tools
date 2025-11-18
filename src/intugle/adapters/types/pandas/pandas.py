@@ -206,6 +206,56 @@ class PandasAdapter(Adapter):
         
         return len(intersection)
 
+    def get_composite_key_uniqueness(self, table_name: str, columns: list[str], dataset_data: pd.DataFrame) -> int:
+        if not isinstance(dataset_data, pd.DataFrame):
+            raise TypeError("Data for get_composite_key_uniqueness must be a pandas DataFrame for PandasAdapter.")
+
+        df = dataset_data
+
+        # Ensure all columns exist in the DataFrame
+        if not all(col in df.columns for col in columns):
+            raise ValueError(f"One or more columns {columns} not found in DataFrame.")
+
+        # Drop rows where any of the key columns have null values
+        df_filtered = df.dropna(subset=columns)
+
+        # Calculate the number of unique combinations
+        distinct_count = df_filtered.groupby(columns).size().count()
+
+        return distinct_count
+
+    def intersect_composite_keys_count(
+        self,
+        table1: "DataSet",
+        columns1: list[str],
+        table2: "DataSet",
+        columns2: list[str],
+    ) -> int:
+        df1 = table1.data
+        df2 = table2.data
+
+        if not isinstance(df1, pd.DataFrame) or not isinstance(df2, pd.DataFrame):
+            raise TypeError("Data for intersect_composite_keys_count must be pandas DataFrames for PandasAdapter.")
+
+        # Ensure all columns exist in the DataFrames
+        if not all(col in df1.columns for col in columns1):
+            raise ValueError(f"One or more columns in {columns1} not found in the first DataFrame.")
+        if not all(col in df2.columns for col in columns2):
+            raise ValueError(f"One or more columns in {columns2} not found in the second DataFrame.")
+
+        # Get unique combinations of composite keys, dropping nulls
+        df1_unique_keys = df1[columns1].dropna().drop_duplicates()
+        df2_unique_keys = df2[columns2].dropna().drop_duplicates()
+
+        # Rename columns of the second dataframe to match the first for merging
+        rename_mapping = dict(zip(columns2, columns1))
+        df2_unique_keys_renamed = df2_unique_keys.rename(columns=rename_mapping)
+
+        # Merge the two dataframes on the composite key columns to find the intersection
+        merged_df = pd.merge(df1_unique_keys, df2_unique_keys_renamed, on=columns1, how="inner")
+
+        return len(merged_df)
+
 
 def can_handle_pandas(data: Any) -> bool:
     return isinstance(data, pd.DataFrame)

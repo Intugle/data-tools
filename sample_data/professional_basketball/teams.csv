@@ -1,0 +1,1537 @@
+year,lgID,tmID,franchID,confID,divID,rank,confRank,playoff,name,o_fgm,o_ftm,o_pts,d_pts,homeWon,homeLost,awayWon,awayLost,won,lost,games,arena
+1937,NBL,AFS,AFS,,EA,1,0,CF,Akron Firestone Non-Skids,249,183,681,578,8,1,5,3,14,4,18,
+1937,NBL,AGW,AGW,,EA,2,0,WC,Akron Goodyear Wingfoots,243,159,645,498,8,1,5,4,13,5,18,
+1937,NBL,BFB,BFB,,EA,4,0,,Buffalo Bisons,108,46,262,275,2,2,1,4,3,6,9,
+1937,NBL,CNC,CNC,,WE,5,0,,Richmond King Clothiers/Cincinnati Comellos,110,42,262,338,3,1,0,5,3,7,10,
+1937,NBL,COL,COL,,EA,6,0,,Columbus Athletic Supply,109,64,282,426,1,3,0,7,1,12,13,
+1937,NBL,DYM,DYM,,WE,7,0,,Dayton Metropolitans,130,87,347,414,2,4,0,5,2,11,13,
+1937,NBL,FWE,FWE,,WE,3,0,,Fort Wayne General Electrics,290,148,728,568,9,1,2,6,13,7,20,
+1937,NBL,INK,INJ,,WE,4,0,,Indianapolis Kautskys,159,118,436,452,4,2,0,6,4,9,13,
+1937,NBL,KNK,KNK,,WE,6,0,,Kankakee Gallagher Trojans,156,88,400,640,1,4,0,7,3,11,14,
+1937,NBL,OSH,OSH,,WE,1,0,LC,Oshkosh All-Stars,256,126,638,458,9,1,2,1,12,2,14,
+1937,NBL,PGP,PGP,,EA,3,0,,Pittsburgh Pirates,179,127,485,434,5,1,3,4,8,5,13,
+1937,NBL,WAR,CWH,,EA,5,0,,Warren Penns,121,76,318,463,2,3,1,6,3,9,12,
+1937,NBL,WHT,HAM,,WE,2,0,CF,Whiting Ciesar All-Americans,238,144,620,560,7,0,5,3,12,3,15,
+1938,NBL,AFS,AFS,,EA,1,0,WC,Akron Firestone Non-Skids,490,223,1203,969,11,2,13,1,24,3,27,
+1938,NBL,AGW,AGW,,EA,2,0,,Akron Goodyear Wingfoots,367,220,954,994,7,7,7,7,14,14,28,
+1938,NBL,CWH,CWH,,EA,3,0,,Warren Penns/Cleveland White Horses,406,216,1028,1068,9,5,5,9,14,14,28,
+1938,NBL,HAM,HAM,,WE,4,0,,Hammond Ciesar All-Americans,367,238,972,1137,4,10,0,14,4,24,28,
+1938,NBL,INK,INJ,,WE,2,0,,Indianapolis Kautskys,449,227,1125,1134,9,4,4,9,13,13,26,
+1938,NBL,OSH,OSH,,WE,1,0,LC,Oshkosh All-Stars,448,258,1154,1011,10,4,7,7,17,11,28,
+1938,NBL,PGP,PGP,,EA,4,0,,Pittsburgh Pirates,394,207,995,1061,9,5,4,9,13,14,27,
+1938,NBL,SHE,SHE,,WE,3,0,,Sheboygan Redskins,392,212,996,1053,7,7,4,10,11,17,28,
+1939,NBL,AFS,AFS,,EA,1,0,WC,Akron Firestone Non-Skids,451,291,1193,1102,10,3,8,6,18,9,27,
+1939,NBL,AGW,AGW,,EA,3,0,,Akron Goodyear Wingfoots,376,294,1046,1036,8,6,6,8,14,14,28,
+1939,NBL,CHB,CHF,,WE,3,0,,Chicago Bruins,383,264,1030,1018,10,4,4,10,14,14,28,
+1939,NBL,DTE,DTE,,EA,2,0,CF,Detroit Eagles,389,296,1074,988,12,2,5,8,17,10,27,
+1939,NBL,HAM,HAM,,WE,4,0,,Hammond Ciesar All-Americans,372,288,1032,1142,7,7,2,12,9,19,28,
+1939,NBL,INK,INJ,,EA,4,0,,Indianapolis Kautskys,431,301,1163,1277,6,8,3,11,9,19,28,
+1939,NBL,OSH,OSH,,WE,1,0,LC,Oshkosh All-Stars,433,329,1195,1126,12,2,3,11,15,13,28,
+1939,NBL,SHE,SHE,,WE,2,0,CF,Sheboygan Redskins,376,276,1028,1072,11,3,4,10,15,13,28,
+1940,NBL,AFS,AFS,,,3,0,CS,Akron Firestone Non-Skids,389,236,1014,969,7,5,6,6,13,11,24,
+1940,NBL,AGW,AGW,,,6,0,,Akron Goodyear Wingfoots,342,242,926,930,6,6,5,7,11,13,24,
+1940,NBL,CHB,CHF,,,5,0,,Chicago Bruins,350,213,913,892,8,4,3,9,11,13,24,
+1940,NBL,DTE,DTE,,,4,0,CS,Detroit Eagles,363,245,971,1049,8,4,4,8,12,12,24,
+1940,NBL,HAM,HAM,,,7,0,,Hammond Ciesar All-Americans,351,224,926,1065,6,6,0,12,6,18,24,
+1940,NBL,OSH,OSH,,,1,0,WC,Oshkosh All-Stars,372,268,1012,890,11,1,7,5,18,6,24,
+1940,NBL,SHE,SHE,,,2,0,LC,Sheboygan Redskins,301,264,866,833,7,5,6,6,13,11,24,
+1941,NBL,AGW,AGW,,,3,0,CS,Akron Goodyear Wingfoots,421,248,1090,979,11,2,4,7,15,9,24,
+1941,NBL,CHB,CHF,,,6,0,,Chicago Bruins,340,198,878,936,4,6,3,8,8,15,23,
+1941,NBL,FTW,DET,,,2,0,LC,Fort Wayne Zollner Pistons,434,259,1127,1066,11,3,4,6,15,9,24,
+1941,NBL,INK,INJ,,,4,0,CS,Indianapolis Kautskys,356,242,954,947,10,1,2,10,12,11,23,
+1941,NBL,OSH,OSH,,,1,0,WC,Oshkosh All-Stars,441,301,1183,977,13,1,7,3,20,4,24,
+1941,NBL,SHE,SHE,,,5,0,,Sheboygan Redskins,373,196,942,1017,8,5,2,9,10,14,24,
+1941,NBL,TCH,TCH,,,7,0,,Toledo Jim White Chevrolets,323,228,874,1126,2,4,0,16,3,21,24,
+1942,NBL,CHF,CHF,,,4,0,CS,Chicago Studebaker Flyers,407,295,1109,1169,5,6,3,9,8,15,23,
+1942,NBL,FTW,DET,,,1,0,LC,Fort Wayne Zollner Pistons,452,271,1175,1067,10,2,7,4,17,6,23,
+1942,NBL,OSH,OSH,,,3,0,CS,Oshkosh All-Stars,366,289,1021,1017,7,5,4,7,11,12,23,
+1942,NBL,SHE,SHE,,,2,0,WC,Sheboygan Redskins,390,214,994,1005,9,4,3,7,12,11,23,
+1942,NBL,TCH,TCH,,,5,0,,Toledo Jim White Chevrolets,66,23,155,196,0,0,0,4,0,4,4,
+1943,NBL,CCB,CAT,,,4,0,CS,Cleveland Chase Brassmen,279,199,757,871,3,6,0,9,3,15,18,
+1943,NBL,FTW,DET,,,1,0,WC,Fort Wayne Zollner Pistons,397,245,1039,906,9,2,9,2,18,4,22,
+1943,NBL,OSH,OSH,,,3,0,CS,Oshkosh All-Stars,341,244,926,958,6,5,1,10,7,15,22,
+1943,NBL,SHE,SHE,,,2,0,LC,Sheboygan Redskins,340,233,913,900,8,3,6,5,14,8,22,
+1944,NBL,CAT,CAT,,EA,2,0,CF,Cleveland Allmen Transfers,566,398,1530,1530,8,7,5,10,13,17,30,
+1944,NBL,CHG,CHG,,WE,2,0,CF,Chicago American Gears,585,377,1547,1618,11,4,3,12,14,16,30,
+1944,NBL,FTW,DET,,EA,1,0,WC,Fort Wayne Zollner Pistons,670,368,1708,1507,14,1,11,4,25,5,30,
+1944,NBL,OSH,OSH,,WE,3,0,,Oshkosh All-Stars,523,360,1406,1449,10,6,2,12,12,18,30,
+1944,NBL,PTR,PTR,,EA,3,0,,Pittsburgh Raiders,590,280,1460,1665,5,9,2,14,7,23,30,
+1944,NBL,SHE,SHE,,WE,1,0,LC,Sheboygan Redskins,561,376,1498,1380,12,3,7,8,19,11,30,
+1945,NBL,CAT,CAT,,EA,4,0,,Cleveland Allmen Transfers,565,384,1514,1856,4,11,0,18,4,29,33,
+1945,NBL,CHG,CHG,,WE,3,0,,Chicago American Gears,610,426,1646,1751,10,7,7,10,17,17,34,
+1945,NBL,FTW,DET,,EA,1,0,CF,Fort Wayne Zollner Pistons,765,467,1997,1733,14,3,12,5,26,8,34,
+1945,NBL,INK,INJ,,WE,4,0,,Indianapolis Kautskys,595,294,1484,1593,4,11,6,11,10,22,32,
+1945,NBL,OSH,OSH,,WE,2,0,CF,Oshkosh All-Stars,667,481,1815,1672,13,5,6,10,19,15,34,
+1945,NBL,ROC,SAC,,EA,2,0,WC,Rochester Royals,732,467,1931,1729,14,3,10,7,24,10,34,
+1945,NBL,SHE,SHE,,WE,1,0,LC,Sheboygan Redskins,656,423,1735,1639,12,6,9,7,21,13,34,
+1945,NBL,YOU,YOU,,EA,3,0,,Youngstown Bears,551,416,1518,1667,9,8,4,12,13,20,33,
+1946,NBL,AND,AND,,WE,5,0,,Anderson Duffey Packers,969,690,2628,2571,16,6,8,14,24,20,44,
+1946,NBA,BOS,BOS,,ED,5,0,,Boston Celtics,1397,811,3605,3898,14,16,8,22,22,38,60,Boston Garden
+1946,NBL,CHG,CHG,,WE,3,0,WC,Chicago American Gears,987,595,2569,2389,15,7,11,11,26,18,44,
+1946,NBA,CHS,CHS,,WD,1,0,F,Chicago Stags,1879,939,4697,4473,22,9,17,13,39,22,61,Chicago Stadium
+1946,NBA,CLR,CLR,,WD,3,0,R1,Cleveland Rebels,1674,903,4251,4308,17,13,13,17,30,30,60,Cleveland Arena
+1946,NBA,DTF,DTF,,WD,4,0,,Detroit Falcons,1437,923,3797,3917,12,18,8,22,20,40,60,Detroit Olympia
+1946,NBL,DTG,LAL,,WE,6,0,,Detroit Gems,825,488,2138,2773,4,18,0,22,4,40,44,
+1946,NBL,FTW,DET,,EA,2,0,CF,Fort Wayne Zollner Pistons,950,666,2566,2447,17,5,8,14,25,19,44,
+1946,NBL,INK,INJ,,WE,2,0,CS,Indianapolis Kautskys,980,543,2503,2337,19,3,8,14,27,17,44,
+1946,NBA,NYK,NYK,,ED,3,0,SF,New York Knicks,1465,951,3881,3842,18,12,15,15,33,27,60,Madison Square Garden (III)
+1946,NBL,OSH,OSH,,WE,1,0,CF,Oshkosh All-Stars,950,654,2554,2433,19,3,9,13,28,16,44,
+1946,NBA,PHW,GSW,,ED,2,0,NC,Philadelphia Warriors,1510,1098,4118,3909,23,7,12,18,35,25,60,Philadelphia Arena
+1946,NBA,PIT,PIT,,WD,5,0,,Pittsburgh Ironmen,1345,984,3674,4057,11,19,4,26,15,45,60,Duquesne Gardens
+1946,NBA,PRO,PRO,,ED,4,0,,Providence Steamrollers,1629,1092,4350,4450,19,11,9,21,28,32,60,Rhode Island Auditorium
+1946,NBL,ROC,SAC,,EA,1,0,LC,Rochester Royals,1048,672,2768,2485,19,3,12,10,31,13,44,
+1946,NBL,SHE,SHE,,WE,4,0,CS,Sheboygan Redskins,890,620,2400,2339,20,2,6,16,26,18,44,
+1946,NBA,STB,STB,,WD,2,0,R1,St. Louis Bombers,1601,862,4064,3911,22,8,16,15,38,23,61,St. Louis Arena
+1946,NBL,SYR,PHI,,EA,4,0,CS,Syracuse Nationals,930,597,2457,2442,14,8,7,15,21,23,44,
+1946,NBL,TOL,TOL,,EA,3,0,CS,Toledo Jeeps,970,600,2540,2499,13,9,8,14,21,23,44,
+1946,NBA,TRH,TRH,,ED,5,0,,Toronto Huskies,1515,966,3996,4262,15,15,7,23,22,38,60,Maple Leaf Gardens
+1946,NBL,TRI,ATL,,EA,5,0,,Tri-Cities Blackhawks,819,522,2160,2279,12,10,7,15,19,25,44,
+1946,NBA,WSC,WSC,,ED,1,0,SF,Washington Capitols,1723,982,4428,3836,29,1,20,10,49,11,60,Uline Arena
+1946,NBL,YOU,YOU,,EA,6,0,,Youngstown Bears,925,505,2355,2644,10,12,2,20,12,32,44,
+1947,NBL,AND,AND,,EA,2,0,CF,Anderson Duffey Packers,1451,996,3898,3562,27,2,13,15,42,18,60,
+1947,PBLA,ATC,ATC,,SO,1,0,,Atlanta Crackers,158,105,421,353,3,0,0,1,7,1,8,Sports Arena
+1947,PBLA,BIR,BIR,,SO,3,0,,Birmingham Skyhawks,139,110,388,358,5,0,0,2,5,2,7,Municipal Auditorium
+1947,NBA,BLB,BLB,,WD,2,0,NC,Baltimore Bullets,1288,994,3570,3385,17,7,11,13,28,20,48,Baltimore Coliseum
+1947,NBA,BOS,BOS,,ED,3,0,R1,Boston Celtics,1241,821,3303,3491,11,13,9,15,20,28,48,Boston Garden
+1947,PBLA,CHG,CHG,,NO,1,0,,Chicago Gears,248,87,583,455,1,0,7,0,8,0,8,International Amphitheatre
+1947,NBA,CHS,CHS,,WD,2,0,SF,Chicago Stags,1390,860,3640,3513,14,10,14,10,28,20,48,Chicago Stadium
+1947,PBLA,CHT,CHT,,SO,4,0,,Chattanooga Majors,112,75,299,327,3,1,0,2,3,3,6,Memorial Auditorium
+1947,NBL,FNT,FNT,,EA,6,0,,Flint/Midland Dow A.C.'s,1265,973,3503,4162,7,22,1,26,8,52,60,
+1947,NBL,FTW,DET,,EA,3,0,CS,Fort Wayne Zollner Pistons,1287,1017,3591,3413,24,3,14,16,40,20,60,
+1947,PBLA,GRR,GRR,,NO,3,0,,Grand Rapids Rangers,125,67,317,308,2,1,1,2,3,3,6,Civic Auditorium
+1947,PBLA,HMV,HMV,,SO,7,0,,Houston Mavericks,48,25,121,98,2,0,0,0,2,0,2,Municipal Auditorium
+1947,NBL,INK,INJ,,WE,4,0,CS,Indianapolis Kautskys,1321,913,3555,3728,17,10,5,25,24,35,59,
+1947,PBLA,KCB,KCB,,NO,6,0,,Kansas City Blues,102,71,275,304,1,2,0,2,1,5,6,Municipal Auditorium (MO)
+1947,PBLA,LOU,LOU,,NO,4,0,,Louisville Colonels,118,65,301,323,1,2,0,2,2,4,6,Louisville Armory
+1947,NBL,MNL,LAL,,WE,1,0,WC,Minneapolis Lakers,1462,919,3843,3395,23,5,15,11,43,17,60,
+1947,PBLA,NOL,NOL,,SO,5,0,,New Orleans Hurricanes,181,93,455,491,0,1,3,4,3,5,8,Coliseum Arena
+1947,NBA,NYK,NYK,,ED,2,0,R1,New York Knicks,1355,868,3578,3427,12,12,14,10,26,22,48,Madison Square Garden (III)
+1947,PBLA,OKD,OKD,,SO,6,0,,Oklahoma City Drillers,79,58,216,224,1,1,1,1,2,3,5,Municipal Auditorium
+1947,PBLA,OMA,OMA,,NO,5,0,,Omaha Tomahawks,118,62,298,345,1,3,1,0,2,4,6,Creighton University
+1947,NBL,OSH,OSH,,WE,3,0,CS,Oshkosh All-Stars,1328,926,3582,3575,20,8,8,20,29,31,60,
+1947,NBA,PHW,GSW,,ED,1,0,F,Philadelphia Warriors,1279,963,3521,3460,14,10,13,11,27,21,48,Philadelphia Arena
+1947,NBA,PRO,PRO,,ED,4,0,,Providence Steamrollers,1268,782,3318,3873,3,21,3,21,6,42,48,Rhode Island Auditorium
+1947,NBL,ROC,SAC,,EA,1,0,LC,Rochester Royals,1452,973,3877,3491,26,4,17,11,44,16,60,
+1947,NBL,SHE,SHE,,WE,5,0,,Sheboygan Redskins,1252,903,3407,3653,13,14,8,21,23,37,60,
+1947,PBLA,SPR,SPR,,SO,8,0,,Springfield Squires,156,73,385,447,1,2,0,5,1,7,8,Mosque Temple
+1947,NBA,STB,STB,,WD,1,0,SF,St. Louis Bombers,1297,838,3432,3335,17,7,12,12,29,19,48,St. Louis Arena
+1947,PBLA,STJ,STJ,,NO,8,0,,St. Joseph Outlaws,134,72,340,406,1,3,0,2,1,6,7,City Auditorium
+1947,PBLA,STP,STP,,NO,2,0,,St. Paul Saints,204,89,497,446,1,1,5,2,6,3,9,St. Paul Auditorium
+1947,NBL,SYR,PHI,,EA,4,0,CS,Syracuse Nationals,1311,936,3558,3749,15,14,7,19,24,36,60,
+1947,NBL,TOL,TOL,,EA,5,0,,Toledo Jeeps,1240,811,3291,3368,15,13,6,22,22,37,59,
+1947,NBL,TRI,ATL,,WE,2,0,CF,Tri-Cities Blackhawks,1340,976,3656,3665,17,9,11,19,30,30,60,
+1947,PBLA,TUL,TUL,,SO,2,0,,Tulsa Ranchers,167,99,433,412,3,1,4,1,7,3,10,Fair Grounds Pavilion
+1947,PBLA,WAT,WAT,,NO,7,0,,Waterloo Hawks,126,56,308,340,1,4,0,1,1,5,6,Waterloo Hippodrome
+1947,NBA,WSC,WSC,,WD,2,0,DT,Washington Capitols,1336,865,3537,3415,19,5,9,15,28,20,48,Uline Arena
+1948,NBL,AND,AND,,EA,1,0,WC,Anderson Duffey Packers,1705,1204,4614,4034,32,2,17,13,49,15,64,
+1948,NBA,BLB,BLB,,ED,3,0,DS,Baltimore Bullets,1736,1545,5017,4934,17,12,11,17,29,31,60,Baltimore Coliseum
+1948,NBA,BOS,BOS,,ED,5,0,,Boston Celtics,1706,1181,4593,4768,17,12,7,20,25,35,60,Boston Garden
+1948,NBA,CHS,CHS,,WD,3,0,DS,Chicago Stags,1905,1228,5038,4798,16,8,18,14,38,22,60,Chicago Stadium
+1948,NBL,DAY,DAY,,EA,4,0,,Dayton Rens,857,553,2267,2458,4,5,9,18,14,26,40,
+1948,NBL,DNN,DNN,,WE,5,0,,Denver Nuggets,1303,1005,3611,3974,15,15,3,28,18,44,62,
+1948,NBL,DTK,DTK,,EA,5,0,,Detroit Vagabond Kings,430,301,1161,1428,1,4,0,12,2,17,19,
+1948,NBA,FTW,DET,,WD,5,0,,Fort Wayne Pistons,1536,1385,4457,4651,15,14,5,23,22,38,60,North Side High School Gym
+1948,NBL,HCB,HCB,,EA,3,0,CS,Hammond Calumet Buccaneers,1307,1168,3782,4016,15,16,5,25,21,41,62,
+1948,NBA,INJ,INJ,,WD,6,0,,Indianapolis Jets,1621,1240,4482,4765,14,15,4,22,18,42,60,Hinkle Fieldhouse
+1948,NBA,MNL,LAL,,WD,2,0,NC,Minneapolis Lakers,1885,1272,5042,4599,26,3,16,13,44,16,60,Minneapolis Auditorium
+1948,NBA,NYK,NYK,,ED,2,0,DF,New York Knicks,1688,1376,4752,4663,18,11,12,17,32,28,60,Madison Square Garden (III)
+1948,NBL,OSH,OSH,,WE,1,0,LC,Oshkosh All-Stars,1426,1044,3896,3773,27,8,9,18,37,27,64,
+1948,NBA,PHW,GSW,,ED,4,0,DS,Philadelphia Warriors,1831,1360,5022,5001,19,10,9,21,28,32,60,Philadelphia Arena
+1948,NBA,PRO,PRO,,ED,6,0,,Providence Steamrollers,1750,1207,4707,5255,7,23,5,23,12,48,60,Rhode Island Auditorium
+1948,NBA,ROC,SAC,,WD,1,0,DF,Rochester Royals,1811,1420,5042,4644,24,5,20,10,45,15,60,Edgerton Park Arena
+1948,NBL,SHE,SHE,,WE,3,0,CS,Sheboygan Redskins,1374,1221,3969,3947,24,7,10,21,35,29,64,
+1948,NBA,STB,STB,,WD,4,0,DS,St. Louis Bombers,1659,1229,4547,4765,17,12,10,18,29,31,60,St. Louis Arena
+1948,NBL,SYR,PHI,,EA,2,0,CF,Syracuse Nationals,1435,1319,4189,4017,27,4,7,19,40,23,63,
+1948,NBL,TRI,ATL,,WE,2,0,CF,Tri-Cities Blackhawks,1487,1191,4165,3991,25,10,10,17,36,28,64,
+1948,NBL,WAT,WAT,,WE,4,0,,Waterloo Hawks,1363,926,3652,3668,23,6,7,22,30,32,62,
+1948,NBA,WSC,WSC,,ED,1,0,F,Washington Capitols,1751,1408,4910,4764,22,7,15,14,38,22,60,Uline Arena
+1949,NBA,AND,AND,,WD,2,0,SF,Anderson Packers,1943,1703,5589,5346,23,9,11,18,37,27,64,Anderson High School Wigwam
+1949,NBA,BLB,BLB,,ED,5,0,,Baltimore Bullets,1712,1549,4973,5353,16,15,8,25,25,43,68,Baltimore Coliseum
+1949,NBA,BOS,BOS,,ED,6,0,,Boston Celtics,1945,1530,5420,5590,12,14,5,28,22,46,68,Boston Garden
+1949,NBA,CHS,CHS,,CD,3,0,DS,Chicago Stags,2003,1346,5352,5243,18,6,14,21,40,28,68,Chicago Stadium
+1949,NBA,DNN,DNN,,WD,6,0,,Denver Nuggets,1731,1355,4817,5530,9,15,1,26,11,51,62,Denver Auditorium Arena
+1949,NBA,FTW,DET,,CD,3,0,DF,Fort Wayne Pistons,1878,1634,5390,5297,28,6,12,22,40,28,68,North Side High School Gym
+1949,NBA,INO,INO,,WD,1,0,DF,Indianapolis Olympians,1982,1529,5493,5256,23,5,13,18,39,25,64,Hinkle Fieldhouse
+1949,NBA,MNL,LAL,,CD,1,0,NC,Minneapolis Lakers,2139,1439,5717,5150,30,1,18,16,51,17,68,Minneapolis Auditorium
+1949,NBA,NYK,NYK,,ED,2,0,DF,New York Knicks,1889,1710,5488,5344,19,10,18,16,40,28,68,Madison Square Garden (III)
+1949,NBA,PHW,GSW,,ED,4,0,DS,Philadelphia Warriors,1779,1425,4983,5194,15,15,8,23,26,42,68,Philadelphia Arena
+1949,NBA,ROC,SAC,,CD,1,0,DS,Rochester Royals,1956,1690,5602,5074,33,1,17,16,51,17,68,Edgerton Park Arena
+1949,NBA,SHE,SHE,,WD,4,0,DS,Sheboygan Redskins,1727,1654,5108,5443,17,14,5,22,22,40,62,Sheboygan Municipal Auditorium and Armory
+1949,NBA,STB,STB,,CD,5,0,,St. Louis Bombers,1741,1528,5010,5202,17,14,7,26,26,42,68,St. Louis Arena
+1949,NBA,SYR,PHI,,ED,1,0,F,Syracuse Nationals,1869,1691,5429,4908,31,1,15,12,51,13,64,State Fair Coliseum
+1949,NBA,TRI,ATL,,WD,3,0,DS,Tri-Cities Blackhawks,1818,1677,5313,5351,22,13,4,20,29,35,64,Wharton Field House
+1949,NBA,WAT,WAT,,WD,5,0,,Waterloo Hawks,1746,1429,4921,5265,17,15,1,22,19,43,62,McElroy Auditorium
+1949,NBA,WSC,WSC,,ED,3,0,DS,Washington Capitols,1813,1575,5201,5264,21,13,10,20,32,36,68,Uline Arena
+1950,NPBL,AND,AND,,EA,2,0,,Anderson Packers,0,0,3651,3596,15,4,6,18,22,22,44,Anderson High School Wigwam
+1950,NBA,BLB,BLB,,ED,5,0,,Baltimore Bullets,1955,1504,5414,5565,21,11,3,25,24,42,66,Baltimore Coliseum
+1950,NBA,BOS,BOS,,ED,2,0,DS,Boston Celtics,2065,1751,5881,5899,26,6,9,22,39,30,69,Boston Garden
+1950,NPBL,DNN,DNN,,WE,2,0,,Denver Refiners,0,0,2498,2704,12,2,3,14,18,16,34,Denver Auditorium Arena
+1950,NPBL,EVA,EVA,,EA,5,0,,Evansville Agogans,0,0,469,601,0,3,0,3,0,6,6,Agoga Tabernacle
+1950,NBA,FTW,DET,,WD,3,0,DS,Fort Wayne Pistons,2002,1718,5722,5849,27,7,5,27,32,36,68,North Side High School Gym
+1950,NPBL,GRH,GRH,,EA,4,0,,Grand Rapids Hornets,0,0,1464,1618,6,3,1,7,6,13,19,Grand Rapids Stadium
+1950,NBA,INO,INO,,WD,4,0,DS,Indianapolis Olympians,2096,1363,5555,5716,19,12,10,24,31,37,68,Hinkle Fieldhouse
+1950,NPBL,KCH,KCH,,WE,4,0,,Kansas City Hi-Spots,0,0,1701,2080,3,6,1,12,4,19,23,Pla-Mor Arena
+1950,NPBL,LOA,LOA,,EA,3,0,,Louisville Alumnites,0,0,2688,2687,11,5,7,11,18,17,35,Louisville Male High Gym
+1950,NBA,MNL,LAL,,WD,1,0,DF,Minneapolis Lakers,2084,1464,5632,5264,29,3,12,21,44,24,68,Minneapolis Auditorium
+1950,NBA,NYK,NYK,,ED,3,0,F,New York Knicks,2037,1592,5666,5639,22,5,10,25,36,30,66,Madison Square Garden (III)
+1950,NBA,PHW,GSW,,ED,1,0,DS,Philadelphia Warriors,1985,1664,5634,5386,29,3,10,22,40,26,66,Philadelphia Arena
+1950,NBA,ROC,SAC,,WD,2,0,NC,Rochester Royals,2032,1692,5756,5553,29,5,12,22,41,27,68,Edgerton Park Arena
+1950,NPBL,SHE,SHE,,EA,1,0,,Sheboygan Redskins,0,0,4244,3755,22,3,6,11,29,16,45,Sheboygan Municipal Auditorium and Armory
+1950,NPBL,SPL,SPL,,WE,3,0,,St. Paul Lights,0,0,1515,1478,9,1,2,7,12,8,20,St. Paul Auditorium
+1950,NBA,SYR,PHI,,ED,4,0,DF,Syracuse Nationals,1884,1912,5680,5645,24,9,8,25,32,34,66,State Fair Coliseum
+1950,NBA,TRI,ATL,,WD,5,0,,Tri-Cities Blackhawks,1988,1754,5730,5988,22,13,2,28,25,43,68,Wharton Field House
+1950,NPBL,WAT,WAT,,WE,1,0,,Waterloo Hawks,0,0,4909,4620,23,5,6,18,32,24,56,Waterloo Hippodrome
+1950,NBA,WSC,WSC,,ED,6,0,,Washington Capitols,967,910,2844,3011,6,11,4,13,10,25,35,Uline Arena
+1951,NBA,BLB,BLB,,ED,5,0,,Baltimore Bullets,1882,1614,5378,5873,17,15,2,22,20,46,66,Baltimore Coliseum
+1951,NBA,BOS,BOS,,ED,2,0,DS,Boston Celtics,2131,1765,6027,5758,22,7,10,19,39,27,66,Boston Garden
+1951,NBA,FTW,DET,,WD,4,0,DS,Fort Wayne Pistons,1771,1609,5151,5286,22,11,6,24,29,37,66,North Side High School Gym
+1951,NBA,INO,INO,,WD,3,0,DS,Indianapolis Olympians,2026,1422,5474,5466,25,6,4,24,34,32,66,Hinkle Fieldhouse
+1951,NBA,MLH,ATL,,WD,5,0,,Milwaukee Hawks,1674,1485,4833,5357,7,13,3,22,17,49,66,Milwaukee Arena
+1951,NBA,MNL,LAL,,WD,2,0,NC,Minneapolis Lakers,2106,1436,5648,5250,21,5,13,19,40,26,66,Minneapolis Auditorium
+1951,NBA,NYK,NYK,,ED,3,0,F,New York Knicks,2022,1565,5609,5560,21,4,12,22,37,29,66,Madison Square Garden (III)
+1951,NBA,PHW,GSW,,ED,4,0,DS,Philadelphia Warriors,2039,1634,5712,5795,24,7,6,25,33,33,66,Philadelphia Arena
+1951,NBA,ROC,SAC,,WD,1,0,DF,Rochester Royals,2014,1661,5689,5468,28,5,12,18,41,25,66,Edgerton Park Arena
+1951,NBA,SYR,PHI,,ED,1,0,DF,Syracuse Nationals,1894,1933,5721,5427,26,7,12,18,40,26,66,Onondaga War Memorial
+1952,NBA,BLB,BLB,,ED,4,0,DS,Baltimore Bullets,2083,1745,5911,6360,11,20,1,19,16,54,70,Baltimore Coliseum
+1952,NBA,BOS,BOS,,ED,3,0,DF,Boston Celtics,2177,1904,6258,6090,21,3,11,18,46,25,71,Boston Garden
+1952,NBA,FTW,DET,,WD,3,0,DF,Fort Wayne Pistons,1876,1839,5591,5599,25,9,8,19,36,33,69,War Memorial Coliseum
+1952,NBA,INO,INO,,WD,4,0,DS,Indianapolis Olympians,1829,1637,5295,5493,19,14,4,23,28,43,71,Hinkle Fieldhouse
+1952,NBA,MLH,ATL,,WD,5,0,,Milwaukee Hawks,1873,1643,5389,5496,14,8,4,24,27,44,71,Milwaukee Arena
+1952,NBA,MNL,LAL,,WD,1,0,NC,Minneapolis Lakers,2166,1641,5973,5544,24,2,16,15,48,22,70,Minneapolis Auditorium
+1952,NBA,NYK,NYK,,ED,1,0,F,New York Knicks,2059,1867,5985,5619,21,4,15,14,47,23,70,Madison Square Garden (III)
+1952,NBA,PHW,GSW,,ED,5,0,,Philadelphia Warriors,1987,1560,5534,6031,4,13,1,28,12,57,69,Philadelphia Civic Center
+1952,NBA,ROC,SAC,,WD,2,0,DS,Rochester Royals,2019,2005,6043,5847,24,8,13,16,44,26,70,Edgerton Park Arena
+1952,NBA,SYR,PHI,,ED,2,0,DS,Syracuse Nationals,1942,2197,6081,5775,32,2,10,19,47,24,71,Onondaga War Memorial
+1953,NBA,BLB,BLB,,ED,5,0,,Baltimore Bullets,2036,1566,5638,6125,12,20,0,20,16,56,72,Baltimore Coliseum
+1953,NBA,BOS,BOS,,ED,2,0,DF,Boston Celtics,2232,1851,6315,6147,16,6,11,19,42,30,72,Boston Garden
+1953,NBA,FTW,DET,,WD,3,0,DR,Fort Wayne Pistons,1952,1689,5593,5476,19,8,11,17,40,32,72,War Memorial Coliseum
+1953,NBA,MLH,ATL,,WD,4,0,,Milwaukee Hawks,1757,1524,5038,5419,10,14,6,17,21,51,72,Milwaukee Arena
+1953,NBA,MNL,LAL,,WD,1,0,NC,Minneapolis Lakers,2184,1512,5880,5660,21,4,13,15,46,26,72,Minneapolis Auditorium
+1953,NBA,NYK,NYK,,ED,1,0,DR,New York Knicks,1934,1820,5688,5697,18,8,15,13,44,28,72,Madison Square Garden (III)
+1953,NBA,PHW,GSW,,ED,4,0,,Philadelphia Warriors,2023,1586,5632,5786,10,9,6,16,29,43,72,Philadelphia Civic Center
+1953,NBA,ROC,SAC,,WD,2,0,DF,Rochester Royals,2010,1722,5742,5567,18,10,12,15,44,28,72,Edgerton Park Arena
+1953,NBA,SYR,PHI,,ED,3,0,F,Syracuse Nationals,2054,1905,6013,5660,27,5,10,19,42,30,72,Onondaga War Memorial
+1954,NBA,BLB,BLB,,ED,5,0,,Baltimore Bullets,0,0,0,0,2,4,1,4,3,11,14,Baltimore Coliseum
+1954,NBA,BOS,BOS,,ED,3,0,DF,Boston Celtics,2604,2097,7305,7309,20,5,5,22,36,36,72,Boston Garden
+1954,NBA,FTW,DET,,WD,1,0,F,Fort Wayne Pistons,2333,1986,6652,6480,20,6,9,14,43,29,72,War Memorial Coliseum
+1954,NBA,MLH,ATL,,WD,4,0,,Milwaukee Hawks,2187,1917,6291,6510,6,11,9,16,26,46,72,Milwaukee Arena
+1954,NBA,MNL,LAL,,WD,2,0,DF,Minneapolis Lakers,2506,1873,6885,6801,18,6,10,14,40,32,72,Minneapolis Auditorium
+1954,NBA,NYK,NYK,,ED,2,0,DS,New York Knicks,2392,1887,6671,6665,17,8,8,19,38,34,72,Madison Square Garden (III)
+1954,NBA,PHW,GSW,,ED,4,0,,Philadelphia Warriors,2392,1928,6712,6731,16,5,4,19,33,39,72,Philadelphia Civic Center
+1954,NBA,ROC,SAC,,WD,3,0,DS,Rochester Royals,2399,1737,6535,6652,17,11,4,19,29,43,72,Edgerton Park Arena
+1954,NBA,SYR,PHI,,ED,1,0,NC,Syracuse Nationals,2360,1837,6557,6457,25,7,10,16,43,29,72,Onondaga War Memorial
+1955,NBA,BOS,BOS,,ED,2,0,DS,Boston Celtics,2745,2142,7632,7585,20,7,12,15,39,33,72,Boston Garden
+1955,NBA,FTW,DET,,WD,1,0,F,Fort Wayne Pistons,2396,2002,6794,6743,19,8,10,17,37,35,72,War Memorial Coliseum
+1955,NBA,MNL,LAL,,WD,2,0,DS,Minneapolis Lakers,2541,2066,7148,7212,13,12,6,21,33,39,72,Minneapolis Auditorium
+1955,NBA,NYK,NYK,,ED,3,0,DT,New York Knicks,2508,2196,7212,7242,14,14,15,14,35,37,72,Madison Square Garden (III)
+1955,NBA,PHW,GSW,,ED,1,0,NC,Philadelphia Warriors,2641,2142,7424,7117,21,7,11,17,45,27,72,Philadelphia Civic Center
+1955,NBA,ROC,SAC,,WD,4,0,,Rochester Royals,2551,1798,6900,7106,15,14,7,21,31,41,72,Rochester Community War Memorial
+1955,NBA,STL,ATL,,WD,2,0,DF,St. Louis Hawks,2506,1941,6953,7059,16,10,10,17,33,39,72,Kiel Auditorium
+1955,NBA,SYR,PHI,,ED,3,0,DF,Syracuse Nationals,2466,2044,6976,6975,23,8,9,19,35,37,72,Onondaga War Memorial
+1956,NBA,BOS,BOS,,ED,1,0,NC,Boston Celtics,2808,1983,7599,7213,27,4,12,19,44,28,72,Boston Garden
+1956,NBA,FTW,DET,,WD,1,0,DS,Fort Wayne Pistons,2532,1874,6938,7104,23,8,7,24,34,38,72,War Memorial Coliseum
+1956,NBA,MNL,LAL,,WD,1,0,DF,Minneapolis Lakers,2584,2195,7363,7421,18,13,9,22,34,38,72,Minneapolis Auditorium
+1956,NBA,NYK,NYK,,ED,4,0,,New York Knicks,2569,2117,7255,7265,19,12,11,20,36,36,72,Madison Square Garden (III)
+1956,NBA,PHW,GSW,,ED,3,0,DS,Philadelphia Warriors,2584,2062,7230,7116,26,5,5,26,37,35,72,Philadelphia Civic Center
+1956,NBA,ROC,SAC,,WD,4,0,,Rochester Royals,2515,1698,6728,6886,19,12,9,22,31,41,72,Rochester Community War Memorial
+1956,NBA,STL,ATL,,WD,1,0,F,St. Louis Hawks,2557,1977,7091,7097,18,13,11,20,34,38,72,Kiel Auditorium
+1956,NBA,SYR,PHI,,ED,2,0,DF,Syracuse Nationals,2550,2075,7175,7277,22,9,12,19,38,34,72,Onondaga War Memorial
+1957,NBA,BOS,BOS,,ED,1,0,F,Boston Celtics,3006,1904,7916,7520,25,4,17,13,49,23,72,Boston Garden
+1957,NBA,CIN,SAC,,WD,2,0,DS,Cincinnati Royals,2817,1688,7322,7420,17,12,10,19,33,39,72,Cincinnati Gardens
+1957,NBA,DET,DET,,WD,2,0,DF,Detroit Pistons,2746,2093,7585,7754,14,14,13,18,33,39,72,Detroit Olympia
+1957,NBA,MNL,LAL,,WD,4,0,,Minneapolis Lakers,2660,2246,7566,8025,13,17,4,22,19,53,72,Minneapolis Auditorium
+1957,NBA,NYK,NYK,,ED,4,0,,New York Knicks,2884,2300,8068,7981,16,13,11,19,35,37,72,Madison Square Garden (III)
+1957,NBA,PHW,GSW,,ED,3,0,DF,Philadelphia Warriors,2765,1977,7507,7516,16,12,12,19,37,35,72,Philadelphia Civic Center
+1957,NBA,STL,ATL,,WD,1,0,NC,St. Louis Hawks,2779,2180,7738,7643,23,8,9,19,41,31,72,Kiel Auditorium
+1957,NBA,SYR,PHI,,ED,2,0,DS,Syracuse Nationals,2823,2075,7721,7564,26,5,9,21,41,31,72,Onondaga War Memorial
+1958,NBA,BOS,BOS,,ED,1,0,NC,Boston Celtics,3208,1963,8379,7912,26,4,13,15,52,20,72,Boston Garden
+1958,NBA,CIN,SAC,,WD,4,0,,Cincinnati Royals,2854,1713,7421,8060,9,19,2,25,19,53,72,Cincinnati Gardens
+1958,NBA,DET,DET,,WD,3,0,DS,Detroit Pistons,2811,1943,7565,7657,13,17,8,20,28,44,72,Detroit Olympia
+1958,NBA,MNL,LAL,,WD,2,0,F,Minneapolis Lakers,2779,2071,7629,7725,15,7,9,17,33,39,72,Minneapolis Auditorium
+1958,NBA,NYK,NYK,,ED,2,0,DS,New York Knicks,2863,2217,7943,7925,21,9,15,15,40,32,72,Madison Square Garden (III)
+1958,NBA,PHW,GSW,,ED,4,0,,Philadelphia Warriors,2826,1783,7435,7651,17,9,7,24,32,40,72,Philadelphia Civic Center
+1958,NBA,STL,ATL,,WD,1,0,DF,St. Louis Hawks,2879,2072,7830,7564,28,3,14,15,49,23,72,Kiel Auditorium
+1958,NBA,SYR,PHI,,ED,3,0,DF,Syracuse Nationals,3050,2046,8146,7855,19,12,12,17,35,37,72,Onondaga War Memorial
+1959,NBA,BOS,BOS,,ED,1,0,NC,Boston Celtics,3744,1849,9337,8713,25,2,23,9,59,16,75,Boston Garden
+1959,NBA,CIN,SAC,,WD,4,0,,Cincinnati Royals,3210,1913,8333,8807,9,22,2,20,19,56,75,Cincinnati Gardens
+1959,NBA,DET,DET,,WD,2,0,DS,Detroit Pistons,3146,2075,8367,8624,17,14,6,21,30,45,75,Detroit Olympia
+1959,NBA,MNL,LAL,,WD,3,0,DF,Minneapolis Lakers,3040,1965,8045,8362,9,13,9,22,25,50,75,Minneapolis Armory
+1959,NBA,NYK,NYK,,ED,4,0,,New York Knicks,3429,1942,8800,8973,13,18,9,19,27,48,75,Madison Square Garden (III)
+1959,NBA,PHW,GSW,,ED,2,0,DF,Philadelphia Warriors,3549,1797,8895,8698,22,6,12,19,49,26,75,Philadelphia Civic Center
+1959,NBA,STL,ATL,,WD,1,0,F,St. Louis Hawks,3179,2148,8506,8303,28,5,12,20,46,29,75,Kiel Auditorium
+1959,NBA,SYR,PHI,,ED,3,0,DS,Syracuse Nationals,3406,2105,8917,8720,26,4,11,19,45,30,75,Onondaga War Memorial
+1960,NBA,BOS,BOS,,ED,1,0,NC,Boston Celtics,3699,2062,9460,9013,21,7,24,11,57,22,79,Boston Garden
+1960,NBA,CIN,SAC,,WD,4,0,,Cincinnati Royals,3626,2060,9312,9585,18,13,8,19,33,46,79,Cincinnati Gardens
+1960,NBA,DET,DET,,WD,3,0,DS,Detroit Pistons,3481,2408,9370,9558,20,11,3,19,34,45,79,Detroit Olympia
+1960,NBA,LAL,LAL,,WD,2,0,DF,Los Angeles Lakers,3401,2204,9006,9010,16,12,8,20,36,43,79,Los Angeles Memorial Sports Arena
+1960,NBA,NYK,NYK,,ED,4,0,,New York Knicks,3422,2135,8979,9486,10,22,7,25,21,58,79,Madison Square Garden (III)
+1960,NBA,PHW,GSW,,ED,2,0,DS,Philadelphia Warriors,3768,2022,9558,9484,23,6,12,21,46,33,79,Philadelphia Civic Center
+1960,NBA,STL,ATL,,WD,1,0,F,St. Louis Hawks,3618,2147,9383,9102,29,5,15,20,51,28,79,Kiel Auditorium
+1960,NBA,SYR,PHI,,ED,3,0,DF,Syracuse Nationals,3654,2278,9586,9416,19,9,8,21,38,41,79,Onondaga War Memorial
+1961,NBA,BOS,BOS,,ED,1,0,NC,Boston Celtics,3855,1977,9687,8948,23,5,26,12,60,20,80,Boston Garden
+1961,ABL1,CHM,CHM,,EA,3,0,CS,Chicago Majors,3141,1953,8518,8562,0,0,0,0,39,44,83,Chicago International Amphitheater
+1961,NBA,CHP,WAS,,WD,5,0,,Chicago Packers,3461,1952,8874,9553,9,19,3,20,18,62,80,International Amphitheatre
+1961,NBA,CIN,SAC,,WD,2,0,DS,Cincinnati Royals,3806,2233,9845,9704,18,13,14,16,43,37,80,Cincinnati Gardens
+1961,ABL1,CLP,CLP,,EA,1,0,WC,Cleveland Pipers,3234,2260,8856,8613,0,0,0,0,45,36,81,Cleveland Arena
+1961,NBA,DET,DET,,WD,3,0,DF,Detroit Pistons,3472,2290,9234,9369,16,14,8,17,37,43,80,Cobo Arena
+1961,ABL1,HAW,LBC,,WE,3,0,C1,Hawaii Chiefs,3012,1970,8153,8365,0,0,0,0,29,53,82,Honolulu City Auditorium
+1961,ABL1,KCS,KCS,,WE,1,0,LC,Kansas City Steers,3101,1836,8258,7888,0,0,0,0,54,25,79,Municipal Auditorium
+1961,ABL1,LAJ,LAJ,,WE,4,0,,Los Angeles Jets,1446,1117,4123,3973,0,0,0,0,24,15,39,Los Angeles Memorial Sports Arena
+1961,NBA,LAL,LAL,,WD,1,0,F,Los Angeles Lakers,3552,2378,9482,9306,26,5,18,13,54,26,80,Los Angeles Memorial Sports Arena
+1961,NBA,NYK,NYK,,ED,4,0,,New York Knicks,3638,1911,9187,9574,19,14,2,23,29,51,80,Madison Square Garden (III)
+1961,ABL1,PGR,PGR,,EA,2,0,C1,Pittsburgh Rens,3078,2053,8429,8453,0,0,0,0,41,40,81,Pittsburgh Civic Arena
+1961,NBA,PHW,GSW,,ED,2,0,DF,Philadelphia Warriors,3917,2201,10035,9813,18,11,18,19,49,31,80,Philadelphia Civic Center
+1961,ABL1,SFS,OAO,,WE,2,0,CS,San Francisco Saints,2835,2019,7828,7956,0,0,0,0,38,38,76,San Francisco Civic Auditorium
+1961,NBA,STL,ATL,,WD,4,0,,St. Louis Hawks,3641,2226,9508,9770,19,16,7,27,29,51,80,Kiel Auditorium
+1961,NBA,SYR,PHI,,ED,3,0,DS,Syracuse Nationals,3706,2246,9658,9473,18,10,11,19,41,39,80,Onondaga War Memorial
+1961,ABL1,WNY,PHT,,EA,4,0,CF,Washington/New York Tapers,2945,2172,8216,8571,0,0,0,0,31,50,81,Washington Coliseum/Long Island Arena
+1962,NBA,BOS,BOS,,ED,1,0,NC,Boston Celtics,3746,2012,9504,8930,25,5,21,16,58,22,80,Boston Garden
+1962,ABL1,CHM,CHM,,,6,0,,Chicago Majors,972,604,2686,2902,0,0,0,0,8,20,28,Chicago International Amphitheater
+1962,NBA,CHZ,WAS,,WD,5,0,,Chicago Zephyrs,3371,2053,8795,9122,17,17,3,23,25,55,80,Chicago Coliseum
+1962,NBA,CIN,SAC,,ED,3,0,DF,Cincinnati Royals,3672,2183,9527,9426,23,10,15,19,42,38,80,Cincinnati Gardens
+1962,NBA,DET,DET,,WD,3,0,DS,Detroit Pistons,3534,2044,9112,9408,14,16,8,19,34,46,80,Cobo Arena
+1962,ABL1,KCS,KCS,,,1,0,,Kansas City Steers,1290,740,3392,3063,0,0,0,0,22,9,31,Municipal Auditorium
+1962,NBA,LAL,LAL,,WD,1,0,F,Los Angeles Lakers,3506,2230,9242,8992,27,7,20,17,53,27,80,Los Angeles Memorial Sports Arena
+1962,ABL1,LBC,LBC,,,2,0,,Long Beach Chiefs,901,546,2424,2347,0,0,0,0,16,8,24,Long Beach Sports Arena
+1962,NBA,NYK,NYK,,ED,4,0,,New York Knicks,3433,1971,8837,9417,12,22,5,28,21,59,80,Madison Square Garden (III)
+1962,ABL1,OAO,OAO,,,4,0,,Oakland Oaks,973,522,2504,2581,0,0,0,0,11,14,25,Oakland Auditorium
+1962,ABL1,PGR,PGR,,,3,0,,Pittsburgh Rens,860,528,2285,2307,0,0,0,0,12,10,22,Pittsburgh Civic Arena
+1962,ABL1,PHT,PHT,,,5,0,,Philadelphia Tapers,1016,576,2654,2745,0,0,0,0,10,18,28,Convention Hall
+1962,NBA,SFW,GSW,,WD,4,0,,San Francisco Warriors,3805,1870,9480,9647,13,20,11,25,31,49,80,Cow Palace
+1962,NBA,STL,ATL,,WD,2,0,DF,St. Louis Hawks,3355,2056,8766,8624,30,7,13,18,48,32,80,Kiel Auditorium
+1962,NBA,SYR,PHI,,ED,2,0,DS,Syracuse Nationals,3690,2350,9730,9427,23,5,13,19,48,32,80,Onondaga War Memorial
+1963,NBA,BAL,WAS,,WD,4,0,,Baltimore Bullets,3456,2036,8948,9091,20,19,8,21,31,49,80,Baltimore Civic Center
+1963,NBA,BOS,BOS,,ED,1,0,NC,Boston Celtics,3619,1804,9042,8410,26,4,21,17,59,21,80,Boston Garden
+1963,NBA,CIN,SAC,,ED,2,0,DF,Cincinnati Royals,3516,2146,9178,8772,26,7,18,18,55,25,80,Cincinnati Gardens
+1963,NBA,DET,DET,,WD,5,0,,Detroit Pistons,3346,1928,8620,9238,9,21,6,25,23,57,80,Cobo Arena
+1963,NBA,LAL,LAL,,WD,3,0,DS,Los Angeles Lakers,3272,2230,8774,8692,24,12,15,21,42,38,80,Los Angeles Memorial Sports Arena
+1963,NBA,NYK,NYK,,ED,4,0,,New York Knicks,3512,1952,8976,9521,10,25,8,27,22,58,80,Madison Square Garden (III)
+1963,NBA,PHI,PHI,,ED,3,0,DS,Philadelphia 76ers,3394,2184,8972,9323,18,12,12,22,34,46,80,Convention Hall
+1963,NBA,SFW,GSW,,WD,1,0,F,San Francisco Warriors,3407,1800,8614,8205,25,14,21,15,48,32,80,Cow Palace
+1963,NBA,STL,ATL,,WD,2,0,DF,St. Louis Hawks,3341,2115,8797,8669,27,12,17,19,46,34,80,Kiel Auditorium
+1964,NBA,BAL,WAS,,WD,3,0,DF,Baltimore Bullets,3421,2245,9087,9264,23,14,12,19,37,43,80,Baltimore Civic Center
+1964,NBA,BOS,BOS,,ED,1,0,NC,Boston Celtics,3567,1890,9024,8351,27,3,27,11,62,18,80,Boston Garden
+1964,NBA,CIN,SAC,,ED,2,0,DS,Cincinnati Royals,3482,2170,9134,8952,25,7,17,21,48,32,80,Cincinnati Gardens
+1964,NBA,DET,DET,,WD,4,0,,Detroit Pistons,3467,1747,8681,8954,13,17,11,20,31,49,80,Cobo Arena
+1964,NBA,LAL,LAL,,WD,1,0,F,Los Angeles Lakers,3336,2276,8948,8795,25,13,21,16,49,31,80,Los Angeles Memorial Sports Arena
+1964,NBA,NYK,NYK,,ED,4,0,,New York Knicks,3339,1915,8593,8886,16,19,8,22,31,49,80,Madison Square Garden (III)
+1964,NBA,PHI,PHI,,ED,3,0,DF,Philadelphia 76ers,3391,2221,9003,9015,13,12,9,21,40,40,80,Convention Hall
+1964,NBA,SFW,GSW,,WD,5,0,,San Francisco Warriors,3323,1819,8465,8960,10,26,5,31,17,63,80,San Francisco Civic Auditorium
+1964,NBA,STL,ATL,,WD,2,0,DS,St. Louis Hawks,3269,2168,8706,8464,26,14,15,17,45,35,80,Kiel Auditorium
+1965,NBA,BAL,WAS,,WD,2,0,DS,Baltimore Bullets,3599,2267,9465,9560,29,9,4,25,38,42,80,Baltimore Civic Center
+1965,NBA,BOS,BOS,,ED,2,0,NC,Boston Celtics,3488,2038,9014,8623,26,5,19,18,54,26,80,Boston Garden
+1965,NBA,CIN,SAC,,ED,3,0,DS,Cincinnati Royals,3610,2204,9424,9331,25,6,11,23,45,35,80,Cincinnati Gardens
+1965,NBA,DET,DET,,WD,5,0,,Detroit Pistons,3475,1877,8827,9373,13,17,4,22,22,58,80,Cobo Arena
+1965,NBA,LAL,LAL,,WD,1,0,F,Los Angeles Lakers,3597,2363,9557,9309,28,11,13,21,45,35,80,Los Angeles Memorial Sports Arena
+1965,NBA,NYK,NYK,,ED,4,0,,New York Knicks,3559,2217,9335,9543,20,14,4,30,30,50,80,Madison Square Garden (III)
+1965,NBA,PHI,PHI,,ED,1,0,DF,Philadelphia 76ers,3650,2087,9387,9013,22,3,20,17,55,25,80,Convention Hall
+1965,NBA,SFW,GSW,,WD,4,0,,San Francisco Warriors,3557,2129,9243,9455,12,14,8,19,35,45,80,San Francisco Civic Auditorium
+1965,NBA,STL,ATL,,WD,3,0,DF,St. Louis Hawks,3379,2155,8913,8958,22,10,6,22,36,44,80,Kiel Auditorium
+1966,NBA,BAL,WAS,,ED,5,0,,Baltimore Bullets,3664,2025,9353,9881,12,20,3,30,20,61,81,Baltimore Civic Center
+1966,NBA,BOS,BOS,,ED,2,0,DF,Boston Celtics,3724,2216,9664,9012,27,4,25,11,60,21,81,Boston Garden
+1966,NBA,CHI,CHI,,WD,4,0,DS,Chicago Bulls,3565,2037,9167,9470,17,19,9,17,33,48,81,International Amphitheatre
+1966,NBA,CIN,SAC,,ED,3,0,DS,Cincinnati Royals,3654,2179,9487,9508,20,11,12,24,39,42,81,Cincinnati Gardens
+1966,NBA,DET,DET,,WD,5,0,,Detroit Pistons,3523,1969,9015,9463,12,18,9,19,30,51,81,Cobo Arena
+1966,NBA,LAL,LAL,,WD,3,0,DS,Los Angeles Lakers,3786,2192,9764,9736,21,18,12,20,36,45,81,Los Angeles Memorial Sports Arena
+1966,NBA,NYK,NYK,,ED,4,0,DS,New York Knicks,3637,2151,9425,9672,20,15,9,24,36,45,81,Madison Square Garden (III)
+1966,NBA,PHI,PHI,,ED,1,0,NC,Philadelphia 76ers,3912,2319,10143,9378,28,2,26,8,68,13,81,Convention Hall
+1966,NBA,SFW,GSW,,WD,1,0,F,San Francisco Warriors,3814,2283,9911,9679,18,10,11,19,44,37,81,Oakland-Alameda County Coliseum Arena
+1966,NBA,STL,ATL,,WD,2,0,DF,St. Louis Hawks,3547,2110,9204,9334,18,11,12,21,39,42,81,Kiel Auditorium
+1967,ABA,ANA,UTS,,WD,5,0,,Anaheim Amigos,3172,2141,8704,9057,12,19,7,27,25,53,78,Anaheim Convention Center
+1967,NBA,BAL,WAS,,ED,6,0,,Baltimore Bullets,3691,2245,9627,9659,17,19,12,23,36,46,82,Baltimore Civic Center
+1967,NBA,BOS,BOS,,ED,2,0,NC,Boston Celtics,3686,2151,9523,9186,28,9,20,16,54,28,82,Boston Garden
+1967,NBA,CHI,CHI,,WD,4,0,DS,Chicago Bulls,3488,2006,8982,9310,11,22,12,23,29,53,82,Chicago Stadium
+1967,NBA,CIN,SAC,,ED,5,0,,Cincinnati Royals,3679,2204,9562,9631,18,12,13,23,39,43,82,Cincinnati Gardens
+1967,NBA,DET,DET,,ED,4,0,DS,Detroit Pistons,3755,2215,9725,9889,21,11,12,23,40,42,82,Cobo Arena
+1967,ABA,DLC,SAS,,WD,2,0,DF,Dallas Chaparrals,3260,2027,8576,8470,29,10,17,20,46,32,78,Moody Coliseum
+1967,ABA,DNR,DEN,,WD,3,0,DS,Denver Rockets,3119,1981,8244,7914,31,8,13,22,45,33,78,Denver Auditorium Arena
+1967,ABA,HSM,SSL,,WD,4,0,DS,Houston Mavericks,3094,1774,8074,8407,23,16,6,32,29,49,78,Hofheinz Pavilion
+1967,ABA,INA,IND,,ED,3,0,DS,Indiana Pacers,3174,2102,8546,8530,24,8,10,26,38,40,78,Indiana State Fair Coliseum
+1967,ABA,KEN,KEN,,ED,4,0,DS,Kentucky Colonels,3044,1921,8150,8207,25,14,10,26,36,42,78,Louisville Convention Center
+1967,NBA,LAL,LAL,,WD,2,0,F,Los Angeles Lakers,3827,2283,9937,9477,30,11,18,19,52,30,82,The Forum
+1967,ABA,MNM,FLO,,ED,2,0,DF,Minnesota Muskies,3248,1896,8469,8163,32,7,15,21,50,28,78,Metropolitan Sports Center
+1967,ABA,NJA,NJN,,ED,4,0,,New Jersey Americans,3189,2138,8641,8768,26,13,9,26,36,42,78,Teaneck Armory
+1967,ABA,NOB,MMS,,WD,1,0,F,New Orleans Buccaneers,3207,2245,8712,8334,23,6,14,20,48,30,78,Loyola Field House
+1967,NBA,NYK,NYK,,ED,3,0,DS,New York Knicks,3682,2159,9523,9374,20,17,21,16,43,39,82,Madison Square Garden (III)
+1967,ABA,OAK,VIR,,WD,6,0,,Oakland Oaks,3215,2109,8642,9160,12,18,4,32,22,56,78,Oakland-Alameda County Coliseum Arena
+1967,NBA,PHI,PHI,,ED,1,0,DF,Philadelphia 76ers,3965,2121,10051,9346,27,8,25,12,62,20,82,The Spectrum
+1967,ABA,PTP,PTC,,ED,1,0,AC,Pittsburgh Pipers,3230,2028,8731,8479,31,6,20,16,54,24,78,Pittsburgh Civic Arena
+1967,NBA,SDR,HOU,,WD,6,0,,San Diego Rockets,3566,2083,9215,9919,8,33,4,26,15,67,82,San Diego Sports Arena
+1967,NBA,SEA,SEA,,WD,5,0,,Seattle Supersonics,3772,2188,9732,10261,9,19,7,24,23,59,82,Seattle Center Coliseum
+1967,NBA,SFW,GSW,,WD,3,0,DF,San Francisco Warriors,3632,2334,9598,9647,27,14,16,23,43,39,82,Oakland-Alameda County Coliseum Arena
+1967,NBA,STL,ATL,,WD,1,0,DS,St. Louis Hawks,3504,2258,9266,9042,25,7,22,13,56,26,82,Kiel Auditorium
+1968,NBA,ATL,ATL,,WD,2,0,DF,Atlanta Hawks,3605,1913,9123,8942,28,12,18,21,48,34,82,Alexander Memorial Coliseum
+1968,NBA,BAL,WAS,,ED,1,0,DS,Baltimore Bullets,3770,2002,9542,9193,29,9,24,15,57,25,82,Baltimore Civic Center
+1968,NBA,BOS,BOS,,ED,4,0,NC,Boston Celtics,3583,1936,9102,8645,24,12,21,19,48,34,82,Boston Garden
+1968,NBA,CHI,CHI,,WD,5,0,,Chicago Bulls,3355,1877,8587,8772,19,21,12,25,33,49,82,Chicago Stadium
+1968,NBA,CIN,SAC,,ED,5,0,,Cincinnati Royals,3565,2262,9392,9476,15,13,16,21,41,41,82,Cincinnati Gardens
+1968,NBA,DET,DET,,ED,6,0,,Detroit Pistons,3609,2141,9359,9618,21,17,7,30,32,50,82,Cobo Arena
+1968,ABA,DLC,SAS,,WD,4,0,DS,Dallas Chaparrals,3185,2192,8657,8710,24,13,14,21,41,37,78,Moody Coliseum
+1968,ABA,DNR,DEN,,WD,3,0,DS,Denver Rockets,3427,2026,8959,8842,32,7,9,26,44,34,78,Denver Auditorium Arena
+1968,ABA,HSM,SSL,,WD,6,0,,Houston Mavericks,3179,2196,8683,9127,15,23,7,28,23,55,78,Hofheinz Pavilion
+1968,ABA,INA,IND,,ED,1,0,F,Indiana Pacers,3474,2273,9331,9010,29,10,15,22,44,34,78,Indiana State Fair Coliseum
+1968,ABA,KEN,KEN,,ED,3,0,DS,Kentucky Colonels,3180,1977,8672,8659,27,13,14,21,42,36,78,Louisville Convention Center
+1968,NBA,LAL,LAL,,WD,1,0,F,Los Angeles Lakers,3574,2056,9204,8864,32,9,21,18,55,27,82,The Forum
+1968,ABA,LAS,UTS,,WD,5,0,,Los Angeles Stars,3208,2291,8925,9163,22,17,10,25,33,45,78,Los Angeles Memorial Sports Arena
+1968,NBA,MIL,MIL,,ED,7,0,,Milwaukee Bucks,3537,1966,9040,9460,15,19,8,27,27,55,82,Milwaukee Arena
+1968,ABA,MMF,FLO,,ED,2,0,DF,Miami Floridians,3406,2167,9008,8973,19,10,16,21,43,35,78,Miami Beach Convention Hall
+1968,ABA,MNP,PTC,,ED,4,0,DS,Minnesota Pipers,3320,1991,8912,8904,15,12,13,25,36,42,78,Metropolitan Sports Center
+1968,ABA,NOB,MMS,,WD,2,0,DF,New Orleans Buccaneers,3386,2148,9053,8787,23,8,17,20,46,32,78,Loyola Field House
+1968,ABA,NYA,NJN,,ED,5,0,,New York Nets,3148,2090,8463,9143,12,27,5,29,17,61,78,Long Island Arena
+1968,NBA,NYK,NYK,,ED,3,0,DF,New York Knicks,3588,1911,9087,8616,30,7,19,20,54,28,82,Madison Square Garden (IV)
+1968,ABA,OAK,VIR,,WD,1,0,AC,Oakland Oaks,3615,2607,9866,9211,30,8,28,10,60,18,78,Oakland-Alameda County Coliseum Arena
+1968,NBA,PHI,PHI,,ED,2,0,DS,Philadelphia 76ers,3754,2238,9746,9332,26,8,24,16,55,27,82,The Spectrum
+1968,NBA,PHO,PHO,,WD,7,0,,Phoenix Suns,3541,2080,9162,9878,11,26,4,28,16,66,82,Arizona Veterans Memorial Coliseum
+1968,NBA,SDR,HOU,,WD,4,0,DS,San Diego Rockets,3691,2074,9456,9472,25,16,8,25,37,45,82,San Diego Sports Arena
+1968,NBA,SEA,SEA,,WD,6,0,,Seattle Supersonics,3543,2105,9191,9589,18,18,6,29,30,52,82,Seattle Center Coliseum
+1968,NBA,SFW,GSW,,WD,3,0,DS,San Francisco Warriors,3414,2119,8947,9081,22,19,18,21,41,41,82,Oakland-Alameda County Coliseum Arena
+1969,NBA,ATL,ATL,,WD,1,0,DF,Atlanta Hawks,3817,2012,9646,9612,25,13,18,16,48,34,82,Alexander Memorial Coliseum
+1969,NBA,BAL,WAS,,ED,3,0,DS,Baltimore Bullets,3925,2050,9900,9726,25,12,19,18,50,32,82,Baltimore Civic Center
+1969,NBA,BOS,BOS,,ED,6,0,,Boston Celtics,3645,2132,9422,9574,16,21,13,27,34,48,82,Boston Garden
+1969,ABA,CAR,SSL,,ED,3,0,DS,Carolina Cougars,3470,1942,8971,8988,28,14,14,27,42,42,84,Greensboro Coliseum
+1969,NBA,CHI,CHI,,WD,3,0,DS,Chicago Bulls,3607,2209,9423,9567,23,10,9,25,39,43,82,Chicago Stadium
+1969,NBA,CIN,SAC,,ED,5,0,,Cincinnati Royals,3767,2082,9616,9858,19,13,14,25,36,46,82,Cincinnati Gardens
+1969,NBA,DET,DET,,ED,7,0,,Detroit Pistons,3565,2116,9246,9518,18,20,10,25,31,51,82,Cobo Arena
+1969,ABA,DLC,SAS,,WD,2,0,DS,Dallas Chaparrals,3775,2340,10077,9918,23,14,14,22,45,39,84,Moody Coliseum
+1969,ABA,DNR,DEN,,WD,1,0,DF,Denver Rockets,3743,2023,9697,9326,36,5,11,25,51,33,84,Denver Auditorium Arena
+1969,ABA,INA,IND,,ED,1,0,AC,Indiana Pacers,3593,2110,9511,9220,28,9,26,14,59,25,84,Indiana State Fair Coliseum
+1969,ABA,KEN,KEN,,ED,2,0,DF,Kentucky Colonels,3593,2020,9536,9448,27,14,14,23,45,39,84,Louisville Convention Center
+1969,NBA,LAL,LAL,,WD,2,0,F,Los Angeles Lakers,3668,1991,9327,9164,27,14,17,21,46,36,82,The Forum
+1969,ABA,LAS,UTS,,WD,4,0,F,Los Angeles Stars,3575,2266,9547,9567,21,15,14,24,43,41,84,Los Angeles Memorial Sports Arena
+1969,NBA,MIL,MIL,,ED,2,0,DF,Milwaukee Bucks,3923,1895,9741,9363,27,11,24,14,56,26,82,Milwaukee Arena
+1969,ABA,MMF,FLO,,ED,6,0,,Miami Floridians,3598,2225,9509,9940,18,20,4,33,23,61,84,Miami Beach Convention Hall
+1969,ABA,NOB,MMS,,WD,5,0,,New Orleans Buccaneers,3463,1970,9064,8999,28,11,11,26,42,42,84,Tulane Gym
+1969,ABA,NYA,NJN,,ED,4,0,DS,New York Nets,3543,1990,9146,9219,23,19,13,25,39,45,84,Island Garden
+1969,NBA,NYK,NYK,,ED,1,0,NC,New York Knicks,3803,1821,9427,8682,30,11,27,10,60,22,82,Madison Square Garden (IV)
+1969,NBA,PHI,PHI,,ED,4,0,DS,Philadelphia 76ers,3915,2168,9998,9718,22,16,16,22,42,40,82,The Spectrum
+1969,NBA,PHO,PHO,,WD,3,0,DS,Phoenix Suns,3676,2434,9786,9927,22,15,12,25,39,43,82,Arizona Veterans Memorial Coliseum
+1969,ABA,PTP,PTC,,ED,5,0,,Pittsburgh Pipers,3721,1875,9445,9824,21,17,8,32,29,55,84,Pittsburgh Civic Arena
+1969,NBA,SDR,HOU,,WD,7,0,,San Diego Rockets,3866,2000,9732,9986,21,17,4,33,27,55,82,San Diego Sports Arena
+1969,NBA,SEA,SEA,,WD,5,0,,Seattle Supersonics,3709,2171,9589,9796,22,14,10,26,36,46,82,Seattle Center Coliseum
+1969,NBA,SFW,GSW,,WD,6,0,,San Francisco Warriors,3555,2004,9114,9476,16,20,14,26,30,52,82,Oakland-Alameda County Coliseum Arena
+1969,ABA,WSA,VIR,,WD,3,0,DS,Washington Capitols,3709,2403,9929,9983,20,10,19,22,44,40,84,Uline Arena
+1970,NBA,ATL,ATL,EC,CD,2,4,CS,Atlanta Hawks,3614,2120,9348,9495,21,20,14,26,36,46,82,Alexander Memorial Coliseum
+1970,NBA,BAL,WAS,EC,CD,1,3,F,Baltimore Bullets,3684,1886,9254,9206,24,13,16,25,42,40,82,Baltimore Civic Center
+1970,NBA,BOS,BOS,EC,AT,3,5,,Boston Celtics,3804,2000,9608,9438,25,14,18,22,44,38,82,Boston Garden
+1970,NBA,BUF,LAC,EC,AT,4,7,,Buffalo Braves,3424,1805,8653,9196,14,23,6,30,22,60,82,Buffalo Memorial Auditorium
+1970,ABA,CAR,SSL,,ED,6,0,,Carolina Cougars,3823,1851,9688,10026,20,22,14,26,34,50,84,Greensboro Coliseum
+1970,NBA,CHI,CHI,WC,MW,2,2,CS,Chicago Bulls,3460,2150,9070,8640,30,11,17,19,51,31,82,Chicago Stadium
+1970,NBA,CIN,SAC,EC,CD,3,6,,Cincinnati Royals,3805,1901,9511,9774,17,16,11,28,33,49,82,Cincinnati Gardens
+1970,NBA,CLE,CLE,EC,CD,4,8,,Cleveland Cavaliers,3299,1775,8373,9289,11,30,2,37,15,67,82,Cleveland Arena
+1970,NBA,DET,DET,WC,MW,4,6,,Detroit Pistons,3468,2093,9029,9090,24,17,20,19,45,37,82,Cobo Arena
+1970,ABA,DNR,DEN,,WD,4,0,DT,Denver Rockets,3852,2158,9965,10306,19,21,10,31,30,54,84,Denver Auditorium Arena
+1970,ABA,FLO,FLO,,ED,4,0,DS,The Floridians,3659,2179,9579,9707,22,17,11,27,37,47,84,Miami Beach Convention Hall
+1970,ABA,INA,IND,,WD,1,0,DF,Indiana Pacers,3796,2104,10002,9501,29,10,25,15,58,26,84,Indiana State Fair Coliseum
+1970,ABA,KEN,KEN,,ED,2,0,F,Kentucky Colonels,3929,2213,10264,10260,26,15,18,23,44,40,84,Freedom Hall
+1970,NBA,LAL,LAL,WC,PC,1,3,CF,Los Angeles Lakers,3739,1933,9411,9159,30,11,17,22,48,34,82,The Forum
+1970,NBA,MIL,MIL,WC,MW,1,1,F,Milwaukee Bucks,3972,1766,9710,8705,34,2,28,13,66,16,82,Milwaukee Arena
+1970,ABA,MMP,MMS,,WD,3,0,DS,Memphis Pros,3700,1664,9175,9234,18,14,16,25,41,43,84,Mid-South Coliseum
+1970,ABA,NYA,NJN,,ED,3,0,DS,New York Nets,3638,2013,9327,9378,25,17,14,26,40,44,84,Island Garden
+1970,NBA,NYK,NYK,EC,AT,1,1,CF,New York Knicks,3633,1760,9026,8614,32,9,19,20,52,30,82,Madison Square Garden (IV)
+1970,NBA,PHI,PHI,EC,AT,2,2,CS,Philadelphia 76ers,3608,2199,9415,9288,24,15,21,18,47,35,82,The Spectrum
+1970,NBA,PHO,PHO,WC,MW,3,5,,Phoenix Suns,3503,2327,9333,9177,27,14,19,20,48,34,82,Arizona Veterans Memorial Coliseum
+1970,NBA,POR,POR,WC,PC,5,9,,Portland Trail Blazers,3721,2025,9467,9837,18,21,9,26,29,53,82,Memorial Coliseum
+1970,ABA,PTC,PTC,,ED,5,0,,Pittsburgh Condors,3906,2012,10001,10229,24,16,11,28,36,48,84,Pittsburgh Civic Arena
+1970,NBA,SDR,HOU,WC,PC,3,7,,San Diego Rockets,3547,2188,9282,9302,24,15,15,26,40,42,82,San Diego Sports Arena
+1970,NBA,SEA,SEA,WC,PC,4,8,,Seattle Supersonics,3664,2101,9429,9591,27,13,11,30,38,44,82,Seattle Center Coliseum
+1970,NBA,SFW,GSW,WC,PC,2,4,CS,San Francisco Warriors,3454,1875,8783,8901,20,18,19,21,41,41,82,Oakland-Alameda County Coliseum Arena
+1970,ABA,TEX,SAS,,WD,4,0,DS,Texas Chaparrals,3964,2038,10207,10458,18,24,11,26,30,54,84,Moody Coliseum
+1970,ABA,UTS,UTS,,WD,2,0,AC,Utah Stars,3787,2219,9994,9400,33,7,20,19,57,27,84,Salt Palace
+1970,ABA,VIR,VIR,,ED,1,0,DF,Virginia Squires,4014,2273,10355,10058,32,9,22,20,55,29,84,Old Dominion University Fieldhouse
+1971,NBA,ATL,ATL,EC,CD,2,4,CS,Atlanta Hawks,3482,2018,8982,9127,22,19,13,26,36,46,82,Alexander Memorial Coliseum
+1971,NBA,BAL,WAS,EC,CD,1,3,CS,Baltimore Bullets,3490,1804,8784,8880,18,15,16,24,38,44,82,Baltimore Civic Center
+1971,NBA,BOS,BOS,EC,AT,1,1,CF,Boston Celtics,3819,1839,9477,9085,32,9,21,16,56,26,82,Boston Garden
+1971,NBA,BUF,LAC,EC,AT,4,8,,Buffalo Braves,3409,1549,8367,9125,13,27,8,31,22,60,82,Buffalo Memorial Auditorium
+1971,ABA,CAR,SSL,,ED,5,0,,Carolina Cougars,3818,1870,9646,9923,20,22,14,26,35,49,84,Greensboro Coliseum
+1971,NBA,CHI,CHI,WC,MW,2,3,CS,Chicago Bulls,3539,2039,9117,8440,29,12,26,12,57,25,82,Chicago Stadium
+1971,NBA,CIN,SAC,EC,CD,3,5,,Cincinnati Royals,3444,1948,8836,9167,20,18,8,32,30,52,82,Cincinnati Gardens
+1971,NBA,CLE,CLE,EC,CD,4,7,,Cleveland Cavaliers,3458,1758,8674,9300,13,28,8,30,23,59,82,Cleveland Arena
+1971,NBA,DET,DET,WC,MW,4,8,,Detroit Pistons,3482,1981,8945,9506,16,25,9,30,26,56,82,Cobo Arena
+1971,ABA,DLC,SAS,,WD,3,0,DS,Dallas Chaparrals,3362,1943,8770,8760,25,15,15,25,42,42,84,Moody Coliseum
+1971,ABA,DNR,DEN,,WD,4,0,DS,Denver Rockets,3703,1953,9400,9500,25,15,7,32,34,50,84,Denver Auditorium Arena
+1971,ABA,FLO,FLO,,ED,4,0,DS,The Floridians,3547,2190,9471,9603,23,18,12,30,36,48,84,Miami Beach Convention Hall
+1971,NBA,GSW,GSW,WC,PC,2,4,CS,Golden State Warriors,3477,1917,8871,8808,27,8,21,20,51,31,82,Oakland-Alameda County Coliseum Arena
+1971,NBA,HOU,HOU,WC,PC,4,7,,Houston Rockets,3590,1813,8993,9121,15,20,14,23,34,48,82,Hofheinz Pavilion
+1971,ABA,INA,IND,,WD,2,0,AC,Indiana Pacers,3601,2065,9487,9266,28,12,17,24,47,37,84,Indiana State Fair Coliseum
+1971,ABA,KEN,KEN,,ED,1,0,DS,Kentucky Colonels,3803,2003,9743,8989,36,6,28,10,68,16,84,Freedom Hall
+1971,NBA,LAL,LAL,WC,PC,1,1,NC,Los Angeles Lakers,3920,2080,9920,8913,36,5,31,7,69,13,82,The Forum
+1971,NBA,MIL,MIL,WC,MW,1,2,CF,Milwaukee Bucks,3813,1774,9400,8485,31,5,27,12,63,19,82,Milwaukee Arena
+1971,ABA,MMP,MMS,,WD,5,0,,Memphis Pros,3500,1875,9029,9489,16,21,8,31,26,58,84,Mid-South Coliseum
+1971,ABA,NYA,NJN,,ED,3,0,F,New York Nets,3697,1990,9476,9445,27,15,17,25,44,40,84,Nassau Veterans Memorial Coliseum
+1971,NBA,NYK,NYK,EC,AT,2,2,F,New York Knicks,3521,1743,8785,8584,27,14,20,19,48,34,82,Madison Square Garden (IV)
+1971,NBA,PHI,PHI,EC,AT,3,6,,Philadelphia 76ers,3577,2049,9203,9504,14,23,14,26,30,52,82,The Spectrum
+1971,NBA,PHO,PHO,WC,MW,3,5,,Phoenix Suns,3599,2336,9534,9083,30,11,19,20,49,33,82,Arizona Veterans Memorial Coliseum
+1971,NBA,POR,POR,WC,PC,5,9,,Portland Trail Blazers,3462,1835,8759,9557,14,26,4,35,18,64,82,Memorial Coliseum
+1971,ABA,PTC,PTC,,ED,6,0,,Pittsburgh Condors,3912,2052,10016,10617,15,22,9,31,25,59,84,Pittsburgh Civic Arena
+1971,NBA,SEA,SEA,WC,PC,3,6,,Seattle Supersonics,3461,2035,8957,8919,28,12,18,22,47,35,82,Seattle Center Coliseum
+1971,ABA,UTS,UTS,,WD,1,0,DF,Utah Stars,3731,2259,9892,9412,31,9,26,14,60,24,84,Salt Palace
+1971,ABA,VIR,VIR,,ED,2,0,DF,Virginia Squires,3913,2101,9988,9914,23,18,20,21,45,39,84,Norfolk Scope
+1972,NBA,ATL,ATL,EC,CD,2,4,CS,Atlanta Hawks,3700,1819,9219,9212,28,13,17,23,46,36,82,Omni Coliseum
+1972,NBA,BAL,WAS,EC,CD,1,3,CS,Baltimore Bullets,3656,1294,8606,8331,24,9,21,17,52,30,82,Baltimore Civic Center
+1972,NBA,BOS,BOS,EC,AT,1,1,CF,Boston Celtics,3811,1616,9238,8566,33,6,32,8,68,14,82,Boston Garden
+1972,NBA,BUF,LAC,EC,AT,3,7,,Buffalo Braves,3536,1399,8471,9223,14,27,6,31,21,61,82,Buffalo Memorial Auditorium
+1972,ABA,CAR,SSL,,ED,1,0,DF,Carolina Cougars,3794,2065,9707,9296,30,12,27,15,57,27,84,Greensboro Coliseum
+1972,NBA,CHI,CHI,WC,MW,2,3,CS,Chicago Bulls,3480,1574,8534,8248,29,12,20,19,51,31,82,Chicago Stadium
+1972,NBA,CLE,CLE,EC,CD,4,6,,Cleveland Cavaliers,3431,1556,8418,8637,20,21,10,27,32,50,82,Cleveland Arena
+1972,NBA,DET,DET,WC,MW,3,5,,Detroit Pistons,3666,1710,9042,9024,26,15,13,25,40,42,82,Cobo Arena
+1972,ABA,DLC,SAS,,WD,5,0,,Dallas Chaparrals,3500,2157,9302,9669,17,18,7,35,28,56,84,Moody Coliseum
+1972,ABA,DNR,DEN,,WD,3,0,DS,Denver Rockets,3433,2253,9193,8932,30,9,13,28,47,37,84,Denver Auditorium Arena
+1972,NBA,GSW,GSW,WC,PC,2,4,CF,Golden State Warriors,3715,1493,8923,8669,27,14,18,20,47,35,82,Oakland-Alameda County Coliseum Arena
+1972,NBA,HOU,HOU,EC,CD,3,5,,Houston Rockets,3772,1706,9250,9392,14,14,10,28,33,49,82,Hofheinz Pavilion
+1972,ABA,INA,IND,,WD,2,0,AC,Indiana Pacers,3668,2123,9631,9451,32,9,17,23,51,33,84,Indiana State Fair Coliseum
+1972,NBA,KCO,SAC,WC,MW,4,7,,KC-Omaha Kings,3621,1580,8822,9061,24,17,12,29,36,46,82,Municipal Auditorium
+1972,ABA,KEN,KEN,,ED,2,0,F,Kentucky Colonels,3770,1779,9401,8860,33,9,23,19,56,28,84,Freedom Hall
+1972,NBA,LAL,LAL,WC,PC,1,2,F,Los Angeles Lakers,3740,1679,9159,8459,30,11,28,11,60,22,82,The Forum
+1972,NBA,MIL,MIL,WC,MW,1,1,CS,Milwaukee Bucks,3759,1271,8789,8115,33,5,25,15,60,22,82,Milwaukee Arena
+1972,ABA,MMT,MMS,,ED,5,0,,Memphis Tams,3618,2038,9368,9921,19,23,5,35,24,60,84,Mid-South Coliseum
+1972,ABA,NYA,NJN,,ED,4,0,DS,New York Nets,3400,1851,8700,9245,21,21,9,31,30,54,84,Nassau Veterans Memorial Coliseum
+1972,NBA,NYK,NYK,EC,AT,2,2,NC,New York Knicks,3627,1356,8610,8053,35,6,21,18,57,25,82,Madison Square Garden (IV)
+1972,NBA,PHI,PHI,EC,AT,4,8,,Philadelphia 76ers,3471,1598,8540,9531,5,26,2,36,9,73,82,The Spectrum
+1972,NBA,PHO,PHO,WC,PC,3,6,,Phoenix Suns,3612,1931,9155,9260,22,19,15,25,38,44,82,Arizona Veterans Memorial Coliseum
+1972,NBA,POR,POR,WC,PC,5,9,,Portland Trail Blazers,3588,1531,8707,9218,13,28,8,32,21,61,82,Memorial Coliseum
+1972,ABA,SDA,SDS,,WD,4,0,DS,San Diego Conquistadors,3542,1970,9153,9513,21,21,8,31,30,54,84,Peterson Gym
+1972,NBA,SEA,SEA,WC,PC,4,8,,Seattle Supersonics,3447,1606,8500,8984,16,25,10,29,26,56,82,Seattle Center Coliseum
+1972,ABA,UTS,UTS,,WD,1,0,DF,Utah Stars,3656,2291,9708,9244,37,5,18,23,55,29,84,Salt Palace
+1972,ABA,VIR,VIR,,ED,3,0,DS,Virginia Squires,3722,2097,9581,9613,31,11,11,31,42,42,84,Norfolk Scope
+1973,NBA,ATL,ATL,EC,CD,2,5,,Atlanta Hawks,3602,1703,8907,9024,23,18,12,25,35,47,82,Omni Coliseum
+1973,NBA,BOS,BOS,EC,AT,1,1,NC,Boston Celtics,3630,1677,8937,8616,26,6,21,18,56,26,82,Boston Garden
+1973,NBA,BUF,LAC,EC,AT,3,4,CS,Buffalo Braves,3728,1699,9155,9164,19,13,17,21,42,40,82,Buffalo Memorial Auditorium
+1973,NBA,CAP,WAS,EC,CD,1,3,CS,Capital Bullets,3480,1393,8353,8231,31,10,15,25,47,35,82,Capital Centre
+1973,ABA,CAR,SSL,,ED,3,0,DS,Carolina Cougars,3714,1825,9278,8987,29,13,18,24,47,37,84,Greensboro Coliseum
+1973,NBA,CHI,CHI,WC,MW,2,2,CF,Chicago Bulls,3292,1784,8368,8097,32,9,21,19,54,28,82,Chicago Stadium
+1973,NBA,CLE,CLE,EC,CD,4,7,,Cleveland Cavaliers,3420,1381,8221,8576,18,23,11,28,29,53,82,Cleveland Arena
+1973,NBA,DET,DET,WC,MW,3,3,CS,Detroit Pistons,3453,1654,8560,8227,29,12,23,17,52,30,82,Cobo Arena
+1973,ABA,DNR,DEN,,WD,4,0,DT,Denver Rockets,3553,1776,8989,9032,24,18,13,28,37,47,84,Denver Auditorium Arena
+1973,NBA,GSW,GSW,WC,PC,2,5,,Golden State Warriors,3721,1569,9011,8801,23,18,20,20,44,38,82,Oakland-Alameda County Coliseum Arena
+1973,NBA,HOU,HOU,EC,CD,3,6,,Houston Rockets,3564,1682,8810,8821,18,23,13,25,32,50,82,Hofheinz Pavilion
+1973,ABA,INA,IND,,WD,2,0,DF,Indiana Pacers,3546,1625,8888,8816,29,11,15,27,46,38,84,Indiana State Fair Coliseum
+1973,NBA,KCO,SAC,WC,MW,4,7,,KC-Omaha Kings,3369,1628,8366,8672,20,21,13,28,33,49,82,Municipal Auditorium
+1973,ABA,KEN,KEN,,ED,2,0,DF,Kentucky Colonels,3681,1565,9024,8675,30,12,23,19,53,31,84,Freedom Hall
+1973,NBA,LAL,LAL,WC,PC,1,4,CS,Los Angeles Lakers,3536,1879,8951,8880,30,11,17,24,47,35,82,The Forum
+1973,NBA,MIL,MIL,WC,MW,1,1,F,Milwaukee Bucks,3726,1328,8780,8121,31,7,24,16,59,23,82,Milwaukee Arena
+1973,ABA,MMT,MMS,,ED,5,0,,Memphis Tams,3446,1532,8503,9092,14,28,7,35,21,63,84,Mid-South Coliseum
+1973,ABA,NYA,NJN,,ED,1,0,AC,New York Nets,3855,1397,9188,8739,31,11,24,18,55,29,84,Nassau Veterans Memorial Coliseum
+1973,NBA,NYK,NYK,EC,AT,2,2,CF,New York Knicks,3478,1350,8306,8080,28,13,21,19,49,33,82,Madison Square Garden (IV)
+1973,NBA,PHI,PHI,EC,AT,4,8,,Philadelphia 76ers,3331,1633,8295,8817,14,23,9,30,25,57,82,The Spectrum
+1973,NBA,PHO,PHO,WC,PC,4,8,,Phoenix Suns,3555,1737,8847,9139,24,17,6,34,30,52,82,Arizona Veterans Memorial Coliseum
+1973,NBA,POR,POR,WC,PC,5,9,,Portland Trail Blazers,3585,1591,8761,9153,22,19,5,34,27,55,82,Memorial Coliseum
+1973,ABA,SAA,SAS,,WD,3,0,DS,San Antonio Spurs,3343,1462,8199,8126,27,15,18,24,45,39,84,HemisFair Arena
+1973,ABA,SDA,SDS,,WD,4,0,DS,San Diego Conquistadors,3907,1476,9506,9719,20,22,17,25,37,47,84,Golden Hall
+1973,NBA,SEA,SEA,WC,PC,3,6,,Seattle Supersonics,3584,1606,8774,8983,22,19,14,27,36,46,82,Seattle Center Coliseum
+1973,ABA,UTS,UTS,,WD,1,0,F,Utah Stars,3584,1566,8828,8798,33,9,18,24,51,33,84,Salt Palace
+1973,ABA,VIR,VIR,,ED,4,0,DS,Virginia Squires,3426,2007,8933,9352,22,20,6,35,28,56,84,Norfolk Scope
+1974,NBA,ATL,ATL,EC,CD,4,8,,Atlanta Hawks,3424,1772,8620,8732,22,19,9,32,31,51,82,Omni Coliseum
+1974,NBA,BOS,BOS,EC,AT,1,1,CF,Boston Celtics,3587,1560,8734,8265,28,13,32,9,60,22,82,Boston Garden
+1974,NBA,BUF,LAC,EC,AT,2,3,CS,Buffalo Braves,3552,1735,8839,8663,30,11,19,22,49,33,82,Buffalo Memorial Auditorium
+1974,NBA,CHI,CHI,WC,MW,1,2,CF,Chicago Bulls,3167,1711,8045,7791,29,12,18,23,47,35,82,Chicago Stadium
+1974,NBA,CLE,CLE,EC,CD,3,6,,Cleveland Cavaliers,3408,1301,8117,8147,29,12,11,30,40,42,82,Coliseum at Richfield
+1974,NBA,DET,DET,WC,MW,3,5,C1,Detroit Pistons,3289,1533,8111,8228,26,15,14,27,40,42,82,Cobo Arena
+1974,ABA,DNA,DEN,,WD,1,0,DF,Denver Nuggets,3953,2041,9969,9359,40,2,25,17,65,19,84,Denver Auditorium Arena
+1974,NBA,GSW,GSW,WC,PC,1,1,NC,Golden State Warriors,3714,1470,8898,8628,31,10,17,24,48,34,82,Oakland-Alameda County Coliseum Arena
+1974,NBA,HOU,HOU,EC,CD,2,4,CS,Houston Rockets,3448,1625,8521,8434,29,12,12,29,41,41,82,Hofheinz Pavilion
+1974,ABA,INA,IND,,WD,3,0,F,Indiana Pacers,3891,1465,9471,9381,30,10,14,28,45,39,84,Market Square Arena
+1974,NBA,KCO,SAC,WC,MW,2,3,CS,KC-Omaha Kings,3257,1797,8311,8335,29,12,15,26,44,38,82,Kemper Arena
+1974,ABA,KEN,KEN,,ED,1,0,AC,Kentucky Colonels,3733,1631,9151,8542,39,3,19,23,58,26,84,Freedom Hall
+1974,NBA,LAL,LAL,WC,PC,5,9,,Los Angeles Lakers,3409,1641,8459,8793,21,20,9,32,30,52,82,The Forum
+1974,NBA,MIL,MIL,WC,MW,4,6,,Milwaukee Bucks,3450,1354,8254,8237,25,16,13,28,38,44,82,MECCA Arena
+1974,ABA,MMS,MMS,,ED,4,0,DS,Memphis Sounds,3577,1367,8698,9149,17,25,10,32,27,57,84,Mid-South Coliseum
+1974,NBA,NOJ,UTA,EC,CD,5,9,,New Orleans Jazz,3301,1717,8319,8963,20,21,3,38,23,59,82,Municipal Auditorium
+1974,ABA,NYA,NJN,,ED,1,0,DS,New York Nets,3879,1501,9328,8685,35,7,22,19,58,26,84,Nassau Veterans Memorial Coliseum
+1974,NBA,NYK,NYK,EC,AT,3,5,C1,New York Knicks,3359,1518,8236,8337,23,18,17,24,40,42,82,Madison Square Garden (IV)
+1974,NBA,PHI,PHI,EC,AT,4,7,,Philadelphia 76ers,3325,1530,8180,8431,20,21,14,27,34,48,82,The Spectrum
+1974,NBA,PHO,PHO,WC,PC,4,8,,Phoenix Suns,3381,1535,8297,8492,22,19,10,31,32,50,82,Arizona Veterans Memorial Coliseum
+1974,NBA,POR,POR,WC,PC,3,7,,Portland Trail Blazers,3414,1680,8508,8472,28,13,10,31,38,44,82,Memorial Coliseum
+1974,ABA,SAA,SAS,,WD,2,0,DS,San Antonio Spurs,3779,1926,9525,9173,32,10,19,23,51,33,84,HemisFair Arena
+1974,ABA,SDA,SDS,,WD,5,0,,San Diego Conquistadors,3845,1418,9231,9699,22,20,9,33,31,53,84,San Diego Sports Arena
+1974,NBA,SEA,SEA,WC,PC,2,4,CS,Seattle Supersonics,3488,1475,8451,8540,24,17,19,22,43,39,82,Seattle Center Coliseum
+1974,ABA,SSL,SSL,,ED,3,0,DF,Spirits of St. Louis,3771,1583,9156,9522,23,19,9,32,32,52,84,St. Louis Arena
+1974,ABA,UTS,UTS,,WD,4,0,DS,Utah Stars,3375,1665,8509,8645,29,13,9,33,38,46,84,Salt Palace
+1974,ABA,VIR,VIR,,ED,5,0,,Virginia Squires,3328,1585,8317,9200,11,31,4,38,15,69,84,Norfolk Scope
+1974,NBA,WSB,WAS,EC,CD,1,2,F,Washington Bullets,3555,1475,8585,7997,36,5,24,17,60,22,82,Capital Centre
+1975,NBA,ATL,ATL,EC,CD,5,9,,Atlanta Hawks,3301,1809,8411,8650,20,21,9,32,29,53,82,Omni Coliseum
+1975,NBA,BOS,BOS,EC,AT,1,1,NC,Boston Celtics,3527,1654,8708,8516,31,10,23,18,54,28,82,Boston Garden
+1975,NBA,BUF,LAC,EC,AT,2,5,CS,Buffalo Braves,3481,1833,8795,8727,28,13,18,23,46,36,82,Buffalo Memorial Auditorium
+1975,NBA,CHI,CHI,WC,MW,4,9,,Chicago Bulls,3106,1651,7863,8101,15,26,9,32,24,58,82,Chicago Stadium
+1975,NBA,CLE,CLE,EC,CD,1,2,CF,Cleveland Cavaliers,3497,1346,8340,8134,29,12,20,21,49,33,82,Coliseum at Richfield
+1975,NBA,DET,DET,WC,MW,2,5,CS,Detroit Pistons,3524,1557,8605,8691,24,17,12,29,36,46,82,Cobo Arena
+1975,ABA,DNA,DEN,,,1,0,F,Denver Nuggets,4059,2078,10237,9734,39,3,21,21,60,24,84,McNichols Sports Arena
+1975,NBA,GSW,GSW,WC,PC,1,1,CF,Golden State Warriors,3691,1620,9002,8457,36,5,23,18,59,23,82,Oakland-Alameda County Coliseum Arena
+1975,NBA,HOU,HOU,EC,CD,3,6,,Houston Rockets,3546,1616,8708,8774,28,13,12,29,40,42,82,The Summit
+1975,ABA,INA,IND,,,5,0,R1,Indiana Pacers,3735,1740,9460,9480,22,19,16,26,39,45,84,Market Square Arena
+1975,NBA,KCK,SAC,WC,MW,3,8,,Kansas City Kings,3341,1792,8474,8707,25,16,6,35,31,51,82,Kemper Arena
+1975,ABA,KEN,KEN,,,4,0,SF,Kentucky Colonels,3756,1703,9326,9253,32,10,14,27,46,38,84,Freedom Hall
+1975,NBA,LAL,LAL,WC,PC,4,6,,Los Angeles Lakers,3547,1670,8764,8757,31,10,9,32,40,42,82,The Forum
+1975,NBA,MIL,MIL,WC,MW,1,4,C1,Milwaukee Bucks,3456,1437,8349,8468,22,19,16,25,38,44,82,MECCA Arena
+1975,NBA,NOJ,UTA,EC,CD,4,8,,New Orleans Jazz,3352,1831,8535,8608,22,19,16,25,38,44,82,Louisiana Superdome
+1975,ABA,NYA,NJN,,,2,0,AC,New York Nets,3752,1775,9390,9142,36,6,19,23,55,29,84,Nassau Veterans Memorial Coliseum
+1975,NBA,NYK,NYK,EC,AT,4,7,,New York Knicks,3443,1532,8418,8519,24,17,14,27,38,44,82,Madison Square Garden (IV)
+1975,NBA,PHI,PHI,EC,AT,2,4,C1,Philadelphia 76ers,3462,1811,8735,8714,34,7,12,29,46,36,82,The Spectrum
+1975,NBA,PHO,PHO,WC,PC,3,3,F,Phoenix Suns,3420,1780,8620,8570,27,14,15,26,42,40,82,Arizona Veterans Memorial Coliseum
+1975,NBA,POR,POR,WC,PC,5,7,,Portland Trail Blazers,3417,1699,8533,8635,26,15,11,30,37,45,82,Memorial Coliseum
+1975,ABA,SAA,SAS,,,3,0,SF,San Antonio Spurs,3888,1905,9707,9362,30,12,20,21,50,34,84,HemisFair Arena
+1975,ABA,SDS,SDS,,,7,0,,San Diego Sails,432,217,1087,1138,1,2,2,6,3,8,11,San Diego Sports Arena
+1975,NBA,SEA,SEA,WC,PC,2,2,CS,Seattle Supersonics,3542,1642,8726,8749,31,10,12,29,43,39,82,Seattle Center Coliseum
+1975,ABA,SSL,SSL,,,6,0,,Spirits of St. Louis,3790,1500,9146,9416,21,21,13,28,35,49,84,St. Louis Arena
+1975,ABA,UTS,UTS,,,8,0,,Utah Stars,715,386,1839,1866,4,5,0,7,4,12,16,Salt Palace
+1975,ABA,VIR,VIR,,,9,0,,Virginia Squires,3431,1939,8873,9674,13,29,2,39,15,68,83,Norfolk Scope
+1975,NBA,WSB,WAS,EC,CD,2,3,CS,Washington Bullets,3416,1595,8427,8236,31,10,17,24,48,34,82,Capital Centre
+1976,NBA,ATL,ATL,EC,CD,6,9,,Atlanta Hawks,3279,1836,8394,8727,19,22,12,29,31,51,82,Omni Coliseum
+1976,NBA,BOS,BOS,EC,AT,2,4,CS,Boston Celtics,3462,1648,8572,8734,28,13,16,25,44,38,82,Boston Garden
+1976,NBA,BUF,LAC,EC,AT,4,10,,Buffalo Braves,3366,1880,8612,8976,23,18,7,34,30,52,82,Buffalo Memorial Auditorium
+1976,NBA,CHI,CHI,WC,MW,2,6,C1,Chicago Bulls,3249,1613,8111,8037,31,10,13,28,44,38,82,Chicago Stadium
+1976,NBA,CLE,CLE,EC,CD,4,6,C1,Cleveland Cavaliers,3451,1468,8370,8278,29,12,14,27,43,39,82,Coliseum at Richfield
+1976,NBA,DEN,DEN,WC,MW,1,2,CS,Denver Nuggets,3590,2053,9233,8805,36,5,14,27,50,32,82,McNichols Sports Arena
+1976,NBA,DET,DET,WC,MW,2,5,C1,Detroit Pistons,3764,1442,8970,9055,30,11,14,27,44,38,82,Cobo Arena
+1976,NBA,GSW,GSW,WC,PC,3,4,CS,Golden State Warriors,3724,1649,9097,8833,29,12,17,24,46,36,82,Oakland-Alameda County Coliseum Arena
+1976,NBA,HOU,HOU,EC,CD,1,2,CF,Houston Rockets,3535,1656,8726,8594,34,7,15,26,49,33,82,The Summit
+1976,NBA,IND,IND,WC,MW,5,9,,Indiana Pacers,3522,1714,8758,8903,25,16,11,30,36,46,82,Market Square Arena
+1976,NBA,KCK,SAC,WC,MW,4,8,,Kansas City Kings,3561,1706,8828,8756,28,13,12,29,40,42,82,Kemper Arena
+1976,NBA,LAL,LAL,WC,PC,1,1,CF,Los Angeles Lakers,3663,1437,8763,8540,37,4,16,25,53,29,82,The Forum
+1976,NBA,MIL,MIL,WC,MW,6,11,,Milwaukee Bucks,3668,1553,8889,9145,24,17,6,35,30,52,82,MECCA Arena
+1976,NBA,NOJ,UTA,EC,CD,5,8,,New Orleans Jazz,3443,1688,8574,8805,26,15,9,32,35,47,82,Louisiana Superdome
+1976,NBA,NYK,NYK,EC,AT,3,7,,New York Knicks,3659,1587,8905,8906,26,15,14,27,40,42,82,Madison Square Garden (IV)
+1976,NBA,NYN,NJN,EC,AT,5,11,,New York Nets,3096,1673,7865,8421,10,31,12,29,22,60,82,Nassau Veterans Memorial Coliseum
+1976,NBA,PHI,PHI,EC,AT,1,1,F,Philadelphia 76ers,3511,2012,9034,8711,32,9,18,23,50,32,82,The Spectrum
+1976,NBA,PHO,PHO,WC,PC,5,10,,Phoenix Suns,3406,1791,8603,8543,26,15,8,33,34,48,82,Arizona Veterans Memorial Coliseum
+1976,NBA,POR,POR,WC,PC,2,3,NC,Portland Trail Blazers,3623,1917,9163,8705,35,6,14,27,49,33,82,Memorial Coliseum
+1976,NBA,SAS,SAS,EC,CD,3,5,C1,San Antonio Spurs,3711,2010,9432,9382,31,10,13,28,44,38,82,HemisFair Arena
+1976,NBA,SEA,SEA,WC,PC,4,7,,Seattle Supersonics,3439,1646,8524,8651,27,14,13,28,40,42,82,Seattle Center Coliseum
+1976,NBA,WSB,WAS,EC,CD,2,3,CS,Washington Bullets,3514,1622,8650,8566,32,9,16,25,48,34,82,Capital Centre
+1977,NBA,ATL,ATL,EC,CD,4,6,C1,Atlanta Hawks,3335,1836,8506,8517,29,12,12,29,41,41,82,Omni Coliseum
+1977,NBA,BOS,BOS,EC,AT,3,8,,Boston Celtics,3494,1682,8670,8830,24,17,8,33,32,50,82,Boston Garden
+1977,NBA,BUF,LAC,EC,AT,4,10,,Buffalo Braves,3413,1808,8634,8941,20,21,7,34,27,55,82,Buffalo Memorial Auditorium
+1977,NBA,CHI,CHI,WC,MW,3,8,,Chicago Bulls,3330,1863,8523,8596,29,12,11,30,40,42,82,Chicago Stadium
+1977,NBA,CLE,CLE,EC,CD,3,4,C1,Cleveland Cavaliers,3496,1569,8561,8522,27,14,16,25,43,39,82,Coliseum at Richfield
+1977,NBA,DEN,DEN,WC,MW,1,2,CF,Denver Nuggets,3548,2068,9164,9096,33,8,15,26,48,34,82,McNichols Sports Arena
+1977,NBA,DET,DET,WC,MW,4,9,,Detroit Pistons,3552,1832,8936,9038,24,17,14,27,38,44,82,Cobo Arena
+1977,NBA,GSW,GSW,WC,PC,5,7,,Golden State Warriors,3574,1550,8698,8670,30,11,13,28,43,39,82,Oakland-Alameda County Coliseum Arena
+1977,NBA,HOU,HOU,EC,CD,6,9,,Houston Rockets,3523,1467,8513,8841,21,20,7,34,28,54,82,The Summit
+1977,NBA,IND,IND,WC,MW,5,11,,Indiana Pacers,3500,1904,8904,9109,21,20,10,31,31,51,82,Market Square Arena
+1977,NBA,KCK,SAC,WC,MW,5,10,,Kansas City Kings,3601,1775,8977,9132,22,19,9,32,31,51,82,Kemper Arena
+1977,NBA,LAL,LAL,WC,PC,4,5,C1,Los Angeles Lakers,3734,1576,9044,8825,29,12,16,25,45,37,82,The Forum
+1977,NBA,MIL,MIL,WC,MW,2,6,CS,Milwaukee Bucks,3801,1612,9214,9262,28,13,16,25,44,38,82,MECCA Arena
+1977,NBA,NJN,NJN,EC,AT,5,11,,New Jersey Nets,3547,1652,8746,9223,18,23,6,35,24,58,82,Rutgers Athletic Center
+1977,NBA,NOJ,UTA,EC,CD,5,7,,New Orleans Jazz,3568,1690,8826,8979,27,14,12,29,39,43,82,Louisiana Superdome
+1977,NBA,NYK,NYK,EC,AT,2,5,CS,New York Knicks,3815,1670,9300,9345,29,12,14,27,43,39,82,Madison Square Garden (IV)
+1977,NBA,PHI,PHI,EC,AT,1,1,CF,Philadelphia 76ers,3628,2153,9409,8987,37,4,18,23,55,27,82,The Spectrum
+1977,NBA,PHO,PHO,WC,PC,2,3,C1,Phoenix Suns,3731,1749,9211,8905,34,7,15,26,49,33,82,Arizona Veterans Memorial Coliseum
+1977,NBA,POR,POR,WC,PC,1,1,CS,Portland Trail Blazers,3556,1717,8829,8325,36,5,22,19,58,24,82,Memorial Coliseum
+1977,NBA,SAS,SAS,EC,CD,1,2,CS,San Antonio Spurs,3794,1797,9385,9110,32,9,20,21,52,30,82,HemisFair Arena
+1977,NBA,SEA,SEA,WC,PC,3,4,F,Seattle Supersonics,3445,1675,8565,8438,31,10,16,25,47,35,82,Seattle Center Coliseum
+1977,NBA,WSB,WAS,EC,CD,2,3,NC,Washington Bullets,3580,1887,9047,8971,29,12,15,26,44,38,82,Capital Centre
+1978,NBA,ATL,ATL,EC,CD,3,5,CS,Atlanta Hawks,3505,1940,8950,8779,34,7,12,29,46,36,82,Omni Coliseum
+1978,NBA,BOS,BOS,EC,AT,5,10,,Boston Celtics,3527,1820,8874,9288,21,20,8,33,29,53,82,Boston Garden
+1978,NBA,CHI,CHI,WC,MW,5,11,,Chicago Bulls,3478,1632,8588,8913,19,22,12,29,31,51,82,Chicago Stadium
+1978,NBA,CLE,CLE,EC,CD,4,9,,Cleveland Cavaliers,3556,1620,8732,9037,20,21,10,31,30,52,82,Coliseum at Richfield
+1978,NBA,DEN,DEN,WC,MW,2,4,C1,Denver Nuggets,3517,2046,9080,8975,29,12,18,23,47,35,82,McNichols Sports Arena
+1978,NBA,DET,DET,EC,CD,4,8,,Detroit Pistons,3708,1607,9023,9242,22,19,8,33,30,52,82,Pontiac Silverdome
+1978,NBA,GSW,GSW,WC,PC,6,9,,Golden State Warriors,3627,1367,8621,8590,23,18,15,26,38,44,82,Oakland-Alameda County Coliseum Arena
+1978,NBA,HOU,HOU,EC,CD,2,4,C1,Houston Rockets,3726,1845,9297,9217,30,11,17,24,47,35,82,The Summit
+1978,NBA,IND,IND,WC,MW,3,10,,Indiana Pacers,3575,1759,8909,9040,25,16,13,28,38,44,82,Market Square Arena
+1978,NBA,KCK,SAC,WC,MW,1,2,CS,Kansas City Kings,3764,1746,9274,9038,32,9,16,25,48,34,82,Kemper Arena
+1978,NBA,LAL,LAL,WC,PC,3,5,CS,Los Angeles Lakers,3827,1606,9260,9009,31,10,16,25,47,35,82,The Forum
+1978,NBA,MIL,MIL,WC,MW,3,8,,Milwaukee Bucks,3906,1541,9353,9171,28,13,10,31,38,44,82,MECCA Arena
+1978,NBA,NJN,NJN,EC,AT,3,6,C1,New Jersey Nets,3464,1904,8832,9174,25,16,12,29,37,45,82,Rutgers Athletic Center
+1978,NBA,NOJ,UTA,EC,CD,6,11,,New Orleans Jazz,3517,1848,8882,9394,22,19,4,37,26,56,82,Louisiana Superdome
+1978,NBA,NYK,NYK,EC,AT,4,7,,New York Knicks,3676,1478,8830,9107,23,18,8,33,31,51,82,Madison Square Garden (IV)
+1978,NBA,PHI,PHI,EC,AT,2,3,CS,Philadelphia 76ers,3584,1815,8983,8831,31,10,16,25,47,35,82,The Spectrum
+1978,NBA,PHO,PHO,WC,PC,2,3,CF,Phoenix Suns,3847,1765,9459,9156,32,9,18,23,50,32,82,Arizona Veterans Memorial Coliseum
+1978,NBA,POR,POR,WC,PC,4,6,C1,Portland Trail Blazers,3541,1806,8888,8785,33,8,12,29,45,37,82,Memorial Coliseum
+1978,NBA,SAS,SAS,EC,CD,2,2,CF,San Antonio Spurs,3927,1926,9780,9355,29,12,19,22,48,34,82,HemisFair Arena
+1978,NBA,SDC,LAC,WC,PC,5,7,,San Diego Clippers,3721,1836,9278,9424,29,12,14,27,43,39,82,San Diego Sports Arena
+1978,NBA,SEA,SEA,WC,PC,1,1,NC,Seattle Supersonics,3504,1732,8740,8517,31,10,21,20,52,30,82,King County Domed Stadium
+1978,NBA,WSB,WAS,EC,AT,1,1,F,Washington Bullets,3819,1785,9423,9014,31,10,23,18,54,28,82,Capital Centre
+1979,NBA,ATL,ATL,EC,CD,1,2,CS,Atlanta Hawks,3261,2038,8573,8334,32,9,18,23,50,32,82,Omni Coliseum
+1979,NBA,BOS,BOS,EC,AT,1,1,CF,Boston Celtics,3617,1907,9303,8664,35,6,26,15,61,21,82,Boston Garden
+1979,NBA,CHI,CHI,WC,MW,3,9,,Chicago Bulls,3362,2019,8813,9035,21,20,9,32,30,52,82,Chicago Stadium
+1979,NBA,CLE,CLE,EC,CD,4,9,,Cleveland Cavaliers,3811,1702,9360,9332,28,13,9,32,37,45,82,Coliseum at Richfield
+1979,NBA,DEN,DEN,WC,MW,3,8,,Denver Nuggets,3462,1871,8878,9240,24,17,6,35,30,52,82,McNichols Sports Arena
+1979,NBA,DET,DET,EC,CD,6,11,,Detroit Pistons,3643,1590,8933,9609,13,28,3,38,16,66,82,Pontiac Silverdome
+1979,NBA,GSW,GSW,WC,PC,6,10,,Golden State Warriors,3527,1412,8493,8853,15,26,9,32,24,58,82,Oakland-Alameda County Coliseum Arena
+1979,NBA,HOU,HOU,EC,CD,2,4,CS,Houston Rockets,3599,1782,9084,9070,29,12,12,29,41,41,82,The Summit
+1979,NBA,IND,IND,EC,CD,4,8,,Indiana Pacers,3639,1753,9119,9176,26,15,11,30,37,45,82,Market Square Arena
+1979,NBA,KCK,SAC,WC,MW,2,5,C1,Kansas City Kings,3582,1671,8860,8603,30,11,17,24,47,35,82,Kemper Arena
+1979,NBA,LAL,LAL,WC,PC,1,1,NC,Los Angeles Lakers,3898,1622,9438,8954,37,4,23,18,60,22,82,The Forum
+1979,NBA,MIL,MIL,WC,MW,1,2,CS,Milwaukee Bucks,3685,1605,9025,8702,28,13,21,20,49,33,82,MECCA Arena
+1979,NBA,NJN,NJN,EC,AT,5,10,,New Jersey Nets,3456,1882,8879,8975,22,19,12,29,34,48,82,Rutgers Athletic Center
+1979,NBA,NYK,NYK,EC,AT,3,7,,New York Knicks,3802,1698,9344,9438,25,16,14,27,39,43,82,Madison Square Garden (IV)
+1979,NBA,PHI,PHI,EC,AT,2,3,F,Philadelphia 76ers,3523,1876,8949,8603,36,5,23,18,59,23,82,The Spectrum
+1979,NBA,PHO,PHO,WC,PC,3,4,CS,Phoenix Suns,3570,1906,9114,8819,36,5,19,22,55,27,82,Arizona Veterans Memorial Coliseum
+1979,NBA,POR,POR,WC,PC,4,6,C1,Portland Trail Blazers,3408,1560,8402,8469,26,15,12,29,38,44,82,Memorial Coliseum
+1979,NBA,SAS,SAS,EC,CD,2,5,C1,San Antonio Spurs,3856,2024,9788,9819,27,14,14,27,41,41,82,HemisFair Arena
+1979,NBA,SDC,LAC,WC,PC,5,7,,San Diego Clippers,3524,1595,8820,9160,24,17,11,30,35,47,82,San Diego Sports Arena
+1979,NBA,SEA,SEA,WC,PC,2,3,CF,Seattle Supersonics,3554,1730,8897,8515,33,8,23,18,56,26,82,King County Domed Stadium
+1979,NBA,UTA,UTA,WC,MW,5,11,,Utah Jazz,3382,1571,8394,8887,17,24,7,34,24,58,82,Salt Palace
+1979,NBA,WSB,WAS,EC,AT,3,6,C1,Washington Bullets,3574,1552,8773,8982,24,17,15,26,39,43,82,Capital Centre
+1980,NBA,ATL,ATL,EC,CD,4,8,,Atlanta Hawks,3291,2012,8604,8858,20,21,11,30,31,51,82,Omni Coliseum
+1980,NBA,BOS,BOS,EC,AT,1,1,NC,Boston Celtics,3581,1781,9008,8526,35,6,27,14,62,20,82,Boston Garden
+1980,NBA,CHI,CHI,EC,CD,2,5,CS,Chicago Bulls,3457,1985,8937,8775,26,15,19,22,45,37,82,Chicago Stadium
+1980,NBA,CLE,CLE,EC,CD,5,9,,Cleveland Cavaliers,3556,1486,8670,9068,20,21,8,33,28,54,82,Coliseum at Richfield
+1980,NBA,DAL,DAL,WC,MW,6,12,,Dallas Mavericks,3204,1868,8322,9011,11,30,4,37,15,67,82,Reunion Arena
+1980,NBA,DEN,DEN,WC,MW,4,8,,Denver Nuggets,3784,2388,9986,10025,23,18,14,27,37,45,82,McNichols Sports Arena
+1980,NBA,DET,DET,EC,CD,6,11,,Detroit Pistons,3236,1689,8174,8692,14,27,7,34,21,61,82,Pontiac Silverdome
+1980,NBA,GSW,GSW,WC,PC,4,7,,Golden State Warriors,3560,1826,9006,9103,26,15,13,28,39,43,82,Oakland-Alameda County Coliseum Arena
+1980,NBA,HOU,HOU,WC,MW,2,6,F,Houston Rockets,3573,1711,8878,8851,25,16,15,26,40,42,82,The Summit
+1980,NBA,IND,IND,EC,CD,3,6,C1,Indiana Pacers,3491,1815,8827,8712,27,14,17,24,44,38,82,Market Square Arena
+1980,NBA,KCK,SAC,WC,MW,2,5,CF,Kansas City Kings,3572,1576,8769,8768,24,17,16,25,40,42,82,Kemper Arena
+1980,NBA,LAL,LAL,WC,PC,2,3,C1,Los Angeles Lakers,3780,1540,9117,8802,30,11,24,17,54,28,82,The Forum
+1980,NBA,MIL,MIL,EC,CD,1,2,CS,Milwaukee Bucks,3722,1802,9276,8680,34,7,26,15,60,22,82,MECCA Arena
+1980,NBA,NJN,NJN,EC,AT,5,10,,New Jersey Nets,3477,1780,8768,9262,16,25,8,33,24,58,82,Rutgers Athletic Center
+1980,NBA,NYK,NYK,EC,AT,3,4,C1,New York Knicks,3505,1783,8849,8716,28,13,22,19,50,32,82,Madison Square Garden (IV)
+1980,NBA,PHI,PHI,EC,AT,1,3,CF,Philadelphia 76ers,3636,1865,9156,8512,37,4,25,16,62,20,82,The Spectrum
+1980,NBA,PHO,PHO,WC,PC,1,1,CS,Phoenix Suns,3587,1810,9019,8567,36,5,21,20,57,25,82,Arizona Veterans Memorial Coliseum
+1980,NBA,POR,POR,WC,PC,3,4,C1,Portland Trail Blazers,3741,1573,9080,9007,30,11,15,26,45,37,82,Memorial Coliseum
+1980,NBA,SAS,SAS,WC,MW,1,2,CS,San Antonio Spurs,3571,2052,9209,8973,34,7,18,23,52,30,82,HemisFair Arena
+1980,NBA,SDC,LAC,WC,PC,5,9,,San Diego Clippers,3477,1651,8737,8867,22,19,14,27,36,46,82,San Diego Sports Arena
+1980,NBA,SEA,SEA,WC,PC,6,10,,Seattle Supersonics,3343,1813,8531,8666,22,19,12,29,34,48,82,King County Domed Stadium
+1980,NBA,UTA,UTA,WC,MW,5,11,,Utah Jazz,3332,1595,8301,8784,20,21,8,33,28,54,82,Salt Palace
+1980,NBA,WSB,WAS,EC,AT,4,7,,Washington Bullets,3549,1499,8662,8661,26,15,13,28,39,43,82,Capital Centre
+1981,NBA,ATL,ATL,EC,CD,2,6,C1,Atlanta Hawks,3210,1833,8281,8237,24,17,18,23,42,40,82,Omni Coliseum
+1981,NBA,BOS,BOS,EC,AT,1,1,CF,Boston Celtics,3657,1817,9180,8657,35,6,28,13,63,19,82,Boston Garden
+1981,NBA,CHI,CHI,EC,CD,5,9,,Chicago Bulls,3369,1951,8743,8909,22,19,12,29,34,48,82,Chicago Stadium
+1981,NBA,CLE,CLE,EC,CD,6,11,,Cleveland Cavaliers,3405,1628,8463,9161,9,32,6,35,15,67,82,Coliseum at Richfield
+1981,NBA,DAL,DAL,WC,MW,5,10,,Dallas Mavericks,3390,1740,8575,8938,16,25,12,29,28,54,82,Reunion Arena
+1981,NBA,DEN,DEN,WC,MW,2,4,C1,Denver Nuggets,3980,2371,10371,10328,29,12,17,24,46,36,82,McNichols Sports Arena
+1981,NBA,DET,DET,EC,CD,3,7,,Detroit Pistons,3561,1938,9112,9187,23,18,16,25,39,43,82,Pontiac Silverdome
+1981,NBA,GSW,GSW,WC,PC,4,7,,Golden State Warriors,3646,1709,9092,9007,28,13,17,24,45,37,82,Oakland-Alameda County Coliseum Arena
+1981,NBA,HOU,HOU,WC,MW,2,6,C1,Houston Rockets,3504,1622,8680,8683,25,16,21,20,46,36,82,The Summit
+1981,NBA,IND,IND,EC,CD,4,8,,Indiana Pacers,3332,1612,8379,8532,25,16,10,31,35,47,82,Market Square Arena
+1981,NBA,KCK,SAC,WC,MW,4,9,,Kansas City Kings,3604,1551,8785,9039,23,18,7,34,30,52,82,Kemper Arena
+1981,NBA,LAL,LAL,WC,PC,1,1,NC,Los Angeles Lakers,3919,1549,9400,9001,30,11,27,14,57,25,82,The Forum
+1981,NBA,MIL,MIL,EC,CD,1,2,CS,Milwaukee Bucks,3544,1753,8890,8441,31,10,24,17,55,27,82,MECCA Arena
+1981,NBA,NJN,NJN,EC,AT,3,4,C1,New Jersey Nets,3501,1714,8746,8690,25,16,19,22,44,38,82,Brendan Byrne Arena
+1981,NBA,NYK,NYK,EC,AT,5,10,,New York Knicks,3523,1603,8707,8926,19,22,14,27,33,49,82,Madison Square Garden (IV)
+1981,NBA,PHI,PHI,EC,AT,2,3,F,Philadelphia 76ers,3616,1846,9119,8649,32,9,26,15,58,24,82,The Spectrum
+1981,NBA,PHO,PHO,WC,PC,3,5,CS,Phoenix Suns,3508,1635,8705,8422,31,10,15,26,46,36,82,Arizona Veterans Memorial Coliseum
+1981,NBA,POR,POR,WC,PC,5,8,,Portland Trail Blazers,3629,1719,9006,8957,27,14,15,26,42,40,82,Memorial Coliseum
+1981,NBA,SAS,SAS,WC,MW,1,2,CF,San Antonio Spurs,3698,1812,9272,9083,29,12,19,22,48,34,82,HemisFair Arena
+1981,NBA,SDC,LAC,WC,PC,6,12,,San Diego Clippers,3552,1693,8896,9502,11,30,6,35,17,65,82,San Diego Sports Arena
+1981,NBA,SEA,SEA,WC,PC,2,3,CS,Seattle Supersonics,3505,1747,8795,8456,31,10,21,20,52,30,82,King County Domed Stadium
+1981,NBA,UTA,UTA,WC,MW,6,11,,Utah Jazz,3679,1714,9094,9558,18,23,7,34,25,57,82,Salt Palace
+1981,NBA,WSB,WAS,EC,AT,4,5,CS,Washington Bullets,3400,1626,8485,8413,22,19,21,20,43,39,82,Capital Centre
+1982,NBA,ATL,ATL,EC,CD,2,6,C1,Atlanta Hawks,3352,1586,8335,8413,26,15,17,24,43,39,82,Omni Coliseum
+1982,NBA,BOS,BOS,EC,AT,2,3,CS,Boston Celtics,3711,1730,9191,8752,33,8,23,18,56,26,82,Boston Garden
+1982,NBA,CHI,CHI,EC,CD,4,9,,Chicago Bulls,3537,1983,9102,9503,18,23,10,31,28,54,82,Chicago Stadium
+1982,NBA,CLE,CLE,EC,CD,5,10,,Cleveland Cavaliers,3252,1430,7964,8574,15,26,8,33,23,59,82,Coliseum at Richfield
+1982,NBA,DAL,DAL,WC,MW,4,8,,Dallas Mavericks,3674,1852,9243,9277,23,18,15,26,38,44,82,Reunion Arena
+1982,NBA,DEN,DEN,WC,MW,2,6,CS,Denver Nuggets,3951,2179,10105,10054,29,12,16,25,45,37,82,McNichols Sports Arena
+1982,NBA,DET,DET,EC,CD,3,8,,Detroit Pistons,3623,1921,9239,9272,23,18,14,27,37,45,82,Pontiac Silverdome
+1982,NBA,GSW,GSW,WC,PC,5,9,,Golden State Warriors,3627,1620,8908,9205,21,20,9,32,30,52,82,Oakland-Alameda County Coliseum Arena
+1982,NBA,HOU,HOU,WC,MW,6,12,,Houston Rockets,3338,1402,8145,9096,9,32,5,36,14,68,82,The Summit
+1982,NBA,IND,IND,EC,CD,6,11,,Indiana Pacers,3707,1447,8911,9391,14,27,6,35,20,62,82,Market Square Arena
+1982,NBA,KCK,SAC,WC,MW,2,7,,Kansas City Kings,3719,1839,9328,9209,30,11,15,26,45,37,82,Kemper Arena
+1982,NBA,LAL,LAL,WC,PC,0,1,,Los Angeles Lakers,3964,1495,9433,8978,33,8,25,16,58,24,82,The Forum
+1982,NBA,MIL,MIL,EC,CD,1,2,CF,Milwaukee Bucks,3486,1731,8740,8379,31,10,20,21,51,31,82,MECCA Arena
+1982,NBA,NJN,NJN,EC,AT,3,4,C1,New Jersey Nets,3510,1622,8672,8445,30,11,19,22,49,33,82,Brendan Byrne Arena
+1982,NBA,NYK,NYK,EC,AT,4,5,CS,New York Knicks,3272,1621,8198,7997,26,15,18,23,44,38,82,Madison Square Garden (IV)
+1982,NBA,PHI,PHI,EC,AT,1,1,NC,Philadelphia 76ers,3600,1966,9191,8562,35,6,30,11,65,17,82,The Spectrum
+1982,NBA,PHO,PHO,WC,PC,2,3,C1,Phoenix Suns,3555,1626,8776,8361,32,9,21,20,53,29,82,Arizona Veterans Memorial Coliseum
+1982,NBA,POR,POR,WC,PC,4,5,CS,Portland Trail Blazers,3459,1855,8808,8633,31,10,15,26,46,36,82,Memorial Coliseum
+1982,NBA,SAS,SAS,WC,MW,1,2,CF,San Antonio Spurs,3697,1887,9375,9075,31,10,22,19,53,29,82,HemisFair Arena
+1982,NBA,SDC,LAC,WC,PC,6,11,,San Diego Clippers,3625,1589,8903,9299,18,23,7,34,25,57,82,San Diego Sports Arena
+1982,NBA,SEA,SEA,WC,PC,3,4,C1,Seattle Supersonics,3597,1796,9019,8756,29,12,19,22,48,34,82,King County Domed Stadium
+1982,NBA,UTA,UTA,WC,MW,5,10,,Utah Jazz,3525,1844,8938,9282,21,20,9,32,30,52,82,Salt Palace
+1982,NBA,WSB,WAS,EC,AT,5,7,,Washington Bullets,3306,1452,8134,8145,27,14,15,26,42,40,82,Capital Centre
+1983,NBA,ATL,ATL,EC,CD,3,7,C1,Atlanta Hawks,3230,1838,8321,8427,31,10,9,32,40,42,82,Omni Coliseum
+1983,NBA,BOS,BOS,EC,AT,1,1,NC,Boston Celtics,3616,1907,9194,8656,33,8,29,12,62,20,82,Boston Garden
+1983,NBA,CHI,CHI,EC,CD,5,10,,Chicago Bulls,3305,1871,8501,8926,18,23,9,32,27,55,82,Chicago Stadium
+1983,NBA,CLE,CLE,EC,CD,4,9,,Cleveland Cavaliers,3362,1619,8386,8735,23,18,5,36,28,54,82,Coliseum at Richfield
+1983,NBA,DAL,DAL,WC,MW,2,4,CS,Dallas Mavericks,3618,1774,9052,9017,31,10,12,29,43,39,82,Reunion Arena
+1983,NBA,DEN,DEN,WC,MW,3,7,C1,Denver Nuggets,3935,2200,10147,10237,27,14,11,30,38,44,82,McNichols Sports Arena
+1983,NBA,DET,DET,EC,CD,2,4,C1,Detroit Pistons,3798,1974,9602,9308,30,11,19,22,49,33,82,Pontiac Silverdome
+1983,NBA,GSW,GSW,WC,PC,5,9,,Golden State Warriors,3519,1915,9008,9287,27,14,10,31,37,45,82,Oakland-Alameda County Coliseum Arena
+1983,NBA,HOU,HOU,WC,MW,6,12,,Houston Rockets,3729,1583,9071,9324,21,20,8,33,29,53,82,The Summit
+1983,NBA,IND,IND,EC,CD,6,11,,Indiana Pacers,3447,1624,8566,8961,20,21,6,35,26,56,82,Market Square Arena
+1983,NBA,KCK,SAC,WC,MW,3,8,C1,Kansas City Kings,3516,1939,9023,9144,26,15,12,29,38,44,82,Kemper Arena
+1983,NBA,LAL,LAL,WC,PC,1,1,F,Los Angeles Lakers,3854,1712,9478,9170,28,13,26,15,54,28,82,The Forum
+1983,NBA,MIL,MIL,EC,CD,1,2,CF,Milwaukee Bucks,3432,1743,8666,8325,30,11,20,21,50,32,82,MECCA Arena
+1983,NBA,NJN,NJN,EC,AT,4,6,CS,New Jersey Nets,3614,1742,9019,8929,29,12,16,25,45,37,82,Brendan Byrne Arena
+1983,NBA,NYK,NYK,EC,AT,3,5,CS,New York Knicks,3386,1944,8763,8448,29,12,18,23,47,35,82,Madison Square Garden (IV)
+1983,NBA,PHI,PHI,EC,AT,2,3,C1,Philadelphia 76ers,3384,2041,8838,8658,32,9,20,21,52,30,82,The Spectrum
+1983,NBA,PHO,PHO,WC,PC,4,6,CF,Phoenix Suns,3677,1673,9101,9028,31,10,10,31,41,41,82,Arizona Veterans Memorial Coliseum
+1983,NBA,POR,POR,WC,PC,2,3,C1,Portland Trail Blazers,3632,1988,9277,8986,33,8,15,26,48,34,82,Memorial Coliseum
+1983,NBA,SAS,SAS,WC,MW,5,10,,San Antonio Spurs,3909,1965,9862,9884,28,13,9,32,37,45,82,HemisFair Arena
+1983,NBA,SDC,LAC,WC,PC,6,11,,San Diego Clippers,3634,1785,9077,9344,25,16,5,36,30,52,82,San Diego Sports Arena
+1983,NBA,SEA,SEA,WC,PC,3,5,C1,Seattle Supersonics,3460,1918,8865,8879,32,9,10,31,42,40,82,King County Domed Stadium
+1983,NBA,UTA,UTA,WC,MW,1,2,CS,Utah Jazz,3606,2115,9428,9335,31,10,14,27,45,37,82,Salt Palace
+1983,NBA,WSB,WAS,EC,AT,5,8,C1,Washington Bullets,3344,1664,8423,8660,25,16,10,31,35,47,82,Capital Centre
+1984,NBA,ATL,ATL,EC,CD,5,9,,Atlanta Hawks,3444,1782,8743,8862,19,22,15,26,34,48,82,Omni Coliseum
+1984,NBA,BOS,BOS,EC,AT,1,1,F,Boston Celtics,3721,1860,9412,8867,35,6,28,13,63,19,82,Boston Garden
+1984,NBA,CHI,CHI,EC,CD,3,7,C1,Chicago Bulls,3453,1981,8916,8985,26,15,12,29,38,44,82,Chicago Stadium
+1984,NBA,CLE,CLE,EC,CD,4,8,C1,Cleveland Cavaliers,3470,1867,8903,9129,20,21,16,25,36,46,82,Coliseum at Richfield
+1984,NBA,DAL,DAL,WC,MW,3,4,C1,Dallas Mavericks,3560,1844,9116,8938,24,17,20,21,44,38,82,Reunion Arena
+1984,NBA,DEN,DEN,WC,MW,1,2,CF,Denver Nuggets,3876,2016,9841,9641,34,7,18,23,52,30,82,McNichols Sports Arena
+1984,NBA,DET,DET,EC,CD,2,4,CS,Detroit Pistons,3840,1783,9508,9304,26,15,20,21,46,36,82,Pontiac Silverdome
+1984,NBA,GSW,GSW,WC,PC,6,12,,Golden State Warriors,3498,1944,9052,9654,17,24,5,36,22,60,82,Oakland-Alameda County Coliseum Arena
+1984,NBA,HOU,HOU,WC,MW,2,3,C1,Houston Rockets,3748,1581,9118,8977,29,12,19,22,48,34,82,The Summit
+1984,NBA,IND,IND,EC,CD,6,11,,Indiana Pacers,3489,1871,8879,9388,16,25,6,35,22,60,82,Market Square Arena
+1984,NBA,KCK,SAC,WC,MW,6,9,,Kansas City Kings,3664,2022,9413,9632,23,18,8,33,31,51,82,Kemper Arena
+1984,NBA,LAC,LAC,WC,PC,4,11,,Los Angeles Clippers,3527,1674,8784,9152,20,21,11,30,31,51,82,Los Angeles Memorial Sports Arena
+1984,NBA,LAL,LAL,WC,PC,1,1,NC,Los Angeles Lakers,3952,1702,9696,9093,36,5,26,15,62,20,82,The Forum
+1984,NBA,MIL,MIL,EC,CD,1,2,CS,Milwaukee Bucks,3564,1873,9090,8528,36,5,23,18,59,23,82,MECCA Arena
+1984,NBA,NJN,NJN,EC,AT,3,5,D1,New Jersey Nets,3646,1631,8975,8956,27,14,15,26,42,40,82,Brendan Byrne Arena
+1984,NBA,NYK,NYK,EC,AT,5,10,,New York Knicks,3435,1706,8627,9007,19,22,5,36,24,58,82,Madison Square Garden (IV)
+1984,NBA,PHI,PHI,EC,AT,2,3,CF,Philadelphia 76ers,3443,2316,9261,8925,34,7,24,17,58,24,82,The Spectrum
+1984,NBA,PHO,PHO,WC,PC,3,8,C1,Phoenix Suns,3507,1757,8858,9031,26,15,10,31,36,46,82,Arizona Veterans Memorial Coliseum
+1984,NBA,POR,POR,WC,PC,2,5,CS,Portland Trail Blazers,3708,2002,9469,9190,30,11,12,29,42,40,82,Memorial Coliseum
+1984,NBA,SAS,SAS,WC,MW,4,7,C1,San Antonio Spurs,3698,1961,9412,9337,30,11,11,30,41,41,82,HemisFair Arena
+1984,NBA,SEA,SEA,WC,PC,4,10,,Seattle Supersonics,3277,1777,8376,8822,20,21,11,30,31,51,82,King County Domed Stadium
+1984,NBA,UTA,UTA,WC,MW,4,6,CS,Utah Jazz,3478,1878,8937,8946,26,15,15,26,41,41,82,Salt Palace
+1984,NBA,WSB,WAS,EC,AT,4,6,C1,Washington Bullets,3534,1478,8655,8677,28,13,12,29,40,42,82,Capital Centre
+1985,NBA,ATL,ATL,EC,CD,2,4,CS,Atlanta Hawks,3447,1979,8906,8712,34,7,16,25,50,32,82,Omni Coliseum
+1985,NBA,BOS,BOS,EC,AT,1,1,NC,Boston Celtics,3718,1785,9359,8587,40,1,27,14,67,15,82,Boston Garden
+1985,NBA,CHI,CHI,EC,CD,4,8,C1,Chicago Bulls,3476,1922,8962,9274,22,19,8,33,30,52,82,Chicago Stadium
+1985,NBA,CLE,CLE,EC,CD,5,9,,Cleveland Cavaliers,3478,1748,8836,9071,16,25,13,28,29,53,82,Coliseum at Richfield
+1985,NBA,DAL,DAL,WC,MW,3,4,CS,Dallas Mavericks,3631,2050,9453,9363,26,15,18,23,44,38,82,Reunion Arena
+1985,NBA,DEN,DEN,WC,MW,2,3,CS,Denver Nuggets,3705,1929,9410,9303,34,7,13,28,47,35,82,McNichols Sports Arena
+1985,NBA,DET,DET,EC,CD,3,5,C1,Detroit Pistons,3754,1800,9363,9267,31,10,15,26,46,36,82,Pontiac Silverdome
+1985,NBA,GSW,GSW,WC,PC,6,12,,Golden State Warriors,3650,1912,9299,9582,24,17,6,35,30,52,82,Oakland-Alameda County Coliseum Arena
+1985,NBA,HOU,HOU,WC,MW,1,2,F,Houston Rockets,3759,1776,9379,9165,36,5,15,26,51,31,82,The Summit
+1985,NBA,IND,IND,EC,CD,6,10,,Indiana Pacers,3441,1614,8519,8792,19,22,7,34,26,56,82,Market Square Arena
+1985,NBA,LAC,LAC,WC,PC,3,10,,Los Angeles Clippers,3388,2067,8907,9475,22,19,10,31,32,50,82,Los Angeles Memorial Sports Arena
+1985,NBA,LAL,LAL,WC,PC,1,1,CF,Los Angeles Lakers,3834,1812,9618,8983,35,6,27,14,62,20,82,The Forum
+1985,NBA,MIL,MIL,EC,CD,1,2,CF,Milwaukee Bucks,3601,2063,9390,8649,33,8,24,17,57,25,82,MECCA Arena
+1985,NBA,NJN,NJN,EC,AT,3,7,C1,New Jersey Nets,3548,1810,8949,9112,26,15,13,28,39,43,82,Brendan Byrne Arena
+1985,NBA,NYK,NYK,EC,AT,5,11,,New York Knicks,3239,1534,8094,8554,15,26,8,33,23,59,82,Madison Square Garden (IV)
+1985,NBA,PHI,PHI,EC,AT,2,3,CS,Philadelphia 76ers,3435,2130,9051,8858,31,10,23,18,54,28,82,The Spectrum
+1985,NBA,PHO,PHO,WC,PC,3,9,,Phoenix Suns,3518,1949,9023,9268,23,18,9,32,32,50,82,Arizona Veterans Memorial Coliseum
+1985,NBA,POR,POR,WC,PC,2,6,C1,Portland Trail Blazers,3610,2142,9436,9349,27,14,13,28,40,42,82,Memorial Coliseum
+1985,NBA,SAC,SAC,WC,MW,5,7,C1,Sacramento Kings,3538,1818,8924,9176,25,16,12,29,37,45,82,ARCO Arena (I)
+1985,NBA,SAS,SAS,WC,MW,6,8,C1,San Antonio Spurs,3596,1882,9120,9272,21,20,14,27,35,47,82,HemisFair Arena
+1985,NBA,SEA,SEA,WC,PC,5,11,,Seattle Supersonics,3335,1815,8564,8572,24,17,7,34,31,51,82,Seattle Center Coliseum
+1985,NBA,UTA,UTA,WC,MW,4,5,C1,Utah Jazz,3453,1930,8871,8901,27,14,15,26,42,40,82,Salt Palace
+1985,NBA,WSB,WAS,EC,AT,3,6,C1,Washington Bullets,3311,1704,8442,8590,26,15,13,28,39,43,82,Capital Centre
+1986,NBA,ATL,ATL,EC,CD,1,2,CS,Atlanta Hawks,3435,2019,9024,8431,35,6,22,19,57,25,82,Omni Coliseum
+1986,NBA,BOS,BOS,EC,AT,1,1,F,Boston Celtics,3645,1740,9237,8692,39,2,20,21,59,23,82,Boston Garden
+1986,NBA,CHI,CHI,EC,CD,5,8,C1,Chicago Bulls,3382,1754,8596,8523,29,12,11,30,40,42,82,Chicago Stadium
+1986,NBA,CLE,CLE,EC,CD,6,9,,Cleveland Cavaliers,3349,1779,8558,8871,25,16,6,35,31,51,82,Coliseum at Richfield
+1986,NBA,DAL,DAL,WC,MW,1,2,C1,Dallas Mavericks,3594,2148,9567,9050,35,6,20,21,55,27,82,Reunion Arena
+1986,NBA,DEN,DEN,WC,MW,4,8,C1,Denver Nuggets,3744,1975,9569,9640,27,14,10,31,37,45,82,McNichols Sports Arena
+1986,NBA,DET,DET,EC,CD,2,3,CF,Detroit Pistons,3544,1991,9118,8836,32,9,20,21,52,30,82,Pontiac Silverdome
+1986,NBA,GSW,GSW,WC,PC,3,5,CS,Golden State Warriors,3551,1970,9188,9380,25,16,17,24,42,40,82,Oakland-Alameda County Coliseum Arena
+1986,NBA,HOU,HOU,WC,MW,3,6,CS,Houston Rockets,3465,1746,8765,8683,25,16,17,24,42,40,82,The Summit
+1986,NBA,IND,IND,EC,CD,4,7,C1,Indiana Pacers,3454,1696,8698,8751,28,13,13,28,41,41,82,Market Square Arena
+1986,NBA,LAC,LAC,WC,PC,6,12,,Los Angeles Clippers,3311,1866,8566,9503,9,32,3,38,12,70,82,Los Angeles Memorial Sports Arena
+1986,NBA,LAL,LAL,WC,PC,1,1,NC,Los Angeles Lakers,3740,2012,9656,8893,37,4,28,13,65,17,82,The Forum
+1986,NBA,MIL,MIL,EC,CD,3,4,CS,Milwaukee Bucks,3457,1953,9052,8731,32,9,18,23,50,32,82,MECCA Arena
+1986,NBA,NJN,NJN,EC,AT,4,10,,New Jersey Nets,3374,2000,8893,9307,19,22,5,36,24,58,82,Brendan Byrne Arena
+1986,NBA,NYK,NYK,EC,AT,4,11,,New York Knicks,3329,1725,8508,9022,18,23,6,35,24,58,82,Madison Square Garden (IV)
+1986,NBA,PHI,PHI,EC,AT,2,5,C1,Philadelphia 76ers,3335,1971,8729,8745,28,13,17,24,45,37,82,The Spectrum
+1986,NBA,PHO,PHO,WC,PC,5,9,,Phoenix Suns,3575,1900,9111,9311,26,15,10,31,36,46,82,Arizona Veterans Memorial Coliseum
+1986,NBA,POR,POR,WC,PC,2,3,C1,Portland Trail Blazers,3650,2269,9667,9410,34,7,15,26,49,33,82,Memorial Coliseum
+1986,NBA,SAC,SAC,WC,MW,5,10,,Sacramento Kings,3522,1974,9095,9359,20,21,9,32,29,53,82,ARCO Arena (I)
+1986,NBA,SAS,SAS,WC,MW,6,11,,San Antonio Spurs,3532,1701,8882,9300,21,20,7,34,28,54,82,HemisFair Arena
+1986,NBA,SEA,SEA,WC,PC,4,7,CF,Seattle Supersonics,3593,1948,9325,9287,25,16,14,27,39,43,82,Seattle Center Coliseum
+1986,NBA,UTA,UTA,WC,MW,2,4,C1,Utah Jazz,3485,1735,8844,8811,31,10,13,28,44,38,82,Salt Palace
+1986,NBA,WSB,WAS,EC,AT,3,6,C1,Washington Bullets,3356,1935,8690,8802,27,14,15,26,42,40,82,Capital Centre
+1987,NBA,ATL,ATL,EC,CD,2,4,CS,Atlanta Hawks,3443,1873,8844,8549,30,11,20,21,50,32,82,Omni Coliseum
+1987,NBA,BOS,BOS,EC,AT,1,1,CF,Boston Celtics,3599,1846,9315,8828,36,5,21,20,57,25,82,Boston Garden
+1987,NBA,CHI,CHI,EC,CD,2,3,CS,Chicago Bulls,3434,1685,8609,8330,30,11,20,21,50,32,82,Chicago Stadium
+1987,NBA,CLE,CLE,EC,CD,4,6,C1,Cleveland Cavaliers,3313,1813,8566,8504,31,10,11,30,42,40,82,Coliseum at Richfield
+1987,NBA,DAL,DAL,WC,MW,2,3,CF,Dallas Mavericks,3413,1980,8960,8602,33,8,20,21,53,29,82,Reunion Arena
+1987,NBA,DEN,DEN,WC,MW,1,2,CS,Denver Nuggets,3770,1841,9573,9239,35,6,19,22,54,28,82,McNichols Sports Arena
+1987,NBA,DET,DET,EC,CD,1,2,F,Detroit Pistons,3461,1977,8957,8533,34,7,20,21,54,28,82,Pontiac Silverdome
+1987,NBA,GSW,GSW,WC,PC,5,11,,Golden State Warriors,3463,1754,8771,9453,16,25,4,37,20,62,82,Oakland-Alameda County Coliseum Arena
+1987,NBA,HOU,HOU,WC,MW,4,6,C1,Houston Rockets,3465,1936,8935,8821,31,10,15,26,46,36,82,The Summit
+1987,NBA,IND,IND,EC,CD,6,9,,Indiana Pacers,3436,1546,8581,8646,25,16,13,28,38,44,82,Market Square Arena
+1987,NBA,LAC,LAC,WC,PC,6,12,,Los Angeles Clippers,3190,1644,8103,8949,14,27,3,38,17,65,82,Los Angeles Memorial Sports Arena
+1987,NBA,LAL,LAL,WC,PC,1,1,NC,Los Angeles Lakers,3576,1956,9250,8771,36,5,26,15,62,20,82,The Forum
+1987,NBA,MIL,MIL,EC,CD,4,5,C1,Milwaukee Bucks,3366,1832,8697,8653,30,11,12,29,42,40,82,MECCA Arena
+1987,NBA,NJN,NJN,EC,AT,5,11,,New Jersey Nets,3208,1682,8235,8900,16,25,3,38,19,63,82,Brendan Byrne Arena
+1987,NBA,NYK,NYK,EC,AT,2,8,C1,New York Knicks,3363,1750,8655,8695,29,12,9,32,38,44,82,Madison Square Garden (IV)
+1987,NBA,PHI,PHI,EC,AT,4,10,,Philadelphia 76ers,3214,2087,8667,8785,27,14,9,32,36,46,82,The Spectrum
+1987,NBA,PHO,PHO,WC,PC,4,9,,Phoenix Suns,3551,1681,8901,9268,22,19,6,35,28,54,82,Arizona Veterans Memorial Coliseum
+1987,NBA,POR,POR,WC,PC,2,4,C1,Portland Trail Blazers,3661,2079,9518,9147,33,8,20,21,53,29,82,Memorial Coliseum
+1987,NBA,SAC,SAC,WC,MW,6,10,,Sacramento Kings,3458,1795,8855,9327,19,22,5,36,24,58,82,ARCO Arena (I)
+1987,NBA,SAS,SAS,WC,MW,5,8,C1,San Antonio Spurs,3706,1769,9314,9714,23,18,8,33,31,51,82,HemisFair Arena
+1987,NBA,SEA,SEA,WC,PC,3,7,C1,Seattle Supersonics,3544,1826,9135,8966,32,9,12,29,44,38,82,Seattle Center Coliseum
+1987,NBA,UTA,UTA,WC,MW,3,5,CS,Utah Jazz,3484,1802,8899,8597,33,8,14,27,47,35,82,Salt Palace
+1987,NBA,WSB,WAS,EC,AT,2,7,C1,Washington Bullets,3355,1914,8653,8716,25,16,13,28,38,44,82,Capital Centre
+1988,NBA,ATL,ATL,EC,CD,3,4,C1,Atlanta Hawks,3412,2168,9102,8699,33,8,19,22,52,30,82,Omni Coliseum
+1988,NBA,BOS,BOS,EC,AT,3,8,C1,Boston Celtics,3520,1840,8958,8863,32,9,10,31,42,40,82,Boston Garden
+1988,NBA,CHH,NOH,EC,AT,6,12,,Charlotte Hornets,3426,1580,8566,9265,12,29,8,33,20,62,82,Charlotte Coliseum
+1988,NBA,CHI,CHI,EC,CD,5,6,CF,Chicago Bulls,3448,1656,8726,8608,30,11,17,24,47,35,82,Chicago Stadium
+1988,NBA,CLE,CLE,EC,CD,2,3,C1,Cleveland Cavaliers,3466,1821,8923,8300,37,4,20,21,57,25,82,Coliseum at Richfield
+1988,NBA,DAL,DAL,WC,MW,4,9,,Dallas Mavericks,3244,1785,8484,8583,24,17,14,27,38,44,82,Reunion Arena
+1988,NBA,DEN,DEN,WC,MW,3,6,C1,Denver Nuggets,3813,1821,9675,9536,35,6,9,32,44,38,82,McNichols Sports Arena
+1988,NBA,DET,DET,EC,CD,1,1,NC,Detroit Pistons,3395,1830,8740,8264,37,4,26,15,63,19,82,The Palace of Auburn Hills
+1988,NBA,GSW,GSW,WC,PC,4,7,CS,Golden State Warriors,3730,1904,9558,9583,29,12,14,27,43,39,82,Oakland-Alameda County Coliseum Arena
+1988,NBA,HOU,HOU,WC,MW,2,5,C1,Houston Rockets,3412,1909,8897,8819,31,10,14,27,45,37,82,The Summit
+1988,NBA,IND,IND,EC,CD,6,10,,Indiana Pacers,3385,1795,8767,9109,20,21,8,33,28,54,82,Market Square Arena
+1988,NBA,LAC,LAC,WC,PC,7,12,,Los Angeles Clippers,3526,1606,8712,9525,17,24,4,37,21,61,82,Los Angeles Memorial Sports Arena
+1988,NBA,LAL,LAL,WC,PC,1,1,F,Los Angeles Lakers,3584,2011,9406,8818,35,6,22,19,57,25,82,Great Western Forum
+1988,NBA,MIA,MIA,WC,MW,6,13,,Miami Heat,3221,1477,8016,8937,12,29,3,38,15,67,82,Miami Arena
+1988,NBA,MIL,MIL,EC,CD,4,5,CS,Milwaukee Bucks,3399,1955,8932,8636,31,10,18,23,49,33,82,Bradley Center
+1988,NBA,NJN,NJN,EC,AT,5,11,,New Jersey Nets,3333,1653,8506,9027,17,24,9,32,26,56,82,Brendan Byrne Arena
+1988,NBA,NYK,NYK,EC,AT,1,2,CS,New York Knicks,3701,1779,9567,9258,35,6,17,24,52,30,82,Madison Square Garden (IV)
+1988,NBA,PHI,PHI,EC,AT,2,7,C1,Philadelphia 76ers,3500,1970,9174,9051,30,11,16,25,46,36,82,The Spectrum
+1988,NBA,PHO,PHO,WC,PC,2,3,CF,Phoenix Suns,3754,2051,9727,9096,35,6,20,21,55,27,82,Arizona Veterans Memorial Coliseum
+1988,NBA,POR,POR,WC,PC,5,8,C1,Portland Trail Blazers,3695,1789,9395,9275,28,13,11,30,39,43,82,Memorial Coliseum
+1988,NBA,SAC,SAC,WC,PC,6,10,,Sacramento Kings,3362,1620,8651,9106,21,20,6,35,27,55,82,ARCO Arena (II)
+1988,NBA,SAS,SAS,WC,MW,5,11,,San Antonio Spurs,3469,1651,8652,9249,18,23,3,38,21,61,82,HemisFair Arena
+1988,NBA,SEA,SEA,WC,PC,3,4,CS,Seattle Supersonics,3564,1775,9196,8958,31,10,16,25,47,35,82,Seattle Center Coliseum
+1988,NBA,UTA,UTA,WC,MW,1,2,C1,Utah Jazz,3182,2110,8588,8176,34,7,17,24,51,31,82,Salt Palace
+1988,NBA,WSB,WAS,EC,AT,4,9,,Washington Bullets,3519,1789,8879,9056,30,11,10,31,40,42,82,Capital Centre
+1989,NBA,ATL,ATL,EC,CD,6,9,,Atlanta Hawks,3417,1943,8901,8817,25,16,16,25,41,41,82,Omni Coliseum
+1989,NBA,BOS,BOS,EC,AT,2,4,C1,Boston Celtics,3563,1791,9023,8696,30,11,22,19,52,30,82,Boston Garden
+1989,NBA,CHH,NOH,WC,MW,7,14,,Charlotte Hornets,3270,1487,8232,8873,13,28,6,35,19,63,82,Charlotte Coliseum
+1989,NBA,CHI,CHI,EC,CD,2,3,CF,Chicago Bulls,3531,1665,8977,8710,36,5,19,22,55,27,82,Chicago Stadium
+1989,NBA,CLE,CLE,EC,CD,4,7,C1,Cleveland Cavaliers,3214,1637,8411,8436,27,14,15,26,42,40,82,Coliseum at Richfield
+1989,NBA,DAL,DAL,WC,MW,3,6,C1,Dallas Mavericks,3246,1735,8384,8378,30,11,17,24,47,35,82,Reunion Arena
+1989,NBA,DEN,DEN,WC,MW,4,7,C1,Denver Nuggets,3716,1737,9397,9281,28,13,15,26,43,39,82,McNichols Sports Arena
+1989,NBA,DET,DET,EC,CD,1,1,NC,Detroit Pistons,3333,1713,8556,8057,35,6,24,17,59,23,82,The Palace of Auburn Hills
+1989,NBA,GSW,GSW,WC,PC,5,10,,Golden State Warriors,3489,2313,9534,9791,27,14,10,31,37,45,82,Oakland-Alameda County Coliseum Arena
+1989,NBA,HOU,HOU,WC,MW,5,8,C1,Houston Rockets,3483,1633,8752,8632,31,10,10,31,41,41,82,The Summit
+1989,NBA,IND,IND,EC,CD,4,8,C1,Indiana Pacers,3381,1906,8962,8949,28,13,14,27,42,40,82,Market Square Arena
+1989,NBA,LAC,LAC,WC,PC,6,11,,Los Angeles Clippers,3319,1815,8509,8787,20,21,10,31,30,52,82,Los Angeles Memorial Sports Arena
+1989,NBA,LAL,LAL,WC,PC,1,1,CS,Los Angeles Lakers,3434,1902,9079,8523,37,4,26,15,63,19,82,Great Western Forum
+1989,NBA,MIA,MIA,EC,AT,5,11,,Miami Heat,3383,1393,8247,9044,11,30,7,34,18,64,82,Miami Arena
+1989,NBA,MIL,MIL,EC,CD,3,6,C1,Milwaukee Bucks,3380,1722,8691,8755,27,14,17,24,44,38,82,Bradley Center
+1989,NBA,MIN,MIN,WC,MW,6,13,,Minnesota Timberwolves,3067,1596,7803,8150,17,24,5,36,22,60,82,Hubert H. Humphrey Metrodome
+1989,NBA,NJN,NJN,EC,AT,6,13,,New Jersey Nets,3157,1754,8208,8853,13,28,4,37,17,65,82,Brendan Byrne Arena
+1989,NBA,NYK,NYK,EC,AT,3,5,CS,New York Knicks,3434,1775,8879,8763,29,12,16,25,45,37,82,Madison Square Garden (IV)
+1989,NBA,ORL,ORL,EC,CD,7,12,,Orlando Magic,3457,2060,9090,9821,12,29,6,35,18,64,82,Orlando Arena
+1989,NBA,PHI,PHI,EC,AT,1,2,CS,Philadelphia 76ers,3437,1976,9039,8630,34,7,19,22,53,29,82,The Spectrum
+1989,NBA,PHO,PHO,WC,PC,3,5,CF,Phoenix Suns,3544,2159,9423,8841,32,9,22,19,54,28,82,Arizona Veterans Memorial Coliseum
+1989,NBA,POR,POR,WC,PC,2,3,F,Portland Trail Blazers,3572,2031,9365,8847,35,6,24,17,59,23,82,Memorial Coliseum
+1989,NBA,SAC,SAC,WC,PC,7,12,,Sacramento Kings,3305,1515,8341,8756,16,25,7,34,23,59,82,ARCO Arena (II)
+1989,NBA,SAS,SAS,WC,MW,1,2,CS,San Antonio Spurs,3388,1888,8718,8432,34,7,22,19,56,26,82,HemisFair Arena
+1989,NBA,SEA,SEA,WC,PC,4,9,,Seattle Supersonics,3466,1606,8769,8684,30,11,11,30,41,41,82,Seattle Center Coliseum
+1989,NBA,UTA,UTA,WC,MW,2,4,C1,Utah Jazz,3330,1874,8760,8367,36,5,19,22,55,27,82,Salt Palace
+1989,NBA,WSB,WAS,EC,AT,4,10,,Washington Bullets,3598,1599,8832,9009,20,21,11,30,31,51,82,Capital Centre
+1990,NBA,ATL,ATL,EC,CD,4,6,C1,Atlanta Hawks,3349,2034,9003,8940,29,12,14,27,43,39,82,Omni Coliseum
+1990,NBA,BOS,BOS,EC,AT,1,2,CS,Boston Celtics,3695,1646,9145,8668,35,6,21,20,56,26,82,Boston Garden
+1990,NBA,CHH,NOH,EC,CD,7,12,,Charlotte Hornets,3286,1725,8428,8858,17,24,9,32,26,56,82,Charlotte Coliseum
+1990,NBA,CHI,CHI,EC,CD,1,1,NC,Chicago Bulls,3632,1605,9024,8278,35,6,26,15,61,21,82,Chicago Stadium
+1990,NBA,CLE,CLE,EC,CD,6,9,,Cleveland Cavaliers,3259,1665,8343,8545,23,18,10,31,33,49,82,Coliseum at Richfield
+1990,NBA,DAL,DAL,WC,MW,6,12,,Dallas Mavericks,3245,1512,8195,8570,20,21,8,33,28,54,82,Reunion Arena
+1990,NBA,DEN,DEN,WC,MW,7,14,,Denver Nuggets,3901,1726,9828,10723,17,24,3,38,20,62,82,McNichols Sports Arena
+1990,NBA,DET,DET,EC,CD,2,3,CF,Detroit Pistons,3194,1686,8205,7937,32,9,18,23,50,32,82,The Palace of Auburn Hills
+1990,NBA,GSW,GSW,WC,PC,4,7,CS,Golden State Warriors,3566,2162,9564,9430,30,11,14,27,44,38,82,Oakland-Alameda County Coliseum Arena
+1990,NBA,HOU,HOU,WC,MW,3,6,C1,Houston Rockets,3403,1631,8753,8466,31,10,21,20,52,30,82,The Summit
+1990,NBA,IND,IND,EC,CD,5,7,C1,Indiana Pacers,3450,2010,9159,9191,29,12,12,29,41,41,82,Market Square Arena
+1990,NBA,LAC,LAC,WC,PC,6,10,,Los Angeles Clippers,3391,1596,8491,8774,23,18,8,33,31,51,82,Los Angeles Memorial Sports Arena
+1990,NBA,LAL,LAL,WC,PC,2,3,F,Los Angeles Lakers,3343,1805,8717,8164,33,8,25,16,58,24,82,Great Western Forum
+1990,NBA,MIA,MIA,EC,AT,6,13,,Miami Heat,3280,1649,8349,8840,18,23,6,35,24,58,82,Miami Arena
+1990,NBA,MIL,MIL,EC,CD,3,4,C1,Milwaukee Bucks,3337,1796,8727,8524,33,8,15,26,48,34,82,Bradley Center
+1990,NBA,MIN,MIN,WC,MW,5,11,,Minnesota Timberwolves,3265,1531,8169,8491,21,20,8,33,29,53,82,Target Center
+1990,NBA,NJN,NJN,EC,AT,5,11,,New Jersey Nets,3311,1658,8441,8811,20,21,6,35,26,56,82,Brendan Byrne Arena
+1990,NBA,NYK,NYK,EC,AT,3,8,C1,New York Knicks,3308,1654,8455,8474,21,20,18,23,39,43,82,Madison Square Garden (IV)
+1990,NBA,ORL,ORL,WC,MW,4,9,,Orlando Magic,3298,1818,8684,9010,24,17,7,34,31,51,82,Orlando Arena
+1990,NBA,PHI,PHI,EC,AT,2,5,CS,Philadelphia 76ers,3289,1868,8641,8656,29,12,15,26,44,38,82,The Spectrum
+1990,NBA,PHO,PHO,WC,PC,3,4,C1,Phoenix Suns,3573,2064,9348,8811,32,9,23,18,55,27,82,Arizona Veterans Memorial Coliseum
+1990,NBA,POR,POR,WC,PC,1,1,CF,Portland Trail Blazers,3577,1912,9407,8695,36,5,27,14,63,19,82,Memorial Coliseum
+1990,NBA,SAC,SAC,WC,PC,7,13,,Sacramento Kings,3086,1540,7928,8484,24,17,1,40,25,57,82,ARCO Arena (II)
+1990,NBA,SAS,SAS,WC,MW,1,2,C1,San Antonio Spurs,3409,1883,8782,8412,33,8,22,19,55,27,82,HemisFair Arena
+1990,NBA,SEA,SEA,WC,PC,5,8,C1,Seattle Supersonics,3500,1608,8744,8643,28,13,13,28,41,41,82,Seattle Center Coliseum
+1990,NBA,UTA,UTA,WC,MW,2,5,CS,Utah Jazz,3214,1951,8527,8254,36,5,18,23,54,28,82,Salt Palace
+1990,NBA,WSB,WAS,EC,AT,4,10,,Washington Bullets,3390,1478,8313,8721,21,20,9,32,30,52,82,Capital Centre
+1991,NBA,ATL,ATL,EC,CD,5,9,,Atlanta Hawks,3492,1517,8711,8834,23,18,15,26,38,44,82,Omni Coliseum
+1991,NBA,BOS,BOS,EC,AT,1,2,CS,Boston Celtics,3543,1549,8745,8448,34,7,17,24,51,31,82,Boston Garden
+1991,NBA,CHH,NOH,EC,CD,6,11,,Charlotte Hornets,3613,1637,8980,9300,22,19,9,32,31,51,82,Charlotte Coliseum
+1991,NBA,CHI,CHI,EC,CD,1,1,NC,Chicago Bulls,3643,1587,9011,8155,36,5,31,10,67,15,82,Chicago Stadium
+1991,NBA,CLE,CLE,EC,CD,2,3,CF,Cleveland Cavaliers,3427,1819,8926,8479,35,6,22,19,57,25,82,Coliseum at Richfield
+1991,NBA,DAL,DAL,WC,MW,5,12,,Dallas Mavericks,3120,1499,8007,8634,15,26,7,34,22,60,82,Reunion Arena
+1991,NBA,DEN,DEN,WC,MW,4,11,,Denver Nuggets,3262,1526,8176,8821,18,23,6,35,24,58,82,McNichols Sports Arena
+1991,NBA,DET,DET,EC,CD,3,5,C1,Detroit Pistons,3191,1566,8113,7946,25,16,23,18,48,34,82,The Palace of Auburn Hills
+1991,NBA,GSW,GSW,WC,PC,2,3,C1,Golden State Warriors,3767,1944,9732,9412,31,10,24,17,55,27,82,Oakland-Alameda County Coliseum Arena
+1991,NBA,HOU,HOU,WC,MW,3,9,,Houston Rockets,3273,1491,8366,8507,28,13,14,27,42,40,82,The Summit
+1991,NBA,IND,IND,EC,CD,4,7,C1,Indiana Pacers,3498,1868,9197,9042,26,15,14,27,40,42,82,Market Square Arena
+1991,NBA,LAC,LAC,WC,PC,5,7,C1,Los Angeles Clippers,3347,1601,8440,8352,29,12,16,25,45,37,82,Los Angeles Memorial Sports Arena
+1991,NBA,LAL,LAL,WC,PC,6,8,C1,Los Angeles Lakers,3183,1744,8229,8319,24,17,19,22,43,39,82,Great Western Forum
+1991,NBA,MIA,MIA,EC,AT,4,8,C1,Miami Heat,3256,1839,8608,8953,28,13,10,31,38,44,82,Miami Arena
+1991,NBA,MIL,MIL,EC,CD,6,12,,Milwaukee Bucks,3321,1596,8609,8749,25,16,6,35,31,51,82,Bradley Center
+1991,NBA,MIN,MIN,WC,MW,6,13,,Minnesota Timberwolves,3366,1379,8237,8815,9,32,6,35,15,67,82,Target Center
+1991,NBA,NJN,NJN,EC,AT,3,6,C1,New Jersey Nets,3473,1471,8641,8780,25,16,15,26,40,42,82,Brendan Byrne Arena
+1991,NBA,NYK,NYK,EC,AT,1,4,CS,New York Knicks,3312,1503,8328,8009,30,11,21,20,51,31,82,Madison Square Garden (IV)
+1991,NBA,ORL,ORL,EC,AT,7,14,,Orlando Magic,3220,1693,8330,8897,13,28,8,33,21,61,82,Orlando Arena
+1991,NBA,PHI,PHI,EC,AT,5,10,,Philadelphia 76ers,3187,1757,8358,8462,23,18,12,29,35,47,82,The Spectrum
+1991,NBA,PHO,PHO,WC,PC,3,4,CS,Phoenix Suns,3553,1861,9194,8707,36,5,17,24,53,29,82,Arizona Veterans Memorial Coliseum
+1991,NBA,POR,POR,WC,PC,1,1,F,Portland Trail Blazers,3476,1858,9135,8539,33,8,24,17,57,25,82,Memorial Coliseum
+1991,NBA,SAC,SAC,WC,PC,7,10,,Sacramento Kings,3348,1615,8549,9046,21,20,8,33,29,53,82,ARCO Arena (II)
+1991,NBA,SAS,SAS,WC,MW,2,5,C1,San Antonio Spurs,3377,1652,8524,8252,31,10,16,25,47,35,82,HemisFair Arena
+1991,NBA,SEA,SEA,WC,PC,4,6,CS,Seattle Supersonics,3380,1772,8737,8583,28,13,19,22,47,35,82,Seattle Center Coliseum
+1991,NBA,UTA,UTA,WC,MW,1,2,CF,Utah Jazz,3379,1961,8877,8353,37,4,18,23,55,27,82,Delta Center
+1991,NBA,WSB,WAS,EC,AT,6,13,,Washington Bullets,3364,1521,8395,8761,14,27,11,30,25,57,82,Capital Centre
+1992,NBA,ATL,ATL,EC,CD,4,7,C1,Atlanta Hawks,3392,1648,8814,8885,25,16,18,23,43,39,82,Omni Coliseum
+1992,NBA,BOS,BOS,EC,AT,2,4,C1,Boston Celtics,3453,1486,8502,8429,28,13,20,21,48,34,82,Boston Garden
+1992,NBA,CHH,NOH,EC,CD,3,5,CS,Charlotte Hornets,3512,1831,9030,9050,22,19,22,19,44,38,82,Charlotte Coliseum
+1992,NBA,CHI,CHI,EC,CD,1,2,NC,Chicago Bulls,3475,1431,8625,8109,31,10,26,15,57,25,82,Chicago Stadium
+1992,NBA,CLE,CLE,EC,CD,2,3,CS,Cleveland Cavaliers,3425,1699,8832,8303,35,6,19,22,54,28,82,Coliseum at Richfield
+1992,NBA,DAL,DAL,WC,MW,6,13,,Dallas Mavericks,3164,1530,8141,9387,7,34,4,37,11,71,82,Reunion Arena
+1992,NBA,DEN,DEN,WC,MW,4,9,,Denver Nuggets,3352,1784,8626,8769,28,13,8,33,36,46,82,McNichols Sports Arena
+1992,NBA,DET,DET,EC,CD,6,10,,Detroit Pistons,3267,1426,8252,8366,28,13,12,29,40,42,82,The Palace of Auburn Hills
+1992,NBA,GSW,GSW,WC,PC,6,10,,Golden State Warriors,3474,1768,9014,9095,19,22,15,26,34,48,82,Oakland-Alameda County Coliseum Arena
+1992,NBA,HOU,HOU,WC,MW,1,2,CS,Houston Rockets,3280,1584,8531,8184,31,10,24,17,55,27,82,The Summit
+1992,NBA,IND,IND,EC,CD,5,8,C1,Indiana Pacers,3371,1837,8836,8697,27,14,14,27,41,41,82,Market Square Arena
+1992,NBA,LAC,LAC,WC,PC,4,7,C1,Los Angeles Clippers,3544,1562,8783,8754,27,14,14,27,41,41,82,Los Angeles Memorial Sports Arena
+1992,NBA,LAL,LAL,WC,PC,5,8,C1,Los Angeles Lakers,3309,1741,8546,8650,20,21,19,22,39,43,82,Great Western Forum
+1992,NBA,MIA,MIA,EC,AT,5,11,,Miami Heat,3127,1908,8495,8589,26,15,10,31,36,46,82,Miami Arena
+1992,NBA,MIL,MIL,EC,CD,7,12,,Milwaukee Bucks,3268,1544,8392,8698,18,23,10,31,28,54,82,Bradley Center
+1992,NBA,MIN,MIN,WC,MW,5,12,,Minnesota Timberwolves,3043,1794,8046,8684,11,30,8,33,19,63,82,Target Center
+1992,NBA,NJN,NJN,EC,AT,3,6,C1,New Jersey Nets,3272,1732,8431,8328,26,15,17,24,43,39,82,Brendan Byrne Arena
+1992,NBA,NYK,NYK,EC,AT,1,1,CF,New York Knicks,3209,1717,8328,7823,37,4,23,18,60,22,82,Madison Square Garden (IV)
+1992,NBA,ORL,ORL,EC,AT,4,9,,Orlando Magic,3257,1821,8652,8544,27,14,14,27,41,41,82,Orlando Arena
+1992,NBA,PHI,PHI,EC,AT,6,13,,Philadelphia 76ers,3225,1776,8556,9029,15,26,11,30,26,56,82,The Spectrum
+1992,NBA,PHO,PHO,WC,PC,1,1,F,Phoenix Suns,3494,1912,9298,8752,35,6,27,14,62,20,82,America West Arena
+1992,NBA,POR,POR,WC,PC,3,4,C1,Portland Trail Blazers,3361,1901,8898,8643,30,11,21,20,51,31,82,Memorial Coliseum
+1992,NBA,SAC,SAC,WC,PC,7,11,,Sacramento Kings,3360,1865,8847,9107,16,25,9,32,25,57,82,ARCO Arena (II)
+1992,NBA,SAS,SAS,WC,MW,2,5,CS,San Antonio Spurs,3311,1794,8652,8433,31,10,18,23,49,33,82,HemisFair Arena
+1992,NBA,SEA,SEA,WC,PC,2,3,CF,Seattle Supersonics,3473,1720,8884,8304,33,8,22,19,55,27,82,Seattle Center Coliseum
+1992,NBA,UTA,UTA,WC,MW,3,6,C1,Utah Jazz,3336,1907,8709,8531,28,13,19,22,47,35,82,Delta Center
+1992,NBA,WSB,WAS,EC,AT,7,14,,Washington Bullets,3302,1575,8353,8930,15,26,7,34,22,60,82,Capital Centre
+1993,NBA,ATL,ATL,EC,CD,1,1,CS,Atlanta Hawks,3247,1556,8318,7886,36,5,21,20,57,25,82,Omni Coliseum
+1993,NBA,BOS,BOS,EC,AT,5,10,,Boston Celtics,3333,1463,8267,8618,18,23,14,27,32,50,82,Boston Garden
+1993,NBA,CHH,NOH,EC,CD,5,9,,Charlotte Hornets,3382,1632,8732,8750,28,13,13,28,41,41,82,Charlotte Coliseum
+1993,NBA,CHI,CHI,EC,CD,2,3,CS,Chicago Bulls,3245,1310,8033,7780,31,10,24,17,55,27,82,Chicago Stadium
+1993,NBA,CLE,CLE,EC,CD,3,6,C1,Cleveland Cavaliers,3133,1736,8296,7966,31,10,16,25,47,35,82,Coliseum at Richfield
+1993,NBA,DAL,DAL,WC,MW,6,13,,Dallas Mavericks,3055,1450,7801,8514,6,35,7,34,13,69,82,Reunion Arena
+1993,NBA,DEN,DEN,WC,MW,4,8,CS,Denver Nuggets,3156,1739,8221,8099,28,13,14,27,42,40,82,McNichols Sports Arena
+1993,NBA,DET,DET,EC,CD,6,14,,Detroit Pistons,3169,1253,7949,8587,10,31,10,31,20,62,82,The Palace of Auburn Hills
+1993,NBA,GSW,GSW,WC,PC,3,6,C1,Golden State Warriors,3512,1529,8844,8701,29,12,21,20,50,32,82,Oakland-Alameda County Coliseum Arena
+1993,NBA,HOU,HOU,WC,MW,1,2,NC,Houston Rockets,3197,1469,8292,7938,35,6,23,18,58,24,82,The Summit
+1993,NBA,IND,IND,EC,CD,3,5,CF,Indiana Pacers,3167,1762,8280,7997,29,12,18,23,47,35,82,Market Square Arena
+1993,NBA,LAC,LAC,WC,PC,7,11,,Los Angeles Clippers,3343,1509,8447,8916,17,24,10,31,27,55,82,Los Angeles Memorial Sports Arena
+1993,NBA,LAL,LAL,WC,PC,5,9,,Los Angeles Lakers,3291,1410,8233,8585,21,20,12,29,33,49,82,Great Western Forum
+1993,NBA,MIA,MIA,EC,AT,4,8,C1,Miami Heat,3197,1744,8475,8256,22,19,20,21,42,40,82,Miami Arena
+1993,NBA,MIL,MIL,EC,CD,6,13,,Milwaukee Bucks,3044,1530,7949,8480,11,30,9,32,20,62,82,Bradley Center
+1993,NBA,MIN,MIN,WC,MW,5,12,,Minnesota Timberwolves,2985,1777,7930,8498,13,28,7,34,20,62,82,Target Center
+1993,NBA,NJN,NJN,EC,AT,3,7,C1,New Jersey Nets,3169,1900,8461,8281,29,12,16,25,45,37,82,Brendan Byrne Arena
+1993,NBA,NYK,NYK,EC,AT,1,2,F,New York Knicks,3098,1564,8076,7503,32,9,25,16,57,25,82,Madison Square Garden (IV)
+1993,NBA,ORL,ORL,EC,AT,2,4,C1,Orlando Magic,3341,1590,8666,8347,31,10,19,22,50,32,82,Orlando Arena
+1993,NBA,PHI,PHI,EC,AT,6,11,,Philadelphia 76ers,3103,1509,8033,8658,15,26,10,31,25,57,82,The Spectrum
+1993,NBA,PHO,PHO,WC,PC,2,3,CS,Phoenix Suns,3429,1674,8876,8479,36,5,20,21,56,26,82,America West Arena
+1993,NBA,POR,POR,WC,PC,4,7,C1,Portland Trail Blazers,3371,1781,8795,8579,30,11,17,24,47,35,82,Memorial Coliseum
+1993,NBA,SAC,SAC,WC,PC,6,10,,Sacramento Kings,3179,1676,8291,8764,20,21,8,33,28,54,82,ARCO Arena (II)
+1993,NBA,SAS,SAS,WC,MW,2,4,C1,San Antonio Spurs,3178,1597,8202,7771,32,9,23,18,55,27,82,Alamodome
+1993,NBA,SEA,SEA,WC,PC,1,1,C1,Seattle Supersonics,3338,1769,8687,7942,37,4,26,15,63,19,82,Seattle Center Coliseum
+1993,NBA,UTA,UTA,WC,MW,3,5,CF,Utah Jazz,3207,1761,8354,8008,33,8,20,21,53,29,82,Delta Center
+1993,NBA,WSB,WAS,EC,AT,7,12,,Washington Bullets,3195,1618,8229,8834,17,24,7,34,24,58,82,US Airways Arena
+1994,NBA,ATL,ATL,EC,CD,5,7,C1,Atlanta Hawks,2986,1410,7921,7816,24,17,18,23,42,40,82,Omni Coliseum
+1994,NBA,BOS,BOS,EC,AT,3,8,C1,Boston Celtics,3179,1708,8428,8582,20,21,15,26,35,47,82,Boston Garden
+1994,NBA,CHH,NOH,EC,CD,2,4,C1,Charlotte Hornets,3051,1587,8249,7980,29,12,21,20,50,32,82,Charlotte Coliseum
+1994,NBA,CHI,CHI,EC,CD,3,5,CS,Chicago Bulls,3191,1500,8325,7929,28,13,19,22,47,35,82,United Center
+1994,NBA,CLE,CLE,EC,CD,4,6,C1,Cleveland Cavaliers,2756,1507,7417,7366,26,15,17,24,43,39,82,Gund Arena
+1994,NBA,DAL,DAL,WC,MW,5,10,,Dallas Mavericks,3227,1622,8462,8700,19,22,17,24,36,46,82,Reunion Arena
+1994,NBA,DEN,DEN,WC,MW,4,8,C1,Denver Nuggets,3098,1700,8309,8240,23,18,18,23,41,41,82,McNichols Sports Arena
+1994,NBA,DET,DET,EC,CD,7,12,,Detroit Pistons,3060,1439,8053,8651,22,19,6,35,28,54,82,The Palace of Auburn Hills
+1994,NBA,GSW,GSW,WC,PC,6,11,,Golden State Warriors,3217,1687,8667,9111,15,26,11,30,26,56,82,Oakland-Alameda County Coliseum Arena
+1994,NBA,HOU,HOU,WC,MW,3,6,NC,Houston Rockets,3159,1527,8491,8317,25,16,22,19,47,35,82,The Summit
+1994,NBA,IND,IND,EC,CD,1,2,CF,Indiana Pacers,2983,1796,8136,7833,33,8,19,22,52,30,82,Market Square Arena
+1994,NBA,LAC,LAC,WC,PC,7,13,,Los Angeles Clippers,3060,1476,7927,8678,13,28,4,37,17,65,82,Los Angeles Memorial Sports Arena
+1994,NBA,LAL,LAL,WC,PC,3,5,CS,Los Angeles Lakers,3284,1523,8616,8634,29,12,19,22,48,34,82,Great Western Forum
+1994,NBA,MIA,MIA,EC,AT,4,10,,Miami Heat,3144,1569,8293,8427,22,19,10,31,32,50,82,Miami Arena
+1994,NBA,MIL,MIL,EC,CD,6,9,,Milwaukee Bucks,3022,1608,8146,8504,22,19,12,29,34,48,82,Bradley Center
+1994,NBA,MIN,MIN,WC,MW,6,12,,Minnesota Timberwolves,2792,1824,7726,8464,13,28,8,33,21,61,82,Target Center
+1994,NBA,NJN,NJN,EC,AT,5,11,,New Jersey Nets,2939,1750,8042,8299,20,21,10,31,30,52,82,Brendan Byrne Arena
+1994,NBA,NYK,NYK,EC,AT,2,3,CS,New York Knicks,2985,1552,8054,7799,29,12,26,15,55,27,82,Madison Square Garden (IV)
+1994,NBA,ORL,ORL,EC,AT,1,1,F,Orlando Magic,3460,1648,9091,8512,39,2,18,23,57,25,82,Orlando Arena
+1994,NBA,PHI,PHI,EC,AT,6,13,,Philadelphia 76ers,2949,1567,7820,8236,14,27,10,31,24,58,82,CoreStates Spectrum
+1994,NBA,PHO,PHO,WC,PC,1,2,CS,Phoenix Suns,3356,1777,9073,8755,32,9,27,14,59,23,82,America West Arena
+1994,NBA,POR,POR,WC,PC,4,7,C1,Portland Trail Blazers,3217,1555,8451,8138,26,15,18,23,44,38,82,Memorial Coliseum
+1994,NBA,SAC,SAC,WC,PC,5,9,,Sacramento Kings,3025,1647,8056,8138,27,14,12,29,39,43,82,ARCO Arena (II)
+1994,NBA,SAS,SAS,WC,MW,1,1,CF,San Antonio Spurs,3236,1836,8742,8253,33,8,29,12,62,20,82,Alamodome
+1994,NBA,SEA,SEA,WC,PC,2,4,C1,Seattle Supersonics,3310,1944,9055,8384,32,9,25,16,57,25,82,Tacoma Dome
+1994,NBA,UTA,UTA,WC,MW,2,3,C1,Utah Jazz,3243,1939,8726,8071,33,8,27,14,60,22,82,Delta Center
+1994,NBA,WSB,WAS,EC,AT,7,14,,Washington Bullets,3176,1457,8242,8701,13,28,8,33,21,61,82,US Airways Arena
+1995,NBA,ATL,ATL,EC,CD,4,6,CS,Atlanta Hawks,2985,1523,8059,7959,26,15,20,21,46,36,82,Omni Coliseum
+1995,NBA,BOS,BOS,EC,AT,5,11,,Boston Celtics,3163,1630,8495,8774,18,23,15,26,33,49,82,FleetCenter
+1995,NBA,CHH,NOH,EC,CD,6,9,,Charlotte Hornets,3108,1631,8431,8478,25,16,16,25,41,41,82,Charlotte Coliseum
+1995,NBA,CHI,CHI,EC,CD,1,1,NC,Chicago Bulls,3293,1495,8625,7621,39,2,33,8,72,10,82,United Center
+1995,NBA,CLE,CLE,EC,CD,3,4,C1,Cleveland Cavaliers,2761,1355,7473,7261,26,15,21,20,47,35,82,Gund Arena
+1995,NBA,DAL,DAL,WC,MW,5,13,,Dallas Mavericks,3124,1426,8409,8811,16,25,10,31,26,56,82,Reunion Arena
+1995,NBA,DEN,DEN,WC,MW,4,10,,Denver Nuggets,3001,1614,8013,8235,24,17,11,30,35,47,82,McNichols Sports Arena
+1995,NBA,DET,DET,EC,CD,4,7,C1,Detroit Pistons,2810,1657,7822,7617,30,11,16,25,46,36,82,The Palace of Auburn Hills
+1995,NBA,GSW,GSW,WC,PC,6,9,,Golden State Warriors,3056,1775,8334,8453,23,18,13,28,36,46,82,Oakland-Alameda County Coliseum Arena
+1995,NBA,HOU,HOU,WC,MW,3,5,CS,Houston Rockets,3078,1611,8404,8261,27,14,21,20,48,34,82,The Summit
+1995,NBA,IND,IND,EC,CD,2,3,C1,Indiana Pacers,2979,1823,8144,7878,32,9,20,21,52,30,82,Market Square Arena
+1995,NBA,LAC,LAC,WC,PC,7,11,,Los Angeles Clippers,3126,1392,8153,8448,19,22,10,31,29,53,82,Los Angeles Memorial Sports Arena
+1995,NBA,LAL,LAL,WC,PC,2,4,C1,Los Angeles Lakers,3216,1529,8438,8073,30,11,23,18,53,29,82,Great Western Forum
+1995,NBA,MIA,MIA,EC,AT,3,8,C1,Miami Heat,2902,1553,7909,7792,26,15,16,25,42,40,82,Miami Arena
+1995,NBA,MIL,MIL,EC,CD,7,13,,Milwaukee Bucks,3034,1412,7837,8272,14,27,11,30,25,57,82,Bradley Center
+1995,NBA,MIN,MIN,WC,MW,5,12,,Minnesota Timberwolves,2974,1797,8024,8463,17,24,9,32,26,56,82,Target Center
+1995,NBA,NJN,NJN,EC,AT,6,12,,New Jersey Nets,2881,1672,7684,8031,20,21,10,31,30,52,82,Brendan Byrne Arena
+1995,NBA,NYK,NYK,EC,AT,2,5,CS,New York Knicks,3003,1480,7971,7781,26,15,21,20,47,35,82,Madison Square Garden (IV)
+1995,NBA,ORL,ORL,EC,AT,1,2,CF,Orlando Magic,3203,1543,8571,8115,37,4,23,18,60,22,82,Orlando Arena
+1995,NBA,PHI,PHI,EC,AT,7,15,,Philadelphia 76ers,2796,1662,7746,8566,11,30,7,34,18,64,82,CoreStates Spectrum
+1995,NBA,PHO,PHO,WC,PC,4,7,C1,Phoenix Suns,3159,1907,8552,8525,25,16,16,25,41,41,82,America West Arena
+1995,NBA,POR,POR,WC,PC,3,6,C1,Portland Trail Blazers,3064,1537,8145,7952,26,15,18,23,44,38,82,Rose Garden Arena
+1995,NBA,SAC,SAC,WC,PC,5,8,C1,Sacramento Kings,2971,1759,8163,8385,26,15,13,28,39,43,82,ARCO Arena (II)
+1995,NBA,SAS,SAS,WC,MW,1,2,CS,San Antonio Spurs,3148,1663,8477,7960,33,8,26,15,59,23,82,Alamodome
+1995,NBA,SEA,SEA,WC,PC,1,1,F,Seattle Supersonics,3074,1843,8572,7933,38,3,26,15,64,18,82,KeyArena at Seattle Center
+1995,NBA,TOR,TOR,EC,CD,8,14,,Toronto Raptors,3084,1412,7994,8610,15,26,6,35,21,61,82,SkyDome
+1995,NBA,UTA,UTA,WC,MW,2,3,CF,Utah Jazz,3129,1769,8404,7864,34,7,21,20,55,27,82,Delta Center
+1995,NBA,VAN,MEM,WC,MW,7,14,,Vancouver Grizzlies,2772,1446,7362,8180,10,31,5,36,15,67,82,General Motors Place
+1995,NBA,WSB,WAS,EC,AT,4,10,,Washington Bullets,3202,1511,8408,8321,25,16,14,27,39,43,82,US Airways Arena
+1996,NBA,ATL,ATL,EC,CD,2,4,CS,Atlanta Hawks,2812,1491,7774,7328,36,5,20,21,56,26,82,Omni Coliseum
+1996,NBA,BOS,BOS,EC,AT,7,15,,Boston Celtics,3066,1649,8248,8849,11,30,4,37,15,67,82,FleetCenter
+1996,NBA,CHH,NOH,EC,CD,3,6,C1,Charlotte Hornets,2988,1541,8108,7955,30,11,24,17,54,28,82,Charlotte Coliseum
+1996,NBA,CHI,CHI,EC,CD,1,1,NC,Chicago Bulls,3277,1381,8458,7572,39,2,30,11,69,13,82,United Center
+1996,NBA,CLE,CLE,EC,CD,5,9,,Cleveland Cavaliers,2704,1282,7173,7022,25,16,17,24,42,40,82,Gund Arena
+1996,NBA,DAL,DAL,WC,MW,4,11,,Dallas Mavericks,2813,1375,7431,7952,14,27,10,31,24,58,82,Reunion Arena
+1996,NBA,DEN,DEN,WC,MW,5,12,,Denver Nuggets,2934,1516,8020,8535,12,29,9,32,21,61,82,McNichols Sports Arena
+1996,NBA,DET,DET,EC,CD,3,5,C1,Detroit Pistons,2827,1487,7723,7293,30,11,24,17,54,28,82,The Palace of Auburn Hills
+1996,NBA,GSW,GSW,WC,PC,7,10,,Golden State Warriors,2997,1696,8171,8557,18,23,12,29,30,52,82,San Jose Arena
+1996,NBA,HOU,HOU,WC,MW,2,3,CF,Houston Rockets,3037,1503,8248,7881,30,11,27,14,57,25,82,The Summit
+1996,NBA,IND,IND,EC,CD,6,10,,Indiana Pacers,2851,1687,7819,7739,21,20,18,23,39,43,82,Market Square Arena
+1996,NBA,LAC,LAC,WC,PC,5,8,C1,Los Angeles Clippers,2989,1517,7969,8162,21,20,15,26,36,46,82,Los Angeles Memorial Sports Arena
+1996,NBA,LAL,LAL,WC,PC,2,4,CS,Los Angeles Lakers,3018,1613,8200,7850,31,10,25,16,56,26,82,Great Western Forum
+1996,NBA,MIA,MIA,EC,AT,1,2,CF,Miami Heat,2822,1454,7776,7326,29,12,32,9,61,21,82,Miami Arena
+1996,NBA,MIL,MIL,EC,CD,7,11,,Milwaukee Bucks,2967,1560,7818,7973,20,21,13,28,33,49,82,Bradley Center
+1996,NBA,MIN,MIN,WC,MW,3,6,C1,Minnesota Timberwolves,2937,1637,7882,8003,25,16,15,26,40,42,82,Target Center
+1996,NBA,NJN,NJN,EC,AT,5,13,,New Jersey Nets,2994,1502,7974,8348,16,25,10,31,26,56,82,Continental Airlines Arena
+1996,NBA,NYK,NYK,EC,AT,2,3,CS,New York Knicks,2882,1585,7819,7563,31,10,26,15,57,25,82,Madison Square Garden (IV)
+1996,NBA,ORL,ORL,EC,AT,3,7,C1,Orlando Magic,2839,1474,7719,7748,26,15,19,22,45,37,82,Orlando Arena
+1996,NBA,PHI,PHI,EC,AT,6,14,,Philadelphia 76ers,3003,1776,8215,8751,11,30,11,30,22,60,82,CoreStates Center
+1996,NBA,PHO,PHO,WC,PC,4,7,C1,Phoenix Suns,3143,1618,8431,8377,25,16,15,26,40,42,82,America West Arena
+1996,NBA,POR,POR,WC,PC,3,5,C1,Portland Trail Blazers,3000,1613,8114,7772,29,12,20,21,49,33,82,Rose Garden Arena
+1996,NBA,SAC,SAC,WC,PC,6,9,,Sacramento Kings,3000,1494,7908,8185,22,19,12,29,34,48,82,ARCO Arena (II)
+1996,NBA,SAS,SAS,WC,MW,6,13,,San Antonio Spurs,2827,1386,7418,8064,12,29,8,33,20,62,82,Alamodome
+1996,NBA,SEA,SEA,WC,PC,1,2,CS,Seattle Supersonics,2995,1725,8274,7644,31,10,26,15,57,25,82,KeyArena at Seattle Center
+1996,NBA,TOR,TOR,EC,CD,8,12,,Toronto Raptors,2897,1446,7829,8085,18,23,12,29,30,52,82,SkyDome
+1996,NBA,UTA,UTA,WC,MW,1,1,F,Utah Jazz,3131,1858,8454,7733,38,3,26,15,64,18,82,Delta Center
+1996,NBA,VAN,MEM,WC,MW,7,14,,Vancouver Grizzlies,2819,1230,7313,8152,8,33,6,35,14,68,82,General Motors Place
+1996,NBA,WSB,WAS,EC,AT,4,8,C1,Washington Bullets,3208,1400,8147,8014,25,16,19,22,44,38,82,Capital Centre
+1997,NBA,ATL,ATL,EC,CD,4,5,C1,Atlanta Hawks,2887,1749,7860,7572,29,12,21,20,50,32,82,Georgia Dome
+1997,NBA,BOS,BOS,EC,AT,6,12,,Boston Celtics,3012,1425,7864,8079,24,17,12,29,36,46,82,FleetCenter
+1997,NBA,CHH,NOH,EC,CD,3,4,CS,Charlotte Hornets,2968,1641,7923,7759,32,9,19,22,51,31,82,Charlotte Coliseum
+1997,NBA,CHI,CHI,EC,CD,1,1,NC,Chicago Bulls,3064,1492,7931,7348,37,4,25,16,62,20,82,United Center
+1997,NBA,CLE,CLE,EC,CD,5,6,C1,Cleveland Cavaliers,2817,1653,7585,7361,27,14,20,21,47,35,82,Gund Arena
+1997,NBA,DAL,DAL,WC,MW,5,10,,Dallas Mavericks,2882,1308,7494,7995,13,28,7,34,20,62,82,Reunion Arena
+1997,NBA,DEN,DEN,WC,MW,7,14,,Denver Nuggets,2677,1658,7300,8266,9,32,2,39,11,71,82,McNichols Sports Arena
+1997,NBA,DET,DET,EC,CD,6,11,,Detroit Pistons,2862,1704,7721,7592,25,16,12,29,37,45,82,The Palace of Auburn Hills
+1997,NBA,GSW,GSW,WC,PC,6,12,,Golden State Warriors,2845,1358,7237,7985,12,29,7,34,19,63,82,The Arena in Oakland
+1997,NBA,HOU,HOU,WC,MW,4,8,C1,Houston Rockets,2946,1634,8099,8161,24,17,17,24,41,41,82,The Summit
+1997,NBA,IND,IND,EC,CD,2,3,CF,Indiana Pacers,2921,1631,7874,7375,32,9,26,15,58,24,82,Market Square Arena
+1997,NBA,LAC,LAC,WC,PC,7,13,,Los Angeles Clippers,2930,1480,7865,8469,11,30,6,35,17,65,82,Los Angeles Memorial Sports Arena
+1997,NBA,LAL,LAL,WC,PC,1,3,CF,Los Angeles Lakers,3146,1863,8652,8017,33,8,28,13,61,21,82,Great Western Forum
+1997,NBA,MIA,MIA,EC,AT,1,2,C1,Miami Heat,2850,1539,7787,7383,30,11,25,16,55,27,82,Miami Arena
+1997,NBA,MIL,MIL,EC,CD,7,13,,Milwaukee Bucks,2918,1663,7748,7905,21,20,15,26,36,46,82,Bradley Center
+1997,NBA,MIN,MIN,WC,MW,3,7,C1,Minnesota Timberwolves,3157,1673,8290,8232,26,15,19,22,45,37,82,Target Center
+1997,NBA,NJN,NJN,EC,AT,2,8,C1,New Jersey Nets,3055,1750,8170,8041,26,15,17,24,43,39,82,Continental Airlines Arena
+1997,NBA,NYK,NYK,EC,AT,2,7,CS,New York Knicks,2864,1399,7509,7307,28,13,15,26,43,39,82,Madison Square Garden (IV)
+1997,NBA,ORL,ORL,EC,AT,5,10,,Orlando Magic,2771,1552,7387,7475,24,17,17,24,41,41,82,Orlando Arena
+1997,NBA,PHI,PHI,EC,AT,7,14,,Philadelphia 76ers,2837,1734,7651,7847,19,22,12,29,31,51,82,CoreStates Center
+1997,NBA,PHO,PHO,WC,PC,3,4,C1,Phoenix Suns,3138,1459,8166,7741,30,11,26,15,56,26,82,America West Arena
+1997,NBA,POR,POR,WC,PC,4,6,C1,Portland Trail Blazers,2885,1640,7734,7619,26,15,20,21,46,36,82,Rose Garden Arena
+1997,NBA,SAC,SAC,WC,PC,5,9,,Sacramento Kings,2957,1440,7637,8095,21,20,6,35,27,55,82,ARCO Arena (II)
+1997,NBA,SAS,SAS,WC,MW,2,5,CS,San Antonio Spurs,2898,1489,7587,7260,31,10,25,16,56,26,82,Alamodome
+1997,NBA,SEA,SEA,WC,PC,1,2,CS,Seattle Supersonics,3052,1521,8246,7658,35,6,26,15,61,21,82,KeyArena at Seattle Center
+1997,NBA,TOR,TOR,EC,CD,8,15,,Toronto Raptors,2965,1479,7781,8541,9,32,7,34,16,66,82,SkyDome
+1997,NBA,UTA,UTA,WC,MW,1,1,F,Utah Jazz,2993,2044,8279,7743,36,5,26,15,62,20,82,Delta Center
+1997,NBA,VAN,MEM,WC,MW,6,11,,Vancouver Grizzlies,3006,1586,7923,8522,14,27,5,36,19,63,82,General Motors Place
+1997,NBA,WAS,WAS,EC,AT,4,9,,Washington Wizards,3080,1489,7969,7921,24,17,18,23,42,40,82,MCI Center
+1998,NBA,ATL,ATL,EC,CD,2,4,CS,Atlanta Hawks,1539,1040,4315,4170,16,9,15,10,31,19,50,Georgia Dome
+1998,NBA,BOS,BOS,EC,AT,5,12,,Boston Celtics,1816,745,4650,4743,10,15,9,16,19,31,50,FleetCenter
+1998,NBA,CHH,NOH,EC,CD,5,9,,Charlotte Hornets,1671,1034,4644,4649,16,9,10,15,26,24,50,Charlotte Coliseum
+1998,NBA,CHI,CHI,EC,CD,8,15,,Chicago Bulls,1539,840,4095,4568,8,17,5,20,13,37,50,United Center
+1998,NBA,CLE,CLE,EC,CD,7,11,,Cleveland Cavaliers,1562,1016,4322,4408,15,10,7,18,22,28,50,Gund Arena
+1998,NBA,DAL,DAL,WC,MW,5,11,,Dallas Mavericks,1749,881,4581,4701,15,10,4,21,19,31,50,Reunion Arena
+1998,NBA,DEN,DEN,WC,MW,6,12,,Denver Nuggets,1681,1010,4674,5004,12,13,2,23,14,36,50,McNichols Sports Arena
+1998,NBA,DET,DET,EC,CD,3,5,C1,Detroit Pistons,1660,950,4518,4347,17,8,12,13,29,21,50,The Palace of Auburn Hills
+1998,NBA,GSW,GSW,WC,PC,6,10,,Golden State Warriors,1730,794,4416,4541,13,12,8,17,21,29,50,The Arena in Oakland
+1998,NBA,HOU,HOU,WC,MW,3,5,C1,Houston Rockets,1755,865,4711,4595,19,6,12,13,31,19,50,Compaq Center
+1998,NBA,IND,IND,EC,CD,1,2,CF,Indiana Pacers,1731,977,4733,4546,18,7,15,10,33,17,50,Market Square Arena
+1998,NBA,LAC,LAC,WC,PC,7,13,,Los Angeles Clippers,1711,883,4519,4960,6,19,3,22,9,41,50,Los Angeles Memorial Sports Arena
+1998,NBA,LAL,LAL,WC,PC,2,4,CS,Los Angeles Lakers,1841,1027,4950,4799,18,7,13,12,31,19,50,Great Western Forum
+1998,NBA,MIA,MIA,EC,AT,1,1,C1,Miami Heat,1616,928,4449,4201,18,7,15,10,33,17,50,Miami Arena
+1998,NBA,MIL,MIL,EC,CD,4,7,C1,Milwaukee Bucks,1753,847,4584,4501,17,8,11,14,28,22,50,Bradley Center
+1998,NBA,MIN,MIN,WC,MW,4,8,C1,Minnesota Timberwolves,1838,849,4647,4628,18,7,7,18,25,25,50,Target Center
+1998,NBA,NJN,NJN,EC,AT,7,14,,New Jersey Nets,1691,962,4569,4758,12,13,4,21,16,34,50,Continental Airlines Arena
+1998,NBA,NYK,NYK,EC,AT,4,8,F,New York Knicks,1610,892,4320,4269,19,6,8,17,27,23,50,Madison Square Garden (IV)
+1998,NBA,ORL,ORL,EC,AT,1,3,C1,Orlando Magic,1687,876,4473,4343,21,4,12,13,33,17,50,Orlando Arena
+1998,NBA,PHI,PHI,EC,AT,3,6,CS,Philadelphia 76ers,1656,1073,4483,4380,17,8,11,14,28,22,50,First Union Center
+1998,NBA,PHO,PHO,WC,PC,3,7,C1,Phoenix Suns,1797,924,4779,4666,15,10,12,13,27,23,50,America West Arena
+1998,NBA,POR,POR,WC,PC,1,2,CF,Portland Trail Blazers,1747,1002,4742,4424,22,3,13,12,35,15,50,Rose Garden Arena
+1998,NBA,SAC,SAC,WC,PC,3,6,C1,Sacramento Kings,1918,883,5009,5030,16,9,11,14,27,23,50,ARCO Arena (II)
+1998,NBA,SAS,SAS,WC,MW,1,1,NC,San Antonio Spurs,1740,988,4640,4237,21,4,16,9,37,13,50,Alamodome
+1998,NBA,SEA,SEA,WC,PC,5,9,,Seattle Supersonics,1756,922,4743,4797,17,8,8,17,25,25,50,KeyArena at Seattle Center
+1998,NBA,TOR,TOR,EC,CD,6,10,,Toronto Raptors,1660,1011,4557,4639,14,11,9,16,23,27,50,SkyDome
+1998,NBA,UTA,UTA,WC,MW,1,3,CS,Utah Jazz,1684,1158,4666,4340,22,3,15,10,37,13,50,Delta Center
+1998,NBA,VAN,MEM,WC,MW,7,14,,Vancouver Grizzlies,1643,1009,4443,4876,7,18,1,24,8,42,50,General Motors Place
+1998,NBA,WAS,WAS,EC,AT,6,13,,Washington Wizards,1768,845,4560,4672,13,12,5,20,18,32,50,MCI Center
+1999,NBA,ATL,ATL,EC,CD,7,14,,Atlanta Hawks,3000,1477,7735,8176,21,20,7,34,28,54,82,Philips Arena
+1999,NBA,BOS,BOS,EC,AT,5,10,,Boston Celtics,3054,1621,8146,8208,26,15,9,32,35,47,82,FleetCenter
+1999,NBA,CHH,NOH,EC,CD,2,4,C1,Charlotte Hornets,2935,1863,8072,7853,30,11,19,22,49,33,82,Charlotte Coliseum
+1999,NBA,CHI,CHI,EC,CD,8,15,,Chicago Bulls,2565,1482,6952,7723,12,29,5,36,17,65,82,United Center
+1999,NBA,CLE,CLE,EC,CD,6,11,,Cleveland Cavaliers,2977,1653,7950,8237,22,19,10,31,32,50,82,Gund Arena
+1999,NBA,DAL,DAL,WC,MW,4,9,,Dallas Mavericks,3195,1407,8316,8363,22,19,18,23,40,42,82,Reunion Arena
+1999,NBA,DEN,DEN,WC,MW,5,10,,Denver Nuggets,3057,1531,8115,8289,25,16,10,31,35,47,82,Pepsi Center
+1999,NBA,DET,DET,EC,CD,4,7,C1,Detroit Pistons,3044,1956,8483,8365,27,14,15,26,42,40,82,The Palace of Auburn Hills
+1999,NBA,GSW,GSW,WC,PC,6,13,,Golden State Warriors,2996,1497,7834,8512,12,29,7,34,19,63,82,The Arena in Oakland
+1999,NBA,HOU,HOU,WC,MW,6,11,,Houston Rockets,3001,1573,8156,8227,22,19,12,29,34,48,82,Compaq Center
+1999,NBA,IND,IND,EC,CD,1,1,F,Indiana Pacers,3047,1629,8306,7929,36,5,20,21,56,26,82,Conseco Fieldhouse
+1999,NBA,LAC,LAC,WC,PC,7,14,,Los Angeles Clippers,2877,1363,7546,8491,10,31,5,36,15,67,82,Staples Center
+1999,NBA,LAL,LAL,WC,PC,1,1,NC,Los Angeles Lakers,3137,1649,8267,7566,36,5,31,10,67,15,82,Staples Center
+1999,NBA,MIA,MIA,EC,AT,1,2,CS,Miami Heat,2974,1345,7739,7484,33,8,19,22,52,30,82,AmericanAirlines Arena
+1999,NBA,MIL,MIL,EC,CD,4,8,C1,Milwaukee Bucks,3174,1558,8300,8282,23,18,19,22,42,40,82,Bradley Center
+1999,NBA,MIN,MIN,WC,MW,3,6,C1,Minnesota Timberwolves,3226,1379,8079,7872,26,15,24,17,50,32,82,Target Center
+1999,NBA,NJN,NJN,EC,AT,6,12,,New Jersey Nets,2979,1601,8036,8121,22,19,9,32,31,51,82,Continental Airlines Arena
+1999,NBA,NYK,NYK,EC,AT,2,3,CF,New York Knicks,2897,1410,7555,7435,33,8,17,24,50,32,82,Madison Square Garden (IV)
+1999,NBA,ORL,ORL,EC,AT,4,9,,Orlando Magic,3169,1574,8206,8150,26,15,15,26,41,41,82,TD Waterhouse Centre
+1999,NBA,PHI,PHI,EC,AT,3,5,CS,Philadelphia 76ers,2993,1577,7771,7661,29,12,20,21,49,33,82,First Union Center
+1999,NBA,PHO,PHO,WC,PC,3,5,CS,Phoenix Suns,3093,1467,8111,7683,32,9,21,20,53,29,82,America West Arena
+1999,NBA,POR,POR,WC,PC,2,3,CF,Portland Trail Blazers,3021,1542,7991,7466,30,11,29,12,59,23,82,Rose Garden Arena
+1999,NBA,SAC,SAC,WC,PC,5,8,C1,Sacramento Kings,3276,1521,8607,8368,30,11,14,27,44,38,82,ARCO Arena (II)
+1999,NBA,SAS,SAS,WC,MW,2,4,C1,San Antonio Spurs,2952,1652,7886,7399,31,10,22,19,53,29,82,Alamodome
+1999,NBA,SEA,SEA,WC,PC,4,7,C1,Seattle Supersonics,3108,1363,8125,8047,24,17,21,20,45,37,82,KeyArena at Seattle Center
+1999,NBA,TOR,TOR,EC,CD,3,6,C1,Toronto Raptors,2980,1583,7968,7981,26,15,19,22,45,37,82,Air Canada Centre
+1999,NBA,UTA,UTA,WC,MW,1,2,CS,Utah Jazz,2962,1661,7914,7548,31,10,24,17,55,27,82,Delta Center
+1999,NBA,VAN,MEM,WC,MW,7,12,,Vancouver Grizzlies,2892,1594,7702,8163,12,29,10,31,22,60,82,General Motors Place
+1999,NBA,WAS,WAS,EC,AT,7,13,,Washington Wizards,3010,1566,7921,8190,17,24,12,29,29,53,82,MCI Center
+2000,NBA,ATL,ATL,EC,CD,7,13,,Atlanta Hawks,2876,1374,7459,7886,18,23,7,34,25,57,82,Philips Arena
+2000,NBA,BOS,BOS,EC,AT,5,9,,Boston Celtics,2773,1621,7759,7934,20,21,16,25,36,46,82,FleetCenter
+2000,NBA,CHH,NOH,EC,CD,3,6,CS,Charlotte Hornets,2800,1599,7539,7367,28,13,18,23,46,36,82,Charlotte Coliseum
+2000,NBA,CHI,CHI,EC,CD,8,15,,Chicago Bulls,2721,1410,7181,7927,10,31,5,36,15,67,82,United Center
+2000,NBA,CLE,CLE,EC,CD,6,11,,Cleveland Cavaliers,2890,1561,7561,7909,20,21,10,31,30,52,82,Gund Arena
+2000,NBA,DAL,DAL,WC,MW,2,5,CS,Dallas Mavericks,3085,1552,8239,7888,28,13,25,16,53,29,82,Reunion Arena
+2000,NBA,DEN,DEN,WC,MW,6,11,,Denver Nuggets,2979,1448,7918,8120,29,12,11,30,40,42,82,Pepsi Center
+2000,NBA,DET,DET,EC,CD,5,10,,Detroit Pistons,2919,1610,7837,7976,18,23,14,27,32,50,82,The Palace of Auburn Hills
+2000,NBA,GSW,GSW,WC,PC,7,14,,Golden State Warriors,2937,1428,7584,8326,11,30,6,35,17,65,82,The Arena in Oakland
+2000,NBA,HOU,HOU,WC,MW,5,9,,Houston Rockets,2943,1582,7972,7784,24,17,21,20,45,37,82,Compaq Center
+2000,NBA,IND,IND,EC,CD,4,8,C1,Indiana Pacers,2828,1539,7591,7607,26,15,15,26,41,41,82,Conseco Fieldhouse
+2000,NBA,LAC,LAC,WC,PC,6,12,,Los Angeles Clippers,2896,1429,7581,7818,22,19,9,32,31,51,82,Staples Center
+2000,NBA,LAL,LAL,WC,PC,1,2,NC,Los Angeles Lakers,3109,1594,8251,7974,31,10,25,16,56,26,82,Staples Center
+2000,NBA,MIA,MIA,EC,AT,2,3,C1,Miami Heat,2694,1423,7289,7101,29,12,21,20,50,32,82,AmericanAirlines Arena
+2000,NBA,MIL,MIL,EC,CD,1,2,CF,Milwaukee Bucks,3112,1474,8260,7942,31,10,21,20,52,30,82,Bradley Center
+2000,NBA,MIN,MIN,WC,MW,4,8,C1,Minnesota Timberwolves,3148,1364,7982,7871,30,11,17,24,47,35,82,Target Center
+2000,NBA,NJN,NJN,EC,AT,6,12,,New Jersey Nets,2781,1629,7552,7966,18,23,8,33,26,56,82,Continental Airlines Arena
+2000,NBA,NYK,NYK,EC,AT,3,4,C1,New York Knicks,2755,1374,7275,7059,30,11,18,23,48,34,82,Madison Square Garden (IV)
+2000,NBA,ORL,ORL,EC,AT,4,7,C1,Orlando Magic,3013,1476,7992,7911,26,15,17,24,43,39,82,TD Waterhouse Centre
+2000,NBA,PHI,PHI,EC,AT,1,1,F,Philadelphia 76ers,2902,1697,7763,7412,29,12,27,14,56,26,82,First Union Center
+2000,NBA,PHO,PHO,WC,PC,3,6,C1,Phoenix Suns,2944,1490,7710,7529,31,10,20,21,51,31,82,America West Arena
+2000,NBA,POR,POR,WC,PC,4,7,C1,Portland Trail Blazers,3004,1447,7824,7480,28,13,22,19,50,32,82,Rose Garden Arena
+2000,NBA,SAC,SAC,WC,PC,2,3,CS,Sacramento Kings,3132,1600,8343,7866,33,8,22,19,55,27,82,ARCO Arena (II)
+2000,NBA,SAS,SAS,WC,MW,1,1,CF,San Antonio Spurs,2884,1673,7886,7250,33,8,25,16,58,24,82,Alamodome
+2000,NBA,SEA,SEA,WC,PC,5,10,,Seattle Supersonics,3029,1454,7978,7976,26,15,18,23,44,38,82,KeyArena at Seattle Center
+2000,NBA,TOR,TOR,EC,CD,2,5,CS,Toronto Raptors,3048,1482,8007,7822,27,14,20,21,47,35,82,Air Canada Centre
+2000,NBA,UTA,UTA,WC,MW,2,4,C1,Utah Jazz,2960,1714,7959,7574,28,13,25,16,53,29,82,Delta Center
+2000,NBA,VAN,MEM,WC,MW,7,13,,Vancouver Grizzlies,2870,1457,7522,7992,15,26,8,33,23,59,82,General Motors Place
+2000,NBA,WAS,WAS,EC,AT,7,14,,Washington Wizards,2833,1704,7645,8192,12,29,7,34,19,63,82,MCI Center
+2001,NBA,ATL,ATL,EC,CD,6,12,,Atlanta Hawks,2901,1486,7711,8058,23,18,10,31,33,49,82,Philips Arena
+2001,NBA,BOS,BOS,EC,AT,2,3,CF,Boston Celtics,2852,1498,7901,7720,27,14,22,19,49,33,82,FleetCenter
+2001,NBA,CHH,NOH,EC,CD,2,4,CS,Charlotte Hornets,2893,1568,7700,7621,21,20,23,18,44,38,82,Charlotte Coliseum
+2001,NBA,CHI,CHI,EC,CD,8,15,,Chicago Bulls,2811,1413,7335,8035,14,27,7,34,21,61,82,United Center
+2001,NBA,CLE,CLE,EC,CD,7,14,,Cleveland Cavaliers,2948,1529,7812,8085,20,21,9,32,29,53,82,Gund Arena
+2001,NBA,DAL,DAL,WC,MW,2,4,CS,Dallas Mavericks,3200,1608,8629,8280,30,11,27,14,57,25,82,American Airlines Center
+2001,NBA,DEN,DEN,WC,MW,6,12,,Denver Nuggets,2915,1306,7559,8036,20,21,7,34,27,55,82,Pepsi Center
+2001,NBA,DET,DET,EC,CD,1,2,CS,Detroit Pistons,2845,1478,7735,7560,26,15,24,17,50,32,82,The Palace of Auburn Hills
+2001,NBA,GSW,GSW,WC,PC,7,14,,Golden State Warriors,2998,1693,8009,8452,14,27,7,34,21,61,82,The Arena in Oakland
+2001,NBA,HOU,HOU,WC,MW,5,11,,Houston Rockets,2837,1402,7572,7973,18,23,10,31,28,54,82,Compaq Center
+2001,NBA,IND,IND,EC,CD,3,8,C1,Indiana Pacers,2935,1663,7938,7916,25,16,17,24,42,40,82,Conseco Fieldhouse
+2001,NBA,LAC,LAC,WC,PC,5,9,,Los Angeles Clippers,2970,1498,7846,7884,25,16,14,27,39,43,82,Staples Center
+2001,NBA,LAL,LAL,WC,PC,2,3,NC,Los Angeles Lakers,3150,1494,8304,7720,34,7,24,17,58,24,82,Staples Center
+2001,NBA,MEM,MEM,WC,MW,7,13,,Memphis Grizzlies,2851,1334,7372,7982,15,26,8,33,23,59,82,Pyramid Arena
+2001,NBA,MIA,MIA,EC,AT,6,11,,Miami Heat,2801,1236,7150,7276,18,23,18,23,36,46,82,AmericanAirlines Arena
+2001,NBA,MIL,MIL,EC,CD,5,9,,Milwaukee Bucks,3041,1321,7996,8014,25,16,16,25,41,41,82,Bradley Center
+2001,NBA,MIN,MIN,WC,MW,3,5,C1,Minnesota Timberwolves,3175,1399,8145,7868,29,12,21,20,50,32,82,Target Center
+2001,NBA,NJN,NJN,EC,AT,1,1,F,New Jersey Nets,3042,1402,7889,7548,33,8,19,22,52,30,82,Continental Airlines Arena
+2001,NBA,NYK,NYK,EC,AT,7,13,,New York Knicks,2817,1406,7514,7841,19,22,11,30,30,52,82,Madison Square Garden (IV)
+2001,NBA,ORL,ORL,EC,AT,3,5,C1,Orlando Magic,3087,1446,8240,8111,27,14,17,24,44,38,82,TD Waterhouse Centre
+2001,NBA,PHI,PHI,EC,AT,4,6,C1,Philadelphia 76ers,2804,1639,7461,7330,22,19,21,20,43,39,82,First Union Center
+2001,NBA,PHO,PHO,WC,PC,6,10,,Phoenix Suns,3097,1250,7802,7858,23,18,13,28,36,46,82,America West Arena
+2001,NBA,POR,POR,WC,PC,3,6,C1,Portland Trail Blazers,3004,1451,7925,7680,30,11,19,22,49,33,82,Rose Garden Arena
+2001,NBA,SAC,SAC,WC,PC,1,1,CF,Sacramento Kings,3267,1618,8578,7954,36,5,25,16,61,21,82,ARCO Arena (II)
+2001,NBA,SAS,SAS,WC,MW,1,2,CS,San Antonio Spurs,2913,1668,7932,7423,32,9,26,15,58,24,82,Alamodome
+2001,NBA,SEA,SEA,WC,PC,4,7,C1,Seattle Supersonics,3131,1263,8014,7766,26,15,19,22,45,37,82,KeyArena at Seattle Center
+2001,NBA,TOR,TOR,EC,CD,3,7,C1,Toronto Raptors,2919,1269,7494,7530,24,17,18,23,42,40,82,Air Canada Centre
+2001,NBA,UTA,UTA,WC,MW,4,8,C1,Utah Jazz,2869,1853,7871,7798,25,16,19,22,44,38,82,Delta Center
+2001,NBA,WAS,WAS,EC,AT,5,10,,Washington Wizards,2938,1428,7609,7724,22,19,15,26,37,45,82,MCI Center
+2002,NBA,ATL,ATL,EC,CD,5,11,,Atlanta Hawks,2859,1594,7714,8006,26,15,9,32,35,47,82,Philips Arena
+2002,NBA,BOS,BOS,EC,AT,3,6,CS,Boston Celtics,2700,1480,7599,7631,25,16,19,22,44,38,82,FleetCenter
+2002,NBA,CHI,CHI,EC,CD,6,12,,Chicago Bulls,2991,1455,7786,8207,27,14,3,38,30,52,82,United Center
+2002,NBA,CLE,CLE,EC,CD,8,15,,Cleveland Cavaliers,2850,1502,7495,8284,14,27,3,38,17,65,82,Gund Arena
+2002,NBA,DAL,DAL,WC,MW,1,3,CF,Dallas Mavericks,3161,1486,8444,7806,33,8,27,14,60,22,82,American Airlines Center
+2002,NBA,DEN,DEN,WC,MW,7,14,,Denver Nuggets,2689,1294,6901,7580,13,28,4,37,17,65,82,Pepsi Center
+2002,NBA,DET,DET,EC,CD,1,1,CF,Detroit Pistons,2700,1559,7492,7190,30,11,20,21,50,32,82,The Palace of Auburn Hills
+2002,NBA,GSW,GSW,WC,PC,6,11,,Golden State Warriors,3061,1853,8400,8493,24,17,14,27,38,44,82,The Arena in Oakland
+2002,NBA,HOU,HOU,WC,MW,5,9,,Houston Rockets,2840,1569,7688,7567,28,13,15,26,43,39,82,Compaq Center
+2002,NBA,IND,IND,EC,CD,2,3,C1,Indiana Pacers,2911,1739,7940,7654,32,9,16,25,48,34,82,Conseco Fieldhouse
+2002,NBA,LAC,LAC,WC,PC,7,13,,Los Angeles Clippers,2835,1633,7693,8031,16,25,11,30,27,55,82,Staples Center
+2002,NBA,LAL,LAL,WC,PC,2,5,CS,Los Angeles Lakers,3091,1562,8230,8039,31,10,19,22,50,32,82,Staples Center
+2002,NBA,MEM,MEM,WC,MW,6,12,,Memphis Grizzlies,3049,1430,7995,8260,20,21,8,33,28,54,82,Pyramid Arena
+2002,NBA,MIA,MIA,EC,AT,7,13,,Miami Heat,2688,1292,7016,7430,16,25,9,32,25,57,82,AmericanAirlines Arena
+2002,NBA,MIL,MIL,EC,CD,4,7,C1,Milwaukee Bucks,3045,1483,8158,8139,25,16,17,24,42,40,82,Bradley Center
+2002,NBA,MIN,MIN,WC,MW,3,4,C1,Minnesota Timberwolves,3172,1406,8046,7876,33,8,18,23,51,31,82,Target Center
+2002,NBA,NJN,NJN,EC,AT,1,2,F,New Jersey Nets,2906,1662,7820,7392,33,8,16,25,49,33,82,Continental Airlines Arena
+2002,NBA,NOH,NOH,EC,CD,3,5,C1,New Orleans Hornets,2914,1467,7699,7526,29,12,18,23,47,35,82,New Orleans Arena
+2002,NBA,NYK,NYK,EC,AT,5,10,,New York Knicks,2967,1320,7860,7971,24,17,13,28,37,45,82,Madison Square Garden (IV)
+2002,NBA,ORL,ORL,EC,AT,4,8,C1,Orlando Magic,2947,1616,8078,8067,26,15,16,25,42,40,82,TD Waterhouse Centre
+2002,NBA,PHI,PHI,EC,AT,2,4,CS,Philadelphia 76ers,2975,1746,7941,7752,25,16,23,18,48,34,82,First Union Center
+2002,NBA,PHO,PHO,WC,PC,4,8,C1,Phoenix Suns,3005,1430,7834,7741,30,11,14,27,44,38,82,America West Arena
+2002,NBA,POR,POR,WC,PC,2,6,C1,Portland Trail Blazers,2987,1450,7803,7589,27,14,23,18,50,32,82,Rose Garden Arena
+2002,NBA,SAC,SAC,WC,PC,1,2,CS,Sacramento Kings,3242,1367,8342,7809,35,6,24,17,59,23,82,ARCO Arena (II)
+2002,NBA,SAS,SAS,WC,MW,1,1,NC,San Antonio Spurs,2908,1591,7856,7412,33,8,27,14,60,22,82,SBC Center
+2002,NBA,SEA,SEA,WC,PC,5,10,,Seattle Supersonics,2887,1325,7555,7565,25,16,15,26,40,42,82,KeyArena at Seattle Center
+2002,NBA,TOR,TOR,EC,CD,7,14,,Toronto Raptors,2847,1350,7453,7934,15,26,9,32,24,58,82,Air Canada Centre
+2002,NBA,UTA,UTA,WC,MW,4,7,C1,Utah Jazz,2894,1750,7762,7566,29,12,18,23,47,35,82,Delta Center
+2002,NBA,WAS,WAS,EC,AT,5,9,,Washington Wizards,2816,1617,7502,7585,23,18,14,27,37,45,82,MCI Center
+2003,NBA,ATL,ATL,EC,CD,7,12,,Atlanta Hawks,2829,1534,7611,7992,18,23,10,31,28,54,82,Philips Arena
+2003,NBA,BOS,BOS,EC,AT,4,8,C1,Boston Celtics,2843,1572,7811,7930,19,22,17,24,36,46,82,FleetCenter
+2003,NBA,CHI,CHI,EC,CD,8,14,,Chicago Bulls,2798,1330,7355,7876,14,27,9,32,23,59,82,United Center
+2003,NBA,CLE,CLE,EC,CD,5,9,,Cleveland Cavaliers,2922,1528,7619,7834,23,18,12,29,35,47,82,Gund Arena
+2003,NBA,DAL,DAL,WC,MW,3,5,C1,Dallas Mavericks,3322,1475,8626,8262,36,5,16,25,52,30,82,American Airlines Center
+2003,NBA,DEN,DEN,WC,MW,6,8,C1,Denver Nuggets,2993,1655,7972,7884,29,12,14,27,43,39,82,Pepsi Center
+2003,NBA,DET,DET,EC,CD,2,3,NC,Detroit Pistons,2747,1561,7388,6909,31,10,23,18,54,28,82,The Palace of Auburn Hills
+2003,NBA,GSW,GSW,WC,PC,4,11,,Golden State Warriors,2875,1470,7649,7709,27,14,10,31,37,45,82,The Arena in Oakland
+2003,NBA,HOU,HOU,WC,MW,5,7,C1,Houston Rockets,2738,1371,7362,7220,27,14,18,23,45,37,82,Toyota Center
+2003,NBA,IND,IND,EC,CD,1,1,CF,Indiana Pacers,2753,1538,7493,7021,34,7,27,14,61,21,82,Conseco Fieldhouse
+2003,NBA,LAC,LAC,WC,PC,7,14,,Los Angeles Clippers,2817,1808,7771,8147,18,23,10,31,28,54,82,Staples Center
+2003,NBA,LAL,LAL,WC,PC,1,2,F,Los Angeles Lakers,3028,1631,8052,7732,34,7,22,19,56,26,82,Staples Center
+2003,NBA,MEM,MEM,WC,MW,4,6,C1,Memphis Grizzlies,2963,1557,7930,7730,31,10,19,22,50,32,82,Pyramid Arena
+2003,NBA,MIA,MIA,EC,AT,2,4,CS,Miami Heat,2729,1459,7402,7359,29,12,13,28,42,40,82,AmericanAirlines Arena
+2003,NBA,MIL,MIL,EC,CD,3,6,C1,Milwaukee Bucks,2970,1698,8039,7952,27,14,14,27,41,41,82,Bradley Center
+2003,NBA,MIN,MIN,WC,MW,1,1,CF,Minnesota Timberwolves,3033,1361,7753,7303,31,10,27,14,58,24,82,Target Center
+2003,NBA,NJN,NJN,EC,AT,1,2,CS,New Jersey Nets,2813,1398,7401,7196,28,13,19,22,47,35,82,Continental Airlines Arena
+2003,NBA,NOH,NOH,EC,CD,3,5,C1,New Orleans Hornets,2772,1454,7529,7537,25,16,16,25,41,41,82,New Orleans Arena
+2003,NBA,NYK,NYK,EC,AT,3,7,C1,New York Knicks,2881,1374,7542,7663,23,18,16,25,39,43,82,Madison Square Garden (IV)
+2003,NBA,ORL,ORL,EC,AT,7,15,,Orlando Magic,2904,1474,7711,8287,11,30,10,31,21,61,82,TD Waterhouse Centre
+2003,NBA,PHI,PHI,EC,AT,5,11,,Philadelphia 76ers,2682,1512,7215,7419,21,20,12,29,33,49,82,Wachovia Center
+2003,NBA,PHO,PHO,WC,PC,6,13,,Phoenix Suns,2958,1392,7723,8030,18,23,11,30,29,53,82,America West Arena
+2003,NBA,POR,POR,WC,PC,3,10,,Portland Trail Blazers,2898,1263,7440,7544,25,16,16,25,41,41,82,Rose Garden Arena
+2003,NBA,SAC,SAC,WC,PC,2,4,CS,Sacramento Kings,3103,1626,8433,8022,34,7,21,20,55,27,82,ARCO Arena (II)
+2003,NBA,SAS,SAS,WC,MW,2,3,CS,San Antonio Spurs,2842,1409,7501,6909,33,8,24,17,57,25,82,SBC Center
+2003,NBA,SEA,SEA,WC,PC,4,12,,Seattle Supersonics,2939,1363,7964,8016,21,20,16,25,37,45,82,KeyArena at Seattle Center
+2003,NBA,TOR,TOR,EC,CD,6,10,,Toronto Raptors,2654,1237,7006,7253,18,23,15,26,33,49,82,Air Canada Centre
+2003,NBA,UTA,UTA,WC,MW,7,9,,Utah Jazz,2690,1639,7271,7371,28,13,14,27,42,40,82,Delta Center
+2003,NBA,WAS,WAS,EC,AT,6,13,,Washington Wizards,2758,1579,7528,7990,17,24,8,33,25,57,82,MCI Center
+2004,NBA,ATL,ATL,EC,SE,5,15,,Atlanta Hawks,2942,1417,7605,8401,9,32,4,37,13,69,82,Philips Arena
+2004,NBA,BOS,BOS,EC,AT,1,3,C1,Boston Celtics,3046,1775,8304,8233,27,14,18,23,45,37,82,FleetCenter
+2004,NBA,CHA,CHA,EC,SE,4,14,,Charlotte Bobcats,2961,1487,7729,8220,14,27,4,37,18,64,82,Charlotte Coliseum
+2004,NBA,CHI,CHI,EC,CD,2,4,C1,Chicago Bulls,2849,1536,7745,7658,27,14,20,21,47,35,82,United Center
+2004,NBA,CLE,CLE,EC,CD,4,9,,Cleveland Cavaliers,2990,1634,7914,7849,29,12,13,28,42,40,82,Gund Arena
+2004,NBA,DAL,DAL,WC,SW,2,4,CS,Dallas Mavericks,3058,1826,8405,7934,29,12,29,12,58,24,82,American Airlines Center
+2004,NBA,DEN,DEN,WC,NW,2,7,C1,Denver Nuggets,3038,1765,8161,7995,31,10,18,23,49,33,82,Pepsi Center
+2004,NBA,DET,DET,EC,CD,1,2,F,Detroit Pistons,2851,1588,7653,7336,32,9,22,19,54,28,82,The Palace of Auburn Hills
+2004,NBA,GSW,GSW,WC,PC,4,12,,Golden State Warriors,3029,1412,8094,8271,20,21,14,27,34,48,82,Oakland Arena
+2004,NBA,HOU,HOU,WC,SW,3,5,C1,Houston Rockets,2846,1551,7796,7465,26,15,25,16,51,31,82,Toyota Center
+2004,NBA,IND,IND,EC,CD,3,6,CS,Indiana Pacers,2668,1748,7626,7564,25,16,19,22,44,38,82,Conseco Fieldhouse
+2004,NBA,LAC,LAC,WC,PC,3,10,,Los Angeles Clippers,2924,1770,7849,7912,27,14,10,31,37,45,82,Staples Center
+2004,NBA,LAL,LAL,WC,PC,4,11,,Los Angeles Lakers,2895,1661,8095,8338,22,19,12,29,34,48,82,Staples Center
+2004,NBA,MEM,MEM,WC,SW,4,8,C1,Memphis Grizzlies,2802,1526,7661,7473,26,15,19,22,45,37,82,FedExForum
+2004,NBA,MIA,MIA,EC,SE,1,1,CF,Miami Heat,3097,1658,8327,7792,35,6,24,17,59,23,82,AmericanAirlines Arena
+2004,NBA,MIL,MIL,EC,CD,5,13,,Milwaukee Bucks,2964,1720,7973,8218,23,18,7,34,30,52,82,Bradley Center
+2004,NBA,MIN,MIN,WC,NW,3,9,,Minnesota Timberwolves,3045,1449,7934,7815,24,17,20,21,44,38,82,Target Center
+2004,NBA,NJN,NJN,EC,AT,3,8,C1,New Jersey Nets,2753,1555,7496,7619,24,17,18,23,42,40,82,Continental Airlines Arena
+2004,NBA,NOH,NOH,WC,SW,5,15,,New Orleans Hornets,2718,1401,7252,7832,11,30,7,34,18,64,82,New Orleans Arena
+2004,NBA,NYK,NYK,EC,AT,4,12,,New York Knicks,2978,1580,7977,8177,22,19,11,30,33,49,82,Madison Square Garden (IV)
+2004,NBA,ORL,ORL,EC,SE,3,10,,Orlando Magic,3034,1772,8160,8344,24,17,12,29,36,46,82,TD Waterhouse Centre
+2004,NBA,PHI,PHI,EC,AT,2,7,C1,Philadelphia 76ers,2946,1731,8128,8189,25,16,18,23,43,39,82,Wachovia Center
+2004,NBA,PHO,PHO,WC,PC,1,1,CF,Phoenix Suns,3351,1556,9054,8470,31,10,31,10,62,20,82,America West Arena
+2004,NBA,POR,POR,WC,NW,4,13,,Portland Trail Blazers,2896,1409,7621,7949,18,23,9,32,27,55,82,Rose Garden Arena
+2004,NBA,SAC,SAC,WC,PC,2,6,C1,Sacramento Kings,3203,1577,8505,8328,30,11,20,21,50,32,82,ARCO Arena (II)
+2004,NBA,SAS,SAS,WC,SW,1,2,NC,San Antonio Spurs,2923,1535,7888,7248,38,3,21,20,59,23,82,SBC Center
+2004,NBA,SEA,SEA,WC,NW,1,3,CS,Seattle Supersonics,2882,1683,8113,7925,26,15,26,15,52,30,82,KeyArena at Seattle Center
+2004,NBA,TOR,TOR,EC,AT,4,11,,Toronto Raptors,2952,1626,8178,8311,22,19,11,30,33,49,82,Air Canada Centre
+2004,NBA,UTA,UTA,WC,NW,5,14,,Utah Jazz,2828,1719,7625,7975,18,23,8,33,26,56,82,Delta Center
+2004,NBA,WAS,WAS,EC,SE,2,5,CS,Washington Wizards,2966,1795,8241,8268,29,12,16,25,45,37,82,MCI Center
+2005,NBA,ATL,ATL,EC,SE,4,14,,Atlanta Hawks,2946,1656,7972,8362,18,23,8,33,26,56,82,Philips Arena
+2005,NBA,BOS,BOS,EC,AT,3,11,,Boston Celtics,2951,1664,8033,8159,21,20,12,29,33,49,82,TD Banknorth Garden
+2005,NBA,CHA,CHA,EC,SE,4,13,,Charlotte Bobcats,2961,1593,7943,8271,17,24,9,32,26,56,82,Charlotte Bobcats Arena
+2005,NBA,CHI,CHI,EC,CD,3,7,C1,Chicago Bulls,3004,1452,8020,7968,21,20,20,21,41,41,82,United Center
+2005,NBA,CLE,CLE,EC,CD,2,4,CS,Cleveland Cavaliers,2908,1689,8002,7819,31,10,19,22,50,32,82,Gund Arena
+2005,NBA,DAL,DAL,WC,SW,2,4,F,Dallas Mavericks,2948,1818,8130,7632,34,7,26,15,60,22,82,American Airlines Center
+2005,NBA,DEN,DEN,WC,NW,1,3,C1,Denver Nuggets,3078,1721,8227,8208,26,15,18,23,44,38,82,Pepsi Center
+2005,NBA,DET,DET,EC,CD,1,1,CF,Detroit Pistons,2983,1418,7941,7394,37,4,27,14,64,18,82,The Palace of Auburn Hills
+2005,NBA,GSW,GSW,WC,PC,5,13,,Golden State Warriors,2939,1573,8076,8187,21,20,13,28,34,48,82,Oakland Arena
+2005,NBA,HOU,HOU,WC,SW,5,12,,Houston Rockets,2708,1502,7387,7517,15,26,19,22,34,48,82,Toyota Center
+2005,NBA,IND,IND,EC,CD,3,6,C1,Indiana Pacers,2786,1591,7699,7544,27,14,14,27,41,41,82,Conseco Fieldhouse
+2005,NBA,LAC,LAC,WC,PC,2,6,CS,Los Angeles Clippers,2993,1694,7970,7841,27,14,20,21,47,35,82,Staples Center
+2005,NBA,LAL,LAL,WC,PC,3,7,C1,Los Angeles Lakers,2992,1618,8154,7949,27,14,18,23,45,37,82,Staples Center
+2005,NBA,MEM,MEM,WC,SW,3,5,C1,Memphis Grizzlies,2746,1476,7558,7255,30,11,19,22,49,33,82,FedExForum
+2005,NBA,MIA,MIA,EC,SE,1,2,NC,Miami Heat,3039,1616,8191,7874,31,10,21,20,52,30,82,AmericanAirlines Arena
+2005,NBA,MIL,MIL,EC,CD,5,8,C1,Milwaukee Bucks,2976,1561,8020,8105,25,16,15,26,40,42,82,Bradley Center
+2005,NBA,MIN,MIN,WC,NW,4,14,,Minnesota Timberwolves,2888,1436,7522,7676,24,17,9,32,33,49,82,Target Center
+2005,NBA,NJN,NJN,EC,AT,1,3,CS,New Jersey Nets,2778,1658,7691,7579,29,12,20,21,49,33,82,Continental Airlines Arena
+2005,NBA,NOK,NOH,WC,SW,4,10,,NO/Oklahoma City Hornets,2831,1649,7611,7842,24,17,14,27,38,44,82,Ford Center
+2005,NBA,NYK,NYK,EC,AT,5,15,,New York Knicks,2822,1878,7842,8367,15,26,8,33,23,59,82,Madison Square Garden (IV)
+2005,NBA,ORL,ORL,EC,SE,3,10,,Orlando Magic,2911,1663,7784,7872,26,15,10,31,36,46,82,TD Waterhouse Centre
+2005,NBA,PHI,PHI,EC,AT,2,9,,Philadelphia 76ers,3001,1770,8147,8307,23,18,15,26,38,44,82,Wachovia Center
+2005,NBA,PHO,PHO,WC,PC,1,2,CF,Phoenix Suns,3430,1189,8886,8431,31,10,23,18,54,28,82,America West Arena
+2005,NBA,POR,POR,WC,NW,5,15,,Portland Trail Blazers,2791,1339,7285,8060,15,26,6,35,21,61,82,Rose Garden Arena
+2005,NBA,SAC,SAC,WC,PC,4,8,C1,Sacramento Kings,2954,1704,8106,7980,27,14,17,24,44,38,82,ARCO Arena (II)
+2005,NBA,SAS,SAS,WC,SW,1,1,CS,San Antonio Spurs,2993,1327,7837,7278,34,7,29,12,63,19,82,SBC Center
+2005,NBA,SEA,SEA,WC,NW,3,11,,Seattle Supersonics,3077,1652,8411,8659,22,19,13,28,35,47,82,KeyArena at Seattle Center
+2005,NBA,TOR,TOR,EC,AT,4,12,,Toronto Raptors,3013,1653,8287,8532,15,26,12,29,27,55,82,Air Canada Centre
+2005,NBA,UTA,UTA,WC,NW,2,9,,Utah Jazz,2744,1774,7573,7789,22,19,19,22,41,41,82,Delta Center
+2005,NBA,WAS,WAS,EC,SE,2,5,C1,Washington Wizards,2975,1889,8336,8184,27,14,15,26,42,40,82,MCI Center
+2006,NBA,ATL,ATL,EC,SE,5,13,,Atlanta Hawks,2831,1677,7680,8070,18,23,12,29,30,52,82,Philips Arena
+2006,NBA,BOS,BOS,EC,AT,5,15,,Boston Celtics,2858,1670,7857,8137,12,29,12,29,24,58,82,TD Banknorth Garden
+2006,NBA,CHA,CHA,EC,SE,4,11,,Charlotte Bobcats,2960,1568,7945,8252,20,21,13,28,33,49,82,Charlotte Bobcats Arena
+2006,NBA,CHI,CHI,EC,CD,3,5,CS,Chicago Bulls,3046,1528,8100,7689,31,10,18,23,49,33,82,United Center
+2006,NBA,CLE,CLE,EC,CD,2,2,F,Cleveland Cavaliers,2978,1484,7934,7620,30,11,20,21,50,32,82,Quicken Loans Arena
+2006,NBA,DAL,DAL,WC,SW,1,1,C1,Dallas Mavericks,3010,1646,8201,7609,36,5,31,10,67,15,82,American Airlines Center
+2006,NBA,DEN,DEN,WC,NW,2,6,C1,Denver Nuggets,3164,1827,8639,8506,23,18,22,19,45,37,82,Pepsi Center
+2006,NBA,DET,DET,EC,CD,1,1,CF,Detroit Pistons,2942,1539,7872,7531,26,15,27,14,53,29,82,The Palace of Auburn Hills
+2006,NBA,GSW,GSW,WC,PC,2,8,CS,Golden State Warriors,3261,1515,8737,8765,30,11,12,29,42,40,82,Oracle Arena
+2006,NBA,HOU,HOU,WC,SW,3,5,C1,Houston Rockets,2906,1436,7953,7555,28,13,24,17,52,30,82,Toyota Center
+2006,NBA,IND,IND,EC,CD,4,9,,Indiana Pacers,2872,1615,7840,8040,22,19,13,28,35,47,82,Conseco Fieldhouse
+2006,NBA,LAC,LAC,WC,PC,4,9,,Los Angeles Clippers,2880,1769,7843,7881,25,16,15,26,40,42,82,Staples Center
+2006,NBA,LAL,LAL,WC,PC,2,7,C1,Los Angeles Lakers,3103,1660,8474,8480,25,16,17,24,42,40,82,Staples Center
+2006,NBA,MEM,MEM,WC,SW,5,15,,Memphis Grizzlies,2998,1835,8331,8753,14,27,8,33,22,60,82,FedExForum
+2006,NBA,MIA,MIA,EC,SE,1,4,C1,Miami Heat,2919,1393,7759,7834,27,14,17,24,44,38,82,AmericanAirlines Arena
+2006,NBA,MIL,MIL,EC,CD,5,14,,Milwaukee Bucks,3121,1406,8172,8531,18,23,10,31,28,54,82,Bradley Center
+2006,NBA,MIN,MIN,WC,NW,3,13,,Minnesota Timberwolves,2997,1499,7877,8178,20,21,12,29,32,50,82,Target Center
+2006,NBA,NJN,NJN,EC,AT,2,6,CS,New Jersey Nets,2913,1566,8001,8064,24,17,17,24,41,41,82,Continental Airlines Arena
+2006,NBA,NOK,NOH,WC,SW,4,10,,NO/Oklahoma City Hornets,2971,1436,7833,7962,24,17,15,26,39,43,82,Ford Center
+2006,NBA,NYK,NYK,EC,AT,4,12,,New York Knicks,2903,1714,7994,8228,19,22,14,27,33,49,82,Madison Square Garden (IV)
+2006,NBA,ORL,ORL,EC,SE,3,8,C1,Orlando Magic,2875,1679,7771,7707,25,16,15,26,40,42,82,Amway Arena
+2006,NBA,PHI,PHI,EC,AT,3,10,,Philadelphia 76ers,2932,1637,7785,8033,21,20,14,27,35,47,82,Wachovia Center
+2006,NBA,PHO,PHO,WC,PC,1,2,CS,Phoenix Suns,3388,1476,9037,8438,33,8,28,13,61,21,82,US Airways Center
+2006,NBA,POR,POR,WC,NW,3,12,,Portland Trail Blazers,2874,1543,7717,8069,18,23,14,27,32,50,82,Rose Garden Arena
+2006,NBA,SAC,SAC,WC,PC,5,11,,Sacramento Kings,2941,1891,8303,8451,20,21,13,28,33,49,82,ARCO Arena (II)
+2006,NBA,SAS,SAS,WC,SW,2,3,NC,San Antonio Spurs,2999,1486,8079,7388,31,10,27,14,58,24,82,AT&T Center
+2006,NBA,SEA,SEA,WC,NW,5,14,,Seattle Supersonics,3047,1511,8130,8367,20,21,11,30,31,51,82,KeyArena at Seattle Center
+2006,NBA,TOR,TOR,EC,AT,1,3,C1,Toronto Raptors,3032,1562,8157,8076,30,11,17,24,47,35,82,Air Canada Centre
+2006,NBA,UTA,UTA,WC,NW,1,4,CF,Utah Jazz,3069,1830,8322,8087,31,10,20,21,51,31,82,EnergySolutions Arena
+2006,NBA,WAS,WAS,EC,SE,2,7,C1,Washington Wizards,3070,1855,8556,8598,26,15,15,26,41,41,82,Verizon Center
+2007,NBA,ATL,ATL,EC,SE,3,8,C1,Atlanta Hawks,2975,1720,8054,8203,25,16,12,29,37,45,82,Philips Arena
+2007,NBA,BOS,BOS,EC,AT,1,1,NC,Boston Celtics,2986,1677,8245,7404,35,6,31,10,66,16,82,TD Banknorth Garden
+2007,NBA,CHA,CHA,EC,SE,4,12,,Charlotte Bobcats,2960,1510,7959,8318,21,20,11,30,32,50,82,Charlotte Bobcats Arena
+2007,NBA,CHI,CHI,EC,CD,4,11,,Chicago Bulls,2987,1533,7981,8234,20,21,13,28,33,49,82,United Center
+2007,NBA,CLE,CLE,EC,CD,2,4,CS,Cleveland Cavaliers,2937,1477,7903,7932,27,14,18,23,45,37,82,Quicken Loans Arena
+2007,NBA,DAL,DAL,WC,SW,4,7,C1,Dallas Mavericks,3025,1690,8234,7862,34,7,17,24,51,31,82,American Airlines Center
+2007,NBA,DEN,DEN,WC,NW,2,8,C1,Denver Nuggets,3307,1891,9074,8770,33,8,17,24,50,32,82,Pepsi Center
+2007,NBA,DET,DET,EC,CD,1,2,CF,Detroit Pistons,2999,1507,7992,7386,34,7,25,16,59,23,82,The Palace of Auburn Hills
+2007,NBA,GSW,GSW,WC,PC,3,9,,Golden State Warriors,3403,1538,9105,8924,27,14,21,20,48,34,82,Oracle Arena
+2007,NBA,HOU,HOU,WC,SW,3,5,C1,Houston Rockets,3003,1342,7931,7547,31,10,24,17,55,27,82,Toyota Center
+2007,NBA,IND,IND,EC,CD,3,9,,Indiana Pacers,3102,1568,8527,8642,21,20,15,26,36,46,82,Conseco Fieldhouse
+2007,NBA,LAC,LAC,WC,PC,5,12,,Los Angeles Clippers,2820,1702,7692,8288,13,28,10,31,23,59,82,Staples Center
+2007,NBA,LAL,LAL,WC,PC,1,1,F,Los Angeles Lakers,3248,1746,8904,8309,30,11,27,14,57,25,82,Staples Center
+2007,NBA,MEM,MEM,WC,SW,5,14,,Memphis Grizzlies,3060,1517,8257,8766,14,27,8,33,22,60,82,FedExForum
+2007,NBA,MIA,MIA,EC,SE,5,15,,Miami Heat,2808,1384,7491,8200,9,32,6,35,15,67,82,AmericanAirlines Arena
+2007,NBA,MIL,MIL,EC,CD,5,13,,Milwaukee Bucks,3026,1452,7956,8521,19,22,7,34,26,56,82,Bradley Center
+2007,NBA,MIN,MIN,WC,NW,4,13,,Minnesota Timberwolves,3076,1246,7839,8395,15,26,7,34,22,60,82,Target Center
+2007,NBA,NJN,NJN,EC,AT,4,10,,New Jersey Nets,2856,1647,7857,8272,21,20,13,28,34,48,82,Izod Center
+2007,NBA,NOH,NOH,WC,SW,1,2,CS,New Orleans Hornets,3164,1312,8270,7837,30,11,26,15,56,26,82,New Orleans Arena
+2007,NBA,NYK,NYK,EC,AT,5,14,,New York Knicks,2967,1524,7948,8490,15,26,8,33,23,59,82,Madison Square Garden (IV)
+2007,NBA,ORL,ORL,EC,SE,1,3,CS,Orlando Magic,3058,1650,8567,8119,25,16,27,14,52,30,82,Amway Arena
+2007,NBA,PHI,PHI,EC,AT,3,7,C1,Philadelphia 76ers,3056,1509,7923,7889,22,19,18,23,40,42,82,Wachovia Center
+2007,NBA,PHO,PHO,WC,PC,2,6,C1,Phoenix Suns,3392,1548,9026,8612,30,11,25,16,55,27,82,US Airways Center
+2007,NBA,POR,POR,WC,NW,3,10,,Portland Trail Blazers,2935,1412,7820,7900,28,13,13,28,41,41,82,Rose Garden Arena
+2007,NBA,SAC,SAC,WC,PC,4,11,,Sacramento Kings,3043,1812,8408,8593,26,15,12,29,38,44,82,ARCO Arena (II)
+2007,NBA,SAS,SAS,WC,SW,2,3,CF,San Antonio Spurs,2938,1350,7820,7427,34,7,22,19,56,26,82,AT&T Center
+2007,NBA,SEA,SEA,WC,NW,5,15,,Seattle Supersonics,3125,1436,7999,8717,13,28,7,34,20,62,82,KeyArena at Seattle Center
+2007,NBA,TOR,TOR,EC,AT,2,6,C1,Toronto Raptors,3148,1347,8215,7977,25,16,16,25,41,41,82,Air Canada Centre
+2007,NBA,UTA,UTA,WC,NW,1,4,CS,Utah Jazz,3279,1745,8710,8146,37,4,17,24,54,28,82,EnergySolutions Arena
+2007,NBA,WAS,WAS,EC,SE,2,5,C1,Washington Wizards,2986,1557,8104,8131,25,16,18,23,43,39,82,Verizon Center
+2008,NBA,ATL,ATL,EC,SE,2,4,CS,Atlanta Hawks,2956,1537,8046,7917,31,10,16,25,47,35,82,Philips Arena
+2008,NBA,BOS,BOS,EC,AT,1,2,CS,Boston Celtics,3075,1587,8275,7659,35,6,27,14,62,20,82,TD Banknorth Garden
+2008,NBA,CHA,CHA,EC,SE,4,10,,Charlotte Bobcats,2866,1455,7677,7781,23,18,12,29,35,47,82,Time Warner Cable Arena
+2008,NBA,CHI,CHI,EC,CD,2,7,C1,Chicago Bulls,3126,1633,8378,8401,28,13,13,28,41,41,82,United Center
+2008,NBA,CLE,CLE,EC,CD,1,1,CF,Cleveland Cavaliers,3022,1523,8223,7491,39,2,27,14,66,16,82,Quicken Loans Arena
+2008,NBA,DAL,DAL,WC,SW,3,6,CS,Dallas Mavericks,3128,1516,8343,8181,32,9,18,23,50,32,82,American Airlines Center
+2008,NBA,DEN,DEN,WC,NW,1,2,CF,Denver Nuggets,3058,1891,8555,8275,33,8,21,20,54,28,82,Pepsi Center
+2008,NBA,DET,DET,EC,CD,3,8,C1,Detroit Pistons,2981,1388,7727,7767,21,20,18,23,39,43,82,The Palace of Auburn Hills
+2008,NBA,GSW,GSW,WC,PC,3,10,,Golden State Warriors,3231,1893,8905,9212,21,20,8,33,29,53,82,Oracle Arena
+2008,NBA,HOU,HOU,WC,SW,2,5,CS,Houston Rockets,2959,1531,8070,7742,33,8,20,21,53,29,82,Toyota Center
+2008,NBA,IND,IND,EC,CD,4,9,,Indiana Pacers,3220,1525,8617,8708,25,16,11,30,36,46,82,Conseco Fieldhouse
+2008,NBA,LAC,LAC,WC,PC,4,14,,Los Angeles Clippers,2955,1354,7799,8518,11,30,8,33,19,63,82,Staples Center
+2008,NBA,LAL,LAL,WC,PC,1,1,NC,Los Angeles Lakers,3307,1607,8768,8140,36,5,29,12,65,17,82,Staples Center
+2008,NBA,MEM,MEM,WC,SW,5,12,,Memphis Grizzlies,2865,1570,7698,8146,16,25,8,33,24,58,82,FedExForum
+2008,NBA,MIA,MIA,EC,SE,3,5,C1,Miami Heat,3034,1411,8061,8040,28,13,15,26,43,39,82,AmericanAirlines Arena
+2008,NBA,MIL,MIL,EC,CD,5,12,,Milwaukee Bucks,3009,1613,8142,8231,22,19,12,29,34,48,82,Bradley Center
+2008,NBA,MIN,MIN,WC,NW,4,11,,Minnesota Timberwolves,2986,1504,8019,8422,11,30,13,28,24,58,82,Target Center
+2008,NBA,NJN,NJN,EC,AT,3,11,,New Jersey Nets,2925,1542,8044,8244,19,22,15,26,34,48,82,Izod Center
+2008,NBA,NOH,NOH,WC,SW,4,7,C1,New Orleans Hornets,2911,1479,7857,7730,28,13,21,20,49,33,82,New Orleans Arena
+2008,NBA,NYK,NYK,EC,AT,5,14,,New York Knicks,3157,1490,8627,8841,20,21,12,29,32,50,82,Madison Square Garden (IV)
+2008,NBA,OKC,SEA,WC,NW,5,13,,Oklahoma City Thunder,2999,1626,7952,8452,15,26,8,33,23,59,82,Ford Center
+2008,NBA,ORL,ORL,EC,SE,1,3,F,Orlando Magic,2929,1611,8286,7737,32,9,27,14,59,23,82,Amway Arena
+2008,NBA,PHI,PHI,EC,AT,2,6,C1,Philadelphia 76ers,2997,1652,7987,7981,24,17,17,24,41,41,82,Wachovia Center
+2008,NBA,PHO,PHO,WC,PC,2,9,,Phoenix Suns,3373,1675,8974,8816,28,13,18,23,46,36,82,US Airways Center
+2008,NBA,POR,POR,WC,NW,2,4,C1,Portland Trail Blazers,3018,1521,8153,7715,34,7,20,21,54,28,82,Rose Garden Arena
+2008,NBA,SAC,SAC,WC,PC,5,15,,Sacramento Kings,2990,1682,8248,8966,11,30,6,35,17,65,82,ARCO Arena (II)
+2008,NBA,SAS,SAS,WC,SW,1,3,C1,San Antonio Spurs,3042,1249,7958,7650,28,13,26,15,54,28,82,AT&T Center
+2008,NBA,TOR,TOR,EC,AT,4,13,,Toronto Raptors,3054,1534,8121,8352,18,23,15,26,33,49,82,Air Canada Centre
+2008,NBA,UTA,UTA,WC,NW,3,8,C1,Utah Jazz,3143,1814,8492,8275,33,8,15,26,48,34,82,EnergySolutions Arena
+2008,NBA,WAS,WAS,EC,SE,5,15,,Washington Wizards,2994,1494,7877,8489,13,28,6,35,19,63,82,Verizon Center
+2009,NBA,ATL,ATL,EC,SE,2,0,CS,Atlanta Hawks,3181,1452,8338,7956,0,0,0,0,53,29,0,
+2009,NBA,BOS,BOS,EC,AT,1,0,F,Boston Celtics,3039,1559,8136,7836,0,0,0,0,50,32,0,
+2009,NBA,CHA,CHA,EC,SE,4,0,C1,Charlotte Bobcats,2858,1637,7813,7693,0,0,0,0,44,38,0,
+2009,NBA,CHI,CHI,EC,CD,3,0,C1,Chicago Bulls,3081,1479,7993,8127,0,0,0,0,41,41,0,
+2009,NBA,CLE,CLE,EC,CD,1,0,CS,Cleveland Cavaliers,3101,1569,8373,7838,0,0,0,0,61,21,0,
+2009,NBA,DAL,DAL,WC,SW,1,0,C1,Dallas Mavericks,3140,1526,8364,8141,0,0,0,0,55,27,0,
+2009,NBA,DEN,DEN,WC,NW,1,0,C1,Denver Nuggets,3124,1937,8729,8394,0,0,0,0,53,29,0,
+2009,NBA,DET,DET,EC,CD,5,0,,Detroit Pistons,2940,1455,7709,8128,0,0,0,0,27,55,0,
+2009,NBA,GSW,GSW,WC,PC,4,0,,Golden State Warriors,3329,1631,8922,9217,0,0,0,0,26,56,0,
+2009,NBA,HOU,HOU,WC,SW,3,0,,Houston Rockets,3094,1561,8395,8425,0,0,0,0,42,40,0,
+2009,NBA,IND,IND,EC,CD,4,0,,Indiana Pacers,3020,1564,8263,8510,0,0,0,0,32,50,0,
+2009,NBA,LAC,LAC,WC,PC,3,0,,Los Angeles Clippers,3002,1362,7849,8370,0,0,0,0,29,53,0,
+2009,NBA,LAL,LAL,WC,PC,1,0,NC,Los Angeles Lakers,3144,1519,8339,7952,0,0,0,0,57,25,0,
+2009,NBA,MEM,MEM,WC,SW,4,0,,Memphis Grizzlies,3223,1614,8404,8528,0,0,0,0,40,42,0,
+2009,NBA,MIA,MIA,EC,SE,3,0,C1,Miami Heat,2984,1452,7914,7727,0,0,0,0,47,35,0,
+2009,NBA,MIL,MIL,EC,CD,2,0,C1,Milwaukee Bucks,3050,1264,8009,7870,0,0,0,0,46,36,0,
+2009,NBA,MIN,MIN,WC,NW,5,0,,Minnesota Timberwolves,3106,1436,8051,8838,0,0,0,0,15,67,0,
+2009,NBA,NJN,NJN,EC,AT,5,0,,New Jersey Nets,2813,1572,7575,8323,0,0,0,0,12,70,0,
+2009,NBA,NOH,NOH,WC,SW,5,0,,New Orleans Hornets,3178,1293,8220,8422,0,0,0,0,37,45,0,
+2009,NBA,NYK,NYK,EC,AT,3,0,,New York Knicks,3127,1376,8373,8686,0,0,0,0,29,53,0,
+2009,NBA,OKC,SEA,WC,NW,4,0,C1,Oklahoma City Thunder,3063,1778,8322,8036,0,0,0,0,50,32,0,
+2009,NBA,ORL,ORL,EC,SE,1,0,CF,Orlando Magic,3005,1575,8426,7812,0,0,0,0,59,23,0,
+2009,NBA,PHI,PHI,EC,AT,4,0,,Philadelphia 76ers,3087,1366,8014,8334,0,0,0,0,27,55,0,
+2009,NBA,PHO,PHO,WC,PC,2,0,CF,Phoenix Suns,3339,1631,9039,8637,0,0,0,0,54,28,0,
+2009,NBA,POR,POR,WC,NW,3,0,C1,Portland Trail Blazers,2974,1606,8045,7774,0,0,0,0,50,32,0,
+2009,NBA,SAC,SAC,WC,PC,5,0,,Sacramento Kings,3144,1430,8200,8558,0,0,0,0,25,57,0,
+2009,NBA,SAS,SAS,WC,SW,2,0,CS,San Antonio Spurs,3150,1458,8312,7895,0,0,0,0,50,32,0,
+2009,NBA,TOR,TOR,EC,AT,2,0,,Toronto Raptors,3199,1618,8534,8680,0,0,0,0,40,42,0,
+2009,NBA,UTA,UTA,WC,NW,2,0,CS,Utah Jazz,3227,1654,8547,8109,0,0,0,0,53,29,0,
+2009,NBA,WAS,WAS,EC,SE,5,0,,Washington Wizards,3008,1444,7892,8284,0,0,0,0,26,56,0,
+2010,NBA,ATL,ATL,EC,SE,3,0,CS,Atlanta Hawks,2971,1346,7790,7857,0,0,0,0,44,38,0,
+2010,NBA,BOS,BOS,EC,AT,1,0,CS,Boston Celtics,3023,1459,7913,7473,0,0,0,0,56,26,0,
+2010,NBA,CHA,CHA,EC,SE,4,0,,Charlotte Bobcats,2873,1511,7650,7978,0,0,0,0,34,48,0,
+2010,NBA,CHI,CHI,EC,CD,1,0,CF,Chicago Bulls,3042,1492,8087,7487,0,0,0,0,62,20,0,
+2010,NBA,CLE,CLE,EC,CD,5,0,,Cleveland Cavaliers,2886,1546,7827,8566,0,0,0,0,19,63,0,
+2010,NBA,DAL,DAL,WC,SW,2,0,NC,Dallas Mavericks,3069,1437,8220,7873,0,0,0,0,57,25,0,
+2010,NBA,DEN,DEN,WC,NW,2,0,C1,Denver Nuggets,3145,1859,8811,8421,0,0,0,0,50,32,0,
+2010,NBA,DET,DET,EC,CD,4,0,,Detroit Pistons,3056,1367,7951,8246,0,0,0,0,30,52,0,
+2010,NBA,GSW,GSW,WC,PC,3,0,,Golden State Warriors,3251,1290,8477,8668,0,0,0,0,36,46,0,
+2010,NBA,HOU,HOU,WC,SW,5,0,,Houston Rockets,3170,1668,8685,8506,0,0,0,0,43,39,0,
+2010,NBA,IND,IND,EC,CD,2,0,C1,Indiana Pacers,3003,1592,8183,8271,0,0,0,0,37,45,0,
+2010,NBA,LAC,LAC,WC,PC,4,0,,Los Angeles Clippers,3015,1546,8089,8346,0,0,0,0,32,50,0,
+2010,NBA,LAL,LAL,WC,PC,1,0,CS,Los Angeles Lakers,3128,1541,8321,7820,0,0,0,0,57,25,0,
+2010,NBA,MEM,MEM,WC,SW,4,0,CS,Memphis Grizzlies,3200,1486,8195,8003,0,0,0,0,46,36,0,
+2010,NBA,MIA,MIA,EC,SE,1,0,F,Miami Heat,3031,1760,8369,7757,0,0,0,0,58,24,0,
+2010,NBA,MIL,MIL,EC,CD,3,0,,Milwaukee Bucks,2814,1423,7534,7603,0,0,0,0,35,47,0,
+2010,NBA,MIN,MIN,WC,NW,5,0,,Minnesota Timberwolves,3090,1519,8288,8832,0,0,0,0,17,65,0,
+2010,NBA,NJN,NJN,EC,AT,4,0,,New Jersey Nets,2918,1427,7722,8234,0,0,0,0,24,58,0,
+2010,NBA,NOH,NOH,WC,SW,3,0,C1,New Orleans Hornets,2944,1452,7784,7711,0,0,0,0,46,36,0,
+2010,NBA,NYK,NYK,EC,AT,2,0,C1,New York Knicks,3140,1689,8734,8670,0,0,0,0,42,40,0,
+2010,NBA,OKC,SEA,WC,NW,1,0,CF,Oklahoma City Thunder,3066,1977,8596,8285,0,0,0,0,55,27,0,
+2010,NBA,ORL,ORL,EC,SE,2,0,C1,Orlando Magic,2956,1453,8135,7687,0,0,0,0,52,30,0,
+2010,NBA,PHI,PHI,EC,AT,3,0,C1,Philadelphia 76ers,3125,1426,8119,7996,0,0,0,0,41,41,0,
+2010,NBA,PHO,PHO,WC,PC,2,0,,Phoenix Suns,3219,1472,8611,8684,0,0,0,0,40,42,0,
+2010,NBA,POR,POR,WC,NW,3,0,C1,Portland Trail Blazers,2951,1476,7896,7771,0,0,0,0,48,34,0,
+2010,NBA,SAC,SAC,WC,PC,5,0,,Sacramento Kings,3134,1455,8151,8589,0,0,0,0,24,58,0,
+2010,NBA,SAS,SAS,WC,SW,1,0,C1,San Antonio Spurs,3148,1521,8502,8034,0,0,0,0,61,21,0,
+2010,NBA,TOR,TOR,EC,AT,5,0,,Toronto Raptors,3144,1491,8124,8639,0,0,0,0,22,60,0,
+2010,NBA,UTA,UTA,WC,NW,4,0,,Utah Jazz,3064,1590,8153,8303,0,0,0,0,39,43,0,
+2010,NBA,WAS,WAS,EC,SE,5,0,,Washington Wizards,3048,1489,7977,8584,0,0,0,0,23,59,0,
+2011,NBA,ATL,ATL,EC,SE,2,0,C1,Atlanta Hawks,2429,1025,6375,6148,0,0,0,0,40,26,0,
+2011,NBA,BOS,BOS,EC,AT,1,0,CF,Boston Celtics,2341,1017,6062,5896,0,0,0,0,39,27,0,
+2011,NBA,CHA,CHA,EC,SE,5,0,,Charlotte Bobcats,2193,1090,5739,6657,0,0,0,0,7,59,0,
+2011,NBA,CHI,CHI,EC,CD,1,0,C1,Chicago Bulls,2467,1006,6359,5819,0,0,0,0,50,16,0,
+2011,NBA,CLE,CLE,EC,CD,5,0,,Cleveland Cavaliers,2261,1178,6140,6615,0,0,0,0,21,45,0,
+2011,NBA,DAL,DAL,WC,SW,3,0,C1,Dallas Mavericks,2398,1029,6322,6259,0,0,0,0,36,30,0,
+2011,NBA,DEN,DEN,WC,NW,2,0,C1,Denver Nuggets,2572,1293,6872,6682,0,0,0,0,38,28,0,
+2011,NBA,DET,DET,EC,CD,4,0,,Detroit Pistons,2291,1098,5997,6313,0,0,0,0,25,41,0,
+2011,NBA,GSW,GSW,WC,PC,4,0,,Golden State Warriors,2489,951,6453,6678,0,0,0,0,23,43,0,
+2011,NBA,HOU,HOU,WC,SW,4,0,,Houston Rockets,2489,1018,6474,6459,0,0,0,0,34,32,0,
+2011,NBA,IND,IND,EC,CD,2,0,CS,Indiana Pacers,2354,1349,6449,6231,0,0,0,0,42,24,0,
+2011,NBA,LAC,LAC,WC,PC,2,0,CS,Los Angeles Clippers,2439,1046,6438,6269,0,0,0,0,40,26,0,
+2011,NBA,LAL,LAL,WC,PC,1,0,CS,Los Angeles Lakers,2429,1202,6422,6328,0,0,0,0,41,25,0,
+2011,NBA,MEM,MEM,WC,SW,2,0,C1,Memphis Grizzlies,2425,1142,6269,6136,0,0,0,0,41,25,0,
+2011,NBA,MIA,MIA,EC,SE,1,0,NC,Miami Heat,2446,1238,6500,6105,0,0,0,0,46,20,0,
+2011,NBA,MIL,MIL,EC,CD,3,0,,Milwaukee Bucks,2502,1095,6535,6517,0,0,0,0,31,35,0,
+2011,NBA,MIN,MIN,WC,NW,5,0,,Minnesota Timberwolves,2355,1281,6464,6609,0,0,0,0,26,40,0,
+2011,NBA,NJN,NJN,EC,AT,5,0,,New Jersey Nets,2262,1113,6144,6539,0,0,0,0,22,44,0,
+2011,NBA,NOH,NOH,WC,SW,5,0,,New Orleans Hornets,2300,1057,5916,6164,0,0,0,0,21,45,0,
+2011,NBA,NYK,NYK,EC,AT,2,0,C1,New York Knicks,2365,1211,6458,6247,0,0,0,0,36,30,0,
+2011,NBA,OKC,SEA,WC,NW,1,0,F,Oklahoma City Thunder,2462,1406,6802,6398,0,0,0,0,47,19,0,
+2011,NBA,ORL,ORL,EC,SE,3,0,C1,Orlando Magic,2275,995,6215,6163,0,0,0,0,37,29,0,
+2011,NBA,PHI,PHI,EC,AT,3,0,CS,Philadelphia 76ers,2471,889,6180,5900,0,0,0,0,35,31,0,
+2011,NBA,PHO,PHO,WC,PC,3,0,,Phoenix Suns,2495,1058,6492,6508,0,0,0,0,33,33,0,
+2011,NBA,POR,POR,WC,NW,4,0,,Portland Trail Blazers,2402,1133,6415,6456,0,0,0,0,28,38,0,
+2011,NBA,SAC,SAC,WC,PC,5,0,,Sacramento Kings,2490,1127,6518,6893,0,0,0,0,22,44,0,
+2011,NBA,SAS,SAS,WC,SW,1,0,CF,San Antonio Spurs,2611,1067,6841,6368,0,0,0,0,50,16,0,
+2011,NBA,TOR,TOR,EC,AT,4,0,,Toronto Raptors,2268,1085,5986,6204,0,0,0,0,23,43,0,
+2011,NBA,UTA,UTA,WC,NW,3,0,C1,Utah Jazz,2523,1258,6577,6536,0,0,0,0,36,30,0,
+2011,NBA,WAS,WAS,EC,SE,4,0,,Washington Wizards,2414,1008,6180,6497,0,0,0,0,20,46,0,

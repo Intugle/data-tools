@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 from dotenv import load_dotenv
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from intugle.core.project import Project
@@ -37,7 +38,6 @@ class Settings(BaseSettings):
 
     DI_CONFIG: dict = load_model_configuration("DI", {})
     KI_CONFIG: dict = load_model_configuration("KI", {})
-    LP_CONFIG: dict = load_model_configuration("LP", {})
     BG_CONFIG: dict = load_model_configuration("BG", {})
 
     DI_MODEL_VERSION: str = "13052023"
@@ -94,7 +94,7 @@ class Settings(BaseSettings):
 
     # DATETIME
     DATE_TIME_FORMAT_LIMIT: int = 25
-    REMOVE_DATETIME_LP: bool = True
+    REMOVE_DATETIME_LP: bool = False
 
     L2_SAMPLE_LIMIT: int = 10
 
@@ -124,6 +124,12 @@ class Settings(BaseSettings):
     NETWORKX_GRAPH_MAX_DEPTH_COLUMN: int = 4
     NETWORKX_GRAPH_TOP_K_TABLE: int = 2
     NETWORKX_GRAPH_MAX_DEPTH_TABLE: int = 2
+
+    # Langfuse Observability Settings
+    LANGFUSE_ENABLED: bool = Field(default=False, description="Enable Langfuse tracing.")
+    LANGFUSE_PUBLIC_KEY: Optional[str] = Field(None, description="Public key for Langfuse.")
+    LANGFUSE_SECRET_KEY: Optional[str] = Field(None, description="Secret key for Langfuse.")
+    LANGFUSE_HOST: Optional[str] = Field("https://cloud.langfuse.com", description="Host for Langfuse.")
 
     model_config = SettingsConfigDict(
         env_file=f"{BASE_PATH}/.env",
