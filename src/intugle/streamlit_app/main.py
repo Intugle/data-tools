@@ -1031,9 +1031,9 @@ with st.sidebar:
             model = st.selectbox(
                 "Model",
                 [
-                    "claude-sonnet-4-5-20250929",
-                    "claude-haiku-4-5-20250929",
-                    "claude-opus-4-1-20250514",
+                    "claude-sonnet-4-5",
+                    "claude-haiku-4-5",
+                    "claude-opus-4-1",
                 ],
                 index=0,
                 help="Claude Sonnet 4.5: Best balance of intelligence, speed, and cost\nClaude Haiku 4.5: Fastest with near-frontier intelligence\nClaude Opus 4.1: Exceptional for specialized reasoning",

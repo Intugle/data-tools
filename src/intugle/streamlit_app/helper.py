@@ -772,6 +772,12 @@ def llm_ready_check() -> tuple[bool, str]:
             return False, "Gemini key missing. Please set **GEMINI_API_KEY** (or GOOGLE_API_KEY) in the sidebar."
         return True, ""
 
+    if provider == "anthropic":
+        key = _get_secret_env("ANTHROPIC_API_KEY")  # type: ignore[name-defined]
+        if not key:
+            return False, "Anthropic key missing. Please set **ANTHROPIC_API_KEY** in the sidebar."
+        return True, ""
+
     return False, f"Unknown provider '{provider}'."
 
 
