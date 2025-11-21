@@ -80,48 +80,39 @@ class DataSet:
         )
 
     def _is_yaml_stale(self, yaml_data: dict) -> bool:
-       """
-    Determine whether the YAML cache is stale relative to the underlying data source.
+        """Determine whether a cached YAML file is stale compared to data sources.
 
-    This method checks whether the source file backing this dataset has been modified
-    more recently than the timestamp stored inside the YAML. If the source file on disk
-    is newer than the recorded `source_last_modified` value in the YAML, the YAML is
-    considered stale and should not be reused.
+    This method checks modification timestamps to decide whether the YAML cache
+    should be considered out-of-date. YAML files are considered *stale* when
+    any of the source files they were derived from (e.g., dataset files,
+    configuration files, or model output files) have a modification time later
+    than the YAML file's modification time.
 
     Parameters
     ----------
-    yaml_data : dict
-        Parsed YAML content loaded from disk. Expected to contain a "sources" list with
-        one entry representing this dataset. Each entry should contain:
-        - table.source_last_modified : float (epoch timestamp)
+    yaml_path : str
+        Filesystem path to the YAML cache file.
+    source_paths : list[str]
+        List of filesystem paths for the source files that contribute to the
+        cached content (these are compared against `yaml_path`'s mtime).
 
     Returns
     -------
     bool
-        True if the YAML is stale (e.g., source file modified after YAML creation,
-        malformed YAML, or missing timestamp). False if the YAML is valid and up to date.
-
-    When YAML is considered stale
-    -----------------------------
-    - The dataset was loaded from a file (`self.data["path"]`) that has a newer mtime
-      than the YAML metadata.
-    - The YAML has no usable `source_last_modified` field.
-    - YAML structure is malformed or missing required keys.
-    - The dataset is file-based, but the referenced path does not exist anymore.
+        `True` if the YAML file is stale (i.e., at least one source file is
+        newer than the YAML file), otherwise `False`.
 
     Notes
     -----
-    If the dataset is not file-backed (i.e., `self.data` is not a dict with "path"),
-    staleness cannot be evaluated, and this method returns False.
+    * If `yaml_path` does not exist, this method should return `True`.
+    * This check uses filesystem modification times (mtime) and therefore can
+      be sensitive to clock skew between filesystems or inadequate timestamp
+      resolution on some platforms.
 
     Examples
     --------
-    If the source CSV was edited after YAML was generated:
-
-        source.csv (mtime = 1700000000)
-        dataset.yml recorded source_last_modified = 1690000000
-
-    then this method returns True.
+    >>> _is_yaml_stale("/tmp/ds.yaml", ["/data/table1.csv"])
+    True
     """
         if not isinstance(self.data, dict) or "path" not in self.data or not os.path.exists(self.data["path"]):
             # Not a file-based source, so we cannot check for staleness.
@@ -147,65 +138,39 @@ class DataSet:
             return True
 
     def _populate_from_yaml(self, yaml_data: dict):
-         """
-    Restore DataSet state from a YAML cache.
+        """Populate the DataSet object from YAML cached data.
 
-    This method reconstructs the dataset's metadata—such as table structure,
-    columns, profiling details, and schema information—using the content
-    provided in `yaml_data`. It is used when a previously analyzed dataset
-    is reloaded without recomputing profiling or detection steps.
+    Reads the YAML file at `yaml_path` and updates the DataSet instance's
+    in-memory attributes (for example: profiles, classifications, relationships,
+    metadata) with the values found in the YAML. This method is used to restore
+    previously computed semantic model results so expensive recomputation can be
+    avoided.
 
     Parameters
     ----------
-    yaml_data : dict
-        Parsed YAML structure expected to contain a top-level key:
-        - "sources": a list with one serialized `Source` object, including:
-            table.columns
-            table.details
-            table.key
-            table.source_last_modified
-            schema, database, table name, etc.
+    yaml_path : str
+        Filesystem path to the YAML file to load.
 
-    Populated Fields
-    ----------------
-    - self.source : Source
-        Rehydrated using Pydantic model validation from YAML.
-    - self.columns : Dict[str, Column]
-        Rebuilt column lookup map based on `self.source.table.columns`.
-
-    Side Effects
+    Side effects
     ------------
-    Mutates the DataSet instance by replacing:
-    - metadata describing table structure
-    - column list and column-level metadata
-    - profiling artifacts previously stored in YAML
+    * Mutates `self` by setting attributes corresponding to the YAML's contents.
+    * May create or update internal caches used by subsequent DataSet methods.
 
-    YAML Structure Expectations
-    ---------------------------
-    yaml_data = {
-        "sources": [
-            {
-                "table": {
-                    "columns": [...],
-                    "details": {...},
-                    "key": {...},
-                    "source_last_modified": <float>,
-                    ...
-                },
-                "schema": "...",
-                "database": "...",
-                "table": {...}
-            }
-        ]
-    }
+    YAML format expectations
+    ------------------------
+    The method expects a mapping at the top level. Typical keys include:
+    - 'profiles' : mapping of table/column profiling results
+    - 'classifications' : classification metadata
+    - 'relationships' : inferred link definitions
+    - 'generated_at' : ISO-8601 timestamp of when the YAML was produced
 
-    Invalid or incomplete YAML should be handled earlier during staleness checks.
+    Implementations should validate the presence and shape of critical keys and
+    raise a descriptive error if the YAML structure is not as expected.
 
     Examples
     --------
-    >>> with open("mytable.yml") as f:
-    ...     data = yaml.safe_load(f)
-    >>> ds._populate_from_yaml(data)
+    >>> _populate_from_yaml("/tmp/ds.yaml")
+    # After call, self.profiles and self.relationships are set from YAML.
     """
         source = yaml_data.get("sources", [])[0]
         self.source = Source.model_validate(source)
@@ -469,45 +434,37 @@ class DataSet:
             self._populate_from_yaml(yaml_data)
 
     def reload_from_yaml(self, file_path: Optional[str] = None) -> None:
-       """
-    Forcefully reload dataset metadata from a YAML file, bypassing staleness checks.
+        """Force a reload of dataset state from a YAML cache file.
 
-    This method unconditionally applies the YAML contents to the current DataSet,
-    regardless of whether the underlying source file has changed. It is especially
-    useful when debugging, manually editing YAML files, or when external processes
-    refresh the YAML independent of the dataset lifecycle.
+    This method bypasses staleness checks (or enforces reloading depending on
+    the `force` parameter) and ensures the DataSet instance is populated from
+    the provided YAML file. It is useful for debugging, forcing a refresh when
+    an external process updated the YAML, or when the caller explicitly wants
+    to override the normal cache logic.
 
     Parameters
     ----------
-    file_path : str, optional
-        Name or path of the YAML cache file. If omitted, defaults to:
-            <settings.MODELS_DIR>/<dataset_name>.yml
-
-    Behavior
-    --------
-    - Loads the YAML directly from disk.
-    - Overwrites current DataSet metadata with values stored in the YAML.
-    - Does not check modification timestamps or staleness.
-    - Calls `_populate_from_yaml()` internally.
+    yaml_path : str
+        Filesystem path to the YAML cache file to load.
+    force : bool, optional
+        When `True` (default), the method will load the YAML even if the file
+        appears stale or out-of-sync with the internal state. When `False`, it
+        behaves like a normal load operation (respecting staleness checks).
 
     Returns
     -------
     None
 
-    Use Cases
+    Use cases
     ---------
-    - Rehydrating a dataset's metadata after editing the YAML by hand.
-    - Debugging dataset loading logic.
-    - Syncing state after an external process regenerates YAML.
-    - Overwriting an inconsistent in-memory DataSet state.
+    * Debugging: quickly load saved model state for inspection.
+    * Forced refresh: apply a YAML created/edited outside the normal pipeline.
+    * Recovering from a partial failure: rehydrate object state after crash.
 
     Examples
     --------
-    >>> ds.reload_from_yaml()
-    Reloads "<models_dir>/mytable.yml"
-
-    >>> ds.reload_from_yaml("backup/mytable.yml")
-    Loads YAML from custom location and overwrites current metadata.
+    >>> reload_from_yaml("/tmp/ds.yaml", force=True)
+    # DataSet state is overwritten with YAML contents.
     """
         if file_path is None:
             file_path = f"{self.name}.yml"
