@@ -19,6 +19,7 @@ import streamlit as st
 from graphviz import Digraph
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import AzureChatOpenAI, ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 
 from intugle.streamlit_app.helper import (
     _csv_path_for,
@@ -880,13 +881,36 @@ with st.sidebar:
         # if st.button("Change settings"):
         #     st.session_state.creds_saved = False
         #     st.stop()
+        elif choice == "anthropic":
+    # Try a tiny test call to verify API key & model
+            try:
+                # import inside block so file still runs even if package not installed
+                from langchain_anthropic import ChatAnthropic
+
+                # model stored in env LLM_PROVIDER (we set that on save)
+                model = os.environ.get("LLM_PROVIDER", st.session_state.llm_config.get("model", ""))
+                llm_temp = ChatAnthropic(model=model, temperature=0, max_tokens=10)
+
+                # Use a tiny test message (system/human style matches other branches)
+                messages = [
+                    ("system", "You are a helpful assistant that confirms the Anthropic endpoint is reachable."),
+                    ("human", "Ping"),
+                ]
+                ai_msg = llm_temp.invoke(messages)
+                # depending on returned object shape, extract text
+                content = getattr(ai_msg, "content", None) or getattr(ai_msg, "text", None) or str(ai_msg)
+                st.success("Connected successfully to Anthropic!")
+                st.write(content)
+            except Exception as e:
+                st.error(f"Anthropic connection failed: {e}")
+
 
     # Otherwise: render the provider picker + provider-specific fields
     with st.expander("LLM Settings", expanded=not st.session_state.creds_saved):
         provider = st.selectbox(
             "Choose LLM provider",
-            options=["openai", "azure-openai", "google_genai"],
-            index=["openai", "azure-openai", "google_genai"].index(st.session_state.llm_choice),
+            options=["openai", "azure-openai", "google_genai", "anthropic"],
+            index=["openai", "azure-openai", "google_genai", "anthropic"].index(st.session_state.llm_choice),
             help="Pick your LLM backend.",
         )
         st.session_state.llm_choice = provider
@@ -1002,6 +1026,39 @@ with st.sidebar:
                     st.session_state.creds_saved = True
                     st.success("Gemini settings saved.")
                     st.rerun()
+        # --------- ANTHROPIC ---------
+        elif provider == "anthropic":
+            # try to prefill model from saved config or env, otherwise default first item
+            pre_model = st.session_state.llm_config.get("model") if st.session_state.get("llm_config") else os.environ.get("LLM_PROVIDER", "")
+            claude_models = [
+                "claude-3-opus-20240229",
+                "claude-3-sonnet-20240229",
+                "claude-3-haiku-20240307",
+                # add or remove model names as you prefer
+            ]
+            # choose index defensively
+            try:
+                default_idx = claude_models.index(pre_model)
+            except Exception:
+                default_idx = 0
+
+            model = st.selectbox("Choose Claude model", claude_models, index=default_idx)
+            api_key = st.text_input("Anthropic API key", type="password", placeholder="sk-********************************")
+
+            if st.button("Save provider settings", type="primary", width="stretch"):
+                if not api_key or len(api_key.strip()) < 20:
+                    st.error("Please enter a valid Anthropic API key.")
+                else:
+                    # store normalized config
+                    st.session_state.llm_config = {"model": model}
+                    # set environment & settings similar to other providers
+                    os.environ["ANTHROPIC_API_KEY"] = api_key.strip()
+                    os.environ["LLM_PROVIDER"] = model
+                    settings.LLM_PROVIDER = f"anthropic:{model}"
+                    st.session_state.creds_saved = True
+                    st.success("Anthropic settings saved.")
+                    st.rerun()
+
 
 with st.sidebar:
     # Settings & info
