@@ -1052,6 +1052,7 @@ with st.sidebar:
                 "Model",
                 value="claude-opus-4-1",  # A sensible default
                 help="Enter the model name. Common options include: claude-sonnet-4-5, claude-haiku-4-5, claude-opus-4-1"
+            )
             model = st.selectbox(
                 "Model",
                 [
