@@ -40,6 +40,16 @@ class LinkPredictor:
             data_input: Either a dictionary of {name: dataframe} or a list
                         of DataSet objects.
         """
+
+        if isinstance(data_input, dict):
+            if len(data_input) < 2:
+                raise ValueError("LinkPredictor requires at least two datasets to compare.")
+        elif isinstance(data_input, list):
+            if len(data_input) < 2:
+                raise ValueError("LinkPredictor requires at least two datasets to compare.")
+        else:
+            raise TypeError("Input must be a dictionary of named dataframes or a list of DataSet objects.")
+
         self.datasets: Dict[str, DataSet] = {}
         self.links: list[PredictedLink] = []
 
@@ -47,11 +57,6 @@ class LinkPredictor:
             self._initialize_from_dict(data_input)
         elif isinstance(data_input, list):
             self._initialize_from_list(data_input)
-        else:
-            raise TypeError("Input must be a dictionary of named dataframes or a list of DataSet objects.")
-
-        if len(self.datasets) < 2:
-            raise ValueError("LinkPredictor requires at least two datasets to compare.")
 
         print(f"LinkPredictor initialized with datasets: {list(self.datasets.keys())}")
 

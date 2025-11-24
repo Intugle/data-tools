@@ -1,3 +1,4 @@
+import pytest
 import pandas as pd
 
 from intugle.analysis.models import DataSet
@@ -12,6 +13,7 @@ COMPLEX_DF = pd.DataFrame({
 DF_NAME = "complex_test_df"
 
 
+@pytest.mark.skip(reason="Requires real LLM API key")
 def test_datatype_identification_end_to_end():
     """
     Tests the identify_datatypes convenience method on the DataSet.

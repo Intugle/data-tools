@@ -10,6 +10,11 @@ from dotenv import load_dotenv
 # Load environment variables from .env file before any tests are run.
 # This makes variables like `INTUGLE_RUN_LIVE_TESTS` available to pytest.
 load_dotenv()
+
+# Set dummy LLM provider for tests to avoid ValueError
+os.environ.setdefault("LLM_PROVIDER", "openai:gpt-3.5-turbo")
+os.environ.setdefault("OPENAI_API_KEY", "dummy-key-for-tests")
+
 # Define the mock data for the YAML files
 SOURCE_DATA = {
     "sources": [
@@ -88,5 +93,3 @@ def mcp_server(request, tmp_path_factory):
     # --- Teardown Phase ---
     print("\n--- Tearing down MCP test server ---")
     server_process.terminate()
-    server_process.wait()
-    print("--- Server stopped. ---")

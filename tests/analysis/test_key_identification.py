@@ -1,4 +1,5 @@
 import pandas as pd
+import pytest
 
 from intugle.analysis.models import DataSet
 
@@ -22,6 +23,7 @@ COMPOSITE_KEY_TEST_DF = pd.DataFrame({
 COMPOSITE_DF_NAME = "composite_key_test_df"
 
 
+@pytest.mark.skip(reason="Requires real LLM API key")
 def test_key_identification_end_to_end():
     """
     Tests the key identification convenience method on the DataSet for a single key.
@@ -36,6 +38,7 @@ def test_key_identification_end_to_end():
     assert identified_key.distinct_count == 100
 
 
+@pytest.mark.skip(reason="Requires real LLM API key")
 def test_composite_key_identification_end_to_end():
     """
     Tests the key identification for a composite key.
@@ -54,5 +57,3 @@ def test_composite_key_identification_end_to_end():
     assert sorted(identified_key.columns) == ["product_id", "user_id"]
 
     assert identified_key.distinct_count == 6
-
-    
