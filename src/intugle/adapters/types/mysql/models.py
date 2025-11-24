@@ -5,17 +5,15 @@ from pydantic import Field
 from intugle.common.schema import SchemaBase
 
 
-class SnowflakeConnectionConfig(SchemaBase):
-    account: str
+class MySQLConnectionConfig(SchemaBase):
     user: str
     password: str
-    role: str
-    warehouse: str
+    host: str
+    port: int = 3306
     database: str
     schema_: str = Field(..., alias="schema")
-    type: str
 
 
-class SnowflakeConfig(SchemaBase):
+class MySQLConfig(SchemaBase):
     identifier: str
-    type: Literal["snowflake"] = "snowflake"
+    type: Literal["mysql"] = "mysql"

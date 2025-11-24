@@ -30,7 +30,7 @@ class SourceTables(SchemaBase):
 
 
 class Source(BaseResource):
-    schema: str
+    schema_: str = Field(..., alias="schema")
     database: str
     resource_type: NodeType = NodeType.SOURCE
     table: SourceTables = Field(default_factory=list)
