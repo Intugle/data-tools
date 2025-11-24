@@ -34,7 +34,7 @@ def get_tables() -> list[dict]:
     name="get_schema",
     description="Given database table names, get the schemas of the tables including their relationships",
 )
-def get_schema(table_names: list[str]) -> dict[str, str]:
+def get_schema(table_names: list[str]) -> dict:
     """
     Given database table names fetch the schema along with some sample rows
     Args:
