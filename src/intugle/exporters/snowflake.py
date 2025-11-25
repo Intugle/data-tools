@@ -1,6 +1,5 @@
 import re
 
-from intugle.adapters.common.relationships import resolve_relationship_direction
 from intugle.core import settings
 from intugle.libs.smart_query_generator.models.models import CategoryType
 from intugle.models.resources.relationship import RelationshipType
@@ -75,7 +74,7 @@ class SnowflakeExporter(Exporter):
             # Add primary key if it exists
             if source.table.key:
                 table_dict["primary_key"] = {
-                    "columns": [clean_name(source.table.key)]
+                    "columns": source.table.key.columns
                 }
 
             # Map columns to dimensions and facts
@@ -103,19 +102,17 @@ class SnowflakeExporter(Exporter):
 
         # Process relationships
         for rel in manifest.relationships.values():
-            resolved = resolve_relationship_direction(rel, manifest.sources)
-            if not resolved:
-                continue
 
             relationship = {
                 "name": rel.name,
-                "left_table": clean_name(resolved.child_table),
-                "right_table": clean_name(resolved.parent_table),
+                "left_table": rel.target.table,
+                "right_table": rel.source.table,
                 "relationship_columns": [
                     {
-                        "left_column": clean_name(resolved.child_column),
-                        "right_column": clean_name(resolved.parent_column)
+                        "left_column": target_col,
+                        "right_column": source_col
                     }
+                    for target_col, source_col in zip(rel.target.columns, rel.source.columns)
                 ],
                 "join_type": "left_outer",
                 "relationship_type": RelationshipType.MANY_TO_ONE.value

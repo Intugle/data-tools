@@ -237,9 +237,9 @@ class DuckdbAdapter(Adapter):
     ) -> str:
         table_name_safe = safe_identifier(table_name)
         if materialize == "table":
-            duckdb.sql(f"CREATE OR REPLACE TABLE {table_name_safe} AS {query}")
+            duckdb.execute(f"CREATE OR REPLACE TABLE {table_name_safe} AS {query}")
         else:
-            duckdb.sql(f"CREATE OR REPLACE VIEW {table_name_safe} AS {query}")
+            duckdb.execute(f"CREATE OR REPLACE VIEW {table_name_safe} AS {query}")
         return query
 
     def create_new_config_from_etl(self, etl_name: str) -> "DataSetData":
@@ -264,6 +264,58 @@ class DuckdbAdapter(Adapter):
             INTERSECT
             SELECT DISTINCT {column2_safe} FROM {table2_name_safe} WHERE {column2_safe} IS NOT NULL
         ) as t
+        """
+        result = self.execute(query)
+        return result[0]['intersect_count']
+
+    def get_composite_key_uniqueness(self, table_name: str, columns: list[str], dataset_data: DataSetData) -> int:
+        table_name_safe = safe_identifier(table_name)
+        columns_safe = [safe_identifier(col) for col in columns]
+        column_list = ", ".join(columns_safe)
+        null_cols_filter = " AND ".join(f"{c} IS NOT NULL" for c in columns_safe)
+
+        query = f"""
+        SELECT COUNT(*) as distinct_count FROM (
+            SELECT DISTINCT {column_list} FROM {table_name_safe}
+            WHERE {null_cols_filter}
+        ) as t
+        """
+        result = self.execute(query)
+        return result[0]['distinct_count']
+
+    def intersect_composite_keys_count(
+        self,
+        table1: "DataSet",
+        columns1: list[str],
+        table2: "DataSet",
+        columns2: list[str],
+    ) -> int:
+        table1_name_safe = safe_identifier(table1.name)
+        table2_name_safe = safe_identifier(table2.name)
+
+        columns1_safe = [safe_identifier(col) for col in columns1]
+        columns2_safe = [safe_identifier(col) for col in columns2]
+
+        # Subquery for distinct keys from table 1
+        distinct_cols1 = ", ".join(columns1_safe)
+        null_filter1 = " AND ".join(f"{c} IS NOT NULL" for c in columns1_safe)
+        subquery1 = f"(SELECT DISTINCT {distinct_cols1} FROM {table1_name_safe} WHERE {null_filter1}) AS t1"
+
+        # Subquery for distinct keys from table 2
+        distinct_cols2 = ", ".join(columns2_safe)
+        null_filter2 = " AND ".join(f"{c} IS NOT NULL" for c in columns2_safe)
+        subquery2 = f"(SELECT DISTINCT {distinct_cols2} FROM {table2_name_safe} WHERE {null_filter2}) AS t2"
+
+        # Join conditions
+        join_conditions = " AND ".join(
+            [f"t1.{c1} = t2.{c2}" for c1, c2 in zip(columns1_safe, columns2_safe)]
+        )
+
+        query = f"""
+        SELECT COUNT(*) as intersect_count
+        FROM {subquery1}
+        JOIN {subquery2}
+        ON {join_conditions}
         """
         result = self.execute(query)
         return result[0]['intersect_count']

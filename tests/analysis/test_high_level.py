@@ -51,6 +51,8 @@ def test_identify_keys(sample_dataframe):
     dataset.identify_keys()
 
     assert dataset.source.table.key is not None
+    assert dataset.source.table.key.columns == ["user_id"]
+    assert dataset.source.table.key.distinct_count == 5
 
 
 def test_generate_glossary(sample_dataframe):
@@ -70,6 +72,7 @@ def test_save_yaml(sample_dataframe, tmp_path):
     dataset = DataSet(sample_dataframe, name="test_table")
     dataset.profile()
     dataset.identify_datatypes()
+    dataset.identify_keys()
     dataset.generate_glossary(domain="ecommerce")
 
     file_path = tmp_path / "test_table.yml"
@@ -97,5 +100,6 @@ def test_save_yaml(sample_dataframe, tmp_path):
     assert new_dataset.source.schema == ""
     assert new_dataset.source.table.name == "test_table"
     assert new_dataset.source.table.description == dataset.source.table.description
-    assert new_dataset.source.table.key == dataset.source.table.key
+    assert new_dataset.source.table.key.columns == dataset.source.table.key.columns
+    assert new_dataset.source.table.key.distinct_count == dataset.source.table.key.distinct_count
     assert new_dataset.source.table.details is None

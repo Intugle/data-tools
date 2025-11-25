@@ -84,9 +84,9 @@ class ChatModelLLM:
         rate_limiter = None
         if settings.ENABLE_RATE_LIMITER:
             rate_limiter = InMemoryRateLimiter(
-                requests_per_second=0.5,  # <-- We can only make a request once every 2 seconds!
+                requests_per_second=0.3,  # <-- We can only make a request once every 2 seconds!
                 check_every_n_seconds=0.1,  # Wake up every 100 ms to check whether allowed to make a request,
-                max_bucket_size=5,  # Controls the maximum burst size.
+                max_bucket_size=10,  # Controls the maximum burst size.
             )
         return rate_limiter
 

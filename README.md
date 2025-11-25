@@ -31,6 +31,10 @@
 
 Intugle’s GenAI-powered open-source Python library builds a semantic data model over your existing data systems. At its core, it discovers meaningful links and relationships across data assets — enriching them with profiles, classifications, and business glossaries. With this connected knowledge layer, you can enable semantic search and auto-generate queries to create unified data products, making data integration and exploration faster, more accurate, and far less manual.
 
+<!-- [PLACEHOLDER: Architecture Diagram - Data Sources -> Intugle Engine -> Outputs] -->
+<p align="center"><img width="1672" height="560" alt="intugle-architecture" src="https://github.com/user-attachments/assets/18d3d67a-a400-41bd-97fc-017f10772be9" /></p>
+
+
 ## Who is this for?
 
 *   **Data Engineers & Architects** often spend weeks manually profiling, classifying, and stitching together fragmented data assets. With Intugle, they can automate this process end-to-end, uncovering meaningful links and relationships to instantly generate a connected semantic layer.
@@ -43,6 +47,41 @@ Intugle’s GenAI-powered open-source Python library builds a semantic data mode
 *   **Business Glossary & Semantic Search:** Auto-generate a business glossary and enable search that understands meaning, not just keywords — making data more accessible across technical and business users.
 *   **Data Products -** Instantly generate SQL and reusable data products enriched with context, eliminating manual pipelines and accelerating data-to-insight.
 *   **Conceptual Search -** Generate data product plans from natural language queries, bridging the gap between business questions and executable data product definitions. Learn more in the [documentation](https://intugle.github.io/data-tools/docs/core-concepts/data-product/conceptual-search).
+
+## Supported Integrations
+
+| Category | Integrations |
+| :--- | :--- |
+| **Data Warehouses** |  Snowflake, Databricks |
+| **Databases** | PostgreSQL, SQL Server |
+| **Local** | Pandas, DuckDB (CSV, Parquet, Excel) |
+
+## Streamlit App
+
+The `intugle` library includes a Streamlit application that provides an interactive web interface for building and visualizing semantic data models.
+
+<!-- [PLACEHOLDER: Streamlit App GIF/Screenshot] -->
+<!-- <img src="docs/images/streamlit_demo.gif" alt="Streamlit App Demo" width="700"> -->
+https://github.com/user-attachments/assets/402c3f3d-baf3-4ece-ba55-4e06437defc5
+
+
+To use the Streamlit app, install `intugle` with the `streamlit` extra:
+
+```bash
+pip install intugle[streamlit]
+```
+
+You can launch the Streamlit application using the `intugle-mcp` command or `uvx`:
+
+```bash
+intugle-streamlit
+# Or using uvx
+uvx --from intugle[streamlit] intugle-streamlit
+```
+
+Open the URL provided in your terminal (usually `http://localhost:8501`) to access the application. For more details, refer to the [Streamlit App documentation](https://intugle.github.io/data-tools/docs/streamlit-app).
+
+To run the app in a cloud environment like Google Colab, please refer to our [Streamlit quickstart notebook](notebooks/quickstart_streamlit.ipynb).
 
 
 ## Getting Started
@@ -110,11 +149,13 @@ For a detailed, hands-on introduction to the project, please see our quickstart 
 | **Native Databricks with AI/BI Genie [ Tech Manufacturing ]** | [`quickstart_native_databricks.ipynb`](notebooks/quickstart_native_databricks.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_native_databricks.ipynb) |
 | **Streamlit App**       | [`quickstart_streamlit.ipynb`](notebooks/quickstart_streamlit.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_streamlit.ipynb) |
 | **Conceptual Search**   | [`quickstart_conceptual_search.ipynb`](notebooks/quickstart_conceptual_search.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_conceptual_search.ipynb) |
+| **Composite Relationships Prediction**   | [`quickstart_basketball_composite_links.ipynb`](notebooks/quickstart_basketball_composite_links.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Intugle/data-tools/blob/main/notebooks/quickstart_basketball_composite_links.ipynb) |
+
 These datasets will take you through the following steps:
 
 *   **Generate Semantic Model** → The unified layer that transforms fragmented datasets, creating the foundation for connected intelligence.
     *   **1.1 Profile and classify data** → Analyze your data sources to understand their structure, data types, and other characteristics.
-    *   **1.2 Discover links & relationships among data** → Reveal meaningful connections (PK & FK) across fragmented tables.
+    *   **1.2 Discover links & relationships among data** → Reveal meaningful connections (PK & FK), including composite keys, across fragmented tables.
     *   **1.3 Generate a business glossary** → Create business-friendly terms and use them to query data with context.
     *   **1.4 Enable semantic search** → Intelligent search that understands meaning, not just keywords—making data more accessible across both technical and business users.
     *   **1.5 Visualize semantic model**→ Get access to enriched metadata of the semantic layer in the form of YAML files and visualize in the form of graph
@@ -201,40 +242,7 @@ print(data_product.to_df())
 
 The semantic search feature allows you to search for columns in your datasets using natural language. It is built on top of the [Qdrant](https://qdrant.tech/) vector database.
 
-#### Prerequisites
-
-To use the semantic search feature, you need to have a running Qdrant instance. You can start one using the following Docker command:
-
-```bash
-docker run -d -p 6333:6333 -p 6334:6334 \
-    -v qdrant_storage:/qdrant/storage:z \
-    --name qdrant qdrant/qdrant
-```
-
-You also need to configure the Qdrant URL and API key (if using authorization) in your environment variables:
-
-```bash
-export QDRANT_URL="http://localhost:6333"
-export QDRANT_API_KEY="your-qdrant-api-key" # if authorization is used
-```
-
-Currently, the semantic search feature only supports OpenAI embedding models. Therefore, you need to have an OpenAI API key set up in your environment. The default model is `text-embedding-ada-002`. You can change the embedding model by setting the `EMBEDDING_MODEL_NAME` environment variable.
-
-**For OpenAI models:**
-
-```bash
-export OPENAI_API_KEY="your-openai-api-key"
-export EMBEDDING_MODEL_NAME="openai:ada"
-```
-
-**For Azure OpenAI models:**
-
-```bash
-export AZURE_OPENAI_API_KEY="your-azure-openai-api-key"
-export AZURE_OPENAI_ENDPOINT="your-azure-openai-endpoint"
-export OPENAI_API_VERSION="your-openai-api-version"
-export EMBEDDING_MODEL_NAME="azure_openai:ada"
-```
+For full setup instructions (including Docker commands and environment variables), please refer to the [Semantic Search Documentation](https://intugle.github.io/data-tools/docs/core-concepts/semantic-intelligence/semantic-search).
 
 #### Usage
 
@@ -278,33 +286,11 @@ For detailed instructions on setting up the server and connecting your favorite 
 
 <!-- mcp-name: io.github.intugle/intugle-vibe-mcp -->
 
-### Streamlit App
-
-The `intugle` library includes a Streamlit application that provides an interactive web interface for building and visualizing semantic data models.
-
-To use the Streamlit app, install `intugle` with the `streamlit` extra:
-
-```bash
-pip install intugle[streamlit]
-```
-
-You can launch the Streamlit application using the `intugle-mcp` command or `uvx`:
-
-```bash
-intugle-streamlit
-# Or using uvx
-uvx --from intugle[streamlit] intugle-streamlit
-```
-
-Open the URL provided in your terminal (usually `http://localhost:8501`) to access the application. For more details, refer to the [Streamlit App documentation](https://intugle.github.io/data-tools/docs/streamlit-app).
-
-To run the app in a cloud environment like Google Colab, please refer to our [Streamlit quickstart notebook](notebooks/quickstart_streamlit.ipynb).
 
 ## Community
 
 Join our community to ask questions, share your projects, and connect with other users.
 
-<!-- *   [Join our Slack](https://join.slack.com/share/enQtOTQ4NDc1MzYzOTg2MC02OTc2MTU1Njg3NDEyZjQwN2IzMzEwMjc5NmU4MjhiZmJlMDdiMzMzYjI5YWJiNDhkYWM4ODU0MGY4NTUyNjhi) -->
 *   [Join our Discord](https://discord.gg/NqR9tNWVTm)
 
 

@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 from intugle.adapters.adapter import Adapter
-from intugle.adapters.common.relationships import clean_name, resolve_relationship_direction
+from intugle.adapters.common.relationships import clean_name
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import ColumnProfile, DataSetData, ProfilingOutput
 from intugle.adapters.types.databricks.models import (
@@ -376,19 +376,20 @@ class DatabricksAdapter(Adapter):
         """
         print("Setting primary key constraints...")
         for source in manifest.sources.values():
-            if not source.table.key or not isinstance(source.table.key, str):
+            if not source.table.key:
                 print(f"Skipping primary key for table '{source.table.name}' due to missing or invalid key.")
                 continue
 
             fqn = self._get_fqn(source.table.name)
-            pk_column = source.table.key
+            pk_columns = source.table.key.columns
             constraint_name = f"pk_{source.table.name}"
             try:
-                # First, ensure the column is not nullable
-                self._execute_sql(f"ALTER TABLE {fqn} ALTER COLUMN `{pk_column}` SET NOT NULL")
+                for col in pk_columns:
+                    # First, ensure the column is not nullable
+                    self._execute_sql(f"ALTER TABLE {fqn} ALTER COLUMN `{col}` SET NOT NULL")
                 # Then, add the primary key constraint
-                self._execute_sql(f"ALTER TABLE {fqn} ADD CONSTRAINT {constraint_name} PRIMARY KEY (`{pk_column}`)")
-                print(f"Set primary key on {fqn} (`{pk_column}`)")
+                self._execute_sql(f"ALTER TABLE {fqn} ADD CONSTRAINT {constraint_name} PRIMARY KEY (`" + "`, `".join(pk_columns) + "`)")
+                print(f"Set primary key on {fqn} (`{pk_columns}`)")
             except Exception as e:
                 print(f"Could not set primary key for {fqn}: {e}")
         print("Primary key setting complete.")
@@ -399,20 +400,20 @@ class DatabricksAdapter(Adapter):
         """
         print("Setting foreign key constraints...")
         for rel in manifest.relationships.values():
-            resolved = resolve_relationship_direction(rel, manifest.sources)
-            if not resolved:
-                print(f"Skipping invalid or ambiguous relationship '{rel.name}'.")
-                continue
-
+            # resolved = resolve_relationship_direction(rel, manifest.sources)
+            # if not resolved:
+            #     print(f"Skipping invalid or ambiguous relationship '{rel.name}'.")
+            #     continue
+            
             try:
-                child_fqn = self._get_fqn(resolved.child_table)
-                parent_fqn = self._get_fqn(resolved.parent_table)
+                child_fqn = self._get_fqn(rel.target.table)
+                parent_fqn = self._get_fqn(rel.source.table)
                 constraint_name = f"fk_{rel.name}"
                 cleaned_constraint_name = clean_name(constraint_name)
 
                 self._execute_sql(
                     f"ALTER TABLE {child_fqn} ADD CONSTRAINT {cleaned_constraint_name} "
-                    f"FOREIGN KEY (`{resolved.child_column}`) REFERENCES {parent_fqn} (`{resolved.parent_column}`)"
+                    f"FOREIGN KEY (`{'`, '.join(rel.target.columns)}`) REFERENCES {parent_fqn} (`{'`, '.join(rel.source.columns)}`)"
                 )
             except Exception as e:
                 print(f"Could not set foreign key for relationship {rel.name}: {e}")
@@ -431,6 +432,59 @@ class DatabricksAdapter(Adapter):
             INTERSECT
             SELECT DISTINCT `{column2_name}` FROM {fqn2} WHERE `{column2_name}` IS NOT NULL
         )
+        """
+        return self._execute_sql(query)[0][0]
+
+    def get_composite_key_uniqueness(self, table_name: str, columns: list[str], dataset_data: DataSetData) -> int:
+        data = self.check_data(dataset_data)
+        fqn = self._get_fqn(data.identifier)
+        safe_columns = [f"`{col}`" for col in columns]
+        column_list = ", ".join(safe_columns)
+        null_cols_filter = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns)
+
+        query = f"""
+        SELECT COUNT(*) FROM (
+            SELECT DISTINCT {column_list} FROM {fqn}
+            WHERE {null_cols_filter}
+        )
+        """
+        return self._execute_sql(query)[0][0]
+
+    def intersect_composite_keys_count(
+        self,
+        table1: "DataSet",
+        columns1: list[str],
+        table2: "DataSet",
+        columns2: list[str],
+    ) -> int:
+        table1_adapter = self.check_data(table1.data)
+        table2_adapter = self.check_data(table2.data)
+
+        fqn1 = self._get_fqn(table1_adapter.identifier)
+        fqn2 = self._get_fqn(table2_adapter.identifier)
+
+        safe_columns1 = [f"`{col}`" for col in columns1]
+        safe_columns2 = [f"`{col}`" for col in columns2]
+
+        # Subquery for distinct keys from table 1
+        distinct_cols1 = ", ".join(safe_columns1)
+        null_filter1 = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns1)
+        subquery1 = f"(SELECT DISTINCT {distinct_cols1} FROM {fqn1} WHERE {null_filter1}) AS t1"
+
+        # Subquery for distinct keys from table 2
+        distinct_cols2 = ", ".join(safe_columns2)
+        null_filter2 = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns2)
+        subquery2 = f"(SELECT DISTINCT {distinct_cols2} FROM {fqn2} WHERE {null_filter2}) AS t2"
+
+        # Join conditions
+        join_conditions = " AND ".join(
+            [f"t1.{c1} = t2.{c2}" for c1, c2 in zip(safe_columns1, safe_columns2)]
+        )
+
+        query = f"""
+        SELECT COUNT(*)
+        FROM {subquery1}
+        INNER JOIN {subquery2} ON {join_conditions}
         """
         return self._execute_sql(query)[0][0]
 

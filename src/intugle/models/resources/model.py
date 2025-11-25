@@ -6,6 +6,11 @@ from intugle.common.resources.base import BaseResource
 from intugle.common.schema import NodeType, SchemaBase
 
 
+class PrimaryKey(SchemaBase):
+    columns: List[str] = Field(..., description="A list of column names that make up the primary key.")
+    distinct_count: Optional[int] = Field(None, description="The number of distinct values in the primary key column(s).")
+
+
 class ColumnProfilingMetrics(SchemaBase):
     count: Optional[int] = None
     null_count: Optional[int] = None

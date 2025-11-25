@@ -772,6 +772,12 @@ def llm_ready_check() -> tuple[bool, str]:
             return False, "Gemini key missing. Please set **GEMINI_API_KEY** (or GOOGLE_API_KEY) in the sidebar."
         return True, ""
 
+    if provider == "anthropic":
+        key = _get_secret_env("ANTHROPIC_API_KEY")  # type: ignore[name-defined]
+        if not key:
+            return False, "Anthropic key missing. Please set **ANTHROPIC_API_KEY** in the sidebar."
+        return True, ""
+
     return False, f"Unknown provider '{provider}'."
 
 
@@ -812,19 +818,65 @@ def link_to_dict(x: Any) -> dict[str, Any]:
 def predicted_links_to_df(links: Sequence[Any]) -> pd.DataFrame:
     """
     Normalize a collection of link-like objects to rows in a DataFrame, with
-    preferred column ordering when available.
+    preferred column ordering when available. Handles composite keys.
     """
-    rows = [link_to_dict(x) for x in links] if links else []
+    if not links:
+        return pd.DataFrame()
+
+    rows = [link_to_dict(x) for x in links]
     df = pd.DataFrame(rows)
 
+    if df.empty:
+        return df
+
+    # --- Handle composite keys and ensure column consistency ---
+
+    # Backwards compatibility: if old `from_column` (str) exists, convert to `from_columns` (list)
+    if "from_column" in df.columns and "from_columns" not in df.columns:
+        df["from_columns"] = df["from_column"].apply(lambda x: [x] if isinstance(x, str) else [])
+    if "to_column" in df.columns and "to_columns" not in df.columns:
+        df["to_columns"] = df["to_column"].apply(lambda x: [x] if isinstance(x, str) else [])
+
+    # Ensure list type for safety, default to empty list if column is missing
+    df["from_columns"] = df.get("from_columns", pd.Series([[] for _ in range(len(df))])).apply(
+        lambda x: x if isinstance(x, list) else []
+    )
+    df["to_columns"] = df.get("to_columns", pd.Series([[] for _ in range(len(df))])).apply(
+        lambda x: x if isinstance(x, list) else []
+    )
+
+    # Add `is_composite` flag
+    df["is_composite"] = df["from_columns"].apply(lambda x: len(x) > 1)
+
+    # Create user-friendly display strings for single and composite keys
+    def format_column_display(cols: list) -> str:
+        if len(cols) > 1:
+            return f"({', '.join(cols)})"
+        return cols[0] if cols else ""
+
+    # Overwrite/create `from_column` and `to_column` for display purposes in graph/table
+    df["from_column"] = df["from_columns"].apply(format_column_display)
+    df["to_column"] = df["to_columns"].apply(format_column_display)
+
+    # --- Reorder columns for display ---
     preferred = [
         "from_dataset", "from_column", "to_dataset", "to_column",
-        "intersect_count", "intersect_ratio_from_col", "intersect_ratio_to_col", "accuracy",
+        "is_composite", "intersect_count", "intersect_ratio_from_col", "intersect_ratio_to_col", "accuracy",
     ]
-    if not df.empty:
-        cols = [c for c in preferred if c in df.columns] + [c for c in df.columns if c not in preferred]
-        return df[cols]
-    return df
+
+    existing_preferred = [c for c in preferred if c in df.columns]
+    # Include all other columns, but put original list-based columns at the end
+    other_cols = sorted([
+        c for c in df.columns
+        if c not in existing_preferred and c not in {"from_columns", "to_columns"}
+    ])
+    
+    final_cols = existing_preferred + other_cols + ["from_columns", "to_columns"]
+    
+    # Filter to only columns that actually exist in the dataframe
+    final_cols = [c for c in final_cols if c in df.columns]
+
+    return df[final_cols]
 
 # ---------- new: plotly network (tables as nodes) ----------
 
@@ -840,15 +892,18 @@ def plotly_table_graph(
     node_fill: str = "#F3E8FF",
     node_stroke: str = "#8B5CF6",
     edge_color: str = "#8B5CF6",
+    composite_edge_color: str = "#4E195E",
     edge_min_width: float = 1.0,
     edge_width_scale: float = 4.0,
 ) -> go.Figure:
     """
     Build a Plotly figure showing dataset→dataset links from a row-wise edges table.
+    Handles both single and composite links.
 
     Expected columns in `df`:
       - from_dataset, to_dataset (str)
       - from_column, to_column (str)  — used to label aggregated edges
+      - is_composite (bool)           — used to style composite links
       - accuracy (float, optional)    — used to weight edge width (mean)
       - intersect_count (int, optional) — included in hover (summed)
 
@@ -865,6 +920,8 @@ def plotly_table_graph(
         Node size/color styling knobs.
     edge_* : styling
         Edge color/width styling knobs.
+    composite_edge_color : str
+        Color for composite link edges.
 
     Returns
     -------
@@ -874,7 +931,7 @@ def plotly_table_graph(
     if df.empty:
         return go.Figure()
 
-    required = {"from_dataset", "to_dataset", "from_column", "to_column"}
+    required = {"from_dataset", "to_dataset", "from_column", "to_column", "is_composite"}
     missing = [c for c in required if c not in df.columns]
     if missing:
         raise ValueError(f"Missing required columns: {', '.join(missing)}")
@@ -890,13 +947,16 @@ def plotly_table_graph(
         label = f"{r['from_column']} → {r['to_column']}"
         acc = float(r.get("accuracy", 1.0) or 1.0)
         cnt = int(r.get("intersect_count", 0) or 0)
+        is_composite = bool(r.get("is_composite", False))
 
         if G.has_edge(src, dst):
             G[src][dst]["labels"].append(label)
             G[src][dst]["accs"].append(acc)
             G[src][dst]["counts"].append(cnt)
+            # If any underlying link is composite, the aggregated edge is composite
+            G[src][dst]["is_composite"] = G[src][dst].get("is_composite", False) or is_composite
         else:
-            G.add_edge(src, dst, labels=[label], accs=[acc], counts=[cnt])
+            G.add_edge(src, dst, labels=[label], accs=[acc], counts=[cnt], is_composite=is_composite)
 
     # --- Layout ---
     pos = nx.spring_layout(G, seed=seed, k=k)
@@ -930,11 +990,12 @@ def plotly_table_graph(
 
     # --- Build edges ---
     def edge_hover(u: str, v: str, data: Mapping[str, Any]) -> str:
+        link_type = "<b>Composite Link</b><br>" if data.get("is_composite") else ""
         pairs = ", ".join(data["labels"])
         n_sum = sum(int(x or 0) for x in data["counts"])
         acc_mean = sum(data["accs"]) / max(1, len(data["accs"]))
         return (
-            f"<b>{u}</b> → <b>{v}</b><br>"
+            f"{link_type}<b>{u}</b> → <b>{v}</b><br>"
             f"Columns: {pairs}<br>"
             f"Mean acc: {acc_mean:.2f} • Sum n: {n_sum}"
         )
@@ -946,16 +1007,25 @@ def plotly_table_graph(
     use_single_trace = len(edges_list) > max_individual_edge_traces
 
     if use_single_trace:
-        # Fast path: one trace with constant width (keeps things interactive for big graphs)
-        edge_x, edge_y, edge_hover_texts = [], [], []
+        # Fast path: two traces (single, composite) with constant width
+        single_x, single_y, single_hover = [], [], []
+        comp_x, comp_y, comp_hover = [], [], []
+
         for u, v, data in edges_list:
             x0, y0 = pos[u]
             x1, y1 = pos[v]
-            edge_x += [x0, x1, None]
-            edge_y += [y0, y1, None]
-            edge_hover_texts.append(edge_hover(u, v, data))
+            hover_text = edge_hover(u, v, data)
 
-            # midpoint label text
+            if data.get("is_composite"):
+                comp_x += [x0, x1, None]
+                comp_y += [y0, y1, None]
+                comp_hover.append(hover_text)
+            else:
+                single_x += [x0, x1, None]
+                single_y += [y0, y1, None]
+                single_hover.append(hover_text)
+
+            # Midpoint label text (common for both)
             mx, my = (x0 + x1) / 2, (y0 + y1) / 2
             edge_label_x.append(mx)
             edge_label_y.append(my)
@@ -963,25 +1033,33 @@ def plotly_table_graph(
                 edge_label_text.append(data["labels"][0])
             else:
                 edge_label_text.append(f"{data['labels'][0]} (+{len(data['labels']) - 1} more)")
-
-        edge_traces.append(
-            go.Scatter(
-                x=edge_x, y=edge_y,
-                mode="lines",
-                hoverinfo="text",
-                text=edge_hover_texts,
+        
+        if single_x:
+            edge_traces.append(go.Scatter(
+                x=single_x, y=single_y, mode="lines", hoverinfo="text", text=single_hover,
                 line=dict(width=max(edge_min_width, 1.5), color=edge_color),
-                opacity=0.85,
-                showlegend=False,
-            )
-        )
+                opacity=0.85, showlegend=False
+            ))
+        if comp_x:
+            edge_traces.append(go.Scatter(
+                x=comp_x, y=comp_y, mode="lines", hoverinfo="text", text=comp_hover,
+                line=dict(width=max(edge_min_width, 1.5), color=composite_edge_color, dash="dash"),
+                opacity=0.85, showlegend=False
+            ))
     else:
-        # Accurate path: one trace per edge so we can vary width by mean accuracy
+        # Accurate path: one trace per edge to vary width by mean accuracy
         for u, v, data in edges_list:
             x0, y0 = pos[u]
             x1, y1 = pos[v]
             acc_mean = sum(data["accs"]) / max(1, len(data["accs"]))
             width = max(edge_min_width, acc_mean * edge_width_scale)
+            is_composite = data.get("is_composite", False)
+
+            line_style = dict(
+                width=width,
+                color=composite_edge_color if is_composite else edge_color,
+                dash="dash" if is_composite else "solid",
+            )
 
             edge_traces.append(
                 go.Scatter(
@@ -989,13 +1067,13 @@ def plotly_table_graph(
                     mode="lines",
                     hoverinfo="text",
                     text=[edge_hover(u, v, data)],
-                    line=dict(width=width, color=edge_color),
+                    line=line_style,
                     opacity=0.85,
                     showlegend=False,
                 )
             )
 
-            # midpoint label
+            # Midpoint label
             mx, my = (x0 + x1) / 2, (y0 + y1) / 2
             edge_label_x.append(mx)
             edge_label_y.append(my)

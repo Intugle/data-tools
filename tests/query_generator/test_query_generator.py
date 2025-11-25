@@ -90,15 +90,15 @@ def mock_manifest() -> Manifest:
     rel1 = Relationship(
         name="encounters_to_patients",
         description="Join between encounters and patients",
-        source=RelationshipTable(table="encounters", column="patient"),
-        target=RelationshipTable(table="patients", column="id"),
+        source=RelationshipTable(table="encounters", columns=["patient"]),
+        target=RelationshipTable(table="patients", columns=["id"]),
         type=RelationshipType.MANY_TO_ONE,
     )
     rel2 = Relationship(
         name="claims_to_patients",
         description="Join between claims and patients",
-        source=RelationshipTable(table="claims_transactions", column="patientid"),
-        target=RelationshipTable(table="patients", column="id"),
+        source=RelationshipTable(table="claims_transactions", columns=["patientid"]),
+        target=RelationshipTable(table="patients", columns=["id"]),
         type=RelationshipType.MANY_TO_ONE,
     )
 

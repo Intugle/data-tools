@@ -14,16 +14,15 @@ from intugle.adapters.models import (
     DataTypeIdentificationL1Output,
     DataTypeIdentificationL2Input,
     DataTypeIdentificationL2Output,
-    KeyIdentificationOutput,
 )
 from intugle.core import settings
 from intugle.core.console import console, warning_style
 from intugle.core.pipeline.business_glossary.bg import BusinessGlossary
 from intugle.core.pipeline.datatype_identification.l2_model import L2Model
 from intugle.core.pipeline.datatype_identification.pipeline import DataTypeIdentificationPipeline
-from intugle.core.pipeline.key_identification.ki import KeyIdentificationLLM
+from intugle.core.pipeline.key_identification.agent import KeyIdentificationAgent
 from intugle.core.utilities.processing import string_standardization
-from intugle.models.resources.model import Column, ColumnProfilingMetrics, ModelProfilingMetrics
+from intugle.models.resources.model import Column, ColumnProfilingMetrics, ModelProfilingMetrics, PrimaryKey
 from intugle.models.resources.source import Source, SourceTables
 
 log = logging.getLogger(__name__)
@@ -81,7 +80,49 @@ class DataSet:
         )
 
     def _is_yaml_stale(self, yaml_data: dict) -> bool:
-        """Check if the YAML data is stale by comparing source modification times."""
+        """
+        Determine whether the YAML cache is stale relative to the underlying data source.
+
+        This method checks whether the source file backing this dataset has been modified
+        more recently than the timestamp stored inside the YAML. If the source file on disk
+        is newer than the recorded `source_last_modified` value in the YAML, the YAML is
+        considered stale and should not be reused.
+
+        Parameters
+        ----------
+        yaml_data : dict
+            Parsed YAML content loaded from disk. Expected to contain a "sources" list with
+            one entry representing this dataset. Each entry should contain:
+            - table.source_last_modified : float (epoch timestamp)
+
+        Returns
+        -------
+        bool
+            True if the YAML is stale (e.g., source file modified after YAML creation,
+            malformed YAML, or missing timestamp). False if the YAML is valid and up to date.
+
+        When YAML is considered stale
+        -----------------------------
+        - The dataset was loaded from a file (`self.data["path"]`) that has a newer mtime
+          than the YAML metadata.
+        - The YAML has no usable `source_last_modified` field.
+        - YAML structure is malformed or missing required keys.
+        - The dataset is file-based, but the referenced path does not exist anymore.
+
+        Notes
+        -----
+        If the dataset is not file-backed (i.e., `self.data` is not a dict with "path"),
+        staleness cannot be evaluated, and this method returns False.
+
+        Examples
+        --------
+        If the source CSV was edited after YAML was generated:
+
+            source.csv (mtime = 1700000000)
+            dataset.yml recorded source_last_modified = 1690000000
+
+        then this method returns True.
+        """
         if not isinstance(self.data, dict) or "path" not in self.data or not os.path.exists(self.data["path"]):
             # Not a file-based source, so we cannot check for staleness.
             return False
@@ -106,7 +147,66 @@ class DataSet:
             return True
 
     def _populate_from_yaml(self, yaml_data: dict):
-        """Populate the DataSet object from YAML data."""
+        """
+        Restore DataSet state from a YAML cache.
+
+        This method reconstructs the dataset's metadata—such as table structure,
+        columns, profiling details, and schema information—using the content
+        provided in `yaml_data`. It is used when a previously analyzed dataset
+        is reloaded without recomputing profiling or detection steps.
+
+        Parameters
+        ----------
+        yaml_data : dict
+            Parsed YAML structure expected to contain a top-level key:
+            - "sources": a list with one serialized `Source` object, including:
+                table.columns
+                table.details
+                table.key
+                table.source_last_modified
+                schema, database, table name, etc.
+
+        Populated Fields
+        ----------------
+        - self.source : Source
+            Rehydrated using Pydantic model validation from YAML.
+        - self.columns : Dict[str, Column]
+            Rebuilt column lookup map based on `self.source.table.columns`.
+
+        Side Effects
+        ------------
+        Mutates the DataSet instance by replacing:
+        - metadata describing table structure
+        - column list and column-level metadata
+        - profiling artifacts previously stored in YAML
+
+        YAML Structure Expectations
+        ---------------------------
+        yaml_data = {
+            "sources": [
+                {
+                    "table": {
+                        "columns": [...],
+                        "details": {...},
+                        "key": {...},
+                        "source_last_modified": <float>,
+                        ...
+                    },
+                    "schema": "...",
+                    "database": "...",
+                    "table": {...}
+                }
+            ]
+        }
+
+        Invalid or incomplete YAML should be handled earlier during staleness checks.
+
+        Examples
+        --------
+        >>> with open("mytable.yml") as f:
+        ...     data = yaml.safe_load(f)
+        >>> ds._populate_from_yaml(data)
+        """
         source = yaml_data.get("sources", [])[0]
         self.source = Source.model_validate(source)
         self.columns = {col.name: col for col in self.source.table.columns}
@@ -251,10 +351,13 @@ class DataSet:
             )
         column_profiles_df = pd.DataFrame(column_profiles_data)
 
-        ki_model = KeyIdentificationLLM(profiling_data=column_profiles_df)
-        ki_result = ki_model()
-        output = KeyIdentificationOutput(**ki_result)
-        self.source.table.key = output.column_name or ""
+        ki_agent = KeyIdentificationAgent(
+            profiling_data=column_profiles_df, adapter=self.adapter, dataset_data=self.data
+        )
+        ki_result = ki_agent()
+
+        if ki_result:
+            self.source.table.key = PrimaryKey(**ki_result)
 
         if save:
             self.save_yaml()
@@ -366,7 +469,46 @@ class DataSet:
             self._populate_from_yaml(yaml_data)
 
     def reload_from_yaml(self, file_path: Optional[str] = None) -> None:
-        """Forces a reload from a YAML file, bypassing staleness checks."""
+        """
+        Forcefully reload dataset metadata from a YAML file, bypassing staleness checks.
+
+        This method unconditionally applies the YAML contents to the current DataSet,
+        regardless of whether the underlying source file has changed. It is especially
+        useful when debugging, manually editing YAML files, or when external processes
+        refresh the YAML independent of the dataset lifecycle.
+
+        Parameters
+        ----------
+        file_path : str, optional
+            Name or path of the YAML cache file. If omitted, defaults to:
+                <settings.MODELS_DIR>/<dataset_name>.yml
+
+        Behavior
+        --------
+        - Loads the YAML directly from disk.
+        - Overwrites current DataSet metadata with values stored in the YAML.
+        - Does not check modification timestamps or staleness.
+        - Calls `_populate_from_yaml()` internally.
+
+        Returns
+        -------
+        None
+
+        Use Cases
+        ---------
+        - Rehydrating a dataset's metadata after editing the YAML by hand.
+        - Debugging dataset loading logic.
+        - Syncing state after an external process regenerates YAML.
+        - Overwriting an inconsistent in-memory DataSet state.
+
+        Examples
+        --------
+        >>> ds.reload_from_yaml()
+        Reloads "<models_dir>/mytable.yml"
+
+        >>> ds.reload_from_yaml("backup/mytable.yml")
+        Loads YAML from custom location and overwrites current metadata.
+        """
         if file_path is None:
             file_path = f"{self.name}.yml"
         file_path = os.path.join(settings.MODELS_DIR, file_path)
