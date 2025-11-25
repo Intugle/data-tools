@@ -1,0 +1,7 @@
+streamlit==1.50.0
+pyngrok==7.4.0
+python-dotenv==1.1.1
+xlsxwriter==3.2.9
+intugle==1.0.7
+plotly
+graphviz
