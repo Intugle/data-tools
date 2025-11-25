@@ -32,7 +32,8 @@
 Intugle’s GenAI-powered open-source Python library builds a semantic data model over your existing data systems. At its core, it discovers meaningful links and relationships across data assets — enriching them with profiles, classifications, and business glossaries. With this connected knowledge layer, you can enable semantic search and auto-generate queries to create unified data products, making data integration and exploration faster, more accurate, and far less manual.
 
 <!-- [PLACEHOLDER: Architecture Diagram - Data Sources -> Intugle Engine -> Outputs] -->
-<!-- <p align="center"><img src="docs/images/architecture_diagram.png" alt="Intugle Architecture"></p> -->
+<p align="center"><img width="1672" height="560" alt="intugle-architecture" src="https://github.com/user-attachments/assets/18d3d67a-a400-41bd-97fc-017f10772be9" /></p>
+
 
 ## Who is this for?
 
@@ -49,20 +50,20 @@ Intugle’s GenAI-powered open-source Python library builds a semantic data mode
 
 ## Supported Integrations
 
-Intugle connects seamlessly to your existing data infrastructure:
-
 | Category | Integrations |
 | :--- | :--- |
 | **Data Warehouses** |  Snowflake, Databricks |
 | **Databases** | PostgreSQL, SQL Server |
 | **Local** | Pandas, DuckDB (CSV, Parquet, Excel) |
 
-### Streamlit App
+## Streamlit App
 
 The `intugle` library includes a Streamlit application that provides an interactive web interface for building and visualizing semantic data models.
 
 <!-- [PLACEHOLDER: Streamlit App GIF/Screenshot] -->
 <!-- <img src="docs/images/streamlit_demo.gif" alt="Streamlit App Demo" width="700"> -->
+https://github.com/user-attachments/assets/402c3f3d-baf3-4ece-ba55-4e06437defc5
+
 
 To use the Streamlit app, install `intugle` with the `streamlit` extra:
 
