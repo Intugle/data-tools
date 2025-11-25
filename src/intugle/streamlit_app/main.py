@@ -916,11 +916,16 @@ with st.sidebar:
         if provider == "openai":
             # Pre-fill from env/secrets if present
             pre_key = get_secret("OPENAI_API_KEY", "")
-            model = st.selectbox(
+            # model = st.selectbox(
+            #     "Model",
+            #     # ["openai:gpt-3.5-turbo"],
+            #     ["gpt-4o-mini", "gpt-4o", "gpt-3.5-turbo"],
+            #     index=0,
+            # )
+            model = st.text_input(
                 "Model",
-                # ["openai:gpt-3.5-turbo"],
-                ["gpt-4o-mini", "gpt-4o", "gpt-3.5-turbo"],
-                index=0,
+                value="gpt-4o-mini",  # A sensible default
+                help="Enter the model name. Common options include: gpt-4o-mini, gpt-4o, gpt-3.5-turbo"
             )
             api_key = st.text_input(
                 "OpenAI API key", type="password", value=pre_key, placeholder="sk-********************************"
@@ -1001,7 +1006,12 @@ with st.sidebar:
         elif provider == "google_genai":
             # Gemini keys are commonly under GEMINI_API_KEY or GOOGLE_API_KEY
             pre_key = get_secret("GOOGLE_API_KEY") or ""
-            model = st.selectbox("Model", ["gemini-2.5-pro", "gemini-2.5-flash", "gemini-2.5-flash-lite"], index=0)
+            # model = st.selectbox("Model", ["gemini-2.5-pro", "gemini-2.5-flash", "gemini-2.5-flash-lite"], index=0)
+            model = st.text_input(
+                "Model",
+                value="gemini-2.5-pro",  # A sensible default
+                help="Enter the model name. Common options include: gemini-2.5-pro, gemini-2.5-flash, gemini-2.5-flash-lite"
+            )
             api_key = st.text_input(
                 "Gemini API key", type="password", value=pre_key, placeholder="********************************"
             )
@@ -1028,15 +1038,20 @@ with st.sidebar:
         elif provider == "anthropic":
             # Anthropic API key
             pre_key = get_secret("ANTHROPIC_API_KEY", "")
-            model = st.selectbox(
+            # model = st.selectbox(
+            #     "Model",
+            #     [
+            #         "claude-sonnet-4-5",
+            #         "claude-haiku-4-5",
+            #         "claude-opus-4-1",
+            #     ],
+            #     index=0,
+            #     help="Claude Sonnet 4.5: Best balance of intelligence, speed, and cost\nClaude Haiku 4.5: Fastest with near-frontier intelligence\nClaude Opus 4.1: Exceptional for specialized reasoning",
+            # )
+            model = st.text_input(
                 "Model",
-                [
-                    "claude-sonnet-4-5",
-                    "claude-haiku-4-5",
-                    "claude-opus-4-1",
-                ],
-                index=0,
-                help="Claude Sonnet 4.5: Best balance of intelligence, speed, and cost\nClaude Haiku 4.5: Fastest with near-frontier intelligence\nClaude Opus 4.1: Exceptional for specialized reasoning",
+                value="claude-opus-4-1",  # A sensible default
+                help="Enter the model name. Common options include: claude-sonnet-4-5, claude-haiku-4-5, claude-opus-4-1"
             )
             api_key = st.text_input(
                 "Anthropic API key", type="password", value=pre_key, placeholder="sk-ant-********************************"
