@@ -1053,16 +1053,6 @@ with st.sidebar:
                 value="claude-opus-4-1",  # A sensible default
                 help="Enter the model name. Common options include: claude-sonnet-4-5, claude-haiku-4-5, claude-opus-4-1"
             )
-            model = st.selectbox(
-                "Model",
-                [
-                    "claude-sonnet-4-5",
-                    "claude-haiku-4-5",
-                    "claude-opus-4-1",
-                ],
-                index=0,
-                help="Claude Sonnet 4.5: Best balance of intelligence, speed, and cost\nClaude Haiku 4.5: Fastest with near-frontier intelligence\nClaude Opus 4.1: Exceptional for specialized reasoning",
-            )
             api_key = st.text_input(
                 "Anthropic API key", type="password", value=pre_key, placeholder="sk-ant-********************************"
             )
