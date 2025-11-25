@@ -53,9 +53,34 @@ Intugle connects seamlessly to your existing data infrastructure:
 
 | Category | Integrations |
 | :--- | :--- |
-| **Data Warehouses** | ❄️ Snowflake, 🧱 Databricks, 🐘 PostgreSQL, 🗄️ SQL Server, 🟢 SAP HANA |
-| **Embedded/Local** | 🦆 DuckDB, 🐼 Pandas (CSV, Parquet, DataFrames) |
-| **Vector Databases** | 🚀 Qdrant (for Semantic Search) |
+| **Data Warehouses** |  Snowflake, Databricks |
+| **Databases** | PostgreSQL, SQL Server |
+| **Local** | Pandas, DuckDB (CSV, Parquet, Excel) |
+
+### Streamlit App
+
+The `intugle` library includes a Streamlit application that provides an interactive web interface for building and visualizing semantic data models.
+
+<!-- [PLACEHOLDER: Streamlit App GIF/Screenshot] -->
+<!-- <img src="docs/images/streamlit_demo.gif" alt="Streamlit App Demo" width="700"> -->
+
+To use the Streamlit app, install `intugle` with the `streamlit` extra:
+
+```bash
+pip install intugle[streamlit]
+```
+
+You can launch the Streamlit application using the `intugle-mcp` command or `uvx`:
+
+```bash
+intugle-streamlit
+# Or using uvx
+uvx --from intugle[streamlit] intugle-streamlit
+```
+
+Open the URL provided in your terminal (usually `http://localhost:8501`) to access the application. For more details, refer to the [Streamlit App documentation](https://intugle.github.io/data-tools/docs/streamlit-app).
+
+To run the app in a cloud environment like Google Colab, please refer to our [Streamlit quickstart notebook](notebooks/quickstart_streamlit.ipynb).
 
 
 ## Getting Started
@@ -260,44 +285,11 @@ For detailed instructions on setting up the server and connecting your favorite 
 
 <!-- mcp-name: io.github.intugle/intugle-vibe-mcp -->
 
-### Streamlit App
-
-The `intugle` library includes a Streamlit application that provides an interactive web interface for building and visualizing semantic data models.
-
-<!-- [PLACEHOLDER: Streamlit App GIF/Screenshot] -->
-<!-- <img src="docs/images/streamlit_demo.gif" alt="Streamlit App Demo" width="700"> -->
-
-To use the Streamlit app, install `intugle` with the `streamlit` extra:
-
-```bash
-pip install intugle[streamlit]
-```
-
-You can launch the Streamlit application using the `intugle-mcp` command or `uvx`:
-
-```bash
-intugle-streamlit
-# Or using uvx
-uvx --from intugle[streamlit] intugle-streamlit
-```
-
-Open the URL provided in your terminal (usually `http://localhost:8501`) to access the application. For more details, refer to the [Streamlit App documentation](https://intugle.github.io/data-tools/docs/streamlit-app).
-
-To run the app in a cloud environment like Google Colab, please refer to our [Streamlit quickstart notebook](notebooks/quickstart_streamlit.ipynb).
-
-## Roadmap
-
-*   **Upcoming Integrations:** BigQuery, Redshift support.
-*   **Advanced Agents:** Custom LLM agents for complex data workflows.
-*   **UI Enhancements:** Expanded interactive capabilities in the Streamlit app.
-
-Current Status: **Active Beta**
 
 ## Community
 
 Join our community to ask questions, share your projects, and connect with other users.
 
-<!-- *   [Join our Slack](https://join.slack.com/share/enQtOTQ4NDc1MzYzOTg2MC02OTc2MTU1Njg3NDEyZjQwN2IzMzEwMjc5NmU4MjhiZmJlMDdiMzMzYjI5YWJiNDhkYWM4ODU0MGY4NTUyNjhi) -->
 *   [Join our Discord](https://discord.gg/NqR9tNWVTm)
 
 
