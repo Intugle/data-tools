@@ -99,7 +99,60 @@ class SemanticSearch:
         >>> details[0]["column_name"]
         'user_id'
         """
-        # implementation remains the same
+        sources = self.manifest.sources
+        models = self.manifest.models
+
+        column_details = []
+        for source in sources.values():
+            table = source.table
+            for column in table.columns:
+                metrics = column.profiling_metrics.model_dump()
+                count = metrics.get("count", 0)
+                distinct_count = metrics.get("distinct_count", 0)
+                null_count = metrics.get("null_count", 0)
+
+                uniqueness = distinct_count / count if count > 0 else 0
+                completeness = (count - null_count) / count if count > 0 else 0
+
+                column_detail = {
+                    "id": f"{table.name}.{column.name}",
+                    "column_name": column.name,
+                    "column_glossary": column.description,
+                    "column_tags": column.tags,
+                    "category": column.category,
+                    "table_name": table.name,
+                    "table_glossary": table.description,
+                    "uniqueness": uniqueness,
+                    "completeness": completeness,
+                    **metrics,
+                }
+                column_details.append(column_detail)
+
+        for model in models.values():
+            for column in model.columns:
+                metrics = column.profiling_metrics.model_dump()
+                count = metrics.get("count", 0)
+                distinct_count = metrics.get("distinct_count", 0)
+                null_count = metrics.get("null_count", 0)
+
+                uniqueness = distinct_count / count if count > 0 else 0
+                completeness = (count - null_count) / count if count > 0 else 0
+
+                column_detail = {
+                    "id": f"{table.name}.{column.name}",
+                    "column_name": column.name,
+                    "column_glossary": column.description,
+                    "column_tags": column.tags,
+                    "category": column.category,
+                    "table_name": table.name,
+                    "table_glossary": table.description,
+                    "uniqueness": uniqueness,
+                    "completeness": completeness,
+                    **metrics,
+                }
+                column_details.append(column_detail)
+
+        return column_details
 
     async def _async_initialize(self):
         """
