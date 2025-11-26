@@ -17,6 +17,7 @@ import pandas as pd
 import streamlit as st
 
 from graphviz import Digraph
+from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import AzureChatOpenAI, ChatOpenAI
 
@@ -877,6 +878,26 @@ with st.sidebar:
             ai_msg = ai_msg.content
             st.success(ai_msg)
             # st.success(f"**Gemini API Key load successful:**")
+
+        elif choice == "anthropic":
+            llm_temp = ChatAnthropic(
+                model=os.environ["LLM_PROVIDER"],
+                temperature=0,
+                # anthropic_api_key="...",  # or set env var: ANTHROPIC_API_KEY=...
+            )
+
+            messages = [
+                (
+                    "system",
+                    "You are a helpful assistant that translates French to English. Translate the user sentence.",
+                ),
+                ("human", "Le point de terminaison Anthropic Claude a été chargé avec succès."),
+            ]
+
+            ai_msg = llm_temp.invoke(messages)
+            ai_msg = ai_msg.content
+            st.success(ai_msg)
+
         # if st.button("Change settings"):
         #     st.session_state.creds_saved = False
         #     st.stop()
@@ -885,8 +906,8 @@ with st.sidebar:
     with st.expander("LLM Settings", expanded=not st.session_state.creds_saved):
         provider = st.selectbox(
             "Choose LLM provider",
-            options=["openai", "azure-openai", "google_genai"],
-            index=["openai", "azure-openai", "google_genai"].index(st.session_state.llm_choice),
+            options=["openai", "azure-openai", "google_genai", "anthropic"],
+            index=["openai", "azure-openai", "google_genai", "anthropic"].index(st.session_state.llm_choice) if st.session_state.llm_choice in ["openai", "azure-openai", "google_genai", "anthropic"] else 0,
             help="Pick your LLM backend.",
         )
         st.session_state.llm_choice = provider
@@ -895,11 +916,16 @@ with st.sidebar:
         if provider == "openai":
             # Pre-fill from env/secrets if present
             pre_key = get_secret("OPENAI_API_KEY", "")
-            model = st.selectbox(
+            # model = st.selectbox(
+            #     "Model",
+            #     # ["openai:gpt-3.5-turbo"],
+            #     ["gpt-4o-mini", "gpt-4o", "gpt-3.5-turbo"],
+            #     index=0,
+            # )
+            model = st.text_input(
                 "Model",
-                # ["openai:gpt-3.5-turbo"],
-                ["gpt-4o-mini", "gpt-4o", "gpt-3.5-turbo"],
-                index=0,
+                value="gpt-4o-mini",  # A sensible default
+                help="Enter the model name. Common options include: gpt-4o-mini, gpt-4o, gpt-3.5-turbo"
             )
             api_key = st.text_input(
                 "OpenAI API key", type="password", value=pre_key, placeholder="sk-********************************"
@@ -980,7 +1006,12 @@ with st.sidebar:
         elif provider == "google_genai":
             # Gemini keys are commonly under GEMINI_API_KEY or GOOGLE_API_KEY
             pre_key = get_secret("GOOGLE_API_KEY") or ""
-            model = st.selectbox("Model", ["gemini-2.5-pro", "gemini-2.5-flash", "gemini-2.5-flash-lite"], index=0)
+            # model = st.selectbox("Model", ["gemini-2.5-pro", "gemini-2.5-flash", "gemini-2.5-flash-lite"], index=0)
+            model = st.text_input(
+                "Model",
+                value="gemini-2.5-pro",  # A sensible default
+                help="Enter the model name. Common options include: gemini-2.5-pro, gemini-2.5-flash, gemini-2.5-flash-lite"
+            )
             api_key = st.text_input(
                 "Gemini API key", type="password", value=pre_key, placeholder="********************************"
             )
@@ -1001,6 +1032,41 @@ with st.sidebar:
                     settings.LLM_PROVIDER = f"google_genai:{model}"
                     st.session_state.creds_saved = True
                     st.success("Gemini settings saved.")
+                    st.rerun()
+
+        # --------- ANTHROPIC ---------
+        elif provider == "anthropic":
+            # Anthropic API key
+            pre_key = get_secret("ANTHROPIC_API_KEY", "")
+            # model = st.selectbox(
+            #     "Model",
+            #     [
+            #         "claude-sonnet-4-5",
+            #         "claude-haiku-4-5",
+            #         "claude-opus-4-1",
+            #     ],
+            #     index=0,
+            #     help="Claude Sonnet 4.5: Best balance of intelligence, speed, and cost\nClaude Haiku 4.5: Fastest with near-frontier intelligence\nClaude Opus 4.1: Exceptional for specialized reasoning",
+            # )
+            model = st.text_input(
+                "Model",
+                value="claude-opus-4-1",  # A sensible default
+                help="Enter the model name. Common options include: claude-sonnet-4-5, claude-haiku-4-5, claude-opus-4-1"
+            )
+            api_key = st.text_input(
+                "Anthropic API key", type="password", value=pre_key, placeholder="sk-ant-********************************"
+            )
+
+            if st.button("Save provider settings", type="primary", width="stretch"):
+                if not api_key or len(api_key) < 20:
+                    st.error("Please enter a valid Anthropic API key.")
+                else:
+                    st.session_state.llm_config = {"model": model}
+                    os.environ["ANTHROPIC_API_KEY"] = api_key.strip()
+                    os.environ["LLM_PROVIDER"] = model
+                    settings.LLM_PROVIDER = f"anthropic:{model}"
+                    st.session_state.creds_saved = True
+                    st.success("Anthropic settings saved.")
                     st.rerun()
 
 with st.sidebar:
