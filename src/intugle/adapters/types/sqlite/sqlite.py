@@ -360,7 +360,7 @@ class SqliteAdapter(Adapter):
             The count of distinct values that appear in both columns.
         """
         table1_config = self.check_data(table1.data)
-        table2_config = self.check_data(table2.data)
+        self.check_data(table2.data)
         
         self.load(table1_config, table1.name)
         
@@ -433,7 +433,7 @@ class SqliteAdapter(Adapter):
             The count of matching composite keys found in both tables.
         """
         table1_config = self.check_data(table1.data)
-        table2_config = self.check_data(table2.data)
+        self.check_data(table2.data)
         
         self.load(table1_config, table1.name)
         

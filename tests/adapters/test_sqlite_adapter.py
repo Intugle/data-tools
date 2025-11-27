@@ -7,10 +7,11 @@ Tests for the SQLite adapter following the BaseAdapterTests pattern.
 import os
 import sqlite3
 import tempfile
+
 from unittest.mock import patch
 
-import pytest
 import pandas as pd
+import pytest
 
 from intugle.adapters.types.sqlite.models import SqliteConfig
 from intugle.adapters.types.sqlite.sqlite import SqliteAdapter, can_handle_sqlite, safe_identifier
