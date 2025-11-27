@@ -53,12 +53,11 @@ def normalise_whitespace(data) -> str:
 
 
 def normalise_string_whitespace(col_values) -> list:
-    
     # Get the metadata info such as id, dataset, table, column name
     table_name = col_values[0]
     column_name = col_values[1]
-    if len(col_values[2:]) > 0: 
-        normalized_values = list(np.vectorize(normalise_whitespace)(np.array(col_values[5:])))
+    if len(col_values[2:]) > 0:
+        normalized_values = list(np.vectorize(normalise_whitespace)(np.array(col_values[2:])))
         # normalized_values = list(pseq(map(additional_processing, col_values[5:]), processes=core_count, partition_size=size))
         # Remove the whitespaces from the data
         # normalized_values = list(map(normalise_whitespace, col_values[5:]))
