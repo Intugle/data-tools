@@ -6,6 +6,12 @@ from typing import TYPE_CHECKING, Any, Optional
 
 import pandas as pd
 
+try:
+    from sqlglot import transpile
+    SQLGLOT_AVAILABLE = True
+except ImportError:
+    SQLGLOT_AVAILABLE = False
+
 from intugle.adapters.adapter import Adapter
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import (
@@ -25,12 +31,9 @@ if TYPE_CHECKING:
 
 def safe_identifier(name: str) -> str:
     """
-    Wraps an SQL identifier in double quotes, allowing almost any character except
-    double quotes and semicolons (to prevent SQL injection).
+    Wraps an SQL identifier in double quotes, escaping existing double quotes.
     """
-    if '"' in name or ';' in name:
-        raise ValueError(f"Invalid SQL identifier: {name}")
-    return f'"{name}"'
+    return f'"{name.replace("\"", "\"\"")}"'
 
 
 class SqliteAdapter(Adapter):
@@ -66,6 +69,15 @@ class SqliteAdapter(Adapter):
     def _get_connection(self, data: SqliteConfig) -> sqlite3.Connection:
         """Get or create a connection to the SQLite database."""
         path = data.path
+        if not path:
+            path = settings.PROFILES.get("sqlite", {}).get("path")
+        
+        if not path:
+            raise ValueError(
+                "SQLite database path not found. Please provide it in the dataset config "
+                "or in profiles.yml under 'sqlite' -> 'path'."
+            )
+
         if path not in self._connections:
             conn = sqlite3.connect(path)
             conn.row_factory = sqlite3.Row
@@ -299,16 +311,22 @@ class SqliteAdapter(Adapter):
         """
         if self.connection is None:
             raise RuntimeError("Connection not established. Call load() first.")
+        
         table_name_safe = safe_identifier(table_name)
         
+        # Transpile the query to SQLite dialect if possible
+        final_query = query
+        if SQLGLOT_AVAILABLE:
+            final_query = transpile(query, read=None, write="sqlite")[0]
+
         if materialize == "table":
             self._execute_sql(f"DROP TABLE IF EXISTS {table_name_safe}")
-            self._execute_sql(f"CREATE TABLE {table_name_safe} AS {query}")
+            self._execute_sql(f"CREATE TABLE {table_name_safe} AS {final_query}")
         else:
             self._execute_sql(f"DROP VIEW IF EXISTS {table_name_safe}")
-            self._execute_sql(f"CREATE VIEW {table_name_safe} AS {query}")
+            self._execute_sql(f"CREATE VIEW {table_name_safe} AS {final_query}")
         
-        return query
+        return final_query
 
     def create_new_config_from_etl(self, etl_name: str) -> DataSetData:
         """
@@ -370,6 +388,96 @@ class SqliteAdapter(Adapter):
         """
         result = self.execute(query)
         return result[0]["intersect_count"]
+
+    def get_composite_key_uniqueness(
+        self, table_name: str, columns: list[str], dataset_data: DataSetData
+    ) -> int:
+        """
+        Calculate the count of unique composite keys in a table.
+
+        Args:
+            table_name: The name of the table.
+            columns: List of column names forming the composite key.
+            dataset_data: The dataset configuration.
+
+        Returns:
+            The count of unique composite keys.
+        """
+        data = self.check_data(dataset_data)
+        self.load(data, table_name)
+        
+        table_name_safe = safe_identifier(table_name)
+        safe_columns = [safe_identifier(col) for col in columns]
+        column_list = ", ".join(safe_columns)
+        null_cols_filter = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns)
+
+        query = f"""
+        SELECT COUNT(*) FROM (
+            SELECT DISTINCT {column_list} FROM {table_name_safe}
+            WHERE {null_cols_filter}
+        ) as t
+        """
+        return self._execute_sql(query)[0][0]
+
+    def intersect_composite_keys_count(
+        self,
+        table1: "DataSet",
+        columns1: list[str],
+        table2: "DataSet",
+        columns2: list[str],
+    ) -> int:
+        """
+        Calculate the intersection count of composite keys between two tables.
+        Assumes both tables are in the same SQLite database.
+
+        Args:
+            table1: The first DataSet.
+            columns1: List of column names from the first table.
+            table2: The second DataSet.
+            columns2: List of column names from the second table.
+
+        Returns:
+            The count of matching composite keys found in both tables.
+        """
+        table1_config = self.check_data(table1.data)
+        table2_config = self.check_data(table2.data)
+        
+        self.load(table1_config, table1.name)
+        
+        if table1_config.path != table2_config.path:
+            raise ValueError(
+                f"Cannot compute intersection: tables are in different databases "
+                f"({table1_config.path} vs {table2_config.path}). "
+                f"Both tables must be in the same SQLite database."
+            )
+
+        fqn1 = safe_identifier(table1.name)
+        fqn2 = safe_identifier(table2.name)
+
+        safe_columns1 = [safe_identifier(col) for col in columns1]
+        safe_columns2 = [safe_identifier(col) for col in columns2]
+
+        # Subquery for distinct keys from table 1
+        distinct_cols1 = ", ".join(safe_columns1)
+        null_filter1 = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns1)
+        subquery1 = f'(SELECT DISTINCT {distinct_cols1} FROM {fqn1} WHERE {null_filter1}) AS t1'
+
+        # Subquery for distinct keys from table 2
+        distinct_cols2 = ", ".join(safe_columns2)
+        null_filter2 = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns2)
+        subquery2 = f'(SELECT DISTINCT {distinct_cols2} FROM {fqn2} WHERE {null_filter2}) AS t2'
+
+        # Join conditions
+        join_conditions = " AND ".join(
+            [f"t1.{c1} = t2.{c2}" for c1, c2 in zip(safe_columns1, safe_columns2)]
+        )
+
+        query = f"""
+        SELECT COUNT(*)
+        FROM {subquery1}
+        INNER JOIN {subquery2} ON {join_conditions}
+        """
+        return self._execute_sql(query)[0][0]
 
     def get_details(self, data: SqliteConfig):
         """
