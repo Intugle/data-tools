@@ -48,7 +48,7 @@ def _run_async_in_sync(coro: Awaitable[T]) -> T:
 
 class SemanticSearch:
     def __init__(
-        self, models_dir_path: str = settings.MODELS_DIR, collection_name: str = settings.VECTOR_COLLECTION_NAME
+        self, models_dir_path: str = settings.MODELS_DIR, collection_name: str = settings.PROJECT_ID
     ):
         """
         Initialize the SemanticSearch object from a persisted manifest.
