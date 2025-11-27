@@ -33,7 +33,7 @@ def safe_identifier(name: str) -> str:
     """
     Wraps an SQL identifier in double quotes, escaping existing double quotes.
     """
-    return f'"{name.replace("\"", "\"\"")}"'
+    return '"' + name.replace('"', '""') + '"'
 
 
 class SqliteAdapter(Adapter):
@@ -79,7 +79,7 @@ class SqliteAdapter(Adapter):
             )
 
         if path not in self._connections:
-            conn = sqlite3.connect(path)
+            conn = sqlite3.connect(path, check_same_thread=False)
             conn.row_factory = sqlite3.Row
             self._connections[path] = conn
         self._current_path = path
@@ -340,7 +340,7 @@ class SqliteAdapter(Adapter):
         """
         if self._current_path is None:
             raise RuntimeError("Connection not established. Cannot create config.")
-        return SqliteConfig(path=self._current_path, type="sqlite")
+        return SqliteConfig(identifier=etl_name, path=self._current_path, type="sqlite")
 
     def deploy_semantic_model(self, manifest: "Manifest", **kwargs):
         """Deploys a semantic model to the target system."""
