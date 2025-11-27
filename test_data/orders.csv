@@ -1,0 +1,4 @@
+order_id,customer_id,product,quantity
+1001,1,Widget,5
+1002,2,Gadget,3
+1003,1,Widget,2
