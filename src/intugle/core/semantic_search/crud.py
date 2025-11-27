@@ -50,7 +50,15 @@ class SemanticSearchCRUD:
             }
             embeddings_configurations = {**embeddings_configurations, **config}
 
-        configuration = QdrantVectorConfiguration(vectors_config=embeddings_configurations)
+        # Payload schema with keyword index for "type" field required for filtering
+        payload_schema = {
+            "type": models.PayloadSchemaType.KEYWORD,
+        }
+
+        configuration = QdrantVectorConfiguration(
+            vectors_config=embeddings_configurations,
+            payload_schema=payload_schema
+        )
 
         return configuration
 
@@ -203,13 +211,7 @@ class SemanticSearchCRUD:
         async with self.vector_store as vdb:
             await vdb.delete_collection()
             await vdb.create_collection()
-            # Create keyword index for the "type" payload field
-            # This is required for filtering operations on the "type" field
-            await vdb.client.create_payload_index(
-                collection_name=self.collection_name,
-                field_name="type",
-                field_schema=models.PayloadSchemaType.KEYWORD
-            )
+            # Keyword index for "type" field is now created during collection creation via payload_schema
 
     async def initialize(self, column_details: list[dict]):
         await self.clean_collection()
