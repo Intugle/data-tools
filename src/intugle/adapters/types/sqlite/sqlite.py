@@ -68,14 +68,11 @@ class SqliteAdapter(Adapter):
 
     def _get_connection(self, data: SqliteConfig) -> sqlite3.Connection:
         """Get or create a connection to the SQLite database."""
-        path = data.path
-        if not path:
-            path = settings.PROFILES.get("sqlite", {}).get("path")
+        path = settings.PROFILES.get("sqlite", {}).get("path")
         
         if not path:
             raise ValueError(
-                "SQLite database path not found. Please provide it in the dataset config "
-                "or in profiles.yml under 'sqlite' -> 'path'."
+                "SQLite database path not found. Please provide it in profiles.yml under 'sqlite' -> 'path'."
             )
 
         if path not in self._connections:
@@ -340,7 +337,7 @@ class SqliteAdapter(Adapter):
         """
         if self._current_path is None:
             raise RuntimeError("Connection not established. Cannot create config.")
-        return SqliteConfig(identifier=etl_name, path=self._current_path, type="sqlite")
+        return SqliteConfig(identifier=etl_name, type="sqlite")
 
     def deploy_semantic_model(self, manifest: "Manifest", **kwargs):
         """Deploys a semantic model to the target system."""
@@ -367,13 +364,9 @@ class SqliteAdapter(Adapter):
         
         self.load(table1_config, table1.name)
         
-        if table1_config.path != table2_config.path:
-            raise ValueError(
-                f"Cannot compute intersection: tables are in different databases "
-                f"({table1_config.path} vs {table2_config.path}). "
-                f"Both tables must be in the same SQLite database."
-            )
-
+        # Assumption: In the single-profile-path model, all tables accessed 
+        # via this adapter instance reside in the same database.
+        
         table1_name_safe = safe_identifier(table1.name)
         table2_name_safe = safe_identifier(table2.name)
         column1_safe = safe_identifier(column1_name)
@@ -444,13 +437,6 @@ class SqliteAdapter(Adapter):
         
         self.load(table1_config, table1.name)
         
-        if table1_config.path != table2_config.path:
-            raise ValueError(
-                f"Cannot compute intersection: tables are in different databases "
-                f"({table1_config.path} vs {table2_config.path}). "
-                f"Both tables must be in the same SQLite database."
-            )
-
         fqn1 = safe_identifier(table1.name)
         fqn2 = safe_identifier(table2.name)
 
