@@ -23,9 +23,10 @@ if TYPE_CHECKING:
     from intugle.adapters.types.duckdb.models import DuckdbConfig
     from intugle.adapters.types.postgres.models import PostgresConfig
     from intugle.adapters.types.snowflake.models import SnowflakeConfig
+    from intugle.adapters.types.sqlite.models import SqliteConfig
     from intugle.adapters.types.sqlserver.models import SQLServerConfig
 
-    DataSetData = pd.DataFrame | DuckdbConfig | SnowflakeConfig | DatabricksConfig | PostgresConfig | SQLServerConfig
+    DataSetData = pd.DataFrame | DuckdbConfig | SnowflakeConfig | DatabricksConfig | PostgresConfig | SQLServerConfig | SqliteConfig
 else:
     # At runtime, this is dynamically determined
     DataSetData = Any
