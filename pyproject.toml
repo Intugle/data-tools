@@ -75,7 +75,7 @@ sqlserver = [
 ]
 
 mysql = [
-    "mysql-connector-python>=8.0.33",
+    "PyMySQL>=1.1.0",
     "sqlglot>=27.20.0",
 ]
 
