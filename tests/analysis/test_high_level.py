@@ -12,13 +12,10 @@ def sample_dataframe():
         "user_id": [1, 2, 3, 4, 5],
         "product_name": ["Laptop", "Mouse", "Keyboard", "Monitor", "Webcam"],
         "price": [1200.50, 25.00, 75.99, 300.00, 55.50],
-        "purchase_date": pd.to_datetime([
-            "2023-01-15", "2023-01-16", "2023-01-17", "2023-01-18", "2023-01-19"
-        ]),
+        "purchase_date": pd.to_datetime(["2023-01-15", "2023-01-16", "2023-01-17", "2023-01-18", "2023-01-19"]),
     })
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_profile(sample_dataframe):
     """Test the profile convenience method."""
     dataset = DataSet(sample_dataframe, name="test_table")
@@ -33,7 +30,6 @@ def test_profile(sample_dataframe):
     assert all(col.profiling_metrics is not None for col in table_model.columns)
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_identify_datatypes(sample_dataframe):
     """Test the identify_datatypes convenience method."""
     dataset = DataSet(sample_dataframe, name="test_table")
@@ -45,7 +41,6 @@ def test_identify_datatypes(sample_dataframe):
     assert all(col.category is not None for col in table_model.columns)
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_identify_keys(sample_dataframe):
     """Test the identify_keys method."""
     dataset = DataSet(sample_dataframe, name="test_table")
@@ -58,7 +53,6 @@ def test_identify_keys(sample_dataframe):
     assert dataset.source.table.key.distinct_count == 5
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_generate_glossary(sample_dataframe):
     """Test the generate_glossary method."""
     dataset = DataSet(sample_dataframe, name="test_table")
@@ -71,7 +65,6 @@ def test_generate_glossary(sample_dataframe):
     assert all(col.description is not None for col in table_model.columns)
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_save_yaml(sample_dataframe, tmp_path):
     """Test the save_yaml method."""
     dataset = DataSet(sample_dataframe, name="test_table")

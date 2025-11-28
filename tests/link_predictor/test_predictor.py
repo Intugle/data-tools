@@ -35,7 +35,6 @@ def mock_predict_for_pair():
         yield mock
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_predictor_with_dict_input(mock_predict_for_pair):
     """
     Tests that the LinkPredictor can be initialized with a dictionary of raw
@@ -67,7 +66,6 @@ def test_predictor_with_dict_input(mock_predict_for_pair):
     assert results.links[0].to_uniqueness_ratio == 0.75
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_predictor_with_list_input(mock_predict_for_pair):
     """
     Tests that the LinkPredictor can be initialized with a list of DataSet
@@ -103,7 +101,6 @@ def test_predictor_with_list_input(mock_predict_for_pair):
     assert results.links[0].to_uniqueness_ratio == 0.75
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_predictor_raises_error_with_insufficient_datasets():
     """
     Tests that LinkPredictor raises a ValueError if initialized with fewer than two datasets.
@@ -112,21 +109,17 @@ def test_predictor_raises_error_with_insufficient_datasets():
         LinkPredictor({"customers": pd.DataFrame({"id": [1]})})
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_predictor_end_to_end_simple_link():
     """
     Tests the LinkPredictor end-to-end with simple dataframes and a single link,
     without mocking the LLM.
     """
     # 1. Prepare dummy dataframes
-    customers_df = pd.DataFrame({
-        "customer_id": [1, 2, 3, 4],
-        "name": ["Alice", "Bob", "Charlie", "David"]
-    })
+    customers_df = pd.DataFrame({"customer_id": [1, 2, 3, 4], "name": ["Alice", "Bob", "Charlie", "David"]})
     orders_df = pd.DataFrame({
         "order_id": [101, 102, 103, 104],
         "customer_id": [1, 3, 1, 4],
-        "amount": [100, 200, 150, 300]
+        "amount": [100, 200, 150, 300],
     })
 
     datasets = {
@@ -142,17 +135,17 @@ def test_predictor_end_to_end_simple_link():
 
     # 4. Assert that the correct link was found
     assert len(results.links) == 1, f"Expected 1 link, but found {len(results.links)}"
-    
+
     # Find the link regardless of direction
     link = None
     for temp_link in results.links:
-        if (
-            {temp_link.from_dataset, temp_link.to_dataset} == {"customers", "orders"} and
-            {tuple(temp_link.from_columns), tuple(temp_link.to_columns)} == {("customer_id",)}
-        ):
+        if {temp_link.from_dataset, temp_link.to_dataset} == {"customers", "orders"} and {
+            tuple(temp_link.from_columns),
+            tuple(temp_link.to_columns),
+        } == {("customer_id",)}:
             link = temp_link
             break
-    
+
     assert link is not None, "Expected link between customers.customer_id and orders.customer_id not found"
 
     # Verify that intersection metrics are populated and reasonable
@@ -167,7 +160,7 @@ def test_predictor_end_to_end_simple_link():
 
     # Specific checks for this data
     assert link.intersect_count == 3
-    
+
     # The ratios depend on the direction, so we check both possibilities
     if link.from_dataset == "customers":
         assert abs(link.intersect_ratio_from_col - 0.75) < 0.01
@@ -183,7 +176,6 @@ def test_predictor_end_to_end_simple_link():
         assert abs(link.to_uniqueness_ratio - 1.0) < 0.01
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_predictor_end_to_end_composite_key_link():
     """
     Tests the LinkPredictor end-to-end with composite keys,
@@ -193,21 +185,21 @@ def test_predictor_end_to_end_composite_key_link():
     products_df = pd.DataFrame({
         "product_id": [1, 2, 3, 4],
         "category": ["Electronics", "Books", "Electronics", "Clothing"],
-        "price": [100, 20, 150, 50]
+        "price": [100, 20, 150, 50],
     })
 
     # This table has a composite key (order_id, product_id)
     order_items_df = pd.DataFrame({
         "order_id": [101, 101, 102, 102, 103],
         "product_id": [1, 2, 1, 3, 4],
-        "quantity": [1, 1, 2, 1, 1]
+        "quantity": [1, 1, 2, 1, 1],
     })
 
     # Another table with a composite key (store_id, product_id)
     store_inventory_df = pd.DataFrame({
         "store_id": ["S1", "S1", "S2", "S2", "S3"],
         "product_id": [1, 2, 1, 3, 4],
-        "stock": [10, 5, 12, 8, 3]
+        "stock": [10, 5, 12, 8, 3],
     })
 
     datasets = {
@@ -227,16 +219,16 @@ def test_predictor_end_to_end_composite_key_link():
 
     # Check for product_id link between products and order_items (direction-agnostic)
     link1_found = any(
-        {link.from_dataset, link.to_dataset} == {"products", "order_items"} and
-        {tuple(link.from_columns), tuple(link.to_columns)} == {("product_id",)}
+        {link.from_dataset, link.to_dataset} == {"products", "order_items"}
+        and {tuple(link.from_columns), tuple(link.to_columns)} == {("product_id",)}
         for link in results.links
     )
     assert link1_found, "Expected link between products.product_id and order_items.product_id not found"
 
     # Check for product_id link between products and store_inventory (direction-agnostic)
     link2_found = any(
-        {link.from_dataset, link.to_dataset} == {"products", "store_inventory"} and
-        {tuple(link.from_columns), tuple(link.to_columns)} == {("product_id",)}
+        {link.from_dataset, link.to_dataset} == {"products", "store_inventory"}
+        and {tuple(link.from_columns), tuple(link.to_columns)} == {("product_id",)}
         for link in results.links
     )
     assert link2_found, "Expected link between products.product_id and store_inventory.product_id not found"
@@ -257,7 +249,6 @@ def test_predictor_end_to_end_composite_key_link():
         assert 0 <= link.to_uniqueness_ratio <= 1
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_predictor_end_to_end_complex():
     """
     Tests the LinkPredictor end-to-end with more complex dataframes,
@@ -269,21 +260,21 @@ def test_predictor_end_to_end_complex():
         "id": [101, 102, 103],
         "email": ["alice@example.com", "bob@example.com", "charlie@example.com"],
         "created_at": pd.to_datetime(["2023-01-15", "2023-02-20", "2023-03-10"]),
-        "country": ["USA", "UK", "USA"]
+        "country": ["USA", "UK", "USA"],
     })
 
     orders_df = pd.DataFrame({
         "order_id": [1, 2, 3, 4],
         "customer_id": [101, 102, 101, 103],
         "order_date": pd.to_datetime(["2023-01-20", "2023-02-22", "2023-01-25", "2023-03-12"]),
-        "amount": [100.50, 50.00, 75.25, 120.00]
+        "amount": [100.50, 50.00, 75.25, 120.00],
     })
 
     events_df = pd.DataFrame({
         "event_id": [1, 2, 3],
         "user_id": [101, 103, 102],
         "event_timestamp": pd.to_datetime(["2023-01-20 10:00", "2023-03-12 11:00", "2023-02-22 12:00"]),
-        "event_type": ["purchase", "page_view", "purchase"]
+        "event_type": ["purchase", "page_view", "purchase"],
     })
 
     datasets = {
@@ -303,20 +294,20 @@ def test_predictor_end_to_end_complex():
 
     # Check for the link between customers and orders (direction-agnostic)
     link1_found = any(
-        {link.from_dataset, link.to_dataset} == {"customers", "orders"} and
-        {tuple(link.from_columns), tuple(link.to_columns)} == {("id",), ("customer_id",)}
+        {link.from_dataset, link.to_dataset} == {"customers", "orders"}
+        and {tuple(link.from_columns), tuple(link.to_columns)} == {("id",), ("customer_id",)}
         for link in results.links
     )
     assert link1_found, "Expected link between customers.id and orders.customer_id not found"
 
     # Check for the link between customers and events (direction-agnostic)
     link2_found = any(
-        {link.from_dataset, link.to_dataset} == {"customers", "events"} and
-        {tuple(link.from_columns), tuple(link.to_columns)} == {("id",), ("user_id",)}
+        {link.from_dataset, link.to_dataset} == {"customers", "events"}
+        and {tuple(link.from_columns), tuple(link.to_columns)} == {("id",), ("user_id",)}
         for link in results.links
     )
     assert link2_found, "Expected link between customers.id and events.user_id not found"
-    
+
     # Verify that intersection metrics are populated
     for link in results.links:
         assert link.intersect_count is not None
@@ -333,7 +324,6 @@ def test_predictor_end_to_end_complex():
         assert 0 <= link.to_uniqueness_ratio <= 1
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_predictor_save_and_load_yaml(tmp_path):
     """
     Tests that the LinkPredictor can correctly save its predicted links to a YAML
@@ -386,7 +376,6 @@ def test_predictor_save_and_load_yaml(tmp_path):
         assert original == loaded
 
 
-@pytest.mark.skip(reason="Requires real LLM API key")
 def test_predictor_end_to_end_composite_key_multiple_links():
     """
     Tests the LinkPredictor end-to-end with composite keys and multiple links
@@ -400,7 +389,7 @@ def test_predictor_end_to_end_composite_key_multiple_links():
     players_df = pd.DataFrame({
         "player_name": ["Alice", "Bob", "Alice", "Charlie"],
         "player_class": ["Warrior", "Mage", "Rogue", "Warrior"],
-        "level": [10, 12, 8, None]
+        "level": [10, 12, 8, None],
     })
 
     games_df = pd.DataFrame({
@@ -409,7 +398,7 @@ def test_predictor_end_to_end_composite_key_multiple_links():
         "winner_class": ["Warrior", "Warrior", "Mage", "Rogue"],
         "loser_name": ["Bob", "Alice", "Charlie", "Bob"],
         "loser_class": ["Mage", "Rogue", "Warrior", "Mage"],
-        "duration_minutes": [15, 20, 10, 18]
+        "duration_minutes": [15, 20, 10, 18],
     })
 
     datasets = {
@@ -433,18 +422,18 @@ def test_predictor_end_to_end_composite_key_multiple_links():
 
     # Check for the winner link
     winner_link_found = any(
-        {link.from_dataset, link.to_dataset} == {"players", "games"} and
-        (tuple(link.from_columns) == player_pk and tuple(link.to_columns) == game_winner_fk) or
-        (tuple(link.from_columns) == game_winner_fk and tuple(link.to_columns) == player_pk)
+        {link.from_dataset, link.to_dataset} == {"players", "games"}
+        and (tuple(link.from_columns) == player_pk and tuple(link.to_columns) == game_winner_fk)
+        or (tuple(link.from_columns) == game_winner_fk and tuple(link.to_columns) == player_pk)
         for link in results.links
     )
     assert winner_link_found, "Expected link between players PK and games winner FK not found"
 
     # Check for the loser link
     loser_link_found = any(
-        {link.from_dataset, link.to_dataset} == {"players", "games"} and
-        (tuple(link.from_columns) == player_pk and tuple(link.to_columns) == game_loser_fk) or
-        (tuple(link.from_columns) == game_loser_fk and tuple(link.to_columns) == player_pk)
+        {link.from_dataset, link.to_dataset} == {"players", "games"}
+        and (tuple(link.from_columns) == player_pk and tuple(link.to_columns) == game_loser_fk)
+        or (tuple(link.from_columns) == game_loser_fk and tuple(link.to_columns) == player_pk)
         for link in results.links
     )
     assert loser_link_found, "Expected link between players PK and games loser FK not found"
