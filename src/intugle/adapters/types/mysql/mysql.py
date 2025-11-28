@@ -16,6 +16,9 @@ if TYPE_CHECKING:
     from intugle.analysis.models import DataSet
 
 try:
+    import pymysql
+
+    pymysql.install_as_MySQLconnector()
     import mysql.connector
 
     MYSQL_CONNECTOR_AVAILABLE = True
