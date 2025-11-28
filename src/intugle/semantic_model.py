@@ -1,6 +1,7 @@
 import logging
+import pathlib
 
-from typing import TYPE_CHECKING, Any, Dict, List
+from typing import TYPE_CHECKING, Any, Dict, List, Union
 
 import pandas as pd
 import yaml
@@ -20,7 +21,7 @@ log = logging.getLogger(__name__)
 
 
 class SemanticModel:
-    def __init__(self, data_input: Dict[str, Any] | List[DataSet], domain: str = ""):
+    def __init__(self, data_input: Union[Dict[str, Any], List[DataSet], str], domain: str = ""):
         self.datasets: Dict[str, DataSet] = {}
         self.links: list[PredictedLink] = []
         self.domain = domain
@@ -30,9 +31,11 @@ class SemanticModel:
             self._initialize_from_dict(data_input)
         elif isinstance(data_input, list):
             self._initialize_from_list(data_input)
+        elif isinstance(data_input, str):
+            self._initialize_from_folder(data_input)
         else:
             raise TypeError(
-                "Input must be a dictionary of named dataframes or a list of DataSet objects."
+                "Input must be a dictionary of named dataframes, a list of DataSet objects, or a string path to a folder."
             )
 
     def _initialize_from_dict(self, data_dict: Dict[str, Any]):
@@ -49,6 +52,55 @@ class SemanticModel:
                     "DataSet objects provided in a list must have a 'name' attribute."
                 )
             self.datasets[dataset.name] = dataset
+
+    def _initialize_from_folder(self, folder_path: str):
+        """Scans a folder for supported data files (CSV, Parquet, Excel) and loads them as datasets."""
+        folder = pathlib.Path(folder_path)
+
+        if not folder.exists():
+            raise FileNotFoundError(f"Folder path does not exist: {folder_path}")
+
+        if not folder.is_dir():
+            raise NotADirectoryError(f"Path is not a directory: {folder_path}")
+
+        # Extension to DuckDB type mapping
+        extension_mapping = {
+            '.csv': 'csv',
+            '.parquet': 'parquet',
+            '.xlsx': 'xlsx',
+            '.xls': 'xlsx'
+        }
+
+        found_files = False
+        for file_path in folder.iterdir():
+            if file_path.is_file():
+                file_extension = file_path.suffix.lower()
+                if file_extension in extension_mapping:
+                    found_files = True
+
+                    # Use filename without extension as dataset name
+                    dataset_name = file_path.stem
+
+                    # Create DuckDB config for this file
+                    config = {
+                        "path": str(file_path.resolve()),
+                        "type": extension_mapping[file_extension]
+                    }
+
+                    # Create DataSet with DuckDB adapter
+                    dataset = DataSet(config, name=dataset_name)
+                    self.datasets[dataset_name] = dataset
+
+                    console.print(
+                        f"Loaded dataset '{dataset_name}' from {file_path.name}",
+                        style="green"
+                    )
+
+        if not found_files:
+            raise FileNotFoundError(
+                f"No supported files found in {folder_path}. Supported formats: "
+                f"{', '.join(extension_mapping.keys())}"
+            )
 
     def profile(self, force_recreate: bool = False):
         """Run profiling, datatype identification, and key identification for all datasets."""
@@ -262,4 +314,3 @@ class SemanticModel:
                 f"Failed to deploy semantic model to '{target}': {e}", style="bold red"
             )
             raise
-
