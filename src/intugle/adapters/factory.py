@@ -24,6 +24,7 @@ DEFAULT_PLUGINS = [
     "intugle.adapters.types.snowflake.snowflake",
     "intugle.adapters.types.databricks.databricks",
     "intugle.adapters.types.postgres.postgres",
+    "intugle.adapters.types.mysql.mysql",
     "intugle.adapters.types.sqlserver.sqlserver",
     "intugle.adapters.types.sqlite.sqlite",
 ]

@@ -1,5 +1,7 @@
 from typing import Literal
 
+from pydantic import Field
+
 from intugle.common.schema import SchemaBase
 
 
@@ -10,7 +12,7 @@ class SnowflakeConnectionConfig(SchemaBase):
     role: str
     warehouse: str
     database: str
-    schema: str
+    schema_: str = Field(..., alias="schema")
     type: str
 
 

@@ -3,14 +3,12 @@ import pandas as pd
 from intugle.analysis.models import DataSet
 
 # --- Test Data for Single Primary Key ---
-KEY_TEST_DF = pd.DataFrame(
-    {
-        "order_id": range(100),  # Perfect primary key
-        "customer_id": [f"cust_{i % 10}" for i in range(100)],  # Low uniqueness
-        "product_id": [101, 102, 103, 104, 105] * 20,  # Low uniqueness
-        "notes": [None] * 100,  # All nulls
-    }
-)
+KEY_TEST_DF = pd.DataFrame({
+    "order_id": range(100),  # Perfect primary key
+    "customer_id": [f"cust_{i % 10}" for i in range(100)],  # Low uniqueness
+    "product_id": [101, 102, 103, 104, 105] * 20,  # Low uniqueness
+    "notes": [None] * 100,  # All nulls
+})
 DF_NAME = "key_test_df"
 
 # --- Test Data for Composite Primary Key ---
@@ -54,5 +52,3 @@ def test_composite_key_identification_end_to_end():
     assert sorted(identified_key.columns) == ["product_id", "user_id"]
 
     assert identified_key.distinct_count == 6
-
-    

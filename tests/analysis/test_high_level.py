@@ -12,9 +12,7 @@ def sample_dataframe():
         "user_id": [1, 2, 3, 4, 5],
         "product_name": ["Laptop", "Mouse", "Keyboard", "Monitor", "Webcam"],
         "price": [1200.50, 25.00, 75.99, 300.00, 55.50],
-        "purchase_date": pd.to_datetime([
-            "2023-01-15", "2023-01-16", "2023-01-17", "2023-01-18", "2023-01-19"
-        ]),
+        "purchase_date": pd.to_datetime(["2023-01-15", "2023-01-16", "2023-01-17", "2023-01-18", "2023-01-19"]),
     })
 
 
@@ -87,7 +85,7 @@ def test_save_yaml(sample_dataframe, tmp_path):
     loaded_source = content["sources"][0]
     assert loaded_source["name"] == "my_pandas_source"
     assert loaded_source["database"] == ""
-    assert loaded_source["schema"] == ""
+    assert loaded_source["schema_"] == ""
     assert loaded_source["table"]["name"] == "test_table"
     assert loaded_source["table"]["details"] is None
 
@@ -97,7 +95,7 @@ def test_save_yaml(sample_dataframe, tmp_path):
 
     assert new_dataset.source.name == "my_pandas_source"
     assert new_dataset.source.database == ""
-    assert new_dataset.source.schema == ""
+    assert new_dataset.source.schema_ == ""
     assert new_dataset.source.table.name == "test_table"
     assert new_dataset.source.table.description == dataset.source.table.description
     assert new_dataset.source.table.key.columns == dataset.source.table.key.columns

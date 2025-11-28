@@ -1,5 +1,7 @@
 from typing import Literal
 
+from pydantic import Field
+
 from intugle.common.schema import SchemaBase
 
 
@@ -9,7 +11,7 @@ class PostgresConnectionConfig(SchemaBase):
     host: str
     port: int = 5432
     database: str
-    schema: str
+    schema_: str = Field(..., alias="schema")
 
 
 class PostgresConfig(SchemaBase):

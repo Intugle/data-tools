@@ -74,6 +74,11 @@ sqlserver = [
     "sqlglot>=27.20.0",
 ]
 
+mysql = [
+    "PyMySQL>=1.1.0",
+    "sqlglot>=27.20.0",
+]
+
 streamlit = [
     "streamlit==1.50.0",
     "pyngrok==7.4.0",
@@ -132,6 +137,9 @@ where = ["src"]
 [tool.pytest.ini_options]
 markers = [
     "mcp: marks tests that require the MCP server to be running",
+]
+filterwarnings = [
+    "ignore:Field name \"schema\" in \"SchemaBase\" shadows an attribute in parent \"BaseModel\":UserWarning",
 ]
 
 [tool.sonar]

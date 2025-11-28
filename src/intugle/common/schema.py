@@ -9,9 +9,9 @@ class SchemaBase(BaseModel):
     model_config = ConfigDict(
         extra="ignore",
         use_enum_values=True,
-        validate_by_name=True
+        validate_by_name=True,
     )
-    
+
 
 class NodeType(str, Enum):
     MODEL = "model"
@@ -19,5 +19,3 @@ class NodeType(str, Enum):
     FEWSHOT = "fewshot"
     ANALYTICS_CATALOGUE = "analytics_catalogue"
     SOURCE = "source"
-
-

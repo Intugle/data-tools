@@ -109,10 +109,10 @@ class BaseAdapterTests:
         # Assert: Check that the intersection is greater than 0.
         assert table1_dataset.source.name is not None
         assert table1_dataset.source.database is None or isinstance(table1_dataset.source.database, str)
-        assert table1_dataset.source.schema is None or isinstance(table1_dataset.source.schema, str)
+        assert table1_dataset.source.schema_ is None or isinstance(table1_dataset.source.schema_, str)
         assert table2_dataset.source.name is not None
         assert table2_dataset.source.database is None or isinstance(table2_dataset.source.database, str)
-        assert table2_dataset.source.schema is None or isinstance(table2_dataset.source.schema, str)
+        assert table2_dataset.source.schema_ is None or isinstance(table2_dataset.source.schema_, str)
 
         assert intersect_count > 0
 
