@@ -41,10 +41,7 @@ class LinkPredictor:
                         of DataSet objects.
         """
 
-        if isinstance(data_input, dict):
-            if len(data_input) < 2:
-                raise ValueError("LinkPredictor requires at least two datasets to compare.")
-        elif isinstance(data_input, list):
+        if isinstance(data_input, (dict, list)):
             if len(data_input) < 2:
                 raise ValueError("LinkPredictor requires at least two datasets to compare.")
         else:
