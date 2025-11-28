@@ -32,7 +32,7 @@ def test_datatype_identification_end_to_end():
 
     assert dataset.source.name == "my_pandas_source"
     assert dataset.source.database == ""
-    assert dataset.source.schema == ""
+    assert dataset.source.schema_ == ""
 
     # Check the final output of the L1 and L2 steps
     columns_map = dataset.columns

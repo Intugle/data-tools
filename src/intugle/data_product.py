@@ -190,7 +190,7 @@ class DataProduct:
                     asset_id=source.table.name,
                     asset_name=source.table.name,
                     asset_details={},
-                    connection_id=source.schema,
+                    connection_id=source.schema_,
                     connection_source_name="postgresql",
                     connection_credentials={},
                 )
