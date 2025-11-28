@@ -18,9 +18,6 @@ if TYPE_CHECKING:
 try:
     import pymysql
 
-    pymysql.install_as_MySQLconnector()
-    import mysql.connector
-
     MYSQL_CONNECTOR_AVAILABLE = True
 except Exception:
     MYSQL_CONNECTOR_AVAILABLE = False
@@ -78,7 +75,7 @@ class MySQLAdapter(Adapter):
                 "MySQL dependencies are not installed. Please run 'pip install intugle[mysql]'."
             )
 
-        self.connection: Optional["mysql.connector.connection_cext.CMySQLConnection"] = None
+        self.connection: Optional[pymysql.connections.Connection] = None
         self._database: Optional[str] = None
         self._schema: Optional[str] = None
         self._source_name: str = settings.PROFILES.get("mysql", {}).get("name", "my_mysql_source")
@@ -95,7 +92,7 @@ class MySQLAdapter(Adapter):
         self._database = params.database
         self._schema = params.schema
 
-        self.connection = mysql.connector.connect(
+        self.connection = pymysql.connect(
             user=params.user,
             password=params.password,
             host=params.host,
@@ -127,7 +124,7 @@ class MySQLAdapter(Adapter):
         return rows
 
     def _get_pandas_df(self, query: str, *args) -> pd.DataFrame:
-        cursor = self.connection.cursor(dictionary=True)
+        cursor = self.connection.cursor(pymysql.cursors.DictCursor)
         cursor.execute(query, args or None)
         rows = cursor.fetchall()
         cursor.close()
