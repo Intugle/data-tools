@@ -5,17 +5,13 @@ from pydantic import BaseModel, ConfigDict
 
 class SchemaBase(BaseModel):
     """Base model configuration"""
-    # Keep an explicit optional `schema` attribute but prefer `schema_` in
-    # concrete models. The presence of this attribute avoids unexpected
-    # Pydantic warnings when child models previously declared `schema`.
-    schema: str | None = None
 
     model_config = ConfigDict(
         extra="ignore",
         use_enum_values=True,
         validate_by_name=True,
     )
-    
+
 
 class NodeType(str, Enum):
     MODEL = "model"
@@ -23,5 +19,3 @@ class NodeType(str, Enum):
     FEWSHOT = "fewshot"
     ANALYTICS_CATALOGUE = "analytics_catalogue"
     SOURCE = "source"
-
-
