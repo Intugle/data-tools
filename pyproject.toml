@@ -83,6 +83,10 @@ streamlit = [
     "graphviz"
 ]
 
+redshift = [
+    "redshift-connector>=2.0.0"
+]
+
 
 [project.urls]
 "Homepage" = "https://github.com/Intugle/data-tools"

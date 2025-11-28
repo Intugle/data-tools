@@ -1,0 +1,64 @@
+Collecting redshift-connector
+  Obtaining dependency information for redshift-connector from https://files.pythonhosted.org/packages/e5/a6/f7100d4be4cc13536bb7e8e1edadfef324bf0e0c9fe0ceb128ad35558358/redshift_connector-2.1.10-py3-none-any.whl.metadata
+  Downloading redshift_connector-2.1.10-py3-none-any.whl.metadata (69 kB)
+     -------------------------------------- 69.7/69.7 kB 475.6 kB/s eta 0:00:00
+Collecting scramp<1.5.0,>=1.2.0 (from redshift-connector)
+  Obtaining dependency information for scramp<1.5.0,>=1.2.0 from https://files.pythonhosted.org/packages/69/bf/54b5d40bea1c1805175ead2d496c267f05eec87561687dd73ab76869d8d9/scramp-1.4.6-py3-none-any.whl.metadata
+  Downloading scramp-1.4.6-py3-none-any.whl.metadata (19 kB)
+Requirement already satisfied: pytz>=2020.1 in c:\users\ram caddysy\desktop\intugle1\data-tools\.venv\lib\site-packages (from redshift-connector) (2025.2)
+Collecting beautifulsoup4<5.0.0,>=4.7.0 (from redshift-connector)
+  Obtaining dependency information for beautifulsoup4<5.0.0,>=4.7.0 from https://files.pythonhosted.org/packages/94/fe/3aed5d0be4d404d12d36ab97e2f1791424d9ca39c2f754a6285d59a3b01d/beautifulsoup4-4.14.2-py3-none-any.whl.metadata
+  Downloading beautifulsoup4-4.14.2-py3-none-any.whl.metadata (3.8 kB)
+Collecting boto3<2.0.0,>=1.9.201 (from redshift-connector)
+  Obtaining dependency information for boto3<2.0.0,>=1.9.201 from https://files.pythonhosted.org/packages/3c/56/f47a80254ed4991cce9a2f6d8ae8aafbc8df1c3270e966b2927289e5a12f/boto3-1.41.5-py3-none-any.whl.metadata
+  Downloading boto3-1.41.5-py3-none-any.whl.metadata (6.8 kB)
+Requirement already satisfied: requests<3.0.0,>=2.23.0 in c:\users\ram caddysy\desktop\intugle1\data-tools\.venv\lib\site-packages (from redshift-connector) (2.32.5)
+Collecting lxml<6.0.0,>=4.6.5 (from redshift-connector)
+  Obtaining dependency information for lxml<6.0.0,>=4.6.5 from https://files.pythonhosted.org/packages/91/1e/05ddcb57ad2f3069101611bd5f5084157d90861a2ef460bf42f45cced944/lxml-5.4.0-cp312-cp312-win_amd64.whl.metadata
+  Downloading lxml-5.4.0-cp312-cp312-win_amd64.whl.metadata (3.6 kB)
+Collecting botocore<2.0.0,>=1.12.201 (from redshift-connector)
+  Obtaining dependency information for botocore<2.0.0,>=1.12.201 from https://files.pythonhosted.org/packages/4e/4e/21cd0b8f365449f1576f93de1ec8718ed18a7a3bc086dfbdeb79437bba7a/botocore-1.41.5-py3-none-any.whl.metadata
+  Downloading botocore-1.41.5-py3-none-any.whl.metadata (5.9 kB)
+Requirement already satisfied: packaging in c:\users\ram caddysy\desktop\intugle1\data-tools\.venv\lib\site-packages (from redshift-connector) (25.0)
+Collecting setuptools (from redshift-connector)
+  Obtaining dependency information for setuptools from https://files.pythonhosted.org/packages/a3/dc/17031897dae0efacfea57dfd3a82fdd2a2aeb58e0ff71b77b87e44edc772/setuptools-80.9.0-py3-none-any.whl.metadata
+  Using cached setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting soupsieve>1.2 (from beautifulsoup4<5.0.0,>=4.7.0->redshift-connector)
+  Obtaining dependency information for soupsieve>1.2 from https://files.pythonhosted.org/packages/14/a0/bb38d3b76b8cae341dad93a2dd83ab7462e6dbcdd84d43f54ee60a8dc167/soupsieve-2.8-py3-none-any.whl.metadata
+  Downloading soupsieve-2.8-py3-none-any.whl.metadata (4.6 kB)
+Requirement already satisfied: typing-extensions>=4.0.0 in c:\users\ram caddysy\desktop\intugle1\data-tools\.venv\lib\site-packages (from beautifulsoup4<5.0.0,>=4.7.0->redshift-connector) (4.15.0)
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3<2.0.0,>=1.9.201->redshift-connector)
+  Obtaining dependency information for jmespath<2.0.0,>=0.7.1 from https://files.pythonhosted.org/packages/31/b4/b9b800c45527aadd64d5b442f9b932b00648617eb5d63d2c7a6587b7cafc/jmespath-1.0.1-py3-none-any.whl.metadata
+  Downloading jmespath-1.0.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting s3transfer<0.16.0,>=0.15.0 (from boto3<2.0.0,>=1.9.201->redshift-connector)
+  Obtaining dependency information for s3transfer<0.16.0,>=0.15.0 from https://files.pythonhosted.org/packages/5f/e1/5ef25f52973aa12a19cf4e1375d00932d7fb354ffd310487ba7d44225c1a/s3transfer-0.15.0-py3-none-any.whl.metadata
+  Downloading s3transfer-0.15.0-py3-none-any.whl.metadata (1.7 kB)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in c:\users\ram caddysy\desktop\intugle1\data-tools\.venv\lib\site-packages (from botocore<2.0.0,>=1.12.201->redshift-connector) (2.9.0.post0)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in c:\users\ram caddysy\desktop\intugle1\data-tools\.venv\lib\site-packages (from botocore<2.0.0,>=1.12.201->redshift-connector) (2.5.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\ram caddysy\desktop\intugle1\data-tools\.venv\lib\site-packages (from requests<3.0.0,>=2.23.0->redshift-connector) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in c:\users\ram caddysy\desktop\intugle1\data-tools\.venv\lib\site-packages (from requests<3.0.0,>=2.23.0->redshift-connector) (3.11)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\ram caddysy\desktop\intugle1\data-tools\.venv\lib\site-packages (from requests<3.0.0,>=2.23.0->redshift-connector) (2025.11.12)
+Collecting asn1crypto>=1.5.1 (from scramp<1.5.0,>=1.2.0->redshift-connector)
+  Obtaining dependency information for asn1crypto>=1.5.1 from https://files.pythonhosted.org/packages/c9/7f/09065fd9e27da0eda08b4d6897f1c13535066174cc023af248fc2a8d5e5a/asn1crypto-1.5.1-py2.py3-none-any.whl.metadata
+  Downloading asn1crypto-1.5.1-py2.py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: six>=1.5 in c:\users\ram caddysy\desktop\intugle1\data-tools\.venv\lib\site-packages (from python-dateutil<3.0.0,>=2.1->botocore<2.0.0,>=1.12.201->redshift-connector) (1.17.0)
+Downloading redshift_connector-2.1.10-py3-none-any.whl (152 kB)
+   ---------------------------------------- 152.8/152.8 kB 4.5 MB/s eta 0:00:00
+Downloading beautifulsoup4-4.14.2-py3-none-any.whl (106 kB)
+   ---------------------------------------- 106.4/106.4 kB 6.4 MB/s eta 0:00:00
+Downloading boto3-1.41.5-py3-none-any.whl (139 kB)
+   ---------------------------------------- 139.3/139.3 kB 8.1 MB/s eta 0:00:00
+Downloading botocore-1.41.5-py3-none-any.whl (14.3 MB)
+   ---------------------------------------- 14.3/14.3 MB 21.1 MB/s eta 0:00:00
+Downloading lxml-5.4.0-cp312-cp312-win_amd64.whl (3.8 MB)
+   ---------------------------------------- 3.8/3.8 MB 20.4 MB/s eta 0:00:00
+Downloading scramp-1.4.6-py3-none-any.whl (12 kB)
+Using cached setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+Downloading asn1crypto-1.5.1-py2.py3-none-any.whl (105 kB)
+   ---------------------------------------- 105.0/105.0 kB ? eta 0:00:00
+Downloading jmespath-1.0.1-py3-none-any.whl (20 kB)
+Downloading s3transfer-0.15.0-py3-none-any.whl (85 kB)
+   ---------------------------------------- 86.0/86.0 kB 5.0 MB/s eta 0:00:00
+Downloading soupsieve-2.8-py3-none-any.whl (36 kB)
+Installing collected packages: asn1crypto, soupsieve, setuptools, scramp, lxml, jmespath, botocore, beautifulsoup4, s3transfer, boto3, redshift-connector
+Successfully installed asn1crypto-1.5.1 beautifulsoup4-4.14.2 boto3-1.41.5 botocore-1.41.5 jmespath-1.0.1 lxml-5.4.0 redshift-connector-2.1.10 s3transfer-0.15.0 scramp-1.4.6 setuptools-80.9.0 soupsieve-2.8

@@ -1,5 +1,4 @@
 import importlib
-
 from typing import Any, Callable, Type, Union
 
 from .adapter import Adapter
@@ -11,6 +10,7 @@ class ModuleInterface:
     @staticmethod
     def register() -> None:
         """Register the necessary items in the environment factory."""
+        ...
 
 
 def import_module(name: str) -> ModuleInterface:
@@ -26,6 +26,9 @@ DEFAULT_PLUGINS = [
     "intugle.adapters.types.postgres.postgres",
     "intugle.adapters.types.sqlserver.sqlserver",
     "intugle.adapters.types.sqlite.sqlite",
+
+    # ✅ Added Redshift adapter plugin
+    "intugle.adapters.types.redshift.redshift",
 ]
 
 
@@ -49,7 +52,10 @@ class AdapterFactory:
                 plugin = import_module(_plugin)
                 plugin.register(self)
             except ImportError:
-                print(f"Warning: Could not load plugin '{_plugin}' due to missing dependencies. This adapter will not be available.")
+                print(
+                    f"Warning: Could not load plugin '{_plugin}' due to missing dependencies. "
+                    "This adapter will not be available."
+                )
                 pass
 
     @classmethod
@@ -77,12 +83,14 @@ class AdapterFactory:
             return Any
         if len(cls.config_types) == 1:
             return cls.config_types[0]
-        return Union[tuple(cls.config_types)]  # noqa: UP007
+        return Union[tuple(cls.config_types)]
 
     @classmethod
     def create(cls, df: Any) -> Adapter:
-        """Create a execution engine type"""
+        """Create an execution engine type"""
         for checker_fn, creator_fn in cls.dataframe_funcs.values():
             if checker_fn(df):
                 return creator_fn()
-        raise ValueError(f"No suitable dataframe type found for object of type {type(df)!r}")
+        raise ValueError(
+            f"No suitable dataframe type found for object of type {type(df)!r}"
+        )
