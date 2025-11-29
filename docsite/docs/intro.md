@@ -25,3 +25,11 @@ Intugle’s GenAI-powered open-source Python library builds an intelligent seman
 *   **Semantic Data Model:** Transform raw, fragmented datasets into an intelligent semantic graph that captures entities, relationships, and context — the foundation for connected intelligence.
 *   **Business Glossary & Semantic Search:** Auto-generate a business glossary and enable search that understands meaning, not just keywords — making data more accessible across technical and business users.
 *   **Data Products:** Instantly generate SQL and reusable data products enriched with context, eliminating manual pipelines and accelerating data-to-insight.
+
+## Supported Integrations
+
+| Category | Integrations |
+| :--- | :--- |
+| **Data Warehouses** |  Snowflake, Databricks |
+| **Databases** | SQLite, PostgreSQL, SQL Server, MySQL |
+| **Local** | Pandas, DuckDB (CSV, Parquet, Excel) |

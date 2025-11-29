@@ -53,7 +53,7 @@ Intugle’s GenAI-powered open-source Python library builds a semantic data mode
 | Category | Integrations |
 | :--- | :--- |
 | **Data Warehouses** |  Snowflake, Databricks |
-| **Databases** | PostgreSQL, SQL Server |
+| **Databases** | SQLite, PostgreSQL, SQL Server, MySQL |
 | **Local** | Pandas, DuckDB (CSV, Parquet, Excel) |
 
 ## Streamlit App
