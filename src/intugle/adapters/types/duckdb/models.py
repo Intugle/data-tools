@@ -5,4 +5,4 @@ from intugle.common.schema import SchemaBase
 
 class DuckdbConfig(SchemaBase): 
     path: str
-    type: Literal["csv", "parquet", "excel"]
+    type: Literal["csv", "parquet", "excel", "table"]
