@@ -115,7 +115,7 @@ class DatabricksAdapter(Adapter):
                     print("Found active Spark session. Using it for execution.")
                     params = DatabricksNotebookConfig.model_validate(connection_parameters_dict)
                     self.catalog = params.catalog
-                    self._schema = params.schema
+                    self._schema = params.schema_
                     return
             except (AttributeError, TypeError):
                 self.spark = None
@@ -129,7 +129,7 @@ class DatabricksAdapter(Adapter):
             print("No active Spark session found. Creating a new SQL connector connection.")
             params = DatabricksSQLConnectorConfig.model_validate(connection_parameters_dict)
             self.catalog = params.catalog
-            self._schema = params.schema
+            self._schema = params.schema_
             self.connection = sql.connect(
                 server_hostname=params.host, http_path=params.http_path, access_token=params.token
             )
