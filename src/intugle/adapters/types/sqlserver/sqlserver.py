@@ -98,7 +98,7 @@ class SQLServerAdapter(Adapter):
 
         params = SQLServerConnectionConfig.model_validate(connection_parameters_dict)
         self._database = params.database
-        self._schema = params.schema
+        self._schema = params.schema_
 
         conn_str = (
             f"SERVER={params.host},{params.port};"

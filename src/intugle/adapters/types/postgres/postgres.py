@@ -137,7 +137,7 @@ class PostgresAdapter(Adapter):
 
         params = PostgresConnectionConfig.model_validate(connection_parameters_dict)
         self._database = params.database
-        self._schema = params.schema
+        self._schema = params.schema_
         self.connection = await asyncpg.connect(
             user=params.user,
             password=params.password,

@@ -95,9 +95,9 @@ class SnowflakeAdapter(Adapter):
                 )
 
             connection_parameters = SnowflakeConnectionConfig.model_validate(connection_parameters_dict)
-            self.session = Session.builder.configs(connection_parameters.model_dump()).create()
+            self.session = Session.builder.configs(connection_parameters.model_dump(by_alias=True)).create()
             self._database = connection_parameters.database
-            self._schema = connection_parameters.schema
+            self._schema = connection_parameters.schema_
 
     @staticmethod
     def check_data(data: Any) -> SnowflakeConfig:

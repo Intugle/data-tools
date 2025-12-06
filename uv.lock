@@ -1998,7 +1998,7 @@ wheels = [
 
 [[package]]
 name = "intugle"
-version = "1.2.1"
+version = "1.2.3"
 source = { editable = "." }
 dependencies = [
     { name = "aiofiles" },
@@ -2071,7 +2071,6 @@ dev = [
     { name = "ipykernel" },
     { name = "langfuse" },
     { name = "mssql-python" },
-    { name = "pymysql" },
     { name = "pysonar" },
     { name = "pyspark" },
     { name = "pytest" },
@@ -2152,7 +2151,6 @@ dev = [
     { name = "ipykernel", specifier = ">=6.30.1" },
     { name = "langfuse", specifier = "==2.60.4" },
     { name = "mssql-python", specifier = ">=0.13.1" },
-    { name = "pymysql", specifier = ">=1.1.2" },
     { name = "pysonar", specifier = ">=1.2.0.2419" },
     { name = "pyspark", specifier = ">=3.5.0,<4.0.0" },
     { name = "pytest", specifier = ">=8.4.1" },

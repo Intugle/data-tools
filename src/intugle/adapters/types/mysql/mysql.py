@@ -93,7 +93,7 @@ class MySQLAdapter(Adapter):
             database=params.database,
         )
 
-    def _get_connection(self) -> pymysql.connections.Connection:
+    def _get_connection(self):
         """Ensures the connection is active and returns it."""
         if self.connection is None:
             self.connect()
