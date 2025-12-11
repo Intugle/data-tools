@@ -17,6 +17,7 @@ def import_module(name: str) -> ModuleInterface:
     """Imports a module given a name."""
     return importlib.import_module(name)  # type: ignore
 
+
 # --- the new helper function ---
 def is_safe_plugin_name(plugin_name: str) -> bool:
     """

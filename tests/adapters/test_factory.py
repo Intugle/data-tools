@@ -1,5 +1,5 @@
-import pytest
 from intugle.adapters.factory import AdapterFactory, is_safe_plugin_name
+
 
 def test_is_safe_plugin_name():
     """
@@ -13,6 +13,7 @@ def test_is_safe_plugin_name():
     assert is_safe_plugin_name("malicious.plugin") is False
     assert is_safe_plugin_name("intugle.adapters.other.something") is False
     assert is_safe_plugin_name("") is False
+
 
 def test_factory_initialization():
     """
