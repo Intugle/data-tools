@@ -79,6 +79,11 @@ mysql = [
     "sqlglot>=27.20.0",
 ]
 
+oracle = [
+    "oracledb>=2.0.0",
+    "sqlglot>=27.20.0",
+]
+
 streamlit = [
     "streamlit==1.50.0",
     "pyngrok==7.4.0",
