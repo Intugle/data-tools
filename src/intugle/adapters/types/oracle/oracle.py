@@ -99,7 +99,7 @@ class OracleAdapter(Adapter):
         
         # Set current schema if different from user
         if params.schema_:
-             with self.connection.cursor() as cursor:
+            with self.connection.cursor() as cursor:
                 cursor.execute(f"ALTER SESSION SET CURRENT_SCHEMA = {params.schema_}")
 
     def _get_fqn(self, identifier: str) -> str:
@@ -235,7 +235,7 @@ class OracleAdapter(Adapter):
             else:
                 dtype_sample = list(distinct_values)
         else:
-             dtype_sample = []
+            dtype_sample = []
 
         # Convert to native types
         native_sample_data = convert_to_native(sample_data)
@@ -290,7 +290,7 @@ class OracleAdapter(Adapter):
             
             elif materialize == "materialized_view":
                 try:
-                     self._execute_sql(f"DROP MATERIALIZED VIEW {fqn}")
+                    self._execute_sql(f"DROP MATERIALIZED VIEW {fqn}")
                 except Exception:
                     pass
                 self._execute_sql(f"CREATE MATERIALIZED VIEW {fqn} AS {transpiled_sql}")
