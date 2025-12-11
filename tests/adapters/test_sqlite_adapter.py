@@ -4,10 +4,10 @@ SQLite Adapter Tests
 Tests for the SQLite adapter following the BaseAdapterTests pattern.
 """
 
+import gc
 import os
 import sqlite3
 import tempfile
-import gc
 
 from unittest.mock import patch
 
@@ -149,7 +149,7 @@ class TestSqliteAdapter(BaseAdapterTests):
 
         conn.close()
         yield path
-        gc.collect() # Force handle release
+        gc.collect()  # Force handle release
         try:
             os.unlink(path)
         except PermissionError:
@@ -407,7 +407,7 @@ class TestSqliteSpecificBehavior:
         try:
             os.unlink(db_path)
         except PermissionError:
-            pass    
+            pass 
 
     def test_missing_profile_raises_error(self):
         """Test that adapter raises ValueError if path is missing from profiles."""
