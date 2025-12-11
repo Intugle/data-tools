@@ -361,9 +361,12 @@ def save_env(env_map: Mapping[str, Optional[str]], env_file: str = ".env") -> No
 
 # ------------------------------ File parsing ------------------------------
 
-def read_bytes_to_df(filename: str, data: bytes) -> tuple[pd.DataFrame, str]:
+def _read_bytes_to_df_core(filename: str, data: bytes) -> tuple[pd.DataFrame, str]:
     """
-    Read a CSV or Excel file from raw bytes into a DataFrame.
+    Core helper to read CSV/Excel files from bytes into a DataFrame.
+
+    This private function encapsulates the common logic for reading different
+    file formats from bytes, used by both read_bytes_to_df and read_file_to_df.
 
     Parameters
     ----------
@@ -406,6 +409,30 @@ def read_bytes_to_df(filename: str, data: bytes) -> tuple[pd.DataFrame, str]:
         return df, note
 
     raise ValueError("Unsupported file type.")
+
+
+def read_bytes_to_df(filename: str, data: bytes) -> tuple[pd.DataFrame, str]:
+    """
+    Read a CSV or Excel file from raw bytes into a DataFrame.
+
+    Parameters
+    ----------
+    filename : str
+        Original filename (used to infer type).
+    data : bytes
+        File content.
+
+    Returns
+    -------
+    (df, note) : tuple[pandas.DataFrame, str]
+        DataFrame plus a note describing how it was read.
+
+    Raises
+    ------
+    ValueError
+        If the file type is unsupported.
+    """
+    return _read_bytes_to_df_core(filename, data)
 
 
 # ------------------------------ Naming helpers ------------------------------
@@ -540,33 +567,7 @@ def read_file_to_df(uploaded_file) -> Tuple[pd.DataFrame, str]:
     if not uploaded_file or not hasattr(uploaded_file, "name") or not hasattr(uploaded_file, "read"):
         raise ValueError("Invalid uploaded file object.")
 
-    filename = str(uploaded_file.name).lower()
-    data = uploaded_file.read()
-    buf = io.BytesIO(data)
-
-    if filename.endswith(".csv"):
-        # Try utf-8 first, fall back to latin-1 for legacy CSVs.
-        try:
-            buf.seek(0)
-            df = pd.read_csv(buf)
-            note = ""
-        except UnicodeDecodeError:
-            buf.seek(0)
-            df = pd.read_csv(buf, encoding="latin-1")
-            note = "Read with latin-1 encoding."
-        return df, note
-
-    if filename.endswith((".xls", ".xlsx")):
-        buf.seek(0)
-        xls = pd.ExcelFile(buf)  # pandas selects suitable engine if available
-        if not xls.sheet_names:
-            raise ValueError("Excel file has no sheets.")
-        first_sheet = xls.sheet_names[0]
-        df = xls.parse(first_sheet)
-        note = f"Read Excel first sheet: '{first_sheet}'."
-        return df, note
-
-    raise ValueError("Unsupported file type. Expect .csv, .xls, or .xlsx.")
+    return _read_bytes_to_df_core(uploaded_file.name, uploaded_file.read())
 
 
 # ------------------------------ State: tables ------------------------------
