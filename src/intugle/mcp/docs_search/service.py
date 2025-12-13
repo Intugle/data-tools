@@ -69,39 +69,93 @@ class DocsSearchService:
                 self._doc_paths = await self._fetch_paths_recursively(session, self.API_URL)
         return self._doc_paths
 
-    async def _fetch_paths_recursively(self, session: aiohttp.ClientSession, url: str) -> List[str]:
+    async def _get_github_api_items(self, session: aiohttp.ClientSession, url: str) -> List[dict]:
         """
-        Recursively fetches file paths from the GitHub API content endpoint.
+        Fetches items from the GitHub API.
 
         Args:
-            session (aiohttp.ClientSession): The active asynchronous HTTP session.
-            url (str): The GitHub API URL for the directory content.
+            session (aiohttp.ClientSession): The HTTP session to use for the request.
+            url (str): The GitHub API URL to fetch items from.
 
         Returns:
-            List[str]: A list of relative paths found under the given URL, or a list
-                       containing an error string if the fetch fails.
+            List[dict]: A list of items from the GitHub API response.
+
+        Raises:
+            RuntimeError: If the API request fails or returns a non-200 status code.
         """
-        paths: List[str] = []
+        async with session.get(url) as response:
+            if response.status != 200:
+                raise RuntimeError(f"Could not fetch {url}, status code: {response.status}")
+            return await response.json()
+
+    def _is_valid_markdown_file(self, item: dict) -> bool:
+        """
+        Checks if an item is a valid markdown file that should be included.
+
+        Args:
+            item (dict): A GitHub API item dictionary.
+
+        Returns:
+            bool: True if the item is a valid markdown file not in blacklist, False otherwise.
+        """
+        if item['type'] != 'file':
+            return False
+        
+        if not (item['name'].endswith('.md') or item['name'].endswith('.mdx')):
+            return False
+        
+        relative_path = item['path'].replace('docsite/docs/', '', 1)
+        return relative_path not in self.BLACKLISTED_ROUTES
+
+    def _extract_relative_path(self, item: dict) -> str:
+        """
+        Extracts the relative path from a GitHub API item.
+
+        Args:
+            item (dict): A GitHub API item dictionary.
+
+        Returns:
+            str: The relative path with 'docsite/docs/' prefix removed.
+        """
+        return item['path'].replace('docsite/docs/', '', 1)
+
+    async def _process_github_item(self, session: aiohttp.ClientSession, item: dict) -> List[str]:
+        """
+        Processes a single GitHub API item (file or directory).
+
+        Args:
+            session (aiohttp.ClientSession): The HTTP session to use for recursive requests.
+            item (dict): A GitHub API item dictionary.
+
+        Returns:
+            List[str]: A list of file paths. Returns a single-item list for files,
+                      or recursively fetched paths for directories.
+        """
+        if self._is_valid_markdown_file(item):
+            return [self._extract_relative_path(item)]
+        elif item['type'] == 'dir':
+            return await self._fetch_paths_recursively(session, item['url'])
+        return []
+
+    async def _fetch_paths_recursively(self, session: aiohttp.ClientSession, url: str) -> List[str]:
+        """
+        Recursively fetches file paths from the GitHub API.
+
+        Args:
+            session (aiohttp.ClientSession): The HTTP session to use for the request.
+            url (str): The GitHub API URL to fetch paths from.
+
+        Returns:
+            List[str]: A list of relative documentation file paths, or error messages if the request fails.
+        """
         try:
-            async with session.get(url) as response:
-                if response.status != 200:
-                    return [f"Error: Could not fetch {url}, status code: {response.status}"]
-
-                items: List[Dict[str, Any]] = await response.json()
-
-                for item in items:
-                    if item['type'] == 'file' and (item['name'].endswith('.md') or item['name'].endswith('.mdx')):
-                        # Strip the docsite/docs/ prefix to get the relative path
-                        relative_path: str = item['path'].replace('docsite/docs/', '', 1)
-                        if relative_path not in self.BLACKLISTED_ROUTES:
-                            paths.append(relative_path)
-                    elif item['type'] == 'dir':
-                        # Recursively fetch paths in subdirectories
-                        paths.extend(await self._fetch_paths_recursively(session, item['url']))
+            items = await self._get_github_api_items(session, url)
+            paths = []
+            for item in items:
+                paths.extend(await self._process_github_item(session, item))
+            return paths
         except Exception as e:
             return [f"Error: Exception while fetching {url}: {e}"]
-
-        return paths
 
     async def search_docs(self, paths: List[str]) -> str:
         """
