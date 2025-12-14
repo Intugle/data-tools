@@ -21,6 +21,37 @@ log = logging.getLogger(__name__)
 
 class SemanticModel:
     def __init__(self, data_input: Dict[str, Any] | List[DataSet], domain: str = ""):
+        """
+        Initialize a SemanticModel to build a semantic layer over your data.
+
+        The SemanticModel is the main entry point for automated data intelligence.
+        It profiles your data, discovers relationships, generates business glossaries,
+        and enables semantic search.
+
+        Args:
+            data_input: Either:
+                - Dictionary mapping table names to data sources (DataFrames, database configs, etc.)
+                - List of pre-configured DataSet objects
+            domain: Optional domain context (e.g., "Healthcare", "Finance") that helps
+                   improve business glossary generation by providing context to the LLM.
+
+        Examples:
+            Initialize from dictionary of DataFrames:
+            >>> datasets = {
+            ...     "patients": {"path": "data/patients.csv", "type": "csv"},
+            ...     "allergies": {"path": "data/allergies.csv", "type": "csv"}
+            ... }
+            >>> sm = SemanticModel(datasets, domain="Healthcare")
+
+            Initialize from list of DataSet objects:
+            >>> dataset1 = DataSet(data1, name="patients")
+            >>> dataset2 = DataSet(data2, name="allergies")
+            >>> sm = SemanticModel([dataset1, dataset2], domain="Healthcare")
+
+        Raises:
+            TypeError: If data_input is neither a dict nor a list of DataSet objects.
+            ValueError: If DataSet objects in a list lack a 'name' attribute.
+        """
         self.datasets: Dict[str, DataSet] = {}
         self.links: list[PredictedLink] = []
         self.domain = domain
@@ -51,7 +82,20 @@ class SemanticModel:
             self.datasets[dataset.name] = dataset
 
     def profile(self, force_recreate: bool = False):
-        """Run profiling, datatype identification, and key identification for all datasets."""
+        """
+        Runs the data profiling pipeline for all contained datasets.
+
+        This stage includes table/column profiling, datatype identification, and
+        primary key identification using data analysis techniques.
+
+        Args:
+            force_recreate (bool): If True, forces the re-execution of profiling
+                                   and overwrites any saved profile files, even
+                                   if data has not changed.
+
+        Returns:
+            None
+        """
         console.print(
             "Starting profiling and key identification stage...", style="yellow"
         )
@@ -70,7 +114,20 @@ class SemanticModel:
         )
 
     def predict_links(self, force_recreate: bool = False):
-        """Run link prediction across all datasets."""
+        """
+        Runs the link prediction stage to discover FK/PK relationships between datasets.
+
+        The method uses statistical and machine learning techniques to find foreign
+        key-primary key relationships and updates the internal link list (`self.links`).
+        Requires at least two datasets in the SemanticModel.
+
+        Args:
+            force_recreate (bool): If True, forces the re-execution of link prediction
+                                   and overwrites any saved link files.
+
+        Returns:
+            None
+        """
         console.print("Starting link prediction stage...", style="yellow")
         if len(self.datasets) < 2:
             console.print(
@@ -85,7 +142,19 @@ class SemanticModel:
         console.print("Link prediction complete.", style="bold green")
 
     def generate_glossary(self, force_recreate: bool = False):
-        """Generate business glossary for all datasets."""
+        """
+        Generates business glossary descriptions for all columns using LLMs.
+
+        This process utilizes the provided `domain` context to improve the quality
+        and relevance of the generated business definitions.
+
+        Args:
+            force_recreate (bool): If True, forces the regeneration of the glossary
+                                   and overwrites existing descriptions.
+
+        Returns:
+            None
+        """
         console.print("Starting business glossary generation stage...", style="yellow")
         for dataset in self.datasets.values():
             # Check if this stage is already complete
@@ -100,9 +169,28 @@ class SemanticModel:
             )
             dataset.generate_glossary(domain=self.domain, save=True)
         console.print("Business glossary generation complete.", style="bold green")
-
+        
     def build(self, force_recreate: bool = False):
-        """Run the full end-to-end knowledge building pipeline."""
+        """
+        Runs the full end-to-end semantic knowledge building pipeline.
+
+        This method orchestrates the full sequence of steps:
+        1. Profile data and identify keys/datatypes (`profile()`).
+        2. Predict inter-dataset relationships (`predict_links()`).
+        3. Generate business glossary (`generate_glossary()`).
+        4. Initialize the semantic search engine.
+
+        Args:
+            force_recreate (bool): If True, forces all downstream steps that
+                                   support it (profile, glossary) to re-run.
+
+        Returns:
+            SemanticModel: The instance of the SemanticModel object (self).
+
+        Example:
+            >>> sm = SemanticModel(datasets).build()
+            >>> print("Build complete with", len(sm.links), "links.")
+        """
         self.profile(force_recreate=force_recreate)
         self.predict_links()
         self.generate_glossary(force_recreate=force_recreate)
@@ -181,10 +269,36 @@ class SemanticModel:
             raise e
 
     def visualize(self):
+        """
+        Visualizes the predicted relationships (links) as a graph.
+
+        Requires that the `predict_links()` method has been called previously
+        to populate the relationships.
+
+        Returns:
+            object: A visualization object (e.g., a NetworkX graph or similar
+                    visualization utility) that can be rendered in environments
+                    like Jupyter notebooks.
+        """
         return self.link_predictor.show_graph()
 
     def search(self, query: str):
-        """Perform a semantic search on the knowledge base."""
+        """
+        Performs a semantic search against the knowledge base.
+
+        This method initializes the semantic search engine (if not already done)
+        and executes a natural language query against the profiled data and glossary.
+
+        Args:
+            query (str): The natural language query to search with (e.g., "What does the patient table contain?").
+
+        Returns:
+            Any: The result from the semantic search engine, typically a list of
+                 relevant documents or code snippets.
+
+        Example:
+            >>> results = sm.search("Find all tables related to patient claims.")
+        """
         if not self._semantic_search_initialized:
             self.initialize_semantic_search()
 
