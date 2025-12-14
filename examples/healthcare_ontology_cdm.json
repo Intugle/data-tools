@@ -1,0 +1,86 @@
+{
+  "name": "Healthcare Enterprise Ontology (CDM)",
+  "description": "Healthcare data ontology aligned with Microsoft CDM",
+  "version": "1.0",
+  "domains": [
+    {
+      "name": "PatientDomain",
+      "display_name": null,
+      "description": "Patient demographics and identification",
+      "domain_type": "customer",
+      "owner": "Patient Services Department",
+      "metadata": {}
+    },
+    {
+      "name": "ClinicalDomain",
+      "display_name": null,
+      "description": "Clinical encounters, diagnoses, and procedures",
+      "domain_type": "service",
+      "owner": "Clinical Operations",
+      "metadata": {}
+    }
+  ],
+  "concepts": [
+    {
+      "name": "Patient",
+      "display_name": null,
+      "description": "Patient demographics and contact information",
+      "domain": "PatientDomain",
+      "cdm_entity_name": "Contact",
+      "cdm_namespace": "core.applicationCommon",
+      "status": "approved",
+      "owner": "patient_services@hospital.org",
+      "tags": [
+        "PHI",
+        "demographics",
+        "core"
+      ],
+      "metadata": {}
+    },
+    {
+      "name": "Encounter",
+      "display_name": null,
+      "description": "Clinical encounters and visits",
+      "domain": "ClinicalDomain",
+      "cdm_entity_name": "Case",
+      "cdm_namespace": "core.applicationCommon.foundationCommon.crmCommon.service",
+      "status": "approved",
+      "owner": "clinical_ops@hospital.org",
+      "tags": [
+        "clinical",
+        "encounter"
+      ],
+      "metadata": {}
+    },
+    {
+      "name": "Medication",
+      "display_name": null,
+      "description": "Prescribed medications",
+      "domain": "ClinicalDomain",
+      "cdm_entity_name": null,
+      "cdm_namespace": null,
+      "status": "in_review",
+      "owner": "pharmacy@hospital.org",
+      "tags": [
+        "clinical",
+        "pharmacy"
+      ],
+      "metadata": {}
+    },
+    {
+      "name": "Diagnosis",
+      "display_name": null,
+      "description": "Clinical diagnoses",
+      "domain": "ClinicalDomain",
+      "cdm_entity_name": null,
+      "cdm_namespace": null,
+      "status": "in_review",
+      "owner": "clinical_ops@hospital.org",
+      "tags": [
+        "clinical",
+        "diagnosis"
+      ],
+      "metadata": {}
+    }
+  ]
+}
