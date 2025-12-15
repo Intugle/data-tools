@@ -1,9 +1,9 @@
 import logging
-
 from typing import TYPE_CHECKING, Any, Dict, List
 
 import pandas as pd
 import yaml
+from rich.panel import Panel  # New import for UI
 
 from intugle.analysis.models import DataSet
 from intugle.core.console import console, success_style
@@ -23,34 +23,6 @@ class SemanticModel:
     def __init__(self, data_input: Dict[str, Any] | List[DataSet], domain: str = ""):
         """
         Initialize a SemanticModel to build a semantic layer over your data.
-
-        The SemanticModel is the main entry point for automated data intelligence.
-        It profiles your data, discovers relationships, generates business glossaries,
-        and enables semantic search.
-
-        Args:
-            data_input: Either:
-                - Dictionary mapping table names to data sources (DataFrames, database configs, etc.)
-                - List of pre-configured DataSet objects
-            domain: Optional domain context (e.g., "Healthcare", "Finance") that helps
-                   improve business glossary generation by providing context to the LLM.
-
-        Examples:
-            Initialize from dictionary of DataFrames:
-            >>> datasets = {
-            ...     "patients": {"path": "data/patients.csv", "type": "csv"},
-            ...     "allergies": {"path": "data/allergies.csv", "type": "csv"}
-            ... }
-            >>> sm = SemanticModel(datasets, domain="Healthcare")
-
-            Initialize from list of DataSet objects:
-            >>> dataset1 = DataSet(data1, name="patients")
-            >>> dataset2 = DataSet(data2, name="allergies")
-            >>> sm = SemanticModel([dataset1, dataset2], domain="Healthcare")
-
-        Raises:
-            TypeError: If data_input is neither a dict nor a list of DataSet objects.
-            ValueError: If DataSet objects in a list lack a 'name' attribute.
         """
         self.datasets: Dict[str, DataSet] = {}
         self.links: list[PredictedLink] = []
@@ -82,25 +54,11 @@ class SemanticModel:
             self.datasets[dataset.name] = dataset
 
     def profile(self, force_recreate: bool = False):
-        """
-        Runs the data profiling pipeline for all contained datasets.
-
-        This stage includes table/column profiling, datatype identification, and
-        primary key identification using data analysis techniques.
-
-        Args:
-            force_recreate (bool): If True, forces the re-execution of profiling
-                                   and overwrites any saved profile files, even
-                                   if data has not changed.
-
-        Returns:
-            None
-        """
+        """Runs the data profiling pipeline for all contained datasets."""
         console.print(
             "Starting profiling and key identification stage...", style="yellow"
         )
         for dataset in self.datasets.values():
-            # Check if this stage is already complete
             if dataset.source.table.key is not None and not force_recreate:
                 print(f"Dataset '{dataset.name}' already profiled. Skipping.")
                 continue
@@ -109,25 +67,46 @@ class SemanticModel:
             dataset.profile(save=True)
             dataset.identify_datatypes(save=True)
             dataset.identify_keys(save=True)
+        
         console.print(
             "Profiling and key identification complete.", style="bold green"
         )
 
+        # [PART 1] Profiling Summary
+        self._print_profiling_summary()
+
+    def _print_profiling_summary(self):
+        """Display a rich summary of profiling results."""
+        total_tables = len(self.datasets)
+        total_columns = 0
+        dimensions = 0
+        measures = 0
+        
+        for dataset in self.datasets.values():
+            if dataset.source and dataset.source.table:
+                cols = dataset.source.table.columns
+                total_columns += len(cols)
+                for col in cols:
+                    if col.data_type in ['string', 'date', 'datetime', 'boolean', 'text']:
+                        dimensions += 1
+                    else:
+                        measures += 1
+        
+        dim_pct = (dimensions / total_columns * 100) if total_columns else 0
+        meas_pct = (measures / total_columns * 100) if total_columns else 0
+
+        summary_text = f"""
+[bold]Tables Profiled:[/bold] {total_tables}
+[bold]Total Columns:[/bold]   {total_columns}
+
+[bold]Distribution:[/bold]
+• Dimensions: {dimensions} ({dim_pct:.1f}%)
+• Measures:   {measures} ({meas_pct:.1f}%)
+        """
+        console.print(Panel(summary_text, title="[bold blue]📊 Profiling Summary[/bold blue]", border_style="blue", expand=False))
+
     def predict_links(self, force_recreate: bool = False):
-        """
-        Runs the link prediction stage to discover FK/PK relationships between datasets.
-
-        The method uses statistical and machine learning techniques to find foreign
-        key-primary key relationships and updates the internal link list (`self.links`).
-        Requires at least two datasets in the SemanticModel.
-
-        Args:
-            force_recreate (bool): If True, forces the re-execution of link prediction
-                                   and overwrites any saved link files.
-
-        Returns:
-            None
-        """
+        """Runs the link prediction stage to discover FK/PK relationships."""
         console.print("Starting link prediction stage...", style="yellow")
         if len(self.datasets) < 2:
             console.print(
@@ -141,56 +120,65 @@ class SemanticModel:
         self.links: list[PredictedLink] = self.link_predictor.links
         console.print("Link prediction complete.", style="bold green")
 
+        # [PART 2] Link Prediction Summary
+        if self.links:
+            self._print_link_prediction_summary()
+
+    def _print_link_prediction_summary(self):
+        """Display a summary of link prediction results."""
+        total_links = len(self.links)
+        link_list_text = ""
+        if total_links > 0:
+            link_list_text = "\n[bold]Relationships Found:[/bold]"
+            for link in self.links[:5]: 
+                link_list_text += f"\n• {link.from_dataset} → {link.to_dataset}"
+            if total_links > 5:
+                link_list_text += f"\n... and {total_links - 5} more."
+        else:
+            link_list_text = "\n[italic]No relationships found.[/italic]"
+
+        summary_text = f"[bold]Links Predicted:[/bold] {total_links}{link_list_text}"
+        console.print(Panel(summary_text, title="[bold blue]🔗 Link Prediction Summary[/bold blue]", border_style="blue", expand=False))
+
     def generate_glossary(self, force_recreate: bool = False):
-        """
-        Generates business glossary descriptions for all columns using LLMs.
-
-        This process utilizes the provided `domain` context to improve the quality
-        and relevance of the generated business definitions.
-
-        Args:
-            force_recreate (bool): If True, forces the regeneration of the glossary
-                                   and overwrites existing descriptions.
-
-        Returns:
-            None
-        """
+        """Generates business glossary descriptions using LLMs."""
         console.print("Starting business glossary generation stage...", style="yellow")
         for dataset in self.datasets.values():
-            # Check if this stage is already complete
             if dataset.source.table.description and not force_recreate:
-                console.print(
-                    f"Glossary for '{dataset.name}' already exists. Skipping."
-                )
+                console.print(f"Glossary for '{dataset.name}' already exists. Skipping.")
                 continue
 
-            console.print(
-                f"Generating glossary for dataset: {dataset.name}", style=success_style
-            )
+            console.print(f"Generating glossary for dataset: {dataset.name}", style=success_style)
             dataset.generate_glossary(domain=self.domain, save=True)
-        console.print("Business glossary generation complete.", style="bold green")
         
+        console.print("Business glossary generation complete.", style="bold green")
+
+        # [PART 3] Glossary Summary
+        self._print_glossary_summary()
+
+    def _print_glossary_summary(self):
+        """Display a summary of business glossary generation."""
+        total_cols = 0
+        described_cols = 0
+        
+        for dataset in self.datasets.values():
+            if dataset.source and dataset.source.table:
+                for col in dataset.source.table.columns:
+                    total_cols += 1
+                    if col.description:
+                        described_cols += 1
+        
+        coverage = (described_cols / total_cols * 100) if total_cols else 0
+        
+        summary_text = f"""
+[bold]Total Fields:[/bold]    {total_cols}
+[bold]Documented:[/bold]      {described_cols}
+[bold]Documentation %:[/bold] [green]{coverage:.1f}%[/green]
+        """
+        console.print(Panel(summary_text, title="[bold blue]📖 Glossary Summary[/bold blue]", border_style="blue", expand=False))
+
     def build(self, force_recreate: bool = False):
-        """
-        Runs the full end-to-end semantic knowledge building pipeline.
-
-        This method orchestrates the full sequence of steps:
-        1. Profile data and identify keys/datatypes (`profile()`).
-        2. Predict inter-dataset relationships (`predict_links()`).
-        3. Generate business glossary (`generate_glossary()`).
-        4. Initialize the semantic search engine.
-
-        Args:
-            force_recreate (bool): If True, forces all downstream steps that
-                                   support it (profile, glossary) to re-run.
-
-        Returns:
-            SemanticModel: The instance of the SemanticModel object (self).
-
-        Example:
-            >>> sm = SemanticModel(datasets).build()
-            >>> print("Build complete with", len(sm.links), "links.")
-        """
+        """Runs the full end-to-end semantic knowledge building pipeline."""
         self.profile(force_recreate=force_recreate)
         self.predict_links()
         self.generate_glossary(force_recreate=force_recreate)
@@ -203,12 +191,25 @@ class SemanticModel:
         except Exception as e:
             log.warning(f"Semantic search initialization failed during build: {e}")
 
+        # [PART 4] Final Build Summary
+        self._print_build_summary()
+
         return self
+
+    def _print_build_summary(self):
+        """Display overall build summary."""
+        summary_text = """
+✅ [bold green]Knowledge Graph Built Successfully![/bold green]
+
+You can now:
+1. Run [bold cyan]sm.visualize()[/bold cyan] to see relationships
+2. Run [bold cyan]sm.search("your question")[/bold cyan] to query data
+3. Run [bold cyan]sm.deploy("snowflake")[/bold cyan] to push to prod
+        """
+        console.print(Panel(summary_text, title="[bold green]🚀 Build Complete[/bold green]", border_style="green", expand=False))
 
     def export(self, format: str, **kwargs):
         """Export the semantic model to a specified format."""
-        # This assumes that the manifest is already loaded in the SemanticModel
-        # In a real implementation, you would get the manifest from the SemanticModel instance
         from intugle.core import settings
         from intugle.parser.manifest import ManifestLoader
 
@@ -269,36 +270,11 @@ class SemanticModel:
             raise e
 
     def visualize(self):
-        """
-        Visualizes the predicted relationships (links) as a graph.
-
-        Requires that the `predict_links()` method has been called previously
-        to populate the relationships.
-
-        Returns:
-            object: A visualization object (e.g., a NetworkX graph or similar
-                    visualization utility) that can be rendered in environments
-                    like Jupyter notebooks.
-        """
+        """Visualizes the predicted relationships (links) as a graph."""
         return self.link_predictor.show_graph()
 
     def search(self, query: str):
-        """
-        Performs a semantic search against the knowledge base.
-
-        This method initializes the semantic search engine (if not already done)
-        and executes a natural language query against the profiled data and glossary.
-
-        Args:
-            query (str): The natural language query to search with (e.g., "What does the patient table contain?").
-
-        Returns:
-            Any: The result from the semantic search engine, typically a list of
-                 relevant documents or code snippets.
-
-        Example:
-            >>> results = sm.search("Find all tables related to patient claims.")
-        """
+        """Performs a semantic search against the knowledge base."""
         if not self._semantic_search_initialized:
             self.initialize_semantic_search()
 
@@ -310,19 +286,12 @@ class SemanticModel:
             raise e
 
     def deploy(self, target: str, **kwargs):
-        """
-        Deploys the semantic model to a specified target platform based on the persisted YAML files.
-
-        Args:
-            target (str): The target platform to deploy to (e.g., "snowflake").
-            **kwargs: Additional keyword arguments specific to the target platform.
-        """
+        """Deploys the semantic model to a specified target platform."""
         console.print(
             f"Starting deployment to '{target}' based on project YAML files...",
             style="yellow",
         )
 
-        # 1. Load the entire project state from YAML files
         from intugle.core import settings
         from intugle.parser.manifest import ManifestLoader
 
@@ -330,10 +299,7 @@ class SemanticModel:
         manifest_loader.load()
         manifest = manifest_loader.manifest
 
-        # 2. Find a suitable adapter from the loaded manifest
         adapter_to_use: "Adapter" = None
-
-        # Dynamically get the adapter class from the factory
         from intugle.adapters.factory import AdapterFactory
 
         factory = AdapterFactory()
@@ -349,7 +315,6 @@ class SemanticModel:
                 f"Deployment target '{target}' is not supported or its dependencies are not installed."
             )
 
-        # Find a source that matches the target type to instantiate the adapter
         for source in manifest.sources.values():
             if (
                 source.table.details
@@ -364,7 +329,6 @@ class SemanticModel:
                 "to provide connection details."
             )
 
-        # 4. Delegate the deployment to the adapter, passing full manifest
         try:
             adapter_to_use.deploy_semantic_model(manifest, **kwargs)
             console.print(
@@ -376,4 +340,3 @@ class SemanticModel:
                 f"Failed to deploy semantic model to '{target}': {e}", style="bold red"
             )
             raise
-
