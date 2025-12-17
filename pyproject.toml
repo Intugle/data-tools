@@ -71,6 +71,7 @@ postgres = [
 ]
 bigquery = [
     "google-cloud-bigquery>=3.11.0",
+    "sqlglot>=27.20.0",
 ]
 sqlserver = [
     "mssql-python>=0.13.1",
