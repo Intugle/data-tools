@@ -18,6 +18,14 @@ def import_module(name: str) -> ModuleInterface:
     return importlib.import_module(name)  # type: ignore
 
 
+# --- the new helper function ---
+def is_safe_plugin_name(plugin_name: str) -> bool:
+    """
+    Checks if the plugin belongs to the safe 'intugle.adapters.types' namespace.
+    """
+    return plugin_name.startswith("intugle.adapters.types.")
+
+
 DEFAULT_PLUGINS = [
     "intugle.adapters.types.pandas.pandas",
     "intugle.adapters.types.duckdb.duckdb",
@@ -28,6 +36,7 @@ DEFAULT_PLUGINS = [
     "intugle.adapters.types.sqlserver.sqlserver",
     "intugle.adapters.types.sqlite.sqlite",
     "intugle.adapters.types.bigquery.bigquery",
+    "intugle.adapters.types.oracle.oracle",
 ]
 
 
@@ -44,7 +53,7 @@ class AdapterFactory:
 
         for _plugin in plugins:
             # Security check: Ensure the plugin is in the correct namespace
-            if not _plugin.startswith("intugle.adapters.types."):
+            if not is_safe_plugin_name(_plugin):
                 print(f"Warning: Skipping potentially unsafe plugin '{_plugin}'.")
                 continue
             try:

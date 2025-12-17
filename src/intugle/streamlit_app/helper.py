@@ -198,10 +198,11 @@ def normalize_col_name(s: str) -> str:
     - replace non [a-z0-9_] with '_'
     - collapse multiple underscores and trim leading/trailing underscores
     """
-    s = re.sub(r"\s+", " ", str(s).strip()).replace(" ", "_").lower()
-    s = re.sub(r"[^a-z0-9_]", "_", s)
-    s = re.sub(r"_+", "_", s).strip("_")
-    return s
+    # Use a distinct local variable to avoid shadowing/redefining the parameter
+    s_clean: str = re.sub(r"\s+", " ", s.strip()).replace(" ", "_").lower()
+    s_clean = re.sub(r"[^a-z0-9_]", "_", s_clean)
+    s_clean = re.sub(r"_+", "_", s_clean).strip("_")
+    return s_clean
 
 
 def validate_column_names(
@@ -348,10 +349,10 @@ def save_env(env_map: Mapping[str, Optional[str]], env_file: str = ".env") -> No
     for k, v in env_map.items():
         if v is None:
             continue
-        val = str(v)
-        os.environ[k] = val
+        val_str = str(v)
+        os.environ[k] = val_str
         # Store quoted value; escape internal double-quotes
-        safe_val = '"' + val.replace('"', r'\"') + '"'
+        safe_val = '"' + val_str.replace('"', r'\"') + '"'
         existing[k] = safe_val
 
     # Write back (sorted for stability)
@@ -361,9 +362,12 @@ def save_env(env_map: Mapping[str, Optional[str]], env_file: str = ".env") -> No
 
 # ------------------------------ File parsing ------------------------------
 
-def read_bytes_to_df(filename: str, data: bytes) -> tuple[pd.DataFrame, str]:
+def _read_bytes_to_df_core(filename: str, data: bytes) -> tuple[pd.DataFrame, str]:
     """
-    Read a CSV or Excel file from raw bytes into a DataFrame.
+    Core helper to read CSV/Excel files from bytes into a DataFrame.
+
+    This private function encapsulates the common logic for reading different
+    file formats from bytes, used by both read_bytes_to_df and read_file_to_df.
 
     Parameters
     ----------
@@ -408,6 +412,30 @@ def read_bytes_to_df(filename: str, data: bytes) -> tuple[pd.DataFrame, str]:
     raise ValueError("Unsupported file type.")
 
 
+def read_bytes_to_df(filename: str, data: bytes) -> tuple[pd.DataFrame, str]:
+    """
+    Read a CSV or Excel file from raw bytes into a DataFrame.
+
+    Parameters
+    ----------
+    filename : str
+        Original filename (used to infer type).
+    data : bytes
+        File content.
+
+    Returns
+    -------
+    (df, note) : tuple[pandas.DataFrame, str]
+        DataFrame plus a note describing how it was read.
+
+    Raises
+    ------
+    ValueError
+        If the file type is unsupported.
+    """
+    return _read_bytes_to_df_core(filename, data)
+
+
 # ------------------------------ Naming helpers ------------------------------
 
 def standardize_table_name(raw: str) -> str:
@@ -420,7 +448,7 @@ def standardize_table_name(raw: str) -> str:
     - replace non [a-z0-9_] with '_'
     - collapse multiple underscores and trim edges
     """
-    s = re.sub(r"\s+", " ", str(raw).strip())
+    s: str = re.sub(r"\s+", " ", raw.strip())
     s = s.replace(" ", "_").lower()
     s = re.sub(r"[^a-z0-9_]", "_", s)
     s = re.sub(r"_+", "_", s).strip("_")
@@ -454,9 +482,13 @@ def validate_table_name(name: str) -> tuple[bool, str]:
     return True, ""
 
 
-def sizeof_mb(bytes_size: int) -> float:
-    """Return size in MiB (rounded to 2 decimals)."""
-    return round(bytes_size / (1024 * 1024), 2)
+def sizeof_mb(bytes_size: int | float) -> float:
+    """Return size in MiB (rounded to 2 decimals).
+
+    Accepts integer or float byte counts and returns a float MiB value.
+    """
+    size_mib: float = round(float(bytes_size) / (1024 * 1024), 2)
+    return size_mib
 
 
 def clean_table_name(name: str) -> str:
@@ -470,8 +502,16 @@ def clean_table_name(name: str) -> str:
 
     Note: this is for UI defaults; persist with `standardize_table_name` before saving.
     """
-    stem = os.path.splitext(name)[0].strip()
+    # Preserve parent path(s) while cleaning only the basename
+    name_str = name
+    # Normalize separators to forward slash for stable behavior across OSes
+    normalized = name_str.replace("\\", "/")
+    parts = normalized.split("/")
+    dir_part = "/".join(parts[:-1]) if len(parts) > 1 else ""
+    filename = parts[-1]
+    stem: str = os.path.splitext(filename)[0].strip()
     stem = re.sub(r"\s+", "_", stem)
+    return f"{dir_part}/{stem}" if dir_part else stem
     return stem
 
 
@@ -489,7 +529,7 @@ def standardize_columns(df: pd.DataFrame) -> pd.DataFrame:
     pandas.DataFrame
         A shallow copy with standardized, unique column names.
     """
-    def normalize(col: str) -> str:
+    def normalize(col: Any) -> str:
         c = re.sub(r"\s+", " ", str(col).strip())
         c = c.replace(" ", "_").lower()
         c = re.sub(r"[^a-z0-9_]", "_", c)
@@ -503,20 +543,27 @@ def standardize_columns(df: pd.DataFrame) -> pd.DataFrame:
 
     for c in df.columns:
         base = normalize(c)
-        count = seen.get(base, 0)
-        if count == 0 and base not in new_cols:
+        # Initialize counter for this base if missing
+        seen.setdefault(base, 0)
+
+        if seen[base] == 0 and base not in new_cols:
             new = base
         else:
-            # Ensure uniqueness by suffixing an incrementing number
-            n = count + 1
-            while f"{base}_{n}" in seen or f"{base}_{n}" in new_cols:
-                n += 1
+            # Ensure uniqueness by suffixing with an incrementing number
+            n = seen[base]
+            if n == 0:
+                n = 1
             new = f"{base}_{n}"
+            # Bump until unique
+            while new in new_cols:
+                n += 1
+                new = f"{base}_{n}"
             seen[base] = n
-        seen[base] = seen.get(base, 0) + 1
-        new_cols.append(new)
 
-    out = df.copy()
+        new_cols.append(new)
+        seen[base] += 1
+
+    out: pd.DataFrame = df.copy()
     out.columns = new_cols
     return out
 
@@ -540,33 +587,7 @@ def read_file_to_df(uploaded_file) -> Tuple[pd.DataFrame, str]:
     if not uploaded_file or not hasattr(uploaded_file, "name") or not hasattr(uploaded_file, "read"):
         raise ValueError("Invalid uploaded file object.")
 
-    filename = str(uploaded_file.name).lower()
-    data = uploaded_file.read()
-    buf = io.BytesIO(data)
-
-    if filename.endswith(".csv"):
-        # Try utf-8 first, fall back to latin-1 for legacy CSVs.
-        try:
-            buf.seek(0)
-            df = pd.read_csv(buf)
-            note = ""
-        except UnicodeDecodeError:
-            buf.seek(0)
-            df = pd.read_csv(buf, encoding="latin-1")
-            note = "Read with latin-1 encoding."
-        return df, note
-
-    if filename.endswith((".xls", ".xlsx")):
-        buf.seek(0)
-        xls = pd.ExcelFile(buf)  # pandas selects suitable engine if available
-        if not xls.sheet_names:
-            raise ValueError("Excel file has no sheets.")
-        first_sheet = xls.sheet_names[0]
-        df = xls.parse(first_sheet)
-        note = f"Read Excel first sheet: '{first_sheet}'."
-        return df, note
-
-    raise ValueError("Unsupported file type. Expect .csv, .xls, or .xlsx.")
+    return _read_bytes_to_df_core(uploaded_file.name, uploaded_file.read())
 
 
 # ------------------------------ State: tables ------------------------------
@@ -783,12 +804,19 @@ def llm_ready_check() -> tuple[bool, str]:
 
 # ------------------------------ Object → dict ------------------------------
 
-def link_to_dict(x: Any) -> dict[str, Any]:
+def link_to_dict(x: object) -> dict[str, Any]:
     """
     Convert dataclass / Pydantic / namedtuple / simple objects to a dict,
     filtering out private attrs where applicable. Falls back to {'value': str(x)}.
     """
-    if is_dataclass(x):
+    # If the incoming object is a plain mapping (dict-like), return a copy
+    # with private keys filtered out. This ensures callers can pass simple
+    # dictionaries to the normalizer without losing structure.
+    if isinstance(x, Mapping):
+        return {k: v for k, v in x.items() if not str(k).startswith("_")}
+
+    # Only pass instances to `asdict`; dataclass `type` objects are not valid.
+    if is_dataclass(x) and not isinstance(x, type):
         return asdict(x)
     if hasattr(x, "model_dump"):
         try:
@@ -810,12 +838,13 @@ def link_to_dict(x: Any) -> dict[str, Any]:
     try:
         return {k: v for k, v in vars(x).items() if not str(k).startswith("_")}
     except Exception:
-        return {"value": str(x)}
+        res = {"value": str(x)}
+        return res
 
 
 # ------------------------------ Links → DataFrame ------------------------------
 
-def predicted_links_to_df(links: Sequence[Any]) -> pd.DataFrame:
+def predicted_links_to_df(links: Optional[Sequence[object]]) -> pd.DataFrame:
     """
     Normalize a collection of link-like objects to rows in a DataFrame, with
     preferred column ordering when available. Handles composite keys.
@@ -823,56 +852,124 @@ def predicted_links_to_df(links: Sequence[Any]) -> pd.DataFrame:
     if not links:
         return pd.DataFrame()
 
-    rows = [link_to_dict(x) for x in links]
-    df = pd.DataFrame(rows)
+    Mapping[str, Any] | object
+    rows: list[dict[str, Any]] = [link_to_dict(x) for x in links]
+    df: pd.DataFrame = pd.DataFrame(rows)
 
     if df.empty:
         return df
 
     # --- Handle composite keys and ensure column consistency ---
 
-    # Backwards compatibility: if old `from_column` (str) exists, convert to `from_columns` (list)
-    if "from_column" in df.columns and "from_columns" not in df.columns:
-        df["from_columns"] = df["from_column"].apply(lambda x: [x] if isinstance(x, str) else [])
-    if "to_column" in df.columns and "to_columns" not in df.columns:
-        df["to_columns"] = df["to_column"].apply(lambda x: [x] if isinstance(x, str) else [])
+    # Ensure a `from_columns`/`to_columns` list exists for each row.
+    # - If `from_columns` already exists and is a list, keep it.
+    # - Else if `from_column` exists (string), convert to a single-element list.
+    # - Else use an empty list.
+    def _ensure_cols(series_name: str, legacy_name: str) -> None:
+        """
+        Ensure column `series_name` exists and contains lists of strings.
 
-    # Ensure list type for safety, default to empty list if column is missing
-    df["from_columns"] = df.get("from_columns", pd.Series([[] for _ in range(len(df))])).apply(
-        lambda x: x if isinstance(x, list) else []
-    )
-    df["to_columns"] = df.get("to_columns", pd.Series([[] for _ in range(len(df))])).apply(
-        lambda x: x if isinstance(x, list) else []
-    )
+        - If `series_name` exists and is a list, coerce elements to str.
+        - If missing but `legacy_name` exists, create a list from the legacy string value.
+        - Otherwise create an empty list per row.
+        """
+        def _safe_str(v: Any) -> str:
+            if isinstance(v, float) and v.is_integer():
+                return str(int(v))
+            return str(v)
+
+        def _coerce_to_str_list(value: Any, legacy_value: Any) -> list[str]:
+            # Value present and is list-like
+            if isinstance(value, list):
+                # If list has items, coerce each to str; otherwise fall back to legacy
+                if len(value) > 0:
+                    return [
+                        _safe_str(x) for x in value if x is not None
+                    ]
+                # Otherwise try legacy
+                if isinstance(legacy_value, (str, int, float)):
+                    return [str(legacy_value)]
+                return []
+            # Treat pandas NA / numpy.nan as missing
+            if pd.isna(value):
+                value = None
+            if pd.isna(legacy_value):
+                legacy_value = None
+
+            # Value present as a single scalar string-like or numeric
+            if isinstance(value, (str, int, float)):
+                return [_safe_str(value)]
+
+            # Use legacy string or numeric value if provided
+            if isinstance(legacy_value, (str, int, float)):
+                return [_safe_str(legacy_value)]
+
+            return []
+
+        # Ensure column exists
+        if series_name not in df.columns:
+            if legacy_name in df.columns:
+                def _from_legacy_to_list(x: Any) -> list[str]:
+                    if isinstance(x, (str, int, float)):
+                        return [_safe_str(x)]
+                    return []
+                df[series_name] = df[legacy_name].apply(_from_legacy_to_list)
+            else:
+                df[series_name] = pd.Series([[] for _ in range(len(df))], index=df.index)
+        else:
+            # Column exists; coerce to lists of strings using legacy if present
+            if legacy_name in df.columns:
+                df[series_name] = [
+                    _coerce_to_str_list(v, lv)
+                    for v, lv in zip(
+                        df.get(series_name, pd.Series([None] * len(df))),
+                        df.get(legacy_name, pd.Series([None] * len(df))),
+                    )
+                ]
+            else:
+                df[series_name] = [
+                    _coerce_to_str_list(v, None) for v in df.get(series_name, pd.Series([None] * len(df)))
+                ]
+
+    _ensure_cols("from_columns", "from_column")
+    _ensure_cols("to_columns", "to_column")
+
+    # Ensure explicit list types for any remaining non-list values
+    df["from_columns"] = df["from_columns"].apply(lambda x: x if isinstance(x, list) else [])
+    df["to_columns"] = df["to_columns"].apply(lambda x: x if isinstance(x, list) else [])
 
     # Add `is_composite` flag
-    df["is_composite"] = df["from_columns"].apply(lambda x: len(x) > 1)
+    # Convert to plain Python bools rather than numpy.bool_ so callers can
+    # compare with `is True` where appropriate in tests.
+    df["is_composite"] = df["from_columns"].apply(lambda x: bool(len(x) > 1)).astype(object)
 
     # Create user-friendly display strings for single and composite keys
-    def format_column_display(cols: list) -> str:
-        if len(cols) > 1:
-            return f"({', '.join(cols)})"
-        return cols[0] if cols else ""
+    def format_column_display(cols: Sequence[Any]) -> str:
+        if not cols:
+            return ""
+        # Ensure all elements are strings for display
+        cols_str = [str(c) for c in cols]
+        if len(cols_str) > 1:
+            return f"({', '.join(cols_str)})"
+        return cols_str[0]
 
     # Overwrite/create `from_column` and `to_column` for display purposes in graph/table
     df["from_column"] = df["from_columns"].apply(format_column_display)
     df["to_column"] = df["to_columns"].apply(format_column_display)
 
     # --- Reorder columns for display ---
-    preferred = [
+    preferred: list[str] = [
         "from_dataset", "from_column", "to_dataset", "to_column",
         "is_composite", "intersect_count", "intersect_ratio_from_col", "intersect_ratio_to_col", "accuracy",
     ]
 
-    existing_preferred = [c for c in preferred if c in df.columns]
+    existing_preferred: list[str] = [c for c in preferred if c in df.columns]
     # Include all other columns, but put original list-based columns at the end
-    other_cols = sorted([
+    other_cols: list[str] = sorted([
         c for c in df.columns
         if c not in existing_preferred and c not in {"from_columns", "to_columns"}
     ])
-    
-    final_cols = existing_preferred + other_cols + ["from_columns", "to_columns"]
-    
+    final_cols: list[str] = existing_preferred + other_cols + ["from_columns", "to_columns"]
     # Filter to only columns that actually exist in the dataframe
     final_cols = [c for c in final_cols if c in df.columns]
 
@@ -1033,7 +1130,6 @@ def plotly_table_graph(
                 edge_label_text.append(data["labels"][0])
             else:
                 edge_label_text.append(f"{data['labels'][0]} (+{len(data['labels']) - 1} more)")
-        
         if single_x:
             edge_traces.append(go.Scatter(
                 x=single_x, y=single_y, mode="lines", hoverinfo="text", text=single_hover,
