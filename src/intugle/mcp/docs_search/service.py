@@ -120,11 +120,11 @@ class DocsSearchService:
         async with aiohttp.ClientSession() as session:
             tasks = [self._fetch_doc(session, path) for path in paths]
             # Use asyncio.gather to run all fetch tasks concurrently
-            results: List[Optional[str]] = await asyncio.gather(*tasks)
-            # Filter(None, results) removes any None values returned by _fetch_doc
+            results: List[str] = await asyncio.gather(*tasks)
+            # Join the results with the separator; filter(None, results) handles any empty strings
             return "\n\n---\n\n".join(filter(None, results))
 
-    async def _fetch_doc(self, session: aiohttp.ClientSession, path: str) -> Optional[str]:
+    async def _fetch_doc(self, session: aiohttp.ClientSession, path: str) -> str:
         """
         Fetches the content of a single documentation file from the GitHub raw URL.
 
@@ -132,7 +132,8 @@ class DocsSearchService:
             session (aiohttp.ClientSession): The active asynchronous HTTP session.
             path (str): The requested documentation path, which is sanitized before use.
 
-        Returns:The file content as a string if successful, or None
+        Returns:
+            str: The file content as a string if successful, or an error message string if it fails.
         """
         sanitized_path: Optional[str] = self._sanitize_path(path)
         if sanitized_path is None:
