@@ -1,14 +1,25 @@
 """Tests for streamlit_app/helper.py file reading functions."""
 
 import io
-import pytest
-import pandas as pd
+
+from collections import namedtuple
+from dataclasses import dataclass
 from unittest.mock import Mock
 
+import pandas as pd
+import pytest
+
 from src.intugle.streamlit_app.helper import (
+    _read_bytes_to_df_core,
+    clean_table_name,
+    link_to_dict,
+    normalize_col_name,
+    predicted_links_to_df,
     read_bytes_to_df,
     read_file_to_df,
-    _read_bytes_to_df_core,
+    sizeof_mb,
+    standardize_columns,
+    standardize_table_name,
 )
 
 
@@ -275,3 +286,156 @@ class TestEdgeCases:
 
         assert df1.equals(df2)
         assert df2.equals(df3)
+
+
+class TestHelperUtilities:
+    """Unit tests for helper utilities we recently annotated."""
+
+    def test_standardize_columns_basic(self):
+        df = pd.DataFrame({" Name ": [1], "AGE": [2], "name": [3], "first name": [4], "": [5]})
+        out = standardize_columns(df)
+        assert list(out.columns) == ["name", "age", "name_1", "first_name", "col"]
+        # Values preserved in the corresponding columns
+        assert out["name"].iloc[0] == 1
+        assert out["age"].iloc[0] == 2
+        assert out["name_1"].iloc[0] == 3
+
+    def test_standardize_columns_empty_and_nonstring(self):
+        # Columns can be None, numeric, or special chars
+        df = pd.DataFrame({None: [1], 123: [2], "!!!": [3]})
+        out = standardize_columns(df)
+        # None -> 'none', 123 -> '123', '!!!' -> becomes blank -> 'col'
+        assert list(out.columns) == ["none", "123", "col"]
+
+    def test_standardize_columns_many_duplicates(self):
+        # Many duplicates should get incrementing suffixes
+        # Use explicit columns list to allow duplicate column names
+        df = pd.DataFrame([[1, 2, 3, 4, 5]], columns=["X", "x", " X ", "x", "X"])
+        out = standardize_columns(df)
+        # Normalized base is 'x'; expect unique increments
+        assert list(out.columns) == ["x", "x_1", "x_2", "x_3", "x_4"]
+
+    def test_normalize_col_name_with_various_types(self):
+        assert normalize_col_name("None") == "none"
+        assert normalize_col_name("123") == "123"
+        assert normalize_col_name("First Name!") == "first_name"
+
+    def test_standardize_table_name(self):
+        assert standardize_table_name("  My Table!  ") == "my_table"
+        assert standardize_table_name("Simple.Name-123") == "simple_name_123"
+
+    def test_clean_table_name(self):
+        assert clean_table_name("  My File.csv") == "My_File"
+        # It should preserve case and only remove extension
+        assert clean_table_name("Some Folder/Another file.TXT") == "Some Folder/Another_file"
+
+    def test_sizeof_mb_int_and_float(self):
+        assert sizeof_mb(1048576) == 1.0
+        assert sizeof_mb(1572864.0) == 1.5
+
+    def test_predicted_links_to_df_basic_and_composite(self):
+        links = [
+            {
+                "from_dataset": "A",
+                "from_column": "col1",
+                "to_dataset": "B",
+                "to_column": "col2",
+                "intersect_count": 5,
+                "accuracy": 0.9,
+            },
+            {
+                "from_dataset": "A",
+                "from_columns": ["col1", "col3"],
+                "to_dataset": "B",
+                "to_columns": ["col2", "col4"],
+                "intersect_count": 2,
+                "accuracy": 0.95,
+            },
+            {
+                "from_dataset": "C",
+                "from_column": "dcol",
+                "to_dataset": "D",
+                "to_column": "ecol",
+                "intersect_count": 1,
+                "accuracy": 0.5,
+            },
+        ]
+        df = predicted_links_to_df(links)
+        assert "from_columns" in df.columns
+        assert "to_columns" in df.columns
+        # from_column should be a single-value display for non-composite and parentheses for composite
+        assert df.loc[0, "from_column"] == "col1"
+        assert df.loc[1, "from_column"] == "(col1, col3)"
+        # is_composite flag for the second row should be True
+        assert df.loc[1, "is_composite"] is True
+        # subtype columns are preserved
+        assert int(df.loc[0, "intersect_count"]) == 5
+
+    def test_predicted_links_to_df_numeric_and_mixed_types(self):
+        links = [
+            {
+                "from_dataset": "X",
+                "from_columns": [1, 2],
+                "to_dataset": "Y",
+                "to_columns": [3, 4],
+                "intersect_count": 7,
+            },
+            {"from_dataset": "X", "from_column": 5, "to_dataset": "Y", "to_column": 6},
+            {"from_dataset": "Z", "to_column": "c"},
+        ]
+        df = predicted_links_to_df(links)
+        # from_columns should be lists of strings
+        assert isinstance(df.loc[0, "from_columns"], list)
+        assert df.loc[0, "from_columns"] == ["1", "2"]
+        # single numeric legacy column should be coerced to str and display properly
+        assert df.loc[1, "from_columns"] == ["5"]
+        assert df.loc[1, "from_column"] == "5"
+        # missing values should result in empty list and empty display string
+        assert df.loc[2, "from_columns"] == []
+        assert df.loc[2, "from_column"] == ""
+
+    def test_predicted_links_to_df_prefer_list_over_legacy(self):
+        # Provide both list and legacy scalar; list should take precedence
+        links = [
+            {"from_dataset": "A", "from_columns": ["a", "b"], "from_column": "a", "to_dataset": "B", "to_column": "c"},
+            {"from_dataset": "A", "from_columns": [], "from_column": "x", "to_dataset": "B", "to_column": "c"},
+        ]
+        df = predicted_links_to_df(links)
+        assert df.loc[0, "from_columns"] == ["a", "b"]
+        # If list is empty but legacy scalar is present, we should convert legacy to list
+        assert df.loc[1, "from_columns"] == ["x"]
+
+    def test_link_to_dict_various_inputs(self):
+
+        @dataclass
+        class Person:
+            name: str
+            age: int
+
+        p = Person("Alice", 30)
+        out = link_to_dict(p)
+        assert out == {"name": "Alice", "age": 30}
+
+        Point = namedtuple("Point", "x y")
+        pt = Point(1, 2)
+        out2 = link_to_dict(pt)
+        assert out2 == {"x": 1, "y": 2}
+
+        class Obj:
+            def __init__(self):
+                self.a = 1
+                self._b = 2
+
+        o = Obj()
+        out3 = link_to_dict(o)
+        assert out3 == {"a": 1}
+
+        # fallback: builtin function or object without vars should return a 'value' string
+        out4 = link_to_dict(len)  # builtin type object without accessible vars
+        assert "value" in out4
+        assert isinstance(out4["value"], str)
+
+    def test_link_to_dict_filters_private_keys_in_mapping(self):
+        d = {"a": 1, "_b": 2, "c": 3}
+        out = link_to_dict(d)
+        assert out == {"a": 1, "c": 3}
