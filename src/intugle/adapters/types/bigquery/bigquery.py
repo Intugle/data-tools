@@ -18,6 +18,7 @@ if TYPE_CHECKING:
 try:
     from google.cloud import bigquery
     from google.oauth2 import service_account
+    from sqlglot import transpile
 
     BIGQUERY_AVAILABLE = True
 except ImportError:
@@ -117,13 +118,15 @@ class BigQueryAdapter(Adapter):
 
     def _execute_sql(self, query: str) -> list[Any]:
         """Execute a SQL query and return results as a list of rows."""
-        query_job = self.client.query(query)
+        job_config = bigquery.QueryJobConfig(default_dataset=f"{self._project_id}.{self._dataset_id}")
+        query_job = self.client.query(query, job_config=job_config)
         results = query_job.result()
         return [dict(row) for row in results]
 
     def _get_pandas_df(self, query: str) -> pd.DataFrame:
         """Execute a SQL query and return results as a pandas DataFrame."""
-        query_job = self.client.query(query)
+        job_config = bigquery.QueryJobConfig(default_dataset=f"{self._project_id}.{self._dataset_id}")
+        query_job = self.client.query(query, job_config=job_config)
         return query_job.to_dataframe()
 
     def profile(self, data: BigQueryConfig, table_name: str) -> ProfilingOutput:
@@ -247,7 +250,8 @@ class BigQueryAdapter(Adapter):
 
     def execute(self, query: str):
         """Execute a SQL query."""
-        query_job = self.client.query(query)
+        job_config = bigquery.QueryJobConfig(default_dataset=f"{self._project_id}.{self._dataset_id}")
+        query_job = self.client.query(query, job_config=job_config)
         query_job.result()  # Wait for the query to complete
         return query_job
 
@@ -267,16 +271,17 @@ class BigQueryAdapter(Adapter):
     ) -> str:
         """Create a table or view from a query."""
         fqn = self._get_fqn(table_name)
+        transpiled_sql = transpile(query, write="bigquery")[0]
 
         if materialize == "view":
-            create_query = f"CREATE OR REPLACE VIEW {fqn} AS {query}"
+            create_query = f"CREATE OR REPLACE VIEW {fqn} AS {transpiled_sql}"
         elif materialize == "table":
-            create_query = f"CREATE OR REPLACE TABLE {fqn} AS {query}"
+            create_query = f"CREATE OR REPLACE TABLE {fqn} AS {transpiled_sql}"
         else:
             raise ValueError(f"Invalid materialize option: {materialize}. Use 'table' or 'view'.")
 
         self.execute(create_query)
-        return fqn
+        return transpiled_sql
 
     def create_new_config_from_etl(self, etl_name: str) -> DataSetData:
         """Create a new config for an ETL-generated table."""
