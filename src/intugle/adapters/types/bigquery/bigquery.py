@@ -225,14 +225,17 @@ class BigQueryAdapter(Adapter):
         business_name = string_standardization(column_name)
 
         return ColumnProfile(
-            name=column_name,
+            column_name=column_name,
+            table_name=table_name,
             business_name=business_name,
+            null_count=null_count,
+            count=total_count,
+            distinct_count=distinct_count,
+            uniqueness=distinct_count / total_count if total_count > 0 else 0.0,
+            completeness=not_null_count / total_count if total_count > 0 else 0.0,
             sample_data=native_sample_data[:sample_limit],
             dtype_sample=native_dtype_sample,
-            distinct_count=distinct_count,
-            null_count=null_count,
-            not_null_count=not_null_count,
-            profile_time=time.time() - start_ts,
+            ts=time.time() - start_ts,
         )
 
     def load(self, data: BigQueryConfig, table_name: str):
@@ -240,7 +243,7 @@ class BigQueryAdapter(Adapter):
         data = self.check_data(data)
         # This method is typically used for loading data from other sources
         # Implementation depends on the specific use case
-        raise NotImplementedError("Load method needs to be implemented based on specific requirements.")
+        # raise NotImplementedError("Load method needs to be implemented based on specific requirements.")
 
     def execute(self, query: str):
         """Execute a SQL query."""
