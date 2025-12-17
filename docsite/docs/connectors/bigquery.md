@@ -77,6 +77,10 @@ sm.build()
 
 When you use the `DataProduct` class with a BigQuery connection, the resulting data product can be materialized as a new **table** or **view** directly within your target dataset.
 
+:::caution
+**Beta Feature:** The DataProduct feature for BigQuery is currently in beta. If you encounter any issues, please raise them on our [GitHub issues page](https://github.com/Intugle/data-tools/issues).
+:::
+
 ```python
 from intugle import DataProduct
 
