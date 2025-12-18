@@ -36,6 +36,7 @@ DEFAULT_PLUGINS = [
     "intugle.adapters.types.mariadb.mariadb",
     "intugle.adapters.types.sqlserver.sqlserver",
     "intugle.adapters.types.sqlite.sqlite",
+    "intugle.adapters.types.bigquery.bigquery",
     "intugle.adapters.types.oracle.oracle",
 ]
 
