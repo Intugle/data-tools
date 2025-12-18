@@ -1,0 +1,61 @@
+{
+  "name": "Enterprise Business Ontology (CDM)",
+  "description": null,
+  "version": "1.0",
+  "domains": [
+    {
+      "name": "CustomerDomain",
+      "display_name": null,
+      "description": "All customer and account-related concepts",
+      "domain_type": "custom",
+      "owner": null,
+      "metadata": {}
+    },
+    {
+      "name": "SalesDomain",
+      "display_name": null,
+      "description": "Sales orders, invoices, and related concepts",
+      "domain_type": "custom",
+      "owner": null,
+      "metadata": {}
+    }
+  ],
+  "concepts": [
+    {
+      "name": "Customer",
+      "display_name": null,
+      "description": null,
+      "domain": "CustomerDomain",
+      "cdm_entity_name": "Contact",
+      "cdm_namespace": "core.applicationCommon",
+      "status": "proposed",
+      "owner": null,
+      "tags": [],
+      "metadata": {}
+    },
+    {
+      "name": "Account",
+      "display_name": null,
+      "description": null,
+      "domain": "CustomerDomain",
+      "cdm_entity_name": "Account",
+      "cdm_namespace": "core.applicationCommon",
+      "status": "proposed",
+      "owner": null,
+      "tags": [],
+      "metadata": {}
+    },
+    {
+      "name": "SalesOrder",
+      "display_name": null,
+      "description": null,
+      "domain": "SalesDomain",
+      "cdm_entity_name": "SalesOrder",
+      "cdm_namespace": "core.applicationCommon.foundationCommon.crmCommon.sales",
+      "status": "proposed",
+      "owner": null,
+      "tags": [],
+      "metadata": {}
+    }
+  ]
+}
