@@ -88,6 +88,89 @@ class LinkPredictor:
         assets.sort()
         return f"{assets[0]}--{assets[1]}"
 
+    def _is_duplicate_combination(self, table_combination: str) -> bool:
+        """
+        Checks if a table combination has already been executed.
+
+        Args:
+            table_combination (str): The table combination identifier.
+
+        Returns:
+            bool: True if the combination was already executed, False otherwise.
+        """
+        if table_combination in self.already_executed_combo:
+            log.warning(f"[!] Skipping already executed combination: {table_combination}")
+            return True
+        return False
+
+    def _invoke_agent(self, dataset_a: DataSet, dataset_b: DataSet) -> Dict[str, Any]:
+        """
+        Invokes the multi-link prediction agent to analyze two datasets.
+
+        Args:
+            dataset_a (DataSet): The first dataset to analyze.
+            dataset_b (DataSet): The second dataset to analyze.
+
+        Returns:
+            Dict[str, Any]: The agent's output containing predicted links.
+        """
+        agent = MultiLinkPredictionAgent(
+            table1_dataset=dataset_a,
+            table2_dataset=dataset_b,
+        )
+        return agent()
+
+    def _create_predicted_link(self, link_data: Dict[str, Any]) -> PredictedLink:
+        """
+        Creates a PredictedLink object from agent output data.
+
+        Args:
+            link_data (Dict[str, Any]): A dictionary containing link information.
+
+        Returns:
+            PredictedLink: A constructed PredictedLink object.
+        """
+        from_columns = [link['column1'] for link in link_data['links']]
+        to_columns = [link['column2'] for link in link_data['links']]
+        
+        # Assuming table names are consistent across all parts of a composite key
+        from_dataset = link_data['links'][0]['table1']
+        to_dataset = link_data['links'][0]['table2']
+
+        return PredictedLink(
+            from_dataset=from_dataset,
+            from_columns=from_columns,
+            to_dataset=to_dataset,
+            to_columns=to_columns,
+            intersect_count=link_data.get("intersect_count"),
+            intersect_ratio_from_col=link_data.get("intersect_ratio_col1"),
+            intersect_ratio_to_col=link_data.get("intersect_ratio_col2"),
+            from_uniqueness_ratio=link_data.get("from_uniqueness_ratio"),
+            to_uniqueness_ratio=link_data.get("to_uniqueness_ratio"),
+            accuracy=max(
+                link_data.get("intersect_ratio_col1", 0) or 0,
+                link_data.get("intersect_ratio_col2", 0) or 0
+            ),
+        )
+
+    def _parse_agent_output(self, llm_result: Dict[str, Any]) -> List[PredictedLink]:
+        """
+        Parses the agent's output and constructs a list of PredictedLink objects.
+
+        Args:
+            llm_result (Dict[str, Any]): The output from the prediction agent.
+
+        Returns:
+            List[PredictedLink]: A list of predicted links between datasets.
+        """
+        pair_links: List[PredictedLink] = []
+        if llm_result and llm_result.get("links"):
+            # llm_result["links"] is a list of OutputSchema-like dictionaries
+            for link_data in llm_result["links"]:
+                if link_data.get('links'):
+                    pair_links.append(self._create_predicted_link(link_data))
+        return pair_links
+
     def _predict_for_pair(
         self,
         name_a: str,
@@ -100,47 +183,11 @@ class LinkPredictor:
         This method can now safely assume that key identification has been run.
         """
         table_combination = self._create_table_combination_id(name_a, name_b)
-        if table_combination in self.already_executed_combo:
-            log.warning(f"[!] Skipping already executed combination: {table_combination}")
+        if self._is_duplicate_combination(table_combination):
             return []
 
-        agent = MultiLinkPredictionAgent(
-            table1_dataset=dataset_a,
-            table2_dataset=dataset_b,
-        )
-
-        llm_result = agent()  # The agent.__call__ method returns a dictionary directly
-
-        pair_links: List[PredictedLink] = []
-        if llm_result and llm_result.get("links"):
-            # llm_result["links"] is a list of OutputSchema-like dictionaries
-            for link_data in llm_result["links"]:
-                if link_data.get('links'):
-                    from_columns = [link['column1'] for link in link_data['links']]
-                    to_columns = [link['column2'] for link in link_data['links']]
-                    
-                    # Assuming table names are consistent across all parts of a composite key
-                    from_dataset = link_data['links'][0]['table1']
-                    to_dataset = link_data['links'][0]['table2']
-
-                    pair_links.append(
-                        PredictedLink(
-                            from_dataset=from_dataset,
-                            from_columns=from_columns,
-                            to_dataset=to_dataset,
-                            to_columns=to_columns,
-                            intersect_count=link_data.get("intersect_count"),
-                            intersect_ratio_from_col=link_data.get("intersect_ratio_col1"),
-                            intersect_ratio_to_col=link_data.get("intersect_ratio_col2"),
-                            from_uniqueness_ratio=link_data.get("from_uniqueness_ratio"),
-                            to_uniqueness_ratio=link_data.get("to_uniqueness_ratio"),
-                            accuracy=max(
-                                link_data.get("intersect_ratio_col1", 0) or 0,
-                                link_data.get("intersect_ratio_col2", 0) or 0
-                            ),
-                        )
-                    )
-        return pair_links
+        llm_result = self._invoke_agent(dataset_a, dataset_b)
+        return self._parse_agent_output(llm_result)
 
     def predict(self, filename: str = None, save: bool = False, force_recreate: bool = False) -> 'LinkPredictor':
         """

@@ -83,6 +83,11 @@ mysql = [
     "sqlglot>=27.20.0",
 ]
 
+mariadb = [
+    "mariadb>=1.1.10",
+    "sqlglot>=27.20.0",
+]
+
 oracle = [
     "oracledb>=2.0.0",
     "sqlglot>=27.20.0",
