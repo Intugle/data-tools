@@ -35,6 +35,7 @@ DEFAULT_PLUGINS = [
     "intugle.adapters.types.mysql.mysql",
     "intugle.adapters.types.sqlserver.sqlserver",
     "intugle.adapters.types.sqlite.sqlite",
+    "intugle.adapters.types.oracle.oracle",
 ]
 
 

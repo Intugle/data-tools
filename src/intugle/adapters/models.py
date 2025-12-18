@@ -21,12 +21,13 @@ if TYPE_CHECKING:
 
     from intugle.adapters.types.databricks.models import DatabricksConfig
     from intugle.adapters.types.duckdb.models import DuckdbConfig
+    from intugle.adapters.types.oracle.models import OracleConfig
     from intugle.adapters.types.postgres.models import PostgresConfig
     from intugle.adapters.types.snowflake.models import SnowflakeConfig
     from intugle.adapters.types.sqlite.models import SqliteConfig
     from intugle.adapters.types.sqlserver.models import SQLServerConfig
 
-    DataSetData = pd.DataFrame | DuckdbConfig | SnowflakeConfig | DatabricksConfig | PostgresConfig | SQLServerConfig | SqliteConfig
+    DataSetData = pd.DataFrame | DuckdbConfig | SnowflakeConfig | DatabricksConfig | PostgresConfig | SQLServerConfig | SqliteConfig | OracleConfig
 else:
     # At runtime, this is dynamically determined
     DataSetData = Any

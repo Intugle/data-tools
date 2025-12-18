@@ -79,6 +79,11 @@ mysql = [
     "sqlglot>=27.20.0",
 ]
 
+oracle = [
+    "oracledb>=2.0.0",
+    "sqlglot>=27.20.0",
+]
+
 nosql = [
     "pandas>=2.0.0",
     "pyarrow>=14.0.0",
