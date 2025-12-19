@@ -140,7 +140,10 @@ class DataSet:
                         style=warning_style,
                     )
                     return True
-            return False
+                return False  # Explicitly not stale only if check passes
+
+            # If source_last_modified is missing/None, treat as stale since freshness cannot be verified
+            return True
         except (IndexError, KeyError, TypeError):
             # If YAML is malformed, treat it as stale.
             console.print(f"Warning: Could not parse existing YAML for '{self.name}'. Treating as stale.", style=warning_style)
