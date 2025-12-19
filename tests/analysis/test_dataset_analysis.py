@@ -100,3 +100,101 @@ def test_profiling_column_with_all_nulls():
     assert notes_profile.distinct_count == 0
     assert notes_profile.uniqueness == 0.0
     assert notes_profile.completeness == 0.0
+
+
+def test_is_yaml_stale_missing_source_last_modified(tmp_path):
+    """
+    Tests that _is_yaml_stale returns True when source_last_modified is missing.
+    
+    When the YAML metadata lacks a source_last_modified timestamp, the cache
+    freshness cannot be verified, so it should be treated as stale.
+    """
+    # Create a temporary CSV file to act as the source
+    csv_file = tmp_path / "test_data.csv"
+    csv_file.write_text("col1,col2\n1,a\n2,b\n")
+
+    # Create a dataset with a DataFrame, then modify self.data to simulate file-based source
+    df = pd.DataFrame({'col1': [1, 2], 'col2': ['a', 'b']})
+    dataset = DataSet(df, "test_dataset")
+    # Override self.data to simulate a file-based source for the _is_yaml_stale check
+    dataset.data = {"path": str(csv_file)}
+
+    # YAML data without source_last_modified field
+    yaml_data_missing_timestamp = {
+        "sources": [
+            {
+                "table": {
+                    "name": "test_data",
+                    # source_last_modified is intentionally missing
+                }
+            }
+        ]
+    }
+
+    # Should return True (stale) because source_last_modified is missing
+    assert dataset._is_yaml_stale(yaml_data_missing_timestamp) is True
+
+
+def test_is_yaml_stale_with_none_source_last_modified(tmp_path):
+    """
+    Tests that _is_yaml_stale returns True when source_last_modified is explicitly None.
+    """
+    # Create a temporary CSV file to act as the source
+    csv_file = tmp_path / "test_data.csv"
+    csv_file.write_text("col1,col2\n1,a\n2,b\n")
+
+    # Create a dataset with a DataFrame, then modify self.data to simulate file-based source
+    df = pd.DataFrame({'col1': [1, 2], 'col2': ['a', 'b']})
+    dataset = DataSet(df, "test_dataset")
+    # Override self.data to simulate a file-based source for the _is_yaml_stale check
+    dataset.data = {"path": str(csv_file)}
+
+    # YAML data with source_last_modified explicitly set to None
+    yaml_data_none_timestamp = {
+        "sources": [
+            {
+                "table": {
+                    "name": "test_data",
+                    "source_last_modified": None
+                }
+            }
+        ]
+    }
+
+    # Should return True (stale) because source_last_modified is None
+    assert dataset._is_yaml_stale(yaml_data_none_timestamp) is True
+
+
+def test_is_yaml_stale_with_valid_source_last_modified(tmp_path):
+    """
+    Tests that _is_yaml_stale returns False when source_last_modified is valid and current.
+    """
+    import os
+
+    # Create a temporary CSV file to act as the source
+    csv_file = tmp_path / "test_data.csv"
+    csv_file.write_text("col1,col2\n1,a\n2,b\n")
+
+    # Get the current modification time
+    current_mtime = os.path.getmtime(str(csv_file))
+
+    # Create a dataset with a DataFrame, then modify self.data to simulate file-based source
+    df = pd.DataFrame({'col1': [1, 2], 'col2': ['a', 'b']})
+    dataset = DataSet(df, "test_dataset")
+    # Override self.data to simulate a file-based source for the _is_yaml_stale check
+    dataset.data = {"path": str(csv_file)}
+
+    # YAML data with source_last_modified set to current or future time
+    yaml_data_valid_timestamp = {
+        "sources": [
+            {
+                "table": {
+                    "name": "test_data",
+                    "source_last_modified": current_mtime + 1000  # Future timestamp
+                }
+            }
+        ]
+    }
+
+    # Should return False (not stale) because source hasn't been modified since YAML was created
+    assert dataset._is_yaml_stale(yaml_data_valid_timestamp) is False
