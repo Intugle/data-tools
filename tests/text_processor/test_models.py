@@ -1,7 +1,6 @@
 """Tests for text processor Pydantic models."""
 
-import pytest
-from intugle.text_processor.models import Entity, Relationship, RDFTriple, RDFGraph
+from intugle.text_processor.models import Entity, RDFGraph, RDFTriple, Relationship
 
 
 class TestEntity:

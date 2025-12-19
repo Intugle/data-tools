@@ -1,14 +1,16 @@
 """Tests for streamlit_app/helper.py file reading functions."""
 
 import io
-import pytest
-import pandas as pd
+
 from unittest.mock import Mock
 
+import pandas as pd
+import pytest
+
 from src.intugle.streamlit_app.helper import (
+    _read_bytes_to_df_core,
     read_bytes_to_df,
     read_file_to_df,
-    _read_bytes_to_df_core,
 )
 
 

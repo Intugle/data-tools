@@ -5,6 +5,7 @@ Supports RDF-star annotations for provenance and confidence metadata.
 """
 
 from typing import Any, Dict, List, Optional
+
 from pydantic import BaseModel, Field
 
 

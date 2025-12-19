@@ -1,6 +1,5 @@
 """Tests for the RDF Builder."""
 
-import pytest
 from intugle.text_processor.models import Entity, Relationship
 from intugle.text_processor.rdf.builder import RDFBuilder
 

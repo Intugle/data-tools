@@ -5,11 +5,12 @@ High-level orchestrator for converting unstructured text to RDF graphs.
 """
 
 import logging
+
 from typing import Any, Dict, Literal, Optional
 
-from intugle.text_processor.models import Entity, RDFGraph, Relationship
 from intugle.text_processor.extractors.base import BaseExtractor
 from intugle.text_processor.extractors.llm_extractor import LLMExtractor
+from intugle.text_processor.models import Entity, RDFGraph, Relationship
 from intugle.text_processor.rdf.builder import RDFBuilder
 
 log = logging.getLogger(__name__)

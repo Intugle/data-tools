@@ -1,10 +1,9 @@
 """Tests for the TextToSemanticProcessor."""
 
-from unittest.mock import MagicMock, patch
-import pytest
+from unittest.mock import MagicMock
 
+from intugle.text_processor.models import Entity, RDFGraph, Relationship
 from intugle.text_processor.processor import TextToSemanticProcessor
-from intugle.text_processor.models import Entity, Relationship, RDFGraph
 
 
 class TestTextToSemanticProcessor:

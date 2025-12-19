@@ -1,9 +1,8 @@
 """Tests for the SemanticMapper."""
 
 from unittest.mock import MagicMock
-import pytest
 
-from intugle.text_processor.mapper import SemanticMapper, MappingResult
+from intugle.text_processor.mapper import MappingResult, SemanticMapper
 from intugle.text_processor.models import Entity, RDFGraph
 
 

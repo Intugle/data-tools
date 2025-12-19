@@ -6,6 +6,7 @@ Uses the existing LangChain setup in intugle for entity and relationship extract
 
 import hashlib
 import logging
+
 from typing import List
 
 from pydantic import BaseModel, Field
@@ -149,7 +150,7 @@ Extract relationships:"""
         result: ExtractionResult = structured_llm.invoke(prompt)
 
         relationships = []
-        entity_ids = {e.id for e in entities}
+        {e.id for e in entities}
 
         for rel in result.relationships:
             relationship = Relationship(

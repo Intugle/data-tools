@@ -5,6 +5,7 @@ Constructs RDF triples from extracted entities and relationships.
 """
 
 import logging
+
 from typing import Any, Dict, List, Optional
 
 from intugle.text_processor.models import Entity, RDFGraph, RDFTriple, Relationship
