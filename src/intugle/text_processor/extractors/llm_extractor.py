@@ -54,6 +54,7 @@ class LLMExtractor(BaseExtractor):
     LLM-based entity and relationship extractor.
     
     Uses LangChain structured output for reliable extraction.
+    Supports multiple LLM providers via LLM_PROVIDER environment variable.
     """
 
     def __init__(self, model_name: str = "gpt-4o-mini"):
@@ -67,11 +68,19 @@ class LLMExtractor(BaseExtractor):
         self._llm = None
 
     def _get_llm(self):
-        """Lazy initialization of LLM."""
+        """Lazy initialization of LLM based on provider."""
         if self._llm is None:
-            from langchain_openai import ChatOpenAI
-
-            self._llm = ChatOpenAI(model=self.model_name, temperature=0)
+            import os
+            provider = os.environ.get("LLM_PROVIDER", "openai").lower()
+            
+            if provider == "google-genai" or self.model_name.startswith("gemini"):
+                from langchain_google_genai import ChatGoogleGenerativeAI
+                model = self.model_name if self.model_name.startswith("gemini") else "gemini-2.5-flash"
+                self._llm = ChatGoogleGenerativeAI(model=model, temperature=0)
+            else:
+                from langchain_openai import ChatOpenAI
+                self._llm = ChatOpenAI(model=self.model_name, temperature=0)
+                
         return self._llm
 
     def _generate_entity_id(self, text: str, label: str) -> str:
