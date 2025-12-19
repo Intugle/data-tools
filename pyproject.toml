@@ -93,6 +93,12 @@ oracle = [
     "sqlglot>=27.20.0",
 ]
 
+nosql = [
+    "pandas>=2.0.0",
+    "pyarrow>=14.0.0",
+    "pymongo>=4.0.0",
+]
+
 streamlit = [
     "streamlit==1.50.0",
     "pyngrok==7.4.0",
@@ -108,6 +114,7 @@ streamlit = [
 "Bug Tracker" = "https://github.com/Intugle/data-tools/issues"
 
 [project.scripts]
+intugle = "intugle.cli:main"
 intugle-mcp = "intugle.mcp.server:main"
 intugle-streamlit = "intugle.cli:run_streamlit_app"
 
@@ -127,6 +134,8 @@ dev = [
     "ipykernel>=6.30.1",
     "langfuse==2.60.4",
     "mssql-python>=0.13.1",
+    "pandas>=2.0.0",
+    "pyarrow>=14.0.0",
     "pysonar>=1.2.0.2419",
     "pyspark>=3.5.0,<4.0.0",
     "pytest>=8.4.1",
