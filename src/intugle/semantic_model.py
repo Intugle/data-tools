@@ -362,6 +362,55 @@ class SemanticModel:
             log.error(f"Could not perform semantic search: {e}")
             raise e
 
+    def overlay(self, rdf_graph: Any, match_threshold: float = 0.85) -> "SemanticModel":
+        """
+        Overlay an RDF graph from unstructured text onto this semantic model.
+        
+        Maps extracted entities and relationships from the RDF graph to existing
+        semantic nodes, enabling integration of text-derived knowledge.
+        
+        Args:
+            rdf_graph: An RDFGraph instance from TextToSemanticProcessor.
+            match_threshold: Minimum similarity score for entity matching (0.0-1.0).
+            
+        Returns:
+            Self for method chaining.
+        """
+        from intugle.text_processor.mapper import SemanticMapper
+
+        console.print(
+            f"Overlaying RDF graph with {len(rdf_graph.entities)} entities...",
+            style="yellow",
+        )
+
+        mapper = SemanticMapper(match_threshold=match_threshold)
+        mapping_results = mapper.map_to_semantic_model(rdf_graph, self)
+
+        # Store mapping results for later use
+        if not hasattr(self, "_text_mappings"):
+            self._text_mappings = []
+        self._text_mappings.extend(mapping_results)
+
+        # Generate suggestions for new nodes
+        new_suggestions = mapper.suggest_new_nodes(mapping_results)
+        if new_suggestions:
+            console.print(
+                f"Found {len(new_suggestions)} unmapped entities that could be new concepts.",
+                style="yellow",
+            )
+
+        matched = sum(1 for r in mapping_results if not r.is_new)
+        console.print(
+            f"Overlay complete: {matched}/{len(mapping_results)} entities matched to existing nodes.",
+            style="bold green",
+        )
+
+        return self
+
+    def get_text_mappings(self) -> list:
+        """Get all text-to-semantic mappings from overlay operations."""
+        return getattr(self, "_text_mappings", [])
+
     def deploy(self, target: str, **kwargs):
         """
         Deploys the semantic model to a specified target platform based on the persisted YAML files.

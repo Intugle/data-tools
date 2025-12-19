@@ -108,6 +108,7 @@ streamlit = [
 "Bug Tracker" = "https://github.com/Intugle/data-tools/issues"
 
 [project.scripts]
+intugle = "intugle.cli:main"
 intugle-mcp = "intugle.mcp.server:main"
 intugle-streamlit = "intugle.cli:run_streamlit_app"
 
