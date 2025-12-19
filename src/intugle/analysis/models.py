@@ -225,7 +225,7 @@ class DataSet:
             print(f"{self.name} loaded")
         except Exception as e:
             log.error(e)
-            ...
+            # ...
 
     def profile_table(self) -> 'DataSet':
         """
@@ -248,6 +248,11 @@ class DataSet:
         if not self.source.table.columns:
             raise RuntimeError("TableProfiler must be run before profiling columns.")
 
+        self._collect_column_profiles()
+        return self
+
+    def _collect_column_profiles(self):
+        """Helper method to iterate through columns and collect profile metrics."""
         count = self.source.table.profiling_metrics.count
 
         for column in self.source.table.columns:
@@ -263,7 +268,6 @@ class DataSet:
                 column.profiling_metrics.distinct_count = column_profile.distinct_count
                 column.profiling_metrics.sample_data = column_profile.sample_data
                 column.profiling_metrics.dtype_sample = column_profile.dtype_sample
-        return self
 
     def identify_datatypes_l1(self) -> "DataSet":
         """
