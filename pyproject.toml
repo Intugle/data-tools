@@ -87,6 +87,7 @@ oracle = [
 nosql = [
     "pandas>=2.0.0",
     "pyarrow>=14.0.0",
+    "pymongo>=4.0.0",
 ]
 
 streamlit = [
@@ -104,6 +105,7 @@ streamlit = [
 "Bug Tracker" = "https://github.com/Intugle/data-tools/issues"
 
 [project.scripts]
+intugle = "intugle.cli:main"
 intugle-mcp = "intugle.mcp.server:main"
 intugle-streamlit = "intugle.cli:run_streamlit_app"
 
