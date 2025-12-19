@@ -1,7 +1,8 @@
-from typing import Dict, Any, Optional
-from intugle.nosql.source import NoSQLSource
-from intugle.nosql.parser import NoSQLParser
+from typing import Any, Dict, Optional
+
 from intugle.nosql.inference import infer_schema
+from intugle.nosql.parser import NoSQLParser
+from intugle.nosql.source import NoSQLSource
 
 
 class NoSQLToRelationalParser:

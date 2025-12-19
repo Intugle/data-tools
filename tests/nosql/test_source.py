@@ -1,4 +1,5 @@
 from unittest.mock import MagicMock, patch
+
 from intugle.nosql.source import MongoSource, NoSQLSource
 
 
