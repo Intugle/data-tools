@@ -1,0 +1,17 @@
+Intugle
+Copyright (c) 2025 Intugle
+
+This product includes software developed by third parties.
+
+---
+
+MariaDB Connector/Python
+Copyright (c) 2012–2025 MariaDB Corporation Ab
+
+Licensed under the GNU Lesser General Public License, Version 2.1 (LGPL-2.1).
+
+This library is used as an external dependency and is not distributed
+as part of this project.
+
+You can find the source code and license text at:
+https://mariadb.com/docs/connectors/mariadb-connector-python/
