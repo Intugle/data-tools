@@ -50,7 +50,15 @@ class SemanticSearchCRUD:
             }
             embeddings_configurations = {**embeddings_configurations, **config}
 
-        configuration = QdrantVectorConfiguration(vectors_config=embeddings_configurations)
+        # Payload schema with keyword index for "type" field required for filtering
+        payload_schema = {
+            "type": models.PayloadSchemaType.KEYWORD,
+        }
+
+        configuration = QdrantVectorConfiguration(
+            vectors_config=embeddings_configurations,
+            payload_schema=payload_schema
+        )
 
         return configuration
 

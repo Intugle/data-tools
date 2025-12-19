@@ -21,6 +21,8 @@ class QdrantVectorConfiguration(BaseModel):
 
     sparse_vectors_config: Optional[Mapping[str, qdrant_types.SparseVectorParams]] = None
 
+    payload_schema: Optional[Mapping[str, models.PayloadSchemaType]] = None
+
 
 # Used for standardization
 
