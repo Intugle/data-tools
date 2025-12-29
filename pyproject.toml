@@ -69,6 +69,10 @@ postgres = [
     "asyncpg>=0.30.0",
     "sqlglot>=27.20.0",
 ]
+bigquery = [
+    "google-cloud-bigquery>=3.11.0",
+    "sqlglot>=27.20.0",
+]
 sqlserver = [
     "mssql-python>=0.13.1",
     "sqlglot>=27.20.0",
@@ -76,6 +80,16 @@ sqlserver = [
 
 mysql = [
     "PyMySQL>=1.1.0",
+    "sqlglot>=27.20.0",
+]
+
+mariadb = [
+    "mariadb>=1.1.10",
+    "sqlglot>=27.20.0",
+]
+
+oracle = [
+    "oracledb>=2.0.0",
     "sqlglot>=27.20.0",
 ]
 

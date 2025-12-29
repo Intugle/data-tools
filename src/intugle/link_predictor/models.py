@@ -19,7 +19,32 @@ def _determine_relationship_cardinality(
     from_uniqueness_ratio: Optional[float],
     to_uniqueness_ratio: Optional[float],
 ) -> tuple[str, List[str], str, List[str], RelationshipType]:
-    """Determines relationship type and swaps source/target for M:1 cases."""
+    """
+    Determines the cardinality and direction of a relationship between two datasets.
+
+    Logic:
+        - If both sides are unique (>= threshold): Relationship is 1:1.
+        - If source is unique and target is not: Relationship is 1:M.
+        - If source is not unique and target is unique: Relationship is M:1, but treated as 1:M
+          by swapping source and target (Intugle standardizes on 1:M or M:M).
+        - If neither is unique: Relationship is M:M.
+
+    Args:
+        from_dataset (str): Name of the source dataset.
+        from_columns (List[str]): List of source column names.
+        to_dataset (str): Name of the target dataset.
+        to_columns (List[str]): List of target column names.
+        from_uniqueness_ratio (Optional[float]): Uniqueness ratio for source columns (0.0 to 1.0).
+        to_uniqueness_ratio (Optional[float]): Uniqueness ratio for target columns (0.0 to 1.0).
+
+    Returns:
+        tuple[str, List[str], str, List[str], RelationshipType]: A tuple containing:
+            - source_table (str): The final source table name (may be swapped).
+            - source_columns (List[str]): The final source columns (may be swapped).
+            - target_table (str): The final target table name (may be swapped).
+            - target_columns (List[str]): The final target columns (may be swapped).
+            - rel_type (RelationshipType): The determined relationship type (1:1, 1:M, or M:M).
+    """
     UNIQUENESS_THRESHOLD = 0.8
 
     from_is_unique = (from_uniqueness_ratio or 0) >= UNIQUENESS_THRESHOLD
@@ -53,8 +78,17 @@ def _get_final_profiling_metrics(
     source_table: str,
 ) -> RelationshipProfilingMetrics:
     """
-    Returns the final profiling metrics, swapping them if the source table
-    was changed during cardinality determination (i.e., a M:1 was treated as 1:M).
+    Constructs the final profiling metrics for a relationship.
+
+    If the `source_table` was swapped (i.e., it matches the `to_dataset` of the original link),
+    the metrics (uniqueness ratios, intersect ratios) are also swapped to reflect the new direction.
+
+    Args:
+        link (PredictedLink): The original predicted link containing raw metrics.
+        source_table (str): The name of the table determined to be the source.
+
+    Returns:
+        RelationshipProfilingMetrics: The adjusted profiling metrics for the relationship.
     """
     # If the final source_table is the original to_dataset, it means a swap happened.
     if source_table == link.to_dataset:
