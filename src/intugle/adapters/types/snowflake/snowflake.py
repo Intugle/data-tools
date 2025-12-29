@@ -253,7 +253,7 @@ class SnowflakeAdapter(Adapter):
         # Apply comments and tags to tables and columns
         for source in manifest.sources.values():
             # Construct the fully qualified table name using details from profiles.yml
-            full_table_name = f"{database}.{schema}.{source.table.name}"
+            full_table_name = f"{quote_identifier(database)}.{quote_identifier(schema)}.{quote_identifier(source.table.name)}"
 
             # Set table comment
             if source.table.description:

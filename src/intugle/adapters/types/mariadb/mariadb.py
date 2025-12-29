@@ -24,7 +24,7 @@ except Exception:
     MARIADB_CONNECTOR_AVAILABLE = False
 
 try:
-    from sqlglot import transpile
+    from sqlglot import exp, transpile
 
     SQLGLOT_AVAILABLE = True
 except Exception:
@@ -112,9 +112,8 @@ class MariaDBAdapter(Adapter):
 
     def _get_fqn(self, identifier: str) -> str:
         if "." in identifier:
-            parts = identifier.split(".")
-            return ".".join(self._quote_id(p) for p in parts)
-        return f"{self._quote_id(self.database)}.{self._quote_id(identifier)}"
+            return exp.to_table(identifier).sql(dialect="mysql")  # MariaDB uses MySQL dialect in sqlglot
+        return exp.to_table(identifier, db=self._database).sql(dialect="mysql")
 
     @staticmethod
     def check_data(data: Any) -> MariaDBConfig:
