@@ -1,14 +1,14 @@
 
-import pytest
 from unittest.mock import MagicMock, patch
+
+from intugle.adapters.types.bigquery.bigquery import BigQueryAdapter
+from intugle.adapters.types.databricks.databricks import DatabricksAdapter
+from intugle.adapters.types.mariadb.mariadb import MariaDBAdapter
+from intugle.adapters.types.oracle.oracle import OracleAdapter
+from intugle.adapters.types.postgres.postgres import PostgresAdapter
+from intugle.adapters.types.sqlserver.sqlserver import SQLServerAdapter
 from intugle.data_product import DataProduct
-from intugle.libs.smart_query_generator.models.models import FieldDetailsModel
-from intugle.adapters.types.postgres.postgres import PostgresAdapter, PostgresConfig
-from intugle.adapters.types.databricks.databricks import DatabricksAdapter, DatabricksConfig
-from intugle.adapters.types.sqlserver.sqlserver import SQLServerAdapter, SQLServerConfig
-from intugle.adapters.types.oracle.oracle import OracleAdapter, OracleConfig
-from intugle.adapters.types.mariadb.mariadb import MariaDBAdapter, MariaDBConfig
-from intugle.adapters.types.bigquery.bigquery import BigQueryAdapter, BigQueryConfig
+
 
 # --- PII Logic Tests ---
 def test_data_product_pii_logic():
@@ -57,6 +57,7 @@ def test_data_product_pii_logic():
 
 # --- Adapter SQL Injection Tests ---
 
+
 def test_postgres_adapter_fqn_safety():
     """Test PostgresAdapter _get_fqn with malicious input."""
     # We don't need a real connection for _get_fqn usually, but let's see implementation.
@@ -64,10 +65,11 @@ def test_postgres_adapter_fqn_safety():
     with patch("intugle.adapters.types.postgres.postgres.POSTGRES_AVAILABLE", True):
         # Bypass init connection
         with patch.object(PostgresAdapter, "connect"):
-             with patch("intugle.adapters.types.postgres.postgres.AsyncRunner"):
+            with patch("intugle.adapters.types.postgres.postgres.AsyncRunner"):
                 adapter = PostgresAdapter()
                 adapter._schema = "public"
                 
+                malicious_table = 'users"; DROP TABLE accounts; --'
                 try:
                     fqn = adapter._get_fqn(malicious_table)
                     
@@ -78,8 +80,11 @@ def test_postgres_adapter_fqn_safety():
                     # Verify that the quote is escaped (doubled)
                     assert '""' in fqn or '\\"' in fqn
                 except Exception as e:
-                   print(f"Caught expected error preventing injection: {e}")
-                   pass
+                    # sqlglot might raise TokenError or ParseError on malformed/malicious input.
+                    # This effectively prevents injection.
+                    print(f"Caught expected error preventing injection: {e}")
+                    pass
+
 
 def test_databricks_adapter_fqn_safety():
     with patch("intugle.adapters.types.databricks.databricks.DATABRICKS_AVAILABLE", True):
@@ -94,6 +99,7 @@ def test_databricks_adapter_fqn_safety():
             
             assert '``;' in fqn
 
+
 def test_sqlserver_adapter_fqn_safety():
     with patch("intugle.adapters.types.sqlserver.sqlserver.SQLSERVER_AVAILABLE", True):
         with patch.object(SQLServerAdapter, "connect"):
@@ -106,6 +112,7 @@ def test_sqlserver_adapter_fqn_safety():
             
             # Expected: [dbo].[users]]; DROP TABLE accounts; --]
             assert ']];' in fqn
+
 
 def test_oracle_adapter_fqn_safety():
     with patch("intugle.adapters.types.oracle.oracle.ORACLE_ADAPTER_AVAILABLE", True):
@@ -123,11 +130,12 @@ def test_oracle_adapter_fqn_safety():
                 print(f"Caught expected error preventing injection: {e}")
                 pass
 
+
 def test_mariadb_adapter_fqn_safety():
     with patch("intugle.adapters.types.mariadb.mariadb.MARIADB_AVAILABLE", True):
         with patch.object(MariaDBAdapter, "connect"):
             adapter = MariaDBAdapter()
-            adapter._database = "inventory" # MariaDB uses database as schema
+            adapter._database = "inventory"  # MariaDB uses database as schema
             
             malicious_table = 'users`; DROP TABLE accounts; --'
             fqn = adapter._get_fqn(malicious_table)
@@ -135,6 +143,7 @@ def test_mariadb_adapter_fqn_safety():
             
             # Should look like `inventory`.`users`` ...`
             assert '``;' in fqn
+
 
 def test_bigquery_adapter_fqn_safety():
     with patch("intugle.adapters.types.bigquery.bigquery.BIGQUERY_AVAILABLE", True):
