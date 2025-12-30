@@ -20,7 +20,7 @@ log = logging.getLogger(__name__)
 
 
 class SemanticSearchCRUD:
-    def __init__(self, collection_name: str, embeddings: List[Embeddings], batch_size: int = 30):
+    def __init__(self, collection_name: str, embeddings: List[Embeddings], batch_size: int = 10):
         self.collection_name = collection_name
         self.embeddings = embeddings
         self.batch_size = batch_size
