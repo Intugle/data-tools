@@ -208,7 +208,7 @@ class SemanticSearchCRUD:
             await vdb.client.create_payload_index(
                 collection_name=self.collection_name,
                 field_name="type",
-                field_schema=models.PayloadSchemaType.KEYWORD
+                field_type=models.PayloadSchemaType.KEYWORD
             )
 
     async def initialize(self, column_details: list[dict]):
