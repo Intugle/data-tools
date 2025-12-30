@@ -20,7 +20,7 @@ log = logging.getLogger(__name__)
 
 
 class SemanticSearchCRUD:
-    def __init__(self, collection_name: str, embeddings: List[Embeddings], batch_size: int = 30):
+    def __init__(self, collection_name: str, embeddings: List[Embeddings], batch_size: int = 10):
         self.collection_name = collection_name
         self.embeddings = embeddings
         self.batch_size = batch_size
@@ -208,7 +208,7 @@ class SemanticSearchCRUD:
             await vdb.client.create_payload_index(
                 collection_name=self.collection_name,
                 field_name="type",
-                field_schema=models.PayloadSchemaType.KEYWORD
+                field_type=models.PayloadSchemaType.KEYWORD
             )
 
     async def initialize(self, column_details: list[dict]):
