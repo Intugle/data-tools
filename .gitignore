@@ -234,3 +234,7 @@ profiles.yaml
 
 # ISSUE DRAFTS
 /issues/
+
+# opencode
+.opencode/
+AGENTS.md
