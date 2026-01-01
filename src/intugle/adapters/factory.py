@@ -34,8 +34,11 @@ DEFAULT_PLUGINS = [
     "intugle.adapters.types.postgres.postgres",
     "intugle.adapters.types.redshift.redshift",
     "intugle.adapters.types.mysql.mysql",
+    "intugle.adapters.types.mariadb.mariadb",
     "intugle.adapters.types.sqlserver.sqlserver",
     "intugle.adapters.types.sqlite.sqlite",
+    "intugle.adapters.types.bigquery.bigquery",
+    "intugle.adapters.types.oracle.oracle",
 ]
 
 

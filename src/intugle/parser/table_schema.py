@@ -28,20 +28,27 @@ class TableSchema:
         if not table_detail:
             raise errors.NotFoundError(f"Table {table_name} not found in manifest.")
 
-        # 1. Define the SQL template with placeholders
+        # 1. Fetch definitions using helper methods
+        column_definitions = self._get_column_definitions(table_detail)
+        fk_definitions = self._get_foreign_key_definitions(table_name)
+
+        # 2. Assemble the final schema
+        all_definitions = column_definitions + fk_definitions
+        definitions_str = ",\n".join(all_definitions)
+
         schema_template = "CREATE TABLE {table_name} -- {table_comment}\n(\n{definitions}\n);"
+        
+        return schema_template.format(
+            table_name=table_detail.table.name,
+            table_comment=table_detail.table.description,
+            definitions=definitions_str
+        )
 
-        # 2. Sanitize all dynamic parts that will go into the template
-        params = {
-            "table_name": table_detail.table.name,
-            "table_comment": table_detail.table.description,
-        }
-
-        # Sanitize each column definition separately
+    def _get_column_definitions(self, table_detail) -> list[str]:
+        """Helper method to generate column definition strings."""
         column_definitions = []
         for column in table_detail.table.columns:
             # Here we assume column.type is safe and doesn't come from user input.
-            # If it can be user-defined, it needs its own validation.
             column_template = "    {column_name} {column_type} -- {column_comment}"
             column_params = {
                 "column_name": column.name,
@@ -49,8 +56,10 @@ class TableSchema:
                 "column_comment": column.description,
             }
             column_definitions.append(column_template.format(**column_params))
+        return column_definitions
 
-        # Add foreign key constraints
+    def _get_foreign_key_definitions(self, table_name: str) -> list[str]:
+        """Helper method to generate foreign key constraint strings."""
         fk_definitions = []
         for relationship in self.manifest.relationships.values():
             if relationship.source.table == table_name:
@@ -61,13 +70,7 @@ class TableSchema:
                     "to_column": ','.join(relationship.target.columns),
                 }
                 fk_definitions.append(fk_template.format(**fk_params))
-
-        # Join all definitions with a comma
-        all_definitions = column_definitions + fk_definitions
-        params["definitions"] = ",\n".join(all_definitions)
-
-        # 3. Format the final schema string with the sanitized parameters
-        return schema_template.format(**params)
+        return fk_definitions
 
     def get_table_schema(self, table_name: str):
         """Get the SQL schema for a specified table, generating it if not already cached.
@@ -85,6 +88,3 @@ class TableSchema:
             self.table_schemas[table_name] = table_schema
 
         return table_schema
-    
-
-    

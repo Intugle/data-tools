@@ -4,6 +4,7 @@ SQLite Adapter Tests
 Tests for the SQLite adapter following the BaseAdapterTests pattern.
 """
 
+import gc
 import os
 import sqlite3
 import tempfile
@@ -148,7 +149,11 @@ class TestSqliteAdapter(BaseAdapterTests):
 
         conn.close()
         yield path
-        os.unlink(path)
+        gc.collect()  # Force handle release
+        try:
+            os.unlink(path)
+        except PermissionError:
+            pass
 
     @pytest.fixture
     def mock_settings(self, db_path):
@@ -249,7 +254,14 @@ class TestSqliteSpecificBehavior:
             # Should be the same connection object
             assert conn1 is conn2
 
-        os.unlink(db_path)
+        adapter.connection.close()
+        
+        gc.collect()
+
+        try:
+            os.unlink(db_path)
+        except PermissionError:
+            pass
 
     def test_create_view(self):
         """Test that CREATE VIEW works correctly."""
@@ -279,7 +291,12 @@ class TestSqliteSpecificBehavior:
             assert len(result) == 1
             assert result.iloc[0]["name"] == "Bob"
 
-        os.unlink(db_path)
+        adapter.connection.close()
+        gc.collect()
+        try:
+            os.unlink(db_path)
+        except PermissionError:
+            pass
 
     def test_parameterized_queries(self):
         """Test that parameterized queries work correctly."""
@@ -305,7 +322,12 @@ class TestSqliteSpecificBehavior:
             assert len(result) == 1
             assert result[0][1] == "Alice"
 
-        os.unlink(db_path)
+        adapter.connection.close()
+        gc.collect()
+        try:
+            os.unlink(db_path)
+        except PermissionError:
+            pass
 
     def test_safe_identifier(self):
         """Test that safe_identifier escapes double quotes correctly."""
@@ -346,7 +368,12 @@ class TestSqliteSpecificBehavior:
                 table_name="test_composite", columns=["col1", "col2"], dataset_data=dataset_data
             )
             assert count == 2
-        os.unlink(db_path)
+        adapter.connection.close()
+        gc.collect()
+        try:
+            os.unlink(db_path)
+        except PermissionError:
+            pass
 
     def test_intersect_composite_keys_count(self):
         """Test intersection count for composite keys across tables."""
@@ -375,7 +402,12 @@ class TestSqliteSpecificBehavior:
                 table1=ds1, columns1=["id", "ver"], table2=ds2, columns2=["id", "ver"]
             )
             assert count == 1
-        os.unlink(db_path)
+        adapter.connection.close()
+        gc.collect()
+        try:
+            os.unlink(db_path)
+        except PermissionError:
+            pass 
 
     def test_missing_profile_raises_error(self):
         """Test that adapter raises ValueError if path is missing from profiles."""
