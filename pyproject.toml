@@ -69,6 +69,10 @@ postgres = [
     "asyncpg>=0.30.0",
     "sqlglot>=27.20.0",
 ]
+redshift = [
+    "redshift-connector>=2.1.0",
+    "sqlglot>=27.20.0",
+]
 bigquery = [
     "google-cloud-bigquery>=3.11.0",
     "sqlglot>=27.20.0",
