@@ -1,9 +1,11 @@
+from unittest.mock import MagicMock, patch
+
 import pytest
-from unittest.mock import MagicMock, patch, PropertyMock
+
 from intugle.adapters.types.bigquery.bigquery import (
+    BIGQUERY_AVAILABLE,
     BigQueryAdapter,
     can_handle_bigquery,
-    BIGQUERY_AVAILABLE,
 )
 from intugle.adapters.types.bigquery.models import BigQueryConfig, BigQueryConnectionConfig
 

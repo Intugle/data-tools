@@ -27,7 +27,7 @@ except ImportError:
     MSSQL_PYTHON_AVAILABLE = False
 
 try:
-    from sqlglot import transpile
+    from sqlglot import exp, transpile
 
     SQLGLOT_AVAILABLE = True
 except ImportError:
@@ -112,8 +112,8 @@ class SQLServerAdapter(Adapter):
     def _get_fqn(self, identifier: str) -> str:
         """Gets the fully qualified name for a table identifier."""
         if "." in identifier:
-            return identifier
-        return f'[{self._schema}].[{identifier}]'
+            return exp.to_table(identifier).sql(dialect="tsql")
+        return exp.to_table(identifier, db=self._schema).sql(dialect="tsql")
 
     @staticmethod
     def check_data(data: Any) -> SQLServerConfig:
