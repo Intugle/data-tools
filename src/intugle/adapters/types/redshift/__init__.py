@@ -1,0 +1,1 @@
+# Redshift adapter module
