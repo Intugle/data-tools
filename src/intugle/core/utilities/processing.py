@@ -16,10 +16,60 @@ ASCII_PATTERN = r"[^\x00-\x7F]"
 
 
 def remove_ascii(strs) -> str:
+    """
+    Remove all non-ASCII characters from the input.
+
+    This function iterates over the input string and filters out any characters
+    whose ASCII code is greater than or equal to 128. It is commonly used as a
+    preprocessing step for data cleaning and standardization.
+
+    Parameters
+    ----------
+    strs : Any
+        Input value to process. It is cast to string before filtering.
+
+    Returns
+    -------
+    str
+        A string containing only ASCII characters.
+
+    Example
+    -------
+    >>> remove_ascii("Café Münster")
+    'Caf Mnster'
+    """
     return "".join([char for word in str(strs) for char in word if ord(char) < 128])
 
 
 def string_standardization(uncleaned_data: str):
+    """
+    Standardize a string by removing noise and normalizing formatting.
+
+    The cleaning steps include:
+    - Removing non-ASCII characters
+    - Replacing special characters with spaces
+    - Collapsing multiple whitespaces
+    - Replacing spaces with underscores
+    - Converting text to lowercase
+
+    This function is useful for preparing strings for identifiers,
+    column names, or normalized comparisons.
+
+    Parameters
+    ----------
+    uncleaned_data : str
+        Raw input string to clean and standardize.
+
+    Returns
+    -------
+    str
+        A cleaned, lowercase, underscore-separated string.
+
+    Example
+    -------
+    >>> string_standardization("Hello, World!!  ")
+    'hello_world'
+    """
     cleaned_data = remove_ascii(uncleaned_data)
     cleaned_data = re.sub(SPECIAL_PATTERN, " ", cleaned_data)
     cleaned_data = re.sub(WHITESPACE_PATTERN, " ", cleaned_data.strip())
@@ -29,6 +79,37 @@ def string_standardization(uncleaned_data: str):
 
 
 def compute_stats(values):
+    """
+    Compute basic statistical metrics for a numeric dataset.
+
+    The following statistics are calculated:
+    - Mean
+    - Variance
+    - Skewness
+    - Kurtosis
+    - Minimum
+    - Maximum
+    - Sum
+
+    If the variance is zero, skewness is returned as 0 and kurtosis as -3,
+    following statistical convention.
+
+    Parameters
+    ----------
+    values : array-like
+        Numeric values as a list or NumPy array.
+
+    Returns
+    -------
+    tuple
+        A tuple containing:
+        (mean, variance, skewness, kurtosis, min, max, sum)
+
+    Example
+    -------
+    >>> compute_stats([1, 2, 3])
+    (2.0, 0.666..., 0.0, -1.5, 1, 3, 6)
+    """
     # Converting the values to array format
     values = np.array(values) if not isinstance(values, np.ndarray) else values
     # Calculate the statistical results from the values
@@ -52,6 +133,40 @@ def compute_stats(values):
 
 
 def adjust_sample(sample_data, expected_size, sample=True, distinct=False, empty_return_na: bool = True):
+    """
+    Adjust a list of sample values to match an expected size.
+
+    This function optionally:
+    - Parses string representations of lists
+    - Removes duplicates
+    - Truncates samples
+    - Augments small samples using random selection
+
+    It is commonly used to normalize sample sizes for downstream processing.
+
+    Parameters
+    ----------
+    sample_data : list or str
+        Sample data as a list or a string representation of a list.
+    expected_size : int
+        Desired size of the output sample.
+    sample : bool, optional
+        Whether to sample or truncate data (default: True).
+    distinct : bool, optional
+        Remove duplicate values before sampling (default: False).
+    empty_return_na : bool, optional
+        Return NaN values when sample is empty (default: True).
+
+    Returns
+    -------
+    list
+        Adjusted list of samples with length up to expected_size.
+
+    Example
+    -------
+    >>> adjust_sample([1, 2], expected_size=5)
+    [1, 2, 2, 1, 1]
+    """
     if not isinstance(sample_data, list):
         try:
             sample_data = ast.literal_eval(sample_data)
@@ -173,6 +288,32 @@ def classify_datetime_format(sampled_values: list) -> list | str:
 
 
 def character_length_based_stratified_sampling(samples: list, n_strata: int = None, n_samples: int = 30):
+    """
+    Perform stratified sampling based on string length.
+
+    Samples are grouped by character length, and each group contributes
+    proportionally to the final sample set. This ensures diversity in
+    string lengths and avoids bias toward short or long values.
+
+    Parameters
+    ----------
+    samples : list
+        List of sample values.
+    n_strata : int, optional
+        Maximum number of length-based strata to consider.
+    n_samples : int, optional
+        Total number of samples to return (default: 30).
+
+    Returns
+    -------
+    list
+        Stratified subset of samples.
+
+    Example
+    -------
+    >>> character_length_based_stratified_sampling(["a", "abcd", "abcdef"], n_samples=2)
+    ['a', 'abcd']
+    """
     df = pd.DataFrame(samples, columns=["data"])
     df["data"] = df.data.astype(str)
     df["length"] = df.data.str.len()
