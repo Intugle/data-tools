@@ -1,5 +1,6 @@
 import logging
 
+from pathlib import Path
 from typing import TYPE_CHECKING, Any, Dict, List
 
 import pandas as pd
@@ -11,7 +12,6 @@ from intugle.exporters.factory import factory as exporter_factory
 from intugle.link_predictor.predictor import LinkPredictor
 from intugle.semantic_search import SemanticSearch
 from intugle.utils.files import update_relationship_file_mtime
-from pathlib import Path
 
 if TYPE_CHECKING:
     from intugle.adapters.adapter import Adapter
@@ -83,6 +83,7 @@ class SemanticModel:
                     "DataSet objects provided in a list must have a 'name' attribute."
                 )
             self.datasets[dataset.name] = dataset
+
     def _initialize_from_folder(self, folder_path: str):
         """
         Initialize datasets by scanning a folder (recursively) for supported data files.
@@ -132,7 +133,6 @@ class SemanticModel:
             raise ValueError(
                 f"No supported data files (.csv, .parquet, .xlsx) found in directory: {folder_path}"
             )
-
 
     def profile(self, force_recreate: bool = False):
         """

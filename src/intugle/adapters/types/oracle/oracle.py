@@ -24,7 +24,7 @@ except ImportError:
     ORACLE_AVAILABLE = False
 
 try:
-    from sqlglot import transpile
+    from sqlglot import exp, transpile
 
     SQLGLOT_AVAILABLE = True
 except ImportError:
@@ -103,9 +103,10 @@ class OracleAdapter(Adapter):
                 cursor.execute(f"ALTER SESSION SET CURRENT_SCHEMA = {params.schema_}")
 
     def _get_fqn(self, identifier: str) -> str:
+        """Gets the fully qualified name for a table identifier."""
         if "." in identifier:
-            return identifier.upper()  # Oracle identifiers are case-insensitive/upper by default unless quoted
-        return f'"{self._schema}"."{identifier}"'
+            return exp.to_table(identifier).sql(dialect="oracle")
+        return exp.to_table(identifier, db=self._schema).sql(dialect="oracle")
 
     @staticmethod
     def check_data(data: Any) -> OracleConfig:
