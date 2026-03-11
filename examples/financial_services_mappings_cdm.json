@@ -1,0 +1,183 @@
+{
+  "ontology_name": "Financial Services Enterprise Ontology (CDM)",
+  "ontology_version": "2.0",
+  "catalog_name": "Microsoft CDM - Core",
+  "mappings": [
+    {
+      "semantic_entities": [
+        "customers"
+      ],
+      "concept_name": "BankCustomer",
+      "cdm_entity_name": "Account",
+      "cdm_namespace": "core.applicationCommon",
+      "mapping_type": "one_to_one",
+      "attribute_mappings": [
+        {
+          "semantic_attribute": "customer_id",
+          "cdm_attribute": "Account.AccountId",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "full_name",
+          "cdm_attribute": "Account.AccountName",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "email",
+          "cdm_attribute": "Account.Email",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "phone",
+          "cdm_attribute": "Account.PhoneNumber",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        }
+      ],
+      "status": "approved",
+      "confidence": 0.95,
+      "owner": "data_governance@bank.com",
+      "notes": "Customer master data aligned with CDM Account",
+      "metadata": {}
+    },
+    {
+      "semantic_entities": [
+        "accounts"
+      ],
+      "concept_name": "BankAccount",
+      "cdm_entity_name": "Product",
+      "cdm_namespace": "core.applicationCommon.foundationCommon.crmCommon.products",
+      "mapping_type": "one_to_one",
+      "attribute_mappings": [
+        {
+          "semantic_attribute": "account_id",
+          "cdm_attribute": "Product.ProductId",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "account_number",
+          "cdm_attribute": "Product.ProductNumber",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "account_type",
+          "cdm_attribute": "Product.ProductName",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        }
+      ],
+      "status": "approved",
+      "confidence": 0.92,
+      "owner": "product_data@bank.com",
+      "notes": "Banking accounts mapped to CDM Product",
+      "metadata": {}
+    },
+    {
+      "semantic_entities": [
+        "transactions"
+      ],
+      "concept_name": "FinancialTransaction",
+      "cdm_entity_name": "SalesOrder",
+      "cdm_namespace": "core.applicationCommon.foundationCommon.crmCommon.sales",
+      "mapping_type": "one_to_one",
+      "attribute_mappings": [
+        {
+          "semantic_attribute": "transaction_id",
+          "cdm_attribute": "SalesOrder.SalesOrderId",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "transaction_date",
+          "cdm_attribute": "SalesOrder.OrderDate",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "amount",
+          "cdm_attribute": "SalesOrder.TotalAmount",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "account_id",
+          "cdm_attribute": "SalesOrder.CustomerId",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        }
+      ],
+      "status": "approved",
+      "confidence": 0.88,
+      "owner": "transactions@bank.com",
+      "notes": "Transactions mapped to CDM SalesOrder",
+      "metadata": {}
+    },
+    {
+      "semantic_entities": [
+        "loans"
+      ],
+      "concept_name": "Loan",
+      "cdm_entity_name": "Invoice",
+      "cdm_namespace": "core.applicationCommon.foundationCommon.crmCommon.sales",
+      "mapping_type": "one_to_one",
+      "attribute_mappings": [
+        {
+          "semantic_attribute": "loan_id",
+          "cdm_attribute": "Invoice.InvoiceId",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "origination_date",
+          "cdm_attribute": "Invoice.InvoiceDate",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "outstanding_balance",
+          "cdm_attribute": "Invoice.TotalAmount",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        }
+      ],
+      "status": "in_review",
+      "confidence": 0.75,
+      "owner": "lending@bank.com",
+      "notes": "Loan mapping under review; awaiting financial services CDM extension",
+      "metadata": {}
+    }
+  ]
+}
