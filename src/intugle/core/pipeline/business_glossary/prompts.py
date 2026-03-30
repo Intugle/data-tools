@@ -1,12 +1,18 @@
-from langchain.output_parsers import ResponseSchema
+from langchain_classic.output_parsers import ResponseSchema
 
 table_glossary = [ResponseSchema(name="table_glossary", description=" single-sentence business glossary definition")]
-column_glossary = [ResponseSchema(name="column_glossary", description="precise, single-sentence and non-technical business glossary definition")]
-column_tag_glossary = [ResponseSchema(name="column_tag_glossary", description="three precise and distinct business tags", type="list[str]")]
+column_glossary = [
+    ResponseSchema(
+        name="column_glossary", description="precise, single-sentence and non-technical business glossary definition"
+    )
+]
+column_tag_glossary = [
+    ResponseSchema(name="column_tag_glossary", description="three precise and distinct business tags", type="list[str]")
+]
 
 BUSINESS_GLOSSARY_PROMPTS = {
-"gpt-4o": {
-"TABLE_GLOSSARY_TEMPLATE": """You are responsible for Data Governance in {domain},
+    "gpt-4o": {
+        "TABLE_GLOSSARY_TEMPLATE": """You are responsible for Data Governance in {domain},
 generate a concise, non-technical business glossary definition for the table on a provided DDL statement.
 The definition should be written as a single sentence and clearly describe the business purpose or function.\n
 # Instructions
@@ -23,7 +29,7 @@ The definition should be written as a single sentence and clearly describe the b
 # Output
 {format_instructions}    
 """,
-"BUSINESS_GLOSSARY_TEMPLATE": """You are responsible for Data Governance in {domain},
+        "BUSINESS_GLOSSARY_TEMPLATE": """You are responsible for Data Governance in {domain},
 generate a concise single-sentence business glossary definition for each column mentioned in the DDL statement.\n
 The definition should clearly describe the business purpose or function.\n
 
@@ -38,7 +44,7 @@ The definition should clearly describe the business purpose or function.\n
 {create_statements}\n
 {format_instructions}
 """,
-"BUSINESS_TAGS_TEMPLATE": """You are responsible for Data Governance in {domain}, your task is to generate three business tags for a column based on the DDL statements of a table given below.
+        "BUSINESS_TAGS_TEMPLATE": """You are responsible for Data Governance in {domain}, your task is to generate three business tags for a column based on the DDL statements of a table given below.
 Use the column's context within the DDL statement (e.g., its name, type, and table name) to infer relevant business tags. Focus on generating concise, domain-relevant, 
 and meaningful tags that align with the potential business use of the column.
 
@@ -65,10 +71,10 @@ and meaningful tags that align with the potential business use of the column.
 # Additional Context:
 {additional_context}\n
 {format_instructions}
-"""
-},
-"gpt-4o-mini": {
-"TABLE_GLOSSARY_TEMPLATE": """
+""",
+    },
+    "gpt-4o-mini": {
+        "TABLE_GLOSSARY_TEMPLATE": """
 Role: You are responsible for Data Governance in the {domain}.\n
 Task: You will be given a SQL DDL statement how `{table}` table is structured. Generate a concise, non-technical business glossary definition for `{table}` that clearly describe the business purpose or function.\n
 
@@ -89,7 +95,7 @@ Instructions:\n
 \n\n
 {format_instructions}
 """,
-"BUSINESS_GLOSSARY_TEMPLATE": """
+        "BUSINESS_GLOSSARY_TEMPLATE": """
 Role: You are responsible for Data Governance in the {domain}.\n
 Task: You will be given a SQL DDL statement how the attribute `{column}` is structured.\n
 
@@ -111,8 +117,7 @@ Instruction:
 {additional_context}\n\n
 {format_instructions}
 """,
-"BUSINESS_TAGS_TEMPLATE":
-"""
+        "BUSINESS_TAGS_TEMPLATE": """
 Role: You are responsible for Data Governance in the {domain}.\n
 Task: You will be given a SQL DDL statement how the attribute `{column}` is structured.\n
 
@@ -131,6 +136,6 @@ Instruction:
 # Additional Context:
 {additional_context}\n\n
 {format_instructions}
-"""
-}
+""",
+    },
 }

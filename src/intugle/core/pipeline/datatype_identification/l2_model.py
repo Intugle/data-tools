@@ -8,7 +8,7 @@ import re
 
 import pandas as pd
 
-from langchain.output_parsers import ResponseSchema
+from langchain_classic.output_parsers import ResponseSchema
 from tqdm.auto import tqdm
 
 from intugle.core.llms.chat import ChatModelLLM
@@ -82,9 +82,7 @@ class L2ModelLLM:
     def __call__(self, row) -> str:
         column_name = row["column_name"]
 
-        sample_data = adjust_sample(
-            sample_data=row["sample_data"], expected_size=settings.L2_SAMPLE_LIMIT
-        )
+        sample_data = adjust_sample(sample_data=row["sample_data"], expected_size=settings.L2_SAMPLE_LIMIT)
 
         table = pd.DataFrame(sample_data, columns=[column_name])
 
@@ -101,7 +99,6 @@ class L2Model:
         self,
         l1_pred: pd.DataFrame,
     ):
-
         l1_pred["predicted_datatype_l2"] = l1_pred.progress_apply(
             self.__model,
             axis=1,
