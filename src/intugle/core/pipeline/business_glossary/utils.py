@@ -3,7 +3,7 @@ import re
 
 import pandas as pd
 
-from langchain.output_parsers import RetryOutputParser
+from langchain_classic.output_parsers import RetryOutputParser
 from langchain_core.prompt_values import StringPromptValue
 
 from intugle.core import settings
@@ -56,11 +56,8 @@ def get_additional_context(table_name: str, global_additional_context: str = "",
 
 
 def preprocess_profiling_df(profiling_data: pd.DataFrame):
-
     profiling_data = preprocess_profiling_data(
-        profiling_data=profiling_data,
-        sample_limit=settings.STRATA_SAMPLE_LIMIT,
-        dtypes_to_filter=None
+        profiling_data=profiling_data, sample_limit=settings.STRATA_SAMPLE_LIMIT, dtypes_to_filter=None
     )
 
     return profiling_data

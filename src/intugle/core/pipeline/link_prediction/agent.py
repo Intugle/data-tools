@@ -5,7 +5,7 @@ from enum import Enum
 
 import pandas as pd
 
-from langchain.output_parsers import OutputFixingParser
+from langchain_classic.output_parsers import OutputFixingParser
 from langchain_core.messages import HumanMessage
 from langchain_core.output_parsers import PydanticOutputParser
 from langgraph.errors import GraphRecursionError
@@ -64,26 +64,25 @@ class MultiLinkPredictionAgent:
         )
 
         pydantic_parser = PydanticOutputParser(pydantic_object=Link)
-        self.parser_linkages = OutputFixingParser.from_llm(
-            llm=self.llm, parser=pydantic_parser
-        )
+        self.parser_linkages = OutputFixingParser.from_llm(llm=self.llm, parser=pydantic_parser)
 
         self.link_identification_agent_prompt = link_identification_agent_prompt
 
         self.table1_dataset = table1_dataset
         self.table2_dataset = table2_dataset
 
-        profiling_data = pd.concat(
-            [table1_dataset.profiling_df, table2_dataset.profiling_df], ignore_index=True
+        profiling_data = pd.concat([table1_dataset.profiling_df, table2_dataset.profiling_df], ignore_index=True)
+        profiling_data.rename(
+            columns={
+                "column_name": "upstream_column_name",
+                "table_name": "upstream_table_name",
+                "distinct_count": "distinct_value_count",
+                "predicted_datatype_l1": "datatype_l1",
+                "predicted_datatype_l2": "datatype_l2",
+                "business_glossary": "glossary",
+            },
+            inplace=True,
         )
-        profiling_data.rename(columns={
-            "column_name": "upstream_column_name",
-            "table_name": "upstream_table_name",
-            "distinct_count": "distinct_value_count",
-            "predicted_datatype_l1": "datatype_l1",
-            "predicted_datatype_l2": "datatype_l2",
-            "business_glossary": "glossary",
-        }, inplace=True)
 
         self.profiling_data = preprocess_profiling_df(profiling_data)
 
@@ -119,14 +118,21 @@ class MultiLinkPredictionAgent:
         start_time = time.time()
         HumanMessage(content=f"{self.table1_dataset.name} & {self.table2_dataset.name}")
         init_data = {
-            "messages": [("user", f"### Table Schemas:\n```sql\n{self.table_ddl_statements[self.table1_dataset.name]}\n```\n```sql\n{self.table_ddl_statements[self.table2_dataset.name]}\n```")],
+            "messages": [
+                (
+                    "user",
+                    f"### Table Schemas:\n```sql\n{self.table_ddl_statements[self.table1_dataset.name]}\n```\n```sql\n{self.table_ddl_statements[self.table2_dataset.name]}\n```",
+                )
+            ],
             "table1_name": self.table1_dataset.name,
             "table2_name": self.table2_dataset.name,
             "remaining_steps": 25,  # This is for the prebuilt agent, not directly used in our custom graph
         }
 
         # Get Langfuse handler if enabled
-        langfuse_handler = get_langfuse_handler(trace_name=f"lp-id-{self.table1_dataset.name}-{self.table2_dataset.name}")
+        langfuse_handler = get_langfuse_handler(
+            trace_name=f"lp-id-{self.table1_dataset.name}-{self.table2_dataset.name}"
+        )
         config = {"callbacks": [langfuse_handler]} if langfuse_handler else {}
 
         try:
@@ -144,14 +150,19 @@ class MultiLinkPredictionAgent:
                     log.info(f"Finished running: {key}:")
 
         except GraphRecursionError as ex:
-            log.warning(f"[!] Graph went into recursion loop when running for {self.table1_dataset.name} <=> {self.table2_dataset.name}")
+            log.warning(
+                f"[!] Graph went into recursion loop when running for {self.table1_dataset.name} <=> {self.table2_dataset.name}"
+            )
             event["status"] = Status.HALLUCINATED_RECURSION
             event["potential_link"] = "NA"
             event["error_msg"] = str(ex)
 
         except Exception as ex:
             import traceback
-            log.error(f"[!] Error while running for {self.table1_dataset.name} <=> {self.table2_dataset.name}: Reason {traceback.format_exc()}")
+
+            log.error(
+                f"[!] Error while running for {self.table1_dataset.name} <=> {self.table2_dataset.name}: Reason {traceback.format_exc()}"
+            )
             event["status"] = Status.HALLUCINATED_RECURSION
             event["potential_link"] = "NA"
             event["error_msg"] = str(ex)
@@ -162,7 +173,7 @@ class MultiLinkPredictionAgent:
 
         # Extract links from the lpt._links dictionary
         potential_links_for_pair = self.lpt._links.get((self.table1_dataset.name, self.table2_dataset.name), {})
-        
+
         # Convert OutputSchema objects to dictionaries
         links_data = [link.model_dump() for link in potential_links_for_pair.values()]
 
@@ -183,7 +194,9 @@ class MultiLinkPredictionAgent:
             and runs < self.HALLUCINATIONS_MAX_RETRY
         ):
             runs += 1
-            log.info(f"[*] Hallucinated for {self.table1_dataset.name} <==> {self.table2_dataset.name} ... Retry no {runs} ")
+            log.info(
+                f"[*] Hallucinated for {self.table1_dataset.name} <==> {self.table2_dataset.name} ... Retry no {runs} "
+            )
             final_output = self.__graph_invoke__()
 
         return final_output
