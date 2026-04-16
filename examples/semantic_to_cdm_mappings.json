@@ -1,0 +1,143 @@
+{
+  "ontology_name": "Enterprise Business Ontology (CDM)",
+  "ontology_version": "1.0",
+  "catalog_name": "Microsoft CDM - Core",
+  "mappings": [
+    {
+      "semantic_entities": [
+        "customer"
+      ],
+      "concept_name": "Customer",
+      "cdm_entity_name": "Contact",
+      "cdm_namespace": "core.applicationCommon",
+      "mapping_type": "one_to_one",
+      "attribute_mappings": [
+        {
+          "semantic_attribute": "customer_id",
+          "cdm_attribute": "Contact.ContactId",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "email",
+          "cdm_attribute": "Contact.Email",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "full_name",
+          "cdm_attribute": "Contact.FullName",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "phone",
+          "cdm_attribute": "Contact.PhoneNumber",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        }
+      ],
+      "status": "proposed",
+      "confidence": 1.0,
+      "owner": null,
+      "notes": null,
+      "metadata": {}
+    },
+    {
+      "semantic_entities": [
+        "account"
+      ],
+      "concept_name": "Account",
+      "cdm_entity_name": "Account",
+      "cdm_namespace": "core.applicationCommon",
+      "mapping_type": "one_to_one",
+      "attribute_mappings": [
+        {
+          "semantic_attribute": "account_id",
+          "cdm_attribute": "Account.AccountId",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "account_name",
+          "cdm_attribute": "Account.Name",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "account_balance",
+          "cdm_attribute": "Account.Balance",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        }
+      ],
+      "status": "proposed",
+      "confidence": 1.0,
+      "owner": null,
+      "notes": null,
+      "metadata": {}
+    },
+    {
+      "semantic_entities": [
+        "sales_order_header"
+      ],
+      "concept_name": "SalesOrder",
+      "cdm_entity_name": "SalesOrder",
+      "cdm_namespace": "core.applicationCommon.foundationCommon.crmCommon.sales",
+      "mapping_type": "one_to_one",
+      "attribute_mappings": [
+        {
+          "semantic_attribute": "order_id",
+          "cdm_attribute": "SalesOrder.SalesOrderId",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "order_date",
+          "cdm_attribute": "SalesOrder.OrderDate",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "customer_id",
+          "cdm_attribute": "SalesOrder.CustomerId",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "total_amount",
+          "cdm_attribute": "SalesOrder.TotalAmount",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        }
+      ],
+      "status": "proposed",
+      "confidence": 1.0,
+      "owner": null,
+      "notes": null,
+      "metadata": {}
+    }
+  ]
+}
