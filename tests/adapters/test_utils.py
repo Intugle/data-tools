@@ -1,6 +1,8 @@
 import numpy as np
-from intugle.adapters.utils import convert_to_native
 import pytest
+
+from intugle.adapters.utils import convert_to_native
+
 
 def test_numpy_scalar_int():
     value = np.int64(10)

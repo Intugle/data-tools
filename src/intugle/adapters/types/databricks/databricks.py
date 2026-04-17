@@ -36,7 +36,7 @@ except ImportError:
     DATABRICKS_SQL_AVAILABLE = False
 
 try:
-    from sqlglot import transpile
+    from sqlglot import exp, transpile
     SQLGLOT_AVAILABLE = True
 except ImportError:
     SQLGLOT_AVAILABLE = False
@@ -136,19 +136,10 @@ class DatabricksAdapter(Adapter):
 
     def _get_fqn(self, identifier: str) -> str:
         """Gets the fully qualified name for a table identifier."""
-        # An identifier is already fully qualified if it contains a dot.
         if "." in identifier:
-            return identifier
+            return exp.to_table(identifier).sql(dialect="databricks")
         
-        # Backticks are used to handle reserved keywords and special characters.
-        safe_schema = f"`{self._schema}`"
-        safe_identifier = f"`{identifier}`"
-
-        if self.catalog:
-            safe_catalog = f"`{self.catalog}`"
-            return f"{safe_catalog}.{safe_schema}.{safe_identifier}"
-        
-        return f"{safe_schema}.{safe_identifier}"
+        return exp.to_table(identifier, db=self._schema, catalog=self.catalog).sql(dialect="databricks")
 
     @staticmethod
     def check_data(data: Any) -> DatabricksConfig:

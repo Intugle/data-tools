@@ -1,4 +1,5 @@
 import time
+
 from typing import TYPE_CHECKING, Any, Optional
 
 import numpy as np
@@ -18,11 +19,17 @@ if TYPE_CHECKING:
 try:
     from google.cloud import bigquery
     from google.oauth2 import service_account
-    from sqlglot import transpile
-
-    BIGQUERY_AVAILABLE = True
+    GOOGLE_BIGQUERY_AVAILABLE = True
 except ImportError:
-    BIGQUERY_AVAILABLE = False
+    GOOGLE_BIGQUERY_AVAILABLE = False
+
+try:
+    from sqlglot import exp, transpile
+    SQLGLOT_AVAILABLE = True
+except ImportError:
+    SQLGLOT_AVAILABLE = False
+
+BIGQUERY_AVAILABLE = GOOGLE_BIGQUERY_AVAILABLE and SQLGLOT_AVAILABLE
 
 
 class BigQueryAdapter(Adapter):
@@ -98,15 +105,8 @@ class BigQueryAdapter(Adapter):
     def _get_fqn(self, identifier: str) -> str:
         """Gets the fully qualified name for a table identifier."""
         if "." in identifier:
-            # Already has project or dataset prefix
-            parts = identifier.split(".")
-            if len(parts) == 2:
-                # dataset.table format
-                return f"`{self._project_id}.{identifier}`"
-            elif len(parts) == 3:
-                # project.dataset.table format
-                return f"`{identifier}`"
-        return f"`{self._project_id}.{self._dataset_id}.{identifier}`"
+            return exp.to_table(identifier).sql(dialect="bigquery")
+        return exp.to_table(identifier, db=self._dataset_id, catalog=self._project_id).sql(dialect="bigquery")
 
     @staticmethod
     def check_data(data: Any) -> BigQueryConfig:
