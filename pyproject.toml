@@ -111,7 +111,7 @@ oracle = [
 streamlit = [
     "streamlit>=1.51.0",
     "pyngrok==7.4.0",
-    "python-dotenv==1.2.1",
+    "python-dotenv==1.2.2",
     "xlsxwriter==3.2.9",
     "plotly",
     "graphviz"
