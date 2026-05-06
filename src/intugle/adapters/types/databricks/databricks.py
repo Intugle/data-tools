@@ -15,7 +15,13 @@ from intugle.adapters.types.databricks.models import (
     DatabricksNotebookConfig,
     DatabricksSQLConnectorConfig,
 )
-from intugle.adapters.utils import convert_to_native
+from intugle.adapters.utils import (
+    convert_to_native,
+    escape_sql_literal,
+    quote_identifier,
+    quote_identifier_parts,
+    split_identifier_path,
+)
 from intugle.core import settings
 from intugle.core.utilities.processing import string_standardization
 
@@ -136,19 +142,17 @@ class DatabricksAdapter(Adapter):
 
     def _get_fqn(self, identifier: str) -> str:
         """Gets the fully qualified name for a table identifier."""
-        # An identifier is already fully qualified if it contains a dot.
-        if "." in identifier:
-            return identifier
-        
-        # Backticks are used to handle reserved keywords and special characters.
-        safe_schema = f"`{self._schema}`"
-        safe_identifier = f"`{identifier}`"
+        parts = split_identifier_path(identifier, max_parts=3)
+        if len(parts) > 1:
+            return quote_identifier_parts(parts, quote_char="`")
 
+        path_parts = [parts[0]]
+        if self._schema:
+            path_parts.insert(0, self._schema)
         if self.catalog:
-            safe_catalog = f"`{self.catalog}`"
-            return f"{safe_catalog}.{safe_schema}.{safe_identifier}"
-        
-        return f"{safe_schema}.{safe_identifier}"
+            path_parts.insert(0, self.catalog)
+
+        return quote_identifier_parts(path_parts, quote_char="`")
 
     @staticmethod
     def check_data(data: Any) -> DatabricksConfig:
@@ -161,16 +165,16 @@ class DatabricksAdapter(Adapter):
     def _execute_sql(self, query: str) -> list[Any]:
         if self.spark:
             if self.catalog:
-                self.spark.sql(f"USE CATALOG `{self.catalog}`")
+                self.spark.sql(f"USE CATALOG {quote_identifier(self.catalog, quote_char='`')}")
             if self._schema:
-                self.spark.sql(f"USE `{self._schema}`")
+                self.spark.sql(f"USE {quote_identifier(self._schema, quote_char='`')}")
             return self.spark.sql(query).collect()
         elif self.connection:
             with self.connection.cursor() as cursor:
                 if self.catalog:
-                    cursor.execute(f"USE CATALOG `{self.catalog}`")
+                    cursor.execute(f"USE CATALOG {quote_identifier(self.catalog, quote_char='`')}")
                 if self._schema:
-                    cursor.execute(f"USE `{self._schema}`")
+                    cursor.execute(f"USE {quote_identifier(self._schema, quote_char='`')}")
                 cursor.execute(query)
                 try:
                     return cursor.fetchall()
@@ -181,16 +185,16 @@ class DatabricksAdapter(Adapter):
     def _get_pandas_df(self, query: str) -> pd.DataFrame:
         if self.spark:
             if self.catalog:
-                self.spark.sql(f"USE CATALOG `{self.catalog}`")
+                self.spark.sql(f"USE CATALOG {quote_identifier(self.catalog, quote_char='`')}")
             if self._schema:
-                self.spark.sql(f"USE `{self._schema}`")
+                self.spark.sql(f"USE {quote_identifier(self._schema, quote_char='`')}")
             return self.spark.sql(query).toPandas()
         elif self.connection:
             with self.connection.cursor() as cursor:
                 if self.catalog:
-                    cursor.execute(f"USE CATALOG `{self.catalog}`")
+                    cursor.execute(f"USE CATALOG {quote_identifier(self.catalog, quote_char='`')}")
                 if self._schema:
-                    cursor.execute(f"USE `{self._schema}`")
+                    cursor.execute(f"USE {quote_identifier(self._schema, quote_char='`')}")
                 cursor.execute(query)
                 data = cursor.fetchall()
                 columns = [column[0] for column in cursor.description]
@@ -228,13 +232,14 @@ class DatabricksAdapter(Adapter):
     ) -> Optional[ColumnProfile]:
         data = self.check_data(data)
         fqn = self._get_fqn(data.identifier)
+        safe_column_name = quote_identifier(column_name, quote_char="`")
         start_ts = time.time()
 
         # Null and distinct counts
         query = f"""
         SELECT
-            COUNT(CASE WHEN `{column_name}` IS NULL THEN 1 END) as null_count,
-            COUNT(DISTINCT `{column_name}`) as distinct_count
+            COUNT(CASE WHEN {safe_column_name} IS NULL THEN 1 END) as null_count,
+            COUNT(DISTINCT {safe_column_name}) as distinct_count
         FROM {fqn}
         """
         result = self._execute_sql(query)[0]
@@ -244,7 +249,7 @@ class DatabricksAdapter(Adapter):
 
         # Sampling
         sample_query = f"""
-        SELECT DISTINCT CAST(`{column_name}` AS STRING) FROM {fqn} WHERE `{column_name}` IS NOT NULL LIMIT {dtype_sample_limit}
+        SELECT DISTINCT CAST({safe_column_name} AS STRING) FROM {fqn} WHERE {safe_column_name} IS NOT NULL LIMIT {dtype_sample_limit}
         """
         distinct_values_result = self._execute_sql(sample_query)
         distinct_values = [row[0] for row in distinct_values_result]
@@ -261,7 +266,7 @@ class DatabricksAdapter(Adapter):
         elif distinct_count > 0 and not_null_count > 0:
             remaining_sample_size = dtype_sample_limit - distinct_count
             additional_samples_query = f"""
-            SELECT CAST(`{column_name}` AS STRING) FROM {fqn} WHERE `{column_name}` IS NOT NULL ORDER BY RAND() LIMIT {remaining_sample_size}
+            SELECT CAST({safe_column_name} AS STRING) FROM {fqn} WHERE {safe_column_name} IS NOT NULL ORDER BY RAND() LIMIT {remaining_sample_size}
             """
             additional_samples_result = self._execute_sql(additional_samples_query)
             additional_samples = [row[0] for row in additional_samples_result]
@@ -346,14 +351,15 @@ class DatabricksAdapter(Adapter):
 
             # Set table comment
             if sync_glossary and source.table.description:
-                table_comment = source.table.description.replace("'", "\\'")
+                table_comment = escape_sql_literal(source.table.description)
                 self._execute_sql(f"COMMENT ON TABLE {fqn} IS '{table_comment}'")  # Works for views too
 
             # Set column comments and tags
             for column in source.table.columns:
+                safe_column_name = quote_identifier(column.name, quote_char="`")
                 if sync_glossary and column.description:
-                    col_comment = column.description.replace("'", "\\'")
-                    self._execute_sql(f"COMMENT ON COLUMN {fqn}.`{column.name}` IS '{col_comment}'")
+                    col_comment = escape_sql_literal(column.description)
+                    self._execute_sql(f"COMMENT ON COLUMN {fqn}.{safe_column_name} IS '{col_comment}'")
 
                 if sync_tags and column.tags:
                     cleaned_tags = [clean_tag(tag) for tag in column.tags]
@@ -361,12 +367,12 @@ class DatabricksAdapter(Adapter):
 
                     # FIXME: Need to differentiate between TABLES and VIEWS for setting tags
                     try:
-                        self._execute_sql(f"ALTER TABLE {fqn} ALTER COLUMN `{column.name}` SET TAGS ({tag_assignments})")
+                        self._execute_sql(f"ALTER TABLE {fqn} ALTER COLUMN {safe_column_name} SET TAGS ({tag_assignments})")
                     except Exception:
                         try:
-                            self._execute_sql(f"ALTER VIEW {fqn} ALTER COLUMN `{column.name}` SET TAGS ({tag_assignments})")
+                            self._execute_sql(f"ALTER VIEW {fqn} ALTER COLUMN {safe_column_name} SET TAGS ({tag_assignments})")
                         except Exception as e:
-                            print(f"Could not set tags '{tag_assignments}' on {fqn}.`{column.name}`: {e}")
+                            print(f"Could not set tags '{tag_assignments}' on {fqn}.{safe_column_name}: {e}")
                             
         print("Metadata sync complete.")
 
@@ -382,13 +388,15 @@ class DatabricksAdapter(Adapter):
 
             fqn = self._get_fqn(source.table.name)
             pk_columns = source.table.key.columns
-            constraint_name = f"pk_{source.table.name}"
+            constraint_name = quote_identifier(clean_name(f"pk_{source.table.name}"), quote_char="`")
             try:
                 for col in pk_columns:
+                    safe_col = quote_identifier(col, quote_char="`")
                     # First, ensure the column is not nullable
-                    self._execute_sql(f"ALTER TABLE {fqn} ALTER COLUMN `{col}` SET NOT NULL")
+                    self._execute_sql(f"ALTER TABLE {fqn} ALTER COLUMN {safe_col} SET NOT NULL")
                 # Then, add the primary key constraint
-                self._execute_sql(f"ALTER TABLE {fqn} ADD CONSTRAINT {constraint_name} PRIMARY KEY (`" + "`, `".join(pk_columns) + "`)")
+                pk_columns_sql = ", ".join(quote_identifier(col, quote_char="`") for col in pk_columns)
+                self._execute_sql(f"ALTER TABLE {fqn} ADD CONSTRAINT {constraint_name} PRIMARY KEY ({pk_columns_sql})")
                 print(f"Set primary key on {fqn} (`{pk_columns}`)")
             except Exception as e:
                 print(f"Could not set primary key for {fqn}: {e}")
@@ -409,11 +417,13 @@ class DatabricksAdapter(Adapter):
                 child_fqn = self._get_fqn(rel.target.table)
                 parent_fqn = self._get_fqn(rel.source.table)
                 constraint_name = f"fk_{rel.name}"
-                cleaned_constraint_name = clean_name(constraint_name)
+                cleaned_constraint_name = quote_identifier(clean_name(constraint_name), quote_char="`")
+                child_columns = ", ".join(quote_identifier(col, quote_char="`") for col in rel.target.columns)
+                parent_columns = ", ".join(quote_identifier(col, quote_char="`") for col in rel.source.columns)
 
                 self._execute_sql(
                     f"ALTER TABLE {child_fqn} ADD CONSTRAINT {cleaned_constraint_name} "
-                    f"FOREIGN KEY (`{'`, '.join(rel.target.columns)}`) REFERENCES {parent_fqn} (`{'`, '.join(rel.source.columns)}`)"
+                    f"FOREIGN KEY ({child_columns}) REFERENCES {parent_fqn} ({parent_columns})"
                 )
             except Exception as e:
                 print(f"Could not set foreign key for relationship {rel.name}: {e}")
@@ -425,12 +435,14 @@ class DatabricksAdapter(Adapter):
         
         fqn1 = self._get_fqn(table1_adapter.identifier)
         fqn2 = self._get_fqn(table2_adapter.identifier)
+        col1 = quote_identifier(column1_name, quote_char="`")
+        col2 = quote_identifier(column2_name, quote_char="`")
 
         query = f"""
         SELECT COUNT(*) FROM (
-            SELECT DISTINCT `{column1_name}` FROM {fqn1} WHERE `{column1_name}` IS NOT NULL
+            SELECT DISTINCT {col1} FROM {fqn1} WHERE {col1} IS NOT NULL
             INTERSECT
-            SELECT DISTINCT `{column2_name}` FROM {fqn2} WHERE `{column2_name}` IS NOT NULL
+            SELECT DISTINCT {col2} FROM {fqn2} WHERE {col2} IS NOT NULL
         )
         """
         return self._execute_sql(query)[0][0]
@@ -438,7 +450,7 @@ class DatabricksAdapter(Adapter):
     def get_composite_key_uniqueness(self, table_name: str, columns: list[str], dataset_data: DataSetData) -> int:
         data = self.check_data(dataset_data)
         fqn = self._get_fqn(data.identifier)
-        safe_columns = [f"`{col}`" for col in columns]
+        safe_columns = [quote_identifier(col, quote_char="`") for col in columns]
         column_list = ", ".join(safe_columns)
         null_cols_filter = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns)
 
@@ -463,8 +475,8 @@ class DatabricksAdapter(Adapter):
         fqn1 = self._get_fqn(table1_adapter.identifier)
         fqn2 = self._get_fqn(table2_adapter.identifier)
 
-        safe_columns1 = [f"`{col}`" for col in columns1]
-        safe_columns2 = [f"`{col}`" for col in columns2]
+        safe_columns1 = [quote_identifier(col, quote_char="`") for col in columns1]
+        safe_columns2 = [quote_identifier(col, quote_char="`") for col in columns2]
 
         # Subquery for distinct keys from table 1
         distinct_cols1 = ", ".join(safe_columns1)

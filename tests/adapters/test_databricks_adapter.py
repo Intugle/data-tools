@@ -178,10 +178,10 @@ class TestDatabricksSpecificBehavior:
         fqn = mock_adapter._get_fqn("my_table")
         assert fqn == "`test_catalog`.`test_schema`.`my_table`"
 
-        # Already qualified (contains dots) - should return as-is
+        # Already qualified (contains dots) - should still be safely quoted
         already_qualified = "custom_cat.custom_schema.my_table"
         fqn_already = mock_adapter._get_fqn(already_qualified)
-        assert fqn_already == already_qualified
+        assert fqn_already == "`custom_cat`.`custom_schema`.`my_table`"
 
     def test_connection_property_exists(self, mock_adapter):
         """Verify adapter has connection for SQL execution."""
@@ -272,5 +272,4 @@ class TestDatabricksErrorHandling:
 
         with pytest.raises(ValueError, match="Could not create Databricks connection"):
             DatabricksAdapter()
-
 

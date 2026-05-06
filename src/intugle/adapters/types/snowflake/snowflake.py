@@ -18,9 +18,16 @@ from intugle.adapters.models import (
     ProfilingOutput,
 )
 from intugle.adapters.types.snowflake.models import SnowflakeConfig, SnowflakeConnectionConfig
-from intugle.adapters.utils import convert_to_native
+from intugle.adapters.utils import (
+    convert_to_native,
+    escape_sql_literal,
+    quote_identifier,
+    quote_identifier_parts,
+    split_identifier_path,
+)
 from intugle.core import settings
-from intugle.exporters.snowflake import clean_name, quote_identifier
+from intugle.exporters.snowflake import clean_name
+from intugle.exporters.snowflake import quote_identifier as snowflake_quote_identifier
 
 try:
     import snowflake.snowpark.functions as F
@@ -107,9 +114,21 @@ class SnowflakeAdapter(Adapter):
             raise TypeError("Input must be a snowflake config.")
         return data
 
+    def _get_fqn(self, identifier: str) -> str:
+        parts = split_identifier_path(identifier, max_parts=3)
+        if len(parts) > 1:
+            return quote_identifier_parts(parts)
+
+        path_parts = [parts[0]]
+        if self._schema:
+            path_parts.insert(0, self._schema)
+        if self._database:
+            path_parts.insert(0, self._database)
+        return quote_identifier_parts(path_parts)
+
     def profile(self, data: SnowflakeConfig, table_name: str) -> ProfilingOutput:
         data = self.check_data(data)
-        table = self.session.table(data.identifier)
+        table = self.session.table(self._get_fqn(data.identifier))
         total_count = table.count()
         columns = table.columns
         dtypes = {field.name: str(field.datatype) for field in table.schema.fields}
@@ -129,7 +148,7 @@ class SnowflakeAdapter(Adapter):
         dtype_sample_limit: int = 10000,
     ) -> Optional[ColumnProfile]:
         data = self.check_data(data)
-        table = self.session.table(data.identifier)
+        table = self.session.table(self._get_fqn(data.identifier))
 
         start_ts = time.time()
 
@@ -198,7 +217,7 @@ class SnowflakeAdapter(Adapter):
 
     def to_df(self, data: SnowflakeConfig, table_name: str):
         data = self.check_data(data)
-        df = self.session.table(data.identifier).to_pandas()
+        df = self.session.table(self._get_fqn(data.identifier)).to_pandas()
         df.columns = [col.strip('"') for col in df.columns]
         return df
 
@@ -213,13 +232,14 @@ class SnowflakeAdapter(Adapter):
             return re.sub(r'""(.*?)""', r'"\1"', sql)
 
         query = _clean_column_quotes(query)
+        fqn = self._get_fqn(table_name)
         if materialize == "table":
             self.session.sql(
-                f"CREATE OR REPLACE TABLE {table_name} AS {query}"
+                f"CREATE OR REPLACE TABLE {fqn} AS {query}"
             ).collect()
         else:
             self.session.sql(
-                f"CREATE OR REPLACE VIEW {table_name} AS {query}"
+                f"CREATE OR REPLACE VIEW {fqn} AS {query}"
             ).collect()
         return query
 
@@ -253,20 +273,20 @@ class SnowflakeAdapter(Adapter):
         # Apply comments and tags to tables and columns
         for source in manifest.sources.values():
             # Construct the fully qualified table name using details from profiles.yml
-            full_table_name = f"{database}.{schema}.{source.table.name}"
+            full_table_name = quote_identifier_parts([database, schema, source.table.name])
 
             # Set table comment
             if source.table.description:
-                table_comment = source.table.description.replace("'", "''")
+                table_comment = escape_sql_literal(source.table.description)
                 self.session.sql(f"ALTER TABLE {full_table_name} SET COMMENT = '{table_comment}'").collect()
 
             # Set column comments and tags
             for column in source.table.columns:
-                comment = (column.description or "").replace("'", "''")
+                comment = escape_sql_literal(column.description or "")
 
                 # Set column comment
                 self.session.sql(
-                    f"ALTER TABLE {full_table_name} MODIFY COLUMN {quote_identifier(column.name)} COMMENT '{comment}'"
+                    f"ALTER TABLE {full_table_name} MODIFY COLUMN {snowflake_quote_identifier(column.name)} COMMENT '{comment}'"
                 ).collect()
 
                 # Set column tags
@@ -298,13 +318,13 @@ class SnowflakeAdapter(Adapter):
         table_clauses = []
         for source in manifest.sources.values():
             table_alias = clean_name(source.table.name)
-            full_table_name = f"{database}.{schema}.{source.table.name}"
+            full_table_name = quote_identifier_parts([database, schema, source.table.name])
 
             clause = f"{table_alias} AS {full_table_name}"
             if source.table.key:
                 clause += ' PRIMARY KEY ("' + '", "'.join(source.table.key.columns) + '")'
             if source.table.description:
-                comment = source.table.description.replace("'", "''")
+                comment = escape_sql_literal(source.table.description)
                 clause += f" COMMENT = '{comment}'"
             table_clauses.append(clause)
 
@@ -313,10 +333,10 @@ class SnowflakeAdapter(Adapter):
         for rel in manifest.relationships.values():
 
             # The table with the FK is the "referencing" table
-            table_alias = rel.target.table
+            table_alias = clean_name(rel.target.table)
             column = '"' + '", "'.join(rel.target.columns) + '"'
             # The table with the PK is the "referenced" table
-            ref_table_alias = rel.source.table
+            ref_table_alias = clean_name(rel.source.table)
             ref_column = '"' + '", "'.join(rel.source.columns) + '"'
 
             clause = f"{clean_name(rel.name)} AS {table_alias}({column}) REFERENCES {ref_table_alias}({ref_column})"
@@ -329,9 +349,9 @@ class SnowflakeAdapter(Adapter):
             table_alias = clean_name(source.table.name)
             for column in source.table.columns:
                 col_alias = clean_name(column.name)
-                expr = f"{table_alias}.{col_alias} AS {quote_identifier(column.name)}"
+                expr = f"{table_alias}.{col_alias} AS {snowflake_quote_identifier(column.name)}"
                 if column.description:
-                    comment = column.description.replace("'", "''")
+                    comment = escape_sql_literal(column.description)
                     expr += f" COMMENT = '{comment}'"
 
                 if column.category == "measure":
@@ -340,7 +360,7 @@ class SnowflakeAdapter(Adapter):
                     dimension_clauses.append(expr)
 
         # -- Assemble the final SQL statement --
-        sql = f"CREATE OR REPLACE SEMANTIC VIEW {model_name}\n"
+        sql = f"CREATE OR REPLACE SEMANTIC VIEW {quote_identifier(model_name)}\n"
         sql += f"  TABLES ({', '.join(table_clauses)})\n"
         if relationship_clauses:
             sql += f"  RELATIONSHIPS ({', '.join(relationship_clauses)})\n"
@@ -358,15 +378,15 @@ class SnowflakeAdapter(Adapter):
         table1_adapter = self.check_data(table1.data)
         table2_adapter = self.check_data(table2.data)
 
-        table1_df = self.session.table(table1_adapter.identifier)
-        table2_df = self.session.table(table2_adapter.identifier)
+        table1_df = self.session.table(self._get_fqn(table1_adapter.identifier))
+        table2_df = self.session.table(self._get_fqn(table2_adapter.identifier))
 
         intersect_df = table1_df.select(column1_name).intersect(table2_df.select(column2_name))
         return intersect_df.count()
 
     def get_composite_key_uniqueness(self, table_name: str, columns: list[str], dataset_data: DataSetData) -> int:
         data = self.check_data(dataset_data)
-        table = self.session.table(data.identifier)
+        table = self.session.table(self._get_fqn(data.identifier))
         
         # Drop rows where any of the key columns have null values and count distinct
         distinct_count = table.dropna(subset=columns).select(columns).distinct().count()
@@ -382,8 +402,8 @@ class SnowflakeAdapter(Adapter):
         table1_adapter = self.check_data(table1.data)
         table2_adapter = self.check_data(table2.data)
 
-        df1 = self.session.table(table1_adapter.identifier)
-        df2 = self.session.table(table2_adapter.identifier)
+        df1 = self.session.table(self._get_fqn(table1_adapter.identifier))
+        df2 = self.session.table(self._get_fqn(table2_adapter.identifier))
 
         # Get unique combinations of composite keys, dropping nulls
         df1_unique_keys = df1.dropna(subset=columns1).select(columns1).distinct()

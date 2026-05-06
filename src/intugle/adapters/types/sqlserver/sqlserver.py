@@ -12,7 +12,13 @@ from intugle.adapters.types.sqlserver.models import (
     SQLServerConfig,
     SQLServerConnectionConfig,
 )
-from intugle.adapters.utils import convert_to_native
+from intugle.adapters.utils import (
+    convert_to_native,
+    escape_sql_literal,
+    quote_identifier,
+    quote_identifier_parts,
+    split_identifier_path,
+)
 from intugle.core import settings
 from intugle.core.utilities.processing import string_standardization
 
@@ -111,9 +117,10 @@ class SQLServerAdapter(Adapter):
 
     def _get_fqn(self, identifier: str) -> str:
         """Gets the fully qualified name for a table identifier."""
-        if "." in identifier:
-            return identifier
-        return f'[{self._schema}].[{identifier}]'
+        parts = split_identifier_path(identifier, max_parts=2)
+        if len(parts) == 2:
+            return quote_identifier_parts(parts, quote_char="[")
+        return quote_identifier_parts([self._schema, parts[0]], quote_char="[")
 
     @staticmethod
     def check_data(data: Any) -> SQLServerConfig:
@@ -141,6 +148,9 @@ class SQLServerAdapter(Adapter):
     def profile(self, data: SQLServerConfig, table_name: str) -> ProfilingOutput:
         data = self.check_data(data)
         fqn = self._get_fqn(data.identifier)
+        identifier_parts = split_identifier_path(data.identifier, max_parts=2)
+        schema_name = identifier_parts[0] if len(identifier_parts) == 2 else self._schema
+        table_identifier = identifier_parts[-1]
 
         total_count = self._execute_sql(f"SELECT COUNT(*) FROM {fqn}")[0][0]
 
@@ -149,7 +159,7 @@ class SQLServerAdapter(Adapter):
         FROM INFORMATION_SCHEMA.COLUMNS
         WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ?
         """
-        rows = self._execute_sql(query, self._schema, data.identifier)
+        rows = self._execute_sql(query, schema_name, table_identifier)
         columns = [row.COLUMN_NAME for row in rows]
         dtypes = {row.COLUMN_NAME: row.DATA_TYPE for row in rows}
 
@@ -170,13 +180,14 @@ class SQLServerAdapter(Adapter):
     ) -> Optional[ColumnProfile]:
         data = self.check_data(data)
         fqn = self._get_fqn(data.identifier)
+        safe_column_name = quote_identifier(column_name, quote_char="[")
         start_ts = time.time()
 
         # Null and distinct counts
         query = f"""
         SELECT
-            SUM(CASE WHEN [{column_name}] IS NULL THEN 1 ELSE 0 END) as null_count,
-            COUNT(DISTINCT [{column_name}]) as distinct_count
+            SUM(CASE WHEN {safe_column_name} IS NULL THEN 1 ELSE 0 END) as null_count,
+            COUNT(DISTINCT {safe_column_name}) as distinct_count
         FROM {fqn}
         """
         result = self._execute_sql(query)[0]
@@ -186,7 +197,7 @@ class SQLServerAdapter(Adapter):
 
         # Sampling
         sample_query = f"""
-        SELECT DISTINCT TOP ({dtype_sample_limit}) [{column_name}] FROM {fqn} WHERE [{column_name}] IS NOT NULL
+        SELECT DISTINCT TOP ({dtype_sample_limit}) {safe_column_name} FROM {fqn} WHERE {safe_column_name} IS NOT NULL
         """
         distinct_values_result = self._execute_sql(sample_query)
         distinct_values = [str(row[0]) for row in distinct_values_result]
@@ -205,9 +216,9 @@ class SQLServerAdapter(Adapter):
         elif distinct_count > 0 and not_null_count > 0:
             remaining_sample_size = dtype_sample_limit - distinct_count
             additional_samples_query = f"""
-            SELECT TOP {remaining_sample_size} [{column_name}]
+            SELECT TOP {remaining_sample_size} {safe_column_name}
             FROM {fqn}
-            WHERE [{column_name}] IS NOT NULL
+            WHERE {safe_column_name} IS NOT NULL
             ORDER BY NEWID()
             """
             additional_samples_result = self._execute_sql(additional_samples_query)
@@ -254,13 +265,14 @@ class SQLServerAdapter(Adapter):
     ) -> str:
         fqn = self._get_fqn(table_name)
         transpiled_sql = transpile(query, write="tsql")[0]
+        escaped_fqn_literal = escape_sql_literal(fqn)
 
         # Drop existing object
         if materialize == "view":
-            self._execute_sql(f"IF OBJECT_ID('{fqn}', 'V') IS NOT NULL DROP VIEW {fqn}")
+            self._execute_sql(f"IF OBJECT_ID('{escaped_fqn_literal}', 'V') IS NOT NULL DROP VIEW {fqn}")
             self._execute_sql(f"CREATE VIEW {fqn} AS {transpiled_sql}")
         else:  # table
-            self._execute_sql(f"IF OBJECT_ID('{fqn}', 'U') IS NOT NULL DROP TABLE {fqn}")
+            self._execute_sql(f"IF OBJECT_ID('{escaped_fqn_literal}', 'U') IS NOT NULL DROP TABLE {fqn}")
             self._execute_sql(f"SELECT * INTO {fqn} FROM ({transpiled_sql}) as tmp")
         
         self.connection.commit()
@@ -277,18 +289,20 @@ class SQLServerAdapter(Adapter):
 
         fqn1 = self._get_fqn(table1_adapter.identifier)
         fqn2 = self._get_fqn(table2_adapter.identifier)
+        col1 = quote_identifier(column1_name, quote_char="[")
+        col2 = quote_identifier(column2_name, quote_char="[")
 
         query = f"""
-        SELECT COUNT(DISTINCT t1.[{column1_name}])
+        SELECT COUNT(DISTINCT t1.{col1})
         FROM {fqn1} AS t1
-        INNER JOIN {fqn2} AS t2 ON t1.[{column1_name}] = t2.[{column2_name}]
+        INNER JOIN {fqn2} AS t2 ON t1.{col1} = t2.{col2}
         """
         return self._execute_sql(query)[0][0]
 
     def get_composite_key_uniqueness(self, table_name: str, columns: list[str], dataset_data: DataSetData) -> int:
         data = self.check_data(dataset_data)
         fqn = self._get_fqn(data.identifier)
-        safe_columns = [f"[{col}]" for col in columns]
+        safe_columns = [quote_identifier(col, quote_char="[") for col in columns]
         column_list = ", ".join(safe_columns)
         null_cols_filter = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns)
 
@@ -313,8 +327,8 @@ class SQLServerAdapter(Adapter):
         fqn1 = self._get_fqn(table1_adapter.identifier)
         fqn2 = self._get_fqn(table2_adapter.identifier)
 
-        safe_columns1 = [f"[{col}]" for col in columns1]
-        safe_columns2 = [f"[{col}]" for col in columns2]
+        safe_columns1 = [quote_identifier(col, quote_char="[") for col in columns1]
+        safe_columns2 = [quote_identifier(col, quote_char="[") for col in columns2]
 
         # Subquery for distinct keys from table 1
         distinct_cols1 = ", ".join(safe_columns1)
