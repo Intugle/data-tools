@@ -9,7 +9,7 @@ from intugle.adapters.adapter import Adapter
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import ColumnProfile, DataSetData, ProfilingOutput
 from intugle.adapters.types.oracle.models import OracleConfig, OracleConnectionConfig
-from intugle.adapters.utils import convert_to_native
+from intugle.adapters.utils import convert_to_native, quote_identifier, quote_identifier_parts, split_identifier_path
 from intugle.core import settings
 from intugle.core.utilities.processing import string_standardization
 
@@ -100,12 +100,13 @@ class OracleAdapter(Adapter):
         # Set current schema if different from user
         if params.schema_:
             with self.connection.cursor() as cursor:
-                cursor.execute(f"ALTER SESSION SET CURRENT_SCHEMA = {params.schema_}")
+                cursor.execute(f"ALTER SESSION SET CURRENT_SCHEMA = {quote_identifier(params.schema_)}")
 
     def _get_fqn(self, identifier: str) -> str:
-        if "." in identifier:
-            return identifier.upper()  # Oracle identifiers are case-insensitive/upper by default unless quoted
-        return f'"{self._schema}"."{identifier}"'
+        parts = split_identifier_path(identifier, max_parts=2)
+        if len(parts) == 2:
+            return quote_identifier_parts(parts)
+        return quote_identifier_parts([self._schema, parts[0]])
 
     @staticmethod
     def check_data(data: Any) -> OracleConfig:
@@ -140,8 +141,9 @@ class OracleAdapter(Adapter):
 
     def profile(self, data: OracleConfig, table_name: str) -> ProfilingOutput:
         data = self.check_data(data)
-        # Assuming identifier is table name
-        table_upper = data.identifier.upper()
+        identifier_parts = split_identifier_path(data.identifier, max_parts=2)
+        schema_name = identifier_parts[0].upper() if len(identifier_parts) == 2 else self._schema
+        table_upper = identifier_parts[-1].upper()
         
         # Count
         fqn = self._get_fqn(data.identifier)
@@ -155,7 +157,7 @@ class OracleAdapter(Adapter):
         FROM ALL_TAB_COLUMNS
         WHERE OWNER = :owner AND TABLE_NAME = :table_name
         """
-        rows = self._execute_sql(query, {"owner": self._schema, "table_name": table_upper})
+        rows = self._execute_sql(query, {"owner": schema_name, "table_name": table_upper})
         
         columns = [row["COLUMN_NAME"] for row in rows]
         dtypes = {row["COLUMN_NAME"]: row["DATA_TYPE"] for row in rows}
@@ -180,7 +182,7 @@ class OracleAdapter(Adapter):
         start_ts = time.time()
         
         # Oracle treats empty strings as NULLs sometimes, but we'll stick to standard SQL
-        safe_col = f'"{column_name}"'
+        safe_col = quote_identifier(column_name)
 
         query = f"""
         SELECT
@@ -312,13 +314,15 @@ class OracleAdapter(Adapter):
 
         fqn1 = self._get_fqn(table1_adapter.identifier)
         fqn2 = self._get_fqn(table2_adapter.identifier)
+        col1 = quote_identifier(column1_name)
+        col2 = quote_identifier(column2_name)
         
         # Use INTERSECT
         query = f"""
         SELECT COUNT(*) as CNT FROM (
-            SELECT DISTINCT "{column1_name}" FROM {fqn1} WHERE "{column1_name}" IS NOT NULL
+            SELECT DISTINCT {col1} FROM {fqn1} WHERE {col1} IS NOT NULL
             INTERSECT
-            SELECT DISTINCT "{column2_name}" FROM {fqn2} WHERE "{column2_name}" IS NOT NULL
+            SELECT DISTINCT {col2} FROM {fqn2} WHERE {col2} IS NOT NULL
         )
         """
         return self._execute_sql(query)[0]["CNT"]
@@ -326,7 +330,7 @@ class OracleAdapter(Adapter):
     def get_composite_key_uniqueness(self, table_name: str, columns: list[str], dataset_data: DataSetData) -> int:
         data = self.check_data(dataset_data)
         fqn = self._get_fqn(data.identifier)
-        safe_columns = [f'"{col}"' for col in columns]
+        safe_columns = [quote_identifier(col) for col in columns]
         column_list = ", ".join(safe_columns)
         null_cols_filter = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns)
 
@@ -351,8 +355,8 @@ class OracleAdapter(Adapter):
         fqn1 = self._get_fqn(table1_adapter.identifier)
         fqn2 = self._get_fqn(table2_adapter.identifier)
 
-        safe_columns1 = [f'"{col}"' for col in columns1]
-        safe_columns2 = [f'"{col}"' for col in columns2]
+        safe_columns1 = [quote_identifier(col) for col in columns1]
+        safe_columns2 = [quote_identifier(col) for col in columns2]
         
         # Subquery for distinct keys from table 1
         distinct_cols1 = ", ".join(safe_columns1)

@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Optional
 
 from intugle.adapters.factory import AdapterFactory
+from intugle.adapters.utils import has_pii_tags, quote_identifier
 from intugle.analysis.models import DataSet
 from intugle.core import settings
 from intugle.core.conceptual_search.plan import DataProductPlan
@@ -180,18 +181,20 @@ class DataProduct:
         # iterate through each source and get the field details (all fields / columns)
         for source in sources.values():
             for column in source.table.columns:
+                table_details = source.table.details or {}
+                connection_source_name = table_details.get("type", "unknown")
                 field_detail: FieldDetailsModel = FieldDetailsModel(
                     id=f"{source.table.name}.{column.name}",
                     name=column.name,
                     datatype_l1=column.type,
                     datatype_l2=column.category,
-                    sql_code=f"\"{source.table.name}\".\"{column.name}\"",
-                    is_pii=False,
+                    sql_code=f"{quote_identifier(source.table.name)}.{quote_identifier(column.name)}",
+                    is_pii=has_pii_tags(column.tags),
                     asset_id=source.table.name,
                     asset_name=source.table.name,
-                    asset_details={},
+                    asset_details=table_details,
                     connection_id=source.schema_,
-                    connection_source_name="postgresql",
+                    connection_source_name=connection_source_name,
                     connection_credentials={},
                 )
                 field_details[field_detail.id] = field_detail
@@ -229,18 +232,20 @@ class DataProduct:
 
                 for column in columns:
                     column_detail = column_details[column]
+                    table_details = table_detail.table.details or {}
+                    connection_source_name = table_details.get("type", "unknown")
                     field_detail: FieldDetailsModel = FieldDetailsModel(
                         id=f"{table}.{column}",
                         name=column_detail.name,
                         datatype_l1=column_detail.type,
                         datatype_l2=column_detail.category,
-                        sql_code=f"\"{table}\".\"{column}\"",
-                        is_pii=False,
+                        sql_code=f"{quote_identifier(table)}.{quote_identifier(column)}",
+                        is_pii=has_pii_tags(column_detail.tags),
                         asset_id=table,
                         asset_name=table,
-                        asset_details={},
+                        asset_details=table_details,
                         connection_id=table_detail.schema,
-                        connection_source_name="postgresql",
+                        connection_source_name=connection_source_name,
                         connection_credentials={},
                     )
                     field_details[field_detail.id] = field_detail

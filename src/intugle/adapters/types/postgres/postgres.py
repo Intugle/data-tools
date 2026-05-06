@@ -11,7 +11,12 @@ from intugle.adapters.adapter import Adapter
 from intugle.adapters.factory import AdapterFactory
 from intugle.adapters.models import ColumnProfile, DataSetData, ProfilingOutput
 from intugle.adapters.types.postgres.models import PostgresConfig, PostgresConnectionConfig
-from intugle.adapters.utils import convert_to_native
+from intugle.adapters.utils import (
+    convert_to_native,
+    quote_identifier,
+    quote_identifier_parts,
+    split_identifier_path,
+)
 from intugle.core import settings
 from intugle.core.utilities.processing import string_standardization
 
@@ -145,13 +150,14 @@ class PostgresAdapter(Adapter):
             port=params.port,
             database=params.database,
         )
-        await self.connection.execute(f"SET search_path TO {self._schema}")
+        await self.connection.execute(f"SET search_path TO {quote_identifier(self._schema)}")
 
     def _get_fqn(self, identifier: str) -> str:
         """Gets the fully qualified name for a table identifier."""
-        if "." in identifier:
-            return identifier
-        return f'"{self._schema}"."{identifier}"'
+        parts = split_identifier_path(identifier, max_parts=2)
+        if len(parts) == 2:
+            return quote_identifier_parts(parts)
+        return quote_identifier_parts([self._schema, parts[0]])
 
     @staticmethod
     def check_data(data: Any) -> PostgresConfig:
@@ -174,6 +180,9 @@ class PostgresAdapter(Adapter):
     def profile(self, data: PostgresConfig, table_name: str) -> ProfilingOutput:
         data = self.check_data(data)
         fqn = self._get_fqn(data.identifier)
+        identifier_parts = split_identifier_path(data.identifier, max_parts=2)
+        schema_name = identifier_parts[0] if len(identifier_parts) == 2 else self._schema
+        table_identifier = identifier_parts[-1]
 
         total_count = self._execute_sql(f"SELECT COUNT(*) FROM {fqn}")[0][0]
 
@@ -182,7 +191,7 @@ class PostgresAdapter(Adapter):
         FROM information_schema.columns
         WHERE table_schema = $1 AND table_name = $2
         """
-        rows = self._execute_sql(query, self._schema, data.identifier)
+        rows = self._execute_sql(query, schema_name, table_identifier)
         columns = [row["column_name"] for row in rows]
         dtypes = {row["column_name"]: row["data_type"] for row in rows}
 
@@ -203,13 +212,14 @@ class PostgresAdapter(Adapter):
     ) -> Optional[ColumnProfile]:
         data = self.check_data(data)
         fqn = self._get_fqn(data.identifier)
+        safe_column_name = quote_identifier(column_name)
         start_ts = time.time()
 
         # Null and distinct counts
         query = f"""
         SELECT
-            COUNT(*) FILTER (WHERE "{column_name}" IS NULL) as null_count,
-            COUNT(DISTINCT "{column_name}") as distinct_count
+            COUNT(*) FILTER (WHERE {safe_column_name} IS NULL) as null_count,
+            COUNT(DISTINCT {safe_column_name}) as distinct_count
         FROM {fqn}
         """
         result = self._execute_sql(query)[0]
@@ -219,7 +229,7 @@ class PostgresAdapter(Adapter):
 
         # Sampling
         sample_query = f"""
-        SELECT DISTINCT CAST("{column_name}" AS VARCHAR) FROM {fqn} WHERE "{column_name}" IS NOT NULL LIMIT {dtype_sample_limit}
+        SELECT DISTINCT CAST({safe_column_name} AS VARCHAR) FROM {fqn} WHERE {safe_column_name} IS NOT NULL LIMIT {dtype_sample_limit}
         """
         distinct_values_result = self._execute_sql(sample_query)
         distinct_values = [row[0] for row in distinct_values_result]
@@ -236,7 +246,7 @@ class PostgresAdapter(Adapter):
         elif distinct_count > 0 and not_null_count > 0:
             remaining_sample_size = dtype_sample_limit - distinct_count
             additional_samples_query = f"""
-            SELECT CAST("{column_name}" AS VARCHAR) FROM {fqn} WHERE "{column_name}" IS NOT NULL ORDER BY RANDOM() LIMIT {remaining_sample_size}
+            SELECT CAST({safe_column_name} AS VARCHAR) FROM {fqn} WHERE {safe_column_name} IS NOT NULL ORDER BY RANDOM() LIMIT {remaining_sample_size}
             """
             additional_samples_result = self._execute_sql(additional_samples_query)
             additional_samples = [row[0] for row in additional_samples_result]
@@ -301,12 +311,14 @@ class PostgresAdapter(Adapter):
 
         fqn1 = self._get_fqn(table1_adapter.identifier)
         fqn2 = self._get_fqn(table2_adapter.identifier)
+        col1 = quote_identifier(column1_name)
+        col2 = quote_identifier(column2_name)
 
         query = f"""
         SELECT COUNT(*) FROM (
-            SELECT DISTINCT "{column1_name}" FROM {fqn1} WHERE "{column1_name}" IS NOT NULL
+            SELECT DISTINCT {col1} FROM {fqn1} WHERE {col1} IS NOT NULL
             INTERSECT
-            SELECT DISTINCT "{column2_name}" FROM {fqn2} WHERE "{column2_name}" IS NOT NULL
+            SELECT DISTINCT {col2} FROM {fqn2} WHERE {col2} IS NOT NULL
         ) as t
         """
         return self._execute_sql(query)[0][0]
@@ -314,7 +326,7 @@ class PostgresAdapter(Adapter):
     def get_composite_key_uniqueness(self, table_name: str, columns: list[str], dataset_data: DataSetData) -> int:
         data = self.check_data(dataset_data)
         fqn = self._get_fqn(data.identifier)
-        safe_columns = [f'"{col}"' for col in columns]
+        safe_columns = [quote_identifier(col) for col in columns]
         column_list = ", ".join(safe_columns)
         null_cols_filter = " AND ".join(f"{c} IS NOT NULL" for c in safe_columns)
 
@@ -339,8 +351,8 @@ class PostgresAdapter(Adapter):
         fqn1 = self._get_fqn(table1_adapter.identifier)
         fqn2 = self._get_fqn(table2_adapter.identifier)
 
-        safe_columns1 = [f'"{col}"' for col in columns1]
-        safe_columns2 = [f'"{col}"' for col in columns2]
+        safe_columns1 = [quote_identifier(col) for col in columns1]
+        safe_columns2 = [quote_identifier(col) for col in columns2]
 
         # Subquery for distinct keys from table 1
         distinct_cols1 = ", ".join(safe_columns1)
