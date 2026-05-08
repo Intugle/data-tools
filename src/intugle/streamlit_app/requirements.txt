@@ -1,6 +1,6 @@
 streamlit>=1.51.0
 pyngrok==7.4.0
-python-dotenv==1.1.1
+python-dotenv==1.2.2
 xlsxwriter==3.2.9
 intugle>=1.3.0
 plotly
