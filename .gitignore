@@ -238,3 +238,6 @@ profiles.yaml
 # opencode
 .opencode/
 AGENTS.md
+
+.codex/
+.omx/
