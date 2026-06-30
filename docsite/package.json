@@ -40,7 +40,8 @@
     "minimatch": "^3.1.4",
     "ajv": "^8.18.0",
     "qs": "^6.14.2",
-    "webpack": "^5.104.1"
+    "webpack": "^5.104.1",
+    "uuid": "^11.1.1"
   },
   "browserslist": {
     "production": [
