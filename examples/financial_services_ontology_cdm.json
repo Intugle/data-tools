@@ -1,0 +1,104 @@
+{
+  "name": "Financial Services Enterprise Ontology (CDM)",
+  "description": "Banking and financial services ontology aligned with Microsoft CDM",
+  "version": "2.0",
+  "domains": [
+    {
+      "name": "CustomerDomain",
+      "display_name": null,
+      "description": "Customer master data and relationships",
+      "domain_type": "customer",
+      "owner": "Customer Experience Department",
+      "metadata": {}
+    },
+    {
+      "name": "AccountDomain",
+      "display_name": null,
+      "description": "Banking accounts and products",
+      "domain_type": "product",
+      "owner": "Product Management",
+      "metadata": {}
+    },
+    {
+      "name": "TransactionDomain",
+      "display_name": null,
+      "description": "Financial transactions and payments",
+      "domain_type": "sales",
+      "owner": "Payments & Transactions",
+      "metadata": {}
+    },
+    {
+      "name": "LendingDomain",
+      "display_name": null,
+      "description": "Loans and credit products",
+      "domain_type": "finance",
+      "owner": "Lending Department",
+      "metadata": {}
+    }
+  ],
+  "concepts": [
+    {
+      "name": "BankCustomer",
+      "display_name": "Bank Customer",
+      "description": "Individual or business banking customer",
+      "domain": "CustomerDomain",
+      "cdm_entity_name": "Account",
+      "cdm_namespace": "core.applicationCommon",
+      "status": "approved",
+      "owner": "customer_data@bank.com",
+      "tags": [
+        "PII",
+        "customer",
+        "core"
+      ],
+      "metadata": {}
+    },
+    {
+      "name": "BankAccount",
+      "display_name": null,
+      "description": "Deposit and credit accounts",
+      "domain": "AccountDomain",
+      "cdm_entity_name": "Product",
+      "cdm_namespace": "core.applicationCommon.foundationCommon.crmCommon.products",
+      "status": "approved",
+      "owner": "product_data@bank.com",
+      "tags": [
+        "account",
+        "product"
+      ],
+      "metadata": {}
+    },
+    {
+      "name": "FinancialTransaction",
+      "display_name": null,
+      "description": "All financial transactions",
+      "domain": "TransactionDomain",
+      "cdm_entity_name": "SalesOrder",
+      "cdm_namespace": "core.applicationCommon.foundationCommon.crmCommon.sales",
+      "status": "approved",
+      "owner": "transactions@bank.com",
+      "tags": [
+        "transaction",
+        "payment"
+      ],
+      "metadata": {}
+    },
+    {
+      "name": "Loan",
+      "display_name": null,
+      "description": "Loan agreements and schedules",
+      "domain": "LendingDomain",
+      "cdm_entity_name": "Invoice",
+      "cdm_namespace": "core.applicationCommon.foundationCommon.crmCommon.sales",
+      "status": "in_review",
+      "owner": "lending@bank.com",
+      "tags": [
+        "loan",
+        "credit"
+      ],
+      "metadata": {
+        "notes": "Using CDM Invoice as closest match; consider custom financial CDM extension"
+      }
+    }
+  ]
+}
