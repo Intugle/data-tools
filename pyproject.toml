@@ -59,7 +59,7 @@ dependencies = [
     "filelock>=3.25.0",
     "PyJWT>=2.13.0",
     "orjson>=3.11.7",
-    "tornado>=6.5.7",
+    "tornado>=6.5.8",
     "protobuf>=6.33.0",
     "pyasn1>=0.6.4",
     "marshmallow>=3.26.2",
@@ -160,6 +160,10 @@ dev = [
 override-dependencies = [
     # pysonar (dev-only) pins requests==2.32.5 which conflicts; override to fix CVE
     "requests>=2.33.0",
+    # Keep transitive packages on versions containing the published security fixes.
+    "setuptools>=83.0.0",
+    "snowflake-connector-python>=4.7.1",
+    "thrift>=0.24.0",
 ]
 
 [tool.ruff]
