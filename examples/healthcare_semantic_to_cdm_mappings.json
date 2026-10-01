@@ -1,0 +1,149 @@
+{
+  "ontology_name": "Healthcare Enterprise Ontology (CDM)",
+  "ontology_version": "1.0",
+  "catalog_name": "Microsoft CDM - Core",
+  "mappings": [
+    {
+      "semantic_entities": [
+        "patients"
+      ],
+      "concept_name": "Patient",
+      "cdm_entity_name": "Contact",
+      "cdm_namespace": "core.applicationCommon",
+      "mapping_type": "one_to_one",
+      "attribute_mappings": [
+        {
+          "semantic_attribute": "patient_id",
+          "cdm_attribute": "Contact.ContactId",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "first_name",
+          "cdm_attribute": "Contact.FirstName",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "last_name",
+          "cdm_attribute": "Contact.LastName",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "email",
+          "cdm_attribute": "Contact.Email",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "phone",
+          "cdm_attribute": "Contact.PhoneNumber",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        }
+      ],
+      "status": "approved",
+      "confidence": 0.95,
+      "owner": "data_governance@hospital.org",
+      "notes": "Approved mapping for patient demographics to CDM Contact",
+      "metadata": {}
+    },
+    {
+      "semantic_entities": [
+        "encounters"
+      ],
+      "concept_name": "Encounter",
+      "cdm_entity_name": "Case",
+      "cdm_namespace": "core.applicationCommon.foundationCommon.crmCommon.service",
+      "mapping_type": "one_to_one",
+      "attribute_mappings": [
+        {
+          "semantic_attribute": "encounter_id",
+          "cdm_attribute": "Case.CaseId",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "encounter_date",
+          "cdm_attribute": "Case.CreatedOn",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "encounter_type",
+          "cdm_attribute": "Case.CaseType",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "chief_complaint",
+          "cdm_attribute": "Case.Title",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        },
+        {
+          "semantic_attribute": "patient_id",
+          "cdm_attribute": "Case.CustomerId",
+          "transformation": null,
+          "confidence": 1.0,
+          "notes": null,
+          "metadata": {}
+        }
+      ],
+      "status": "approved",
+      "confidence": 0.9,
+      "owner": "clinical_ops@hospital.org",
+      "notes": "Encounter mapped to CDM Case entity",
+      "metadata": {}
+    },
+    {
+      "semantic_entities": [
+        "medications"
+      ],
+      "concept_name": "Medication",
+      "cdm_entity_name": null,
+      "cdm_namespace": null,
+      "mapping_type": "one_to_one",
+      "attribute_mappings": [],
+      "status": "in_review",
+      "confidence": 0.7,
+      "owner": "pharmacy@hospital.org",
+      "notes": "Awaiting healthcare-specific CDM extension",
+      "metadata": {}
+    },
+    {
+      "semantic_entities": [
+        "diagnoses"
+      ],
+      "concept_name": "Diagnosis",
+      "cdm_entity_name": null,
+      "cdm_namespace": null,
+      "mapping_type": "one_to_one",
+      "attribute_mappings": [],
+      "status": "in_review",
+      "confidence": 0.7,
+      "owner": "clinical_ops@hospital.org",
+      "notes": "Awaiting healthcare-specific CDM extension",
+      "metadata": {}
+    }
+  ]
+}
