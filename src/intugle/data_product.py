@@ -23,6 +23,28 @@ class DataProduct:
     """Generates data products based on the manifest and ETL configurations."""
 
     def __init__(self, models_dir_path: str = settings.MODELS_DIR):
+        """
+        Initialize a DataProduct from a semantic model manifest.
+
+        Loads the manifest YAML files from the models directory, extracts field
+        metadata and table relationships, and preloads all source datasets so
+        queries can be generated immediately.
+
+        Args:
+            models_dir_path: Path to the directory containing semantic model YAML
+                files. Defaults to ``settings.MODELS_DIR``.
+
+        Examples:
+            Create a data product from the default models directory:
+
+            >>> dp = DataProduct()
+            >>> dp.field_details.keys()
+            dict_keys(['patients.id', 'claims.amount', ...])
+
+            Use a custom models directory:
+
+            >>> dp = DataProduct(models_dir_path="path/to/my/models")
+        """
         self.manifest_loader = ManifestLoader(models_dir_path)
         self.manifest_loader.load()
         self.manifest = self.manifest_loader.manifest
@@ -103,6 +125,19 @@ class DataProduct:
         return self.build(etl=etl_model)
 
     def load_all(self):
+        """
+        Load all source datasets defined in the manifest.
+
+        Iterates over every source table in the manifest and creates a
+        ``DataSet`` instance for each one. This method is called automatically
+        during initialization so that source tables are ready before query
+        generation or visualization.
+
+        Note:
+            Each loaded dataset is instantiated but not retained on the
+            ``DataProduct`` instance; the side effect is that underlying
+            adapters load the data into memory or register connections.
+        """
         sources = self.manifest.sources
         for source in sources.values():
             table_name = source.table.name
@@ -267,9 +302,50 @@ class DataProduct:
         return links
 
     def plot_graph(self, graph):
+        """
+        Plot a specific table-relationship graph.
+
+        Visualizes table relationships as a network graph, showing tables as
+        nodes and foreign-key links as edges. Useful for inspecting join paths
+        before building a data product.
+
+        Args:
+            graph: A NetworkX ``MultiGraph`` containing table nodes and
+                relationship edges. Typically obtained from
+                ``Join.generate_graph()``.
+
+        Examples:
+            Plot a join graph for selected tables:
+
+            >>> dp = DataProduct()
+            >>> graph = dp.join.generate_graph(["patients", "claims"])
+            >>> dp.plot_graph(graph)
+
+        Note:
+            Requires ``matplotlib`` and ``networkx`` for visualization. The
+            graph is displayed inline in Jupyter notebooks.
+        """
         self.join.plot_graph(graph)
 
     def plot_sources_graph(self):
+        """
+        Plot a graph of all source tables and their relationships.
+
+        Builds a relationship graph across every table referenced in the
+        manifest field metadata and renders it. Unlike :meth:`plot_graph`,
+        this method discovers all assets automatically and includes
+        disconnected tables when ``only_connected=False``.
+
+        Examples:
+            Visualize every table and link in the semantic model:
+
+            >>> dp = DataProduct()
+            >>> dp.plot_sources_graph()
+
+        Note:
+            Requires ``matplotlib`` and ``networkx`` for visualization. The
+            graph is displayed inline in Jupyter notebooks.
+        """
         assets = {field.asset_id for field in self.field_details.values()}
 
         graph = self.join.generate_graph(list(assets), only_connected=False)
